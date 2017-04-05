@@ -8,10 +8,11 @@
   <link href="vendor/prettify.css" rel="stylesheet" media="screen">
   <link href="css/style.css" rel="stylesheet" media="screen, print">
   <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="vendor/polyfill.js"></script>
 </head>
 <body>
-
 <script id="template-sidenav" type="text/x-handlebars-template">
 <nav id="scrollingNav">
   <ul class="sidenav nav nav-list">
@@ -36,6 +37,8 @@
 
 <script id="template-project" type="text/x-handlebars-template">
   <div class="pull-left">
+      <div class="top-nav"><img src="//learning-services-media.brightcove.com/doc-assets/general/images/bc-logo-ondark.png" alt="Brightcove"> | <a href="../../../index.html">API References Index</a> | <a href="//docs.brightcove.com">Brightcove Docs</a></div>
+
     <h1>{{name}}</h1>
     {{#if description}}<h2>{{{nl2br description}}}</h2>{{/if}}
   </div>
@@ -649,7 +652,7 @@
     <div class="spinner-container container3">
       <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div>
     </div>
-    
+
   </div>
 </div>
 

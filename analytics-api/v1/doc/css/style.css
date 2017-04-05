@@ -141,7 +141,7 @@ td {
 
 .top-nav {
     margin-top:-1rem;
-    margin-left:-1rem;
+    margin-left:-1.2rem;
     padding:.4rem;
     background-color:#292D32;
     color:#F3F1F0;
@@ -151,8 +151,11 @@ td {
 }
 
 .top-nav a:hover {
-    color: #F7D562;
+    color: #F9DA7E;
     text-decoration: underline;
+}
+.top-nav img {
+    height: 1.5rem;
 }
 
 /* ------------------------------------------------------------------------------------------
