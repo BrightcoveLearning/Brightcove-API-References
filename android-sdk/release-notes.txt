@@ -1,5 +1,15 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 4.13.4:
+
+  SDK changes:
+
+    * Added support to configure the PROGRESS event heartbeat. The default heartbeat value for this event is 500ms, unchanged from previous SDK behavior.
+    * Added support for customization of caption margins.
+    * Fixed an issue in the PROGRESS event where in rare circumstances the event heartbeat frequency could be significantly reduced from its default value of 500ms.
+
+    Please note that version 4.13.3 is identical to 4.13.4.
+
 Version 4.13.2:
 
   SDK changes:
