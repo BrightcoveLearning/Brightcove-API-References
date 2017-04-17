@@ -13,9 +13,34 @@
  *
  * @apiParam (VOD Request Body Fields) {string} input A valid URL to a media file (HTTP/HTTPS, FTP/FTPS, SFTP, Azure, GCS, CF or S3), with or without authentication
  * @apiParam (VOD Request Body Fields) {string} [api_key] API Key (must be included here if not passed as a header, which is the recommended way)
- * @apiParam (VOD Request Body Fields) {string="us", "europe", "asia", "sa", "australia", "us-virginia", "us-oregon", "us-n-california", "eu-dublin", "asia-singapore", "asia-tokyo", "sa-saopaulo", "australia-sydney", "us-central-gce", "eu-west-gce",  "asia-east-gce"} [region="us"] The AWS region or Google Compute Engine instance where Zencoder should process the job
- * @apiParam (VOD Request Body Fields) {Boolean} [test=false] The AWS region or Google Compute Engine instance where Zencoder should process the job
+ * @apiParam (VOD Request Body Fields) {string="us", "europe", "asia", "sa", "australia", "us-virginia", "us-oregon", "us-n-california", "eu-dublin", "asia-singapore", "asia-tokyo", "sa-saopaulo", "australia-sydney", "us-central-gce", "eu-west-gce",  "asia-east-gce"} [region="us"] The AWS region or Google Compute Engine instance (beta) where Zencoder should process the job
+ * @apiParam (VOD Request Body Fields) {Boolean} [test=false] Enable test mode ("Integration Mode") for a job
+ * @apiParam (VOD Request Body Fields) {Boolean} [private=false] Enable privacy mode for a job
+ * @apiParam (VOD Request Body Fields) {Number} [download_connections=5] Utilize multiple, simultaneous connections for download acceleration (in some circumstances)
+ * @apiParam (VOD Request Body Fields) {String} [pass_through] Optional information to store alongside this job
+ * @apiParam (VOD Request Body Fields) {Boolean} [mock=false] Send a mocked job request
+ * @apiParam (VOD Request Body Fields) {String} [grouping] A report grouping for this job
+ * @apiParam (VOD Request Body Fields) {String} [aspera_transfer_policy="fair"] How to allocate available bandwidth for Aspera file transfers
+ * @apiParam (VOD Request Body Fields) {Number} [transfer_minimum_rate=1000] A targeted rate in Kbps for data transfer minimums
+ * @apiParam (VOD Request Body Fields) {Number} [transfer_maximum_rate=250000] A targeted rate in Kbps for data transfer maximums
+ * @apiParam (VOD Request Body Fields) {String} [credentials] References saved credentials by a nickname
  * @apiParam (VOD Request Body Fields) {Object[]} [outputs] Array of output specifications
+ * @apiParam (VOD Request Body Fields) {String="standard", "segmented", "playlist", "transfer-only"} [outputs.type="standard"] The type of file to output
+ * @apiParam (VOD Request Body Fields) {String} [outputs.label] An optional label for this output
+ * @apiParam (VOD Request Body Fields) {String} [outputs.url] A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.secondary_url] A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.base_url] A base S3, Cloud Files, GCS, FTP, FTPS, SFTP, Azure, or Aspera directory URL where Zencoder put the transcoded file, without a filename
+ * @apiParam (VOD Request Body Fields) {String} [outputs.filename] The filename of a finished file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.package_filename] The filename of a packaged output
+ * @apiParam (VOD Request Body Fields) {String="zip", "tar"} [outputs.package_format] Zip/packaging format to use for the output file(s)
+ * @apiParam (VOD Request Body Fields) {String="mobile/advanced", "mobile/baseline", "mobile/legacy", "v1/mobile/advanced", "v1/mobile/baseline", "v1/mobile/legacy", "v2/mobile/advanced", "v2/mobile/baseline", "v2/mobile/legacy"} [outputs.device_profile] A device profile to use for mobile device compatibility
+ * @apiParam (VOD Request Body Fields) {Boolean=false} [outputs.strict] Enable strict mode
+ * @apiParam (VOD Request Body Fields) {Boolean=false} [outputs.skip_video] Do not output a video track
+ * @apiParam (VOD Request Body Fields) {Boolean=false} [outputs.skip_audio] Do not output a audio track
+ * @apiParam (VOD Request Body Fields) {String} [outputs.source] References a label on another job and uses the video created by that output for processing instead of the input file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.credentials] References saved credentials by a nickname
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.generate_md5_checksum=false] Generate an MD5 checksum of the output file
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.parallel_upload_limit] HTTP headers to send with your file when we upload it - defaults: `30` for S3, `10` for other destinations
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
