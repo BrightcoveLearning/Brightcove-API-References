@@ -1,67 +1,21 @@
-// Create a Standard Live Job
+// Create a Job
 
 /**
- * @api {post} /v1/jobs Create a Live Job
- * @apiName Create a Live Job
- * @apiGroup Live_Jobs
- * @apiVersion 1.0.0
+ * @api {post} /v2/jobs Create a Job
+ * @apiName Create a Job
+ * @apiGroup Jobs
+ * @apiVersion 2.0.0
  *
- * @apiDescription Create a live stream
+ * @apiDescription Create an encoding job. See [Encoding Settings](//docs.brightcove.com/en/zencoder/guides/encoding-settings.html) for more details on the request body fields.
  *
- * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+ * @apiHeader {String} Content-Type Content-Type: application/json or application/xml
+ * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
  *
- * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
- * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
- * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
- * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish. To prevent job from finishing unless you manually cancel it, set `reconnect_time` to `0`
- * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
- * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
- * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
- * @apiParam (Request Body Fields) {String} [encryption.key] The encryption key - either a `key` or a `passphrase` is required; if the `type` is `external`, `key` is required.
- * @apiParam (Request Body Fields) {String} [encryption.passphrase] The encryption key - either a `key` or a `passphrase` is required
- * @apiParam (Request Body Fields) {Boolean} [encryption.key_rotation=false] Whether to use key rotation
- * @apiParam (Request Body Fields) {Number} [encryption.rotate_every=10] Interval for key rotation in video segments
- * @apiParam (Request Body Fields) {String} [encryption.external_url] The URL for the external encryption key - this field is required if you specify `type` as `external`, and the external key must match the `key` value
- * @apiParam (Request Body Fields) {Number{0-93600}} [event_length=0] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
- * @apiParam (Request Body Fields) {Number{0-7200}} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
- * @apiParam (Request Body Fields) {Number{1-5}} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
- * @apiParam (Request Body Fields) {mixed[]} [notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
- * @apiParam (Request Body Fields) {String} notifications.url Destination for the notification.
- * @apiParam (Request Body Fields) {String} [notifications.credentials] Credentials The name of the credentials configured in your account for this address
- * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It is recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
- * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
- * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
- * @apiParam (Request Body Fields) {String} add_cdns.prepend CDN hostname to be prepended to addresses
- * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for live and VOD assets to be created from the live stream.
- * @apiParam (Request Body Fields) {String} outputs.label Label for the live or VOD asset.
- * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If `live_stream` is false, or is not set, the output will be treated as a VOD output.
- * @apiParam (Request Body Fields) {Number{0-172800}} [outputs.duration] Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Number{0-2147483647}} [outputs.stream_start_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Number{stream_start_time-stream_start_time+172800}} [outputs.stream_end_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Number{current_time-future_time}} [outputs.start_time] Clipping API option 3. Universal epoch time, in seconds, to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Number{start_time-start_time+172800}} [outputs.end_time] Clipping API option 3. Universal epoch time, in seconds, to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Boolean} [outputs.copy_video] Specifying `copy_video` will take the video track from the input video file and transmux it into the resulting output file.
- * @apiParam (Request Body Fields) {Boolean} [outputs.copy_audio] Specifying `copy_audio` will take the audio track from the input video file and transmux it into the resulting output file.
- * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video] Specifying `skip_video` removes the video track.
- * @apiParam (Request Body Fields) {Boolean} [outputs.skip_audio] Specifying `skip_audio` removes the audio track.
- * @apiParam (Request Body Fields) {Number} [outputs.width] Video frame width. If no width is supplied, we will use the original width, or scale to size of height setting.
- * @apiParam (Request Body Fields) {Number} [outputs.height] Video frame height. If no height is supplied, we will use the original height, or scale to size or width setting.
- * @apiParam (Request Body Fields) {String="h264"} [outputs.video_codec] The output video codec. Note: Only h264 is supported.
- * @apiParam (Request Body Fields) {String="baseline","main","high"} [outputs.h264_profile] H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose Baseline.
- * @apiParam (Request Body Fields) {Number{1-6000}} outputs.keyframe_interval The maximum number of frames between each keyframe. If you set a low keyframe_interval it will increase the size / decrease the quality of your output file, but it will allow more precise scrubbing in most players. It’s recommended to have at least one keyframe per segment. If keyframe_interval is not provided, keyframes will follow the input GOP structure.
- * @apiParam (Request Body Fields) {Number{64-10000}} outputs.video_bitrate target video bitrate in kbps
- * @apiParam (Request Body Fields) {String="aac"} [outputs.audio_codec] The output audio codec to use. Note: Only aac is supported. * @apiParam (Request Body Fields) {Number{16-1024}} outputs.audio_bitrate An output bitrate setting for the audio track, in Kbps
- * @apiParam (Request Body Fields) {Number{1-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
- * @apiParam (Request Body Fields) {mixed[]} [outputs.notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
- * @apiParam (Request Body Fields) {String} outputs.notifications.url Destination for the notification.
- * @apiParam (Request Body Fields) {String} [outputs.notifications.credentials] Credentials The name of the credentials configured in your account for this address
- * @apiParam (Request Body Fields) {String} [outputs.rendition_label] Indicates what rendition to use to create a VOD output (from the live job) or which renditions to use. By default, the system uses any transmuxed rendition or the highest resolution output if there is no transmuxed output.
- * @apiParam (Request Body Fields) {String="playlist"} [outputs.type] The only type supported is a playlist. This is used for generating multiple master playlists with different renditions in the HLS manifest with the defined stream labels.
- * @apiParam (Request Body Fields) {Array} [outputs.streams] When creating a playlist, the streams field is used to define which output renditions (by label) should be included in the manifest. Example format [{"source": "1080p"}, {"source": "720p"}].
- * @apiParam (Request Body Fields) {String} [outputs.url] For VOD, URL is mandatory and sets the destination of the final asset destination. For access restricted origins, the credentials a can be passed along with the URL or stored within the Brightcove system. For Live, this is reserved for future use.
- * @apiParam (Request Body Fields) {String} [outputs.credentials] The name for credentials with private and public keys can be stored with Brightcove to avoid passing plain text on API requests. This is required if the S3 or FTP origins are restricted. If credentials are not provided, it will be assumed that the origin restrictions are set to public or credentials are passed along with the URL.
- * @apiParam (Request Body Fields) {Object} [outputs.videocloud] Video Cloud customer have the option to push their clips directly through Dynamic Ingest. Options "{"video": {"name"}, "ingest": { }". The video object will be sent to the CMS API and can include (description, tags, etc.). Note: the account_id and reference_id will be added automatically. If overriding the reference_id, ensure that the id does not already exist or the job will fail. For more information see: [CMS-API-CreateVideo](http://docs.brightcove.com/en/video-cloud/cms-api/references/cms-api/versions/v1/index.html#api-videoGroup-Create_Video). The ingest object will be sent to the Dynamic Ingest API and can include (master, profile, poster, callbacks, etc). Note: the account_id and video_id are added automatically. For more information see: [DI-API-IngestVideo](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset).
+ * @apiParam (VOD Request Body Fields) {string} input A valid URL to a media file (HTTP/HTTPS, FTP/FTPS, SFTP, Azure, GCS, CF or S3), with or without authentication
+ * @apiParam (VOD Request Body Fields) {string} [api_key] API Key (must be included here if not passed as a header, which is the recommended way)
+ * @apiParam (VOD Request Body Fields) {string="us", "europe", "asia", "sa", "australia", "us-virginia", "us-oregon", "us-n-california", "eu-dublin", "asia-singapore", "asia-tokyo", "sa-saopaulo", "australia-sydney", "us-central-gce", "eu-west-gce",  "asia-east-gce"} [region="us"] The AWS region or Google Compute Engine instance where Zencoder should process the job
+ * @apiParam (VOD Request Body Fields) {Boolean} [test=false] The AWS region or Google Compute Engine instance where Zencoder should process the job
+ * @apiParam (VOD Request Body Fields) {Object[]} [outputs] Array of output specifications
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
@@ -774,8 +728,8 @@
  /**
   * @api {put} /v1/jobs/:jobId/cancel Stop a Live Job
   * @apiName Stop Live Job
-  * @apiGroup Live_Jobs
-  * @apiVersion 1.0.0
+  * @apiGroup Jobs
+  * @apiVersion 2.0.0
   *
   * @apiDescription Stop a live stream
   *
@@ -802,8 +756,8 @@
  /**
   * @api {get} /v1/jobs/:jobId Get Live Job Details
   * @apiName Get Live Job Details
-  * @apiGroup Live_Jobs
-  * @apiVersion 1.0.0
+  * @apiGroup Jobs
+  * @apiVersion 2.0.0
   *
   * @apiDescription Get Live Job Details
   *
@@ -1104,8 +1058,8 @@
 /**
   * @api {post} /v1/jobs/:jobId/cuepoint Manual Ad Cue Point Insertion
   * @apiName Manual Ad Cue Point Insertion
-  * @apiGroup Live_Jobs
-  * @apiVersion 1.0.0
+  * @apiGroup Jobs
+  * @apiVersion 2.0.0
   *
   * @apiDescription Inserts a manual Cue-Out with a duration to the Live ingest point.
   *
