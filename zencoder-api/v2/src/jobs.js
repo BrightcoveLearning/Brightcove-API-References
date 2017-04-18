@@ -41,12 +41,78 @@
  * @apiParam (VOD Request Body Fields) {String} [outputs.credentials] References saved credentials by a nickname
  * @apiParam (VOD Request Body Fields) {Boolean} [outputs.generate_md5_checksum=false] Generate an MD5 checksum of the output file
  * @apiParam (VOD Request Body Fields) {Number} [outputs.parallel_upload_limit] The maximum number of simultaneous uploads to attempt - defaults: `30` for S3, `10` for other destinations
- * @apiParam (VOD Request Body Fields) {String} [outputs.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
+ * @apiParam (VOD Request Body Fields) {Object} [outputs.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
  * @apiParam (VOD Request Body Fields) {String} [outputs.format] The output format to use - defaults determined by the output filename and then video or audio codec; otherwise: `mp4` (for standard outputs); `ts` (for segmented outputs)
  * @apiParam (VOD Request Body Fields) {String} [outputs.video_codec] The video codec to use - defaults determined by the format, profile, or audio_codec; `h264` if none are provided
  * @apiParam (VOD Request Body Fields) {String} [outputs.audio_codec] The audio codec to use - defaults determined by the format, profile, or video_codec; `aac` if none are provided
  * @apiParam (VOD Request Body Fields) {String} [outputs.size] The resolution of the output video (WxH, in pixels)
  * @apiParam (VOD Request Body Fields) {Number} [outputs.width] The maximum width of the output video (in pixels)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.height] The maximum height of the output video (in pixels)
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.upscale=false] Upscale the output if the input is smaller than the target output resolution
+ * @apiParam (VOD Request Body Fields) {String="preserve", "stretch", "crop", "pad"} [outputs.aspect_mode="preserve"] What to do when aspect ratio of input file does not match the target width/height aspect ratio
+ * @apiParam (VOD Request Body Fields) {String} [outputs.sample_aspect_ratio] The sample (pixel) aspect ratio to be used for the output video. The size, width, height, and aspect_mode mode options all refer to the encoded pixel dimensions, not the display dimensions - sets the aspect ratio to use for sample/pixels of the output video, specified as `"8:9"`, `"32:27"`, or any other ratio of two positive integers, each between 1 and 65535
+ * @apiParam (VOD Request Body Fields) {Number{1-5}} [outputs.quality=3] Autoselect the best video bitrate to to match a target visual quality
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.video_bitrate] A target video bitrate in kbps - not necessary if you select a quality setting, unless you want to target a specific bitrate
+ * @apiParam (VOD Request Body Fields) {Number{1-5}} [outputs.audio_quality=3] Autoselect the best audio bitrate to to match a target sound quality
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.audio_bitrate] A target audio bitrate in kbps - not necessary if you select a audio_quality setting, unless you want to target a specific bitrate
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.max_video_bitrate] A maximum average bitrate
+ * @apiParam (VOD Request Body Fields) {Number{1-5}} [outputs.speed=3] A target transcoding speed - slower encoding generally allows for more advanced compression
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.decoder_bitrate_cap] Max bitrate fed to decoder buffer - typically used for video intended for streaming, or for targeting specific devices (e.g. Blu-Ray)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.decoder_buffer_size] Size of the decoder buffer, used in conjunction with bitrate_cap
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.one_pass=false] Force one-pass encoding
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.audio_constant_bitrate=false] Enable constant bitrate mode for audio if possible
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.frame_rate] The frame rate to use - defaults to original (input) frame rate
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.max_frame_rate] The maximum frame rate to use
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.decimate] Reduce the input frame rate by a divisor
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.keyframe_interval=250] The maximum number of frames between each keyframe
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.keyframe_rate] The number of keyframes per second
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.fixed_keyframe_interval=false] Enable fixed keyframe interval mode (VP6, VP8, VP9 and H.264 only)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.forced_keyframe_interval] Force keyframes at the specified interval (H.264 only)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.forced_keyframe_rate] Specify the number of keyframes per-second, taking frame rate into account (H.264 only)
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.generate_frame_index] Generate a video frame index file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.frame_index_filename] Override the default filename for the frame index when `generate_frame_index` is enabled
+ * @apiParam (VOD Request Body Fields) {Number{0-16}} [outputs.video_reference_frames=3] A number of reference frames to use (H.264, HEVC) - you can also use the string `auto`
+ * @apiParam (VOD Request Body Fields) {String="H.264", "HEVC", "VP9"} [outputs.video_codec_profile] The video codec profile to use - defaults: H.264: `baseline`, HEVC: `main`, VP9: `0`
+ * @apiParam (VOD Request Body Fields) {String} [outputs.video_codec_level] The video codec level to use (H.264, HEVC) - the default is automatically calculated using a level chart based on the output video
+ * @apiParam (VOD Request Body Fields) {Number{0-16}} [outputs.video_bframes=0] The maximum number of consecutive B-frames (H.264, HEVC)
+ * @apiParam (VOD Request Body Fields) {String="preserve", "discard"} [outputs.color_metadata="preserve"] Preserve or discard color metadata information from the input in the output video
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.audio_sample_rate] The audio sample rate, in Hz
+ * @apiParam (VOD Request Body Fields) {Number{1-2}} [outputs.audio_channels] The number of audio channels - defaults to `1` if the source is mono, otherwise `2`
+ * @apiParam (VOD Request Body Fields) {Number=16,24,32} [outputs.audio_bit_depth] The number of bits per sample
+ * @apiParam (VOD Request Body Fields) {String} [outputs.audio_language] Describes the language of the audio track
+ * @apiParam (VOD Request Body Fields) {Object} [outputs.input_audio_channels] Sets the input audio tracks-to-channels layout
+ * @apiParam (VOD Request Body Fields) {Object} [outputs.output_audio_channels] Sets the output audio tracks-to-channels layout
+ * @apiParam (VOD Request Body Fields) {Object[]} [outputs.thumbnails] Defines a set of thumbnails to be captured for each output
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.label] A label to identify each set of thumbnail groups
+ * @apiParam (VOD Request Body Fields) {String="png", "jpg"} [outputs.thumbnails.format="png"] The format of the thumbnail image
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.format="png"] A number of thumbnails, evenly-spaced
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.thumbnails.start_at_first_frame=false] Start generating the thumbnails starting at the first frame
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.interval] Take thumbnails at an even interval, in seconds
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.interval_in_frames] Take thumbnails at an even interval, in frames
+ * @apiParam (VOD Request Body Fields) {Number[]} [outputs.thumbnails.times] An array of times, in seconds, at which to grab a thumbnail
+ * @apiParam (VOD Request Body Fields) {String="preserve", "stretch", "crop", "pad"} [outputs.thumbnails.aspect_mode="preserve"] How to handle a thumbnail width/height that differs from the aspect ratio of the input file
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.size] Thumbnail resolution as WxH
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.width] The maximum width of the thumbnail (in pixels)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.height] The maximum height of the thumbnail (in pixels)
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.base_url] A base S3, Cloud Files, GCS, FTP, FTPS, or SFTP directory URL where Zencoder will place the thumbnails, without a filename
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.prefix] Prefix for thumbnail filenames
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.filename] Prefix for thumbnail filenames
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.thumbnails.public=false] Make the output publicly readable on S3
+ * @apiParam (VOD Request Body Fields) {Object[]} [outputs.thumbnails.access_control] Fine-grained access control rules for files sent to S3
+ * @apiParam (VOD Request Body Fields) {String="READ", "READ_ACP", "WRITE_ACP", "FULL_CONTROL"} [outputs.thumbnails.access_control.permission] A string or array of strings containing: `READ`, `READ_ACP`, `WRITE_ACP`, or `FULL_CONTROL`
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.access_control.grantee] A valid S3 grantee (email, ID, or URI)
+ * @apiParam (VOD Request Body Fields) {Boolean} [outputs.thumbnails.rrs] Amazon S3's Reduced Redundancy Storage
+ * @apiParam (VOD Request Body Fields) {Object} [outputs.thumbnails.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
+ * @apiParam (VOD Request Body Fields) {String} [outputs.thumbnails.credentials] References saved credentials by a nickname
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.thumbnails.parallel_upload_limit] The maximum number of simultaneous uploads to attempt - defaults: `30` for S3, `10` for other destinations
+ * @apiParam (VOD Request Body Fields) {Object[]} [outputs.watermarks] Add one or more watermarks to an output video
+ * @apiParam (VOD Request Body Fields) {String} [outputs.watermarks.url] The URL of a remote image file to use as a watermark
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.watermarks.x=-10] Where to place a watermark, on the x axis
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.watermarks.y=-10] Where to place a watermark, on the y axis
+ * @apiParam (VOD Request Body Fields) {Mixed} [outputs.watermarks.width] The scaled width of a watermark - number of pixels (`100`)) or percentage of video width (`"10%"`)
+ * @apiParam (VOD Request Body Fields) {Mixed} [outputs.watermarks.height] The scaled height of a watermark - number of pixels (`10`)) or percentage of video width (`"5%"`)
+ * @apiParam (VOD Request Body Fields) {String="content", "frame"} [outputs.watermarks.origin] Which part of the output to base the watermark position on - this only affects jobs where aspect_mode is `pad`
+ * @apiParam (VOD Request Body Fields) {Number{0.0-1.0}} [outputs.watermarks.opacity] Make the watermark transparent
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
