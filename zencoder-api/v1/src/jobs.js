@@ -40,7 +40,13 @@
  * @apiParam (VOD Request Body Fields) {String} [outputs.source] References a label on another job and uses the video created by that output for processing instead of the input file
  * @apiParam (VOD Request Body Fields) {String} [outputs.credentials] References saved credentials by a nickname
  * @apiParam (VOD Request Body Fields) {Boolean} [outputs.generate_md5_checksum=false] Generate an MD5 checksum of the output file
- * @apiParam (VOD Request Body Fields) {Number} [outputs.parallel_upload_limit] HTTP headers to send with your file when we upload it - defaults: `30` for S3, `10` for other destinations
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.parallel_upload_limit] The maximum number of simultaneous uploads to attempt - defaults: `30` for S3, `10` for other destinations
+ * @apiParam (VOD Request Body Fields) {String} [outputs.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
+ * @apiParam (VOD Request Body Fields) {String} [outputs.format] The output format to use - defaults determined by the output filename and then video or audio codec; otherwise: `mp4` (for standard outputs); `ts` (for segmented outputs)
+ * @apiParam (VOD Request Body Fields) {String} [outputs.video_codec] The video codec to use - defaults determined by the format, profile, or audio_codec; `h264` if none are provided
+ * @apiParam (VOD Request Body Fields) {String} [outputs.audio_codec] The audio codec to use - defaults determined by the format, profile, or video_codec; `aac` if none are provided
+ * @apiParam (VOD Request Body Fields) {String} [outputs.size] The resolution of the output video (WxH, in pixels)
+ * @apiParam (VOD Request Body Fields) {Number} [outputs.width] The maximum width of the output video (in pixels)
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
