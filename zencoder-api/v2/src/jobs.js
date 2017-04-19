@@ -103,7 +103,7 @@
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.height] The maximum height of the thumbnail (in pixels)
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.base_url] A base S3, Cloud Files, GCS, FTP, FTPS, or SFTP directory URL where Zencoder will place the thumbnails, without a filename
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.prefix] Prefix for thumbnail filenames
- * @apiParam (Request Body Fields) {String} [outputs.thumbnails.filename] Prefix for thumbnail filenames
+ * @apiParam (Request Body Fields) {String} [outputs.thumbnails.filename] Interpolated thumbnail filename
  * @apiParam (Request Body Fields) {Boolean} [outputs.thumbnails.public=false] Make the output publicly readable on S3
  * @apiParam (Request Body Fields) {Object[]} [outputs.thumbnails.access_control] Fine-grained access control rules for files sent to S3
  * @apiParam (Request Body Fields) {String="READ", "READ_ACP", "WRITE_ACP", "FULL_CONTROL"} [outputs.thumbnails.access_control.permission] A string or array of strings containing: `READ`, `READ_ACP`, `WRITE_ACP`, or `FULL_CONTROL`
@@ -144,7 +144,7 @@
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_compression_ratio] Compress the dynamic range of the audio
  * @apiParam (Request Body Fields) {Number{-120-0}} [outputs.audio_compression_threshold=-20] Compress the dynamic range of the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_expansion_ratio] Expand the dynamic range of the audio
- * @apiParam (Request Body Fields) {Number{-120-0}} [outputs.audio_expansion_threshold=-35] Compress the dynamic range of the audio
+ * @apiParam (Request Body Fields) {Number{-120-0}} [outputs.audio_expansion_threshold=-35] Expand the dynamic range of the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade] Apply fade-in and fade-out effects to the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_in] Apply a fade-in effect to the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_out] Apply a fade-out effect to the audio
@@ -185,7 +185,7 @@
  * @apiParam (Request Body Fields) {String} [outputs.streams.path] Specifies the path to a stream manifest file
  * @apiParam (Request Body Fields) {String} o[utputs.streams.source] Specifies the source media for a playlist stream manifest file
  * @apiParam (Request Body Fields) {Number} [outputs.streams.bandwidth] Specifies the bandwidth of a playlist stream in kbps
- * @apiParam (Request Body Fields) {String} [outputs.streams.resolution] Specifies the bandwidth of a playlist stream in kbps
+ * @apiParam (Request Body Fields) {String} [outputs.streams.resolution] Specifies the resolution of a playlist stream (WxH)
  * @apiParam (Request Body Fields) {String} [outputs.streams.codecs] Specifies the codecs used in a playlist stream - codecs in HTML5 format, such as: `mp4a.40.2`
  * @apiParam (Request Body Fields) {String} [outputs.streams.audio] String containing the name of the audio GROUP-ID to use. This value must have been defined as an alternate_audio grouping
  * @apiParam (Request Body Fields) {String} [outputs.streams.segment_image_url] An image to display on audio-only segments
@@ -194,7 +194,7 @@
  * @apiParam (Request Body Fields) {Number{2-5}} [outputs.streams.hls_protocol_version] HLS protocol to use - default value: automatic according to max_hls_protocol_version setting
  * @apiParam (Request Body Fields) {Boolean} [outputs.streams.hls_optimized_ts=true] Optimize TS segment files for HTTP Live Streaming on iOS
  * @apiParam (Request Body Fields) {String="hls", "mss", "dash"} [outputs.streams.prepare_for_segmenting] Include captions and keyframe timing for segmenting
- * @apiParam (Request Body Fields) {String} [outputs.streams.smil_base_url] Include captions and keyframe timing for segmenting
+ * @apiParam (Request Body Fields) {String} [outputs.streams.smil_base_url] Add &lt;meta base="smil_base_url_value"/&gt; to the &lt;head&gt; section of an SMIL playlist
  * @apiParam (Request Body Fields) {Boolean} [outputs.streams.byte_range_segmenting=false] Configures HLS segmenting to produce a single output file rather than one file per segment
  * @apiParam (Request Body Fields) {Boolean} [outputs.streams.generate_keyframe_manifest=false] Generates an HLS keyframe (I-frame) manifest which is required for fast-forward and reverse playback
  * @apiParam (Request Body Fields) {String} [outputs.streams.keyframe_manifest_filename="iframe_index.m3u8"] Override the default filename for the HLS keyframe manifest
@@ -206,10 +206,52 @@
  * @apiParam (Request Body Fields) {String} [outputs.encryption_key_url_prefix] Prepend key URLs with the passed string
  * @apiParam (Request Body Fields) {String} [outputs.encryption_iv] Set an initialization vector to use when encrypting - a hexadecimal string of 16 octets (32 chars long, optional "0x" prefix)
  * @apiParam (Request Body Fields) {String} [outputs.encryption_password] Sets a password to use for generating an initialization vector
- * @apiParam (Request Body Fields) {String="none", "aes-128-cbc", "aes-128-ctr", "aes-256-cbc", "aes-256-ctr"} [outputs.decryption_method] Set the decryption algorithm to use - defaults to `aes-128-cbc` (if decryption_key or decryption_key_url are set)
+ * @apiParam (Request Body Fields) {String="none", "aes-128-cbc", "aes-128-ctr", "aes-256-cbc", "aes-256-ctr"} [outputs.decryption_method] Set the decryption algorithm to use - defaults to `aes-128-cbc` (if `decryption_key` or `decryption_key_url` are set)
  * @apiParam (Request Body Fields) {String} [outputs.decryption_key] Set the decryption key to use - a hexadecimal string of 16 octets (32 chars long, optional "0x" prefix)
  * @apiParam (Request Body Fields) {String} [outputs.decryption_key_url] The URL of a decryption key file to use
  * @apiParam (Request Body Fields) {String} [outputs.decryption_password] The password used in combination with the key to decrypt the input file
+ * @apiParam (Request Body Fields) {Number{0-16}} [outputs.h264_reference_frames=3] A number of reference frames to use in H.264 video
+ * @apiParam (Request Body Fields) {String="baseline", "main", "high"} [outputs.h264_profile="baseline"] The H.264 profile to use
+ * @apiParam (Request Body Fields) {String} [outputs.h264_level] The H.264 level to use - default is automatically calculated using H.264 level chart based on the output video
+ * @apiParam (Request Body Fields) {Number{0-16}} [outputs.h264_bframes=0] The maximum number of consecutive B-frames
+ * @apiParam (Request Body Fields) {String="film", "animation", "grain", "psnr", "ssim", "fastdecode", "zerolatency"} [outputs.tuning] Tune the output video for a specific content type
+ * @apiParam (Request Body Fields) {Number{1-51}} [outputs.crf] Bitrate control setting
+ * @apiParam (Request Body Fields) {Object[]} [outputs.cue_points] Add event or navigation cue points to a FLV video
+ * @apiParam (Request Body Fields) {String="navigation", "event"} [outputs.cue_points.type] A cue point type
+ * @apiParam (Request Body Fields) {Number} [outputs.cue_points.time] A cue point time, in seconds
+ * @apiParam (Request Body Fields) {String} [outputs.cue_points.name] A cue point name
+ * @apiParam (Request Body Fields) {Object} [outputs.cue_points.data] Cue point data (key/value pairs)
+ * @apiParam (Request Body Fields) {Number{0-100}} [outputs.vp6_temporal_down_watermark=20] VP6 temporal down watermark percentage
+ * @apiParam (Request Body Fields) {Boolean} [outputs.vp6_temporal_resampling] Enable or disable VP6 temporal resampling - default: `true` when encoding with a low number of bits per pixel; otherwise, `false`
+ * @apiParam (Request Body Fields) {Number{0-100}} [outputs.vp6_undershoot_pct=90] Target a slightly lower datarate
+ * @apiParam (Request Body Fields) {String="vp6e", "vp6s"} [outputs.vp6_profile="vp6e"] VP6 profile: vp6s or vp6e
+ * @apiParam (Request Body Fields) {String="good", "best"} [outputs.vp6_compression_mode="good"] VP6 compression mode
+ * @apiParam (Request Body Fields) {Number{0-100}} [outputs.vp6_2pass_min_section=40] For two-pass VBR encoding, the lowest datarate that the encoder will allow
+ * @apiParam (Request Body Fields) {Number} [outputs.vp6_2pass_max_section=400] For two-pass VBR encoding, the highest datarate that the encoder will allow
+ * @apiParam (Request Body Fields) {Number} [outputs.vp6_stream_prebuffer=6] Seconds of preload that are necessary before starting playback
+ * @apiParam (Request Body Fields) {Number} [outputs.vp6_stream_max_buffer] Maximum decoder buffer size
+ * @apiParam (Request Body Fields) {String="adaptive", "blur", "drop"} [outputs.vp6_deinterlace_mode="adaptive"] Deinterlace mode for VP6
+ * @apiParam (Request Body Fields) {Number{0-1.0}} [outputs.vp6_denoise_level=0] Denoise level for VP6
+ * @apiParam (Request Body Fields) {Boolean} [outputs.alpha_transparency=false] Enable alpha transparency; currently, only supported by VP6
+ * @apiParam (Request Body Fields) {Boolean} [outputs.constant_bitrate=false] Use constant bitrate (CBR) encoding
+ * @apiParam (Request Body Fields) {Boolean} [outputs.hint=false] Enable hinting of MP4 files for RTP/RTSP
+ * @apiParam (Request Body Fields) {Number{100-5000}} [outputs.mtu_size=1450] Set MTU size for MP4 hinting
+ * @apiParam (Request Body Fields) {String="aac-lc", "he-aac", "he-aac-v2"} [outputs.max_aac_profile="he-aac"] What is the most advanced (compressed) AAC profile to allow?
+ * @apiParam (Request Body Fields) {String="aac-lc", "he-aac", "he-aac-v2"} [outputs.force_aac_profile] Force the use of a particular AAC profile, rather than letting Zencoder choose the best profile for the bitrate
+ * @apiParam (Request Body Fields) {String="avci_50", "avci_100"} [outputs.video_codec_preset] Video encoding preset to allow compatibility with specific industry standards
+ * @apiParam (Request Body Fields) {String="ts_dvb", "ts_cablelabs", "ts_broadcast", "as11_hd"} [outputs.format_preset] Format preset to allow compatibility with specific industry standards
+ * @apiParam (Request Body Fields) {Number{1-1000000}} [outputs.ts_muxrate] The maximum rate in kbps that the transport stream can be muxed; used with the ts format only
+ * @apiParam (Request Body Fields) {Number{1-8191}} [outputs.ts_pmt_pid] Override the packet id of the Program Map Table
+ * @apiParam (Request Body Fields) {Number{1-8191}} [outputs.ts_video_pid] Override the packet id of video data
+ * @apiParam (Request Body Fields) {Number{1-8191}} [outputs.ts_audio_pid] Override the packet id of audio data
+ * @apiParam (Request Body Fields) {Number{1-8191}} [outputs.ts_pcr_pid] Override the packet id of the Program Clock Reference
+ * @apiParam (Request Body Fields) {Boolean} [outputs.ts_cbr=false] Create CBR output by stuffing packets at the transport stream layer
+ * @apiParam (Request Body Fields) {Boolean} [outputs.lossless_video=false] Enables lossless video encoding if supported by the video codec
+ * @apiParam (Request Body Fields) {String} [outputs.aspera_transfer_policy="fair"] How to allocate available bandwidth for Aspera file transfers
+ * @apiParam (Request Body Fields) {Number} [outputs.transfer_minimum_rate=1000] A targeted rate in Kbps for data transfer minimums
+ * @apiParam (Request Body Fields) {Number} [outputs.transfer_maximum_rate=250000] A targeted rate in Kbps for data transfer maximums
+ * @apiParam (Request Body Fields) {Boolean} [outputs.copy_video=false] Copy the video track of the input file
+ * @apiParam (Request Body Fields) {Boolean} [outputs.copy_audio=false] Copy the audio track of the input file
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
