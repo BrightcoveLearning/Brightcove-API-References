@@ -76,7 +76,7 @@
  * @apiParam (Request Body Fields) {Boolean} [outputs.fixed_keyframe_interval=false] Enable fixed keyframe interval mode (VP6, VP8, VP9 and H.264 only)
  * @apiParam (Request Body Fields) {Number} [outputs.forced_keyframe_interval] Force keyframes at the specified interval (H.264 only)
  * @apiParam (Request Body Fields) {Number} [outputs.forced_keyframe_rate] Specify the number of keyframes per-second, taking frame rate into account (H.264 only)
- * @apiParam (Request Body Fields) {Boolean} [outputs.generate_frame_index] Generate a video frame index file
+ * @apiParam (Request Body Fields) {Boolean} [outputs.generate_frame_index=false] Generate a video frame index file
  * @apiParam (Request Body Fields) {String} [outputs.frame_index_filename] Override the default filename for the frame index when `generate_frame_index` is enabled
  * @apiParam (Request Body Fields) {Number{0-16}} [outputs.video_reference_frames=3] A number of reference frames to use (H.264, HEVC) - you can also use the string `auto`
  * @apiParam (Request Body Fields) {String="H.264", "HEVC", "VP9"} [outputs.video_codec_profile] The video codec profile to use - defaults: H.264: `baseline`, HEVC: `main`, VP9: `0`
