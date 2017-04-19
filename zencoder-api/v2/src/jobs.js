@@ -177,6 +177,39 @@
  * @apiParam (Request Body Fields) {String="dash", "mpd", "hls", "m3u", "m3u8", "ism", "mss", "highwinds"} [outputs.playlist_format] Sets the format for a playlist output
  * @apiParam (Request Body Fields) {Number{1.0-3600.0}} [outputs.segment_seconds=10] Sets the maximum duration of each segment in a segmented output - values less than 2.0 are only allowed when byte_range_segmenting is enabled
  * @apiParam (Request Body Fields) {Object} [outputs.alternate_audio] Provides a set of alternate audio streams for HLS playlists
+ * @apiParam (Request Body Fields) {Object[]} [outputs.alternate_audio.alternate_audio_group] Each alternate audio group is an array of audio objects, and a name of your choosing
+ * @apiParam (Request Body Fields) {String} [outputs.alternate_audio.alternate_audio_group.source] A label for the audio source
+ * @apiParam (Request Body Fields) {String} [outputs.alternate_audio.alternate_audio_group.path] An optional path to the M3U8 playlist for this audio rendition; if the path is not set, this alternate audio stream describes the the audio contained in the source stream
+ * @apiParam (Request Body Fields) {String} outputs.alternate_audio.alternate_audio_group.language The ISO 639 code for the language of the audio track, like "en", "es", or "zh"
+ * @apiParam (Request Body Fields) {Object[]} [outputs.streams] Array of hashes containing playlist stream info
+ * @apiParam (Request Body Fields) {String} [outputs.streams.path] Specifies the path to a stream manifest file
+ * @apiParam (Request Body Fields) {String} o[utputs.streams.source] Specifies the source media for a playlist stream manifest file
+ * @apiParam (Request Body Fields) {Number} [outputs.streams.bandwidth] Specifies the bandwidth of a playlist stream in kbps
+ * @apiParam (Request Body Fields) {String} [outputs.streams.resolution] Specifies the bandwidth of a playlist stream in kbps
+ * @apiParam (Request Body Fields) {String} [outputs.streams.codecs] Specifies the codecs used in a playlist stream - codecs in HTML5 format, such as: `mp4a.40.2`
+ * @apiParam (Request Body Fields) {String} [outputs.streams.audio] String containing the name of the audio GROUP-ID to use. This value must have been defined as an alternate_audio grouping
+ * @apiParam (Request Body Fields) {String} [outputs.streams.segment_image_url] An image to display on audio-only segments
+ * @apiParam (Request Body Fields) {Boolean} [outputs.streams.segment_video_snapshots=false] When segmenting a video file into audio-only segments, take snapshots of the video as thumbnails for each segment
+ * @apiParam (Request Body Fields) {Number{2-5}} [outputs.streams.max_hls_protocol_version] The maximum HLS protocol to use - default values: `3` for Live outputs, `5` for sample AES encryption; otherwise, `2`
+ * @apiParam (Request Body Fields) {Number{2-5}} [outputs.streams.hls_protocol_version] HLS protocol to use - default value: automatic according to max_hls_protocol_version setting
+ * @apiParam (Request Body Fields) {Boolean} [outputs.streams.hls_optimized_ts=true] Optimize TS segment files for HTTP Live Streaming on iOS
+ * @apiParam (Request Body Fields) {String="hls", "mss", "dash"} [outputs.streams.prepare_for_segmenting] Include captions and keyframe timing for segmenting
+ * @apiParam (Request Body Fields) {String} [outputs.streams.smil_base_url] Include captions and keyframe timing for segmenting
+ * @apiParam (Request Body Fields) {Boolean} [outputs.streams.byte_range_segmenting=false] Configures HLS segmenting to produce a single output file rather than one file per segment
+ * @apiParam (Request Body Fields) {Boolean} [outputs.streams.generate_keyframe_manifest=false] Generates an HLS keyframe (I-frame) manifest which is required for fast-forward and reverse playback
+ * @apiParam (Request Body Fields) {String} [outputs.streams.keyframe_manifest_filename="iframe_index.m3u8"] Override the default filename for the HLS keyframe manifest
+ * @apiParam (Request Body Fields) {Boolean} [outputs.streams.allow_skipped_sources=false] Ignore sources that are conditional outputs which have been skipped
+ * @apiParam (Request Body Fields) {String="none", "aes-128-cbc", "aes-128-ctr", "aes-256-cbc", "aes-256-ctr"} [outputs.encryption_method] Set the encryption method to use for encrypting
+ * @apiParam (Request Body Fields) {String} [outputs.encryption_key] Set a single encryption key to use rather than having Zencoder generate one - string must be a hexadecimal string of 16 octets (32 chars long, optional "0x" prefix)
+ * @apiParam (Request Body Fields) {String} [outputs.encryption_key_url] Set a URL to a single encryption key to use rather than having Zencoder generate one
+ * @apiParam (Request Body Fields) {Number} [outputs.encryption_key_rotation_period] Rotate to a new encryption key after a number of segments
+ * @apiParam (Request Body Fields) {String} [outputs.encryption_key_url_prefix] Prepend key URLs with the passed string
+ * @apiParam (Request Body Fields) {String} [outputs.encryption_iv] Set an initialization vector to use when encrypting - a hexadecimal string of 16 octets (32 chars long, optional "0x" prefix)
+ * @apiParam (Request Body Fields) {String} [outputs.encryption_password] Sets a password to use for generating an initialization vector
+ * @apiParam (Request Body Fields) {String="none", "aes-128-cbc", "aes-128-ctr", "aes-256-cbc", "aes-256-ctr"} [outputs.decryption_method] Set the decryption algorithm to use - defaults to `aes-128-cbc` (if decryption_key or decryption_key_url are set)
+ * @apiParam (Request Body Fields) {String} [outputs.decryption_key] Set the decryption key to use - a hexadecimal string of 16 octets (32 chars long, optional "0x" prefix)
+ * @apiParam (Request Body Fields) {String} [outputs.decryption_key_url] The URL of a decryption key file to use
+ * @apiParam (Request Body Fields) {String} [outputs.decryption_password] The password used in combination with the key to decrypt the input file
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
