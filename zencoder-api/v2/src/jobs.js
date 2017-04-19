@@ -25,6 +25,11 @@
  * @apiParam (Request Body Fields) {Number} [transfer_minimum_rate=1000] A targeted rate in Kbps for data transfer minimums
  * @apiParam (Request Body Fields) {Number} [transfer_maximum_rate=250000] A targeted rate in Kbps for data transfer maximums
  * @apiParam (Request Body Fields) {String} [credentials] References saved credentials by a nickname
+ * @apiParam (Request Body Fields) {String[]} [notifications] An array of notification strings (valid email addresses or URLs), or hashes of url and format
+ * @apiParam (Request Body Fields) {String} [notifications.url] A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials
+ * @apiParam (Request Body Fields) {String="json", "xml"} [notifications.format] A format and content type for notifications
+ * @apiParam (Request Body Fields) {Object} [notifications.headers] By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here
+ * @apiParam (Request Body Fields) {String="first_segment_uploaded", "seamless_playback"} [notifications.event] Live outputs have additional notification events corresponding to the progress of the file
  * @apiParam (Request Body Fields) {Object[]} [outputs] Array of output specifications
  * @apiParam (Request Body Fields) {String="standard", "segmented", "playlist", "transfer-only"} [outputs.type="standard"] The type of file to output
  * @apiParam (Request Body Fields) {String} [outputs.label] An optional label for this output
@@ -103,7 +108,7 @@
  * @apiParam (Request Body Fields) {Object[]} [outputs.thumbnails.access_control] Fine-grained access control rules for files sent to S3
  * @apiParam (Request Body Fields) {String="READ", "READ_ACP", "WRITE_ACP", "FULL_CONTROL"} [outputs.thumbnails.access_control.permission] A string or array of strings containing: `READ`, `READ_ACP`, `WRITE_ACP`, or `FULL_CONTROL`
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.access_control.grantee] A valid S3 grantee (email, ID, or URI)
- * @apiParam (Request Body Fields) {Boolean} [outputs.thumbnails.rrs] Amazon S3's Reduced Redundancy Storage
+ * @apiParam (Request Body Fields) {Boolean} [outputs.thumbnails.rrs=false] Amazon S3's Reduced Redundancy Storage
  * @apiParam (Request Body Fields) {Object} [outputs.thumbnails.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.credentials] References saved credentials by a nickname
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.parallel_upload_limit] The maximum number of simultaneous uploads to attempt - defaults: `30` for S3, `10` for other destinations
@@ -132,7 +137,46 @@
  * @apiParam (Request Body Fields) {Boolean} [outputs.audio_normalize=false] Normalize audio to 0dB
  * @apiParam (Request Body Fields) {Boolean} [outputs.audio_pre_normalize=false] Normalize the audio before applying expansion or compression effects
  * @apiParam (Request Body Fields) {Boolean} [outputs.audio_post_normalize=false] Normalize the audio after applying expansion or compression effects
- * @apiParam (Request Body Fields) {Number{-10-10}} [outputs.audio_bass] Normalize the audio after applying expansion or compression effects
+ * @apiParam (Request Body Fields) {Number{-10-10}} [outputs.audio_bass] Increase or decrease the amount of bass in the audio
+ * @apiParam (Request Body Fields) {Number{-10-10}} [outputs.audio_treble] Increase or decrease the amount of treble in the audio
+ * @apiParam (Request Body Fields) {Number{5-24000}} [outputs.audio_highpass] Apply a high-pass filter to the audio (in Hz)
+ * @apiParam (Request Body Fields) {Number{5-24000}} [outputs.audio_lowpass] Apply a low-pass filter to the audio (in Hz)
+ * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_compression_ratio] Compress the dynamic range of the audio
+ * @apiParam (Request Body Fields) {Number{-120-0}} [outputs.audio_compression_threshold=-20] Compress the dynamic range of the audio
+ * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_expansion_ratio] Expand the dynamic range of the audio
+ * @apiParam (Request Body Fields) {Number{-120-0}} [outputs.audio_expansion_threshold=-35] Compress the dynamic range of the audio
+ * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade] Apply fade-in and fade-out effects to the audio
+ * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_in] Apply a fade-in effect to the audio
+ * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_out] Apply a fade-out effect to the audio
+ * @apiParam (Request Body Fields) {Boolean} [outputs.audio_karaoke_mode=false] Apply a karaoke effect to the audio
+ * @apiParam (Request Body Fields) {Mixed} [outputs.start_clip] Encode only a portion of the input file by setting a custom start time - may be entered as a string in HH:MM:SS.S format or as a number in seconds
+ * @apiParam (Request Body Fields) {Mixed} [outputs.clip_length] Encode only a portion of the input file by setting a custom clip length - may be entered as a string in HH:MM:SS.S format or as a number in seconds
+ * @apiParam (Request Body Fields) {Boolean} [outputs.public=false] Make the output publicly readable on S3
+ * @apiParam (Request Body Fields) {Boolean} [outputs.rrs=false] Amazon S3's Reduced Redundancy Storage
+ * @apiParam (Request Body Fields) {Object[]} [outputs.access_control] Fine-grained access control rules for files sent to S3
+ * @apiParam (Request Body Fields) {String="READ", "READ_ACP", "WRITE_ACP", "FULL_CONTROL"} [outputs.access_control.permission] A string or array of strings containing: `READ`, `READ_ACP`, `WRITE_ACP`, or `FULL_CONTROL`
+ * @apiParam (Request Body Fields) {String} [outputs.access_control.grantee] A valid S3 grantee (email, ID, or URI)
+ * @apiParam (Request Body Fields) {String[]} [outputs.notifications] An array of notification strings (valid email addresses or URLs), or hashes of url and format
+ * @apiParam (Request Body Fields) {String} [outputs.notifications.url] A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials
+ * @apiParam (Request Body Fields) {String="json", "xml"} [outputs.notifications.format] A format and content type for notifications
+ * @apiParam (Request Body Fields) {Object} [outputs.notifications.headers] By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here
+ * @apiParam (Request Body Fields) {String="first_segment_uploaded", "seamless_playback"} [outputs.notifications.event] Live outputs have additional notification events corresponding to the progress of the file
+ * @apiParam (Request Body Fields) {Object} [outputs.skip] A set of conditions for skipping creation of an output
+ * @apiParam (Request Body Fields) {String} [outputs.skip.min_size] Skip output if the source dimensions are smaller than the given dimensions (`"WxH"`)
+ * @apiParam (Request Body Fields) {String} [outputs.skip.max_size] Skip output if the source dimensions are larger than the given dimensions (`"WxH"`)
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.min_duration] Skip output if the source duration is shorter than the given duration, in seconds
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.max_duration] Skip output if the source duration is longer than the given duration, in seconds
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.min_audio_bitrate] Skip output if the source audio bitrate is less than the specified bitrate (in kbps)
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.max_audio_bitrate] Skip output if the source audio bitrate is greater than the specified bitrate (in kbps)
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.min_video_bitrate] Skip output if the source video bitrate is less than the specified bitrate (in kbps)
+ * @apiParam (Request Body Fields) {Number} [outputs.skip.max_video_bitrate] Skip output if the source video bitrate is greater than the specified bitrate (in kbps)
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip.require_audio=false] Skip output if the source file does not include an audio track
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip.require_video=false] Skip output if the source file does not include an video track
+ * @apiParam (Request Body Fields) {String="dash"} [outputs.streaming_delivery_format] Sets the format/protocol configuration for a streamable output
+ * @apiParam (Request Body Fields) {String="live", "hbbtv_1.5", "on_demand"} [outputs.streaming_delivery_profile="live"] Sets the specific profile of a streaming delivery format
+ * @apiParam (Request Body Fields) {String="dash", "mpd", "hls", "m3u", "m3u8", "ism", "mss", "highwinds"} [outputs.playlist_format] Sets the format for a playlist output
+ * @apiParam (Request Body Fields) {Number{1.0-3600.0}} [outputs.segment_seconds=10] Sets the maximum duration of each segment in a segmented output - values less than 2.0 are only allowed when byte_range_segmenting is enabled
+ * @apiParam (Request Body Fields) {Object} [outputs.alternate_audio] Provides a set of alternate audio streams for HLS playlists
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
