@@ -1081,11 +1081,98 @@
    * @apiParamExample {url} Live Stream Custom Origin Example:
    *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
    *
+   *
+   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+   *    HTTP/1.1 204
+   *    Content-Type:
+   *    X-Zencoder-Rate-Remaining: 59
+   *
+   */
+
+  // Finish a Live Job
+
+  /**
+   * @api {put} /v1/jobs/:jobId/finish Finish a Live Job
+   * @apiName Finish a Live Job
+   * @apiGroup Jobs
+   * @apiVersion 2.0.0
+   *
+   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs.
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+   *
+   * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
+   *
+   * @apiParamExample {url} Live Stream Custom Origin Example:
+   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
+   *
    * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
    *
    * @apiSuccessExample {json} Success Response Stop a Live Stream:
    *    HTTP/1.1 204
    *    Content-Type:
    *    X-Zencoder-Rate-Remaining: 59
+   *
+   */
+
+
+  // Job Progress
+
+  /**
+   * @api {put} /v1/jobs/:jobId/progress Job Progress
+   * @apiName Job Progress
+   * @apiGroup Jobs
+   * @apiVersion 2.0.0
+   *
+   * @apiDescription Get the progress of a job. The return will contain one or more of the following keys: state, input, outputs, and progress.
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+   *
+   *
+   * @apiSuccess (Response Fields) {String} state The overall progress state: pending, waiting, processing, finished, failed, or cancelled
+   * @apiSuccess (Response Fields) {Number} progress The percentage complete
+   * @apiSuccess (Response Fields) {Object[]} input Progress for getting and processing the input
+   * @apiSuccess (Response Fields) {Object[]} input Progress for getting and processing the input
+   * @apiSuccess (Response Fields) {String} input.id Id for the input
+   * @apiSuccess (Response Fields) {String} input.state State for the input: pending, waiting, processing, finished, failed, or cancelled
+   * @apiSuccess (Response Fields) {Number} input.progress The overall percentage complete
+   * @apiSuccess (Response Fields) {String} input.current_event The current activity
+   * @apiSuccess (Response Fields) {Number} input.current_event_progress The current activity percentage complete
+   * @apiSuccess (Response Fields) {Object[]} outputs Progress for processing the outputs
+   * @apiSuccess (Response Fields) {String} outputs.id Id for the output
+   * @apiSuccess (Response Fields) {String} outputs.state State for an output: pending, waiting, processing, finished, failed, or cancelled
+   * @apiSuccess (Response Fields) {Number} outputs.progress The overall percentage complete for processing an output
+   * @apiSuccess (Response Fields) {String} outputs.current_event The current activity on an output
+   * @apiSuccess (Response Fields) {Number} outputs.current_event_progress The current activity percentage complete
+   *
+   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+   *    HTTP/1.1 200
+   *    Content-Type
+   *    {
+   *      "state": "processing",
+   *      "progress": 32.34567345,
+   *      "input": {
+   *        "id": 1234,
+   *        "state": "finished"
+   *      },
+   *      "outputs": [
+   *        {
+   *          "id": 4567,
+   *          "state": "processing",
+   *          "current_event": "Transcoding",
+   *          "current_event_progress": 25.0323,
+   *          "progress": 35.23532
+   *        },
+   *        {
+   *          "id": 4568,
+   *          "state": "processing",
+   *          "current_event": "Uploading",
+   *          "current_event_progress": 82.32,
+   *          "progress": 95.3223
+   *        }
+   *      ]
+   *    }
    *
    */
