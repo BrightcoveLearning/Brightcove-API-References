@@ -7,9 +7,9 @@
     "order": [
         "Jobs",
         "Create_a_Job",
+        "Resubmit_a_Job",
         "List_Jobs",
         "Get_Job_Details",
-        "Resubmit_a_job",
         "Cancel_a_Job",
         "Finish_a_Live_Job",
         "Job_Progress",
