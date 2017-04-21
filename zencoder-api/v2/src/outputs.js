@@ -1,102 +1,109 @@
-// Create a VOD Clip by Duration from Live
+// Get Output Details
 
 /**
-  * @api {post} /v1/vods Create VOD Clip
-  * @apiName Create VOD Clip
-  * @apiGroup Clips
-  * @apiVersion 1.0.0
+  * @api {get} i/v2/outputs/:outputId Get Output Details
+  * @apiName Get Output Details
+  * @apiGroup outputs
+  * @apiVersion 2.0.0
   *
-  * @apiDescription Create VOD clips from a Live Stream.
+  * @apiDescription Get details of an Output file for a job.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
-  * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
-  * @apiParam (Request Body Fields) {String} outputs.label Label for the output
-  * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
-  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Video-Create_Video_Object)
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video injestion - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
+  * @apiParam (URL Parameters) {String} outputId an Output id.
   *
-  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  * @apiParam (Request Body Fields) {Object} application_ad_configuration The ad configuration object
+  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
+  * @apiParam (Request Body Fields) {String="Dfp","Vast","SmartXML"} application_ad_configuration.ad_configuration_expected_response_type The expected response type based on your ad server
+  * @apiParam (Request Body Fields) {String="SingleAdResponse","MultipleAdResponse"} application_ad_configuration.ad_configuration_strategy Specifies whether ad breaks should include single or muliple ads
+  * @apiParam (Request Body Fields) {Object[]} application_ad_configuration.ad_configuration_transforms Array of ad configuration transforms.
+  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xpath xpath for the transform.
+  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xslt xslt stylesheet for the transform.
+  * @apiParam (Request Body Fields) {String} ad_configuration_url_format Format for the ad tag - see (http://docs.brightcove.com/en/live/guides/ssai.html#ad_configuration_variables) for the available ad configuration variables.
+  * @apiParam (Request Body Fields) {String} application_description Human readable description of the ad application.
+  * @apiParam (Request Body Fields) {String} [account_id] Your account id.
+  * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
+  *
+  *
+  * @apiSuccess (Response Fields) {Number} audio_bitrate_in_kbps Audio bitrate of an Output media file
+  * @apiSuccess (Response Fields) {String} audio_codec Audio codec of an Output media file
+  * @apiSuccess (Response Fields) {Number} audio_sample_rate Audio sample rate of an Output media file
+  * @apiSuccess (Response Fields) {Number} audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} channels The number of audio channels
+  * @apiSuccess (Response Fields) {DateTimeString} created_at ISO 8601 date-time string representing when an Output file was created
+  * @apiSuccess (Response Fields) {Number} duration_in_ms duration_in_ms.
+  * @apiSuccess (Response Fields) {String} error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} finished_at ISO 8601 date-time string representing when an Output file was finished
+  * @apiSuccess (Response Fields) {String} format Format of an Output file
+  * @apiSuccess (Response Fields) {Number} frame_rate Frame rate of an Output file
+  * @apiSuccess (Response Fields) {Number} height Frame height of an Output file
+  * @apiSuccess (Response Fields) {String} id System id of an Output file
+  * @apiSuccess (Response Fields) {String} md5_checksum Checksum for an Output file
+  * @apiSuccess (Response Fields) {Boolean} privacy Privacy mode
+  * @apiSuccess (Response Fields) {String} state Current state of Output file processing
+  * @apiSuccess (Response Fields) {Boolean} test Whether run in test (integration) mode
+  * @apiSuccess (Response Fields) {DateTimeString} updated_at ISO 8601 date-time string representing when an Output file was last modified
+  * @apiSuccess (Response Fields) {Number} video_bitrate_in_kbps Video bitrate of an Output media file
+  * @apiSuccess (Response Fields) {String} video_codec Video codec of an Output media file
+  * @apiSuccess (Response Fields) {Number} width Frame width of an Output media file
+  * @apiSuccess (Response Fields) {Number} total_bitrate_in_kbps Total bitrate of an Output media file
+  * @apiSuccess (Response Fields) {String} url URL for an Output media file
+  *
+  * @apiSuccessExample {json} Success response for get Output details
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs of live job",
-  *                "duration": 60,
-  *                "url": "ftp://log:pass@yourftpserver.com:21/live/test_dur60.mp4"
-  *            }
-  *        ]
+  *      "audio_bitrate_in_kbps": 74,
+  *      "audio_codec": "aac",
+  *      "audio_sample_rate": 48000,
+  *      "channels": "2",
+  *      "duration_in_ms": 24892,
+  *      "file_size_in_bytes": 1215110,
+  *      "format": "mpeg4",
+  *      "frame_rate": 29.97,
+  *      "height": 352,
+  *      "id": 13339,
+  *      "label": null,
+  *      "state": "finished",
+  *      "total_bitrate_in_kbps": 387,
+  *      "url": "https://example.com/file.mp4",
+  *      "video_bitrate_in_kbps": 313,
+  *      "video_codec": "h264",
+  *      "width": 624,
+  *      "md5_checksum": "7f106918e02a69466afa0ee014174143"
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by stream from min 2 to min 3",
-  *                "stream_start_time": 120,
-  *                "stream_end_time": 180,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_min2to3.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
-  *    }
+  */
+
+// Output Progress
+
+/**
+  * @api {get} /v2/outputs/:outputId/progress Output Progress
+  * @apiName Update Output Progress
+  * @apiGroup outputs
+  * @apiVersion 2.0.0
   *
-  * @apiParamExample {json} Create a VOD Clip by Unix Timestamp Request Body Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by timestamp”,
-  *                "start_time": 1471375580,
-  *                "end_time": 1471375640,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
-  *    }
+  * @apiDescription Get the progress of processing for an output file. The current_event_progress number is the percent complete of the current event – so if the event is Transcoding, and current_event_progress is 99.3421, then the file is almost finished transcoding, but hasn't started uploading yet. The progress number is the overall percentage of completion for the output. The progress number is the percent complete of the current event – so if the event is Transcoding, and progress is 99.3421, then the file is almost finished transcoding, but hasn't started Uploading yet. Valid states include: waiting, queued, assigning, processing, finished, failed, cancelled, no input, and skipped. Events include: downloading, transcoding and uploading. If you're getting a 404 to a Job Progress request, make sure that you're using the output ID, not the job ID, and make sure your API key is correct. A 404 means that we didn't find an output file with the specified ID for the account linked to the provided API key.
   *
-  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs if live job",
-  *                "duration": 60,
-  *                "credentials": "VC_CREDENTIALS",
-  *                "videocloud": {
-  *                    "video": {
-  *                        "name": "TEST"
-  *                    },
-  *                    "ingest": { }
-  *                }
-  *            }
-  *        ]
-  *    }
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
-  * @apiSuccess (Response Fields) {String} vod_jobs.jvod_id The clip job id
-  * @apiSuccess (Response Fields) {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess (Response Fields) {String} live_job_id The clip label (from the input)
+  * @apiParam (URL Parameters) {String} outputId an Output id.
   *
-  * @apiSuccessExample {json} Creation of a clip
+  *
+  *
+  * @apiSuccess (Response Fields) {String} state State for an output: pending, waiting, processing, finished, failed, or cancelled
+  * @apiSuccess (Response Fields) {Number} progress The overall percentage complete
+  * @apiSuccess (Response Fields) {String} current_event The current activity
+  * @apiSuccess (Response Fields) {Number} current_event_progress The current activity percentage complete
+  *
+  * @apiSuccessExample {json} Success response for Output Progress
   *    {
-  *      "vod_jobs": [
-  *        {
-  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
-  *          "label": "last 60 secs of live job"
-  *        }
-  *      ],
-  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
+  *      "state": "processing",
+  *      "current_event": "Downloading",
+  *      "current_event_progress": "32.34567345",
+  *      "progress": "45.2353255"
   *    }
   *
   */
