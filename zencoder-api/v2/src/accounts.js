@@ -1,12 +1,12 @@
-// Create a VOD Clip by Duration from Live
+// Create an Account
 
 /**
-  * @api {post} /v1/vods Create VOD Clip
-  * @apiName Create VOD Clip
+  * @api {post} /v1/vods Create an Account
+  * @apiName Create an Account
   * @apiGroup Clips
   * @apiVersion 1.0.0
   *
-  * @apiDescription Create VOD clips from a Live Stream.
+  * @apiDescription Create an Accounts from a Live Stream.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
