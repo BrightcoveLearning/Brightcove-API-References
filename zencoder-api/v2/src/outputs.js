@@ -3,13 +3,13 @@
 /**
   * @api {get} i/v2/outputs/:outputId Get Output Details
   * @apiName Get Output Details
-  * @apiGroup outputs
+  * @apiGroup Outputs
   * @apiVersion 2.0.0
   *
   * @apiDescription Get details of an Output file for a job.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
   *
   * @apiParam (URL Parameters) {String} outputId an Output id.
   *
@@ -81,13 +81,13 @@
 /**
   * @api {get} /v2/outputs/:outputId/progress Output Progress
   * @apiName Update Output Progress
-  * @apiGroup outputs
+  * @apiGroup Outputs
   * @apiVersion 2.0.0
   *
   * @apiDescription Get the progress of processing for an output file. The current_event_progress number is the percent complete of the current event – so if the event is Transcoding, and current_event_progress is 99.3421, then the file is almost finished transcoding, but hasn't started uploading yet. The progress number is the overall percentage of completion for the output. The progress number is the percent complete of the current event – so if the event is Transcoding, and progress is 99.3421, then the file is almost finished transcoding, but hasn't started Uploading yet. Valid states include: waiting, queued, assigning, processing, finished, failed, cancelled, no input, and skipped. Events include: downloading, transcoding and uploading. If you're getting a 404 to a Job Progress request, make sure that you're using the output ID, not the job ID, and make sure your API key is correct. A 404 means that we didn't find an output file with the specified ID for the account linked to the provided API key.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
   *
   * @apiParam (URL Parameters) {String} outputId an Output id.
   *

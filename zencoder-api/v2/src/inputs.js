@@ -9,7 +9,7 @@
   * @apiDescription Get details of the input file for a job.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
   *
   * @apiParam (URL Parameters) {String} inputId The input id.
   *
@@ -77,18 +77,18 @@
   *
   */
 
-// Onput Progress
+// Input Progress
 
 /**
-  * @api {get} /v2/inputs/:inputId/progress Onput Progress
-  * @apiName Update Onput Progress
+  * @api {get} /v2/inputs/:inputId/progress Input Progress
+  * @apiName Update Input Progress
   * @apiGroup Inputs
   * @apiVersion 2.0.0
   *
   * @apiDescription Get the progress of processing for the input file. The current_event_progress number is the percent complete of the current event – so if the event is Downloading, and current_event_progress is 99.3421, then the file is almost finished downloading, but hasn't started Inspecting yet. The progress number is the overall percentage of completion for the input. The progress number is the percent complete of the current event – so if the event is Downloading, and progress is 99.3421, then the file is almost finished downloading, but hasn't started Inspecting yet. Valid states include: waiting, pending, assigning, processing, finished, failed, cancelled. Events include: downloading and inspecting. If you're getting a 404 to an input progress request, make sure that you're using the input ID, not the job or output ID, and make sure your API key is correct. A 404 means that we didn't find an input file with the specified ID for the account linked to the provided API key.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
   *
   * @apiParam (URL Parameters) {String} inputId The input id.
   *
@@ -99,7 +99,7 @@
   * @apiSuccess (Response Fields) {String} current_event The current activity
   * @apiSuccess (Response Fields) {Number} current_event_progress The current activity percentage complete
   *
-  * @apiSuccessExample {json} Success response for Onput Progress
+  * @apiSuccessExample {json} Success response for Input Progress
   *    {
   *      "state": "processing",
   *      "current_event": "Downloading",

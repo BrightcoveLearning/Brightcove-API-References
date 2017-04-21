@@ -1,15 +1,14 @@
 // Create an Account
 
 /**
-  * @api {post} /v1/vods Create an Account
+  * @api {post} /v2/account Create an Account
   * @apiName Create an Account
-  * @apiGroup Clips
-  * @apiVersion 1.0.0
+  * @apiGroup Accounts
+  * @apiVersion 2.0.0
   *
-  * @apiDescription Create an Accounts from a Live Stream.
+  * @apiDescription All that is required is an email address and an agreement to the terms of service. You can also send a password, but if you don't one will be generated. New accounts will be created under the Test (Free) plan.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
   * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs

@@ -9,7 +9,7 @@
   * @apiDescription Create VOD clips from a Live Stream.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
   *
   * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
   * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
