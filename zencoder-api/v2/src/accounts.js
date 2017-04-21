@@ -10,92 +10,93 @@
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   *
-  * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
-  * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
-  * @apiParam (Request Body Fields) {String} outputs.label Label for the output
-  * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
-  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Video-Create_Video_Object)
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video injestion - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
+  * @apiParam (Request Body Fields) {String} email Email address of the account owner - must be unique
+  * @apiParam (Request Body Fields) {String="1"} terms_of_service Indication that you agree to the terms of service
+  * @apiParam (Request Body Fields) {String} [password] Password
+  * @apiParam (Request Body Fields) {String} [password_confirmation] Password confirmation
   *
-  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  * @apiParamExample {json} Create an Account Body Example:
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs of live job",
-  *                "duration": 60,
-  *                "url": "ftp://log:pass@yourftpserver.com:21/live/test_dur60.mp4"
-  *            }
-  *        ]
+  *      "terms_of_service": "1",
+  *      "email": "test@example.com",
+  *      "password": "zencoderisnumber1",
+  *      "password_confirmation":"zencoderisnumber1"
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
+  *
+  * @apiSuccess (Response Fields) {String} api_key The api key used to authenticate other API requests
+  * @apiSuccess (Response Fields) {String} password The password submitted or an auto-generated one
+  *
+  * @apiSuccessExample {json} Create an Account
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by stream from min 2 to min 3",
-  *                "stream_start_time": 120,
-  *                "stream_end_time": 180,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_min2to3.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
+  *      "api_key": "a123afdaf23fa231245fadcbbb",
+  *      "password": "zencoderisnumber1"
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by Unix Timestamp Request Body Example:
+  */
+
+
+// Get Account Details
+
+/**
+  * @api {get} /v2/account Get Account Details
+  * @apiName Get Account Details
+  * @apiGroup Accounts
+  * @apiVersion 2.0.0
+  *
+  * @apiDescription Account details may be retrieved by issuing an HTTP GET to https://app.zencoder.com/api/v2/account. Account states are Active, Stopped, Suspended, and Cancelled. Billing states are Active, Past Due, and Cancelled.
+  *
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
+  *
+  *
+  * @apiSuccess (Response Fields) {String} account_state Account states are `active`, `stopped`, `suspended`, and `cancelled`
+  * @apiSuccess (Response Fields) {String} plan The current account plan
+  * @apiSuccess (Response Fields) {String} billing_state Billing states are `active`, `past due`, and `cancelled`
+  * @apiSuccess (Response Fields) {Number} minutes_used Minutes of encoded output used this month
+  * @apiSuccess (Response Fields) {Number} minutes_included Minutes of encoded output included in your plan (per month)
+  * @apiSuccess (Response Fields) {Boolean} integration_mode Whether the account is in integration (test) mode
+  *
+  * @apiSuccessExample {json} Get Account Details
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by timestamp”,
-  *                "start_time": 1471375580,
-  *                "end_time": 1471375640,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
+  *      "account_state": "active",
+  *      "plan": "Growth",
+  *      "minutes_used": 12549,
+  *      "minutes_included": 25000,
+  *      "billing_state": "active",
+  *      "integration_mode":true
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs if live job",
-  *                "duration": 60,
-  *                "credentials": "VC_CREDENTIALS",
-  *                "videocloud": {
-  *                    "video": {
-  *                        "name": "TEST"
-  *                    },
-  *                    "ingest": { }
-  *                }
-  *            }
-  *        ]
-  *    }
+  */
+
+
+// Turn On Integration Mode
+
+/**
+  * @api {put} /v2/account/integration Turn On Integration Mode
+  * @apiName Turn On Integration Mode
+  * @apiGroup Accounts
+  * @apiVersion 2.0.0
   *
-  * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
-  * @apiSuccess (Response Fields) {String} vod_jobs.jvod_id The clip job id
-  * @apiSuccess (Response Fields) {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess (Response Fields) {String} live_job_id The clip label (from the input)
+  * @apiDescription Integration mode can be turned on by issuing a PUT request to https://app.zencoder.com/api/v2/account/integration. A successful response will be indicated by a HTTP status of 204 No Content
   *
-  * @apiSuccessExample {json} Creation of a clip
-  *    {
-  *      "vod_jobs": [
-  *        {
-  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
-  *          "label": "last 60 secs of live job"
-  *        }
-  *      ],
-  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
-  *    }
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
+  *
+  *
+  *
+  */
+
+// Turn Off Integration Mode
+
+/**
+  * @api {put} /v2/account/live Turn Off Integration Mode
+  * @apiName Turn Off Integration Mode
+  * @apiGroup Accounts
+  * @apiVersion 2.0.0
+  *
+  * @apiDescription Integration mode can be turned off by issuing a PUT request to https://app.zencoder.com/api/v2/account/live. A successful response will be indicated by a HTTP status of 204 No Content
+  *
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
+  *
+  *
   *
   */

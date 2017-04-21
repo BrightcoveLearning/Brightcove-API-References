@@ -1,102 +1,240 @@
-// Create a VOD Clip by Duration from Live
+// Get Usage for VOD
 
 /**
-  * @api {post} /v1/vods Create VOD Clip
-  * @apiName Create VOD Clip
-  * @apiGroup Clips
-  * @apiVersion 1.0.0
+  * @api {get} /v2/reports/vod Get Usage for VOD
+  * @apiName Get Usage for VOD
+  * @apiGroup Reports
+  * @apiVersion 2.0.0
   *
-  * @apiDescription Create VOD clips from a Live Stream.
+  * @apiDescription This report returns a breakdown of video on demand (videos not using live-streaming) minute usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping. If you don't use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it's only partially complete. It's important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
-  * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
-  * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
-  * @apiParam (Request Body Fields) {String} outputs.label Label for the output
-  * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
-  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Video-Create_Video_Object)
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video injestion - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
+  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  * @apiParamExample {url} Get Usage for VOD Example:
+  *    https://app.zencoder.com/api/v2/reports/vod?from=2017-01-01&to=2017-01-31&grouping=myGroup
+  *
+  *
+  * @apiSuccess (Response Fields) {Object} total Summary object
+  * @apiSuccess (Response Fields) {Number} total.encoded_minutes The total encoding minutes
+  * @apiSuccess (Response Fields) {Number} total.billable_minutes The encoding minutes that were billable
+  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
+  * @apiSuccess (Response Fields) {String} statistics.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess (Response Fields) {DateString} statistics.collected_on The date of the report
+  * @apiSuccess (Response Fields) {Number} statistics.encoded_minutes The encoding minutes for this group
+  * @apiSuccess (Response Fields) {Number} statistics.billable_minutes The billable encoding minutes for this group
+  *
+  * @apiSuccessExample {json} Get Usage for VOD
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs of live job",
-  *                "duration": 60,
-  *                "url": "ftp://log:pass@yourftpserver.com:21/live/test_dur60.mp4"
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by stream from min 2 to min 3",
-  *                "stream_start_time": 120,
-  *                "stream_end_time": 180,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_min2to3.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiParamExample {json} Create a VOD Clip by Unix Timestamp Request Body Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by timestamp”,
-  *                "start_time": 1471375580,
-  *                "end_time": 1471375640,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs if live job",
-  *                "duration": 60,
-  *                "credentials": "VC_CREDENTIALS",
-  *                "videocloud": {
-  *                    "video": {
-  *                        "name": "TEST"
-  *                    },
-  *                    "ingest": { }
-  *                }
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
-  * @apiSuccess (Response Fields) {String} vod_jobs.jvod_id The clip job id
-  * @apiSuccess (Response Fields) {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess (Response Fields) {String} live_job_id The clip label (from the input)
-  *
-  * @apiSuccessExample {json} Creation of a clip
-  *    {
-  *      "vod_jobs": [
+  *      "total": {
+  *        "encoded_minutes": 6,
+  *        "billable_minutes": 8
+  *      },
+  *      "statistics": [
   *        {
-  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
-  *          "label": "last 60 secs of live job"
+  *          "grouping": "myGroup",
+  *          "collected_on": "2017-03-10",
+  *          "encoded_minutes": 4,
+  *          "billable_minutes": 5
+  *        }, {
+  *          "grouping": null,
+  *          "collected_on": "2017-03-10",
+  *          "encoded_minutes": 2,
+  *          "billable_minutes": 3
   *        }
-  *      ],
-  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
+  *      ]
   *    }
   *
   */
+
+
+
+// Get Usage for Live
+
+/**
+  * @api {get} /v2/reports/live Get Usage for Live
+  * @apiName Get Usage for Live
+  * @apiGroup Reports
+  * @apiVersion 2.0.0
+  *
+  * @apiDescription This report returns a breakdown of live-streaming hour usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping. If you don't use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it's only partially complete. It's important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
+  *
+  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
+  *
+  * @apiParamExample {url} Get Usage for Live Example:
+  *    https://app.zencoder.com/api/v2/reports/live?from=2017-01-01&to=2017-01-31&grouping=myGroup
+  *
+  *
+  * @apiSuccess (Response Fields) {Object} total Summary object
+  * @apiSuccess (Response Fields) {Number} total.stream_hours The total streaming hours
+  * @apiSuccess (Response Fields) {Number} total.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess (Response Fields) {Number} total.encoded_hours The total encoded hours
+  * @apiSuccess (Response Fields) {Number} total.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
+  * @apiSuccess (Response Fields) {String} statistics.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess (Response Fields) {DateString} statistics.collected_on The date of the report
+  * @apiSuccess (Response Fields) {Number} statistics.stream_hours The total streaming hours
+  * @apiSuccess (Response Fields) {Number} statistics.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess (Response Fields) {Number} statistics.encoded_hours The total encoded hours
+  * @apiSuccess (Response Fields) {Number} statistics.billable_encoded_hours The encoded hours that were billable
+  *
+  * @apiSuccessExample {json} Get Usage for Live
+  *    {
+  *      "total": {
+  *        "stream_hours": 5,
+  *        "billable_stream_hours": 6,
+  *        "encoded_hours": 5,
+  *        "billable_encoded_hours": 6,
+  *        "total_hours": 10,
+  *        "total_billable_hours": 12
+  *      },
+  *      "statistics": [
+  *        {
+  *          "grouping": "myGroup",
+  *          "collected_on": "2017-03-10",
+  *          "stream_hours": 3,
+  *          "billable_stream_hours": 4,
+  *          "encoded_hours": 3,
+  *          "billable_encoded_hours": 4,
+  *          "total_hours": 6,
+  *          "total_billable_hours": 8
+  *        }, {
+  *          "grouping": null,
+  *          "collected_on": "2017-03-10",
+  *          "stream_hours": 2,
+  *          "billable_stream_hours": 2,
+  *          "encoded_hours": 2,
+  *          "billable_encoded_hours": 2,
+  *          "total_hours": 4,
+  *          "total_billable_hours": 4
+  *        }
+  *      ]
+  *    }
+  *
+  */
+
+
+
+// Get Usage for VOD & Live
+
+/**
+  * @api {get} /v2/reports/all Get Usage for VOD & Live
+  * @apiName Get Usage for VOD & Live
+  * @apiGroup Reports
+  * @apiVersion 2.0.0
+  *
+  * @apiDescription This report returns a breakdown of VOD and live-streaming usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping, broken out by Live and VOD. If you don't use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it's only partially complete. It's important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
+  *
+  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
+  *
+  * @apiParamExample {url} Get Usage for VOD & Live Example:
+  *    https://app.zencoder.com/api/v2/reports/all?from=2017-01-01&to=2017-01-31&grouping=myGroup
+  *
+  *
+  * @apiSuccess (Response Fields) {Object} total Summary object
+  * @apiSuccess (Response Fields) {Object} total.live Summary object for live usage
+  * @apiSuccess (Response Fields) {Number} total.live.stream_hours The total streaming hours
+  * @apiSuccess (Response Fields) {Number} total.live.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess (Response Fields) {Number} total.live.encoded_hours The total encoded hours
+  * @apiSuccess (Response Fields) {Number} total.live.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess (Response Fields) {Number} total.live.total_hours The total encoded and stream hours
+  * @apiSuccess (Response Fields) {Number} total.live.total_billable_hours The encoded and stream hours that were billable
+  * @apiSuccess (Response Fields) {Object} total.vod Summary object for VOD usage
+  * @apiSuccess (Response Fields) {Number} total.vod.encoded_minutes The total encoding minutes
+  * @apiSuccess (Response Fields) {Number} total.vod.billable_minutes The encoding minutes that were billable
+  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
+  * @apiSuccess (Response Fields) {Object[]} statistics.live reports by grouping for live usage
+  * @apiSuccess (Response Fields) {String} statistics.live.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess (Response Fields) {DateString} statistics.live.collected_on The date of the report
+  * @apiSuccess (Response Fields) {Number} statistics.live.stream_hours The total streaming hours
+  * @apiSuccess (Response Fields) {Number} statistics.live.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess (Response Fields) {Number} statistics.live.encoded_hours The total encoded hours
+  * @apiSuccess (Response Fields) {Number} statistics.live.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess (Response Fields) {Object[]} statistics.vod reports by grouping for VOD usage
+  * @apiSuccess (Response Fields) {String} statistics.vod.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess (Response Fields) {DateString} statistics.vod.collected_on The date of the report
+  * @apiSuccess (Response Fields) {Number} statistics.vod.encoded_minutes The encoding minutes for this group
+  * @apiSuccess (Response Fields) {Number} statistics.vod.billable_minutes The billable encoding minutes for this group
+  *
+  * @apiSuccessExample {json} Get Usage for VOD & Live
+  *    {
+  *      "total": {
+  *        "live": {
+  *          "stream_hours": 5,
+  *          "billable_stream_hours": 6,
+  *          "encoded_hours": 5,
+  *          "billable_encoded_hours": 6,
+  *          "total_hours": 10,
+  *          "total_billable_hours": 12
+  *        },
+  *        "vod": {
+  *          "encoded_minutes": 6,
+  *          "billable_minutes": 8
+  *        }
+  *      },
+  *      "statistics": {
+  *        "live": [
+  *          {
+  *            "grouping": "zencoder",
+  *            "collected_on": "2011-08-10",
+  *            "stream_hours": 3,
+  *            "billable_stream_hours": 4,
+  *            "encoded_hours": 3,
+  *            "billable_encoded_hours": 4
+  *            "total_hours": 6,
+  *            "total_billable_hours": 8
+  *          }, {
+  *            "grouping": null,
+  *            "collected_on": "2011-08-10",
+  *            "stream_hours": 2,
+  *            "billable_stream_hours": 2,
+  *            "encoded_hours": 2,
+  *            "billable_encoded_hours": 2
+  *            "total_hours": 4,
+  *            "total_billable_hours": 4
+  *          }
+  *        ],
+  *        "vod": [
+  *          {
+  *            "grouping": "zencoder",
+  *            "collected_on": "2011-08-10",
+  *            "encoded_minutes": 4,
+  *            "billable_minutes": 5
+  *          }, {
+  *            "grouping": null,
+  *            "collected_on": "2011-08-10",
+  *            "encoded_minutes": 2,
+  *            "billable_minutes": 3
+  *          }
+  *        ]
+  *      }
+  *    }
+  *
+  */
+
+
+  // Get Get_Minutes_Used
+
+  /**
+    * @api {get} /v2/reports/minutes Get Get_Minutes_Used
+    * @apiName Get Get_Minutes_Used
+    * @apiGroup Reports
+    * @apiVersion 2.0.0
+    *
+    * @apiDescription In API version 2 /vod and /minutes return the same data. View the [/vod documentation](#api-Reports-Get_Usage_for_VOD) for more information on the available options and response fields.
+    *
+    */

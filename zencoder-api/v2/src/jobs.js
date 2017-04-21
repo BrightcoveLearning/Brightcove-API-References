@@ -9,7 +9,7 @@
  * @apiDescription Encoding jobs are created by sending an HTTP POST request to https://app.zencoder.com/api/v2/jobs. The post body must include two things: the URL of a video to process and your API key. It may also include output settings for the job, including an output destination, notification settings, and transcoding settings.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json or application/xml
- * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+ * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
  *
  * @apiParam (Request Body Fields) {String} [api_key] API key for your Zencoder account (must be included here if not passed as a header, which is the recommended way) - get your API key from (https://app.zencoder.com/api)
  * @apiParam (Request Body Fields) {String} input A valid URL to a media file (HTTP/HTTPS, FTP/FTPS, SFTP, Azure, GCS, CF or S3), with or without authentication
@@ -400,7 +400,7 @@
  * @apiDescription If a job has failed processing with a transient error that may be solved by attempting processing again (such as a network timeout, or if you fix permissions on your server that had caused a download permission error) you may request that it be attempted again. You may resubmit a job for processing by sending a PUT request to https://app.zencoder.com/api/v2/jobs/1234/resubmit?api_key=93h630j1dsyshjef620qlkavnmzui3. Only jobs that are not in the “finished” state may be resubmitted. If resubmission succeeds you will receive a 204 No Content response. If you attempt to resubmit a “finished” job you will receive a 409 Conflict response. Resubmit requests are limited to prevent runaway scripts from repeatedly resubmitting a failing job. If you attempt to resubmit a job more times than the limit amount, you will receive a 403 Forbidden response. The limit is currently 5 attempts, but may change without warning.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json or application/xml
- * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+ * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
  *
  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
  *
@@ -419,7 +419,7 @@
   * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
   *
   *
@@ -713,7 +713,7 @@
   * @apiDescription Get Job Details
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
@@ -1034,7 +1034,7 @@
    * @apiDescription If you wish to cancel a job that has not yet finished processing you may send a request (using any HTTP method) to https://app.zencoder.com/api/v2/jobs/1234/cancel. If cancellation succeeds you will receive a 204 No Content response. Only jobs that are in the “waiting” or “processing” state may be cancelled. If you attempt to cancel a job in any other state you will receive a 409 Conflict response.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
    *
    * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
@@ -1060,7 +1060,7 @@
    * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
    *
    * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
@@ -1088,7 +1088,7 @@
    * @apiDescription Get the progress of a job. The return will contain one or more of the following keys: state, input, outputs, and progress.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
+   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
    *
    * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
