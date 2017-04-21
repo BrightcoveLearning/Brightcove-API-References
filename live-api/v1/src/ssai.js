@@ -94,7 +94,7 @@
   *
   * @apiParam (URL Parameters) {Object} application_id The ad application id
   * @apiSuccess (Response Fields) {String} application.description The ad application description
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
@@ -123,20 +123,20 @@
   *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
   *    }
   *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiSuccess (Request Body Fields) {Object} application The ad application object
+  * @apiSuccess (Request Body Fields) {String} application.account_id The account id
+  * @apiSuccess (Request Body Fields) {String} application.description The ad application description
+  * @apiSuccess (Request Body Fields) {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess (Request Body Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess (Request Body Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess (Request Body Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess (Request Body Fields) {String} application.application_id The ad application id
+  * @apiSuccess (Request Body Fields) {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {

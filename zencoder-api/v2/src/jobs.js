@@ -6,7 +6,7 @@
  * @apiGroup Jobs
  * @apiVersion 2.0.0
  *
- * @apiDescription Create an encoding job. See [Encoding Settings](//docs.brightcove.com/en/zencoder/guides/encoding-settings.html) for more details on the request body fields.
+ * @apiDescription Encoding jobs are created by sending an HTTP POST request to https://app.zencoder.com/api/v2/jobs. The post body must include two things: the URL of a video to process and your API key. It may also include output settings for the job, including an output destination, notification settings, and transcoding settings.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json or application/xml
  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
@@ -352,8 +352,8 @@
  * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
  * @apiSuccess (Response Fields) {String} outputs.url Media HLS manifest for the specified rendition (non-SSAI).
  * @apiSuccess (Response Fields) {String} outputs.label Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
- // *
- * @apiSuccessExample {json} Success Response Standard Live Stream:
+ *
+ * @apiSuccessExample {json} Success Response Create a Job:
  *    HTTP/1.1 201
  *    Content-Type: application/json; charset=utf-8
  *    X-Zencoder-Rate-Remaining: 999
@@ -397,50 +397,12 @@
  * @apiGroup Jobs
  * @apiVersion 2.0.0
  *
- * @apiDescription Resubmit an encoding job.
+ * @apiDescription If a job has failed processing with a transient error that may be solved by attempting processing again (such as a network timeout, or if you fix permissions on your server that had caused a download permission error) you may request that it be attempted again. You may resubmit a job for processing by sending a PUT request to https://app.zencoder.com/api/v2/jobs/1234/resubmit?api_key=93h630j1dsyshjef620qlkavnmzui3. Only jobs that are not in the “finished” state may be resubmitted. If resubmission succeeds you will receive a 204 No Content response. If you attempt to resubmit a “finished” job you will receive a 409 Conflict response. Resubmit requests are limited to prevent runaway scripts from repeatedly resubmitting a failing job. If you attempt to resubmit a job more times than the limit amount, you will receive a 403 Forbidden response. The limit is currently 5 attempts, but may change without warning.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json or application/xml
  * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {APIKey}
  *
- *
- *
- *
- *
- * @apiSuccess (Response Fields) {String} id Id for the job.
- * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
- * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
- * @apiSuccess (Response Fields) {String} outputs.url Media HLS manifest for the specified rendition (non-SSAI).
- * @apiSuccess (Response Fields) {String} outputs.label Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
- // *
- * @apiSuccessExample {json} Success Response Standard Live Stream:
- *   {
- *     "id": 365577652,
- *     "outputs": [
- *       {
- *         "id": 1295040689,
- *         "label": "hls_300",
- *         "url": "http://learning-services-media.brightcove.com.s3.amazonaws.com/awesomeness_300.m3u8"
- *       },
- *       {
- *         "id": 1295040690,
- *         "label": "hls_600",
- *         "url": "http://learning-services-media.brightcove.com.s3.amazonaws.com/awesomeness_600.m3u8"
- *       },
- *       {
- *         "id": 1295040693,
- *         "label": "hls_1200",
- *         "url": "http://learning-services-media.brightcove.com.s3.amazonaws.com/awesomeness_1200.m3u8"
- *       },
- *       {
- *         "id": 1295040695,
- *         "label": null,
- *         "url": "http://learning-services-media.brightcove.com.s3.amazonaws.com/master.m3u8"
- *       }
- *     ],
- *     "stream_url": "rtmp://live36.us-va.zencoder.io:1935/live",
- *     "stream_name": "aa56369464a55ff7cd6236070e49e0f4"
- *   }
- *
+ * @apiParam (URL Parameters) {String} jobId The job id you want details for.
  *
  *
  *
@@ -454,7 +416,7 @@
   * @apiGroup Jobs
   * @apiVersion 2.0.0
   *
-  * @apiDescription Get Job Details
+  * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -755,8 +717,6 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
-  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
   *
   * @apiSuccess (Response Fields) {Object} job Object containing the job details
   * @apiSuccess (Response Fields) {DateTimeString} job.created_at ISO 8601 date-time string representing when the job was created
@@ -864,7 +824,7 @@
   * @apiSuccess (Response Fields) {String} job.output_media_files.filename File name for the playlist manifest
   * @apiSuccess (Response Fields) {String} job.output_media_files.dvr_filename File name for the DVR playlist manifest
   *
-  * @apiSuccessExample {json} Success Response Get Live Job Details:
+  * @apiSuccessExample {json} Success Response Get Job Details:
   *    HTTP/1.1 200
   *    Content-Type: application/json; charset=utf-8
   *    X-Zencoder-Rate-Remaining: 59
@@ -1071,7 +1031,7 @@
    * @apiGroup Jobs
    * @apiVersion 2.0.0
    *
-   * @apiDescription Cancel a Job
+   * @apiDescription If you wish to cancel a job that has not yet finished processing you may send a request (using any HTTP method) to https://app.zencoder.com/api/v2/jobs/1234/cancel. If cancellation succeeds you will receive a 204 No Content response. Only jobs that are in the “waiting” or “processing” state may be cancelled. If you attempt to cancel a job in any other state you will receive a 409 Conflict response.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -1082,7 +1042,7 @@
    *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
    *
    *
-   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+   * @apiSuccessExample {json} Success Response Cancel a Job:
    *    HTTP/1.1 204
    *    Content-Type:
    *    X-Zencoder-Rate-Remaining: 59
@@ -1097,7 +1057,7 @@
    * @apiGroup Jobs
    * @apiVersion 2.0.0
    *
-   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs.
+   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -1109,7 +1069,7 @@
    *
    * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
    *
-   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+   * @apiSuccessExample {json} Success Response Finish a Live Job:
    *    HTTP/1.1 204
    *    Content-Type:
    *    X-Zencoder-Rate-Remaining: 59
@@ -1130,10 +1090,10 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
+   * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
    * @apiSuccess (Response Fields) {String} state The overall progress state: pending, waiting, processing, finished, failed, or cancelled
    * @apiSuccess (Response Fields) {Number} progress The percentage complete
-   * @apiSuccess (Response Fields) {Object[]} input Progress for getting and processing the input
    * @apiSuccess (Response Fields) {Object[]} input Progress for getting and processing the input
    * @apiSuccess (Response Fields) {String} input.id Id for the input
    * @apiSuccess (Response Fields) {String} input.state State for the input: pending, waiting, processing, finished, failed, or cancelled
@@ -1147,7 +1107,7 @@
    * @apiSuccess (Response Fields) {String} outputs.current_event The current activity on an output
    * @apiSuccess (Response Fields) {Number} outputs.current_event_progress The current activity percentage complete
    *
-   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+   * @apiSuccessExample {json} Success Response Job Progress:
    *    HTTP/1.1 200
    *    Content-Type
    *    {

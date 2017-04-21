@@ -1,15 +1,17 @@
-// Create an Ad application_ad_configuration
+// Get Input Details
 
 /**
-  * @api {post} /v1/ssai/application Create Ad Configuration
-  * @apiName Create Ad Configuration
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
+  * @api {get} i/v2/inputs/:inputId Get Input Details
+  * @apiName Get Input Details
+  * @apiGroup Inputs
+  * @apiVersion 2.0.0
   *
-  * @apiDescription Create a configuration for server-side ad application.
+  * @apiDescription Get details of the input file for a job.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} inputId The input id.
   *
   * @apiParam (Request Body Fields) {Object} application_ad_configuration The ad configuration object
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
@@ -23,688 +25,86 @@
   * @apiParam (Request Body Fields) {String} [account_id] Your account id.
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
-  * @apiParamExample {json} Create an ad configuration example:
-  *    {
-  *        "application_ad_configuration": {
-  *            "ad_configuration_description": "Human readable description of the configuration",
-  *            "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML",
-  *            "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
-  *            "ad_configuration_transforms": [
-  *            {
-  *                "xpath": "/",
-  *                "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
-  *            }],
-  *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
-  *        },
-  *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
-  *    }
   *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiSuccess (Response Fields) {Number} audio_bitrate_in_kbps Audio bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} audio_codec Audio codec of the input media file
+  * @apiSuccess (Response Fields) {Number} audio_sample_rate Audio sample rate of the input media file
+  * @apiSuccess (Response Fields) {Number} audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} channels The number of audio channels
+  * @apiSuccess (Response Fields) {DateTimeString} created_at ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess (Response Fields) {Number} duration_in_ms duration_in_ms.
+  * @apiSuccess (Response Fields) {String} error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} finished_at ISO 8601 date-time string representing when the input file was finished
+  * @apiSuccess (Response Fields) {String} format Format of the input file
+  * @apiSuccess (Response Fields) {Number} frame_rate Frame rate of the input file
+  * @apiSuccess (Response Fields) {Number} height Frame height of the input file
+  * @apiSuccess (Response Fields) {String} id System id of the input file
+  * @apiSuccess (Response Fields) {String} md5_checksum Checksum for the input file
+  * @apiSuccess (Response Fields) {Boolean} privacy Privacy mode
+  * @apiSuccess (Response Fields) {String} state Current state of input file processing
+  * @apiSuccess (Response Fields) {Boolean} test Whether run in test (integration) mode
+  * @apiSuccess (Response Fields) {DateTimeString} updated_at ISO 8601 date-time string representing when the input file was last modified
+  * @apiSuccess (Response Fields) {Number} video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} video_codec Video codec of the input media file
+  * @apiSuccess (Response Fields) {Number} width Frame width of the input media file
+  * @apiSuccess (Response Fields) {Number} total_bitrate_in_kbps Total bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} url URL for the input media file
   *
-  * @apiSuccessExample {json} Success response for create ad application
+  * @apiSuccessExample {json} Success response for get input details
   *    {
-  *      "application": {
-  *        "account_id": "USER ACCOUNT ID",
-  *        "application_description": "Human readable description of the ad application",
-  *        "application_ad_configuration": {
-  *          "ad_configuration_description": "Human readable description of the configuration",
-  *          "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML,
-  *          "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
-  *          "ad_configuration_transforms": [
-  *            {
-  *              "xpath": "/",
-  *              "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
-  *            }
-  *          ],
-  *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
-  *        },
-  *        "application_id": "APPLICATION ID"
-  *      },
-  *      "inserted": true
+  *      "audio_bitrate_in_kbps": 96,
+  *      "audio_codec": "aac",
+  *      "audio_sample_rate": 48000,
+  *      "channels": "2",
+  *      "duration_in_ms": 24892,
+  *      "file_size_in_bytes": 1862748,
+  *      "format": "mpeg4",
+  *      "frame_rate": 29.98,
+  *      "height": 352,
+  *      "id": 6816,
+  *      "job_id": 6816,
+  *      "privacy": false,
+  *      "state": "finished",
+  *      "total_bitrate_in_kbps": 594,
+  *      "url": "s3://example/file.mp4",
+  *      "video_bitrate_in_kbps": 498,
+  *      "video_codec": "h264",
+  *      "width": 624,
+  *      "md5_checksum": "7f106918e02a69466afa0ee014174143"
   *    }
   *
   */
 
-// Update an Ad application_ad_configuration
+// Input Progress
 
 /**
-  * @api {put} /v1/ssai/application/:application_id Update Ad Configuration
-  * @apiName Update Ad Configuration
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
+  * @api {get} /v2/inputs/:inputId/progress Input Progress
+  * @apiName Update Input Progress
+  * @apiGroup Inputs
+  * @apiVersion 2.0.0
   *
-  * @apiDescription Update a configuration for server-side ad application.
+  * @apiDescription Get the progress of processing for the input file. The current_event_progress number is the percent complete of the current event – so if the event is Downloading, and current_event_progress is 99.3421, then the file is almost finished downloading, but hasn't started Inspecting yet. The progress number is the overall percentage of completion for the input.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {Object} application_id The ad application id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiParam (URL Parameters) {String} inputId The input id.
   *
-  * @apiParamExample {json} Update an ad configuration example:
+  *
+  *
+  * @apiSuccess (Response Fields) {String} state State for the input: pending, waiting, processing, finished, failed, or cancelled
+  * @apiSuccess (Response Fields) {Number} progress The overall percentage complete
+  * @apiSuccess (Response Fields) {String} current_event The current activity
+  * @apiSuccess (Response Fields) {Number} current_event_progress The current activity percentage complete
+  *
+  * @apiSuccessExample {json} Success response for input progress
   *    {
-  *        "application_ad_configuration": {
-  *            "ad_configuration_description": "Human readable description of the configuration",
-  *            "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML",
-  *            "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
-  *            "ad_configuration_transforms": [
-  *            {
-  *                "xpath": "/",
-  *                "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
-  *            }],
-  *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
-  *        },
-  *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
-  *    }
-  *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
-  *
-  * @apiSuccessExample {json} Success response for create ad application
-  *    {
-  *      "application": {
-  *        "account_id": "USER ACCOUNT ID",
-  *        "application_description": "Human readable description of the ad application",
-  *        "application_ad_configuration": {
-  *          "ad_configuration_description": "Human readable description of the configuration",
-  *          "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML,
-  *          "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
-  *          "ad_configuration_transforms": [
-  *            {
-  *              "xpath": "/",
-  *              "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
-  *            }
-  *          ],
-  *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
-  *        },
-  *        "application_id": "APPLICATION ID"
-  *      },
-  *      "inserted": true
+  *      "state": "processing",
+  *      "current_event": "Downloading",
+  *      "current_event_progress": "32.34567345",
+  *      "progress": "45.2353255"
   *    }
   *
   */
-
-  // Get Ad application_ad_configurations
-
-  /**
-    * @api {get} /v1/ssai/applications/:account_id Get Account Ad Configurations
-    * @apiName Get Account Ad Configurations
-    * @apiGroup SSAI
-    * @apiVersion 1.0.0
-    *
-    * @apiDescription Get ad applications for an account.
-    *
-    * @apiHeader {String} Content-Type Content-Type: application/json
-    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-    *
-    * @apiParam (Request Body Fields) {Object} account_id The account id
-    *
-    *
-    * @apiSuccess (Response Fields) {Object} application The ad application object
-    * @apiSuccess (Response Fields) {String} application.account_id The account id
-    * @apiSuccess (Response Fields) {String} application.description The ad application description
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-    * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-    * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-    * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
-    *
-    * @apiSuccessExample {json} Success response for create ad application
-    *    [
-    *      {
-    *        "application_id": "APPLICATION_ID_1",
-    *        "application_description": "DFP Single Midroll",
-    *        "application_ad_configuration": {
-    *          "ad_configuration_description": "DFP Test Config Single Midroll",
-    *          "ad_configuration_strategy": "MultipleAdResponse",
-    *          "ad_configuration_transforms": [],
-    *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler",
-    *          "ad_configuration_expected_response_type": "Dfp"
-    *        },
-    *        "account_id": "ACCOUNT_ID"
-    *      },
-    *      {
-    *        "application_id": "APPLICATION_ID_2",
-    *        "application_description": "Test DFP Single Midroll"
-    *        "application_ad_configuration": {
-    *          "ad_configuration_description": "DFP Test Config Single Midroll",
-    *          "ad_configuration_strategy": "MultipleAdResponse",
-    *          "ad_configuration_transforms": [
-    *            {
-    *              "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>",
-    *              "xpath": "/"
-    *            }
-    *          ],
-    *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}",
-    *          "ad_configuration_expected_response_type": "Dfp"
-    *        },
-    *        "account_id": "ACCOUNT_ID"
-    *      }
-    *    ]
-    *
-    *
-    */
-
-// Get an Ad application_ad_configuration
-
-/**
-  * @api {get} /v1/ssai/application/:application_id Get Ad Configuration
-  * @apiName Get Ad Configuration
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Get an ad application.
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-  *
-  * @apiParam (URL Parameters) {Object} application_id The ad application id
-  *
-  *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
-  *
-  * @apiSuccessExample {json} Success response for create ad application
-  *    {
-  *      "application_id": "APPLICATION_ID",
-  *      "application_description": "Test DFP Single Midroll",
-  *      "application_ad_configuration": {
-  *        "ad_configuration_description": "DFP Test Config Single Midroll",
-  *        "ad_configuration_strategy": "MultipleAdResponse",
-  *        "ad_configuration_transforms": [
-  *          {
-  *            "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>",
-  *            "xpath": "/"
-  *          }
-  *        ],
-  *        "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}",
-  *        "ad_configuration_expected_response_type": "Dfp"
-  *      },
-  *      "account_id": "ACCOUNT_ID"
-  *    }
-  *
-  */
-
- // Delete an ad application
-
-/**
-  * @api {delete} /v1/ssai/application/:application_id Delete Ad Configuration
-  * @apiName Delete Ad Configuration
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Delete an ad application.
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-  *
-  * @apiParam (URL Parameters) {Object} application_id The ad application id
-  *
-  *
-  * @apiSuccess (Response Fields) {String} TODO
-  *
-  * @apiSuccessExample {json} Success response for create ad application
-  *    {
-  *      "application_id": "APPLICATION_ID",
-  *      "deleted": true
-  *    }
-  */
-
-  // Ingest Slate Media Source Asset
-
-/**
-  * @api {post} /v1/ssai/slate Ingest Slate Media Source Asset
-  * @apiName Ingest Slate Media Source Asset
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Ingest Slate Media Source Asset.
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-  *
-  * @apiParam (Request Body Fields) {String} source_url URL for the slate to ingest
-  * @apiParam (Request Body Fields) {String} account_id The account id
-  * @apiParam (Request Body Fields) {String} [source_description] User identifiable description for the slate
-  *
-  * @apiParamExample {json} Ingest Slate Media Source Asset example:
-  *    {
-  *        "source_url": "https://somesourceasset.com/slate-to-ingest.mp4",
-  *        "account_id": "ACCOUNT_ID"
-  *        "source_description": "User identifiable description for the slate"
-  *    }
-  *
-  *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {String} media_source_asset_description User identifiable description for the slate
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
-  *
-  * @apiSuccessExample {json} Success response for create slate media resource
-  *    {
-  *      "media_source_asset_id": "NEW_UUID",
-  *      "account_id": "ACCOUNT_ID",
-  *      "media_source_asset_default": false,
-  *      "media_source_asset_type": "slate",
-  *      "media_source_asset_url": "https://somesourceasset.com/slate-to-ingest.mp4",
-  *      "media_source_asset_status": "transcoding"
-  *      "media_source_asset_description": "User identifiable description for the slate"
-  *    }
-  */
-
-  // Delete Slate Media Source Asset
-
-/**
-  * @api {delete} /v1/ssai/slate/:SLATE_MSA_ID Delete Slate Media Source Asset
-  * @apiName Delete Slate Media Source Asset
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Ingest Slate Media Source Asset.
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-  *
-  * @apiParam (URL Parameters) {String} SLATE_MSA_ID URL The id for the Slate media source asset
-  *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
-  *
-  * @apiSuccessExample {json} Success response for delete media source asset
-  *    {
-  *      "media_source_asset_id": "MSA_UUID",
-  *      "media_source_asset_type": "slate",
-  *      "media_source_asset_url": "http://someS3urlpath/media.mp4",
-  *      "media_source_asset_default": false,
-  *      "media_source_asset_status": "ready",
-  *      "account_id": "ACCOUNT_ID"
-  *    }
-  */
-
-  // Get Slate Media Source Assets
-
-/**
-  * @api {get} /v1/ssai/slates/:ACCOUNT_ID Get Slate Media Source Assets
-  * @apiName Get Slate Media Source Assets
-  * @apiGroup SSAI
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Get Slate Media Source Assets for an account.
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-  *
-  * @apiParam (URL Parameters) {String} ACCOUNT_ID URL The account id
-  *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {String} media_source_asset_description User identifiable description for the slate
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
-  *
-  * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-  *    [
-  *      {
-  *        "media_source_asset_id": "MSA_UUID_1",
-  *        "media_source_asset_type": "slate",
-  *        "media_source_asset_default": false,
-  *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-  *        "account_id": "ACCOUNT_ID",
-  *        "media_source_asset_status": "ready"
-  *      },
-  *      {
-  *        "media_source_asset_id": "MSA_UUID_2",
-  *        "media_source_asset_type": "slate",
-  *        "media_source_asset_default": true,
-  *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-  *        "account_id": "ACCOUNT_ID",
-  *        "media_source_asset_status": "ready"
-  *      }
-  *    ]
-  *
-  */
-
- // Create a beacon set
-
- /**
-   * @api {post} /v1/ssai/beaconset Create beacon set
-   * @apiName Create beacon set
-   * @apiGroup SSAI
-   * @apiVersion 1.0.0
-   *
-   * @apiDescription Beacons are data points on playback sent to ad servers to track whether and how much of ads were played. Creates a beacon set.
-   *
-   * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-   *
-   * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
-   * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
-   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon variables
-   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon types
-   *
-   * @apiParamExample {json} Ingest Slate Media Source Asset example:
-   *    {
-   *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
-   *        "beacon_urls": [
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Play"
-   *            }
-   *        ]
-   *    }
-   *
-   *
-   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
-   *
-   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-   *    {
-   *        "beacon_set": {
-   *            "beacon_urls": [{
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Play"
-   *            }],
-   *            "beacon_set_id": "Inserted Beacon Set ID",
-   *            "account_id": "USER's ACCOUNT ID"
-   *        }
-   *        "inserted": true
-   *    }
-   *
-   */
-
- // Update a beacon set
-
- /**
-   * @api {put} /v1/ssai/beaconset/BEACON_SET_ID Update beacon set
-   * @apiName Update beacon set
-   * @apiGroup SSAI
-   * @apiVersion 1.0.0
-   *
-   * @apiDescription Updates a beacon set.
-   *
-   * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-   *
-   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
-   * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
-   * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
-   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon variables
-   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon types
-   *
-   * @apiParamExample {json} Ingest Slate Media Source Asset example:
-   *    {
-   *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
-   *        "beacon_urls": [
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
-   *                "beacon_type": "Play"
-   *            }
-   *        ]
-   *    }
-   *
-   *
-   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
-   *
-   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-   *    {
-   *        "beacon_set": {
-   *            "account_id": "USER's ACCOUNT ID",
-   *            "beacon_set_id": "BEACON_SET_ID",
-   *            "beacon_urls": [{
-   *                "beacon_url": "https://myserver.com/beaconRX/load",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/play",
-   *                "beacon_type": "Play"
-   *            }],
-   *            "updated_beacon_set": {
-   *                "beacon_set_id": "BEACON_SET_ID",
-   *                "beacon_urls": [{
-   *                    "beacon_url": "https://myserver.com/beaconRX/load",
-   *                    "beacon_type": "Load"
-   *                },
-   *                {
-   *                    "beacon_url": "https://myserver.com/beaconRX/play",
-   *                    "beacon_type": "Play"
-   *                }],
-   *                "account_id": "USER's ACCOUNT ID"
-   *            }
-   *        }
-   *    }
-   *
-   */
-
-   // Get beacon sets
-
-   /**
-     * @api {get} /v1/ssai/beaconsets/:account_id Get beacon sets
-     * @apiName Get beacon sets
-     * @apiGroup SSAI
-     * @apiVersion 1.0.0
-     *
-     * @apiDescription Get all beacon sets for an account.
-     *
-     * @apiHeader {String} Content-Type Content-Type: application/json
-     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-     *
-     * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
-     *
-     *
-     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
-     *
-     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-     *    [{
-     *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_1",
-     *        "beacon_urls": [{
-     *            "beacon_url": "https://myserver.com/beaconRX/load",
-     *            "beacon_type": "Load"
-     *        }]
-     *    },
-     *    {
-     *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_2",
-     *        "beacon_urls": [{
-     *           "beacon_url": "https://myserver.com/beaconRX2/load",
-     *           "beacon_type": "Load"
-     *        },
-     *        {
-     *           "beacon_url": "https://myserver.com/beaconRX2/play",
-     *           "beacon_type": "Play"
-     *        }]
-     *    }]
-     *
-     */
-
-
-   // Get beacon sets for user
-
-   /**
-     * @api {get} /v1/ssai/beaconsets Get beacon sets for user
-     * @apiName Get beacon sets for user
-     * @apiGroup SSAI
-     * @apiVersion 1.0.0
-     *
-     * @apiDescription Get all beacon sets for the requesting user.
-     *
-     * @apiHeader {String} Content-Type Content-Type: application/json
-     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-     *
-     *
-     *
-     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
-     *
-     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-     *    [{
-     *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_1",
-     *        "beacon_urls": [{
-     *            "beacon_url": "https://myserver.com/beaconRX/load",
-     *            "beacon_type": "Load"
-     *        }]
-     *    },
-     *    {
-     *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_2",
-     *        "beacon_urls": [{
-     *           "beacon_url": "https://myserver.com/beaconRX2/load",
-     *           "beacon_type": "Load"
-     *        },
-     *        {
-     *           "beacon_url": "https://myserver.com/beaconRX2/play",
-     *           "beacon_type": "Play"
-     *        }]
-     *    }]
-     *
-     */
-
-
-
- // Delete a beacon set
-
- /**
-   * @api {delete} /v1/ssai/beaconset/BEACON_SET_ID Delete beacon set
-   * @apiName Delete beacon set
-   * @apiGroup SSAI
-   * @apiVersion 1.0.0
-   *
-   * @apiDescription Deletes a beacon set.
-   *
-   * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
-   *
-   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
-   *
-   * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
-   * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
-   *
-   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-   *    {
-   *        "beacon_set": {
-   *            "account_id": "USER's ACCOUNT ID",
-   *            "beacon_set_id": "BEACON_SET_ID",
-   *            "beacon_urls": [{
-   *                "beacon_url": "https://myserver.com/beaconRX/load",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/play",
-   *                "beacon_type": "Play"
-   *            }],
-   *            "updated_beacon_set": {
-   *                "beacon_set_id": "BEACON_SET_ID",
-   *                "beacon_urls": [{
-   *                    "beacon_url": "https://myserver.com/beaconRX/load",
-   *                    "beacon_type": "Load"
-   *                },
-   *                {
-   *                    "beacon_url": "https://myserver.com/beaconRX/play",
-   *                    "beacon_type": "Play"
-   *                }],
-   *                "account_id": "USER's ACCOUNT ID"
-   *            }
-   *        }
-   *    }
-   *
-   */
