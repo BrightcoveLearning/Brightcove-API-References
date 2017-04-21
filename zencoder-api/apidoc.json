@@ -1,6 +1,6 @@
 {
     "name": "Zencoder API",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Reference for the Brightcove Zencoder API, used to create and manage Zencoder encoding jobs.",
     "title": "Zencoder API Reference",
     "url": "https://app.zencoder.com/api",
