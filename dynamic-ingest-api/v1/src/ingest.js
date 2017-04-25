@@ -225,8 +225,26 @@
  *    {
  *      "master": {
  *          "url": "http://host/master.mp4"
+ *          "audio_tracks" [
+ *              {
+ *                  "language": "en",
+ *                  "variant": "main"
+ *              }
+ *          ]
  *      },
  *      "profile": "high-resolution",
+ *      "audio_tracks" [
+ *          {
+ *              "url": "https://my.assets.com/audio-fr.mp4"
+ *              "language": "fr",
+ *              "variant": "dub"
+ *          },
+ *          {
+ *              "url": "https://my.assets.com/audio-commentary.mp4"
+ *              "language": "en",
+ *              "variant": "commentary"
+ *          }
+ *      ]
  *      "poster": {
  *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
  *            "width": 640,
