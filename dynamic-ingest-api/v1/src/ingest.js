@@ -224,7 +224,7 @@
  * @apiParamExample {json} Ingest Request Example:
  *    {
  *      "master": {
- *          "url": "http://host/master.mp4"
+ *          "url": "http://host/master.mp4",
  *          "audio_tracks" [
  *              {
  *                  "language": "en",
