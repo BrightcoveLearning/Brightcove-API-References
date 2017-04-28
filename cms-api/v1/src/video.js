@@ -741,8 +741,8 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video Images Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
+ * @apiParamExample {Url} Get Audio Tracks Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
  *
  * @apiSuccess (Response Fields) {String} id id for the track
  * @apiSuccess (Response Fields) {String} language language for the track
@@ -791,6 +791,173 @@
  *        "is_default": true
  *      }
  *    ]
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// get an audio tracks
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/audio_tracks/:audio_track_id Get an Audio Track
+ * @apiName Get an Audio Track
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets an audio track for a video
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} audio_track_id the audio track ID.
+ *
+ * @apiParamExample {Url} Get Video Audio Track Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/en_main
+ *
+ * @apiSuccess (Response Fields) {String} id id for the track
+ * @apiSuccess (Response Fields) {String} language language for the track
+ * @apiSuccess (Response Fields) {String} variant the kind of track
+ * @apiSuccess (Response Fields) {Number} duration duration of the track
+ * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the track in bps
+ * @apiSuccess (Response Fields) {Boolean} is_default array of encoding rates for the track in bps
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "id": "en_alternate",
+ *      "language": "en",
+ *      "variant": "alternate",
+ *      "duration": 86100,
+ *      "encoding_rates": [
+ *        64000,
+ *        96000,
+ *        127000
+ *      ],
+ *      "is_default": false
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// update an audio tracks
+
+ /**
+ * @api {patch} /accounts/:account_id/videos/:video_id/audio_tracks/:audio_track_id Update an Audio Track
+ * @apiName Update an Audio Track
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Updates the metadata for an audio track for a video
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} audio_track_id the audio track ID.
+ *
+ * @apiParam (Request Body Fields) {String} [language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+ * @apiParam (Request Body Fields) {String="main","alternate","dub"."commentary"."descriptive"} [variant] The kind of audio track
+ * @apiParam (Request Body Fields) {Boolean} [is_default=false] Whether this is the default audio track
+ *
+ * @apiParamExample {JSON} Update Audio Track Example:
+ *    {
+ *        "language": "es",
+ *        "is_default": true
+ *    }
+ *
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 203 Accepted
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// delete an audio tracks
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id/audio_tracks/:audio_track_id Delete an Audio Track
+ * @apiName Delete an Audio Track
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Delete an audio track for a video
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} audio_track_id the audio track ID.
+ *
+ *
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 203 Accepted
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested

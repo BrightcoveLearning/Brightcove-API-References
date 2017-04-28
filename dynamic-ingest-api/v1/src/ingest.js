@@ -225,13 +225,48 @@
  *    {
  *      "master": {
  *          "url": "http://host/master.mp4",
- *          "audio_tracks" [
- *              {
- *                  "language": "en",
- *                  "variant": "main"
- *              }
- *          ]
- *      },
+ *      "profile": "high-resolution",
+ *      "audio_tracks" [
+ *          {
+ *              "url": "https://my.assets.com/audio-fr.mp4"
+ *              "language": "fr",
+ *              "variant": "dub"
+ *          },
+ *          {
+ *              "url": "https://my.assets.com/audio-commentary.mp4"
+ *              "language": "en",
+ *              "variant": "commentary"
+ *          }
+ *      ]
+ *      "poster": {
+ *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
+ *            "width": 640,
+ *            "height": 360
+ *        },
+ *        "thumbnail": {
+ *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-thumbnail.png",
+ *            "width": 160,
+ *            "height": 90
+ *        },
+ *        "capture-images": false,
+ *        "text_tracks": [
+ *            {
+ *                "url": "http://learning-services-media.brightcove.com/captions/for_video/Water-in-Motion.vtt",
+ *                "srclang": "en",
+ *                "kind": "captions",
+ *                "label": "EN",
+ *                "default": true
+ *            }
+ *        ],
+ *        "callbacks": [
+ *            "http://solutions.brightcove.com/bcls/di-api/di-callbacks.php"
+ *        ]
+ *    }
+ *
+ * @apiParamExample {json} Ingest Request Example:
+ *    {
+ *      "master": {
+ *          "url": "http://host/master.mp4",
  *      "profile": "high-resolution",
  *      "audio_tracks" [
  *          {
