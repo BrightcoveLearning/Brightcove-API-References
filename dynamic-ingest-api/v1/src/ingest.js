@@ -203,7 +203,15 @@
  * @apiParam (Request Body Fields) {Object} [master] the video master to be ingested
  * @apiParam (Request Body Fields) {Url} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
  * @apiParam (Request Body Fields) {Boolean} [master.use_archived_master] For retranscode requests, will use the archived master if set to `true`; if set to `false`, you must also include the `url` for the source video
+ * @apiParam (Request Body Fields) {Object[]} [master.audio_tracks] Contains metadata for the audio track of the video (used with multiple audio tracks; should __not__ be included if no video is being ingested)
+ * @apiParam (Request Body Fields) {String} [master.audio_tracks.language] Language for the audio track included in the video - a two-letter code from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+ * @apiParam (Request Body Fields) {String="main","alternate","dub","commentary","descriptive"} [master.audio_tracks.variant] The kind of audio track contained in the video - usually `main` for the video's embedded audio track
  * @apiParam (Request Body Fields) {String} [profile] ingest profile to use for transcoding; if absent, account default profile will be used
+ * @apiParam (Request Body Fields) {Object} [audio_tracks] Contains information about additional audio tracks for the video
+ * @apiParam (Request Body Fields) {Boolean} [audio_tracks.merge_with_existing] Whether the audio tracks should be merged with existing ones or replace them
+ * @apiParam (Request Body Fields) {Object[]} [audio_tracks.masters] Array of information about the audio tracks
+ * @apiParam (Request Body Fields) {String} [audio_tracks.masters.language] Language for the audio track included in the video - a two-letter code from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+ * @apiParam (Request Body Fields) {String="main","alternate","dub","commentary","descriptive"} [audio_tracks.masters.variant] The kind of audio track contained in the video
  * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
  * @apiParam (Request Body Fields) {Url} text_tracks.url URL for a WebVTT file
  * @apiParam (Request Body Fields) {String} text_tracks.srclang ISO 639 2-letter (alpha-2) language code for the text tracks
@@ -226,18 +234,6 @@
  *      "master": {
  *          "url": "http://host/master.mp4",
  *      "profile": "high-resolution",
- *      "audio_tracks" [
- *          {
- *              "url": "https://my.assets.com/audio-fr.mp4"
- *              "language": "fr",
- *              "variant": "dub"
- *          },
- *          {
- *              "url": "https://my.assets.com/audio-commentary.mp4"
- *              "language": "en",
- *              "variant": "commentary"
- *          }
- *      ]
  *      "poster": {
  *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
  *            "width": 640,
@@ -263,23 +259,33 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Ingest Request Example:
+ * @apiParamExample {json} Ingest Request with Audio Tracks Example:
  *    {
  *      "master": {
  *          "url": "http://host/master.mp4",
- *      "profile": "high-resolution",
- *      "audio_tracks" [
- *          {
- *              "url": "https://my.assets.com/audio-fr.mp4"
- *              "language": "fr",
- *              "variant": "dub"
+ *          "audio_tracks": [
+ *              {
+ *                  "language": "en",
+ *                  "variant": "main"
+ *              }
+ *              ]
  *          },
- *          {
- *              "url": "https://my.assets.com/audio-commentary.mp4"
- *              "language": "en",
- *              "variant": "commentary"
- *          }
- *      ]
+ *      "profile": "high-resolution",
+ *      "audio_tracks" {
+ *          "merge_with_existing": false,
+ *          "masters": [
+ *              {
+ *                  "url": "https://my.assets.com/audio-fr.mp4"
+ *                  "language": "fr",
+ *                  "variant": "dub"
+ *              },
+ *              {
+ *                  "url": "https://my.assets.com/audio-commentary.mp4"
+ *                  "language": "en",
+ *                  "variant": "commentary"
+ *              }
+ *          ]
+ *      },
  *      "poster": {
  *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
  *            "width": 640,
