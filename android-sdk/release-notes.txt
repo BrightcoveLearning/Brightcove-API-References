@@ -1,5 +1,15 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 4.13.5:
+
+  SDK changes:
+
+    * Added support to use density-independent pixels for caption edge types.
+
+  Brightcove ExoPlayer changes:
+
+    * Added support to pull custom headers from the video properties for Widevine license acquisition.
+
 Version 4.13.4:
 
   SDK changes:
