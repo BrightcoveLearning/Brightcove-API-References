@@ -7,7 +7,7 @@
  * @apiGroup Ingest
  * @apiVersion 1.0.0
  *
- * @apiDescription Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. __NOTE that before you ingest a new video, you must first make a [Create Video request](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video).__
+ * @apiDescription Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. **NOTE that before you ingest a new video, you must first make a [Create Video request](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video).**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
