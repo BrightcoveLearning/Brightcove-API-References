@@ -13,6 +13,8 @@
         "Get_Video_Images",
         "Get_Audio_Tracks",
         "Get_an_Audio_Track",
+        "Update_an_Audio_Track",
+        "Delete_an_Audio_Track",
         "Get_Digital_Master_Info",
         "Get_Playlists_for_Video",
         "Create_Video",
