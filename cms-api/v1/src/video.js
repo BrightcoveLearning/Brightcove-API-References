@@ -882,7 +882,7 @@
  *
  */
 
-// update an audio tracks
+// update an audio track
 
  /**
  * @api {patch} /accounts/:account_id/videos/:video_id/audio_tracks/:audio_track_id Update an Audio Track
@@ -910,8 +910,28 @@
  *    }
  *
  *
+ * @apiSuccess (Response Fields) {String} id id for the track
+ * @apiSuccess (Response Fields) {String} language language for the track
+ * @apiSuccess (Response Fields) {String} variant the kind of track
+ * @apiSuccess (Response Fields) {Number} duration duration of the track
+ * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the track in bps
+ * @apiSuccess (Response Fields) {Boolean} is_default array of encoding rates for the track in bps
+ *
  * @apiSuccessExample {json} Success Response:
- *    HTTP/1.1 203 Accepted
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "id": "en_alternate",
+ *      "language": "en",
+ *      "variant": "alternate",
+ *      "duration": 86100,
+ *      "encoding_rates": [
+ *        64000,
+ *        96000,
+ *        127000
+ *      ],
+ *      "is_default": false
+ *    }
+ *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
