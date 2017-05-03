@@ -1,5 +1,11 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 4.13.6:
+
+  SDK changes:
+
+    * Improved Analytics to detect and report tablet devices reliably without using Telephony service.
+
 Version 4.13.5:
 
   SDK changes:
