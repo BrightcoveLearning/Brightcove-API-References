@@ -460,7 +460,7 @@
  * @apiSuccess (Response Field) {String} codec the video codec for the rendition
  * @apiSuccess (Response Field) {String} container the video container for the rendition
  * @apiSuccess (Response Field) {Number} duration duration in milliseconds
- * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
+ * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in bps
  * @apiSuccess (Response Field) {Number} height frame height in pixels
  * @apiSuccess (Response Field) {Boolean} remote whether the source is a remote asset
  * @apiSuccess (Response Field) {Number} size file size in bytes
@@ -751,7 +751,7 @@
  * @apiSuccess (Response Field) {String} controller_type video controller type
  * @apiSuccess (Response Field) {String} current_filename the file name
  * @apiSuccess (Response Field) {Object} drm DRM licensing information
- * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
+ * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in bps
  * @apiSuccess (Response Field) {Number} frame_height frame height in pixels
  * @apiSuccess (Response Field) {Number} frame_width frame width in pixels
  * @apiSuccess (Response Field) {Object} hds HDS information
