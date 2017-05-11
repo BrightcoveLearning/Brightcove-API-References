@@ -162,10 +162,10 @@
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: Resource not found
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} ILLEGAL_QUERY 400: The search string syntax was invalid - example: 1) doing a `tags` search that ends with a comma or has an unclosed quote
  * @apiError (Error 4xx) {json} AD_CONFIG_NOT_FOUND 400: Ad configuration specified in an SSAI request was not found
  * @apiError (Error 4xx) {json} AD_CONFIG_INACTIVE 400: Ad configuration specified in an SSAI request is inactive
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
- * @apiError (Error 4xx) {json} BAD_VALUE 403: Spelling error or other use of non-existent field
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
@@ -1086,9 +1086,9 @@
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
-  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
-  * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
+  * @apiError (Error 4xx) {json} BAD_VALUE 403: Spelling error or other use of non-existent field
+  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
+  * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
   *
   * @apiErrorExample {json} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
@@ -1304,9 +1304,12 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
+ * @apiError (Error 4xx) {json} BAD_VALUE 403: Spelling error or other use of non-existent field
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
+ * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: the JSON data was not valid - error messages vary depending on the problem
+ * @apiError (Error 5xx) {json} UNKNOWN 500: an unknown internal error occurred - this might be a temporary system issue, but if the problem persists, it is likely an uncaught error in the request - contact Support
+ * @apiError (Error 5xx) {json} TIMEOUT 503: Server likely too busy - try again later
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1550,6 +1553,8 @@
   *    ]
   *
   *
+  * @apiError (Error 4xx) {json} REFERENCES_EXIST 400: You are attempting to delete a video that is included in at least one playlist
+  * @apiError (Error 4xx) {json} SHARED_VIDEO 400: Deletion of shared videos is not yet supported
   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
