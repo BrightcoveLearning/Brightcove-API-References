@@ -326,7 +326,7 @@
   * @apiParamExample {json} Ingest Slate Media Source Asset example:
   *    {
   *        "source_url": "https://somesourceasset.com/slate-to-ingest.mp4",
-  *        "account_id": "ACCOUNT_ID"
+  *        "account_id": "ACCOUNT_ID",
   *        "source_description": "User identifiable description for the slate"
   *    }
   *
