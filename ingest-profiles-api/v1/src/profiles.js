@@ -46,6 +46,7 @@
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
   * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
+  * @apiParam (Request Body Fields) {Number} [renditions.segment_seconds=10] number of seconds of content to include in segments (the default for HLS is `10`; for DASH: `2`)
   * @apiParam (Request Body Fields) {Object} [renditions.skip] A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
   * @apiParam (Request Body Fields) {Number} [renditions.skip.min_audio_bitrate] the minimum audio bitrate that the source must have (kbps)
   * @apiParam (Request Body Fields) {Number} [renditions.skip.max_audio_bitrate] the maximum audio bitrate that the source must have (kbps)
