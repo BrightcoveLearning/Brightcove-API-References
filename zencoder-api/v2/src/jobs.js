@@ -52,6 +52,7 @@
  * @apiParam (Request Body Fields) {String="buydrm"} [drm.provider] The Digital Rights Management (DRM) provider used. **Only required for PlayReady**
  * @apiParam (Request Body Fields) {String} [drm.user_key] The user key from the DRM provider - 32 hexadecimal characters (with optional dashes)
  * @apiParam (Request Body Fields) {String} [drm.server_key] The server key from the DRM provider - 32 hexadecimal characters (with optional dashes)
+ * @apiParam (Request Body Fields) {String} [drm.content_id] Unique identifier for the content - 32 hexadecimal characters (with optional dashes)
  * @apiParam (Request Body Fields) {Object} [outputs.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
  * @apiParam (Request Body Fields) {Boolean} [outputs.rtmp_keep_alive=false] Send empty script packets in an RTMP output when no data is being recieved
  * @apiParam (Request Body Fields) {String} [outputs.format] The output format to use - defaults determined by the output filename and then video or audio codec; otherwise: `mp4` (for standard outputs); `ts` (for segmented outputs)
