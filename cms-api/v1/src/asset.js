@@ -244,7 +244,7 @@
  *
  */
 
-// post renditions
+// add rendition
 
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/renditions Add Rendition
@@ -265,6 +265,7 @@
  * @apiParam (Request Body Fields) {Number} [frame_height] frame height in pixels
  * @apiParam (Request Body Fields) {Number} [frame_width] frame width in pixels
  * @apiParam (Request Body Fields) {String} [name] asset name
+ * @apiParam (Request Body Fields) {Boolean} [progressive_download] whether this is a progressive download video - **required for MP4 renditions**
  * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [size] the size of the asset in bytes (integer)
@@ -295,7 +296,7 @@
  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
  * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download
  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
