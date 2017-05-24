@@ -962,6 +962,12 @@
   * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
   * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags - note that tags may __not__ contain commas
   * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
+  * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
+  * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
+  * @apiParam (Request Body Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
+  * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+  * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
+  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
   * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
