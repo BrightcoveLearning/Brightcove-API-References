@@ -38,10 +38,11 @@
  * @apiParam (Request Body Fields) {Object} add_cdns.token_auth Token authentication details
  * @apiParam (Request Body Fields) {String} add_cdns.token_auth.auth_type Token authentication type - currently, the only supported value is `Akamai2.0`
  * @apiParam (Request Body Fields) {String} add_cdns.token_auth.key Your Akamai token auth password
- * @apiParam (Request Body Fields) {String} add_cdns.token_auth.token_name Your Akamai token token name
+ * @apiParam (Request Body Fields) {String{5..12}} add_cdns.token_auth.token_name Your Akamai token token name
  * @apiParam (Request Body Fields) {Object} add_cdns.token_auth.media Your Akamai token token name
- * @apiParam (Request Body Fields) {String} add_cdns.token_auth.media.start_time The time to apply token auth, usually `now`
- * @apiParam (Request Body Fields) {ttl} add_cdns.token_auth.media.ttl The time to live in seconds
+ * @apiParam (Request Body Fields) {Mixed} [add_cdns.token_auth.media.start_time="now"] The time to apply token auth - `"now"` or epoch time in seconds
+ * @apiParam (Request Body Fields) {Number} [add_cdns.token_auth.media.end_time] The time to end token auth, epoch time in seconds
+ * @apiParam (Request Body Fields) {ttl} [add_cdns.token_auth.media.ttl] The time to live in seconds - either `end_time` or `ttl` is required
  * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for live and VOD assets to be created from the live stream.
  * @apiParam (Request Body Fields) {String} outputs.label Label for the live or VOD asset.
  * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If `live_stream` is false, or is not set, the output will be treated as a VOD output.
