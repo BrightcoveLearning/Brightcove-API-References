@@ -73,5 +73,8 @@ echo ${txtrst}
 cd ../policy-api
 echo ${txtyel}generating docs for policy-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-new
+cd ../zencoder-api
+echo ${txtyel}generating docs for zencoder api
+apidoc -i v2/src/  -f .js -o v2/doc/ -t ../template-new
 echo ${txtgrn}Finished!
 echo ${txtrst}
