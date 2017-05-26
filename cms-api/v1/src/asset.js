@@ -2053,7 +2053,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets the hls_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Gets the hls_manifest for a given video. **Notes**: 1) you can use `/videos/ref:reference_id` instead of `/videos/video_id` 2) this method only returns a **remote asset** HTL manifest, **not** manifests for ingested videos
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
