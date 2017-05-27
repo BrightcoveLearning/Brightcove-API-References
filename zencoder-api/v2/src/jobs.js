@@ -422,7 +422,7 @@
   * @apiGroup Jobs
   * @apiVersion 2.0.0
   *
-  * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50.
+  * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50. Note that historical jobs data is kept by Zencoder for 60 days - if you need to keep jobs data for longer periods, you need to retrieve it within 60 days and save it in your own data storage.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
