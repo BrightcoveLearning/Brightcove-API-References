@@ -1063,7 +1063,7 @@
    * @apiGroup Jobs
    * @apiVersion 2.0.0
    *
-   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them.
+   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them. **Note** that jobs cannot be finished when archive output is transcoding.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
