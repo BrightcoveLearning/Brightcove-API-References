@@ -98,7 +98,8 @@
  * @apiParam (Request Body Fields) {Object[]} [outputs.thumbnails] Defines a set of thumbnails to be captured for each output
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.label] A label to identify each set of thumbnail groups
  * @apiParam (Request Body Fields) {String="png", "jpg"} [outputs.thumbnails.format="png"] The format of the thumbnail image
- * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.format="png"] A number of thumbnails, evenly-spaced
+ * @apiParam (Request Body Fields) {String="png","jpg"} [outputs.thumbnails.format="png"] Format for the thumbnails
+ * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.number] A number of thumbnails, evenly-spaced
  * @apiParam (Request Body Fields) {Boolean} [outputs.thumbnails.start_at_first_frame=false] Start generating the thumbnails starting at the first frame
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.interval] Take thumbnails at an even interval, in seconds
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.interval_in_frames] Take thumbnails at an even interval, in frames
