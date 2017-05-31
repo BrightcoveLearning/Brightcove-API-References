@@ -34,7 +34,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
+ * @apiSuccess (Response Fields) {Object} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
  * @apiSuccess (Response Fields) {Object[]} poster_sources array of poster source maps (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} poster_sources.src URL for a poster source image (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} poster URL for the default poster source image
