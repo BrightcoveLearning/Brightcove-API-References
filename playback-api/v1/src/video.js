@@ -61,7 +61,7 @@
  * @apiSuccess (Response Fields) {String} sources.container the video container
  * @apiSuccess (Response Fields) {String} sources.app_name the address for rtmp streams
  * @apiSuccess (Response Fields) {String} sources.type the type (for HLS streams)
- * @apiSuccess (Response Fields) {Object} sources.key_systems string values that denote the kind of encryption used for DRM packaged source
+ * @apiSuccess (Response Fields) {Object} sources.key_systems set of string values that denote the kind of encryption used for DRM packaged source
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {Object[]} text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
