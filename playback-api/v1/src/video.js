@@ -300,30 +300,30 @@
  *"description": null,
  *"poster_sources": [
 *   {
-*     "src": "http://brightcove.vo.llnwd.net/e1/pd/3742124955001/3742124955001_5435275785001_5435275519001-vs.jpg?pubId=3742124955001&videoId=5435275519001"
+*     "src": "http://brightcove.vo.llnwd.net/e1/pd/3742124111001/3742124111001_5435275111001_5435211119001-vs.jpg?pubId=3742111155001&videoId=5435211119001"
 *   },
 *   {
-*     "src": "https://brightcove.hs.llnwd.net/e1/pd/3742124955001/3742124955001_5435275785001_5435275519001-vs.jpg?pubId=3742124955001&videoId=5435275519001"
+*     "src": "https://brightcove.hs.llnwd.net/e1/pd/3742124111001/3742124111001_5435275111001_5435275111001-vs.jpg?pubId=3742124111001&videoId=5435211119001"
 *   }
 * ],
 * "tags": [],
 * "cue_points": [],
 * "custom_fields": {},
-* "account_id": "3742124955001",
+* "account_id": "3742124111001",
 * "sources": [
 *   {
 *     "type": "application/vnd.apple.mpegurl",
-*     "src": "http://hlsak-a.akamaihd.net/3742124955001/3742124955001_5435275961001_5435275519001.m3u8?pubId=3742124955001&videoId=5435275519001",
+*     "src": "http://hlsak-a.akamaihd.net/3742124111001/3742124111001_5435271111001_5435211119001.m3u8?pubId=3742124111001&videoId=5435271119001",
 *     "key_systems": {
 *       "com.apple.fps.1_0": {
 *         "key_request_url": "https://fps.brightcove.com/v1/fairplay_session_playback"
 *       }
 *     },
-*     "asset_id": "5435275961001"
+*     "asset_id": "5435211161001"
 *   },
 *   {
 *     "type": "application/vnd.apple.mpegurl",
-*     "src": "https://hlsak-a.akamaihd.net/3742124955001/3742124955001_5435275961001_5435275519001.m3u8?pubId=3742124955001&videoId=5435275519001",
+*     "src": "https://hlsak-a.akamaihd.net/3742124111001/3742124955001_5435271111001_5435271119001.m3u8?pubId=3742124111001&videoId=5435211119001",
 *     "key_systems": {
 *       "com.apple.fps.1_0": {
 *         "key_request_url": "https://fps.brightcove.com/v1/fairplay_session_playback"
@@ -333,31 +333,31 @@
 *   },
 *   {
 *     "type": "application/dash+xml",
-*     "src": "http://hlsak-a.akamaihd.net/3742124955001/3742124955001_5435275953001_5435275519001.mpd?pubId=3742124955001&videoId=5435275519001",
+*     "src": "http://hlsak-a.akamaihd.net/3742124111001/3742124111001_5435271113001_5435211119001.mpd?pubId=3742124111001&videoId=5435211119001",
 *     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
 *     "key_systems": {
 *       "com.widevine.alpha": {
-*         "license_url": "https://wvlic.brightcove.com/proxy/5435275519001"
+*         "license_url": "https://wvlic.brightcove.com/proxy/5435211119001"
 *       },
 *       "com.microsoft.playready": {
-*         "license_url": "https://prlic.brightcove.com/license/3742124955001"
+*         "license_url": "https://prlic.brightcove.com/license/3742124111001"
 *       }
 *     },
-*     "asset_id": "5435275953001"
+*     "asset_id": "5435275111001"
 *   },
 *   {
 *     "type": "application/dash+xml",
-*     "src": "https://hlsak-a.akamaihd.net/3742124955001/3742124955001_5435275953001_5435275519001.mpd?pubId=3742124955001&videoId=5435275519001",
+*     "src": "https://hlsak-a.akamaihd.net/3742124111001/3742124111001_5435275111001_5435211119001.mpd?pubId=3742124111001&videoId=5435211119001",
 *     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
 *     "key_systems": {
 *       "com.widevine.alpha": {
-*         "license_url": "https://wvlic.brightcove.com/proxy/5435275519001"
+*         "license_url": "https://wvlic.brightcove.com/proxy/5435211119001"
 *       },
 *       "com.microsoft.playready": {
-*         "license_url": "https://prlic.brightcove.com/license/3742124955001"
+*         "license_url": "https://prlic.brightcove.com/license/3742124111001"
 *       }
 *     },
-*     "asset_id": "5435275953001"
+*     "asset_id": "5435211153001"
 *   }
 * ],
 * "name": "Brown_Pelican -FP, WV, and multiple captions",
@@ -369,75 +369,75 @@
 * "text_tracks": [
 *   {
 *     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
+*     "account_id": "3742124111001",
 *     "default": false,
 *     "sources": [
 *       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_cb636d32-eb07-491a-b741-2a9eeee9e611.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124111001_cb636d32-eb07-491a-b741-2a9111e9e611.vtt?pubId=3742124111001&videoId=5435211119001"
 *       },
 *       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_cb636d32-eb07-491a-b741-2a9eeee9e611.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124111001/201705/1640/3742124111001_cb636d32-eb07-491a-b741-2a9111e9e611.vtt?pubId=3742124111001&videoId=5435211119001"
 *       }
 *     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_cb636d32-eb07-491a-b741-2a9eeee9e611.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "cb636d32-eb07-491a-b741-2a9eeee9e611",
+*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124111001_cb636d32-eb07-491a-b741-2a9111e9e611.vtt?pubId=3742124111001&videoId=5435211119001",
+*     "asset_id": "cb636d32-eb07-491a-b741-2a9111e9e611",
 *     "label": "ES",
-*     "id": "585bdfc2-74c0-4c1b-a2d6-d5e5d50aa4ed",
+*     "id": "585bdfc2-74c0-4c1b-a2d6-d5e5d111a4ed",
 *     "kind": "captions",
 *     "srclang": "es"
 *   },
 *   {
 *     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
+*     "account_id": "3742124111001",
 *     "default": true,
 *     "sources": [
 *       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_dadfa799-f10f-4af9-ad77-12dea36c2a91.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124111001_dadfa799-f10f-4af9-ad77-1211136c2a91.vtt?pubId=3742124111001&videoId=5435211119001"
 *       },
 *       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_dadfa799-f10f-4af9-ad77-12dea36c2a91.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124111001/201705/1640/3742124111001_dadfa799-f10f-4af9-ad77-1211136c2a91.vtt?pubId=3742124111001&videoId=5435211119001"
 *       }
 *     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_dadfa799-f10f-4af9-ad77-12dea36c2a91.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "dadfa799-f10f-4af9-ad77-12dea36c2a91",
+*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124111001_dadfa799-f10f-4af9-ad77-1211136c2a91.vtt?pubId=3742124111001&videoId=5435211119001",
+*     "asset_id": "dadfa799-f10f-4af9-ad77-1211136c2a91",
 *     "label": "EN",
-*     "id": "6493938a-37cf-468a-b853-760c002171ec",
+*     "id": "6493938a-37cf-468a-b853-760c011171ec",
 *     "kind": "captions",
 *     "srclang": "en"
 *   },
 *   {
 *     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
+*     "account_id": "3742124111001",
 *     "default": false,
 *     "sources": [
 *       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_c4890c0b-f04c-45f9-8179-366452285099.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124111001_c4890c0b-f04c-45f9-8179-361112285099.vtt?pubId=3742124111001&videoId=5435211119001"
 *       },
 *       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_c4890c0b-f04c-45f9-8179-366452285099.vtt?pubId=3742124955001&videoId=5435275519001"
+*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124111001/201705/1640/3742124111001_c4890c0b-f04c-45f9-8179-366451115099.vtt?pubId=3742124111001&videoId=5435211119001"
 *       }
 *     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_c4890c0b-f04c-45f9-8179-366452285099.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "c4890c0b-f04c-45f9-8179-366452285099",
+*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124111001/201705/1640/3742124955001_c4890c0b-f04c-45f9-8179-366451115099.vtt?pubId=3742124111001&videoId=5435211119001",
+*     "asset_id": "c4890c0b-f04c-45f9-8179-366451115099",
 *     "label": "JA",
-*     "id": "ba650a72-b41d-49a1-8ad3-5060b0e0f875",
+*     "id": "ba650a72-b41d-49a1-8ad3-5060b111f875",
 *     "kind": "captions",
 *     "srclang": "ja"
 *   }
 * ],
 * "updated_at": "2017-05-16T00:09:03.505Z",
-* "thumbnail": "http://brightcove.vo.llnwd.net/e1/pd/3742124955001/3742124955001_5435275761001_5435275519001-th.jpg?pubId=3742124955001&videoId=5435275519001",
-* "poster": "http://brightcove.vo.llnwd.net/e1/pd/3742124955001/3742124955001_5435275785001_5435275519001-vs.jpg?pubId=3742124955001&videoId=5435275519001",
+* "thumbnail": "http://brightcove.vo.llnwd.net/e1/pd/3742124111001/3742124111001_5435271111001_5435211119001-th.jpg?pubId=3742124111001&videoId=5435211119001",
+* "poster": "http://brightcove.vo.llnwd.net/e1/pd/3742124111001/3742124111001_5435271115001_5435211119001-vs.jpg?pubId=3742124111001&videoId=5435211119001",
 * "offline_enabled": false,
 * "link": null,
-* "id": "5435275519001",
+* "id": "5435211119001",
 * "ad_keys": null,
 * "thumbnail_sources": [
 *   {
-*     "src": "http://brightcove.vo.llnwd.net/e1/pd/3742124955001/3742124955001_5435275761001_5435275519001-th.jpg?pubId=3742124955001&videoId=5435275519001"
+*     "src": "http://brightcove.vo.llnwd.net/e1/pd/3742124111001/3742124111001_5435211161001_5435211119001-th.jpg?pubId=3742124111001&videoId=5435211119001"
 *   },
 *   {
-*     "src": "https://brightcove.hs.llnwd.net/e1/pd/3742124955001/3742124955001_5435275761001_5435275519001-th.jpg?pubId=3742124955001&videoId=5435275519001"
+*     "src": "https://brightcove.hs.llnwd.net/e1/pd/3742124111001/3742124111001_5435271111001_5435211119001-th.jpg?pubId=3742124111001&videoId=5435211119001"
 *   }
 * ],
 * "created_at": "2017-05-15T22:33:18.529Z"
