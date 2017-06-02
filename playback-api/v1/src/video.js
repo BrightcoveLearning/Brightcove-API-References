@@ -373,25 +373,6 @@
 *     "default": false,
 *     "sources": [
 *       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_36e6b888-39a0-4a44-8efd-82ed1ef68b6c.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_36e6b888-39a0-4a44-8efd-82ed1ef68b6c.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_36e6b888-39a0-4a44-8efd-82ed1ef68b6c.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "36e6b888-39a0-4a44-8efd-82ed1ef68b6c",
-*     "label": "AR",
-*     "id": "4244749b-a3e0-4624-8870-905934f5344c",
-*     "kind": "captions",
-*     "srclang": "ar"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
 *         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_cb636d32-eb07-491a-b741-2a9eeee9e611.vtt?pubId=3742124955001&videoId=5435275519001"
 *       },
 *       {
@@ -430,63 +411,6 @@
 *     "default": false,
 *     "sources": [
 *       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_c59c24f8-6fd3-4fab-ab54-4ca0bdb03922.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_c59c24f8-6fd3-4fab-ab54-4ca0bdb03922.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_c59c24f8-6fd3-4fab-ab54-4ca0bdb03922.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "c59c24f8-6fd3-4fab-ab54-4ca0bdb03922",
-*     "label": "TA",
-*     "id": "8a9792e9-70e0-4418-bf8d-af028bfb3a50",
-*     "kind": "captions",
-*     "srclang": "ta"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_f9d157fe-e89b-4177-ad0c-6de5c1c17489.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_f9d157fe-e89b-4177-ad0c-6de5c1c17489.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_f9d157fe-e89b-4177-ad0c-6de5c1c17489.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "f9d157fe-e89b-4177-ad0c-6de5c1c17489",
-*     "label": "HI",
-*     "id": "9abb134b-209d-465b-9425-8edbb307d3e4",
-*     "kind": "captions",
-*     "srclang": "hi"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_9e0ff652-c328-4d3a-8643-7e56ac249205.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_9e0ff652-c328-4d3a-8643-7e56ac249205.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_9e0ff652-c328-4d3a-8643-7e56ac249205.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "9e0ff652-c328-4d3a-8643-7e56ac249205",
-*     "label": "KN",
-*     "id": "a4fae714-60ee-421b-baf6-ba7e10ef3eaf",
-*     "kind": "captions",
-*     "srclang": "kn"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
 *         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_c4890c0b-f04c-45f9-8179-366452285099.vtt?pubId=3742124955001&videoId=5435275519001"
 *       },
 *       {
@@ -499,63 +423,6 @@
 *     "id": "ba650a72-b41d-49a1-8ad3-5060b0e0f875",
 *     "kind": "captions",
 *     "srclang": "ja"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_86c37113-8082-4dd3-9431-60c83f0c20fb.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_86c37113-8082-4dd3-9431-60c83f0c20fb.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_86c37113-8082-4dd3-9431-60c83f0c20fb.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "86c37113-8082-4dd3-9431-60c83f0c20fb",
-*     "label": "KO",
-*     "id": "c8888d08-a5a1-4cbd-9512-0d8547e1a44e",
-*     "kind": "captions",
-*     "srclang": "ko"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_82a83b74-f945-48e2-931e-ca82206e1b39.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_82a83b74-f945-48e2-931e-ca82206e1b39.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_82a83b74-f945-48e2-931e-ca82206e1b39.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "82a83b74-f945-48e2-931e-ca82206e1b39",
-*     "label": "FR",
-*     "id": "ea76a1e8-8ea4-497c-80c6-bd86e3cc69fa",
-*     "kind": "captions",
-*     "srclang": "fr"
-*   },
-*   {
-*     "mime_type": "text/vtt",
-*     "account_id": "3742124955001",
-*     "default": false,
-*     "sources": [
-*       {
-*         "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_5c32e4a4-ce35-4ab9-8dc2-faf71300be8c.vtt?pubId=3742124955001&videoId=5435275519001"
-*       },
-*       {
-*         "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/3742124955001/201705/1640/3742124955001_5c32e4a4-ce35-4ab9-8dc2-faf71300be8c.vtt?pubId=3742124955001&videoId=5435275519001"
-*       }
-*     ],
-*     "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/3742124955001/201705/1640/3742124955001_5c32e4a4-ce35-4ab9-8dc2-faf71300be8c.vtt?pubId=3742124955001&videoId=5435275519001",
-*     "asset_id": "5c32e4a4-ce35-4ab9-8dc2-faf71300be8c",
-*     "label": "DE",
-*     "id": "fd68b353-bc5f-4040-8b00-578878b306ac",
-*     "kind": "captions",
-*     "srclang": "de"
 *   }
 * ],
 * "updated_at": "2017-05-16T00:09:03.505Z",
