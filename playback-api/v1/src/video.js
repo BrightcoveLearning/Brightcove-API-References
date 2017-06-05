@@ -316,7 +316,7 @@
 *     "src": "http://hlsak-a.akamaihd.net/3742124111001/3742124111001_5435271111001_5435211119001.m3u8?pubId=3742124111001&videoId=5435271119001",
 *     "key_systems": {
 *       "com.apple.fps.1_0": {
-*         "key_request_url": "https://yourkeyrequesturl.com"
+*         "key_request_url": "https://yourfpskeyrequesturl"
 *       }
 *     },
 *     "asset_id": "5435211161001"
@@ -326,7 +326,7 @@
 *     "src": "https://hlsak-a.akamaihd.net/3742124111001/3742124955001_5435271111001_5435271119001.m3u8?pubId=3742124111001&videoId=5435211119001",
 *     "key_systems": {
 *       "com.apple.fps.1_0": {
-*         "key_request_url": "https://yourfpskeyrequesturl.com"
+*         "key_request_url": "https://yourfpskeyrequesturl"
 *       }
 *     },
 *     "asset_id": "5435275961001"
@@ -337,10 +337,10 @@
 *     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
 *     "key_systems": {
 *       "com.widevine.alpha": {
-*         "license_url": "https://yourwidevinelicenseurl.com"
+*         "license_url": "https://yourwidevinelicenseurl"
 *       },
 *       "com.microsoft.playready": {
-*         "license_url": "https://yourplayreadylicenseurl.com"
+*         "license_url": "https://yourplayreadylicenseurl"
 *       }
 *     },
 *     "asset_id": "5435275111001"
@@ -351,10 +351,10 @@
 *     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
 *     "key_systems": {
 *       "com.widevine.alpha": {
-*         "license_url": "https://yourwidevinelicenseurl.com"
+*         "license_url": "https://yourwidevinelicenseurl"
 *       },
 *       "com.microsoft.playready": {
-*         "license_url": "https://yourplayreadylicenseurl.com"
+*         "license_url": "https://yourplayreadylicenseurl"
 *       }
 *     },
 *     "asset_id": "5435211153001"

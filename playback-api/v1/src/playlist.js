@@ -6,7 +6,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a playlist object for the account. > __Note:__ The raw API JSON response is not suitable with the player. Use the player.catalog.transformVideoResponse() function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility.
+ * @apiDescription Gets a playlist object for the account. __Note:__ The raw API JSON response is not suitable with the player. Use the player.catalog.transformVideoResponse() function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility.
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
  *
