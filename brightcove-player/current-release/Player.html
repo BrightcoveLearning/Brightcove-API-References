@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Brightcove Player v5.20.1 Class: Player</title>
+	<title>Brightcove Player v5.22.2 Class: Player</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,7 +20,7 @@
 <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
 <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Brightcove Player v5.20.1</a>
+		<a class="navbar-brand" href="index.html">Brightcove Player v5.22.2</a>
 		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -8022,6 +8022,125 @@ full screen on ESC key</p>
             
 <hr>
 <dt>
+    <h4 class="name" id="getVideoPlaybackQuality"><span class="type-signature"></span>getVideoPlaybackQuality()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets available media playback quality metrics as specified by the W3C's Media
+Playback Quality API.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		player.js
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://wicg.github.io/media-playback-quality">Spec</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>An object with supported media playback quality metrics or undefined if there
+        is no tech or the tech does not support it.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="hasClass"><span class="type-signature"></span>hasClass(classToCheck)</h4>
     
     
@@ -11938,6 +12057,192 @@ playback, for instance.</p>
     </dt>
     <dd>
         
+<span class="param-type"><a href="Player.html">Player</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="playsinline"><span class="type-signature"></span>playsinline( [value])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Set or unset the playsinline attribute.
+Playsinline tells the browser that non-fullscreen playback is preferred.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><ul>
+<li>true means that we should try to play inline by default<pre class="prettyprint source"><code> - false means that we should use the browser's default playback mode,
+   which in most cases is inline. iOS Safari is a notable exception
+   and plays fullscreen by default.</code></pre></li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		player.js
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p><a href="https://html.spec.whatwg.org/#attr-video-playsinline">Spec</a></p></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>the current value of playsinline<pre class="prettyprint source"><code>  - the player when setting</code></pre></li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
 <span class="param-type"><a href="Player.html">Player</a></span>
 
 
@@ -18858,179 +19163,179 @@ reason to prevent playback, use <code>myPlayer.one('play');</code> instead.</p>
 <dd>
 
     
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type"><a href="EventTarget.html#~Event">EventTarget~Event</a></span>
-
-
-</h5>
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		player.js
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:fullscreenchange">fullscreenchange</h4>
-    
-    
-</dt>
-<dd>
-
-    
-
-    
-
-    
-        <h5>Type: 
-<span class="param-type"><a href="EventTarget.html#~Event">EventTarget~Event</a></span>
-
-
-</h5>
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
-	<dd class="tag-source">
-		player.js
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="event:fullscreenchange">fullscreenchange</h4>
-    
-    
-</dt>
-<dd>
-
-    
     <div class="description">
         <p>Fired when going in and out of fullscreen.</p>
     </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="EventTarget.html#~Event">EventTarget~Event</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		player.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:fullscreenchange">fullscreenchange</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type"><a href="EventTarget.html#~Event">EventTarget~Event</a></span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		player.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:fullscreenchange">fullscreenchange</h4>
+    
+    
+</dt>
+<dd>
+
     
 
     
@@ -19207,7 +19512,7 @@ reason to prevent playback, use <code>myPlayer.one('play');</code> instead.</p>
 
     
     <div class="description">
-        <p>Fires when the browser has loaded meta data for the audio/video.</p>
+        <p>Fired when the player has initial duration and dimension information</p>
     </div>
     
 
@@ -19301,7 +19606,7 @@ reason to prevent playback, use <code>myPlayer.one('play');</code> instead.</p>
 
     
     <div class="description">
-        <p>Fired when the player has initial duration and dimension information</p>
+        <p>Fires when the browser has loaded meta data for the audio/video.</p>
     </div>
     
 
@@ -21370,7 +21675,7 @@ playback technology in use.</p>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
-		on 12 Apr 2017
+		on 5 Jun 2017
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
