@@ -253,17 +253,27 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 400) BAD_REQUEST error_subcode: `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
+ * @apiError (Error 400) BAD_REQUEST error_subcode:
+
+ `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
  * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
- * @apiError (Error 403) FORBIDDEN-1 error_subcode: `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
- * @apiError (Error 403) FORBIDDEN-2 error_subcode: `DOMAIN` - The video is restricted from playing on the current domain
- * @apiError (Error 403) FORBIDDEN-3 error_subcode: `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
- * @apiError (Error 403) FORBIDDEN-4 error_subcode: `CLIENT_IP` - The video is restricted at the current IP address
- * @apiError (Error 403) FORBIDDEN-5 error_subcode: `POLICY_ERROR` - Error when evaluating the policy key
+ * @apiError (Error 403) FORBIDDEN error_subcode:
+
+ `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
+
+ `DOMAIN` - The video is restricted from playing on the current domain
+
+ `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
+
+ `CLIENT_IP` - The video is restricted at the current IP address
+
+ `POLICY_ERROR` - Error when evaluating the policy key
  * @apiError (Error 404) NOT_FOUND error_subcode: `PLAYLIST_NOT_FOUND` - The requested resource is not available.
  * @apiError (Error 405) METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
  * @apiError (Error 500) SERVER_ERROR Internal server error.
- * @apiError (Error 502) SERVER_ERROR Got a bad response from a backend server. Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `PLAYLIST_RETRIEVE_FAILURE`, `PLAYLIST_VIDEOS_RETRIEVE_FAILURE`.
+ * @apiError (Error 502) SERVER_ERROR Got a bad response from a backend server.
+ * 
+ Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `PLAYLIST_RETRIEVE_FAILURE`, `PLAYLIST_VIDEOS_RETRIEVE_FAILURE`.
  * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server.
  * @apiError (Error 504) SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
  *
