@@ -521,7 +521,11 @@
  *
  * @apiError (Error 400) BAD_REQUEST error_subcode: `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
  * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
- * @apiError (Error 403) FORBIDDEN-1 error_subcode: `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
+ * @apiError (Error 403) FORBIDDEN-1 error_subcodes:
+
+ `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
+
+ `DOMAIN` - The video is restricted from playing on the current domain
  * @apiError (Error 403) FORBIDDEN-2 error_subcode: `DOMAIN` - The video is restricted from playing on the current domain
  * @apiError (Error 403) FORBIDDEN-3 error_subcode: `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
  * @apiError (Error 403) FORBIDDEN-4 error_subcode: `CLIENT_IP` - The video is restricted at the current IP address
