@@ -8,7 +8,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID or Reference ID
  * @apiName Get Video by ID or Reference ID
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video object.
