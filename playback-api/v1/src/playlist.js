@@ -1,3 +1,7 @@
+/**
+ * @apiDefine playlistGroup Playlist
+ * Playlist operations allow you to retrieve playlists from your Video Cloud library.
+ */
 // get playlist by id
 
 /**
@@ -257,7 +261,7 @@
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
  * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
- * @apiError (Error 403) FORBIDDEN error_subcode:
+ * @apiError (Error 403) FORBIDDEN error_subcodes:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
@@ -268,11 +272,13 @@
  `CLIENT_IP` - The video is restricted at the current IP address
 
  `POLICY_ERROR` - Error when evaluating the policy key
- * @apiError (Error 404) NOT_FOUND error_subcode: `PLAYLIST_NOT_FOUND` - The requested resource is not available.
+ * @apiError (Error 404) NOT_FOUND error_subcode:
+
+ `PLAYLIST_NOT_FOUND` - The requested resource is not available.
  * @apiError (Error 405) METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
  * @apiError (Error 500) SERVER_ERROR Internal server error.
  * @apiError (Error 502) SERVER_ERROR Got a bad response from a backend server.
- * 
+ *
  Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `PLAYLIST_RETRIEVE_FAILURE`, `PLAYLIST_VIDEOS_RETRIEVE_FAILURE`.
  * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server.
  * @apiError (Error 504) SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.

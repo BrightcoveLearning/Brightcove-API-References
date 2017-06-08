@@ -1,3 +1,8 @@
+/**
+ * @apiDefine videoGroup Video
+ * The video operations allow you to retrieve video objects from your Video Cloud library.
+ */
+
 // get video by id
 
 /**
@@ -542,7 +547,7 @@
  * @apiError (Error 405) METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
  * @apiError (Error 500) SERVER_ERROR Internal server error.
  * @apiError (Error 502) SERVER_ERROR Got a bad response from a backend server.
- 
+
  Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `VIDEO_RETRIEVE_FAILURE`, `VIDEO_URLS_RETRIEVE_FAILURE`.
  * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server.
  * @apiError (Error 504) SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
