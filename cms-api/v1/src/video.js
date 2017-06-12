@@ -519,7 +519,7 @@
  *    ]
  *
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {json} Non Dynamic Delivery Response:
  *    HTTP/1.1 200 OK
  *    [
  *        {
