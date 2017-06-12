@@ -471,6 +471,54 @@
  * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
  * @apiSuccess (Response Field) {Number} width frame width in pixels
  *
+ * @apiSuccessExample {json} Dynamic Delivery Video Success Response
+ *    HTTP/1.1 200 OK
+ *    [
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/10s/master.m3u8?fastly_token=NTk2MzQ5NDJfZTg4MWE3NGVhMGI1ZWY5MjZjNGEyMGJkZDlmNTE0MjhmMDEyNDgwOGFiM2UxZjZlNjI5ZGZjNDE0YjQ5MmZmYQ%3D%3D",
+ *            "ext_x_version": "4",
+ *            "type": "application/x-mpegURL",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v5/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/10s/master.m3u8?fastly_token=NTk2MzQ5NDJfYjAxOGJiNGMxYzdlYWEzOGZjMjdmZDRiZTYwZDU5ZmE5YWU4NjhhNzFlMzc1YmMxMDcwOGYyMjk2NjAzMjRjNA%3D%3D",
+ *            "ext_x_version": "5",
+ *            "type": "application/x-mpegURL",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/2s/manifest.mpd?fastly_token=NTk2MzQ5NDJfY2QzYWU1ZjNlOWRhZDY1MjE4N2ZjZjgzNmUxMmY3ZDMzMDViZDExZTVmYTJjNWY2MGIzMDg3ZmM2NDU2MmU4Ng%3D%3D",
+ *            "type": "application/dash+xml",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z",
+ *            "profiles": "urn:mpeg:dash:profile:isoff-live:2011"
+ *        },
+ *        {
+ *            "remote": false,
+ *            "src": "https://bcbolt446c5271-a.akamaihd.net/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/high.mp4?akamai_token=exp=1499679042~acl=/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/high.mp4*~hmac=059c3404b66179664e230b3392e0a742f761d4f51275a7f0f102ab7f2888abc2",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "encoding_rate": 4119000,
+ *            "duration": 31487,
+ *            "height": 1080,
+ *            "width": 1920,
+ *            "size": 16222238,
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "remote": false,
+ *            "src": "https://bcbolt446c5271-a.akamaihd.net/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/mid.mp4?akamai_token=exp=1499679042~acl=/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/mid.mp4*~hmac=3d270d4c3db93f700a56353a76ffc3d6c3dfcbc486b761ad4b9257ca3c48f46e",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "encoding_rate": 576000,
+ *            "duration": 31487,
+ *            "height": 270,
+ *            "width": 480,
+ *            "size": 2278357,
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        }
+ *    ]
+ *
+ *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    [
