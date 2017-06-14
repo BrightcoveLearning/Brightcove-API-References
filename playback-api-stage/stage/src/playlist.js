@@ -7,7 +7,7 @@
 /**
  * @api {get} /accounts/:account_id/playlists/:playlist_id Get Playlist by ID or Reference ID
  * @apiName Get Playlists by ID or Reference ID
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a playlist object for the account.

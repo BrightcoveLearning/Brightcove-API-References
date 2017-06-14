@@ -8,10 +8,10 @@
  /**
   * @api {get} /accounts/:account_id/videos Get Videos
   * @apiName Get Videos
-  * @apiGroup Video
+  * @apiGroup videoGroup
   * @apiVersion 1.0.0
   *
-  * @apiDescription Gets a page of video objects __STAGING TEST__ -  __THIS IS NOT THE PRODUCTION API REFERENCE__
+  * @apiDescription Gets a page of video objects
 
   __Notes:__
   - The maximum number of videos (and the highest 'count') returned is 1000, even if there are more matching videos in the account. When you need more videos returned, you must use the CMS api.
@@ -22,7 +22,6 @@
 
   - The 'count' value is capped at 1000 and is an estimate that may be larger than the actual number of videos returned, especially when there are geo-restricted videos. It should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page.
 
-  - The raw API JSON response is not suitable with the player. Use the `player.catalog.transformVideoResponse()` function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility. For details, see the [Player Catalog](http://docs.brightcove.com/en/player/brightcove-player/guides/player-catalog.html#transformVideoResponse) document.
   *
   * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). When performing a search, the Policy Key's 'key-data' needs to include {"apis": "search"}. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
   * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) When performing a search, the Policy Key's 'key-data' needs to include {"apis": "search"}. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
@@ -100,11 +99,17 @@
   *          }
   *     ]
   *
-  * @apiError (Error 400) BAD_REQUEST error_subcode:
+  * @apiError (Error 400) {json} BAD_REQUEST error_subcode:
 
   `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
-  * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
-  * @apiError (Error 403) FORBIDDEN error_subcode:
+
+  `INVALID_SEARCH` - The search parameters are not valid
+
+  `ILLEGAL_QUERY` - The search string syntax was invalid - example: 1) doing a tags search that ends with a comma or has an unclosed quote
+
+  `INVALID_SORT` - The sort parameters specified an invalid field
+  * @apiError (Error 401) {json} ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
+  * @apiError (Error 403) {json} FORBIDDEN error_subcode:
 
   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
@@ -117,36 +122,16 @@
   `POLICY_ERROR` - Error when evaluating the policy key
 
   `VIDEO_NOT_PLAYABLE` - For a single video request, the video exists, but is not allowed to be played now. That could be any of the three reasons that videos are not playable: not sufficiently ingested, not active, not in scheduled date range.
-  * @apiError (Error 404) NOT_FOUND error_subcode:
+  * @apiError (Error 404) {json} NOT_FOUND error_subcode:
 
   `VIDEO_NOT_FOUND` - The requested resource is not available.
-  * @apiError (Error 405) METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
-  * @apiError (Error 500) SERVER_ERROR Internal server error.
-  * @apiError (Error 502) SERVER_ERROR Got a bad response from a backend server.
+  * @apiError (Error 405) {json} METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
+  * @apiError (Error 500) {json} SERVER_ERROR Internal server error.
+  * @apiError (Error 502) {json} SERVER_ERROR Got a bad response from a backend server.
 
   Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `VIDEO_RETRIEVE_FAILURE`, `VIDEO_URLS_RETRIEVE_FAILURE`.
-  * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server.
-  * @apiError (Error 504) SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: Resource not found
-  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
-  * @apiError (Error 4xx) {json} ILLEGAL_QUERY 400: The search string syntax was invalid - example: 1) doing a `tags` search that ends with a comma or has an unclosed quote
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 503) {json} SERVICE_UNAVAILABLE Returned this response from a backend server.
+  * @apiError (Error 504) {json} SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
   *
   */
 
@@ -155,12 +140,10 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID or Reference ID
  * @apiName Get Video by ID or Reference ID
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video object.
-
- __Note:__ The raw API JSON response is not suitable with the player. Use the `player.catalog.transformVideoResponse()` function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility. For details, see the [Player Catalog](http://docs.brightcove.com/en/player/brightcove-player/guides/player-catalog.html#transformVideoResponse) document.
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
