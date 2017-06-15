@@ -14,13 +14,11 @@
   * @apiDescription Gets a page of video objects
 
   __Notes:__
-  - The maximum number of videos (and the highest 'count') returned is 1000, even if there are more matching videos in the account. When you need more videos returned, you must use the CMS api.
+  - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and shoiuld not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api.
 
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
 
   - Any geo-restricted videos that are denied for the particular requestor are omitted from the results. As long as some videos are allowed the request is considered successful.
-
-  - The 'count' value is capped at 1000 and is an estimate that may be larger than the actual number of videos returned, especially when there are geo-restricted videos. It should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page.
 
   *
   * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). When performing a search, the Policy Key's 'key-data' needs to include {"apis": "search"}. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
@@ -30,6 +28,8 @@
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
   * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
   *
+  * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
+  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
   * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
   * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
   *
