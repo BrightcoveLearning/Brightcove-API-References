@@ -13,7 +13,9 @@
   *
   * @apiDescription Gets a page of video objects
 
-  __Notes:__
+  __<span id="searchpolicy">Notes:</span>__
+  - When performing a search, you need to use a Policy Key that has a request body which includes a `key-data` value of `{"apis": "search"}`. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys.
+  
   - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and shoiuld not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api.
 
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
@@ -21,9 +23,9 @@
   - Any geo-restricted videos that are denied for the particular requestor are omitted from the results. As long as some videos are allowed the request is considered successful.
 
   *
-  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). When performing a search, the Policy Key's `key-data` needs to include `{"apis": "search"}`. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
-  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) When performing a search, the Policy Key's `key-data` needs to include `{"apis": "search"}`. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
-  * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) When performing a search, the Policy Key's `key-data` needs to include `{"apis": "search"}`. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
+  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
+  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
+  * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
   * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
