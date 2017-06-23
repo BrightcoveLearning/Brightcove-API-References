@@ -2080,6 +2080,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2165,6 +2166,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2233,6 +2235,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add HLS Manifest Request Data Example:
  *    {
@@ -2254,6 +2257,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2358,6 +2362,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add HLS Manifest Request Data Example:
  *    {
@@ -2379,6 +2384,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2545,6 +2551,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2630,6 +2637,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2698,6 +2706,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add HDS Manifest Request Data Example:
  *    {
@@ -2719,6 +2728,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -2825,6 +2835,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add HDS Manifest Request Data Example:
  *    {
@@ -2846,6 +2857,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3012,6 +3024,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3097,6 +3110,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3165,6 +3179,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add ISM Manifest Request Data Example:
  *    {
@@ -3186,6 +3201,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3290,6 +3306,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add ISM Manifest Request Data Example:
  *    {
@@ -3311,6 +3328,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3478,6 +3496,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3563,6 +3582,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3631,6 +3651,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add ISMC Manifest Request Data Example:
  *    {
@@ -3652,6 +3673,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3755,6 +3777,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add ISMC Manifest Request Data Example:
  *    {
@@ -3776,6 +3799,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -3944,6 +3968,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -4030,6 +4055,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -4099,6 +4125,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add DASH Manifest Request Data Example:
  *    {
@@ -4120,6 +4147,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -4223,6 +4251,7 @@
  *
  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
  * @apiParamExample {json} Add DASH Manifest Request Data Example:
  *    {
@@ -4244,6 +4273,7 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

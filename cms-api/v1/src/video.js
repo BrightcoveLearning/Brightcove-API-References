@@ -48,7 +48,7 @@
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {String} folder_id id for the folder the video belongs to
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
@@ -304,7 +304,7 @@
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
@@ -471,7 +471,55 @@
  * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
  * @apiSuccess (Response Field) {Number} width frame width in pixels
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {json} Dynamic Delivery Video Success Response
+ *    HTTP/1.1 200 OK
+ *    [
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/10s/master.m3u8?fastly_token=NTk2MzQ5NDJfZTg4MWE3NGVhMGI1ZWY5MjZjNGEyMGJkZDlmNTE0MjhmMDEyNDgwOGFiM2UxZjZlNjI5ZGZjNDE0YjQ5MmZmYQ%3D%3D",
+ *            "ext_x_version": "4",
+ *            "type": "application/x-mpegURL",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v5/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/10s/master.m3u8?fastly_token=NTk2MzQ5NDJfYjAxOGJiNGMxYzdlYWEzOGZjMjdmZDRiZTYwZDU5ZmE5YWU4NjhhNzFlMzc1YmMxMDcwOGYyMjk2NjAzMjRjNA%3D%3D",
+ *            "ext_x_version": "5",
+ *            "type": "application/x-mpegURL",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/2s/manifest.mpd?fastly_token=NTk2MzQ5NDJfY2QzYWU1ZjNlOWRhZDY1MjE4N2ZjZjgzNmUxMmY3ZDMzMDViZDExZTVmYTJjNWY2MGIzMDg3ZmM2NDU2MmU4Ng%3D%3D",
+ *            "type": "application/dash+xml",
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z",
+ *            "profiles": "urn:mpeg:dash:profile:isoff-live:2011"
+ *        },
+ *        {
+ *            "remote": false,
+ *            "src": "https://bcbolt446c5271-a.akamaihd.net/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/high.mp4?akamai_token=exp=1499679042~acl=/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/high.mp4*~hmac=059c3404b66179664e230b3392e0a742f761d4f51275a7f0f102ab7f2888abc2",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "encoding_rate": 4119000,
+ *            "duration": 31487,
+ *            "height": 1080,
+ *            "width": 1920,
+ *            "size": 16222238,
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        },
+ *        {
+ *            "remote": false,
+ *            "src": "https://bcbolt446c5271-a.akamaihd.net/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/mid.mp4?akamai_token=exp=1499679042~acl=/media/v1/pmp4/static/clear/57838016001/ae81dd9b-99ba-4899-bc8b-9402cf242210/mid.mp4*~hmac=3d270d4c3db93f700a56353a76ffc3d6c3dfcbc486b761ad4b9257ca3c48f46e",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "encoding_rate": 576000,
+ *            "duration": 31487,
+ *            "height": 270,
+ *            "width": 480,
+ *            "size": 2278357,
+ *            "uploaded_at": "2017-04-27T18:07:58.185Z"
+ *        }
+ *    ]
+ *
+ *
+ * @apiSuccessExample {json} Non Dynamic Delivery Response:
  *    HTTP/1.1 200 OK
  *    [
  *        {
@@ -969,7 +1017,7 @@
   * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
   * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
-  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
+  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
   * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
   * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
@@ -1009,7 +1057,7 @@
   * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
   * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
   * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
-  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
   * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
   * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
   * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
@@ -1175,7 +1223,7 @@
  * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
+ * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
  * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
@@ -1227,7 +1275,7 @@
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding

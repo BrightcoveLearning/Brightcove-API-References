@@ -442,12 +442,12 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
+   * @apiParam (Request Body Fields) {String} [account_id] Account id
    * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon variables
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon types
    *
-   * @apiParamExample {json} Ingest Slate Media Source Asset example:
+   * @apiParamExample {json} Create beacon set example:
    *    {
    *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
    *        "beacon_urls": [

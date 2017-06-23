@@ -31,7 +31,7 @@
  * @apiParam (Request Body Fields) {String} [notifications.credentials] Credentials The name of the credentials configured in your account for this address
  * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It is recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
- * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
+ * @apiParam (Request Body Fields) {String} add_cdns.label A label to identify the CDN.
  * @apiParam (Request Body Fields) {String} add_cdns.prepend CDN hostname to be prepended to addresses
  * @apiParam (Request Body Fields) {String="http","https"} add_cdns.protocol Protocol to use for the stream delivery
  * @apiParam (Request Body Fields) {String} add_cdns.vendor CDN vendor such as `akamai`
@@ -553,7 +553,7 @@
  * @apiSuccess (Response Fields) {String} [notifications.credentials] Credentials for the destination, if required.
  * @apiSuccess (Response Fields) {String} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiSuccess (Response Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
- * @apiSuccess (Response Fields) {String} add_cdns.label A lable to identify the CDN.
+ * @apiSuccess (Response Fields) {String} add_cdns.label A label to identify the CDN.
  * @apiSuccess (Response Fields) {String} add_cdns.prepend Typically, a domain or path to prepend to addresses
  * @apiSuccess (Response Fields) {String} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  *

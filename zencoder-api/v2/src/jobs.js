@@ -98,7 +98,8 @@
  * @apiParam (Request Body Fields) {Object[]} [outputs.thumbnails] Defines a set of thumbnails to be captured for each output
  * @apiParam (Request Body Fields) {String} [outputs.thumbnails.label] A label to identify each set of thumbnail groups
  * @apiParam (Request Body Fields) {String="png", "jpg"} [outputs.thumbnails.format="png"] The format of the thumbnail image
- * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.format="png"] A number of thumbnails, evenly-spaced
+ * @apiParam (Request Body Fields) {String="png","jpg"} [outputs.thumbnails.format="png"] Format for the thumbnails
+ * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.number] A number of thumbnails, evenly-spaced
  * @apiParam (Request Body Fields) {Boolean} [outputs.thumbnails.start_at_first_frame=false] Start generating the thumbnails starting at the first frame
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.interval] Take thumbnails at an even interval, in seconds
  * @apiParam (Request Body Fields) {Number} [outputs.thumbnails.interval_in_frames] Take thumbnails at an even interval, in frames
@@ -422,7 +423,7 @@
   * @apiGroup Jobs
   * @apiVersion 2.0.0
   *
-  * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50.
+  * @apiDescription A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50. Note that historical jobs data is kept by Zencoder for 60 days - if you need to keep jobs data for longer periods, you need to retrieve it within 60 days and save it in your own data storage.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
@@ -1063,7 +1064,7 @@
    * @apiGroup Jobs
    * @apiVersion 2.0.0
    *
-   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them.
+   * @apiDescription Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them. **Note** that jobs cannot be finished when archive output is transcoding.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
