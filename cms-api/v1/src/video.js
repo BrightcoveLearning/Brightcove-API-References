@@ -1,7 +1,7 @@
 /**
  * @apiDefine videoGroup Video
  * The video operations allow you to create, retrieve, update, and delete video objects in Video Cloud. (You cannot ingest any assets with the CMS API &mdash;
- * to add actual asset files, including videos, use the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html).) You
+ * to add actual asset files, including videos, use the [Dynamic Ingest API](https://support.brightcove.com/node/17948).) You
  * can also search for videos, get a count of all your videos or of search results, get the sources, images, and digital master for a video, get the playlists
  * the video belongs to, and remove it from all playlists. There is also a GET request to return all custom fields for the account.
  */
@@ -17,13 +17,13 @@
  * @apiDescription Gets a page of video objects
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
  *
  * @apiParamExample {Url} Search Example:
@@ -208,11 +208,11 @@
  * @apiDescription Gets count of videos for the account or a search
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
-  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response
  *
  * @apiParamExample {Url} Search Count Example:
@@ -276,7 +276,7 @@
  * @apiDescription Gets a video object
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
@@ -448,7 +448,7 @@
  * @apiDescription Gets an array of sources (renditions) for a video
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
@@ -691,7 +691,7 @@
  * @apiDescription Gets the images for a video
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
@@ -785,7 +785,7 @@
  * @apiDescription Gets the stored digital master for a video, if any
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
@@ -894,7 +894,7 @@
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
@@ -950,7 +950,7 @@
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925)
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
@@ -995,10 +995,10 @@
   * @apiVersion 1.0.0
   *
   * @apiDescription Create a new video object in the account.
-  * _Note: this does not ingest a video file - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
+  * _Note: this does not ingest a video file - use the [Dynamic Ingest API](https://support.brightcove.com/node/17948) for ingestion_
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925)
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   *
@@ -1196,10 +1196,10 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a video's metadata
- * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_. Also note that replacing WebVTT text tracks is a two-step operation - see [Add WebVTT Captions](http://docs.brightcove.com/en/video-cloud/cms-api/guides/webvtt.html#replaceTracks) for details.
+ * _note that this API does not ingest any media files - use the [Dynamic Ingest API](https://support.brightcove.com/node/17948) for ingestion_. Also note that replacing WebVTT text tracks is a two-step operation - see [Add WebVTT Captions](https://support.brightcove.com/node/18013#replaceTracks) for details.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
@@ -1422,7 +1422,7 @@
  * @apiDescription Deletes a video
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
@@ -1469,7 +1469,7 @@
   * @apiDescription Gets a list of custom fields for the account
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   *

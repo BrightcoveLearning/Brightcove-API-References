@@ -14,7 +14,7 @@
  * @apiDescription Gets list of folders for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (URL Parameters) {Number} [limit=20] number of folders to return
@@ -99,7 +99,7 @@
  * @apiDescription Gets information about a folder
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id Video Cloud folder ID.
@@ -165,7 +165,7 @@
  * @apiDescription Gets list of video objects in a folder
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id the folder ID.
@@ -385,7 +385,7 @@
  * @apiDescription Create a new folder for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {String} name name of the folder (must be unique in the account)
@@ -453,7 +453,7 @@
  * @apiDescription Update the folder name
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
@@ -522,7 +522,7 @@
  * @apiDescription Add a video to a folder
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
@@ -581,7 +581,7 @@
  * @apiDescription Remove a video from a folder
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
@@ -640,7 +640,7 @@
  * @apiDescription Delete a folder
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
