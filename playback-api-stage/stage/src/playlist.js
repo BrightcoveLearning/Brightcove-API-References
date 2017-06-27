@@ -12,7 +12,7 @@
  *
  * @apiDescription Gets a playlist object for the account.
  *
- * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
+ * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID
@@ -260,14 +260,14 @@
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
- * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
+ * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
  * @apiError (Error 403) FORBIDDEN error_subcodes:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
  `DOMAIN` - The video is restricted from playing on the current domain
 
- `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
+ `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
  `CLIENT_IP` - The video is restricted at the current IP address
 

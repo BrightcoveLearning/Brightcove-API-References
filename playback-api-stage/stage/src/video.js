@@ -14,8 +14,8 @@
   * @apiDescription Gets a page of video objects
 
   __<span id="searchpolicy">Notes:</span>__
-  - When performing a search, you need to use a Policy Key that has a request body which includes a `key-data` value of `{"apis": "search"}`. See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys.
-  
+  - When performing a search, you need to use a Policy Key that has a request body which includes a `key-data` value of `{"apis": "search"}`. See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys.
+
   - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and shoiuld not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api.
 
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
@@ -32,7 +32,7 @@
   *
   * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
   * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
-  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005) for details
   * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
   *
   * @apiParamExample {Url} Search Example:
@@ -110,14 +110,14 @@
   `ILLEGAL_QUERY` - The search string syntax was invalid - example: 1) doing a tags search that ends with a comma or has an unclosed quote
 
   `INVALID_SORT` - The sort parameters specified an invalid field
-  * @apiError (Error 401) {json} ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
+  * @apiError (Error 401) {json} ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906).
   * @apiError (Error 403) {json} FORBIDDEN error_subcode:
 
   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
   `DOMAIN` - The video is restricted from playing on the current domain
 
-  `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
+  `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
   `CLIENT_IP` - The video is restricted at the current IP address
 
@@ -147,9 +147,9 @@
  *
  * @apiDescription Gets a video object.
  *
- * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
- * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
- * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/player/player-management/guides/policy-key.html) for information on getting policy keys
+ * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
+ * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
+ * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
@@ -659,14 +659,14 @@
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
- * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](http://docs.brightcove.com/en/video-cloud/playback-api/getting-started/api-overview.html#authentication).
+ * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
  * @apiError (Error 403) FORBIDDEN error_subcode:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
  `DOMAIN` - The video is restricted from playing on the current domain
 
- `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](http://docs.brightcove.com/en/video-cloud/playback-api/references/error-reference.html)
+ `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
  `CLIENT_IP` - The video is restricted at the current IP address
 
