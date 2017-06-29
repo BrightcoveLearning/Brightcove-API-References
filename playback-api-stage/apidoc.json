@@ -5,8 +5,8 @@
     "title": "Playback API Reference",
     "order": [
       "videoGroup",
-      "Get_Videos",
       "Get_Video_by_ID_or_Reference_ID",
+      "Get_Videos",
       "playlistGroup",
       "Get_Playlists_by_ID_or_Reference_ID"
     ],

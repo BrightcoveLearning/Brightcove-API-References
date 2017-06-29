@@ -110,8 +110,8 @@
   `ILLEGAL_QUERY` - The search string syntax was invalid - example: 1) doing a tags search that ends with a comma or has an unclosed quote
 
   `INVALID_SORT` - The sort parameters specified an invalid field
-  * @apiError (Error 401) {json} ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906).
-  * @apiError (Error 403) {json} FORBIDDEN error_subcode:
+  * @apiError (Error 401) {json} INVALID_POLICY_KEY Must be a legal policy key in an [appropriate header](https://support.brightcove.com/node/17906).
+  * @apiError (Error 403) {json} ACCESS_DENIED error_subcode:
 
   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
@@ -659,8 +659,8 @@
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
- * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
- * @apiError (Error 403) FORBIDDEN error_subcode:
+ * @apiError (Error 401) INVALID_POLICY_KEY Must be a legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
+ * @apiError (Error 403) ACCESS_DENIED error_subcode:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 

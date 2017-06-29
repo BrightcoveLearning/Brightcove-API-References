@@ -260,8 +260,8 @@
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
- * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
- * @apiError (Error 403) FORBIDDEN error_subcodes:
+ * @apiError (Error 401) INVALID_POLICY_KEY Must be a legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
+ * @apiError (Error 403) ACCESS_DENIED error_subcodes:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
