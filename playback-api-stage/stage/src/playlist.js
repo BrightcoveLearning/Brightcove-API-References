@@ -11,6 +11,7 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a playlist object for the account.
+ <br><br>
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *

@@ -12,7 +12,7 @@
   * @apiVersion 1.0.0
   *
   * @apiDescription Gets a page of video objects. The Playback API allows you to programmatically [search for videos](https://support.brightcove.com/node/18005) in your Video Cloud library. To use the search functionality, you must include a Policy Key that is search-enabled.
-
+  <br><br>
   __<span id="searchpolicy">Notes:</span>__
   - When performing a search, you need to use a Policy Key that has a request body which includes a `key-data` value of `{"apis": "search"}`. See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys.
 
@@ -23,7 +23,7 @@
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
 
   - Any geo-restricted videos that are denied for the particular requestor are omitted from the results. As long as some videos are allowed the request is considered successful. An errors field is added to the result with a summary explaining why videos were omitted.
-
+  <br><br>
   *
   * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
   * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
@@ -97,11 +97,15 @@
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200 OK
-  *     [
-  *         {
-  *              "account_id": "1752604059001",
-  *          }
-  *     ]
+  *     {
+  *       "count": 123,
+  *       "videos":
+  *         [
+  *           {<video1 fields>},
+  *           {<video2 fields>},
+  *           ...
+  *         ]
+  *     }
   *
   * @apiError (Error 400) {json} BAD_REQUEST error_subcode:
 
@@ -148,6 +152,7 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video object.
+ <br><br>
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
