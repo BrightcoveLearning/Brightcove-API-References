@@ -11,10 +11,10 @@
   * @apiGroup videoGroup
   * @apiVersion 1.0.0
   *
-  * @apiDescription Gets a page of video objects. The Playback API allows you to programmatically [search for videos](https://support.brightcove.com/node/18005) in your Video Cloud library. To use the search functionality, you must include a Policy Key that is search-enabled.
+  * @apiDescription Gets a page of video objects. The Playback API allows you to programmatically [search for videos](https://support.brightcove.com/node/18005) in your Video Cloud library. To use the search functionality, you must include a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
   <br><br>
   __<span id="searchpolicy">Notes:</span>__
-  - When performing a search, you need to use a Policy Key that has a request body which includes a `key-data` value of `{"apis": "search"}`. See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys.
+  - When performing a search, you need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos). For information on getting policy keys, see the [Policy API Overview](https://support.brightcove.com/node/18003) or the [Policy Keys](https://support.brightcove.com/node/18125) documents.
 
   - In general, search-enabled Policy Keys should only be stored on a server and not in a browser player or mobile app, since they can be used to list all playable videos. For some accounts this may not be applicable if you do not care if all of your playable videos can be discovered.
 
@@ -25,12 +25,11 @@
   - Any geo-restricted videos that are denied for the particular requestor are omitted from the results. As long as some videos are allowed the request is considered successful. An errors field is added to the result with a summary explaining why videos were omitted.
   <br><br>
   *
-  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
-  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
-  * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-configured Policy Key](#searchpolicy) as defined in the __Notes__ above.
+  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
+  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
+  * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
-  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
   *
   * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
   * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
@@ -151,7 +150,7 @@
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video object.
+ * @apiDescription Gets a video object based on a video ID or reference ID.
  <br><br>
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
