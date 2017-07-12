@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BCOVAdSequence Class Reference</title>
+	<title>BCOVOfflineVideoStatus Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,29 +56,25 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/ads">ads</option>
+		<option value="//api/name/downloadEndTime">downloadEndTime</option>
 		
-		<option value="//api/name/beginTime">beginTime</option>
+		<option value="//api/name/downloadPercent">downloadPercent</option>
 		
-		<option value="//api/name/duration">duration</option>
+		<option value="//api/name/downloadStartTime">downloadStartTime</option>
 		
-		<option value="//api/name/properties">properties</option>
+		<option value="//api/name/downloadState">downloadState</option>
+		
+		<option value="//api/name/downloadTask">downloadTask</option>
+		
+		<option value="//api/name/error">error</option>
+		
+		<option value="//api/name/offlineVideoToken">offlineVideoToken</option>
 		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/init">- init</option>
-		
-		<option value="//api/name/initWithAds:properties:">- initWithAds:properties:</option>
-		
-		<option value="//api/name/isEqualToAdSequence:">- isEqualToAdSequence:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -93,7 +89,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BCOVAdSequence Class Reference</h1>
+					<h1 class="title">BCOVOfflineVideoStatus Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -101,8 +97,11 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
 	<th>Declared in</th>
-	<td>BCOVAdvertising.h</td>
+	<td>BCOVOfflineVideoManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,8 +111,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This object represents a sequence of <a href="#//api/name/ads">ads</a> intended to be viewed in sequence,
-at the same point in the video.</p>
+						<p>BCOVOfflineVideoStatus
+This object keeps track of various pieces of information related
+to video downloads.</p>
 					</div>
 					
 					
@@ -125,335 +125,12 @@ at the same point in the video.</p>
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/beginTime" title="beginTime"></a>
-	<h3 class="method-title"><code><a href="#//api/name/beginTime">&nbsp;&nbsp;beginTime</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The begin time of the sequence.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime beginTime</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The begin time of the sequence.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/duration" title="duration"></a>
-	<h3 class="method-title"><code><a href="#//api/name/duration">&nbsp;&nbsp;duration</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The duration of the sequence.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CMTime duration</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The duration of the sequence.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/ads" title="ads"></a>
-	<h3 class="method-title"><code><a href="#//api/name/ads">&nbsp;&nbsp;ads</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The ads that make up the sequence.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSArray *ads</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The ads that make up the sequence.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/properties" title="properties"></a>
-	<h3 class="method-title"><code><a href="#//api/name/properties">&nbsp;&nbsp;properties</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The properties of the sequence.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSDictionary *properties</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The properties of the sequence.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithAds:properties:" title="initWithAds:properties:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithAds:properties:">&ndash;&nbsp;initWithAds:properties:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This is the designated initializer. It creates an ad sequence.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAds:(NSArray *)<em>ads</em> properties:(NSDictionary *)<em>properties</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>ads</code></th>
-						<td><p>The <a href="#//api/name/ads">ads</a> that make up the sequence.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>properties</code></th>
-						<td><p>The <a href="#//api/name/properties">properties</a> of the ad sequence.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An initialized ad sequence.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This is the designated initializer. It creates an ad sequence.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isEqualToAdSequence:" title="isEqualToAdSequence:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isEqualToAdSequence:">&ndash;&nbsp;isEqualToAdSequence:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Returns YES if <code>adSequence</code> is equivalent to this instance.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToAdSequence:(BCOVAdSequence *)<em>adSequence</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>adSequence</code></th>
-						<td><p>The ad sequence to test for equivalence with this instance.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>Whether <code>adSequence</code> is equivalent to this instance.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Returns YES if <code>adSequence</code> is equivalent to this instance.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
 						
 
-						<a title="Unavailable Methods" name="task_Unavailable Methods"></a>
-						<h2 class="task-title">Unavailable Methods</h2>
-
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	<a name="//api/name/offlineVideoToken" title="offlineVideoToken"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlineVideoToken">&nbsp;&nbsp;offlineVideoToken</a></code>
 </h3>
 
 	<div class="method-info">
@@ -463,12 +140,12 @@ at the same point in the video.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Private method.</p>
+				<p>Offline video token used to identify the downloaded video</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BCOVOfflineVideoToken offlineVideoToken</code></div>
 
 		    
 			
@@ -480,7 +157,7 @@ at the same point in the video.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Private method.</p>
+				<p>Offline video token used to identify the downloaded video</p>
 			</div>
 			
 
@@ -491,7 +168,285 @@ at the same point in the video.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVAdvertising.h</code></p>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadState" title="downloadState"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadState">&nbsp;&nbsp;downloadState</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The state of the current download</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BCOVOfflineVideoDownloadState downloadState</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The state of the current download</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadStartTime" title="downloadStartTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadStartTime">&nbsp;&nbsp;downloadStartTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The NSDate that this download was requested (not when it started)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *downloadStartTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The NSDate that this download was requested (not when it started)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadEndTime" title="downloadEndTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadEndTime">&nbsp;&nbsp;downloadEndTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The NSDate that this download finished (successfully, cancelled, or with an <a href="#//api/name/error">error</a>)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *downloadEndTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The NSDate that this download finished (successfully, cancelled, or with an <a href="#//api/name/error">error</a>)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadPercent" title="downloadPercent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadPercent">&nbsp;&nbsp;downloadPercent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The progress of the download, expressed as a percentage</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CGFloat downloadPercent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The progress of the download, expressed as a percentage</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadTask" title="downloadTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadTask">&nbsp;&nbsp;downloadTask</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The AVAssetDownloadTask associated with this download.
+Will be set to nil once the download has completed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) AVAssetDownloadTask *downloadTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The AVAssetDownloadTask associated with this download.
+Will be set to nil once the download has completed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The NSError associated with this download if a failure occurs.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The NSError associated with this download if a failure occurs.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
 			</div>
 			
 			
