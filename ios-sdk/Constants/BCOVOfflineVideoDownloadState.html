@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BCOVPUIButtonIcon Constants Reference</title>
+	<title>BCOVOfflineVideoDownloadState Constants Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BCOVPUIButtonIcon Constants Reference</h1>
+					<h1 class="title">BCOVOfflineVideoDownloadState Constants Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>BCOVPUICommon.h</td>
+	<td>BCOVOfflineVideoManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,11 +75,12 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">BCOVPUIButtonIcon</h3>
+                    <h3 class="subsubtitle method-title">BCOVOfflineVideoDownloadState</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Distinct Icon types.</p>
+                        <p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 					</div>
 					
 					
@@ -87,25 +88,21 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSUInteger, BCOVPUIButtonIcon ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, BCOVOfflineVideoDownloadState ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconPlay</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateRequested</a> = 0,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconPause</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateDownloading</a> = 1,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconJumpBack</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateSuspended</a> = 2,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconZoomIn</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateCancelled</a> = 3,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconZoomOut</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateCompleted</a> = 4,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconClosedCaption</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadStateError</a> = 5,<br>
                             
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconExternalRoute</a>,<br>
-                            
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconVideo360</a>,<br>
-                            
-                            &nbsp;&nbsp; <a href="">BCOVPUIButtonIconReserved</a>,<br>
+                            &nbsp;&nbsp; <a href="">BCOVOfflineVideoDownloadLicensePreloaded</a> = 6,<br>
                             
                             };</code>
                     
@@ -115,11 +112,12 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="BCOVPUIButtonIconPlay"></a><code>BCOVPUIButtonIconPlay</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateRequested"></a><code>BCOVOfflineVideoDownloadStateRequested</code></dt>
 <dd>
 
 
-<p>Play icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -127,16 +125,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconPause"></a><code>BCOVPUIButtonIconPause</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateDownloading"></a><code>BCOVOfflineVideoDownloadStateDownloading</code></dt>
 <dd>
 
 
-<p>Pause icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -144,16 +143,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconJumpBack"></a><code>BCOVPUIButtonIconJumpBack</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateSuspended"></a><code>BCOVOfflineVideoDownloadStateSuspended</code></dt>
 <dd>
 
 
-<p>Jump back icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -161,16 +161,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconZoomIn"></a><code>BCOVPUIButtonIconZoomIn</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateCancelled"></a><code>BCOVOfflineVideoDownloadStateCancelled</code></dt>
 <dd>
 
 
-<p>Zoom in icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -178,16 +179,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconZoomOut"></a><code>BCOVPUIButtonIconZoomOut</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateCompleted"></a><code>BCOVOfflineVideoDownloadStateCompleted</code></dt>
 <dd>
 
 
-<p>Zoom out icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -195,16 +197,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconClosedCaption"></a><code>BCOVPUIButtonIconClosedCaption</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadStateError"></a><code>BCOVOfflineVideoDownloadStateError</code></dt>
 <dd>
 
 
-<p>Closed Caption icon.</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -212,16 +215,17 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="BCOVPUIButtonIconExternalRoute"></a><code>BCOVPUIButtonIconExternalRoute</code></dt>
+                            <dt><a name="" title="BCOVOfflineVideoDownloadLicensePreloaded"></a><code>BCOVOfflineVideoDownloadLicensePreloaded</code></dt>
 <dd>
 
 
-<p>External Route (airplay) icon</p>
+<p>BCOVOfflineVideoDownloadState
+The various possible states of a video download</p>
 
 
 
@@ -229,41 +233,7 @@
 
     
 	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="BCOVPUIButtonIconVideo360"></a><code>BCOVPUIButtonIconVideo360</code></dt>
-<dd>
-
-
-<p>Video 360 Options icon</p>
-
-
-
-
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="BCOVPUIButtonIconReserved"></a><code>BCOVPUIButtonIconReserved</code></dt>
-<dd>
-
-
-<p>Reserved icon.</p>
-
-
-
-
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">BCOVPUICommon.h</code>.
+		Declared In <code class="declared-in-ref">BCOVOfflineVideoManager.h</code>.
 	</p>
 	
 </dd>
@@ -280,7 +250,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">BCOVPUICommon.h</code></p>
+                        <p><code class="declared-in-ref">BCOVOfflineVideoManager.h</code></p>
                     </div>
                     
                     
