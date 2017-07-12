@@ -15,6 +15,7 @@
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
  * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish. To prevent job from finishing unless you manually cancel it, set `reconnect_time` to `0`
+ * @apiParam (Request Body Fields) {String} [slate] Id for a set of slate assets
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
  * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
  * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
@@ -542,17 +543,18 @@
  * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
  * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest of the Live stream for the last 24 hours. (non-SSAI).
  * @apiSuccess (Response Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
- * @apiSuccess (Response Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
+ * @apiSuccess (Response Fields) {Boolean} ad_insertion Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiSuccess (Response Fields) {String} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
- * @apiSuccess (Response Fields) {Number} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
- * @apiSuccess (Response Fields) {Number} [event_length=0] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
- * @apiSuccess (Response Fields) {Number} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
- * @apiSuccess (Response Fields) {Number} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
- * @apiSuccess (Response Fields) {mixed[]} [notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiSuccess (Response Fields) {Number} reconnect_time The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
+ * @apiSuccess (Response Fields) {Number} event_length The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
+ * @apiSuccess (Response Fields) {Number} live_sliding_window_duration The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
+ * @apiSuccess (Response Fields) {Number} max_hls_protocol_version Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
+ * @apiSuccess (Response Fields) {String} slate id for slate of assets to be included
+ * @apiSuccess (Response Fields) {mixed[]} notifications Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiSuccess (Response Fields) {String} notifications.url Destination for the notification.
- * @apiSuccess (Response Fields) {String} [notifications.credentials] Credentials for the destination, if required.
- * @apiSuccess (Response Fields) {String} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
- * @apiSuccess (Response Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
+ * @apiSuccess (Response Fields) {String} notifications.credentials Credentials for the destination, if required.
+ * @apiSuccess (Response Fields) {String} notifications.event Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
+ * @apiSuccess (Response Fields) {Object[]} add_cdns Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiSuccess (Response Fields) {String} add_cdns.label A label to identify the CDN.
  * @apiSuccess (Response Fields) {String} add_cdns.prepend Typically, a domain or path to prepend to addresses
  * @apiSuccess (Response Fields) {String} add_cdns.protocol Protocol to use in sending the stream to the CDN.
@@ -871,6 +873,7 @@
   * @apiSuccess (Response Fields) {Number} job.input_media_file.width Frame width of the input media file
   * @apiSuccess (Response Fields) {Number} job.input_media_file.total_bitrate_in_kbps Total bitrate of the input media file
   * @apiSuccess (Response Fields) {String} job.input_media_file.url URL for the input media file
+  * @apiSuccess (Response Fields) {String} job.slate id for a slate of assets included
   * @apiSuccess (Response Fields) {Object} job.stream Object containing properties for the live stream
   * @apiSuccess (Response Fields) {DateTimeString} job.stream.created_at ISO 8601 date-time string representing when the stream was created
   * @apiSuccess (Response Fields) {Number} job.stream.duration ISO Duration of the stream in seconds
