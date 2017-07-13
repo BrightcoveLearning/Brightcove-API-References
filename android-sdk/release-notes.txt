@@ -1,5 +1,11 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 4.13.7:
+
+  SDK changes:
+
+    * Fixed an issue in Live DVR where seeking into the DVR window caused the scrubber to advance back to the Live edge.
+
 Version 4.13.6:
 
   SDK changes:
