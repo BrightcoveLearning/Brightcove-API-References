@@ -603,7 +603,7 @@
 // update profile
 
 /**
- * @api {put} /accounts/:account_id/profiles Update Ingest Profile
+ * @api {put} /accounts/:account_id/profiles/:profile_id Update Ingest Profile
  * @apiName Update Ingest Profile
  * @apiGroup Profile
  * @apiVersion 1.0.0
