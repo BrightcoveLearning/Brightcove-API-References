@@ -102,6 +102,34 @@ article h4 {
   margin: 0 0 8px 0;
 }
 
+.bcls-expander-head {
+  text-decoration: underline;
+}
+.bcls-expander-head:before {
+  content: url(../img/plus.png);
+  margin-left: -1em;
+  margin-top: .2em;
+  margin-right: .2em;
+}
+.bcls-expander-head.changed {
+  text-decoration: none;
+}
+.bcls-expander-head.changed:before {
+  content: url(../img/minus.png);
+  margin-left: -1em;
+  margin-top: .2em;
+  margin-right: .2em;
+}
+.bcls-expander-content {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  height: 0;
+  visibility: hidden;
+  display: none;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
