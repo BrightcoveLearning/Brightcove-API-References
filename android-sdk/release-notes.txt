@@ -1,5 +1,22 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 5.0.3:
+
+  SDK New Features:
+
+    Offline Playback: Added support for the following:
+      Multiple Audio Tracks
+      VTT Captions
+      Rendition Selection
+
+      Please also note that Offline Playback is currently supported only with Video Cloud Dynamic Delivery and DRM.
+
+Version 5.0.0 (BETA):
+
+  SDK changes:
+
+    Offline Playback: Added support for downloading DASH Widevine content and viewing it without an internet connection.
+
 Version 4.13.7:
 
   SDK changes:
