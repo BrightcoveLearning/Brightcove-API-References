@@ -86,12 +86,12 @@
 
 <script id="template-sections" type="text/x-handlebars-template">
   <section id="api-{{group}}">
-    <h1>{{underscoreToSpace title}}</h1>
+    <h1 class="bcls-expander-head">{{underscoreToSpace title}}</h1>
     {{#if description}}
       <p>{{{nl2br description}}}</p>
     {{/if}}
     {{#each articles}}
-      <div id="api-{{group}}-{{name}}">
+      <div class="bcls-expander-content" id="api-{{group}}-{{name}}">
         {{{article}}}
       </div>
     {{/each}}
@@ -657,5 +657,6 @@
 </div>
 
 <script data-main="main.js" src="vendor/require.min.js"></script>
+<script src="utils/expander.js"></script>
 </body>
 </html>
