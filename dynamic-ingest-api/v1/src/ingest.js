@@ -10,7 +10,7 @@
  * @apiDescription Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. **NOTE that before you ingest a new video, you must first make a [Create Video request](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video).**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
@@ -33,7 +33,7 @@
  * @apiParam (Request Body Fields) {Number} [thumbnail.height] pixel height of the image
  * @apiParam (Request Body Fields) {Number} [thumbnail.width] pixel width of the image
  * @apiParam (Request Body Fields) {Boolean} [capture-images] whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not
- * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](http://docs.brightcove.com/en/video-cloud/di-api/guides/notifications.html) should be sent to
+ * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](https://support.brightcove.com/node/17939) should be sent to
  *
  * @apiParamExample {json} Ingest Request Example:
  *    {
