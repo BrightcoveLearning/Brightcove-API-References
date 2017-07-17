@@ -10,7 +10,7 @@
  * **Note that date range for this request must fall within the available date range for the dimensions requested &mdash; the simplest thing to do is to use `from=alltime`**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
  * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
@@ -18,8 +18,8 @@
  * @apiParam (URL Parameters) {Number} [offset=0] ignored
  * @apiParam (URL Parameters) {String} [sort=video_view] ignored
  * @apiParam (URL Parameters) {String} [fields=video_view] ignored
- * @apiParam (URL Parameters) {String="account","city","country","region","date","date-time","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#reportDimensions) for which combined dimensions are supported
- * @apiParam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#filterValues) for details
+ * @apiParam (URL Parameters) {String="account","city","country","region","date","date-time","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](https://support.brightcove.com/node/17997#reportDimensions) for which combined dimensions are supported
+ * @apiParam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](https://support.brightcove.com/node/17997#filterValues) for details
  * @apiParam (URL Parameters) {mixed} [from="(30 days before now)"] ignored
  * @apiParam (URL Parameters) {mixed} [to="now"] ignored
  * @apiParam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] ignored
