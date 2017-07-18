@@ -9,7 +9,7 @@
  * @apiDescription Get a player configuration. Note that you specify which branch you wish to act upon, either the master (published) or preview.
  *
  * @apiHeader {String}  Content-Type Content-Type: application/json
- * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String}  account_id account ID
  * @apiParam (Path Parameters) {String}  player_id player ID
@@ -106,7 +106,7 @@
  * @apiDescription Update a player configuration. This operation allows you to replace, and in some cases update, any property in the JSON configuration for a player. This is the recommended way to update a player configuration, rather than the PUT operation below. The PATCH will modify the configuration whereas the PUT will replace the configuration.
  *
  * @apiHeader {String}  Content-Type Content-Type: application/json
- * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String}  account_id account ID
  * @apiParam (Path Parameters) {String}  player_id player ID
