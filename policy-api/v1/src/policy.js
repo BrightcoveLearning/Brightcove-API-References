@@ -9,7 +9,7 @@
  * @apiDescription Create a new policy key to access the Playback API
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields (Concise Format)) {Object} key-data data for the policy key (used for concise format)
@@ -88,7 +88,7 @@
  * @apiDescription Get a policy key associated with a policy key string
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} key_string the key string for the policy
