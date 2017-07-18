@@ -392,7 +392,7 @@
   * @apiGroup MediaItem
   * @apiVersion 1.0.0
   *
-  * @apiDescription Retrieves all publicationRuleIds assigned to a mediaItem.  Please review the [Content Restriction](/docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  * @apiDescription Retrieves all publicationRuleIds assigned to a mediaItem.  Please review the [Content Restriction](https://support.brightcove.com/node/17772#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *

@@ -112,7 +112,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Create an adServer, defining the base URL and query string variables that will be fired to your ad provider for a single VAST ad or DFP/SmartXML ad playlist response. Please see our guide for [Converting an ad tag for the Once Media Management API](//docs.brightcove.com/en/once/guides/converting-ad-tag-once-media-management-api.html).
+ * @apiDescription Create an adServer, defining the base URL and query string variables that will be fired to your ad provider for a single VAST ad or DFP/SmartXML ad playlist response. Please see our guide for [Converting an ad tag for the Once Media Management API](https://support.brightcove.com/node/17774).
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
