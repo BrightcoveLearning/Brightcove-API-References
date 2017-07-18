@@ -7,10 +7,11 @@
 /**
  * @api {get} /accounts/:account_id/playlists/:playlist_id Get Playlist by ID or Reference ID
  * @apiName Get Playlists by ID or Reference ID
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a playlist object for the account.
+ * @apiDescription Gets a playlist object for an account, based on playlist ID or reference ID.
+ <br><br>
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *
@@ -260,8 +261,8 @@
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
  `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
- * @apiError (Error 401) ACCESS_DENIED Must legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
- * @apiError (Error 403) FORBIDDEN error_subcodes:
+ * @apiError (Error 401) INVALID_POLICY_KEY Must be a legal policy key in an [appropriate header](https://support.brightcove.com/node/17906#authentication).
+ * @apiError (Error 403) ACCESS_DENIED error_subcodes:
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
