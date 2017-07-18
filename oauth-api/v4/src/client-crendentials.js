@@ -10,14 +10,14 @@
  * _Note: client credentials are permanent unless revoked, but you must save the client secret when you create it - it can never be retrieved again._
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
  *
  * @apiParam (Request Body Fields) {String} type always equal to `credential`
  * @apiParam (Request Body Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
  * @apiParam (Request Body Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiParam (Request Body Fields) {String="video-cloud-account","perform-account"} maximum_scope.identity.type the type of account
  * @apiParam (Request Body Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiParam (Request Body Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiParam (Request Body Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/node/17922))
  * @apiParam (Request Body Fields) {String} name name for the credentials
  * @apiParam (Request Body Fields) {String} description description for the credentials
  *
@@ -55,7 +55,7 @@
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/node/17922))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -117,7 +117,7 @@
  * @apiDescription Get an array of client credentials for one or more accounts
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
  *
  * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
  *
@@ -142,7 +142,7 @@
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/node/17922))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -228,7 +228,7 @@
  * @apiDescription Get a client credential
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
  *
  * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
  *
@@ -253,7 +253,7 @@
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/node/17922))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -310,7 +310,7 @@
  * @apiDescription Update a client credential
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
  *
  * @apiParam (Path Parameters) {String} client_id client id for the credential
  *
@@ -347,7 +347,7 @@
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/node/17922))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -406,7 +406,7 @@
  * @apiDescription Update a client credential
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
  *
  * @apiParam (Path Parameters) {String} client_id client id for the credential
  *
