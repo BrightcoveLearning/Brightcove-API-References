@@ -624,6 +624,186 @@
  *
  */
 
+ // get dynamic renditions
+
+ /**
+  * @api {get} /accounts/:account_id/videos/:video_id/assets/dynamic_renditions Get Dynamic Renditions
+  * @apiName Get Dynamic Renditions
+  * @apiGroup assetGroup
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Gets a list of dynamic renditions for a Dynamic Delivery video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Rendition list Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/renditions
+  *
+  * @apiSuccess (Response Fields) {String} rendition_id the rendition id
+  * @apiSuccess (Response Fields) {Boolean} media_type media type for the rendition (`audio` or `video`)
+  * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
+  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
+  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
+  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess (Response Fields) {Number} duration duration in milliseconds
+  * @apiSuccess (Response Fields) {String} audio_configuration The audio configuration of the audio track
+  * @apiSuccess (Response Fields) {String} variant The variant of the HLS profile (`baseline`, `main`, or `high`)
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 200 OK
+  *    [
+  *        {
+  *            "rendition_id": "default/audio128",
+  *            "frame_height": null,
+  *            "frame_width": null,
+  *            "media_type": "audio",
+  *            "size": 801796,
+  *            "created_at": "2017-06-05T11:21:08.447Z",
+  *            "updated_at": "2017-06-05T11:21:08.447Z",
+  *            "encoding_rate": 125000,
+  *            "duration": 49691,
+  *            "audio_configuration": "L_R",
+  *            "language": "en",
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/audio64",
+  *            "frame_height": null,
+  *            "frame_width": null,
+  *            "media_type": "audio",
+  *            "size": 413259,
+  *            "created_at": "2017-06-05T11:21:08.399Z",
+  *            "updated_at": "2017-06-05T11:21:08.399Z",
+  *            "encoding_rate": 63000,
+  *            "duration": 49691,
+  *            "audio_configuration": "L_R",
+  *            "language": "en",
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/audio96",
+  *            "frame_height": null,
+  *            "frame_width": null,
+  *            "media_type": "audio",
+  *            "size": 606234,
+  *            "created_at": "2017-06-05T11:21:08.494Z",
+  *            "updated_at": "2017-06-05T11:21:08.494Z",
+  *            "encoding_rate": 96000,
+  *            "duration": 49691,
+  *            "audio_configuration": "L_R",
+  *            "language": "en",
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video1200",
+  *            "frame_height": 540,
+  *            "frame_width": 960,
+  *            "media_type": "video",
+  *            "size": 7454598,
+  *            "created_at": "2017-06-05T11:21:38.687Z",
+  *            "updated_at": "2017-06-05T11:21:38.687Z",
+  *            "encoding_rate": 1198000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video1700",
+  *            "frame_height": 540,
+  *            "frame_width": 960,
+  *            "media_type": "video",
+  *            "size": 10553021,
+  *            "created_at": "2017-06-05T11:21:36.566Z",
+  *            "updated_at": "2017-06-05T11:21:36.566Z",
+  *            "encoding_rate": 1697000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video2000",
+  *            "frame_height": 720,
+  *            "frame_width": 1280,
+  *            "media_type": "video",
+  *            "size": 12458619,
+  *            "created_at": "2017-06-05T11:21:44.306Z",
+  *            "updated_at": "2017-06-05T11:21:44.306Z",
+  *            "encoding_rate": 2004000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video450",
+  *            "frame_height": 270,
+  *            "frame_width": 480,
+  *            "media_type": "video",
+  *            "size": 2803606,
+  *            "created_at": "2017-06-05T11:21:33.204Z",
+  *            "updated_at": "2017-06-05T11:21:33.204Z",
+  *            "encoding_rate": 449000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video700",
+  *            "frame_height": 360,
+  *            "frame_width": 640,
+  *            "media_type": "video",
+  *            "size": 4343474,
+  *            "created_at": "2017-06-05T11:21:40.947Z",
+  *            "updated_at": "2017-06-05T11:21:40.947Z",
+  *            "encoding_rate": 697000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        },
+  *        {
+  *            "rendition_id": "default/video900",
+  *            "frame_height": 360,
+  *            "frame_width": 640,
+  *            "media_type": "video",
+  *            "size": 5595772,
+  *            "created_at": "2017-06-05T11:21:37.728Z",
+  *            "updated_at": "2017-06-05T11:21:37.728Z",
+  *            "encoding_rate": 898000,
+  *            "duration": 49633,
+  *            "variant": "main"
+  *        }
+  *    ]
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
 
  // get captions
 
