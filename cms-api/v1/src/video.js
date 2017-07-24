@@ -822,7 +822,20 @@
  * @apiSuccess (Response Field) {String} video_container the video container
  * @apiSuccess (Response Field) {Number} video_duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response video has digital master:
+ * @apiSuccessExample {json} Success Response video digital master (Dynamic Delivery):
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "0e1ba58d-cc8d-438a-9db5-3bb3d79487c8",
+ *        "size": 108263237,
+ *        "height": 1080,
+ *        "width": 1920,
+ *        "duration": 49628,
+ *        "encoding_rate": 17442000,
+ *        "created_at": "2017-07-21T23:14:39.957Z",
+ *        "updated_at": "2017-07-21T23:14:39.957Z"
+ *    }
+ *
+ * @apiSuccessExample {json} Success Response video digital master:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",

@@ -33,6 +33,7 @@
         "Add_Rendition",
         "Update_Rendition",
         "Delete_Rendition",
+        "Get_Dynamic_Renditions",
         "Get_Digital_Master_List",
         "Get_Digital_Master",
         "Add_Digital_Master",
