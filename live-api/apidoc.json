@@ -10,6 +10,7 @@
         "Get_Live_Job_Details",
         "Stop_a_Live_Job",
         "Manual_Ad_Cue_Point_Insertion",
+        "Insert_ID3_timed_metadata",
         "Clips",
         "Create_VOD_Clip",
         "SSAI",
@@ -25,7 +26,6 @@
         "Update_beacon_set",
         "Get_beacon_sets",
         "Get_beacon_sets_for_user",
-        "Delete_beacon_set",
-        "Insert_ID3_timed_metadata"
+        "Delete_beacon_set"
     ]
 }

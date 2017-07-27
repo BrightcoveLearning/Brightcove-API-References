@@ -1142,7 +1142,7 @@
   // Insert ID3 timed metadata
 
   /**
-    * @api {delete} /v1/jobs/:JOB_ID/id3tag Insert ID3 timed metadata
+    * @api {delete} /v1/jobs/:jobId/id3tag Insert ID3 timed metadata
     * @apiName Insert ID3 timed metadata
     * @apiGroup SSAI
     * @apiVersion 1.0.0
@@ -1152,37 +1152,33 @@
     * @apiHeader {String} Content-Type Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
     *
-    * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+    * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+    * @apiParam (Request Body Fields) {Object} id3_tag An object containing variables for the ID3 timed metadata
+    * @apiParam (Request Body Fields) {String{1..4}} id3_tag.name A name for the tag
+    * @apiParam (Request Body Fields) {String} id3_tag.value A value for the tag (maximum string data size 256KB)
+    * @apiParam (Request Body Fields) {String} [id3_tag.timecode] Time to insert - by default, insertion is immediate
     *
-    * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
-    * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
-    *
-    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+    * @apiParamExample {json} ID3 timed metadata Insertion Request Body Example:
     *    {
-    *        "beacon_set": {
-    *            "account_id": "USER's ACCOUNT ID",
-    *            "beacon_set_id": "BEACON_SET_ID",
-    *            "beacon_urls": [{
-    *                "beacon_url": "https://myserver.com/beaconRX/load",
-    *                "beacon_type": "Load"
-    *            },
-    *            {
-    *                "beacon_url": "https://myserver.com/beaconRX/play",
-    *                "beacon_type": "Play"
-    *            }],
-    *            "updated_beacon_set": {
-    *                "beacon_set_id": "BEACON_SET_ID",
-    *                "beacon_urls": [{
-    *                    "beacon_url": "https://myserver.com/beaconRX/load",
-    *                    "beacon_type": "Load"
-    *                },
-    *                {
-    *                    "beacon_url": "https://myserver.com/beaconRX/play",
-    *                    "beacon_type": "Play"
-    *                }],
-    *                "account_id": "USER's ACCOUNT ID"
-    *            }
+    *        "id3_tag": {
+    *            "name": "BCOV",
+    *            "value": "my value", []
+    *            "timecode": "15:50:49:16" []
     *        }
+    *    }
+    *
+    * @apiSuccess (Response Fields) {String} id The job id
+    * @apiSuccess (Response Fields) {Object} id3_tag The ID3 tag details
+    * @apiSuccess (Response Fields) {String} id3_tag.tag_name The ID3 tag name
+    * @apiSuccess (Response Fields) {String} id3_tag.tag_value The ID3 tag value
+    *
+    * @apiSuccessExample {json} Success response for ID3 timed metadata Insertion
+    *    {
+    *      "id": "JOB_ID",
+    *      "id3_tag": {
+    *        "tag_name": "BCOV",
+    *        "tag_value": "my value"
+    *      }
     *    }
     *
     */
