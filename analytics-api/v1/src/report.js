@@ -33,7 +33,7 @@
  * @apiSuccess (Response Fields) {Object[]} items array of analytics objects for the videos returned
  * @apiSuccess (Response Fields) {Number} items.ad_mode_begin number of times a player entered ad mode
  * @apiSuccess (Response Fields) {Number} items.ad_mode_complete number of times a player completed ad mode
- * @apiSuccess (Response Fields) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
+ * @apiSuccess (Response Fields) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and (for player reports) the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
  * @apiSuccess (Response Fields) {Number} items.engagement_score the calculated engagement score for the video
  * @apiSuccess (Response Fields) {Number} items.play_rate video views divided by video impressions
  * @apiSuccess (Response Fields) {Number} items.play_request number of play requests received for a video
