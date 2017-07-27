@@ -1144,7 +1144,7 @@
   /**
     * @api {delete} /v1/jobs/:jobId/id3tag Insert ID3 timed metadata
     * @apiName Insert ID3 timed metadata
-    * @apiGroup SSAI
+    * @apiGroup Live_Jobs
     * @apiVersion 1.0.0
     *
     * @apiDescription Inserts an ID3 timed metadata tag for an ongoing job.
