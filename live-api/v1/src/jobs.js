@@ -1138,3 +1138,51 @@
   * @apiSuccess (Response Fields) {Boolean} inserted Whether the cuepoint was successfully inserted
   *
   */
+
+  // Insert ID3 timed metadata
+
+  /**
+    * @api {delete} /v1/jobs/:JOB_ID/id3tag Insert ID3 timed metadata
+    * @apiName Insert ID3 timed metadata
+    * @apiGroup SSAI
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Inserts an ID3 timed metadata tag for an ongoing job.
+    *
+    * @apiHeader {String} Content-Type Content-Type: application/json
+    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+    *
+    * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+    *
+    * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
+    * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
+    *
+    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+    *    {
+    *        "beacon_set": {
+    *            "account_id": "USER's ACCOUNT ID",
+    *            "beacon_set_id": "BEACON_SET_ID",
+    *            "beacon_urls": [{
+    *                "beacon_url": "https://myserver.com/beaconRX/load",
+    *                "beacon_type": "Load"
+    *            },
+    *            {
+    *                "beacon_url": "https://myserver.com/beaconRX/play",
+    *                "beacon_type": "Play"
+    *            }],
+    *            "updated_beacon_set": {
+    *                "beacon_set_id": "BEACON_SET_ID",
+    *                "beacon_urls": [{
+    *                    "beacon_url": "https://myserver.com/beaconRX/load",
+    *                    "beacon_type": "Load"
+    *                },
+    *                {
+    *                    "beacon_url": "https://myserver.com/beaconRX/play",
+    *                    "beacon_type": "Play"
+    *                }],
+    *                "account_id": "USER's ACCOUNT ID"
+    *            }
+    *        }
+    *    }
+    *
+    */

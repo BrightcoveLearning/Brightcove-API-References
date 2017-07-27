@@ -25,6 +25,7 @@
         "Update_beacon_set",
         "Get_beacon_sets",
         "Get_beacon_sets_for_user",
-        "Delete_beacon_set"
+        "Delete_beacon_set",
+        "Insert_ID3_timed_metadata"
     ]
 }
