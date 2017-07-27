@@ -1127,16 +1127,36 @@
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
-  * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds.
+  * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds
+  * @apiParam (Request Body Fields) {Object} ad_server_data a set of any variables (key/value pairs) that should be passed to the adServer
   *
   * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
   *    {
-  *       "duration":30
+  *       "duration": 30,
+  *       "ad_server_data" : {
+  *            "varToAdServer": "Hello",
+  *            "adBreakId": 12312
+  *            "adBreakCategory": "summer"
+  *       }
   *    }
   *
-  * @apiSuccess (Response Fields) {String} live_job_id The id of the live stream job
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the cuepoint was successfully inserted
+  * @apiSuccess (Response Fields) {String} id The id of the live stream job
+  * @apiSuccess (Response Fields) {Object} cue_point The cuepoint data
+  * @apiSuccess (Response Fields) {String} cue_point.id The cuepoint id
+  * @apiSuccess (Response Fields) {Number} cue_point.duration The cuepoint duration in seconds
+  * @apiSuccess (Response Fields) {String} cue_point.accuracy The cuepoint insertion accuracy - may be `segment` or `frame`
+  * @apiSuccess (Response Fields) {DateTimeString} cue_point.inserted_at Time when the cue point was inserted in the stream
   *
+  * @apiSuccessExample {json} Success response for ID3 timed metadata Insertion
+  *    {
+  *        "id": "JOB_ID",
+  *        "cue_point": {
+  *            "id": "adBreak-2f58393ada1442d98eca0817fa565ba4",
+  *            "duration": 30,
+  *            "accuracy": "segment", [ Can be segment or frame ]
+  *            "inserted_at": "2017-07-21T09:30:46.307Z" [ Time when the cue point was inserted in the stream ]
+  *        },
+  *    }
   */
 
   // Insert ID3 timed metadata
