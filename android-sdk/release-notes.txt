@@ -1,5 +1,11 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 5.0.4:
+
+  SDK Changes:
+    Fixed issues with resuming downloads when the device wakes from sleep.
+    Fixed issues with resuming downloads when the device recovers from a network interruption.
+
 Version 5.0.3:
 
   SDK New Features:
