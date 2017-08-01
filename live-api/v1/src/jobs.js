@@ -14,6 +14,7 @@
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
+ * @apiParam (Request Body Fields) {String} [beacon_set] ID for a beacon set (for SSAI only).
  * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish. To prevent job from finishing unless you manually cancel it, set `reconnect_time` to `0`
  * @apiParam (Request Body Fields) {String} [slate] Id for a set of slate assets
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
@@ -1128,7 +1129,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds
-  * @apiParam (Request Body Fields) {String} [timecode] When to insert the cuepoint in DD:HH:MM:SS from the stream start; if omitted, the cuepoint will be inserted immediately
+  * @apiParam (Request Body Fields) {String} [timecode] When to insert the cuepoint in HH:MM:SS:FF from the stream start (FF = frames); if omitted, the cuepoint will be inserted immediately
   * @apiParam (Request Body Fields) {Object} [ad_server_data] a set of any variables (key/value pairs) that should be passed to the adServer
   *
   * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
