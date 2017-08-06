@@ -56,7 +56,9 @@
  * @apiParam (Request Body Fields) {Object} [outputs.headers] HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files
  * @apiParam (Request Body Fields) {Boolean} [outputs.rtmp_keep_alive=false] Send empty script packets in an RTMP output when no data is being recieved
  * @apiParam (Request Body Fields) {String} [outputs.format] The output format to use - defaults determined by the output filename and then video or audio codec; otherwise: `mp4` (for standard outputs); `ts` (for segmented outputs)
+ * @apiParam (Request Body Fields) {String} [outputs.video_bit_depth] The number of bits per color channel to use - valid values are `8`, `10`, and `12` - Normally you wouldn't set this and instead would specify the video_codec_profile which would provide the bit depth
  * @apiParam (Request Body Fields) {String} [outputs.video_codec] The video codec to use - defaults determined by the format, profile, or audio_codec; `h264` if none are provided
+ * @apiParam (Request Body Fields) {String} [outputs.video_codec_profile] Sets the encoding profile used by the video codec; defaults: H.264: `baseline`, HEVC: `main`, VP9: `0` - see (https://support.brightcove.com/encoding-settings-video#bc-ipnav-1) for more details
  * @apiParam (Request Body Fields) {String} [outputs.audio_codec] The audio codec to use - defaults determined by the format, profile, or video_codec; `aac` if none are provided
  * @apiParam (Request Body Fields) {String} [outputs.size] The resolution of the output video (WxH, in pixels)
  * @apiParam (Request Body Fields) {Number} [outputs.width] The maximum width of the output video (in pixels)
