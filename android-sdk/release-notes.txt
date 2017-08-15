@@ -1,27 +1,40 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 5.0.5:
+
+  SDK changes:
+
+    *  Fixed issue where getLiveEdge() was not updating if the playback head was out of live.
+
+  IMA Plugin changes:
+
+    * The IMA Plugin now supports v3.7.4 of the Google IMA SDK for Android. 
+    * Fixed issue where an Ad would break after skipping an earlier Ad.
+    * Fixed issue where the Ad timer will freeze after pausing and resuming the player.
+
 Version 5.0.4:
 
   SDK Changes:
-    Fixed issues with resuming downloads when the device wakes from sleep.
-    Fixed issues with resuming downloads when the device recovers from a network interruption.
+
+    * Fixed issues with resuming downloads when the device wakes from sleep.
+    * Fixed issues with resuming downloads when the device recovers from a network interruption.
 
 Version 5.0.3:
 
   SDK New Features:
 
-    Offline Playback: Added support for the following:
-      Multiple Audio Tracks
-      VTT Captions
-      Rendition Selection
+    * Offline Playback: Added support for the following:
+        Multiple Audio Tracks
+        VTT Captions
+        Rendition Selection
 
-      Please also note that Offline Playback is currently supported only with Video Cloud Dynamic Delivery and DRM.
+        Please also note that Offline Playback is currently supported only with Video Cloud Dynamic Delivery and DRM.
 
 Version 5.0.0 (BETA):
 
   SDK changes:
 
-    Offline Playback: Added support for downloading DASH Widevine content and viewing it without an internet connection.
+    * Offline Playback: Added support for downloading DASH Widevine content and viewing it without an internet connection.
 
 Version 4.13.7:
 
