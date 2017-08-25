@@ -28,6 +28,7 @@
         "Update_Playlist",
         "Delete_Playlist",
         "assetGroup",
+        "Get_Assets",
         "Get_Rendition_List",
         "Get_Rendition",
         "Add_Rendition",
