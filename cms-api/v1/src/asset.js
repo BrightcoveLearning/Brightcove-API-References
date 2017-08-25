@@ -6,6 +6,157 @@
 * update remote assets. GET operations will work for both ingested and remote assets.
 */
 
+// get assets
+
+/**
+ * @api {get} /accounts/:account_id/videos/:video_id/assets Get Assets
+ * @apiName Get Assets
+ * @apiGroup assetGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets assets for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ *
+ *
+ * @apiParamExample {Url} Rendition list Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets
+ *
+ * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
+ * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
+ * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    [
+ *    	{
+ *    		"id": "5510490788001",
+ *    		"account_id": "1752604059001",
+ *    		"audio_only": false,
+ *    		"cdn_origin_id": "5602",
+ *    		"complete": true,
+ *    		"controller_type": "DEFAULT",
+ *    		"current_filename": "1752604059001_5510490788001_5510487311001-th.jpg",
+ *    		"key_systems": [
+ *    		],
+ *    		"name": "Lightning-over-mosque-Utrecht.m4v Thumbnail",
+ *    		"progressive_download": false,
+ *    		"reference_id": "",
+ *    		"remote_stream_name": "",
+ *    		"remote_url": "",
+ *    		"size": 2024,
+ *    		"type": "THUMBNAIL",
+ *    		"uploaded_at": "2017-07-17T17:46:22.523Z",
+ *    		"updated_at": "2017-07-26T07:02:42.076Z",
+ *    		"frame_height": 90,
+ *    		"frame_width": 160
+ *    	},
+ *    	{
+ *    		"id": "5510492050001",
+ *    		"account_id": "1752604059001",
+ *    		"audio_only": false,
+ *    		"cdn_origin_id": "5602",
+ *    		"complete": true,
+ *    		"controller_type": "DEFAULT",
+ *    		"current_filename": "1752604059001_5510492050001_5510487311001-vs.jpg",
+ *    		"key_systems": [
+ *    		],
+ *    		"name": "Lightning-over-mosque-Utrecht.m4v Video Still",
+ *    		"progressive_download": false,
+ *    		"reference_id": "",
+ *    		"remote_stream_name": "",
+ *    		"remote_url": "",
+ *    		"size": 41742,
+ *    		"type": "VIDEO_STILL",
+ *    		"uploaded_at": "2017-07-17T17:46:17.295Z",
+ *    		"updated_at": "2017-07-26T07:02:42.077Z",
+ *    		"frame_height": 720,
+ *    		"frame_width": 1280
+ *    	},
+ *    	{
+ *    		"id": "5510492151001",
+ *    		"account_id": "1752604059001",
+ *    		"audio_only": false,
+ *    		"cdn_origin_id": "",
+ *    		"complete": true,
+ *    		"controller_type": "DEFAULT",
+ *    		"current_filename": "1752604059001_5510492151001_5510487311001.mp4",
+ *    		"key_systems": [
+ *    		],
+ *    		"name": "Lightning-over-mosque-Utrecht.m4v",
+ *    		"progressive_download": true,
+ *    		"reference_id": "",
+ *    		"remote_stream_name": "",
+ *    		"remote_url": "",
+ *    		"size": 7135676,
+ *    		"type": "DIGITAL_MASTER",
+ *    		"uploaded_at": "2017-07-17T17:46:16.157Z",
+ *    		"updated_at": "2017-07-17T17:46:31.126Z",
+ *    		"drm": null,
+ *    		"encoding_rate": 10508000,
+ *    		"frame_height": 1080,
+ *    		"frame_width": 1920,
+ *    		"hds": null,
+ *    		"hls": null,
+ *    		"video_codec": "H264",
+ *    		"video_container": "MP4",
+ *    		"video_duration": 4578
+ *    	}
+ *    ]
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
 // get renditions
 
 /**
