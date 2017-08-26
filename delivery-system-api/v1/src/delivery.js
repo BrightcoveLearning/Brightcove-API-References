@@ -175,7 +175,7 @@
   *     {
   *       "name": "newname.txt",
   *       "public_url": "http://players.brightcove.net/1507807800001/testRepo1/newname.txt"
-  *     {
+  *     }
   */
 
   // delete a file
@@ -204,7 +204,7 @@
    *     HTTP/1.1 200
    *     {
    *       message: "The call was successful."
-   *     {
+   *     }
    */
 
    // list all files
