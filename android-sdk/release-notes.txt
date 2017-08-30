@@ -1,10 +1,24 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 5.0.6:
+
+  SDK changes:
+
+    * Fixed a timing issue where captions/gear icon was not appearing correctly on Android TV.
+    * Fixed issue with download status notifications affecting certain devices like Pixel C.
+    * Fixed multiple strict mode warnings that may appear when downloading videos
+    * General improvements in updating download status notifications from the file downloader service.
+    * General improvements when queueing multiple videos for download.
+
+  Brightcove ExoPlayer changes:
+
+    * Added a new field to the Video.Fields object. The WIDEVINE_HEADERS field is used when sending custom headers for Widevine license acquisition.
+
 Version 5.0.5:
 
   SDK changes:
 
-    *  Fixed issue where getLiveEdge() was not updating if the playback head was out of live.
+    * Fixed issue where getLiveEdge() was not updating if the playback head was out of live.
 
   IMA Plugin changes:
 

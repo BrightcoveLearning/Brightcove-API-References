@@ -15,6 +15,7 @@ com.brightcove.player.captioning
 com.brightcove.player.captioning.preferences
 com.brightcove.player.captioning.tasks
 com.brightcove.player.controller
+com.brightcove.player.data
 com.brightcove.player.display
 com.brightcove.player.display.tasks
 com.brightcove.player.drm
