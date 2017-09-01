@@ -17,6 +17,7 @@
  * @apiParam (Request Body Fields) {String} [beacon_set] ID for a beacon set (for SSAI only).
  * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish. To prevent job from finishing unless you manually cancel it, set `reconnect_time` to `0`
  * @apiParam (Request Body Fields) {String} [slate] Id for a set of slate assets
+ * @apiParam (Request Body Fields) {Boolean} [static=false] Whether this is a static entry point (SEP) job
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
  * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
  * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
@@ -786,7 +787,7 @@
  // Stop Live Job
 
  /**
-  * @api {put} /v1/jobs/:jobId/cancel Stop a Live Job
+  * @api {put} /v1/jobs/:jobId/cancel Stop Live Job
   * @apiName Stop Live Job
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -802,6 +803,62 @@
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
+  *
+  * @apiSuccessExample {json} Success Response Stop a Live Stream:
+  *    HTTP/1.1 200 OK
+  *    {
+  *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
+  *    }
+  *
+  */
+
+ // Activate SEP Stream
+
+ /**
+  * @api {put} /v1/jobs/:jobId/activate Activate SEP Stream
+  * @apiName Activate SEP Stream
+  * @apiGroup Live_Jobs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Activate SEP (static entry point) Stream
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to activate.
+  *
+  * @apiParamExample {url} Live Stream Custom Origin Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
+  *
+  * @apiSuccess (Response Fields) {String} id The job id for the stream that was activated
+  *
+  * @apiSuccessExample {json} Success Response Stop a Live Stream:
+  *    HTTP/1.1 200 OK
+  *    {
+  *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
+  *    }
+  *
+  */
+
+ // Deactivate SEP Stream
+
+ /**
+  * @api {put} /v1/jobs/:jobId/deactivate Deactivate SEP Stream
+  * @apiName Deactivate SEP Stream
+  * @apiGroup Live_Jobs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deactivate SEP (static entry point) Stream
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to deactivate.
+  *
+  * @apiParamExample {url} Live Stream Custom Origin Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
+  *
+  * @apiSuccess (Response Fields) {String} id The job id for the stream that was Deactivated
   *
   * @apiSuccessExample {json} Success Response Stop a Live Stream:
   *    HTTP/1.1 200 OK
