@@ -719,7 +719,7 @@
   * @apiGroup Jobs
   * @apiVersion 2.0.0
   *
-  * @apiDescription Get Job Details
+  * @apiDescription Get Job Details. Job details are available for two months after the job is submitted.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
