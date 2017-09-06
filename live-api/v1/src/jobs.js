@@ -827,8 +827,8 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to activate.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
-  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
+  * @apiParamExample {url} Activate SEP Job Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/activate
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was activated
   *
@@ -855,8 +855,8 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to deactivate.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
-  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
+  * @apiParamExample {url} Deactivate SEP Job Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/deactivate
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was Deactivated
   *
