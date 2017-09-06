@@ -1028,7 +1028,7 @@
   * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
   * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
   * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
-  * @apiParam (Request Body Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
+  * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
   * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
   * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
@@ -1235,7 +1235,7 @@
  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
  * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
  * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
- * @apiParam (Request Body Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
+ * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
  * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
