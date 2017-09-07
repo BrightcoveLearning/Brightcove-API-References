@@ -18,7 +18,7 @@
 
   - In general, search-enabled Policy Keys should only be stored on a server and not in a browser player or mobile app, since they can be used to list all playable videos. For some accounts this may not be applicable if you do not care if all of your playable videos can be discovered.
 
-  - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api. Initially, there is a lower maximum limit of 200 videos for accounts with Geo-restriction enabled.
+  - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api.
 
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
 
