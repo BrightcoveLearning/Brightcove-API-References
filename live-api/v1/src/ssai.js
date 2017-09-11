@@ -20,7 +20,7 @@
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xslt xslt stylesheet for the transform.
   * @apiParam (Request Body Fields) {String} ad_configuration_url_format Format for the ad tag - see [SSAI Using the Brightcove Live API](https://support.brightcove.com/server-side-ad-insertion-using-brightcove-live-api#ad_configuration_variables) for the available ad configuration variables.
   * @apiParam (Request Body Fields) {String} application_description Human readable description of the ad application.
-  * @apiParam (Request Body Fields) {String} [account_id] Your account id.
+  * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work).
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
   * @apiParamExample {json} Create an ad configuration example:
@@ -41,7 +41,7 @@
   *    }
   *
   * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
+  * @apiSuccess (Response Fields) {String} application.account_id The Live account id (if omitted, the request will still work)
   * @apiSuccess (Response Fields) {String} application.description The ad application description
   * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
@@ -175,7 +175,7 @@
     * @apiHeader {String} Content-Type Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
     *
-    * @apiParam (Request Body Fields) {Object} account_id The account id
+    * @apiParam (URL Parameters) {Object} [account_id] The Live account id (if you leave this out, request will still work)
     *
     *
     * @apiSuccess (Response Fields) {Object} application The ad application object
@@ -320,7 +320,7 @@
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (Request Body Fields) {String} source_url URL for the slate to ingest
-  * @apiParam (Request Body Fields) {String} account_id The account id
+  * @apiParam (Request Body Fields) {String} account_id The Live account id (if left blank, the request will still work)
   * @apiParam (Request Body Fields) {String} [source_description] User identifiable description for the slate
   *
   * @apiParamExample {json} Ingest Slate Media Source Asset example:
