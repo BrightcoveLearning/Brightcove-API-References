@@ -1033,7 +1033,7 @@
   * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
   * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
-  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
+  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
   * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
   * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
@@ -1240,7 +1240,7 @@
  * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
  * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
