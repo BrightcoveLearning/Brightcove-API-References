@@ -322,7 +322,7 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
- * //This curl statement creates an embed that uses a video asset from a URL (Perform customer)
+ * //This curl statement creates an embed that uses a video asset from a URL (standalone Brightcove Player customer)
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user $EMAIL \
