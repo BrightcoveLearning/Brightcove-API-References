@@ -897,6 +897,58 @@
  *
  */
 
+ // delete digital master
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/digital_master Delete Digital Master
+  * @apiName Delete Digital Master
+  * @apiGroup videoGroup
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes the archived digital master for a video. **Be sure to read [Digital Master Delete API](https://support.brightcove.com/digital-master-delete-api) before using this operation** to understand the implications.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete Digital Master Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/digital_master
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
 // get playlist references
 
  /**

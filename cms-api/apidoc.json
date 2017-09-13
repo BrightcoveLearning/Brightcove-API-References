@@ -12,6 +12,7 @@
         "Get_Video_Sources",
         "Get_Video_Images",
         "Get_Digital_Master_Info",
+        "Delete_Digital_Master",
         "Get_Playlists_for_Video",
         "Create_Video",
         "Update_Video",
