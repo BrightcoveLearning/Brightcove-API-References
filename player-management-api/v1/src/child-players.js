@@ -314,10 +314,8 @@
  *   --request POST \
  *   --data '{
  *       "name": "MySampleEmbedPlayer2",
- *       "configuration": {
- *         "video_cloud": {
- *           "video": "4443311217001"
- *         }
+ *       "video_cloud": {
+ *         "video": "4443311217001"
  *       }
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
@@ -329,13 +327,11 @@
  *   --request POST \
  *   --data '{
  *       "name": "MySampleEmbedPlayer3",
- *       "configuration": {
- *         "media": {
- *           "sources": [{
- *             "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
- *             "type":"video/mp4"
- *           }]
- *         }
+ *       "media": {
+ *         "sources": [{
+ *           "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+ *           "type":"video/mp4"
+ *         }]
  *       }
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
