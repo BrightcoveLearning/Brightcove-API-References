@@ -21,7 +21,7 @@
  * @apiParamExample {curl} curl Statement:
  *  curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/configuration/:branch
  *
@@ -64,7 +64,7 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request PATCH \
  *   --data '{
  *       "name": "New Patched Embed Name",
@@ -129,7 +129,7 @@ Using this endpoint does not change any configurations, it is only useful for se
  * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request GET \
  *   "https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embedID/configuration/merged?playerBranch=master&embedBranch=preview"
  *

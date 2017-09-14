@@ -445,7 +445,7 @@
  * //This curl statement creates a player that uses a Video Cloud asset
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request POST \
  *   --data '{
  *       "name": "MySamplePlayer - Video Cloud source",
@@ -460,7 +460,7 @@
  * //This curl statement creates a player that uses a video asset from a URL (standalone Brightcove Player customer)
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request POST \
  *   --data '{
  *       "name": "MySamplePlayer - URL Source",
@@ -558,7 +558,7 @@
  * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request POST \
  *   --data '{
  *     "comment": "Comment for GitHub repo"
@@ -598,7 +598,7 @@
  * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request DELETE \
  *   --data '{}' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id

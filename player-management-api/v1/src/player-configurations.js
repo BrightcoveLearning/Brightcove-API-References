@@ -162,7 +162,7 @@
  * @apiParamExample {curl}  curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
+ *   --user :email \
  *   --request PATCH \
  *   --data '{
  *       "languages": [
