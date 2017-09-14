@@ -891,7 +891,7 @@
   * @apiSuccess (Response Fields) {DateTimeString} job.finished_at ISO 8601 date-time string representing when the live stream was stopped
   * @apiSuccess (Response Fields) {String} job.id The live job id
   * @apiSuccess (Response Fields) {Boolean} job.privacy `TODO`
-  * @apiSuccess (Response Fields) {String} job.state The current state of the job
+  * @apiSuccess (Response Fields) {String} job.state The current state of the job - possible values for Live jobs are `standby`, `waiting`, `processing`, `disconnected`. `finishing`, `finished`, `cancelling`, `cancelled`, `failed`; possible values for VOD jobs are `waiting_finish_live`, `waiting`, `processing`, `creating_asset`, `cancelling`, `cancelled`, `finished`, `failed`
   * @apiSuccess (Response Fields) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
   * @apiSuccess (Response Fields) {Boolean} job.test `TODO`
   * @apiSuccess (Response Fields) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
