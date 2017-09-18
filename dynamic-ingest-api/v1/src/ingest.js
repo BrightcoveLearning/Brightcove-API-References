@@ -189,11 +189,17 @@
   * @apiParamExample {json} Get S3 URLS Example:
   *    https://ingest.api.brightcove.com/v1/accounts/57838016001/videos/67909129001/upload-urls/greatblueheron.mp4
   *
-  * @apiSuccess (Response Fields) {String} id job id for the request
+  * @apiSuccess (Response Fields) {String} bucket  the S3 bucket name
+  * @apiSuccess (Response Fields) {String} object_key the access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (Response Fields) {String} access_key_id the access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (Response Fields) {String} secret_access_key the secret access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (Response Fields) {String} session_token the secret access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (Response Fields) {String} SignedUrl this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload
+  * @apiSuccess (Response Fields) {String} ApiRequestUrl this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets
   *
   * @apiSuccessExample {json} Success Response:
   *    HTTP/1.1 200 OK
-  *    {    
+  *    {
   *    	    "bucket": "ingestion-upload-production",
   *    	    "object_key": "57838016001/67909129001/194ed2d1-cd57-420d-9139-58ed655ba70f/greatblueheron.mp4",
   *    	    "access_key_id": "ASIAI6IWBNY3QPOKC55A",
@@ -205,24 +211,8 @@
   *
   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-  * @apiError (Error 4xx) {json} PROFILE 400: Unable to find profile by name
-  * @apiError (Error 4xx) {json} NOT_SUBMITTED 400: Unable to submit job, please try again later
-  * @apiError (Error 4xx) {json} NO_SUCH_VIDEO 400: Unable to find the referenced video
-  * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
-  * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
-  * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
-  * @apiError (Error 5xx) {json} SUBMISSION_FAILURE 500: Unable to submit job please try again later.
   * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Unable to authorize request.
-  * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL 422: source url is malformed.
-  * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL 422: source url uses a unsupported protocol.
-  * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES 422: vtt sources exceed the maximum size.
-  * @apiError (Error 4xx) {json} INVALID_VTT_KIND 422: vtt kind is invalid.
-  * @apiError (Error 4xx) {json} CONSTRAINT_VIOLATION 422: capture-image is not allowed if an image source is provided.
-  * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY 422: request data contains some unprocessable entity.
-  * @apiError (Error 4xx) {json} BAD_REQUEST 400: Unable to parse request body.
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} CDN_CONFIGS Unable to fetch CDN credentials
-  * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST 400 Both a master url and use_archived_master were set in the request.
   * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
   *
   * @apiErrorExample {json} 404 Error Response
@@ -233,14 +223,6 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 400 PROFILE
-  *    HTTP/1.1 400 Bad Request
-  *    [
-  *        {
-  *            "error_code": "PROFILE",
-  *            "message": "Unable to find profile by name."
-  *        }
-  *    ]
   *
   * @apiErrorExample {json} 404 Not Found
   *    HTTP/1.1 404 Not Found
@@ -260,40 +242,5 @@
   *        }
   *    ]
   *
-  * @apiErrorExample 400 Bad Request
-  *    HTTP/1.1 403 Bad Request
-  *    [
-  *        {
-  *            "error_code": "BAD_REQUEST",
-  *            "message": "Unable to parse request body."
-  *        }
-  *    ]
-  *
-  * @apiErrorExample 422 CONSTRAINT_VIOLATION
-  *    HTTP/1.1 422 Unprocessable Entity
-  *    [
-  *        {
-  *            "error_code": "CONSTRAINT_VIOLATION",
-  *            "message": "capture-image is not allowed if an image source is provided."
-  *        }
-  *    ]
-  *
-  * @apiErrorExample 400 AMBIGUOUS_REQUEST
-  *    HTTP/1.1 400 Bad Request
-  *    [
-  *        {
-  *            "error_code": "AMBIGUOUS_REQUEST",
-  *            "message": "Both a master url and use_archived_master were set in the request."
-  *        }
-  *    ]
-  *
-  * @apiErrorExample 422 TYPE_VIOLATION
-  *    HTTP/1.1 422 Unprocessable Entity
-  *    [
-  *        {
-  *            "error_code": "TYPE_VIOLATION",
-  *            "message": ".text_tracks.kind must be of type String"
-  *        }
-  *    ]
   *
   */
