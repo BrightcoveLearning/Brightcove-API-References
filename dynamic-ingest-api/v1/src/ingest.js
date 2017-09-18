@@ -168,3 +168,132 @@
  *    ]
  *
  */
+
+ // Get S3 URLs
+
+  /**
+  * @api {get} /accounts/:account_id/videos/:video_id/upload-urls/:source_name Get S3 URLs
+  * @apiName Get S3 URLs
+  * @apiGroup Ingest
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Get temporary S3 URLs to upload source files for ingestion into Video Cloud. See [Source File Upload](https://support.brightcove.com/source-file-upload-api-dynamic-ingest) for more information. **NOTE that before you ingest a new video, you must first make a [Create Video request](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video).**
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
+  * @apiParam (Path Parameters) {String} source_name the video source filename - **the name should not contain any URL-reserved characters such as ?, &, # or spaces**
+  *
+  * @apiParamExample {json} Get S3 URLS Example:
+  *    https://ingest.api.brightcove.com/v1/accounts/57838016001/videos/67909129001/upload-urls/greatblueheron.mp4
+  *
+  * @apiSuccess (Response Fields) {String} id job id for the request
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 200 OK
+  *    {    
+  *    	    "bucket": "ingestion-upload-production",
+  *    	    "object_key": "57838016001/67909129001/194ed2d1-cd57-420d-9139-58ed655ba70f/greatblueheron.mp4",
+  *    	    "access_key_id": "ASIAI6IWBNY3QPOKC55A",
+  *    	    "secret_access_key": "DXzr3VYcpMpH1Qg5JZ3qFRw3gRFdi3jAoxiUQtR0",
+  *    	    "session_token": "FQoDYXdzEI///////////wEaDNnYCOYcjTzSp6seNyKMA5pkuYrKv2+oSVDI/I4xLqGg5Mc7ORWqTT1Bn72VdzqvxkbA8i/2xaOKNSYzF/ceyTAb3Bp43jah4s/mn2MqkurXPL0dfP0KzVOUAsg7Xdt9JIstycn6mhp0rhf6Qm0Rq7GGXiCchb1KF4TV33fNKZSq8+/4oGKK55LfW+lqWF8a+24Pk5x2aEeSUCFSWIHEkAyj2rBzmIYR9TyjJhe1hE8eoTZKvovz5o5S86mEr4apg77ibrMUyYHTbDTvGVr9NVmNwXQR4vbaKKzhpL6CII0RZ9PHApGbLkg78w5EWGM2MLmTfIjvkq+WWztG2DybSCjmx7c+za6rNMKDgouKTvkHnJbqqsmTlPuhFmzIkIF3e6cYZLHl3q8ku7dk46YJPWK0BwZaNxjfMyIWM93BNPQBwLJlwSMaYZsWadSjWOyBn/w/p/BtP/haKQGYMVcOFrYKdnjY5SeGTruOmHdfRKnPQAtmoB5aroxnD3d7maFdnc/2/FZoybnp1nrw9uyGa8yiPHpqCENFCm3T3iiuof/NBQ==",
+  *    	    "signed_url": "https://ingestion-upload-production.s3.amazonaws.com/57838016001/67909129001/194ed2d1-cd57-420d-9139-58ed655ba70f/greatblueheron.mp4?AWSAccessKeyId=AKIAJZKRHWB4FUFMCPPA&Expires=1505829422&Signature=PKxh8SqQVtxVONt41tLSh6WSvnk%3D",
+  *    	    "api_request_url": "https://ingestion-upload-production.s3.amazonaws.com/57838016001/67909129001/194ed2d1-cd57-420d-9139-58ed655ba70f/greatblueheron.mp4"
+  *    }
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} PROFILE 400: Unable to find profile by name
+  * @apiError (Error 4xx) {json} NOT_SUBMITTED 400: Unable to submit job, please try again later
+  * @apiError (Error 4xx) {json} NO_SUCH_VIDEO 400: Unable to find the referenced video
+  * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
+  * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
+  * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
+  * @apiError (Error 5xx) {json} SUBMISSION_FAILURE 500: Unable to submit job please try again later.
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Unable to authorize request.
+  * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL 422: source url is malformed.
+  * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL 422: source url uses a unsupported protocol.
+  * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES 422: vtt sources exceed the maximum size.
+  * @apiError (Error 4xx) {json} INVALID_VTT_KIND 422: vtt kind is invalid.
+  * @apiError (Error 4xx) {json} CONSTRAINT_VIOLATION 422: capture-image is not allowed if an image source is provided.
+  * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY 422: request data contains some unprocessable entity.
+  * @apiError (Error 4xx) {json} BAD_REQUEST 400: Unable to parse request body.
+  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 4xx) {json} CDN_CONFIGS Unable to fetch CDN credentials
+  * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST 400 Both a master url and use_archived_master were set in the request.
+  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  * @apiErrorExample {json} 400 PROFILE
+  *    HTTP/1.1 400 Bad Request
+  *    [
+  *        {
+  *            "error_code": "PROFILE",
+  *            "message": "Unable to find profile by name."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample {json} 404 Not Found
+  *    HTTP/1.1 404 Not Found
+  *    [
+  *        {
+  *            "error_code": "NO_SUCH_VIDEO",
+  *            "message": "Unable to find the referenced video."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample 403 Forbidden
+  *    HTTP/1.1 403 Forbidden
+  *    [
+  *        {
+  *            "error_code": "UNAUTHORIZED",
+  *            "message": "Unable to authorize request."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample 400 Bad Request
+  *    HTTP/1.1 403 Bad Request
+  *    [
+  *        {
+  *            "error_code": "BAD_REQUEST",
+  *            "message": "Unable to parse request body."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample 422 CONSTRAINT_VIOLATION
+  *    HTTP/1.1 422 Unprocessable Entity
+  *    [
+  *        {
+  *            "error_code": "CONSTRAINT_VIOLATION",
+  *            "message": "capture-image is not allowed if an image source is provided."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample 400 AMBIGUOUS_REQUEST
+  *    HTTP/1.1 400 Bad Request
+  *    [
+  *        {
+  *            "error_code": "AMBIGUOUS_REQUEST",
+  *            "message": "Both a master url and use_archived_master were set in the request."
+  *        }
+  *    ]
+  *
+  * @apiErrorExample 422 TYPE_VIOLATION
+  *    HTTP/1.1 422 Unprocessable Entity
+  *    [
+  *        {
+  *            "error_code": "TYPE_VIOLATION",
+  *            "message": ".text_tracks.kind must be of type String"
+  *        }
+  *    ]
+  *
+  */
