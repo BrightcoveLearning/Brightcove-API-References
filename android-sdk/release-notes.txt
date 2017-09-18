@@ -1,5 +1,16 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 5.1.0:
+
+  SDK changes:
+
+    * The edge Catalog now accepts query parameters as a Map object which are included in the Playback API request.
+    * Added Analytics.getSessionKey() static method, which can be used to access the application session identifier.
+
+  OnceUx Plugin changes:
+
+    * Added support for Brightcove Dynamic Delivery with Server Side Ad Insertion.
+
 Version 5.0.7:
 
   SDK changes:
