@@ -588,7 +588,7 @@
 * "created_at": "2017-05-15T22:33:18.529Z"
 *}
 *
-* ** @apiSuccessExample {json} Success Response Dynamic Delivery:
+* ** @apiSuccessExample {json} Dynamic Delivery:
 *    HTTP/1.1 200 OK
 *    {
 * "description": null,
@@ -660,6 +660,91 @@
 *   }
 * ],
 * "created_at": "2017-06-05T11:20:52.412Z"
+*}
+*
+** @apiSuccessExample {json} DRM-packaged Dynamic Delivery:
+*    HTTP/1.1 200 OK
+*{
+* "description": null,
+* "poster_sources": [
+*   {
+*     "src": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/1280x720/2s316ms/match/image.jpg"
+*   }
+* ],
+* "tags": [],
+* "cue_points": [],
+* "custom_fields": {},
+* "account_id": "2728142649001",
+* "sources": [
+*   {
+*     "ext_x_version": "5",
+*     "type": "application/x-mpegURL",
+*     "src": "http://manifest.prod.boltdns.net/manifest/v1/hls/v5/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/10s/master.m3u8?fastly_token=NTllOGY3ZjhfOTczOWZhNGY4ZWQxODFjYWFmODRiNDZiMzI2NmM0NWE3OWFjYWJiNTk0ZmUxOGUzZjM3ZDI1ZTA5YjNkMjJlZA%3D%3D",
+*     "key_systems": {
+*       "com.apple.fps.1_0": {
+*         "key_request_url": "https://manifest.prod.boltdns.net/license/v1/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/22d62151-eccd-421b-8848-e36a4cbae571?fastly_token=NTllOGY3ZjhfNWVhYTVmYWFmNDYwNTJkNTNmMGMwNmNkNjQwMTE1ZDVmNTE3YTU4Y2VjZTFhYWFkODNhMzExMTczYjk5N2RkNg%3D%3D",
+*         "certificate_url": "https://manifest.prod.boltdns.net/license/v1/fairplay_app_cert/2728142649001"
+*        }
+*      }
+*   },
+*   {
+*     "ext_x_version": "5",
+*     "type": "application/x-mpegURL",
+*     "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v5/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/10s/master.m3u8?fastly_token=NTllOGY3ZjhfOTczOWZhNGY4ZWQxODFjYWFmODRiNDZiMzI2NmM0NWE3OWFjYWJiNTk0ZmUxOGUzZjM3ZDI1ZTA5YjNkMjJlZA%3D%3D",
+*     "key_systems": {
+*       "com.apple.fps.1_0": {
+*         "key_request_url": "https://manifest.prod.boltdns.net/license/v1/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/22d62151-eccd-421b-8848-e36a4cbae571?fastly_token=NTllOGY3ZjhfNWVhYTVmYWFmNDYwNTJkNTNmMGMwNmNkNjQwMTE1ZDVmNTE3YTU4Y2VjZTFhYWFkODNhMzExMTczYjk5N2RkNg%3D%3D",
+*         "certificate_url": "https://manifest.prod.boltdns.net/license/v1/fairplay_app_cert/2728142649001"
+*       }
+*     }
+*   },
+*   {
+*     "type": "application/dash+xml",
+*     "src": "http://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/bccenc/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/2s/manifest.mpd?fastly_token=NTllOGY3ZjhfOTZiMGJmYzk1ODBjZjc2ODQ3ZTRmZDdlNTA5OTYyNTQ5ZjNiYjlkOWViZTUzZTBiMjJlOGYwODhhZmQ3YWIxNg%3D%3D",
+*     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+*     "key_systems": {
+*       "com.widevine.alpha": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/widevine/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfZGU1N2RhMDUyY2ZiZWZjY2QyMDNkY2E2ZTkwOTU5ZjZiM2U4YzU3ZGJlMjJmMjFkYzIyM2ZkOTVlNGRiMDM1Ng%3D%3D"
+*       },
+*       "com.microsoft.playready": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/playready/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfMjBlYWRiOTU0MGM2MTRmOGVlNzc2NzkyOTI5OTc4ZWUwZTNkMDcwMWIyMzQ3NTEyMDM1NjVmM2NjNGJkNzMzMw%3D%3D"
+*       }
+*     }
+*   },
+*   {
+*     "type": "application/dash+xml",
+*     "src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/bccenc/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/2s/manifest.mpd?fastly_token=NTllOGY3ZjhfOTZiMGJmYzk1ODBjZjc2ODQ3ZTRmZDdlNTA5OTYyNTQ5ZjNiYjlkOWViZTUzZTBiMjJlOGYwODhhZmQ3YWIxNg%3D%3D",
+*     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+*     "key_systems": {
+*       "com.widevine.alpha": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/widevine/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfZGU1N2RhMDUyY2ZiZWZjY2QyMDNkY2E2ZTkwOTU5ZjZiM2U4YzU3ZGJlMjJmMjFkYzIyM2ZkOTVlNGRiMDM1Ng%3D%3D"
+*       },
+*       "com.microsoft.playready": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/playready/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfMjBlYWRiOTU0MGM2MTRmOGVlNzc2NzkyOTI5OTc4ZWUwZTNkMDcwMWIyMzQ3NTEyMDM1NjVmM2NjNGJkNzMzMw%3D%3D"
+*       }
+*     }
+*   }
+* ],
+* "name": "Lightning-Utrecht",
+* "reference_id": null,
+* "long_description": null,
+* "duration": 4633,
+* "economics": "AD_SUPPORTED",
+* "published_at": "2017-09-20T12:45:57.347Z",
+* "text_tracks": [],
+* "updated_at": "2017-09-20T12:47:52.010Z",
+* "thumbnail": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/160x90/2s316ms/match/image.jpg",
+* "poster": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/1280x720/2s316ms/match/image.jpg",
+* "offline_enabled": false,
+* "link": null,
+* "id": "5581882937001",
+* "ad_keys": null,
+* "thumbnail_sources": [
+*   {
+*     "src": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/160x90/2s316ms/match/image.jpg"
+*   }
+* ],
+* "created_at": "2017-09-20T12:45:57.347Z"
 *}
  *
  * @apiError (Error 400) BAD_REQUEST error_subcode:
