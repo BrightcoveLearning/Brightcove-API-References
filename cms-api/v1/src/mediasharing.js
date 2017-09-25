@@ -1,5 +1,5 @@
 /**
- * @apiDefine mediasharingGroup Video
+ * @apiDefine mediasharingGroup Media Sharing
  * The media sharing operations allow you to create sharing relationships between a **Master** account and affiliates, and to share or un-share videos
  * For more information, see [Media Sharing with the CMS API](https://support.brightcove.com/media-sharing-cms-api)
  */
