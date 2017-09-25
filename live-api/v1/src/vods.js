@@ -59,7 +59,7 @@
   *                "label": "60 secs by timestamp”,
   *                "start_time": 1471375580,
   *                "end_time": 1471375640,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
+  *                "url": "s3://yourS3bucket/live/test_stream_timestamp.mp4",
   *                "credentials": "YOUR_CREDENTIALS"
   *            }
   *        ]
