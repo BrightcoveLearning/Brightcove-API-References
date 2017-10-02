@@ -310,7 +310,7 @@
  * @apiDescription Update a client credential
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/node/17924#steps))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](https://support.brightcove.com/oauth-get-client-credentials-using-curl#steps))
  *
  * @apiParam (Path Parameters) {String} client_id client id for the credential
  *
