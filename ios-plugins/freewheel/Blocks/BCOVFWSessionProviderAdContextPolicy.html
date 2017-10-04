@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BCOVAMCVideoHeartbeatConfigurationPolicy Block Reference</title>
+	<title>BCOVFWSessionProviderAdContextPolicy Block Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -59,13 +59,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BCOVAMCVideoHeartbeatConfigurationPolicy Block Reference</h1>
+					<h1 class="title">BCOVFWSessionProviderAdContextPolicy Block Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Declared in</th>
-	<td>BCOVAMCAnalyticsPolicy.h</td>
+	<td>BCOVFWSessionProvider.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -79,30 +79,37 @@
           
           <a title="Block Definition" name="instance_methods"></a>
           <h4 class="method-subtitle parameter-title">Block Definition</h4>
-          <h3 class="subsubtitle method-title">BCOVAMCVideoHeartbeatConfigurationPolicy</h3>
+          <h3 class="subsubtitle method-title">BCOVFWSessionProviderAdContextPolicy</h3>
 
 
 <div class="method-subsection brief-description">
-  <p>Each time a new playback session is ready to be processed, this
-block is called and the session is passed in. The block must return a video
-heartbeat configuration object that will be used to configure Adobe Heartbeat
-for this new playback session. If the block returns nil, Adobe Heartbeat will
-throw an illegal parameter exception to configure heartbeat analytics.</p>
+  <p>@typedef BCOVFWSessionProviderAdContextPolicy</p>
 </div>
 
 
 
-<code>typedef ADBMediaHeartbeatConfig* (^BCOVAMCVideoHeartbeatConfigurationPolicy) (id <, BCOVPlaybackSession >, session )</code>
+<code>typedef BCOVFWContext* (^BCOVFWSessionProviderAdContextPolicy) (BCOVVideo *video, BCOVSource *source, NSTimeInterval videoDuration)</code>
   
   
   
   <div class="method-subsection discussion-section">
   <h4 class="method-subtitle">Discussion</h4>
-  <p>Each time a new playback session is ready to be processed, this
-block is called and the session is passed in. The block must return a video
-heartbeat configuration object that will be used to configure Adobe Heartbeat
-for this new playback session. If the block returns nil, Adobe Heartbeat will
-throw an illegal parameter exception to configure heartbeat analytics.</p>
+  <p>@typedef BCOVFWSessionProviderAdContextPolicy</p>
+
+<p>Policy that returns a BCOVFWAdContext object (FWContext and FWRequestConfiguration)
+for the given video and source. Clients of the BCOVFW component must implement
+this policy to return an appropriately-configured FreeWheel context for each
+video/source/duration. The same context object may be returned for all
+video/source combinations, if desired.</p>
+
+<p>The videoDuration in seconds is provided for convenience when calling setVideoAssetId: on
+the ad context. By default, the sdk will wait for the AVPlayerItem to report
+a duration before executing this block.</p>
+
+<p>If you would like to have this block called as soon as possible, either because
+the duration is available on the BCOVVideo/Source properties dictionary (if retreived
+from Video Cloud) or you are playing a live stream, set <code></code>BCOVFWSessionProviderOptions<code>.waitForAVPlayerDuration = NO</code>
+when creating the plugin.</p>
   </div>
   
   
@@ -115,7 +122,7 @@ throw an illegal parameter exception to configure heartbeat analytics.</p>
   
   <div class="method-subsection declared-in-section">
   <h4 class="method-subtitle">Declared In</h4>
-  <code class="declared-in-ref">BCOVAMCAnalyticsPolicy.h</code><br />
+  <code class="declared-in-ref">BCOVFWSessionProvider.h</code><br />
   </div>
   
   

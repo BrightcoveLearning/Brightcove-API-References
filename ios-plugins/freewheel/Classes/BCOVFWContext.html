@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>BCOVMutableSource Protocol Reference</title>
+	<title>BCOVFWContext Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,17 +56,23 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/deliveryMethod">deliveryMethod</option>
+		<option value="//api/name/adContext">adContext</option>
 		
-		<option value="//api/name/properties">properties</option>
-		
-		<option value="//api/name/url">url</option>
+		<option value="//api/name/adRequestConfig">adRequestConfig</option>
 		
 	</optgroup>
 	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithAdContext:requestConfiguration:">- initWithAdContext:requestConfiguration:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -81,16 +87,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">BCOVMutableSource Protocol Reference</h1>
+					<h1 class="title">BCOVFWContext Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
-	<td><a href="../Protocols/BCOVSource.html">BCOVSource</a></td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BCOVSource.h</td>
+	<td>BCOVFWSessionProvider.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -100,7 +106,11 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Sub-protocol of <a href="../Classes/BCOVSource.html">BCOVSource</a>, used only in its <code>-update</code> method.</p>
+						<p>The <a href="../Blocks/BCOVFWSessionProviderAdContextPolicy.html">BCOVFWSessionProviderAdContextPolicy</a> block returns an object of class
+BCOVFWContext which wraps the parameters of a FreeWheel ad request:</p>
+
+<p>// Submit request with 5s timeout
+[_bcovFWContext submitRequestWithConfiguration:self.<a href="#//api/name/adRequestConfig">adRequestConfig</a> timeout:5];</p>
 					</div>
 					
 					
@@ -116,9 +126,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/url" title="url"></a>
-	<h3 class="method-title"><code><a href="#//api/name/url">&nbsp;&nbsp;url</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/adContext" title="adContext"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adContext">&nbsp;&nbsp;adContext</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -127,12 +137,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The URL at which this source instance&rsquo;s media is accessible.</p>
+				<p>The FWContext object to be used when calling the -submintRequestWithConfiguration:timeout:
+method of FWContext.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, copy) NSURL *url</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) id&lt;FWContext&gt; adContext</code></div>
 
 		    
 			
@@ -144,7 +155,8 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The URL at which this source instance&rsquo;s media is accessible.</p>
+				<p>The FWContext object to be used when calling the -submintRequestWithConfiguration:timeout:
+method of FWContext.</p>
 			</div>
 			
 
@@ -155,16 +167,16 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVSource.h</code></p>
+				<p><code class="declared-in-ref">BCOVFWSessionProvider.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/deliveryMethod" title="deliveryMethod"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deliveryMethod">&nbsp;&nbsp;deliveryMethod</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/adRequestConfig" title="adRequestConfig"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adRequestConfig">&nbsp;&nbsp;adRequestConfig</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -173,13 +185,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The delivery method describing this source in relation to other sources in
-the same video.</p>
+				<p>The FWRequestConfiguration object to be used when calling the-submintRequestWithConfiguration:timeout:
+method of FWContext.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, copy) NSString *deliveryMethod</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) FWRequestConfiguration *adRequestConfig</code></div>
 
 		    
 			
@@ -191,8 +203,8 @@ the same video.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The delivery method describing this source in relation to other sources in
-the same video.</p>
+				<p>The FWRequestConfiguration object to be used when calling the-submintRequestWithConfiguration:timeout:
+method of FWContext.</p>
 			</div>
 			
 
@@ -203,56 +215,42 @@ the same video.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVSource.h</code></p>
+				<p><code class="declared-in-ref">BCOVFWSessionProvider.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/properties" title="properties"></a>
-	<h3 class="method-title"><code><a href="#//api/name/properties">&nbsp;&nbsp;properties</a></code>
-<span class="task-item-suffix">required method</span></h3>
+	<a name="//api/name/initWithAdContext:requestConfiguration:" title="initWithAdContext:requestConfiguration:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAdContext:requestConfiguration:">&ndash;&nbsp;initWithAdContext:requestConfiguration:</a></code>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
 
 		<div class="method-info-container">
 			
-			
-			<div class="method-subsection brief-description">
-				<p>The metadata or properties related to this source instance.</p>
-			</div>
-			
-		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, copy) NSDictionary *properties</code></div>
+			<div class="method-subsection method-declaration"><code>- (BCOVFWContext *)initWithAdContext:(id&lt;FWContext&gt;)<em>adContext</em> requestConfiguration:(FWRequestConfiguration *)<em>adRequestConfig</em></code></div>
 
 		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
 			
 
-			
+			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
 
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>The metadata or properties related to this source instance.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVSource.h</code></p>
-			</div>
-			
-			
+		    
 		</div>
 	</div>
 </div>
