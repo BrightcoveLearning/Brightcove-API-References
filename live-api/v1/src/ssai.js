@@ -23,12 +23,29 @@
   * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work).
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
-  * @apiParamExample {json} Create an ad configuration example:
+  * @apiParamExample {json} Create an ad configuration (single ad response) example:
   *    {
   *        "application_ad_configuration": {
   *            "ad_configuration_description": "Human readable description of the configuration",
-  *            "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML",
-  *            "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
+  *            "ad_configuration_expected_response_type": "Vast",
+  *            "ad_configuration_strategy": "SingleAdResponse",
+  *            "ad_configuration_transforms": [
+  *            {
+  *                "xpath": "/",
+  *                "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
+  *            }],
+  *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
+  *        },
+  *        "application_description": "Human readable description of the ad application",
+  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *    }
+  *
+  * @apiParamExample {json} Create an ad configuration (multiple ad response) example:
+  *    {
+  *        "application_ad_configuration": {
+  *            "ad_configuration_description": "Human readable description of the configuration",
+  *            "ad_configuration_expected_response_type": "Vast",
+  *            "ad_configuration_strategy": "MultipleAdResponse",
   *            "ad_configuration_transforms": [
   *            {
   *                "xpath": "/",
@@ -106,12 +123,29 @@
   * @apiSuccess (Response Fields) {String} application.application_id The ad application id
   * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
   *
-  * @apiParamExample {json} Update an ad configuration example:
+  * @apiParamExample {json} Update an ad configuration (single ad response) example:
   *    {
   *        "application_ad_configuration": {
   *            "ad_configuration_description": "Human readable description of the configuration",
-  *            "ad_configuration_expected_response_type": "Dfp/Vast/SmartXML",
-  *            "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
+  *            "ad_configuration_expected_response_type": "Dfp",
+  *            "ad_configuration_strategy": "SingleAdResponse",
+  *            "ad_configuration_transforms": [
+  *            {
+  *                "xpath": "/",
+  *                "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
+  *            }],
+  *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
+  *        },
+  *        "application_description": "Human readable description of the ad application",
+  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *    }
+  *
+  * @apiParamExample {json} Update an ad configuration (multiple ad response) example:
+  *    {
+  *        "application_ad_configuration": {
+  *            "ad_configuration_description": "Human readable description of the configuration",
+  *            "ad_configuration_expected_response_type": "Dfp",
+  *            "ad_configuration_strategy": "MultipleAdResponse",
   *            "ad_configuration_transforms": [
   *            {
   *                "xpath": "/",
