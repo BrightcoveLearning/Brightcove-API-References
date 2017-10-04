@@ -13,7 +13,7 @@
  *
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
- * @apiParam (Request Body Fields) {String="us-west-2","ap-southeast-2","ap-northeast-1","ap-sounteast-1","eu-central-1","sa-east-1"} region AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support.
+ * @apiParam (Request Body Fields) {String="us-west-2","ap-southeast-2","ap-northeast-1","ap-southeast-1","eu-central-1","sa-east-1"} region AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support.
  * @apiParam (Request Body Fields) {String} [beacon_set] ID for a beacon set (for SSAI only).
  * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish.
  * @apiParam (Request Body Fields) {String} [slate] Id for a set of slate assets
