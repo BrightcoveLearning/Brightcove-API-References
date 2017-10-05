@@ -9,7 +9,7 @@
  * @apiDescription Get a player plugin by id. **Note that the plugin id must be URI_encoded.**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id account ID
  * @apiParam (Path Parameters) {String} plugin_id plugin id - **must be URI_encoded**
@@ -73,7 +73,7 @@
  * @apiDescription Get a player plugin by id. **Note that the plugin id must be URI_encoded.**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id account ID
  * @apiParam (Path Parameters) {String} plugin_id plugin id - **must be URI_encoded**
