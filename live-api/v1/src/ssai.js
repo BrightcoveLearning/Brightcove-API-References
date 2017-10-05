@@ -31,7 +31,7 @@
   *            "ad_configuration_expected_response_type": "Vast",
   *            "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *            "ad_configuration_strategy": "SingleAdResponse",
   *            "ad_configuration_transforms": [
@@ -52,7 +52,7 @@
   *            "ad_configuration_expected_response_type": "Vast",
   *            "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *            "ad_configuration_strategy": "MultipleAdResponse",
   *            "ad_configuration_transforms": [
@@ -92,7 +92,7 @@
   *          "ad_configuration_expected_response_type": "Vast",
   *          "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *          "ad_configuration_strategy": "SingleAdResponse",
   *          "ad_configuration_transforms": [
@@ -144,7 +144,7 @@
   *            "ad_configuration_expected_response_type": "Dfp",
   *            "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *            "ad_configuration_strategy": "SingleAdResponse",
   *            "ad_configuration_transforms": [
@@ -165,7 +165,7 @@
   *            "ad_configuration_expected_response_type": "Dfp",
   *            "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *            "ad_configuration_strategy": "MultipleAdResponse",
   *            "ad_configuration_transforms": [
@@ -205,7 +205,7 @@
   *          "ad_configuration_expected_response_type": "Dfp,
   *          "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
-  *                "X-VIDEOPLAZA-FORWARDED-FOR": "stuff"
+  *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
   *          "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
   *          "ad_configuration_transforms": [
