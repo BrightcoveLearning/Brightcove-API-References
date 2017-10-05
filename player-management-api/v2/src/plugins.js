@@ -3,7 +3,7 @@
 /**
  * @api {get} /accounts/:account_id/plugins/:plugin_id Get Single Plugin
  * @apiName Get Single Plugin
- * @apiGroup Plugin_Registry
+ * @apiGroup Plugin Registry
  * @apiVersion 2.0.0
  *
  * @apiDescription Get a player plugin by id. **Note that the plugin id must be URI_encoded.**
@@ -67,7 +67,7 @@
 /**
  * @api {get} /accounts/:account_id/plugins Get All Plugins
  * @apiName Get All Plugins
- * @apiGroup Plugin_Registry
+ * @apiGroup Plugin Registry
  * @apiVersion 2.0.0
  *
  * @apiDescription Get a player plugin by id. **Note that the plugin id must be URI_encoded.**
