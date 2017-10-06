@@ -1069,8 +1069,8 @@
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   *
-  * @apiParam (Request Body Fields) {String{1..248}} name video title
-  * @apiParam (Request Body Fields) {String{0..254}} [description] video short description
+  * @apiParam (Request Body Fields) {String{1..255}} name video title
+  * @apiParam (Request Body Fields) {String{0..255}} [description] video short description
   * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
   * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected (this field is only available for accounts enabled for [Dynamic Delivery](https://support.brightcove.com/node/17949) and DRM)
   * @apiParam (Request Body Fields) {String{0..5000}} [long_description] video long description
@@ -1272,8 +1272,8 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
  *
- * @apiParam (Request Body Fields) {String{1..248}} [name] video title
- * @apiParam (Request Body Fields) {String{..248}} [description] video short description
+ * @apiParam (Request Body Fields) {String{1..255}} [name] video title
+ * @apiParam (Request Body Fields) {String{..255}} [description] video short description
  * @apiParam (Request Body Fields) {String="AD_supported", "FREE"} [economics="AD_SUPPORTED"] video short description
  * @apiSuccess (Request Body Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands.
  * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected (this field is only available for accounts enabled for [Dynamic Delivery](https://support.brightcove.com/node/17949) and DRM)
