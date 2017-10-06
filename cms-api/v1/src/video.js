@@ -1070,7 +1070,7 @@
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   *
   * @apiParam (Request Body Fields) {String{1..255}} name video title
-  * @apiParam (Request Body Fields) {String{0..255}} [description] video short description
+  * @apiParam (Request Body Fields) {String{0..250}} [description] video short description
   * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
   * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected (this field is only available for accounts enabled for [Dynamic Delivery](https://support.brightcove.com/node/17949) and DRM)
   * @apiParam (Request Body Fields) {String{0..5000}} [long_description] video long description
@@ -1082,7 +1082,7 @@
   * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
   * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
   * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
-  * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
+  * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
   * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
   * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
@@ -1273,7 +1273,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
  *
  * @apiParam (Request Body Fields) {String{1..255}} [name] video title
- * @apiParam (Request Body Fields) {String{..255}} [description] video short description
+ * @apiParam (Request Body Fields) {String{..250}} [description] video short description
  * @apiParam (Request Body Fields) {String="AD_supported", "FREE"} [economics="AD_SUPPORTED"] video short description
  * @apiSuccess (Request Body Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands.
  * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected (this field is only available for accounts enabled for [Dynamic Delivery](https://support.brightcove.com/node/17949) and DRM)
@@ -1289,7 +1289,7 @@
  * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
  * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
  * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
+ * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
