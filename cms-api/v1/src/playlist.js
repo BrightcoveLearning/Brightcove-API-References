@@ -729,8 +729,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParam (Request Body Fields) {String{1..248}} name playlist name
- * @apiParam (Request Body Fields) {String{1..248}} [description] playlist description
+ * @apiParam (Request Body Fields) {String{1..255}} name playlist name
+ * @apiParam (Request Body Fields) {String{1..255}} [description] playlist description
  * @apiParam (Request Body Fields) {String} [reference_id] playlist reference id
  * @apiParam (Request Body Fields) {String="EXPLICIT", "ACTIVATED_OLDEST_TO_NEWEST", "ACTIVATED_NEWEST_TO_OLDEST", "ALPHABETICAL", "PLAYS_TOTAL", "PLAYS_TRAILING_WEEK", "START_DATE_OLDEST_TO_NEWEST", "START_DATE_NEWEST_TO_OLDEST"} type of playlist
  * @apiParam (Request Body Fields) {Number} [limit] maximum number of videos to include (smart playlists only)
@@ -856,8 +856,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParam (Request Body Fields) {String{1..248}} name playlist name
- * @apiParam (Request Body Fields) {String{1..248}} [description] playlist description
+ * @apiParam (Request Body Fields) {String{1..255}} name playlist name
+ * @apiParam (Request Body Fields) {String{1..255}} [description] playlist description
  * @apiParam (Request Body Fields) {String} [reference_id] playlist reference id
  * @apiParam (Request Body Fields) {String="EXPLICIT", "ACTIVATED_OLDEST_TO_NEWEST", "ACTIVATED_NEWEST_TO_OLDEST", "ALPHABETICAL", "PLAYS_TOTAL", "PLAYS_TRAILING_WEEK", "START_DATE_OLDEST_TO_NEWEST", "START_DATE_NEWEST_TO_OLDEST"} [type] of playlist
  * @apiParam (Request Body Fields) {String[]} [video_ids] array of video ids for EXPLICIT type only &mdash; note that you must replace the whole array
