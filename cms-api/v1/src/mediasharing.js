@@ -647,7 +647,7 @@
     * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
     * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
     *
-    * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state] state determines whether the video is accepted or not
+    * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} state determines whether the video is accepted (`ACTIVE`) or rejected (`INACTIVE`)
     *
     * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
     *
