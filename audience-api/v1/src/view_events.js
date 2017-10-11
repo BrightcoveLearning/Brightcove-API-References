@@ -33,7 +33,7 @@
  * @apiSuccess (Response Fields) {String} result.video_id the Video Cloud video id
  * @apiSuccess (Response Fields) {String} result.video_name the Video Cloud video name
  * @apiSuccess (Response Fields) {Number} result.watched the percentage of the video watched
- * @apiSuccess (Response Fields) {Number} result.time_watched the seconds of the video watched
+ * @apiSuccess (Response Fields) {Number} result.time_watched the seconds of the video watched (current playhead position / video duration)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
