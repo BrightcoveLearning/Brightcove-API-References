@@ -422,7 +422,7 @@
    * @apiGroup mediasharingGroup
    * @apiVersion 1.0.0
    *
-   * @apiDescription Lists the existing shares for an account - this is an **Master** account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes
+   * @apiDescription Lists the existing shares for an account - this is a **Master** account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
