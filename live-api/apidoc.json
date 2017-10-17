@@ -7,6 +7,7 @@
     "order": [
         "Live_Jobs",
         "Create_a_Live_Job",
+        "Get_Live_Jobs",
         "Get_Live_Job_Details",
         "Stop_Live_Job",
         "Activate_SEP_Stream",
