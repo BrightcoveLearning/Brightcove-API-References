@@ -873,6 +873,309 @@
   *
   */
 
+// Get Live Jobs
+
+ /**
+  * @api {get} /v1/jobs/ Get Live Jobs
+  * @apiName Get Live Jobs
+  * @apiGroup Live_Jobs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Get all current live jobs
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+  *
+  * @apiParamExample {url} Live Stream Custom Origin Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
+  *
+  * @apiSuccess (Response Fields) {Object} job Object containing the job details
+  * @apiSuccess (Response Fields) {DateTimeString} job.created_at ISO 8601 date-time string representing when the job was created
+  * @apiSuccess (Response Fields) {DateTimeString} job.finished_at ISO 8601 date-time string representing when the live stream was stopped
+  * @apiSuccess (Response Fields) {String} job.id The live job id
+  * @apiSuccess (Response Fields) {Boolean} job.privacy `TODO`
+  * @apiSuccess (Response Fields) {String} job.state The current state of the job - possible values for Live jobs are `standby`, `waiting`, `processing`, `disconnected`. `finishing`, `finished`, `cancelling`, `cancelled`, `failed`; possible values for VOD jobs are `waiting_finish_live`, `waiting`, `processing`, `creating_asset`, `cancelling`, `cancelled`, `finished`, `failed`
+  * @apiSuccess (Response Fields) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
+  * @apiSuccess (Response Fields) {Boolean} job.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
+  * @apiSuccess (Response Fields) {String} job.region The Amazon AWS region to use for encoding the job
+  * @apiSuccess (Response Fields) {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
+  * @apiSuccess (Response Fields) {Number} job.event_length The time, in seconds, that the system will keep the live stream available
+  * @apiSuccess (Response Fields) {Number} job.live_sliding_window_duration The time, in seconds, kept in the live DVR manifest
+  * @apiSuccess (Response Fields) {Boolean} job.live_stream Indicates whether this is a live stream or VOD
+  * @apiSuccess (Response Fields) {Boolean} job.ad_insertion Indicates whether SSAI is enabled
+  * @apiSuccess (Response Fields) {Boolean} job.metadata_passthrough `TODO`
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes `TODO`
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes_rate `TODO`
+  * @apiSuccess (Response Fields) {String} job.playback_url Playback URL for the live stream
+  * @apiSuccess (Response Fields) {String} job.playback_url_dvr Playback URL for the live DVR
+  * @apiSuccess (Response Fields) {Object} job.input_media_file Object containing properties for the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_bitrate_in_kbps Audio bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.audio_codec Audio codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_sample_rate Audio sample rate of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.channels The number of audio channels
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.created_at ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.duration_in_ms duration_in_ms.
+  * @apiSuccess (Response Fields) {String} job.input_media_file.error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} job.input_media_file.error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.finished_at ISO 8601 date-time string representing when the input file was finished
+  * @apiSuccess (Response Fields) {String} job.input_media_file.format Format of the input file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.frame_rate Frame rate of the input file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.height Frame height of the input file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.id System id of the input file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.md5_checksum Checksum for the input file
+  * @apiSuccess (Response Fields) {Boolean} job.input_media_file.privacy `TODO`
+  * @apiSuccess (Response Fields) {String} job.input_media_file.state Current state of input file processing
+  * @apiSuccess (Response Fields) {Boolean} job.input_media_file.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.updated_at ISO 8601 date-time string representing when the input file was last modified
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.video_codec Video codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.width Frame width of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.total_bitrate_in_kbps Total bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.url URL for the input media file
+  * @apiSuccess (Response Fields) {String} job.slate id for a slate of assets included
+  * @apiSuccess (Response Fields) {Object} job.stream Object containing properties for the live stream
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.created_at ISO 8601 date-time string representing when the stream was created
+  * @apiSuccess (Response Fields) {Number} job.stream.duration ISO Duration of the stream in seconds
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.finished_at ISO 8601 date-time string representing when the stream was finished
+  * @apiSuccess (Response Fields) {Number} job.stream.height Frame height of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.id System id of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.name Name of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.protocol Protocol of the stream
+  * @apiSuccess (Response Fields) {Boolean} job.stream.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.updated_at ISO 8601 date-time string representing when the stream was last modified
+  * @apiSuccess (Response Fields) {Number} job.stream.video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.stream.video_codec Video codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.stream.width Frame width of the stream
+  * @apiSuccess (Response Fields) {Number} job.stream.total_bitrate_in_kbps Total bitrate of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.region AWS region list specified for the account
+  * @apiSuccess (Response Fields) {String} job.stream.url URL for the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location Object representing the location of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source Object representing the location source of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.latitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.longitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.location `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination Object representing the destination of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source Object representing the destination source of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.latitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.longitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.location `TODO`
+  * @apiSuccess (Response Fields) {Number} job.stream.in_worker_bytes `TODO`
+  * @apiSuccess (Response Fields) {Number} job.stream.in_worker_bytes_rate `TODO`
+  * @apiSuccess (Response Fields) {Object[]} job.output_media_files Array of objects containing properties for the output media files
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_bitrate_in_kbps Audio bitrate of the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.audio_codec Audio codec of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_sample_rate Audio sample rate of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.channels The number of audio channels
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.created_at ISO 8601 date-time string representing when the output file was created
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.duration_in_ms ISO 8601 date-time string representing when the output file was created
+  * @apiSuccess (Response Fields) {String} job.output_media_files.error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} job.output_media_files.error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.finished_at ISO 8601 date-time string representing when the output file was finished
+  * @apiSuccess (Response Fields) {String} job.output_media_files.format Format of the output file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.fragment_duration_in_ms `TODO`
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.frame_rate Frame rate of the output file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.height Frame height of the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.id System id of the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.md5_checksum Checksum for the output file
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.privacy `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.rfc_6381_audio_codec `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.rfc_6381_video_codec `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.state Current state of output file processing
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.updated_at ISO 8601 date-time string representing when the output file was last modified
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.video_bitrate_in_kbps Video bitrate of the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.video_codec Video codec of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.width Frame width of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.total_bitrate_in_kbps Total bitrate of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.keyframe_interval Keyframe interval for the output media file
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.keyframe_interval_follow_source Whether keyframe rate for the output matches the source
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.live_stream Whether the output is a live stream
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.keyframe_interval Keyframe interval for the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url URL for the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_dvr Live DVR url for live stream output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_vod  URL for VOD output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playlist_type Playlist type for playlist output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.type Will be `playlist` for playlist output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.filename File name for the playlist manifest
+  * @apiSuccess (Response Fields) {String} job.output_media_files.dvr_filename File name for the DVR playlist manifest
+  *
+  * @apiSuccessExample {json} Success Response Get Live Job Details:
+  *    HTTP/1.1 200 OK
+  *    {
+  *      "job": {
+  *        "created_at": "2016-11-06T20:12:46.571Z",
+  *        "finished_at": "2016-11-06T20:43:16.063Z",
+  *        "id": "edb92295e0f744f088f473ac047538c3",
+  *        "privacy": false,
+  *        "state": "finished",
+  *        "submitted_at": "2016-11-06T20:12:46.571Z",
+  *        "test": false,
+  *        "updated_at": "2016-11-06T20:42:55.980Z",
+  *        "region": "my-region-list,
+  *        "reconnect_time": 20,
+  *        "event_length": 0,
+  *        "live_sliding_window_duration": 30,
+  *        "live_stream": true,
+  *        "ad_insertion": false,
+  *        "metadata_passthrough": false,
+  *        "out_worker_bytes": 0,
+  *        "out_worker_bytes_rate": 0,
+  *        "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *        "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
+  *        "input_media_file": {
+  *          "audio_bitrate_in_kbps": null,
+  *          "audio_codec": null,
+  *          "audio_sample_rate": null,
+  *          "audio_tracks": null,
+  *          "channels": null,
+  *          "created_at": "2016-11-06T20:12:46.571Z",
+  *          "duration_in_ms": 1478464996063,
+  *          "error_class": null,
+  *          "error_message": null,
+  *          "file_size_bytes": null,
+  *          "finished_at": "2016-11-06T20:43:16.063Z",
+  *          "format": null,
+  *          "frame_rate": null,
+  *          "height": null,
+  *          "id": "input-edb92295e0f744f088f473ac047538c3",
+  *          "md5_checksum": null,
+  *          "privacy": false,
+  *          "state": "finished",
+  *          "test": false,
+  *          "updated_at": "2016-11-06T20:42:55.980Z",
+  *          "video_bitrate_in_kbps": null,
+  *          "video_codec": null,
+  *          "width": null,
+  *          "total_bitrate_in_kbps": null,
+  *          "url": null
+  *        },
+  *        "stream": {
+  *          "created_at": null,
+  *          "finished_at": "2016-11-06T20:43:16.063Z",
+  *          "height": null,
+  *          "id": "stream-edb92295e0f744f088f473ac047538c3",
+  *          "name": "alive",
+  *          "protocol": null,
+  *          "state": null,
+  *          "test": false,
+  *          "updated_at": null,
+  *          "width": null,
+  *          "total_bitrate_in_kbps": null,
+  *          "duration": 1478464996.063,
+  *          "region": "my-region-list,
+  *          "url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
+  *          "location": {
+  *            "source": {
+  *              "latitude": null,
+  *              "longitude": null,
+  *              "location": null
+  *            },
+  *            "destination": {
+  *              "latitude": null,
+  *              "longitude": null,
+  *              "location": null
+  *            },
+  *            "distance": null
+  *          },
+  *          "in_worker_bytes": 0,
+  *          "in_worker_bytes_rate": 0
+  *        },
+  *        "output_media_files": [
+  *          {
+  *            "audio_bitrate_in_kbps": 196.608,
+  *            "audio_codec": "AAC",
+  *            "audio_sample_rate": null,
+  *            "channels": null,
+  *            "created_at": "2016-11-06T20:12:46.571Z",
+  *            "duration_in_ms": 1478464996063,
+  *            "error_class": null,
+  *            "error_message": null,
+  *            "file_size_bytes": null,
+  *            "finished_at": "2016-11-06T20:43:16.063Z",
+  *            "format": null,
+  *            "fragment_duration_in_ms": null,
+  *            "frame_rate": null,
+  *            "height": 540,
+  *            "id": "0-edb92295e0f744f088f473ac047538c3",
+  *            "md5_checksum": null,
+  *            "privacy": false,
+  *            "rfc_6381_audio_codec": null,
+  *            "rfc_6381_video_codec": null,
+  *            "state": "finished",
+  *            "test": false,
+  *            "updated_at": "2016-11-06T20:42:55.980Z",
+  *            "video_bitrate_in_kbps": 1887.232,
+  *            "video_codec": "H.264",
+  *            "video_codec_profile": "main",
+  *            "width": 960,
+  *            "label": "hls720p",
+  *            "total_bitrate_in_kbps": 2083.84,
+  *            "keyframe_interval": 60,
+  *            "keyframe_interval_follow_source": false,
+  *            "segment_seconds": 6,
+  *            "live_stream": true,
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8"
+  *          },
+  *          {
+  *            "audio_bitrate_in_kbps": 196.608,
+  *            "audio_codec": "AAC",
+  *            "audio_sample_rate": null,
+  *            "channels": null,
+  *            "created_at": "2016-11-06T20:12:46.571Z",
+  *            "duration_in_ms": 1478464996063,
+  *            "error_class": null,
+  *            "error_message": null,
+  *            "file_size_bytes": null,
+  *            "finished_at": "2016-11-06T20:43:16.063Z",
+  *            "format": null,
+  *            "fragment_duration_in_ms": null,
+  *            "frame_rate": null,
+  *            "height": 360,
+  *            "id": "1-edb92295e0f744f088f473ac047538c3",
+  *            "md5_checksum": null,
+  *            "privacy": false,
+  *            "rfc_6381_audio_codec": null,
+  *            "rfc_6381_video_codec": null,
+  *            "state": "finished",
+  *            "test": false,
+  *            "updated_at": "2016-11-06T20:42:55.980Z",
+  *            "video_bitrate_in_kbps": 838.656,
+  *            "video_codec": "H.264",
+  *            "video_codec_profile": "main",
+  *            "width": 640,
+  *            "label": "hls480p",
+  *            "total_bitrate_in_kbps": 1035.264,
+  *            "keyframe_interval": 60,
+  *            "keyframe_interval_follow_source": false,
+  *            "segment_seconds": 6,
+  *            "live_stream": true,
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8"
+  *          },
+  *          {
+  *            "playlist_type": "defaultS3",
+  *            "type": "playlist",
+  *            "filename": "playlist.m3u8",
+  *            "dvr_filename": "playlist_dvr.m3u8",
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+  *          }
+  *        ]
+  *      }
+  *    }
+  *
+  */
+
 // Get Live Job Details
 
  /**
