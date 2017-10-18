@@ -3743,7 +3743,7 @@
 
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Delete ISM Manifest
-  * @apiName Get ISM Manifest
+  * @apiName Delete ISM Manifest
   * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
