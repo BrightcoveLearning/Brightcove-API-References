@@ -108,6 +108,9 @@
   *      "inserted": true
   *    }
   *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
 
 // Update an Ad application_ad_configuration
@@ -220,6 +223,9 @@
   *      },
   *      "inserted": true
   *    }
+  *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   *
   */
 
@@ -412,6 +418,10 @@
   *      "media_source_asset_status": "transcoding"
   *      "media_source_asset_description": "User identifiable description for the slate"
   *    }
+  *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
 
   // Delete Slate Media Source Asset
@@ -551,6 +561,9 @@
    *        "inserted": true
    *    }
    *
+   * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+   *
+   *
    */
 
  // Update a beacon set
@@ -623,6 +636,9 @@
    *            }
    *        }
    *    }
+   *
+   * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+   *
    *
    */
 
