@@ -225,6 +225,7 @@
   *    }
   *
   * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   *
   */
@@ -294,6 +295,8 @@
     *      }
     *    ]
     *
+    * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+    *
     *
     */
 
@@ -348,6 +351,9 @@
   *      "account_id": "ACCOUNT_ID"
   *    }
   *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
 
  // Delete an ad application
@@ -373,6 +379,9 @@
   *      "application_id": "APPLICATION_ID",
   *      "deleted": true
   *    }
+  *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   */
 
   // Ingest Slate Media Source Asset
@@ -455,6 +464,10 @@
   *      "media_source_asset_status": "ready",
   *      "account_id": "ACCOUNT_ID"
   *    }
+  *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
 
   // Get Slate Media Source Assets
@@ -499,6 +512,9 @@
   *        "media_source_asset_status": "ready"
   *      }
   *    ]
+  *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   *
   */
 
@@ -638,6 +654,7 @@
    *    }
    *
    * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+   * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
    *
    *
    */
@@ -688,6 +705,9 @@
      *        }]
      *    }]
      *
+     * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+     *
+     *
      */
 
 
@@ -735,6 +755,9 @@
      *           "beacon_type": "Play"
      *        }]
      *    }]
+     *
+     * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+     *
      *
      */
 
@@ -785,5 +808,8 @@
    *            }
    *        }
    *    }
+   *
+   * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+   *
    *
    */
