@@ -781,14 +781,12 @@
  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  *
  * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
- *    [
- *        {
- *            "error_code": "NOT_FOUND",
- *            "message": "Requested resource does not exist",
- *            "request_id": "df35af83-ac9b-44b0-b172-a80a11bd0bfa"
- *        }
- *    ]
+ *    HTTP/1.1 404 Not Found
+ *    {
+ *        "error_code": "NOT_FOUND",
+ *        "message": "Requested resource does not exist",
+ *        "request_id": "df35af83-ac9b-44b0-b172-a80a11bd0bfa"
+ *    }
  *
  *
  */
@@ -819,6 +817,7 @@
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   */
