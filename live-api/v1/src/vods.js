@@ -99,4 +99,8 @@
   *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
   *    }
   *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
