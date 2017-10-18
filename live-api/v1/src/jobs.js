@@ -778,6 +778,7 @@
  * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -818,6 +819,8 @@
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   */
 
  // Activate SEP Stream
@@ -846,6 +849,8 @@
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   */
 
  // Deactivate SEP Stream
@@ -873,6 +878,8 @@
   *    {
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
+  *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   */
 
@@ -1817,6 +1824,9 @@
   *      }
   *    }
   *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
   */
 
 // Manual Ad Cue Point Insertion
@@ -1864,6 +1874,9 @@
   *            "inserted_at": "2017-07-21T09:30:46.307Z" [ Time when the cue point was inserted in the stream ]
   *        },
   *    }
+  *
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
   */
 
   // Insert ID3 timed metadata
@@ -1907,5 +1920,7 @@
     *        "tag_value": "my value"
     *      }
     *    }
+    *
+    * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
     *
     */
