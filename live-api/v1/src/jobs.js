@@ -877,7 +877,7 @@
 // Get Live Jobs
 
  /**
-  * @api {get} /v1/jobs/ Get Live Jobs
+  * @api {get} /v1/jobs/live Get Live Jobs
   * @apiName Get Live Jobs
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
