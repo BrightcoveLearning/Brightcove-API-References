@@ -8,7 +8,7 @@
  *
  * @apiDescription Create a live stream
  *
- * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Content-Type: application/json
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
@@ -801,7 +801,7 @@
   *
   * @apiDescription Stop a live stream
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to stop.
@@ -834,7 +834,7 @@
   *
   * @apiDescription Activate SEP (static entry point) Stream
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to activate.
@@ -866,7 +866,7 @@
   *
   * @apiDescription Deactivate SEP (static entry point) Stream
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to deactivate.
@@ -898,7 +898,7 @@
   *
   * @apiDescription Get all current live jobs
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
@@ -1538,7 +1538,7 @@
   *
   * @apiDescription Get Live Job Details
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
@@ -1846,7 +1846,7 @@
   *
   * @apiDescription Inserts a manual Cue-Out with a duration to the Live ingest point.
   *
-  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
@@ -1900,7 +1900,7 @@
     *
     * @apiDescription Inserts an ID3 timed metadata tag for an ongoing job.
     *
-    * @apiHeader {String} Content-Type Content-Type: application/json
+    * @apiHeader {String} Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
     *
     * @apiParam (URL Parameters) {String} jobId The job id you want details for.
