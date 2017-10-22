@@ -15,7 +15,7 @@
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String {..255}} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
- * @apiParam (URL Parameters) {String {..255}} [foreignKey] Filter to media items that have foreign key substring. E.g. foreignKey=foo could return media items with foreign key "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String {..150}} [foreignKey] Filter to media items that have foreign key substring. E.g. foreignKey=foo could return media items with foreign key "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="asc","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
@@ -196,7 +196,7 @@
  * @apiParam (Request Body Fields) {String} id The mediaItem Id
  * @apiParam (Request Body Fields) {String} catalogId The catalog Id
  * @apiParam (Request Body Fields) {String} domainId The domain Id
- * @apiParam (Request Body Fields) {String {..255}} [foreignKey] The unique identifier for the asset (max length: 255 characters)
+ * @apiParam (Request Body Fields) {String {..150}} [foreignKey] The unique identifier for the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String {..255}} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} [description] Text description of the video
  * @apiParam (Request Body Fields) {String[]} [keywords] Array of video keywords
@@ -767,7 +767,7 @@
       * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
       * @apiSuccess (Response Fields) {String} results.id Each timedText Id
       * @apiSuccess (Response Fields) {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
-      * @apiSuccess (Response Fields) {String} results.timedTextType The type  of the timed text: `CAPTION` or `SUBTITLE`, or `EMBEDDED`
+      * @apiSuccess (Response Fields) {String} results.timedTextType The type  of the timed text: `CAPTION` or `SUBTITLE`
       *
       * @apiSuccessExample {json} Success Response:
       *    HTTP/1.1 200 OK
@@ -816,7 +816,7 @@
       * @apiParam (Request Body Fields) {Object} timedText The timed text object
       * @apiParam (Request Body Fields) {Object} timedText.media Object detailing the timed text media asset
       * @apiParam (Request Body Fields) {String} timedText.media.sourceURL Location of the timed text media asset
-      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE","EMBEDDED"} timedText.timedTextType The type for the timed text
+      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE"} timedText.timedTextType The type for the timed text
       * @apiParam (Request Body Fields) {String[]} timedText.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
       *
       * @apiParamExample {json} Create Timed Text Example:
