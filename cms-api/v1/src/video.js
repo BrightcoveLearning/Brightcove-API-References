@@ -305,6 +305,7 @@
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
+ * @apiSuccess (Response Fields) {String} folder_id id of the folder that contains the video
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
@@ -353,66 +354,86 @@
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
- *     {
- *         "account_id": "1752604059001",
- *         "complete": true,
- *         "created_at": "2015-09-17T16:08:37.108Z",
- *         "cue_points": [],
- *         "custom_fields": {},
- *         "description": null,
- *         "digital_master_id": "4492154733001",
- *         "duration": 155573,
- *         "economics": "AD_SUPPORTED",
- *         "folder_id": null,
- *         "geo": null,
- *         "id": "4492075574001",
- *         "images": {
- *             "poster": {
- *                 "asset_id": "4492153571001",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
- *             },
- *             "thumbnail": {
- *                 "asset_id": "4492154714001",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
- *             }
- *         },
- *         "link": null,
- *         "long_description": null,
- *         "name": "sea_marvels.mp4",
- *         "reference_id": null,
- *         "schedule": null,
- *         "sharing": null,
- *         "state": "ACTIVE",
- *         "tags": [],
- *         "text_tracks": [
- *             {
- *                 "asset_id": "0cbd3425-8e94-46e6-9a10-a0d4491d4893",
- *                 "default": true,
- *                 "id": "c9001cee-d7f9-4b67-955c-9764cfc3d1f4",
- *                 "kind": "captions",
- *                 "label": null,
- *                 "mime_type": "text/vtt",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001",
- *                 "srclang": "en"
- *             }
- *         ],
- *         "updated_at": "2015-09-17T17:41:20.782Z"
- *     }
+ *    {
+ *    	"id": "5566317640001",
+ *    	"account_id": "57838016001",
+ *    	"ad_keys": null,
+ *    	"clip_source_video_id": null,
+ *    	"complete": true,
+ *    	"created_at": "2017-09-06T12:52:08.639Z",
+ *    	"cue_points": [
+ *    	],
+ *    	"custom_fields": {
+ *    		"purpose": "Demo",
+ *    		"downloadable": "no",
+ *    		"uploader-userid": "rcrooks@brightcove.com"
+ *    	},
+ *    	"delivery_type": "static_origin",
+ *    	"description": null,
+ *    	"digital_master_id": "5566327803001",
+ *    	"duration": 16207,
+ *    	"economics": "AD_SUPPORTED",
+ *    	"folder_id": null,
+ *    	"geo": null,
+ *    	"has_digital_master": true,
+ *    	"images": {
+ *    		"thumbnail": {
+ *    			"asset_id": "5566327984001",
+ *    			"remote": false,
+ *    			"src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201709/1425/57838016001_5566327984001_5566317640001-th.jpg?pubId=57838016001&videoId=5566317640001",
+ *    			"sources": [
+ *    				{
+ *    					"src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201709/1425/57838016001_5566327984001_5566317640001-th.jpg?pubId=57838016001&videoId=5566317640001",
+ *    					"height": 90,
+ *    					"width": 160
+ *    				},
+ *    				{
+ *    					"src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201709/1425/57838016001_5566327984001_5566317640001-th.jpg?pubId=57838016001&videoId=5566317640001",
+ *    					"height": 90,
+ *    					"width": 160
+ *    				}
+ *    			]
+ *    		},
+ *    		"poster": {
+ *    			"asset_id": "5566326010001",
+ *    			"remote": false,
+ *    			"src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201709/1425/57838016001_5566326010001_5566317640001-vs.jpg?pubId=57838016001&videoId=5566317640001",
+ *    			"sources": [
+ *    				{
+ *    					"src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201709/1425/57838016001_5566326010001_5566317640001-vs.jpg?pubId=57838016001&videoId=5566317640001",
+ *    					"height": 720,
+ *    					"width": 1280
+ *    				},
+ *    				{
+ *    					"src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201709/1425/57838016001_5566326010001_5566317640001-vs.jpg?pubId=57838016001&videoId=5566317640001",
+ *    					"height": 720,
+ *    					"width": 1280
+ *    				}
+ *    			]
+ *    		}
+ *    	},
+ *    	"link": null,
+ *    	"long_description": null,
+ *    	"name": "Adult-and-young-swan-Sizergh-Castlle-Cumbria",
+ *    	"original_filename": "Adult-and-young-swan-Sizergh-Castlle-Cumbria.mov",
+ *    	"projection": null,
+ *    	"published_at": "2017-09-06T12:52:08.639Z",
+ *    	"reference_id": null,
+ *    	"schedule": null,
+ *    	"sharing": {
+ *    		"by_external_acct": false,
+ *    		"by_id": null,
+ *    		"source_id": null,
+ *    		"to_external_acct": true,
+ *    		"by_reference": false
+ *    	},
+ *    	"state": "ACTIVE",
+ *    	"tags": [
+ *    	],
+ *    	"text_tracks": [
+ *    	],
+ *    	"updated_at": "2017-09-06T13:01:03.817Z"
+ *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
