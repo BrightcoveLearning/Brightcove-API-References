@@ -871,7 +871,7 @@
       * @apiParam (Request Body Fields) {Object} timedText The timed text object
       * @apiParam (Request Body Fields) {Object} timedText.media Object detailing the timed text media asset
       * @apiParam (Request Body Fields) {String} timedText.media.sourceURL Location of the timed text media asset
-      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE","EMBEDDED"} timedText.timedTextType The type for the timed text
+      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE"} timedText.timedTextType The type for the timed text
       * @apiParam (Request Body Fields) {String[]} timedText.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
       *
       * @apiParamExample {json} Update Timed Text Example:
