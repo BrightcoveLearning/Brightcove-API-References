@@ -1,13 +1,15 @@
-// request notification resend
+// request notification resend deprecated
 
 /**
- * @api {get} /notifications/:request_id/:notification_type Request Notifications Resend
+ * @api {get} /notifications/:request_id/:notification_type Request Notifications Resend Deprecated
  * @apiName Request Notifications Resend
  * @apiGroup Resend
  * @apiVersion 1.0.0
  *
- * @apiDescription Get the status of notifications for a request job
+ * @apiDescription Get the status of notifications for a request job - **This method is deprecated**
+ *
  * @apiDeprecated
+ * 
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} request_id The request_id for the job
