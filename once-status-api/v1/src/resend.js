@@ -7,7 +7,7 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Get the status of notifications for a request job
- *
+ * @apiDeprecated
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} request_id The request_id for the job
@@ -44,4 +44,3 @@
  *
  *
  */
-
