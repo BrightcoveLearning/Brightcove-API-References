@@ -1907,7 +1907,7 @@
     * @apiParam (Request Body Fields) {Object} id3_tag An object containing variables for the ID3 timed metadata
     * @apiParam (Request Body Fields) {String{1..4}} id3_tag.name A name for the tag
     * @apiParam (Request Body Fields) {String} id3_tag.value A value for the tag (maximum string data size 256KB)
-    * @apiParam (Request Body Fields) {String} [id3_tag.timecode] Time to insert - by default, insertion is immediate - __Note that to use `timecode`, the encoder must be sending timecode via OnFI packets in the RTMP stream; if the encoder is not sending the timecode, you should *not* include `timecode` in the request
+    * @apiParam (Request Body Fields) {String} [id3_tag.timecode] Time to insert - by default, insertion is immediate - **Note that to use `timecode`, the encoder must be sending timecode via OnFI packets in the RTMP stream; if the encoder is not sending the timecode, you should *not* include `timecode` in the request**
     *
     * @apiParamExample {json} ID3 timed metadata Insertion Request Body Example:
     *    {
