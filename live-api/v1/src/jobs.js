@@ -1913,8 +1913,8 @@
     *    {
     *        "id3_tag": {
     *            "name": "BCOV",
-    *            "value": "my value", []
-    *            "timecode": "15:50:49:16" []
+    *            "value": "my value",
+    *            "timecode": "15:50:49:16"
     *        }
     *    }
     *
