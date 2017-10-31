@@ -1143,7 +1143,7 @@
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
-  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
   *
   * @apiParamExample {json} Add Captions Request Data Example:
@@ -1269,7 +1269,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   * @apiParam (Path Parameters) {String} asset_id id for the asset
   *
-  * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
   *
   * @apiParamExample {json} Add Captions Request Data Example:
@@ -1616,7 +1616,7 @@
    * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
    *
-   * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
    *
    * @apiParamExample {json} Add Posters Request Data Example:
@@ -1743,7 +1743,7 @@
    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
    * @apiParam (Path Parameters) {String} asset_id id for the asset
    *
-   * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
    *
    * @apiParamExample {json} Add Posters Request Data Example:
@@ -2091,7 +2091,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  *
  * @apiParamExample {json} Add Thumbnails Request Data Example:
@@ -2218,7 +2218,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  *
  * @apiParamExample {json} Add Thumbnails Request Data Example:
@@ -2564,7 +2564,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -2691,7 +2691,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -3035,7 +3035,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -3164,7 +3164,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -3508,7 +3508,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -3635,7 +3635,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -3980,7 +3980,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -4106,7 +4106,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -4454,7 +4454,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
@@ -4580,7 +4580,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  * @apiParam (Path Parameters) {String} asset_id id for the asset
  *
- * @apiParam (Request Body Fields) {String} reference_id video reference id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
