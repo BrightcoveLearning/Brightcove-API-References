@@ -1871,7 +1871,7 @@
   * @apiSuccess (Response Fields) {String} cue_point.accuracy The cuepoint insertion accuracy - may be `segment` or `frame`
   * @apiSuccess (Response Fields) {DateTimeString} cue_point.inserted_at Time when the cue point was inserted in the stream
   *
-  * @apiSuccessExample {json} Success response for ID3 timed metadata Insertion
+  * @apiSuccessExample {json} Success response for cuepoint Insertion
   *    {
   *        "id": "JOB_ID",
   *        "cue_point": {
@@ -1907,7 +1907,7 @@
     * @apiParam (Request Body Fields) {Object} id3_tag An object containing variables for the ID3 timed metadata
     * @apiParam (Request Body Fields) {String{1..4}} id3_tag.name A name for the tag
     * @apiParam (Request Body Fields) {String} id3_tag.value A value for the tag (maximum string data size 256KB)
-    * @apiParam (Request Body Fields) {String} [id3_tag.timecode] Time to insert - by default, insertion is immediate - **Note that to use `timecode`, the encoder must be sending timecode via OnFI packets in the RTMP stream; if the encoder is not sending the timecode, you should *not* include `timecode` in the request**
+    * @apiParam (Request Body Fields) {String} [id3_tag.timecode] Time to insert - by default, insertion is immediate - **Note: 1) If you use the `timecode` property, the job only only stores the most recent request for insertion; 2) If you use the `timecode` property, the encoder must be sending SMPTE-formatted (HH:MM:SS:FF) timecode stored in the `tc` property via OnFI; 3) Software encoders such as Wirecast and OBS *do not* support the sending timecode via OnFI packets in the RTMP stream; 4) Elemental hardware encoders *do* support the sending timecode via OnFI packets in the RTMP stream**
     *
     * @apiParamExample {json} ID3 timed metadata Insertion Request Body Example:
     *    {
