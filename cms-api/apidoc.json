@@ -18,6 +18,8 @@
         "Update_Video",
         "Remove_Video_from_all_Playlists",
         "Delete_Video",
+        "Get_Status_of_Ingest_Jobs",
+        "Get_Status_of_Ingest_Job",
         "Get_Custom_Fields",
         "playlistGroup",
         "Get_Playlists",
