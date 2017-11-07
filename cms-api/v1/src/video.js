@@ -1551,7 +1551,7 @@
 // get status of ingest jobs
 
  /**
- * @api {delete} /accounts/:account_id/videos/:video_id/ingest_jobs Get Status of Ingest Jobs
+ * @api {get} /accounts/:account_id/videos/:video_id/ingest_jobs Get Status of Ingest Jobs
  * @apiName Get Status of Ingest Jobs
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
@@ -1634,7 +1634,7 @@
 // get status of ingest job
 
  /**
- * @api {delete} /accounts/:account_id/videos/:video_id/ingest_jobs/:job_id Get Status of Ingest Job
+ * @api {get} /accounts/:account_id/videos/:video_id/ingest_jobs/:job_id Get Status of Ingest Job
  * @apiName Get Status of Ingest Job
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
