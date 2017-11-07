@@ -280,7 +280,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
   *
  * @apiParamExample {Url} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
@@ -474,7 +474,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Sources Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/sources
@@ -717,7 +717,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Images Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
@@ -811,7 +811,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Digital MasterExample:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/digital_master
@@ -985,7 +985,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
@@ -1041,7 +1041,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925)
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
@@ -1291,7 +1291,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
  *
  * @apiParam (Request Body Fields) {String{1..255}} [name] video title
  * @apiParam (Request Body Fields) {String{..250}} [description] video short description
@@ -1515,7 +1515,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
@@ -1527,6 +1527,159 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} REFERENCES_EXIST 409: The video is in one or more manual playlists
  * @apiError (Error 4xx) {json} PRE_CONDITION_FAILED 412: usually this means the caller provided an ETag that didn't match the version of the video
+ * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// get status of ingest jobs
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id/ingest_jobs Get Status of Ingest Jobs
+ * @apiName Get Status of Ingest Jobs
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video)
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ *
+ * @apiParamExample {Url} Get Status of Ingest Jobs Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200
+ *    [
+ *    	{
+ *    		"id": "ac49b1db-e6e1-477f-a2c1-70b9cd3107cb",
+ *    		"state": "finished",
+ *    		"account_id": "57838016001",
+ *    		"video_id": "5636411346001",
+ *    		"error_code": null,
+ *    		"error_message": null,
+ *    		"updated_at": "2017-11-07T13:56:51.505Z",
+ *    		"started_at": "2017-11-07T13:56:12.510Z",
+ *    		"priority": "normal",
+ *    		"submitted_at": "2017-11-07T13:56:12.435Z"
+ *    	},
+ *    	{
+ *    		"id": "10605652-8b6f-4f22-b190-01bd1938677b",
+ *    		"state": "processing",
+ *    		"account_id": "57838016001",
+ *    		"video_id": "5636411346001",
+ *    		"error_code": null,
+ *    		"error_message": null,
+ *    		"updated_at": null,
+ *    		"started_at": null,
+ *    		"priority": "low",
+ *    		"submitted_at": "2017-11-07T14:06:35.000Z"
+ *    	}
+ *    ]
+ *
+ * @apiSuccess (Response Fields) {string} id the ingest job id
+ * @apiSuccess (Response Fields) {string} state the current state of the ingest job
+ * @apiSuccess (Response Fields) {string} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {string} video_id the video id
+ * @apiSuccess (Response Fields) {string} error_code the error code if the job failed
+ * @apiSuccess (Response Fields) {string} error_message the error message if the job failed
+ * @apiSuccess (Response Fields) {string} updated_at when the status was last updated
+ * @apiSuccess (Response Fields) {string} started_at when processing started
+ * @apiSuccess (Response Fields) {string} priority priority of the job (normal or low)
+ * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// get status of ingest job
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id/ingest_jobs/:job_id Get Status of Ingest Job
+ * @apiName Get Status of Ingest Job
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Get the status of an ingest job associated with a video (including the orginal ingestion, replacing and retranscoding the video)
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {String} job_id the job ID for the ingest job
+ *
+ * @apiParamExample {Url} Get Status of Ingest Jobs Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs/ac49b1db-e6e1-477f-a2c1-70b9cd3107cb
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200
+ *    {
+ *    	"id": "ac49b1db-e6e1-477f-a2c1-70b9cd3107cb",
+ *    	"state": "finished",
+ *    	"account_id": "57838016001",
+ *    	"video_id": "5636411346001",
+ *    	"error_code": null,
+ *    	"error_message": null,
+ *    	"updated_at": "2017-11-07T13:56:51.505Z",
+ *    	"started_at": "2017-11-07T13:56:12.510Z",
+ *    	"priority": "normal",
+ *    	"submitted_at": "2017-11-07T13:56:12.435Z"
+ *    }
+ *
+ * @apiSuccess (Response Fields) {string} id the ingest job id
+ * @apiSuccess (Response Fields) {string} state the current state of the ingest job
+ * @apiSuccess (Response Fields) {string} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {string} video_id the video id
+ * @apiSuccess (Response Fields) {string} error_code the error code if the job failed
+ * @apiSuccess (Response Fields) {string} error_message the error message if the job failed
+ * @apiSuccess (Response Fields) {string} updated_at when the status was last updated
+ * @apiSuccess (Response Fields) {string} started_at when processing started
+ * @apiSuccess (Response Fields) {string} priority priority of the job (normal or low)
+ * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED

@@ -645,7 +645,7 @@
     * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
     *
     * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-    * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
+    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
     *
     * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} state determines whether the video is accepted (`ACTIVE`) or rejected (`INACTIVE`)
     *
