@@ -14,7 +14,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {Object} key-data data for the policy key
  * @apiParam (Request Body Fields) {String} key-data.account-id Video Cloud account id
- * @apiParam (Request Body Fields) {String[]} [key-data.apis] Array of APIs that are permitted for this key (currently `"search"` is the only one available - this must be included to to use the [search funtionality](https://brightcovelearning.github.io/Brightcove-API-References/playback-api/v1/doc/index.html#api-videoGroup-Get_Videos) for the Playback API)
+ * @apiParam (Request Body Fields) {String[]} [key-data.apis] Array of APIs that are permitted for this key (currently `"search"` is the only one available - this must be included to use the [search functionality](https://brightcovelearning.github.io/Brightcove-API-References/playback-api/v1/doc/index.html#api-videoGroup-Get_Videos) for the Playback API)
  * @apiParam (Request Body Fields) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on
  *
  * @apiParamExample {json} Create Policy Request Body Examples:
