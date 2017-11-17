@@ -403,7 +403,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Add a rendition to the given video. Ingested assets must be added via the [Dynamic Ingest API](https://support.brightcove.com/node/17948). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Add a **remote** rendition to the given video. To change the renditions stored in Video Cloud, you must replace or re-transcode the video using <a href="https://support.brightcove.com/dynamic-ingest-api">Dynamic Ingest</a> **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
@@ -571,7 +571,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Update the location for a remote rendition. Ingested renditions must be updated by retranscoding the video via [Dynamic Ingest](https://support.brightcove.com/node/17948) or Studio. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Update the location for a **remote** rendition. Ingested renditions must be updated by retranscoding the video via [Dynamic Ingest](https://support.brightcove.com/node/17948) or Studio. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
