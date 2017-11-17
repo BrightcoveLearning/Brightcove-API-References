@@ -15,6 +15,7 @@
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
   * @apiParam (Request Body Fields) {String="Dfp","Vast","SmartXML"} application_ad_configuration.ad_configuration_expected_response_type The expected response type based on your ad server
   * @apiParam (Request Body Fields) {Object} [application_ad_configuration.ad_configuration_headers] An optional JSON object that can contain zero or more key-value-pairs, for which both key and value must be strings.  All of the standard URL substitutions are valid for headers.
+  * @apiParam (Request Body Fields) {Boolean} [application_ad_configuration.ad_configuration_headers_for_impressions=true] If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
   * @apiParam (Request Body Fields) {String="SingleAdResponse","MultipleAdResponse"} application_ad_configuration.ad_configuration_strategy Specifies whether ad breaks should include single or muliple ads
   * @apiParam (Request Body Fields) {Object[]} application_ad_configuration.ad_configuration_transforms Array of ad configuration transforms.
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xpath xpath for the transform.
@@ -73,6 +74,7 @@
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
   * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
   * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
@@ -93,7 +95,8 @@
   *          "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
   *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
-  *            },
+  *          },
+  *          "ad_configuration_headers_for_impressions": false,
   *          "ad_configuration_strategy": "SingleAdResponse",
   *          "ad_configuration_transforms": [
   *            {
@@ -134,6 +137,7 @@
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
   * @apiParam (Request Body Fields) {String="Dfp","Vast","SmartXML"} application_ad_configuration.ad_configuration_expected_response_type The expected response type based on your ad server
   * @apiParam (Request Body Fields) {Object} [application_ad_configuration.ad_configuration_headers] An optional JSON object that can contain zero or more key-value-pairs, for which both key and value must be strings.  All of the standard URL substitutions are valid for headers.
+  * @apiParam (Request Body Fields) {Boolean} [application_ad_configuration.ad_configuration_headers_for_impressions=true] If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
   * @apiParam (Request Body Fields) {String="SingleAdResponse","MultipleAdResponse"} application_ad_configuration.ad_configuration_strategy Specifies whether ad breaks should include single or muliple ads
   * @apiParam (Request Body Fields) {Object[]} application_ad_configuration.ad_configuration_transforms Array of ad configuration transforms.
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xpath xpath for the transform.
@@ -173,6 +177,7 @@
   *                "X-Custom-Header-Rand": "{{random.int32}}",
   *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
   *            },
+  *            "ad_configuration_headers_for_impressions": false,
   *            "ad_configuration_strategy": "MultipleAdResponse",
   *            "ad_configuration_transforms": [
   *            {
@@ -192,6 +197,7 @@
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
   * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
   * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
@@ -212,7 +218,8 @@
   *          "ad_configuration_headers": {
   *                "X-Custom-Header-Rand": "{{random.int32}}",
   *                "X-VIDEOPLAZA-FORWARDED-FOR": "{{client.ipaddress}}"
-  *            },
+  *          },
+  *          "ad_configuration_headers_for_impressions": false,
   *          "ad_configuration_strategy": "SingleAdResponse/MultipleAdResponse",
   *          "ad_configuration_transforms": [
   *            {
@@ -259,6 +266,7 @@
     * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
     * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
     * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
+    * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
     * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
     * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
     * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
@@ -331,6 +339,7 @@
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
   * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
   * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
