@@ -422,7 +422,7 @@
  * @apiParam (Request Body Fields) {Number} [size] the size of the asset in bytes (integer)
  * @apiParam (Request Body Fields) {Number} [video_duration] duration in milliseconds
  * @apiParam (Request Body Fields) {String} video_codec the video codec &mdash; support for video formats -  varies across browsers and devices; for the broadest support use `h264` &mdash; __remote assets will not work properly without this field__
- * @apiParam (Request Body Fields) {String} video_container the video container such as `MP4` or `MT2S` &mdash; __remote assets will not work properly without this field__
+ * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `M2TS`
  *
  * @apiParamExample {json} Add Rendition Request Body Example:
  *    {
