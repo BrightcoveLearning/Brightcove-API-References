@@ -528,8 +528,10 @@
  * @apiParam (Path Parameters) {String} folder_id the folder ID
  * @apiParam (Request Body Fields) {String} name name of the folder (must be unique in the account)
  *
- * @apiParamExample {json} Update Folder Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos/4442677263001
+ * @apiParamExample {json} Add Video to  Folder Request BodyExample:
+ *    {
+ *      "name": "birds"
+ *    }
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
  * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
