@@ -40,7 +40,7 @@
  *      "master": {
  *          "url": "http://host/master.mp4"
  *      },
- *      "profile": "high-resolution",
+ *      "profile": "multi-platform-extended-static",
  *      "poster": {
  *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
  *            "width": 640,
