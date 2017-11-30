@@ -1556,7 +1556,7 @@
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video)
+ * @apiDescription Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video). **NOTE: this operation only works for videos that were ingested using [Dynamic Delivery](https://support.brightcove.com/overview-dynamic-delivery) profiles.**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
