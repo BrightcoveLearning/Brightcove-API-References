@@ -129,7 +129,7 @@
   `POLICY_ERROR` - Error when evaluating the policy key
 
 
-  * @apiError (Error 403) {json} FORBIDDENT error_subcode:
+  * @apiError (Error 403) {json} FORBIDDEN error_subcode:
   `VIDEO_NOT_PLAYABLE` - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable: not sufficiently ingested, has no sources, not active, not in scheduled date range.
   * @apiError (Error 404) {json} NOT_FOUND error_subcode:
 
