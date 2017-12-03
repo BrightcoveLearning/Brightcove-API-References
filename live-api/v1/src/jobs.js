@@ -548,6 +548,8 @@
  * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
  * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
  * @apiSuccess (Response Fields) {String} outputs.playback_url Media HLS manifest for the specified rendition (non-SSAI).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest for the specified rendition (with DVR capability).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest for the VOD version of the stream if one was specified in the job settings - note that the VOD will not be available until the live event has finished and the creation of the VOD is complete.
  * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
  * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest of the Live stream for the last 24 hours. (non-SSAI).
  * @apiSuccess (Response Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
