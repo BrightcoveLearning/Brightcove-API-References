@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: control-bar/progress-control/progress-control.js | Brightcove Player API Documentation</title>
+    <title>Source: control-bar/time-controls/time-display.js | Brightcove Player API Documentation</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -55,21 +55,20 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file progress-control.js
+ * @file time-display.js
  */
+import document from 'global/document';
 import Component from '../../component.js';
 import * as Dom from '../../utils/dom.js';
-import {throttle, bind} from '../../utils/fn.js';
-
-import './seek-bar.js';
+import {bind, throttle} from '../../utils/fn.js';
+import formatTime from '../../utils/format-time.js';
 
 /**
- * The Progress Control component contains the seek bar, load progress,
- * and play progress.
+ * Displays the time left in the video
  *
  * @extends Component
  */
-class ProgressControl extends Component {
+class TimeDisplay extends Component {
 
   /**
    * Creates an instance of this class.
@@ -82,10 +81,8 @@ class ProgressControl extends Component {
    */
   constructor(player, options) {
     super(player, options);
-    this.handleMouseMove = throttle(bind(this, this.handleMouseMove), 25);
-    this.throttledHandleMouseSeek = throttle(bind(this, this.handleMouseSeek), 25);
-
-    this.enable();
+    this.throttledUpdateContent = throttle(bind(this, this.updateContent), 25);
+    this.on(player, 'timeupdate', this.throttledUpdateContent);
   }
 
   /**
@@ -94,165 +91,110 @@ class ProgressControl extends Component {
    * @return {Element}
    *         The element that was created.
    */
-  createEl() {
-    return super.createEl('div', {
-      className: 'vjs-progress-control vjs-control'
+  createEl(plainName) {
+    const className = this.buildCSSClass();
+    const el = super.createEl('div', {
+      className: `${className} vjs-time-control vjs-control`
     });
+
+    this.contentEl_ = Dom.createEl('div', {
+      className: `${className}-display`
+    }, {
+      // tell screen readers not to automatically read the time as it changes
+      'aria-live': 'off'
+    }, Dom.createEl('span', {
+      className: 'vjs-control-text',
+      textContent: this.localize(this.controlText_)
+    }));
+
+    this.updateTextNode_();
+    el.appendChild(this.contentEl_);
+    return el;
+  }
+
+  dispose() {
+    this.contentEl_ = null;
+    this.textNode_ = null;
+
+    super.dispose();
   }
 
   /**
-   * When the mouse moves over the `ProgressControl`, the pointer position
-   * gets passed down to the `MouseTimeDisplay` component.
+   * Updates the "remaining time" text node with new content using the
+   * contents of the `formattedTime_` property.
    *
-   * @param {EventTarget~Event} event
-   *        The `mousemove` event that caused this function to run.
-   *
-   * @listen mousemove
+   * @private
    */
-  handleMouseMove(event) {
-    const seekBar = this.getChild('seekBar');
-    const mouseTimeDisplay = seekBar.getChild('mouseTimeDisplay');
-    const seekBarEl = seekBar.el();
-    const seekBarRect = Dom.getBoundingClientRect(seekBarEl);
-    let seekBarPoint = Dom.getPointerPosition(seekBarEl, event).x;
-
-    // The default skin has a gap on either side of the `SeekBar`. This means
-    // that it's possible to trigger this behavior outside the boundaries of
-    // the `SeekBar`. This ensures we stay within it at all times.
-    if (seekBarPoint > 1) {
-      seekBarPoint = 1;
-    } else if (seekBarPoint &lt; 0) {
-      seekBarPoint = 0;
-    }
-
-    if (mouseTimeDisplay) {
-      mouseTimeDisplay.update(seekBarRect, seekBarPoint);
-    }
-  }
-
-  /**
-   * A throttled version of the {@link ProgressControl#handleMouseSeek} listener.
-   *
-   * @method ProgressControl#throttledHandleMouseSeek
-   * @param {EventTarget~Event} event
-   *        The `mousemove` event that caused this function to run.
-   *
-   * @listen mousemove
-   * @listen touchmove
-   */
-
-  /**
-   * Handle `mousemove` or `touchmove` events on the `ProgressControl`.
-   *
-   * @param {EventTarget~Event} event
-   *        `mousedown` or `touchstart` event that triggered this function
-   *
-   * @listens mousemove
-   * @listens touchmove
-   */
-  handleMouseSeek(event) {
-    const seekBar = this.getChild('seekBar');
-
-    seekBar.handleMouseMove(event);
-  }
-
-  /**
-   * Are controls are currently enabled for this progress control.
-   *
-   * @return {boolean}
-   *         true if controls are enabled, false otherwise
-   */
-  enabled() {
-    return this.enabled_;
-  }
-
-  /**
-   * Disable all controls on the progress control and its children
-   */
-  disable() {
-    this.children().forEach((child) => child.disable &amp;&amp; child.disable());
-
-    if (!this.enabled()) {
+  updateTextNode_() {
+    if (!this.contentEl_) {
       return;
     }
 
-    this.off(['mousedown', 'touchstart'], this.handleMouseDown);
-    this.off(this.el_, 'mousemove', this.handleMouseMove);
-    this.handleMouseUp();
+    while (this.contentEl_.firstChild) {
+      this.contentEl_.removeChild(this.contentEl_.firstChild);
+    }
 
-    this.addClass('disabled');
-
-    this.enabled_ = false;
+    this.textNode_ = document.createTextNode(this.formattedTime_ || '0:00');
+    this.contentEl_.appendChild(this.textNode_);
   }
 
   /**
-   * Enable all controls on the progress control and its children
+   * Generates a formatted time for this component to use in display.
+   *
+   * @param  {number} time
+   *         A numeric time, in seconds.
+   *
+   * @return {string}
+   *         A formatted time
+   *
+   * @private
    */
-  enable() {
-    this.children().forEach((child) => child.enable &amp;&amp; child.enable());
+  formatTime_(time) {
+    return formatTime(time);
+  }
 
-    if (this.enabled()) {
+  /**
+   * Updates the time display text node if it has what was passed in changed
+   * the formatted time.
+   *
+   * @param {number} time
+   *        The time to update to
+   *
+   * @private
+   */
+  updateFormattedTime_(time) {
+    const formattedTime = this.formatTime_(time);
+
+    if (formattedTime === this.formattedTime_) {
       return;
     }
 
-    this.on(['mousedown', 'touchstart'], this.handleMouseDown);
-    this.on(this.el_, 'mousemove', this.handleMouseMove);
-    this.removeClass('disabled');
-
-    this.enabled_ = true;
+    this.formattedTime_ = formattedTime;
+    this.requestAnimationFrame(this.updateTextNode_);
   }
 
   /**
-   * Handle `mousedown` or `touchstart` events on the `ProgressControl`.
+   * To be filled out in the child class, should update the displayed time
+   * in accordance with the fact that the current time has changed.
    *
-   * @param {EventTarget~Event} event
-   *        `mousedown` or `touchstart` event that triggered this function
+   * @param {EventTarget~Event} [event]
+   *        The `timeupdate`  event that caused this to run.
    *
-   * @listens mousedown
-   * @listens touchstart
+   * @listens Player#timeupdate
    */
-  handleMouseDown(event) {
-    const doc = this.el_.ownerDocument;
-
-    this.on(doc, 'mousemove', this.throttledHandleMouseSeek);
-    this.on(doc, 'touchmove', this.throttledHandleMouseSeek);
-    this.on(doc, 'mouseup', this.handleMouseUp);
-    this.on(doc, 'touchend', this.handleMouseUp);
-  }
-
-  /**
-   * Handle `mouseup` or `touchend` events on the `ProgressControl`.
-   *
-   * @param {EventTarget~Event} event
-   *        `mouseup` or `touchend` event that triggered this function.
-   *
-   * @listens touchend
-   * @listens mouseup
-   */
-  handleMouseUp(event) {
-    const doc = this.el_.ownerDocument;
-
-    this.off(doc, 'mousemove', this.throttledHandleMouseSeek);
-    this.off(doc, 'touchmove', this.throttledHandleMouseSeek);
-    this.off(doc, 'mouseup', this.handleMouseUp);
-    this.off(doc, 'touchend', this.handleMouseUp);
-  }
+  updateContent(event) {}
 }
 
 /**
- * Default options for `ProgressControl`
+ * The text that should display over the `TimeDisplay`s controls. Added to for localization.
  *
- * @type {Object}
+ * @type {string}
  * @private
  */
-ProgressControl.prototype.options_ = {
-  children: [
-    'seekBar'
-  ]
-};
+TimeDisplay.prototype.controlText_ = 'Time';
 
-Component.registerComponent('ProgressControl', ProgressControl);
-export default ProgressControl;
+Component.registerComponent('TimeDisplay', TimeDisplay);
+export default TimeDisplay;
 </code></pre>
         </article>
     </section>
