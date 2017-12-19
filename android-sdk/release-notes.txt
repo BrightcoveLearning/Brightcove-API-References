@@ -1,5 +1,73 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 6.0.1:
+
+  SDK changes:
+
+    * The deprecated legacy Media API classes, those in the com.brightcove.player.media package,  were removed from the Brightcove Native SDK for Android.
+    * The following classes were moved from com.brightcove.player.media to com.brightcove.player.model. Please note this is a breaking change:
+      ** DeliveryType
+      ** CaptionType
+      ** ErrorFields
+      ** VideoFields
+
+  ExoPlayer v2 Changes:
+
+    * The Brightcove Native SDK for Android using ExoPlayer 2 (v2.5.3) is in General Availability.
+    * Added support for the Omniture plugin when using ExoPlayer 2.
+    * Several bug fixes.
+
+  ExoPlayer v1 Changes:
+
+    * The Brightcove Native SDK for Android using ExoPlayer 1 has been deprecated.
+      For more information about the migration process, please visit https://support.brightcove.com/migrating-exoplayer-2-framework
+
+Version 6.0.0-Beta4:
+
+  ExoPlayer Changes:
+
+    * Added the following features for the Brightcove Native SDK for Android when using ExoPlayer 2:
+      ** Support for Offline Playback.
+      ** Support for Video 360 playback.
+      ** Support for Android TV and Fire TV.
+    * Added basic support for EIA-608 captions.
+    * Minor bug fixes.
+
+  SDK Changes:
+
+    * Added support to emit SEEKBAR_DRAGGING_START, SEEKBAR_DRAGGING_PROGRESS and SEEKBAR_DRAGGING_STOP evens when dragging the Brightcove seek bar.
+
+  FreeWheel Plugin changes:
+
+    * Added AD_PROGRESS, AD_PAUSED and AD_RESUMED events.
+
+Version 6.0.0-Beta3:
+
+  ExoPlayer Changes:
+
+    * Added the following features for the Brightcove Native SDK for Android when using ExoPlayer 2:
+      ** Support for HLS Live and HLS Live DVR.
+
+Version 6.0.0-Beta2:
+
+  ExoPlayer Changes:
+
+    * Added the following features for the Brightcove Native SDK for Android when using ExoPlayer 2:
+      ** Support for Widevine Modular protected content playback.
+      ** Support for Brightcove Dynamic Delivery with Server Side Ad Insertion.
+    * Exposed the BrightcoveDrmSession through ExoPlayerVideoDisplayComponent.
+
+Version 6.0.0-Beta1:
+
+  ExoPlayer Changes:
+
+    * This release of the Brightcove Native Player SDK for Android includes BETA support for ExoPlayer v2.5.3. See the com.brightcove.player.view.BrightcoveExoPlayerVideoView javadoc and our github sample app repo for more info.
+    * Supported features of Brightcove Native SDK for Android, Beta 1, when using ExoPlayer 2:
+      ** VOD Video formats: Mpeg-DASH, HLS, HLSe, MP4
+      ** Web-VTT Closed Captions
+      ** Multiple Audio Tracks
+      ** Client-side advertising with Google IMA and FreeWheel
+
 Version 5.2.0:
 
   SDK changes:
