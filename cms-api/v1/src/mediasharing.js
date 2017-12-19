@@ -4,6 +4,144 @@
  * For more information, see [Media Sharing with the CMS API](https://support.brightcove.com/media-sharing-cms-api)
  */
 
+// List Channels
+
+/**
+ * @api {get} /accounts/:account_id/channels List Channels
+ * @apiName List Channels
+ * @apiGroup mediasharingGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a list of channels (currently there is only one `default` channel) - this is a **Master** account operation
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ *
+ *
+ * @apiParamExample {Url} List Channels Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels
+ *
+ * @apiSuccess (Response Fields) {String} account_id master account id
+ * @apiSuccess (Response Fields) {String} name channel name
+ * @apiSuccess (Response Fields) {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
+ * @apiSuccess (Response Fields) {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiSuccess (Response Fields) {String} account_name master account name
+ * @apiSuccess (Response Fields) {DateTime} created_at when the channel was created
+ * @apiSuccess (Response Fields) {DateTime} updated_at when the channel was last updated
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    [
+ *    	{
+ *    		"account_id": "57838016001",
+ *    		"name": "default",
+ *    		"enforce_custom_fields": false,
+ *    		"enforce_geo": false,
+ *    		"account_name": "BrightcoveLearning",
+ *    		"created_at": "2017-08-23T19:12:24.139Z",
+ *    		"updated_at": "2017-08-23T19:12:24.139Z"
+ *      }
+ *    ]
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: Resource not found
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
+// Get Channel Details
+
+/**
+ * @api {get} /accounts/:account_id/channels/:channel_name Get Channel Details
+ * @apiName Get Channel Details
+ * @apiGroup mediasharingGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets settings for a sharing channel (currently there is only one `default` channel) - this is a **Master** account operation
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} channel_name The channel name.
+ *
+ *
+ * @apiParamExample {Url} Get Channel Details Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default
+ *
+ * @apiSuccess (Response Fields) {String} account_id master account id
+ * @apiSuccess (Response Fields) {String} name channel name
+ * @apiSuccess (Response Fields) {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
+ * @apiSuccess (Response Fields) {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiSuccess (Response Fields) {String} account_name master account name
+ * @apiSuccess (Response Fields) {DateTime} created_at when the channel was created
+ * @apiSuccess (Response Fields) {DateTime} updated_at when the channel was last updated
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    	{
+ *    		"account_id": "57838016001",
+ *    		"name": "default",
+ *    		"enforce_custom_fields": false,
+ *    		"enforce_geo": false,
+ *    		"account_name": "BrightcoveLearning",
+ *    		"created_at": "2017-08-23T19:12:24.139Z",
+ *    		"updated_at": "2017-08-23T19:12:24.139Z"
+ *      }
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: Resource not found
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
+
 // List Channel Affiliates
 
 /**
