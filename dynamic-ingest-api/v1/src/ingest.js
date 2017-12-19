@@ -84,6 +84,8 @@
  * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
  * @apiError (Error 5xx) {json} SUBMISSION_FAILURE 500: Unable to submit job please try again later.
  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Unable to authorize request.
+ * @apiError (Error 4xx) {json} DYNAMIC_DELIVERY_NOT_ALLOWED 403: This account is not enabled for Dynamic Delivery, but a Dynamic Delivery profile was specified.
+ * @apiError (Error 4xx) {json} CONTEXT_AWARE_ENCODING_NOT_ALLOWED 403: This account is not enabled for Context Aware Encoding, but a Context Aware Encoding profile was specified.
  * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL 422: source url is malformed.
  * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL 422: source url uses a unsupported protocol.
  * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES 422: vtt sources exceed the maximum size.
