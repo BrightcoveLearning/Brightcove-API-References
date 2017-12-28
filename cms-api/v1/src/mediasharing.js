@@ -236,6 +236,7 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default/members
  *
  * @apiSuccess (Response Fields) {String} account_id affiliate account id
+ * @apiSuccess (Response Fields) {String} account_name affiliate account name
  * @apiSuccess (Response Fields) {Boolean} approved whether the affiliate has approved the relationship
  *
  * @apiSuccessExample {json} Success Response:
@@ -243,7 +244,8 @@
  *    [
  *    	{
  *    		"account_id": "1485884786001",
- *    		"approved": false
+ *    		"approved": false,
+ *    		"account_name": "Developer Training"
  *    	}
  *    ]
  *
