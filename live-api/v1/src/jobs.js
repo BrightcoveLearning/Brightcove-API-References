@@ -90,10 +90,21 @@
  *        "live_sliding_window_duration": 30,
  *        "outputs": [
  *            {
+ *                "label": "hls1080p",
+ *                "live_stream": true,
+ *                "width": 1920,
+ *                "height": 1080,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 2400,
+ *                "segment_seconds": 6,
+ *                "keyframe_interval": 60
+ *            },
+ *            {
  *                "label": "hls720p",
  *                "live_stream": true,
- *                "width": 960,
- *                "height": 540,
+ *                "width": 1280,
+ *                "height": 720,
  *                "video_codec": "h264",
  *                "h264_profile": "main",
  *                "video_bitrate": 1843,
