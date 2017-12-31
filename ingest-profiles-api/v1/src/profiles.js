@@ -47,6 +47,8 @@
  * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [dynamic_origin.dynamic_profile_options.max_resolution] Defines the maximum resolution for renditions
  * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.height=source-height] Maximum height for renditions
  * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.width=source-width] Maximum width for renditions
+ * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_bitrate] Maximum bitrate for renditions in kbps
+ * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate] Maximum bitrate for lowest bitrate rendition in kbps
  * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_frame_rate=30] Maximum framerate for renditions in fps
  * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.keyframe_rate=0.5] The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second)
  * @apiParam (Request Body Fields - Context Aware Encoding) {Boolean} [dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration=false] At least one rendition used in the profile will be baseline profile
@@ -119,7 +121,91 @@
  * @apiParam (Request Body Fields - Legacy Ingest) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  *
- * @apiParamExample {json} Create Profile Example:
+ * @apiParamExample {json} Create Profile Example - Dynamic Delivery:
+ *    {
+ *      "name": "basic_dynamic_delivery_profile",
+ *      "display_name": "Basic Dynamic Delivery Profile",
+ *      "description": "Deliver a range of renditions for a variety of platforms on mobile and desktop.",
+ *      "account_id": null,
+ *      "digital_master": {
+ *        "rendition": "passthrough",
+ *        "distribute": false
+ *      },
+ *      "renditions": [],
+ *      "packages": [],
+ *      "dynamic_origin": {
+ *        "renditions": [
+ *          "default/audio64",
+ *          "default/audio96",
+ *          "default/audio128",
+ *          "default/video700",
+ *          "default/video2000",
+ *          "default/video1700",
+ *          "default/video450",
+ *          "default/video900"
+ *        ],
+ *        "images": [
+ *          {
+ *            "label": "thumbnail",
+ *            "height": 90,
+ *            "width": 160
+ *          },
+ *          {
+ *            "label": "poster",
+ *            "height": 720,
+ *            "width": 1280
+ *          }
+ *        ]
+ *      }
+ *    }
+ *
+ * @apiParamExample {json} Create Profile Example - Context Aware Encoding:
+ *    {
+ *      "name": "basic_cae_profile",
+ *      "display_name": "Basic CAE Profile",
+ *      "description": "Deliver a range of renditions for a variety of platforms on mobile and desktop.",
+ *      "account_id": null,
+ *      "digital_master": {
+ *        "rendition": "passthrough",
+ *        "distribute": false
+ *      },
+ *      "renditions": [],
+ *      "packages": [],
+ *      "dynamic_origin": {
+ *        "renditions": [
+ *          "default/audio64",
+ *          "default/audio96",
+ *          "default/audio128"
+ *        ],
+ *        "images": [
+ *          {
+ *            "label": "thumbnail",
+ *            "height": 90,
+ *            "width": 160
+ *          },
+ *          {
+ *            "label": "poster",
+ *            "height": 720,
+ *            "width": 1280
+ *          }
+ *        ],
+ *        "dynamic_profile_options": {
+ *          "min_renditions": 2,
+ *          "max_renditions": 4,
+ *          "max_resolution": {
+ *            "width": 1280,
+ *            "height": 720
+ *          },
+ *          "max_frame_rate": 30.0,
+ *          "max_bitrate": 3000.0,
+ *          "max_first_rendition_bitrate": 400.0,
+ *          "keyframe_rate": 0.5,
+ *          "select_baseline_profile_configuration": true
+ *        }
+ *      }
+ *    }
+ *
+ * @apiParamExample {json} Create Profile Example - Legacy Ingest:
  *    {
  *      "account_id": "57838016001",
  *      "name": "Protected",
@@ -175,6 +261,19 @@
  * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
+ * @apiSuccess (Response Fields) {Object} digital_master directions for archiving masters
+ * @apiSuccess (Response Fields) {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
+ * @apiSuccess (Response Fields) {Boolean} digital_master.distribute whether source is available for playback as a rendition
+ * @apiSuccess (Response Fields) {Object} dynamic_origin specification for Dynamic Delivery Options
+ * @apiSuccess (Response Fields) {Array} dynamic_origin.renditions audio and video renditions to be created
+ * @apiSuccess (Response Fields) {Object[]} dynamic_origin.images specification for poster and thumbnail images
+ * @apiSuccess (Response Fields) {String} dynamic_origin.images.label the image type
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.images.height the image height
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.images.width the image width
+ * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
+ * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
