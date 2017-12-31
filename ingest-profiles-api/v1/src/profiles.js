@@ -274,6 +274,16 @@
  * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
  * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
  * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
+ * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
+ * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
+ * @apiSuccess (Response Fields) {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
