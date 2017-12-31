@@ -9,7 +9,7 @@
  * @apiDescription Get an analytics report on one or more dimensions. Note that the fields returned in the response will vary according to the dimension(s) requested and the fields specified in the `fields` parameter
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
  * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas

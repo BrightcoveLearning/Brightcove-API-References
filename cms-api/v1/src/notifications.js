@@ -14,7 +14,7 @@
  * @apiDescription Get a list of all notification subscriptions for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
@@ -78,7 +78,7 @@
  * @apiDescription Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will <strong>not</strong> trigger change events.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {String} endpoint a URL that can handle HTTP POST requests
@@ -147,7 +147,7 @@
  * @apiDescription Get a notification subscription for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} subscription_id the subscription ID.
@@ -210,7 +210,7 @@
  * @apiDescription Delete a notification subscription for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} subscription_id the subscription ID.

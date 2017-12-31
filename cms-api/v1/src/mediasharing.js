@@ -855,7 +855,7 @@
     * @apiDescription Accept a shared video (only relevant if `auto_accept` is set to `false`). This is an **Affiliate** account operation.
     *
     * @apiHeader {String} Content-Type Content-Type: application/json
-    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
     *
     * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
     * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.

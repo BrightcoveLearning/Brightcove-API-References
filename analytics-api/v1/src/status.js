@@ -10,7 +10,7 @@
  * **Note that date range for this request must fall within the available date range for the dimensions requested &mdash; the simplest thing to do is to use `from=alltime`**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
  * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas

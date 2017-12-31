@@ -9,7 +9,7 @@
  * @apiDescription This will list the details for all repositories in an account.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
  *
@@ -49,7 +49,7 @@
  * @apiDescription This will retrieve the details for a single repository.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
  * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
@@ -79,7 +79,7 @@
  * @apiDescription This will create a single repository, if it does not exist. A response of 200 means the repository already existed. A response of 201 means repository was successfully created.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
  * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
@@ -118,7 +118,7 @@
  * @apiDescription This will delete a single repository.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
  * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
@@ -152,7 +152,7 @@
   *
   * @apiDescription This will add or update a file. The wanted file name is at the end of the endpoint. The <code>form contents</code> can be a file name, including relative path, or any string. If the file has a <code>.json</code> extension, it will be checked for valid JSON format.
   *
-  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
   * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
   * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
@@ -188,7 +188,7 @@
    *
    * @apiDescription Deletes a file in a repo.
    *
-   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
    * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
    * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
@@ -217,7 +217,7 @@
     *
     * @apiDescription Lists all the files in a repo.
     *
-    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
     *
     * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
     * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.

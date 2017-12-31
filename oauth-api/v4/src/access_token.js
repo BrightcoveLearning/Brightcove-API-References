@@ -9,7 +9,7 @@
  * @apiDescription create a temporary access token for an API request
  *
  * @apiHeader {String} Content-Type Content-Type: application/x-www-form-urlencoded
- * @apiHeader {String} Authorization Authorization: Basic client_id:client_secret (the "client_id:client_secret" string must be BASE64-encoded; see [Getting Access Tokens](https://support.brightcove.com/node/17925))
+ * @apiHeader {String} Authorization Authorization: Basic client_id:client_secret (the "client_id:client_secret" string must be BASE64-encoded; see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
  * @apiParam (URL Parameters) {String="client_credentials"} grant_type always equal to "client_credentials"
  *
