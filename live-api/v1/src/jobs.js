@@ -556,6 +556,8 @@
  *
  *
  * @apiSuccess (Response Fields) {String} id Id for the stream.
+ * @apiSuccess (Response Fields) {String} stream_url The stream URL to add to your encoder configuration.
+ * @apiSuccess (Response Fields) {String} stream_name The stream name to add to your encoder configuration.
  * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
  * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
  * @apiSuccess (Response Fields) {String} outputs.playback_url Media HLS manifest for the specified rendition (non-SSAI).
