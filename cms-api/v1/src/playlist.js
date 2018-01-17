@@ -863,7 +863,7 @@
  * @apiParam (Request Body Fields) {String[]} [video_ids] array of video ids for EXPLICIT type only &mdash; note that you must replace the whole array
  * @apiParam (Request Body Fields) {String} [search] the search string to generate the list of videos &mdash; only for smart playlist types
  *
- * @apiParamExample {json} Create Playlist Example:
+ * @apiParamExample {json} Update Playlist Example:
  *    {
  *        "description": "My revised bird playlist",
  *        "name": "Bird Videos",
