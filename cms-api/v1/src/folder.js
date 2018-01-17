@@ -528,6 +528,9 @@
  * @apiParam (Path Parameters) {String} folder_id the folder ID
  * @apiParam (Path Parameters) {String} video_id the video ID
  *
+ * @apiParamExample {json} Add Video to Folder Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos/4442677263001
+ *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 204 No Content
  *
@@ -575,17 +578,11 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
- * @apiParam (Request Body Fields) {String} name name of the folder (must be unique in the account)
+ * @apiParam (Path Parameters) {String} video_id the video ID
  *
- * @apiParamExample {json} Update Folder Example:
+ * @apiParamExample {json} Remove Video from Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos/4442677263001
  *
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
- * @apiSuccess (Response Fields) {String} id system id for the folder
- * @apiSuccess (Response Fields) {String} name folder name
- * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 204 No Content
