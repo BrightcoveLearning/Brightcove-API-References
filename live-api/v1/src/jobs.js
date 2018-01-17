@@ -39,11 +39,11 @@
  * @apiParam (Request Body Fields) {String} add_cdns.prepend CDN hostname to be prepended to addresses
  * @apiParam (Request Body Fields) {String="http","https"} add_cdns.protocol Protocol to use for the stream delivery
  * @apiParam (Request Body Fields) {String} add_cdns.vendor CDN vendor such as `akamai`
- * @apiParam (Request Body Fields) {Object} add_cdns.token_auth Token authentication details
- * @apiParam (Request Body Fields) {String} add_cdns.token_auth.auth_type Token authentication type - currently, the only supported value is `Akamai2.0`
- * @apiParam (Request Body Fields) {String} add_cdns.token_auth.key Your Akamai token auth password
- * @apiParam (Request Body Fields) {String{5..12}} add_cdns.token_auth.token_name Your Akamai token token name
- * @apiParam (Request Body Fields) {Object} add_cdns.token_auth.media Your Akamai token token name
+ * @apiParam (Request Body Fields) {Object} [add_cdns.token_auth] Token authentication details
+ * @apiParam (Request Body Fields) {String} [add_cdns.token_auth.auth_type] Token authentication type - currently, the only supported value is `Akamai2.0`
+ * @apiParam (Request Body Fields) {String} [add_cdns.token_auth.key] Your Akamai token auth password
+ * @apiParam (Request Body Fields) {String{5..12}} [add_cdns.token_auth.token_name] Your Akamai token token name
+ * @apiParam (Request Body Fields) {Object} [add_cdns.token_auth.media] Your Akamai token token name
  * @apiParam (Request Body Fields) {Mixed} [add_cdns.token_auth.media.start_time="now"] The time to apply token auth - `"now"` or epoch time in seconds
  * @apiParam (Request Body Fields) {Number} [add_cdns.token_auth.media.end_time] The time to end token auth, epoch time in seconds
  * @apiParam (Request Body Fields) {ttl} [add_cdns.token_auth.media.ttl] The time to live in seconds - either `end_time` or `ttl` is required
@@ -556,6 +556,8 @@
  *
  *
  * @apiSuccess (Response Fields) {String} id Id for the stream.
+ * @apiSuccess (Response Fields) {String} stream_url The stream URL to add to your encoder configuration.
+ * @apiSuccess (Response Fields) {String} stream_name The stream name to add to your encoder configuration.
  * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
  * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
  * @apiSuccess (Response Fields) {String} outputs.playback_url Media HLS manifest for the specified rendition (non-SSAI).
