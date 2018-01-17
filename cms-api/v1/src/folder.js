@@ -526,7 +526,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} folder_id the folder ID
- * @apiParam (Request Body Fields) {String} name name of the folder (must be unique in the account)
+ * @apiParam (Path Parameters) {String} video_id the video ID
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 204 No Content
