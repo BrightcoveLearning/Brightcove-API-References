@@ -528,18 +528,6 @@
  * @apiParam (Path Parameters) {String} folder_id the folder ID
  * @apiParam (Request Body Fields) {String} name name of the folder (must be unique in the account)
  *
- * @apiParamExample {json} Add Video to  Folder Request BodyExample:
- *    {
- *      "name": "birds"
- *    }
- *
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
- * @apiSuccess (Response Fields) {String} id system id for the folder
- * @apiSuccess (Response Fields) {String} name folder name
- * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
- *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 204 No Content
  *
