@@ -20,7 +20,7 @@
   * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
   * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
   * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
-  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address
+  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address - A credential label for a valid client id + client secret should have been created when your Live account was set up, the credential label sent to you. If you do not have it, please <a href="https://help.brightcove.com/en/contact">Contact Brightcove Support</a>
   * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
   * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](https://brightcovelearning.github.io/Brightcove-API-References/dynamic-ingest-api/v1/doc/index.html#api-Video-Create_Video_Object)
   * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video ingestion - see the [Dynamic Ingest Reference](https://brightcovelearning.github.io/Brightcove-API-References/dynamic-ingest-api/v1/doc/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
