@@ -158,7 +158,7 @@
  * @apiParam (Path Parameters) {String} channel_name The channel name.
  *
  * @apiParam (Request Body Fields) {Boolean} enforce_custom_fields=false Allow sharing only if affiliate account has all custom fields for which a value is set in the master account
- * @apiParam (Request Body Fields) {Boolean} enforce_geo=true Allow sharing only if affiliate account is enabled for geo-filtering (if the master account is enabled for geo-filtering) **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiParam (Request Body Fields) {Boolean} enforce_geo=true Allow sharing only if affiliate account is enabled for geo-filtering (if the master account is enabled for geo-filtering)
  *
  *
  * @apiParamExample {JSON} Update Channel Example:
