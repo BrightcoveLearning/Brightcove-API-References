@@ -5,5 +5,6 @@ txtred=$(tput setaf 9) # red
 cd cms-api
 echo ${txtyel}generating docs for cms-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v3
+apidoc -i v1/src/  -f .js -o v1/drupal/ -t ../template-d
 echo ${txtgrn}Finished!
 echo ${txtrst}
