@@ -120,11 +120,13 @@
 
   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
-  `DOMAIN` - The video is restricted from playing on the current domain
+  `API`  - The policy key is not search-enabled when attempting to perform a search
 
   `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
   `CLIENT_IP` - The video is restricted at the current IP address
+
+  `DOMAIN` - The video is restricted from playing on the current domain
 
   `POLICY_ERROR` - Error when evaluating the policy key
 
@@ -757,11 +759,11 @@
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
- `DOMAIN` - The video is restricted from playing on the current domain
-
  `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
  `CLIENT_IP` - The video is restricted at the current IP address
+
+ `DOMAIN` - The video is restricted from playing on the current domain
 
  `POLICY_ERROR` - Error when evaluating the policy key
 
