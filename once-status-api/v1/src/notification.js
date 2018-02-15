@@ -6,7 +6,7 @@
  * @apiGroup Notifications
  * @apiVersion 1.0.0
  *
- * @apiDeprecated
+ * @apiDeprecated DEPRECATED
  * @apiDescription Get the status of notifications for a request job
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
