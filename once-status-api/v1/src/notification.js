@@ -1,8 +1,8 @@
 // Get notification statuses
 
 /**
- * @api {get} /notifications/:request_id Get Notification Status
- * @apiName Get Notification Status
+ * @api {get} /notifications/:request_id Get Notification Status DEPRECATED
+ * @apiName Get Notification Status DEPRECATED
  * @apiGroup Notifications
  * @apiVersion 1.0.0
  *
