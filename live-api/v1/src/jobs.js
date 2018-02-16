@@ -12,6 +12,7 @@
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
+ * @apiParam (Request Body Fields) {String="channel","event"} [channel_type=event] Indicates whether the job should be billed as event hours or a channel - see [Channels and Event Hours ](https://support.brightcove.com/overview-brightcove-live-api#Channels_and_hours).
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiParam (Request Body Fields) {String="us-west-1", "us-west-2","us-east-1","ap-southeast-2", "ap-northeast-1","ap-southeast-1", "eu-central-1", "sa-east-1"} region AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support.
  * @apiParam (Request Body Fields) {String} [beacon_set] ID for a beacon set (for SSAI only).
