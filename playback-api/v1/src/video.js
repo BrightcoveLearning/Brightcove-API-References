@@ -93,6 +93,7 @@
   * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
+  * @apiSuccess (Response Fields) {Number} count the count of videos found
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200 OK
