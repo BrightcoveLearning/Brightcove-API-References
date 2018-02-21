@@ -900,7 +900,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
  *
- * @apiParamExample {Url} Get Video Audio Tracks Example:
+ * @apiParamExample {Url} Get Video Audio Track Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
  *
  * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
@@ -956,7 +956,7 @@
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets one audio track for a video by its ID **Dynamic Delivery only**
+ * @apiDescription Updates audio track metadata for a video **Dynamic Delivery only**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
@@ -964,9 +964,15 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
+ * @apiParam (Request Body Fields) {String} [language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  *
- * @apiParamExample {Url} Get Video Audio Tracks Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
+ * @apiParamExample {Url} Update Video Audio Track Request Body Example:
+ *    {
+ *        "language": "es",
+ *        "is_default": true
+ *    }
  *
  * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
  * @apiSuccess (Response Fields) {String} language language code for the audio track
@@ -987,6 +993,58 @@
  *        127000
  *      ]
  *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// delete audio track
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id/audio_tracks/audio_track_id Delete Video Audio Track
+ * @apiName Delete Video Audio Track
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Deletes one audio track for a video by its ID **Dynamic Delivery only**
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
+ * @apiParam (Request Body Fields) {String} [language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
+ *
+ * @apiParamExample {Url} Delete Video Audio Track Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
+ *
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP 202 ACCEPTED or HTTP 204 NO CONTENT
+ *    // note that you may get 202 because the operation is asynchronous
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
