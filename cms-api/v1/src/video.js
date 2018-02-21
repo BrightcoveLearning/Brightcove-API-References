@@ -886,12 +886,12 @@
 // get audio track
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/audio_tracks Get Video Audio Track
+ * @api {get} /accounts/:account_id/videos/:video_id/audio_tracks/audio_track_id Get Video Audio Track
  * @apiName Get Video Audio Track
  * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets the audio tracks for a video **Dynamic Delivery only**
+ * @apiDescription Gets one audio track for a video by its ID **Dynamic Delivery only**
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
