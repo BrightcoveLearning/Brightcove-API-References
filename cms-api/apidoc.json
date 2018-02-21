@@ -11,6 +11,7 @@
         "Get_Video_by_ID_or_Reference_ID",
         "Get_Video_Sources",
         "Get_Video_Images",
+        "Get_Video_Audio_Tracks",
         "Get_Digital_Master_Info",
         "Delete_Digital_Master",
         "Get_Playlists_for_Video",
