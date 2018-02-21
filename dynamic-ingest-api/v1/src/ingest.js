@@ -19,6 +19,12 @@
  * @apiParam (Request Body Fields) {Boolean} [master.use_archived_master] For retranscode requests, will use the archived master if set to `true`; if set to `false`, you must also include the `url` for the source video
  * @apiParam (Request Body Fields) {String} [profile] ingest profile to use for transcoding; if absent, account default profile will be used
  * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
+ * @apiParam (Request Body Fields) {Object[]} [audio_tracks] array of audio track objects **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {Boolean} [audio_tracks.merge_with_existing=false] whether to replace existing audio tracks or add the new ones (currently only `false` is supported) **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {Object[]} [audio_tracks.masters] array of audio track objects **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {String} [audio_tracks.masters.url] URL for the audio file **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {String} [audio_tracks.masters.language] language for the audio track (2-character country code in lowercase - default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
+ * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [audio_tracks.masters.variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {Url} text_tracks.url URL for a WebVTT file
  * @apiParam (Request Body Fields) {String} text_tracks.srclang ISO 639 2-letter (alpha-2) language code for the text tracks
  * @apiParam (Request Body Fields) {String="captions","subtitles","chapters","metadata"} [text_tracks.kind="captions"] how the vtt file is meant to be used
@@ -41,6 +47,21 @@
  *          "url": "http://host/master.mp4"
  *      },
  *      "profile": "multi-platform-extended-static",
+ *      "audio_tracks": {
+ *            "merge_with_existing": false,
+ *            "masters": [
+ *                {
+ *                    "url": "http://learning-services-media.brightcove.com/audio/celtic_lullaby.m4a",
+ *                    "language": "en",
+ *                    "variant": "alternate"
+ *                },
+ *                {
+ *                    "url": "http://learning-services-media.brightcove.com/audio/audio1.m4a",
+ *                    "language": "en",
+ *                    "variant": "commentary"
+ *                }
+ *            ]
+ *        },
  *      "poster": {
  *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
  *            "width": 640,
