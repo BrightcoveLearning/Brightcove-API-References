@@ -723,16 +723,16 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
  *
  * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
- * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Object} poster map of poster properties
+ * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {Url} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {Url} thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} thumbnail.src URL for the default thumbnail source image
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -772,6 +772,179 @@
  *            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201510/826/57838016001_4564811464001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001"
  *        }
  *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// get audio tracks
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/audio_tracks Get Video Audio Tracks
+ * @apiName Get Video Audio Tracks
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets the audio tracks for a video **Dynamic Delivery only**
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {Url} Get Video Audio Tracks Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
+ *
+ * @apiSuccess (Response Fields) {String} id ID for the audio track formed as `language_variant`
+ * @apiSuccess (Response Fields) {String} language language code for the audio track
+ * @apiSuccess (Response Fields) {String} variant the type of audio track
+ * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
+ * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    [
+ *      {
+ *        "id": "en_alternate",
+ *        "language": "en",
+ *        "variant": "alternate",
+ *        "duration": 86100,
+ *        "encoding_rates": [
+ *          64000,
+ *          96000,
+ *          127000
+ *        ]
+ *      },
+ *      {
+ *        "id": "en_commentary",
+ *        "language": "en",
+ *        "variant": "commentary",
+ *        "duration": 34203,
+ *        "encoding_rates": [
+ *          10000,
+ *          13000,
+ *          15000
+ *        ]
+ *      },
+ *      {
+ *        "id": "en_main",
+ *        "language": "en",
+ *        "variant": "main",
+ *        "duration": 31488,
+ *        "encoding_rates": [
+ *          62000,
+ *          94000,
+ *          125000
+ *        ]
+ *      }
+ *    ]
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+// get audio track
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/audio_tracks Get Video Audio Track
+ * @apiName Get Video Audio Track
+ * @apiGroup videoGroup
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets the audio tracks for a video **Dynamic Delivery only**
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {Url} Get Video Audio Tracks Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
+ *
+ * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
+ * @apiSuccess (Response Fields) {String} language language code for the audio track
+ * @apiSuccess (Response Fields) {String} variant the type of audio track
+ * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
+ * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    [
+ *      {
+ *        "id": "en_alternate",
+ *        "language": "en",
+ *        "variant": "alternate",
+ *        "duration": 86100,
+ *        "encoding_rates": [
+ *          64000,
+ *          96000,
+ *          127000
+ *        ]
+ *      },
+ *      {
+ *        "id": "en_commentary",
+ *        "language": "en",
+ *        "variant": "commentary",
+ *        "duration": 34203,
+ *        "encoding_rates": [
+ *          10000,
+ *          13000,
+ *          15000
+ *        ]
+ *      },
+ *      {
+ *        "id": "en_main",
+ *        "language": "en",
+ *        "variant": "main",
+ *        "duration": 31488,
+ *        "encoding_rates": [
+ *          62000,
+ *          94000,
+ *          125000
+ *        ]
+ *      }
+ *    ]
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
