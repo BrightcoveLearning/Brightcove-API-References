@@ -1914,7 +1914,8 @@
     * @apiGroup Live_Jobs
     * @apiVersion 1.0.0
     *
-    * @apiDescription Inserts an ID3 timed metadata tag for an ongoing job.
+    * @apiDescription Inserts an ID3 timed metadata tag for an ongoing job. Note that: 1) If using timecode property, the job only stores the most recent request for insertion; 2) If using timecode property, the encoder must be sending SMPTE-formatted (HH:MM:SS:FF) timecode stored in the tc property via OnFI
+
     *
     * @apiHeader {String} Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
