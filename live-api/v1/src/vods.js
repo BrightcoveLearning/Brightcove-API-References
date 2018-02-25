@@ -17,8 +17,8 @@
   * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
   * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
   * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.stream_start_timecode Start for the clip as an SMPTE timecode for the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.stream_end_timecode End for the clip as an SMPTE timecode for the live stream
   * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
   * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
   * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
@@ -53,7 +53,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by Unix Timestamp Request Body Example:
+  * @apiParamExample {json} Create a VOD Clip by Unix Epoch time:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -67,7 +67,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
+  * @apiParamExample {json} Create a VOD Clip by duration:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -81,6 +81,30 @@
   *                    },
   *                    "ingest": { }
   *                }
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiParamExample {json} Create a VOD Clip by stream timecodes:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "Clipping using Timecode from-01:10:18:15 to-01:11:08:15",
+  *                "stream_start_timecode": "01:10:18:15",
+  *                "stream_end_timecode": "01:11:08:15",
+  *                "credentials": "VC_CREDENTIALS",
+  *                "videocloud": {
+  *                    "video": {
+  *                        "name": "One Minute Clip",
+  *                        "tags": ["live", "clip"]
+  *                    },
+  *                    "ingest": {
+  *                        "profile": "high-resolution",
+  *                        "capture-images": true
+  *                    }
+  *                },
+  *                "notifications": ["http://myserver.com/api/notification_listener?type=jvod"]
   *            }
   *        ]
   *    }
