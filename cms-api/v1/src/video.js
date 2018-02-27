@@ -1371,7 +1371,7 @@
   * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
   * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
   * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags - note that tags may __not__ contain commas
-  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
+  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters. **Note: be sure to use the *internal* name for the field, not the display name**
   * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
   * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
   * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
@@ -1578,7 +1578,7 @@
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
  * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
  * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags - note that tags may __not__ contain commas
- * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
+ * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters **Note: be sure to use the *internal* name for the field, not the display name**
  * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
  * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
  * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
