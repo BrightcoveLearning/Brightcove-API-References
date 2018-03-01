@@ -21,44 +21,22 @@
  * @apiParamExample {http} Get Status of Video Examples:
  *
  *
- * @apiSuccess (Response Fields) {String} key_string The policy key string
- * @apiSuccess (Response Fields) {Object} key-data Map of key data prescribing the policy
- * @apiSuccess (Response Fields) {String} key-data.account-id The Video Cloud account id
- * @apiSuccess (Response Fields) {Sting[]} key-data.apis Array of apis permitted for the key
- * @apiSuccess (Response Fields) {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
- * @apiSuccess (Response Fields) {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
- * @apiSuccess (Response Fields) {Object} key-data.geo Map of geo-filtering properties
- * @apiSuccess (Response Fields) {Sting[]} key-data.geo.countries=null Array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess (Response Fields) {Boolean} key-data.geo.exclude_countries=false If true, country array is treated as a list of countries excluded from viewing. If false, the country array is a list of countries included for viewing.
+ * @apiSuccess (Response Fields) {Number} video_id The video id
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
- * {
- * "key-string": "BCpkAD123456789AbcdEFghIjklmnOP",
- * "key-data": {
- *    "account-id": "1486906377",
- *    "require-ad-config": true,
- *    "apis": [
- *     "search"
- *    ],
- *    "allowed-domains": [
- *       "http://support.brightcove.com",
- *       "https://solutions.brightcove.com"
- *    ],
- *    "geo": {
- *       "countries": [
- *           "us",
- *           "usmil",
- *           "pr",
- *           "gu",
- *           "vi",
- *           "as",
- *           "mp"
- *        ],
- *        "exclude_countries": false
- *     }
- *  }
- *}
+ *    [
+ *      {
+ *        "video_id": 1234,
+ *        "time": "2017-04-01T12:12:12",
+ *        "remote_url": "http://facebook/page/foo",
+ *        "destination_id": "123-abc"
+ *        "action": "UPLOAD",
+ *        "result": "SUCCESS",
+ *        "distribution_method": "autosync"
+ *      }, ...
+ *    ]
+ *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
