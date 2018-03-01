@@ -22,6 +22,7 @@
  *
  *
  * @apiSuccess (Response Fields) {Number} video_id The video id
+ * @apiSuccess (Response Fields) {DateTime} time TThe time at which Social last attempted to modify the video on the remote social platform
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
