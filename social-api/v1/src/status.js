@@ -15,6 +15,8 @@
  * @apiParam (Path Parameters) {String} video_id Video ID
  * @apiParam (URL Parameters) {DateTime} [before] Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp
  * @apiParam (URL Parameters) {DateTime} [since] Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp
+ * @apiParam (URL Parameters) {Number{1-100}} [pageSize=100] The number of entries to return in this page of data
+ * @apiParam (URL Parameters) {String="YOUTUBE","TWITTER","FACEBOOK"} [platform] TThe social platform to return data for; if left blank will return data for all social platforms
  *
  * @apiParamExample {http} Get Status of Video Examples:
  *
