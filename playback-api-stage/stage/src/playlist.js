@@ -81,7 +81,7 @@
  * @apiSuccess (Response Fields) {String} videos.text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} videos.text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} videos.text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} videos.text_tracks.mime_type mime_type for the track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} videos.text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest

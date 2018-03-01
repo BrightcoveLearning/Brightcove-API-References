@@ -18,7 +18,7 @@
 
   - In general, search-enabled Policy Keys should only be stored on a server and not in a browser player or mobile app, since they can be used to list all playable videos. For some accounts this may not be applicable if you do not care if all of your playable videos can be discovered.
 
-  - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api. Initially, there is a lower maximum limit of 200 videos for accounts with Geo-restriction enabled.
+  - The maximum number of videos (highest `count` value) returned is 1000, even if there are more matching videos in the account. The `count` value is an estimate and should not be relied on as the exact number to be returned. If all results are desired then keep paging until it no longer returns a full page, or use the CMS api.
 
   - Only currently playable videos are included in the results list. It is recommended to do a similar query with the CMS api to see why some videos are excluded.
 
@@ -87,12 +87,13 @@
   * @apiSuccess (Response Fields) {String} text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
   * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
   * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
-  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime_type for the track
   * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
   * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
   * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
+  * @apiSuccess (Response Fields) {Number} count the count of videos found
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200 OK
@@ -120,15 +121,19 @@
 
   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
-  `DOMAIN` - The video is restricted from playing on the current domain
+  `API`  - The policy key is not search-enabled when attempting to perform a search
 
   `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
   `CLIENT_IP` - The video is restricted at the current IP address
 
+  `DOMAIN` - The video is restricted from playing on the current domain
+
   `POLICY_ERROR` - Error when evaluating the policy key
 
-  `VIDEO_NOT_PLAYABLE` - For a single video request, the video exists, but is not allowed to be played now. That could be any of the three reasons that videos are not playable: not sufficiently ingested, not active, not in scheduled date range.
+
+  * @apiError (Error 403) {json} FORBIDDEN error_subcode:
+  `VIDEO_NOT_PLAYABLE` - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable: not sufficiently ingested, has no sources, not active, not in scheduled date range.
   * @apiError (Error 404) {json} NOT_FOUND error_subcode:
 
   `VIDEO_NOT_FOUND` - The requested resource is not available.
@@ -141,6 +146,145 @@
   * @apiError (Error 504) {json} SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
   *
   */
+
+  // get related videos
+
+  /**
+   * @api {get} /accounts/:account_id/videos/:video_id/related Get Related Videos by ID or Reference ID
+   * @apiName Get Related Videos by ID or Reference ID
+   * @apiGroup videoGroup
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Gets a page of video objects that are related to the specified video. Using the `name` and `short description` of the specified video, the Playback API searches for videos with any partial matches in the following fields: `name`, `short description`, `long description`, `tags`.
+   <br><br>
+   __<span id="searchpolicy">Notes:</span>__
+   - When performing this search, you need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos). For information on getting policy keys, see the [Policy API Overview](https://support.brightcove.com/node/18003) or the [Policy Keys](https://support.brightcove.com/node/18125) documents.
+
+   - In general, search-enabled Policy Keys should only be stored on a server and not in a browser player or mobile app, since they can be used to list all playable videos. For some accounts this may not be applicable if you do not care if all of your playable videos can be discovered.
+
+   - Any geo-restricted videos that are denied for the particular requestor are omitted from the results. As long as some videos are allowed the request is considered successful. An errors field is added to the result with a summary explaining why videos were omitted.
+   <br><br>
+   *
+   * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
+   * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
+   * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
+   *
+   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+   * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
+   *
+   * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
+   * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
+   *
+   * @apiParamExample {Url} Get Related Videos Example:
+   *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999/related
+   *     // or
+   *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/ref:nature1/related
+   *
+   * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+   * @apiSuccess (Response Fields) {String} id video id
+   * @apiSuccess (Response Fields) {String} name video title
+   * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+   * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+   * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
+   * @apiSuccess (Response Fields) {String} cue_points.name cue point name
+   * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+   * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+   * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+   * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+   * @apiSuccess (Response Fields) {String} description video short description
+   * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+   * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
+   * @apiSuccess (Response Fields) {Object[]} poster_sources array of poster source maps (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   * @apiSuccess (Response Fields) {String} poster_sources.src URL for a poster source image (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   * @apiSuccess (Response Fields) {String} poster URL for the default poster source image
+   * @apiSuccess (Response Fields) {String} projection The mapping projection for 360° videos, e.g. "equirectangular"
+   * @apiSuccess (Response Fields) {Object[]} thumbnail_sources array of thumbnail source maps (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   * @apiSuccess (Response Fields) {String} thumbnail_sources.src URL for a thumbnail source image (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   image
+   * @apiSuccess (Response Fields) {String} thumbnail URL for the default thumbnail source image
+   * @apiSuccess (Response Fields) {Object} link map of scheduling properties
+   * @apiSuccess (Response Fields) {String} link.text text for the link
+   * @apiSuccess (Response Fields) {String} link.url URL for the link
+   * @apiSuccess (Response Fields) {String} long_description video long description
+   * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
+   * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+   * @apiSuccess (Response Fields) {String[]} tags array of tags
+   * @apiSuccess (Response Fields) {Object[]} sources array of video sources (renditions)
+   * @apiSuccess (Response Fields) {Number} sources.avg_bitrate average bitrate
+   * @apiSuccess (Response Fields) {Number} sources.width frame width in pixels
+   * @apiSuccess (Response Fields) {Number} sources.height frame height in pixels
+   * @apiSuccess (Response Fields) {Number} sources.size size in bytes
+   * @apiSuccess (Response Fields) {Number} sources.duration duration in milliseconds
+   * @apiSuccess (Response Fields) {String} sources.asset_id the asset id for the source
+   * @apiSuccess (Response Fields) {String} sources.stream_name the stream name for the source
+   * @apiSuccess (Response Fields) {String} sources.codec the video codec
+   * @apiSuccess (Response Fields) {String} sources.container the video container
+   * @apiSuccess (Response Fields) {String} sources.app_name the address for rtmp streams
+   * @apiSuccess (Response Fields) {String} sources.type the type (for HLS streams)
+   * @apiSuccess (Response Fields) {Object} sources.key_systems a list of objects where each defines the type of encryption used for a DRM packaged source – if this object is defined, then its source is content protected
+   * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
+   * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+   * @apiSuccess (Response Fields) {Object[]} text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   * @apiSuccess (Response Fields) {String} text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+   * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
+   * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+   * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime_type for the track
+   * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
+   * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+   * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+   * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
+   *
+   * @apiSuccessExample {json} Success Response:
+   *     HTTP/1.1 200 OK
+   *     {
+   *       "videos":
+   *         [
+   *           {<video1 fields>},
+   *           {<video2 fields>},
+   *           ...
+   *         ]
+   *     }
+   *
+   * @apiError (Error 400) {json} BAD_REQUEST error_subcode:
+
+   `DUPLICATE_PARAMETERS` - The same parameter name was provided more than once in the request
+
+   `INVALID_SEARCH` - The search parameters are not valid
+
+   `ILLEGAL_QUERY` - The search string syntax was invalid - example: 1) doing a tags search that ends with a comma or has an unclosed quote
+
+   `INVALID_SORT` - The sort parameters specified an invalid field
+   * @apiError (Error 401) {json} INVALID_POLICY_KEY Must be a legal policy key in an [appropriate header](https://support.brightcove.com/node/17906).
+   * @apiError (Error 403) {json} ACCESS_DENIED error_subcode:
+
+   `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
+
+   `API`  - The policy key is not search-enabled when attempting to perform a search
+
+   `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
+
+   `CLIENT_IP` - The video is restricted at the current IP address
+
+   `DOMAIN` - The video is restricted from playing on the current domain
+
+   `POLICY_ERROR` - Error when evaluating the policy key
+
+
+   * @apiError (Error 403) {json} FORBIDDEN error_subcode:
+   `VIDEO_NOT_PLAYABLE` - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable: not sufficiently ingested, has no sources, not active, not in scheduled date range.
+   * @apiError (Error 404) {json} NOT_FOUND error_subcode:
+
+   `VIDEO_NOT_FOUND` - The requested resource is not available.
+   * @apiError (Error 405) {json} METHOD_NOT_ALLOWED Only `GET`, `HEAD` and `OPTIONS` are allowed for this api.
+   * @apiError (Error 500) {json} SERVER_ERROR Internal server error.
+   * @apiError (Error 502) {json} SERVER_ERROR Got a bad response from a backend server.
+
+   Various `*_RETRIEVE_FAILURE` error codes: `ACCOUNT_RETRIEVE_FAILURE`, `VIDEO_RETRIEVE_FAILURE`, `VIDEO_URLS_RETRIEVE_FAILURE`.
+   * @apiError (Error 503) {json} SERVICE_UNAVAILABLE Returned this response from a backend server.
+   * @apiError (Error 504) {json} SERVER_TIMEOUT Either a backend server or one of the servers they rely on timed out.
+   *
+   */
 
 // get video by id
 
@@ -213,7 +357,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime_type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
@@ -588,7 +732,7 @@
 * "created_at": "2017-05-15T22:33:18.529Z"
 *}
 *
-* ** @apiSuccessExample {json} Success Response Dynamic Delivery:
+* ** @apiSuccessExample {json} Dynamic Delivery:
 *    HTTP/1.1 200 OK
 *    {
 * "description": null,
@@ -661,6 +805,91 @@
 * ],
 * "created_at": "2017-06-05T11:20:52.412Z"
 *}
+*
+** @apiSuccessExample {json} DRM-packaged Dynamic Delivery:
+*    HTTP/1.1 200 OK
+*{
+* "description": null,
+* "poster_sources": [
+*   {
+*     "src": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/1280x720/2s316ms/match/image.jpg"
+*   }
+* ],
+* "tags": [],
+* "cue_points": [],
+* "custom_fields": {},
+* "account_id": "2728142649001",
+* "sources": [
+*   {
+*     "ext_x_version": "5",
+*     "type": "application/x-mpegURL",
+*     "src": "http://manifest.prod.boltdns.net/manifest/v1/hls/v5/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/10s/master.m3u8?fastly_token=NTllOGY3ZjhfOTczOWZhNGY4ZWQxODFjYWFmODRiNDZiMzI2NmM0NWE3OWFjYWJiNTk0ZmUxOGUzZjM3ZDI1ZTA5YjNkMjJlZA%3D%3D",
+*     "key_systems": {
+*       "com.apple.fps.1_0": {
+*         "key_request_url": "https://manifest.prod.boltdns.net/license/v1/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/22d62151-eccd-421b-8848-e36a4cbae571?fastly_token=NTllOGY3ZjhfNWVhYTVmYWFmNDYwNTJkNTNmMGMwNmNkNjQwMTE1ZDVmNTE3YTU4Y2VjZTFhYWFkODNhMzExMTczYjk5N2RkNg%3D%3D",
+*         "certificate_url": "https://manifest.prod.boltdns.net/license/v1/fairplay_app_cert/2728142649001"
+*        }
+*      }
+*   },
+*   {
+*     "ext_x_version": "5",
+*     "type": "application/x-mpegURL",
+*     "src": "https://manifest.prod.boltdns.net/manifest/v1/hls/v5/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/10s/master.m3u8?fastly_token=NTllOGY3ZjhfOTczOWZhNGY4ZWQxODFjYWFmODRiNDZiMzI2NmM0NWE3OWFjYWJiNTk0ZmUxOGUzZjM3ZDI1ZTA5YjNkMjJlZA%3D%3D",
+*     "key_systems": {
+*       "com.apple.fps.1_0": {
+*         "key_request_url": "https://manifest.prod.boltdns.net/license/v1/fairplay/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/22d62151-eccd-421b-8848-e36a4cbae571?fastly_token=NTllOGY3ZjhfNWVhYTVmYWFmNDYwNTJkNTNmMGMwNmNkNjQwMTE1ZDVmNTE3YTU4Y2VjZTFhYWFkODNhMzExMTczYjk5N2RkNg%3D%3D",
+*         "certificate_url": "https://manifest.prod.boltdns.net/license/v1/fairplay_app_cert/2728142649001"
+*       }
+*     }
+*   },
+*   {
+*     "type": "application/dash+xml",
+*     "src": "http://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/bccenc/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/2s/manifest.mpd?fastly_token=NTllOGY3ZjhfOTZiMGJmYzk1ODBjZjc2ODQ3ZTRmZDdlNTA5OTYyNTQ5ZjNiYjlkOWViZTUzZTBiMjJlOGYwODhhZmQ3YWIxNg%3D%3D",
+*     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+*     "key_systems": {
+*       "com.widevine.alpha": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/widevine/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfZGU1N2RhMDUyY2ZiZWZjY2QyMDNkY2E2ZTkwOTU5ZjZiM2U4YzU3ZGJlMjJmMjFkYzIyM2ZkOTVlNGRiMDM1Ng%3D%3D"
+*       },
+*       "com.microsoft.playready": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/playready/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfMjBlYWRiOTU0MGM2MTRmOGVlNzc2NzkyOTI5OTc4ZWUwZTNkMDcwMWIyMzQ3NTEyMDM1NjVmM2NjNGJkNzMzMw%3D%3D"
+*       }
+*     }
+*   },
+*   {
+*     "type": "application/dash+xml",
+*     "src": "https://manifest.prod.boltdns.net/manifest/v1/dash/live-baseurl/bccenc/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/2s/manifest.mpd?fastly_token=NTllOGY3ZjhfOTZiMGJmYzk1ODBjZjc2ODQ3ZTRmZDdlNTA5OTYyNTQ5ZjNiYjlkOWViZTUzZTBiMjJlOGYwODhhZmQ3YWIxNg%3D%3D",
+*     "profiles": "urn:mpeg:dash:profile:isoff-live:2011",
+*     "key_systems": {
+*       "com.widevine.alpha": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/widevine/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfZGU1N2RhMDUyY2ZiZWZjY2QyMDNkY2E2ZTkwOTU5ZjZiM2U4YzU3ZGJlMjJmMjFkYzIyM2ZkOTVlNGRiMDM1Ng%3D%3D"
+*       },
+*       "com.microsoft.playready": {
+*         "license_url": "https://manifest.prod.boltdns.net/license/v1/cenc/playready/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/4cbdc140-e254-4365-86d0-55fc10cdfa22?fastly_token=NTllOGY3ZjhfMjBlYWRiOTU0MGM2MTRmOGVlNzc2NzkyOTI5OTc4ZWUwZTNkMDcwMWIyMzQ3NTEyMDM1NjVmM2NjNGJkNzMzMw%3D%3D"
+*       }
+*     }
+*   }
+* ],
+* "name": "Lightning-Utrecht",
+* "reference_id": null,
+* "long_description": null,
+* "duration": 4633,
+* "economics": "AD_SUPPORTED",
+* "published_at": "2017-09-20T12:45:57.347Z",
+* "text_tracks": [],
+* "updated_at": "2017-09-20T12:47:52.010Z",
+* "thumbnail": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/160x90/2s316ms/match/image.jpg",
+* "poster": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/1280x720/2s316ms/match/image.jpg",
+* "offline_enabled": false,
+* "link": null,
+* "id": "5581882937001",
+* "ad_keys": null,
+* "thumbnail_sources": [
+*   {
+*     "src": "https://cf-images.us-east-1.prod.boltdns.net/v1/jit/2728142649001/9305d071-0c5b-40dd-8374-9cb3dd5e9515/main/160x90/2s316ms/match/image.jpg"
+*   }
+* ],
+* "created_at": "2017-09-20T12:45:57.347Z"
+*}
  *
  * @apiError (Error 400) BAD_REQUEST error_subcode:
 
@@ -670,11 +899,11 @@
 
  `ACCOUNT_ID`  - The account id in the policy key does not match the account in the api request
 
- `DOMAIN` - The video is restricted from playing on the current domain
-
  `CLIENT_GEO` - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the [Playback API Error Reference](https://support.brightcove.com/node/17903)
 
  `CLIENT_IP` - The video is restricted at the current IP address
+
+ `DOMAIN` - The video is restricted from playing on the current domain
 
  `POLICY_ERROR` - Error when evaluating the policy key
 

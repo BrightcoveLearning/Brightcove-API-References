@@ -227,11 +227,11 @@
   */
 
 
-  // Get Get_Minutes_Used
+  // Get Get Minutes Used
 
   /**
-    * @api {get} /v2/reports/minutes Get Get_Minutes_Used
-    * @apiName Get Get_Minutes_Used
+    * @api {get} /v2/reports/minutes Get Get Minutes Used
+    * @apiName Get Get Minutes Used
     * @apiGroup Reports
     * @apiVersion 2.0.0
     *

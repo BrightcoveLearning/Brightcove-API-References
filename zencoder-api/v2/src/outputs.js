@@ -76,11 +76,11 @@
   *
   */
 
-// Output Progress
+// Get Output Progress
 
 /**
-  * @api {get} /v2/outputs/:outputId/progress Output Progress
-  * @apiName Update Output Progress
+  * @api {get} /v2/outputs/:outputId/progress Get Output Progress
+  * @apiName Get Output Progress
   * @apiGroup Outputs
   * @apiVersion 2.0.0
   *
