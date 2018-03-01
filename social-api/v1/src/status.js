@@ -24,7 +24,8 @@
  * @apiSuccess (Response Fields) {Number} video_id The video id
  * @apiSuccess (Response Fields) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
  * @apiSuccess (Response Fields) {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
- * @apiSuccess (Response Fields) {String} destination_id TThe Social ID of the destination to which this remote_url points
+ * @apiSuccess (Response Fields) {String} destination_id The Social ID of the destination to which this remote_url points
+ * @apiSuccess (Response Fields) {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
