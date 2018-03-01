@@ -27,6 +27,7 @@
  * @apiSuccess (Response Fields) {String} destination_id The Social ID of the destination to which this remote_url points
  * @apiSuccess (Response Fields) {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
  * @apiSuccess (Response Fields) {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
+ * @apiSuccess (Response Fields) {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
