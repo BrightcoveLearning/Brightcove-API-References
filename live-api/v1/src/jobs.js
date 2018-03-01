@@ -69,7 +69,7 @@
  * @apiParam (Request Body Fields) {Number{64-10000}} outputs.video_bitrate target video bitrate in kbps
  * @apiParam (Request Body Fields) {String="aac"} [outputs.audio_codec] The output audio codec to use. Note: Only aac is supported.
  * @apiParam (Request Body Fields) {Number{16-1024}} outputs.audio_bitrate An output bitrate setting for the audio track, in Kbps
- * @apiParam (Request Body Fields) {Number{1-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
+ * @apiParam (Request Body Fields) {Number{2-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
  * @apiParam (Request Body Fields) {mixed[]} [outputs.notifications] Array of notification destination objects or strings - notifications defined here are for events specific to the output.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiParam (Request Body Fields) {String} outputs.notifications.url Destination for the notification.
  * @apiParam (Request Body Fields) {String} [outputs.notifications.event] Event to send the notification for.
