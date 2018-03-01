@@ -127,43 +127,6 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream Custom Origin Example:
- *    {
- *        "live_stream": true,
- *        "region": "my-region-list",
- *        "reconnect_time": 30,
- *        "outputs": [
- *            {
- *                "label": "hls720p",
- *                "live_stream": true,
- *                "width": 960,
- *                "height": 540,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 1843,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            },
- *            {
- *                "label": "hls480p",
- *                "live_stream": true,
- *                "width": 640,
- *                "height": 360,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 819,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            },
- *            {
- *                "type":"playlist",
- *                "url":"s3://YOUR_BUCKET/custom/playlist.m3u8",
- *                "credentials":"YOUR_CREDENTIALS",
- *                "streams": [{"source": "hls480p"},{"source": "hls720p"}]
- *            }
- *        ]
- *    }
- *
  * @apiParamExample {json} Live Stream Transmuxed Rendition Example:
  *     // When using a transmuxed rendition within a multi-bitrate HLS output,
  *     // the segment_size and keyframe_interval should be avoided on any of the outputs
@@ -823,7 +786,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to stop.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
+  * @apiParamExample {url} Stop Live Stream Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
@@ -920,7 +883,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
+  * @apiParamExample {url} Get Live Jobs Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
   *
   * @apiSuccess (Response Fields) {String} lastevaluatedkey `TODO`
@@ -1560,7 +1523,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
-  * @apiParamExample {url} Live Stream Custom Origin Example:
+  * @apiParamExample {url} Get Live Job Details Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
   *
   * @apiSuccess (Response Fields) {Object} job Object containing the job details
