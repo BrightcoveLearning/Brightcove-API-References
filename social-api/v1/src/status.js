@@ -21,7 +21,7 @@
  * @apiParam (URL Parameters) {String="YOUTUBE","TWITTER","FACEBOOK"} [platform] TThe social platform to return data for; if left blank will return data for all social platforms
  *
  * @apiParamExample {http} Get Status of Video Examples:
- *
+ *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/video/1234
  *
  * @apiSuccess (Response Fields) {Number} video_id The video id
  * @apiSuccess (Response Fields) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
@@ -84,7 +84,7 @@
  * @apiParam (URL Parameters) {Number{1-100}} [pageSize=100] The number of entries to return in this page of data
  *
  * @apiParamExample {http} Get Status of Videos for Destination Example:
- *
+ *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/destination/123-abc
  *
  * @apiSuccess (Response Fields) {Number} video_id The video id
  * @apiSuccess (Response Fields) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
@@ -144,7 +144,7 @@
  *
  *
  * @apiParamExample {http} Get Status of Video Examples:
- *
+ *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/destination/123-abc/video/1234
  *
  * @apiSuccess (Response Fields) {Number} video_id The video id
  * @apiSuccess (Response Fields) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
