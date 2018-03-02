@@ -19,6 +19,7 @@
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID
  * @apiParam (URL Parameters) {Number{1-100}} [limit=20] The number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] The number of videos to skip
+ * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
  *
  * @apiParamExample {Url} Get Playlists Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/749117323001

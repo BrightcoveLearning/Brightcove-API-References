@@ -35,6 +35,7 @@
   * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
   * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005) for details
   * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
+  * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
   *
   * @apiParamExample {Url} Search Example:
   *     https://edge.api.brightcove.com/playback/v1/accounts/:account_id/videos?q=tags:nature,name:nature
@@ -303,6 +304,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
+ *
+ * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
  *
  * @apiParamExample {Url} Get Video Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999
