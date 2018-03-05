@@ -550,36 +550,48 @@
  * @apiSuccessExample {json} Success Response Standard Live Stream:
  *    HTTP/1.1 200 OK
  *    {
- *      "id": "edb92295e0f744f088f473ac047538c3",
- *      "outputs": [
- *        {
- *          "id": "0-edb92295e0f744f088f473ac047538c3",
- *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8",
- *          "label": "hls720p"
- *        },
- *        {
- *          "id": "1-edb92295e0f744f088f473ac047538c3",
- *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8",
- *          "label": "hls480p"
- *        },
- *        {
- *          "id": "2-edb92295e0f744f088f473ac047538c3",
- *          "playlist_type": "defaultS3",
- *          "type": "playlist",
- *          "filename": "playlist.m3u8",
- *          "dvr_filename": "playlist_dvr.m3u8",
- *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
- *        }
- *      ],
- *      "stream_url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
- *      "stream_name": "alive",
- *      "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
- *      "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+ *    	"id": "6666482ac53b4f9bac473157c0897bde",
+ *    	"outputs": [
+ *    		{
+ *    			"id": "0-6666482ac53b4f9bac473157c0897bde",
+ *    			"playback_url": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_0/chunklist.m3u8",
+ *    			"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+ *    			"playback_url_vod": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_0/chunklist_vod.m3u8",
+ *    			"playback_added_cdns": [],
+ *    			"label": "hls1080p"
+ *    		},
+ *    		{
+ *    			"id": "1-6666482ac53b4f9bac473157c0897bde",
+ *    			"playback_url": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_1/chunklist.m3u8",
+ *    			"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+ *    			"playback_url_vod": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_1/chunklist_vod.m3u8",
+ *    			"playback_added_cdns": [],
+ *    			"label": "hls720p"
+ *    		},
+ *    		{
+ *    			"id": "2-6666482ac53b4f9bac473157c0897bde",
+ *    			"playback_url": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_2/chunklist.m3u8",
+ *    			"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+ *    			"playback_url_vod": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/profile_2/chunklist_vod.m3u8",
+ *    			"playback_added_cdns": [],
+ *    			"label": "hls480p"
+ *    		},
+ *    		{
+ *    			"id": "3-6666482ac53b4f9bac473157c0897bde",
+ *    			"playlist_type": "defaultS3",
+ *    			"type": "playlist",
+ *    			"filename": "playlist.m3u8",
+ *    			"dvr_filename": "playlist_dvr.m3u8",
+ *    			"playback_url": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/playlist.m3u8",
+ *    			"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/playlist_dvr.m3u8"
+ *    		}
+ *    	],
+ *    	"stream_url": "rtmp://ep2-usw2.bcovlive.io:1935/6666482ac53b4f9bac473157c0897bde",
+ *    	"stream_name": "alive",
+ *    	"static": false,
+ *    	"encryption": {},
+ *    	"playback_url": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/playlist.m3u8",
+ *    	"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/playlist_dvr.m3u8"
  *    }
  *
  * @apiSuccessExample {json} Success Response Live Stream with Multiple Output Playlists:
@@ -610,8 +622,8 @@
  *            "hls1080p",
  *            "hls720p"
  *          ],
- *          "playback_url": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3_dvr.m3u8",
+ *          "playback_url": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
+ *          "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3_dvr.m3u8",
  *          "playback_url_s3": "s3://BUCKET/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8"
  *        },
  *        {
@@ -624,8 +636,8 @@
  *          "streams": [
  *            "hls1080p"
  *          ],
- *          "playback_url": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-high.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-high_dvr.m3u8",
+ *          "playback_url": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-high.m3u8",
+ *          "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-high_dvr.m3u8",
  *          "playback_url_s3": "s3://BUCKET/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-high.m3u8"
  *        },
  *        {
@@ -638,15 +650,15 @@
  *          "streams": [
  *            "AudioOnly"
  *          ],
- *          "playback_url": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-audio.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-audio_dvr.m3u8",
+ *          "playback_url": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-audio.m3u8",
+ *          "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-audio_dvr.m3u8",
  *          "playback_url_s3": "s3://BUCKET/edcd4d356228417d80345a0c91864efe/us-west-2/playlist-audio.m3u8"
  *        }
  *      ],
  *      "stream_url": "rtmp://host/edcd4d356228417d80345a0c91864efe",
  *      "stream_name": "alive",
- *      "playback_url": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
- *      "playback_url_dvr": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3_dvr.m3u8",
+ *      "playback_url": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
+ *      "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3_dvr.m3u8",
  *      "playback_url_s3": "s3://BUCKET/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
  *    }
  *
@@ -657,9 +669,9 @@
  *      "outputs": [
  *        {
  *          "id": "0b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
+ *          "playback_url": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist.m3u8",
+ *          "playback_url_dvr": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_dvr.m3u8",
+ *          "playback_url_vod": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
  *          "playback_added_cdns": [
  *            {
  *              "label": "akamai",
@@ -678,9 +690,9 @@
  *        },
  *        {
  *          "id": "1b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_vod.m3u8",
+ *          "playback_url": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist.m3u8",
+ *          "playback_url_dvr": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_dvr.m3u8",
+ *          "playback_url_vod": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_vod.m3u8",
  *          "playback_added_cdns": [
  *            {
  *              "label": "akamai",
@@ -700,9 +712,9 @@
  *      ],
  *      "stream_url": "rtmp://ep16-usw2.a-live.io:1935/b3c20e416f964fb1b67334877bade99b",
  *      "stream_name": "alive",
- *      "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist.m3u8",
- *      "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist_dvr.m3u8",
- *      "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
+ *      "playback_url": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist.m3u8",
+ *      "playback_url_dvr": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist_dvr.m3u8",
+ *      "playback_url_vod": "http://bcovlive-a.akamaihd.net/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
  *      "playback_added_cdns": [
  *        {
  *          "label": "akamai",
@@ -1013,8 +1025,8 @@
   *            "job_playlists": [
   *              {
   *                "delivery": {
-  *                  "media_cdn_prepend": "playback.bcovlive.io",
-  *                  "ssai_cdn_prepend": "playback.bcovlive.io",
+  *                  "media_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *                  "ssai_cdn_prepend": "bcovlive-a.akamaihd.net",
   *                  "media_cdn_protocol": "http",
   *                  "ssai_manifest_append": "_ssaiM",
   *                  "ssai_cdn_protocol": "http"
@@ -1039,12 +1051,12 @@
   *                "playlist_name": "playlist.m3u8",
   *                "default_chunklist_name": "chunklist.m3u8",
   *                "default_dvr_chunklist_name": "chunklist_dvr.m3u8",
-  *                "playback_url": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
   *                "default_vod_chunklist_name": "chunklist_vod.m3u8",
   *                "default_s3_bucket": "alive-pr-[[region]]-media",
   *                "dvr_playlist_name": "playlist_dvr.m3u8",
   *                "default_s3_bucket_ads": "alive-pr-[[region]]-ads",
-  *                "playback_url_dvr": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8"
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8"
   *              }
   *            ],
   *            "job_out_bytes": 0,
@@ -1133,12 +1145,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_0",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1148,9 +1160,9 @@
   *                "name": "Out0",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 2150400,
-  *                "ui_playback_url": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_0/chunklist_vod.m3u8"
   *              },
   *              {
   *                "video_height": 540,
@@ -1168,12 +1180,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_1",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1183,9 +1195,9 @@
   *                "name": "Out1",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 1536000,
-  *                "ui_playback_url": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_1/chunklist_vod.m3u8"
   *              },
   *              {
   *                "video_height": 360,
@@ -1203,12 +1215,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_2",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1218,9 +1230,9 @@
   *                "name": "Out2",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 819200,
-  *                "ui_playback_url": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/profile_2/chunklist_vod.m3u8"
   *              }
   *            ],
   *            "job_tick": 100,
@@ -1248,10 +1260,10 @@
   *            "vods": [
   *
   *            ],
-  *            "job_playback_url": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
-  *            "job_playback_url_dvr": "http://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8",
-  *            "job_ui_playback_url": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
-  *            "job_ui_playback_url_dvr": "https://playback.bcovlive.io/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8"
+  *            "job_playback_url": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
+  *            "job_playback_url_dvr": "http://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8",
+  *            "job_ui_playback_url": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist.m3u8",
+  *            "job_ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/52f0508ce379496780a9073919435a3b/us-west-2/NA/playlist_dvr.m3u8"
   *          }
   *        },
   *        {
@@ -1259,8 +1271,8 @@
   *            "job_playlists": [
   *              {
   *                "delivery": {
-  *                  "media_cdn_prepend": "playback.bcovlive.io",
-  *                  "ssai_cdn_prepend": "playback.bcovlive.io",
+  *                  "media_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *                  "ssai_cdn_prepend": "bcovlive-a.akamaihd.net",
   *                  "media_cdn_protocol": "http",
   *                  "ssai_manifest_append": "_ssaiM",
   *                  "ssai_cdn_protocol": "http"
@@ -1285,12 +1297,12 @@
   *                "playlist_name": "playlist.m3u8",
   *                "default_chunklist_name": "chunklist.m3u8",
   *                "default_dvr_chunklist_name": "chunklist_dvr.m3u8",
-  *                "playback_url": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
   *                "default_vod_chunklist_name": "chunklist_vod.m3u8",
   *                "default_s3_bucket": "alive-pr-[[region]]-media",
   *                "dvr_playlist_name": "playlist_dvr.m3u8",
   *                "default_s3_bucket_ads": "alive-pr-[[region]]-ads",
-  *                "playback_url_dvr": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8"
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8"
   *              }
   *            ],
   *            "job_out_bytes": 0,
@@ -1380,12 +1392,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_0",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1395,9 +1407,9 @@
   *                "name": "Out0",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 2150400,
-  *                "ui_playback_url": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_0/chunklist_vod.m3u8"
   *              },
   *              {
   *                "video_height": 540,
@@ -1415,12 +1427,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_1",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1430,9 +1442,9 @@
   *                "name": "Out1",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 1536000,
-  *                "ui_playback_url": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_1/chunklist_vod.m3u8"
   *              },
   *              {
   *                "video_height": 360,
@@ -1450,12 +1462,12 @@
   *                "video_fit_mode": "stretch",
   *                "profile_name": "profile_2",
   *                "segment_duration_ms": 4000,
-  *                "playback_url": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist.m3u8",
+  *                "playback_url": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist.m3u8",
   *                "video_keyframe_interval_follow_source": false,
-  *                "playback_url_dvr": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *                "playback_url_dvr": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
   *                "video_codec": "H.264",
   *                "video_codec_level": "3.1",
-  *                "playback_url_vod": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_vod.m3u8",
+  *                "playback_url_vod": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_vod.m3u8",
   *                "audio_bitrate_bps": 196608,
   *                "gpuid": -1,
   *                "video_keyframe_interval": 60,
@@ -1465,9 +1477,9 @@
   *                "name": "Out2",
   *                "info_format": "mpeg-ts",
   *                "video_bitrate_bps": 819200,
-  *                "ui_playback_url": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist.m3u8",
-  *                "ui_playback_url_dvr": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
-  *                "ui_playback_url_vod": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_vod.m3u8"
+  *                "ui_playback_url": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist.m3u8",
+  *                "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *                "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/profile_2/chunklist_vod.m3u8"
   *              }
   *            ],
   *            "job_tick": 99,
@@ -1497,10 +1509,10 @@
   *            "vods": [
   *
   *            ],
-  *            "job_playback_url": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
-  *            "job_playback_url_dvr": "http://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8",
-  *            "job_ui_playback_url": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
-  *            "job_ui_playback_url_dvr": "https://playback.bcovlive.io/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8"
+  *            "job_playback_url": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
+  *            "job_playback_url_dvr": "http://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8",
+  *            "job_ui_playback_url": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist.m3u8",
+  *            "job_ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/e058d5ed5758440b9396efc4f2737e18/us-west-2/NA/playlist_dvr.m3u8"
   *          }
   *        }
   *      ]
@@ -1662,8 +1674,8 @@
   *        "metadata_passthrough": false,
   *        "out_worker_bytes": 0,
   *        "out_worker_bytes_rate": 0,
-  *        "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
-  *        "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
+  *        "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *        "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
   *        "input_media_file": {
   *          "audio_bitrate_in_kbps": null,
   *          "audio_codec": null,
@@ -1756,9 +1768,9 @@
   *            "keyframe_interval_follow_source": false,
   *            "segment_seconds": 6,
   *            "live_stream": true,
-  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
-  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
-  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8"
+  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
+  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8"
   *          },
   *          {
   *            "audio_bitrate_in_kbps": 196.608,
@@ -1793,17 +1805,17 @@
   *            "keyframe_interval_follow_source": false,
   *            "segment_seconds": 6,
   *            "live_stream": true,
-  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
-  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
-  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8"
+  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
+  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8"
   *          },
   *          {
   *            "playlist_type": "defaultS3",
   *            "type": "playlist",
   *            "filename": "playlist.m3u8",
   *            "dvr_filename": "playlist_dvr.m3u8",
-  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
-  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
   *          }
   *        ]
   *      }
