@@ -538,6 +538,7 @@
  * @apiSuccess (Response Fields) {Number} live_sliding_window_duration The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
  * @apiSuccess (Response Fields) {Number} max_hls_protocol_version Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
  * @apiSuccess (Response Fields) {String} slate id for slate of assets to be included
+ * @apiSuccess (Response Fields) {String} sep_state The current state of the job's SEP (static entry point) - possible values: 'waiting' 'pending_activation', 'activation_in_progress', 'ready', 'pending_deactivation', 'deactivation_in_progress', 'cancelled', 'finished'
  * @apiSuccess (Response Fields) {mixed[]} notifications Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiSuccess (Response Fields) {String} notifications.url Destination for the notification.
  * @apiSuccess (Response Fields) {String} notifications.credentials Credentials for the destination, if required.
