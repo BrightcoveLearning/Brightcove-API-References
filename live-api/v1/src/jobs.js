@@ -897,7 +897,7 @@
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
   * @apiParamExample {url} Get Live Jobs Example:
-  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
+  *     https://api.bcovlive.io/v1/jobs
   *
   * @apiSuccess (Response Fields) {String} lastevaluatedkey `TODO`
   * @apiSuccess (Response Fields) {Object[]} jobs Array of `job` objects - remaining entries are the job detail fields
