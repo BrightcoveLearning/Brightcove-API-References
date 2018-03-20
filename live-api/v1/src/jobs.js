@@ -1845,7 +1845,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds
-  * @apiParam (Request Body Fields) {String} [timecode] When to insert the cuepoint in HH:MM:SS:FF from the stream start (FF = frames); if omitted, the cuepoint will be inserted immediately
+  * @apiParam (Request Body Fields) {String} timecode When to insert the cuepoint in HH:MM:SS:FF from the stream start (FF = frames); if omitted, the cuepoint will be inserted immediately
   * @apiParam (Request Body Fields) {Object} [ad_server_data] a set of any variables (key/value pairs) that should be passed to the adServer
   *
   * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
