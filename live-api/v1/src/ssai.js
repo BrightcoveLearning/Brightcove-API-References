@@ -706,7 +706,7 @@
      * @apiHeader {String} Content-Type Content-Type: application/json
      * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
      *
-     * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+     * @apiParam (URL Parameters) {String} account_id The Live account id
      *
      *
      * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
