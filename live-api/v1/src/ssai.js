@@ -821,9 +821,8 @@
    *
    * @apiSuccessExample {json} Success response for Delete Beacon Set
    *    {
-   *        "beacon_set": {
-   *            "beacon_set_id": "BEACON_SET_ID",
-   *            "deleted": true
+   *      "beacon_set_id": "BEACON_SET_ID",
+   *      "deleted": true
    *    }
    *
    * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
