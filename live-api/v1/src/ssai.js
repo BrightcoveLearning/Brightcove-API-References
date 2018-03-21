@@ -717,7 +717,7 @@
      * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
      * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
      *
-     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+     * @apiSuccessExample {json} Success response for Get Beacon Sets
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
      *        "beacon_set_id": "BEACON_SET_ID_1",
@@ -770,7 +770,7 @@
      * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
      * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
      *
-     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+     * @apiSuccessExample {json} Success response for Get Beacon Sets for user
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
      *        "beacon_set_id": "BEACON_SET_ID_1",
@@ -819,32 +819,11 @@
    * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
    * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
    *
-   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+   * @apiSuccessExample {json} Success response for Delete Beacon Set
    *    {
    *        "beacon_set": {
-   *            "account_id": "USER's ACCOUNT ID",
    *            "beacon_set_id": "BEACON_SET_ID",
-   *            "beacon_urls": [{
-   *                "beacon_url": "https://myserver.com/beaconRX/load",
-   *                "beacon_type": "Load"
-   *            },
-   *            {
-   *                "beacon_url": "https://myserver.com/beaconRX/play",
-   *                "beacon_type": "Play"
-   *            }],
-   *            "updated_beacon_set": {
-   *                "beacon_set_id": "BEACON_SET_ID",
-   *                "beacon_urls": [{
-   *                    "beacon_url": "https://myserver.com/beaconRX/load",
-   *                    "beacon_type": "Load"
-   *                },
-   *                {
-   *                    "beacon_url": "https://myserver.com/beaconRX/play",
-   *                    "beacon_type": "Play"
-   *                }],
-   *                "account_id": "USER's ACCOUNT ID"
-   *            }
-   *        }
+   *            "deleted": true
    *    }
    *
    * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
