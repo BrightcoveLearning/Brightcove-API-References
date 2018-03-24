@@ -1940,7 +1940,7 @@
  *    }
  *
  * @apiSuccess (Response Fields) {string} id the ingest job id
- * @apiSuccess (Response Fields) {string} state the current state of the ingest job
+ * @apiSuccess (Response Fields) {string="processing", "publishing", "finished",  "failed"} state the current state of the ingest job
  * @apiSuccess (Response Fields) {string} account_id the Video Cloud account id
  * @apiSuccess (Response Fields) {string} video_id the video id
  * @apiSuccess (Response Fields) {string} error_code the error code if the job failed
