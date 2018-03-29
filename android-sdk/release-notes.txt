@@ -1,11 +1,31 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 6.1.0:
+
+  SDK changes:
+
+      * Added support for Picture-in-Picture on Android Oreo.
+      * Fixed a UI performance issue for Offline Playback when downloading a video by making all Download Manager callbacks on a background thread.
+      * Improvement in download speeds for Offline Playback.
+      * Fixed an Offline Playback issue where the download_id parameter was missing from video_download_request and video_download_cancellation events for clear downloads.
+      * Fixed an issue with WebVTT captions where using the "line:" attribute without a percentage (%) character was preventing the captions from displaying.
+      * AbstractOfflineCatalog.renewLicense method is deprecated and is now non-functional. To renew an offline license, please use either AbstractOfflineCatalog.requestRentalLicense(Video, Date, long, EventListener) or AbstractOfflineCatalog.requestPurchaseLicense(Video, EventListener)
+
+  ExoPlayer2 changes:
+
+      * ExoPlayer2 now reports the cumulative number of bytes downloaded through the current video engagement event and sends it to the Analytics server as media_bytes_transferred.
+      * Added a convenience method to set the peak bitrate before preparing the player for a new video, or any time ExoPlayerVideoDisplayComponent.setPeakBitrate(int peakBitrate) is called.
+
 Version 6.0.2:
 
   SDK changes:
 
     * Added support for offline playback analytics.
     * The deprecated Widevine Classic plugin has been removed.
+
+  IMA Plugin Changes:
+
+    * Fixed an issue where viewable_impression beacons were not being fired as expected.
 
   OnceUX Plugin Changes:
 
