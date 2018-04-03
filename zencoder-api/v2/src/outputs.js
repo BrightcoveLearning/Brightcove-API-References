@@ -13,18 +13,6 @@
   *
   * @apiParam (URL Parameters) {String} outputId an Output id.
   *
-  * @apiParam (Request Body Fields) {Object} application_ad_configuration The ad configuration object
-  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
-  * @apiParam (Request Body Fields) {String="Dfp","Vast","SmartXML"} application_ad_configuration.ad_configuration_expected_response_type The expected response type based on your ad server
-  * @apiParam (Request Body Fields) {String="SingleAdResponse","MultipleAdResponse"} application_ad_configuration.ad_configuration_strategy Specifies whether ad breaks should include single or muliple ads
-  * @apiParam (Request Body Fields) {Object[]} application_ad_configuration.ad_configuration_transforms Array of ad configuration transforms.
-  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xpath xpath for the transform.
-  * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xslt xslt stylesheet for the transform.
-  * @apiParam (Request Body Fields) {String} ad_configuration_url_format Format for the ad tag - see [Server-Side Ad Insertion Using the Brightcove Live API](https://support.brightcove.com/node/17763#ad_configuration_variables) for the available ad configuration variables.
-  * @apiParam (Request Body Fields) {String} application_description Human readable description of the ad application.
-  * @apiParam (Request Body Fields) {String} [account_id] Your account id.
-  * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
-  *
   *
   * @apiSuccess (Response Fields) {Number} audio_bitrate_in_kbps Audio bitrate of an Output media file
   * @apiSuccess (Response Fields) {String} audio_codec Audio codec of an Output media file
