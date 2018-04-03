@@ -1,6 +1,4 @@
 com.brightcove.cast
-com.brightcove.drm
-com.brightcove.drm.widevine
 com.brightcove.freewheel.controller
 com.brightcove.freewheel.cuepoint
 com.brightcove.freewheel.event
@@ -29,6 +27,7 @@ com.brightcove.player.mediacontroller.buttons
 com.brightcove.player.model
 com.brightcove.player.network
 com.brightcove.player.offline
+com.brightcove.player.pictureinpicture
 com.brightcove.player.render
 com.brightcove.player.store
 com.brightcove.player.util
