@@ -41,6 +41,8 @@
  * @apiParam (Request Body Fields) {String="zip", "tar"} [outputs.package_format] Zip/packaging format to use for the output file(s)
  * @apiParam (Request Body Fields) {String="mobile/advanced", "mobile/baseline", "mobile/legacy", "v1/mobile/advanced", "v1/mobile/baseline", "v1/mobile/legacy", "v2/mobile/advanced", "v2/mobile/baseline", "v2/mobile/legacy"} [outputs.device_profile] A device profile to use for mobile device compatibility
  * @apiParam (Request Body Fields) {Boolean} [outputs.strict=false] Enable strict mode
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_red_x=] Enable strict mode
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_red_x=] Enable strict mode
  * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video=false] Do not output a video track
  * @apiParam (Request Body Fields) {Boolean} [outputs.skip_audio=false] Do not output a audio track
  * @apiParam (Request Body Fields) {String} [outputs.source] References a label on another job and uses the video created by that output for processing instead of the input file
