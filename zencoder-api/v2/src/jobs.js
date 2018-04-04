@@ -41,16 +41,22 @@
  * @apiParam (Request Body Fields) {String="zip", "tar"} [outputs.package_format] Zip/packaging format to use for the output file(s)
  * @apiParam (Request Body Fields) {String="mobile/advanced", "mobile/baseline", "mobile/legacy", "v1/mobile/advanced", "v1/mobile/baseline", "v1/mobile/legacy", "v2/mobile/advanced", "v2/mobile/baseline", "v2/mobile/legacy"} [outputs.device_profile] A device profile to use for mobile device compatibility
  * @apiParam (Request Body Fields) {Boolean} [outputs.strict=false] Enable strict mode
- * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_red_x] Color volume x setting for red (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display_red_y] Color volume y setting for red (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_green_x] Color volume x setting for green (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display_green_y] Color volume y setting for green (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_blue_x] Color volume x setting for blue (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display_blue_y] Color volume y setting for blue (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display_white_point_x] Color volume x setting for white point (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display_white_point_y] Color volume y setting for white point (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{0.0001-5.0}} [outputs.master_display_luminance_min] Minimum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs)
- * @apiParam (Request Body Fields) {Number{5.0-10000.0}} [outputs.master_display_luminance_max] Maximum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display] Hash of HDR10 output settings
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display.red] Hash of red color volumes for HDR10 output settings
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display.red.x] Color volume x setting for red (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display.red.y] Color volume y setting for red (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display.green] Hash of green color volumes for HDR10 output settings
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display.green.x] Color volume x setting for green (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display.green.y] Color volume y setting for green (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display.blue] Hash of blue color volumes for HDR10 output settings
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display.blue.x] Color volume x setting for blue (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display.blue.y] Color volume y setting for blue (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display.white_point] Hash of white point color volumes for HDR10 output settings
+ * @apiParam (Request Body Fields) {Number{0.0001-0.7400}} [outputs.master_display.white_point.x] Color volume x setting for white point (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Number{0.0001-0.8400}} [outputs.master_display.white_point.y] Color volume y setting for white point (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Object} [outputs.master_display.luminance Hash of luminance settings for HDR10 output settings
+ * @apiParam (Request Body Fields) {Number{0.0001-5.0}} [outputs.master_display.luminance.min] Minimum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs)
+ * @apiParam (Request Body Fields) {Number{5.0-10000.0}} [outputs.master_display.luminance.max] Maximum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs)
  * @apiParam (Request Body Fields) {Number{0-10000}} [outputs.max_content_light_level] Maximum light level for the content as a whole nits or candelas per square meter (cd/m2) - integer values (for HDR10 outputs)
  * @apiParam (Request Body Fields) {Number{5.0-10000.0}} [outputs.max_frame_average_light_level] Maximum average light level for content frames nits or candelas per square meter (cd/m2) - integer values. Although values up to 10000 are allowed, values in the 100-200 range will generally produce the best results (for HDR10 outputs)
  * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video=false] Do not output a video track
