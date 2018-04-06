@@ -1,5 +1,12 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 6.1.1:
+
+  SDK changes:
+
+      * Fixed an Offline Analytics dependency that was unexpectedly increasing app sizes.
+      * Fixed an issue with Offline Playback where some downloads were hanging at 99%.
+
 Version 6.1.0:
 
   SDK changes:
