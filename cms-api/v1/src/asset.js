@@ -3,7 +3,7 @@
 * Asset operations allow you to manage assets including renditions,
 * manifests, images, and text tracks. To ingest assets, you must
 * use the [Dynamic Ingest API](https://support.brightcove.com/dynamic-ingest-api) &mdash; the POST and PATCH operations shown here can be used to add and
-* update remote assets. GET operations will work for both ingested and remote assets.
+* update remote assets. GET operations will work for both ingested and remote assets. **Note, however, that most asset endpoints for [Dynamic Delivery] (https://support.brightcove.com/overview-dynamic-delivery) will return no results for *ingested* assets.**
 */
 
 // get assets
