@@ -2,7 +2,7 @@
 * @apiDefine assetGroup Assets
 * Asset operations allow you to manage assets including renditions,
 * manifests, images, and text tracks. To ingest assets, you must
-* use the [Dynamic Ingest API](https://support.brightcove.com/node/17948) &mdash; the POST and PATCH operations shown here can be used to add and
+* use the [Dynamic Ingest API](https://support.brightcove.com/dynamic-ingest-api) &mdash; the POST and PATCH operations shown here can be used to add and
 * update remote assets. GET operations will work for both ingested and remote assets.
 */
 
