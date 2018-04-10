@@ -786,15 +786,15 @@
  *
  */
 
- // Stop Live Job
+ // Cancel Live Job
 
  /**
-  * @api {put} /v1/jobs/:jobId/cancel Stop Live Job
-  * @apiName Stop Live Job
+  * @api {put} /v1/jobs/:jobId/cancel Cancel Live Job
+  * @apiName Cancel Live Job
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
   *
-  * @apiDescription Stop a live stream
+  * @apiDescription Cancel a live stream
   *
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
