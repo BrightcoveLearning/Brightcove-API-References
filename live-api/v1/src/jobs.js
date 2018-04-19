@@ -91,7 +91,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration": 30,
  *        "outputs": [
  *            {
  *                "label": "hls1080p",
@@ -178,7 +177,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration":30,
  *        "outputs": [
  *            {
  *                "label": "hls720p",
@@ -376,7 +374,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration": 30,
  *        "encryption": {
  *            "method": "aes-128",
  *            "type": "internal",
@@ -413,7 +410,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration": 30,
  *        "encryption": {
  *            "method": "aes-128",
  *            "type": "internal",
@@ -450,7 +446,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration": 30,
  *        "encryption": {
  *            "method": "aes-128",
  *            "type": "internal",
@@ -488,7 +483,6 @@
  *        "live_stream": true,
  *        "region": "my-region-list",
  *        "reconnect_time": 20,
- *        "live_sliding_window_duration": 30,
  *        "encryption": {
  *            "method": "aes-128",
  *            "type": "external",
@@ -537,7 +531,6 @@
  * @apiSuccess (Response Fields) {String} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
  * @apiSuccess (Response Fields) {Number} reconnect_time The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
  * @apiSuccess (Response Fields) {Number} event_length The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
- * @apiSuccess (Response Fields) {Number} live_sliding_window_duration The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
  * @apiSuccess (Response Fields) {Number} max_hls_protocol_version Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
  * @apiSuccess (Response Fields) {String} slate id for slate of assets to be included
  * @apiSuccess (Response Fields) {String} sep_state The current state of the job's SEP (static entry point) - possible values: 'waiting' 'pending_activation', 'activation_in_progress', 'ready', 'pending_deactivation', 'deactivation_in_progress', 'cancelled', 'finished'
@@ -914,7 +907,6 @@
   * @apiSuccess (Response Fields) {String} job.region The Amazon AWS region to use for encoding the job
   * @apiSuccess (Response Fields) {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
   * @apiSuccess (Response Fields) {Number} job.event_length The time, in seconds, that the system will keep the live stream available
-  * @apiSuccess (Response Fields) {Number} job.live_sliding_window_duration The time, in seconds, kept in the live DVR manifest
   * @apiSuccess (Response Fields) {Boolean} job.live_stream Indicates whether this is a live stream or VOD
   * @apiSuccess (Response Fields) {Boolean} job.ad_insertion Indicates whether SSAI is enabled
   * @apiSuccess (Response Fields) {Boolean} job.metadata_passthrough `TODO`
@@ -1032,7 +1024,6 @@
   *        "region": "my-region-list,
   *        "reconnect_time": 20,
   *        "event_length": 0,
-  *        "live_sliding_window_duration": 30,
   *        "live_stream": true,
   *        "ad_insertion": false,
   *        "metadata_passthrough": false,
