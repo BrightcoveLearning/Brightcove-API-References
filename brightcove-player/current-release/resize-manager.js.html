@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: utils/url.js | Brightcove Player API Documentation</title>
+    <title>Source: resize-manager.js | Brightcove Player API Documentation</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -55,170 +55,126 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file url.js
- * @module url
+ * @file resize-manager.js
  */
-import document from 'global/document';
 import window from 'global/window';
+import { debounce } from './utils/fn.js';
+import * as Events from './utils/events.js';
+import mergeOptions from './utils/merge-options.js';
+import Component from './component.js';
 
 /**
- * @typedef {Object} url:URLObject
+ * A Resize Manager. It is in charge of triggering `playerresize` on the player in the right conditions.
  *
- * @property {string} protocol
- *           The protocol of the url that was parsed.
+ * It'll either create an iframe and use a debounced resize handler on it or use the new {@link https://wicg.github.io/ResizeObserver/|ResizeObserver}.
  *
- * @property {string} hostname
- *           The hostname of the url that was parsed.
+ * If the ResizeObserver is available natively, it will be used. A polyfill can be passed in as an option.
+ * If a `playerresize` event is not needed, the ResizeManager component can be removed from the player, see the example below.
+ * @example &lt;caption>How to disable the resize manager&lt;/caption>
+ * const player = videojs('#vid', {
+ *   resizeManager: false
+ * });
  *
- * @property {string} port
- *           The port of the url that was parsed.
+ * @see {@link https://wicg.github.io/ResizeObserver/|ResizeObserver specification}
  *
- * @property {string} pathname
- *           The pathname of the url that was parsed.
- *
- * @property {string} search
- *           The search query of the url that was parsed.
- *
- * @property {string} hash
- *           The hash of the url that was parsed.
- *
- * @property {string} host
- *           The host of the url that was parsed.
+ * @extends Component
  */
+class ResizeManager extends Component {
 
-/**
- * Resolve and parse the elements of a URL.
- *
- * @param  {String} url
- *         The url to parse
- *
- * @return {url:URLObject}
- *         An object of url details
- */
-export const parseUrl = function(url) {
-  const props = ['protocol', 'hostname', 'port', 'pathname', 'search', 'hash', 'host'];
+  /**
+   * Create the ResizeManager.
+   *
+   * @param {Object} player
+   *        The `Player` that this class should be attached to.
+   *
+   * @param {Object} [options]
+   *        The key/value store of ResizeManager options.
+   *
+   * @param {Object} [options.ResizeObserver]
+   *        A polyfill for ResizeObserver can be passed in here.
+   *        If this is set to null it will ignore the native ResizeObserver and fall back to the iframe fallback.
+   */
+  constructor(player, options) {
+    let RESIZE_OBSERVER_AVAILABLE = options.ResizeObserver || window.ResizeObserver;
 
-  // add the url to an anchor and let the browser parse the URL
-  let a = document.createElement('a');
+    // if `null` was passed, we want to disable the ResizeObserver
+    if (options.ResizeObserver === null) {
+      RESIZE_OBSERVER_AVAILABLE = false;
+    }
 
-  a.href = url;
+    // Only create an element when ResizeObserver isn't available
+    const options_ = mergeOptions({createEl: !RESIZE_OBSERVER_AVAILABLE}, options);
 
-  // IE8 (and 9?) Fix
-  // ie8 doesn't parse the URL correctly until the anchor is actually
-  // added to the body, and an innerHTML is needed to trigger the parsing
-  const addToBody = (a.host === '' &amp;&amp; a.protocol !== 'file:');
-  let div;
+    super(player, options_);
 
-  if (addToBody) {
-    div = document.createElement('div');
-    div.innerHTML = `&lt;a href="${url}">&lt;/a>`;
-    a = div.firstChild;
-    // prevent the div from affecting layout
-    div.setAttribute('style', 'display:none; position:absolute;');
-    document.body.appendChild(div);
-  }
+    this.ResizeObserver = options.ResizeObserver || window.ResizeObserver;
+    this.loadListener_ = null;
+    this.resizeObserver_ = null;
+    this.debouncedHandler_ = debounce(() => {
+      this.resizeHandler();
+    }, 100, false, player);
 
-  // Copy the specific URL properties to a new object
-  // This is also needed for IE8 because the anchor loses its
-  // properties when it's removed from the dom
-  const details = {};
+    if (RESIZE_OBSERVER_AVAILABLE) {
+      this.resizeObserver_ = new this.ResizeObserver(this.debouncedHandler_);
+      this.resizeObserver_.observe(player.el());
 
-  for (let i = 0; i &lt; props.length; i++) {
-    details[props[i]] = a[props[i]];
-  }
+    } else {
+      this.loadListener_ = () => {
+        if (this.el_.contentWindow) {
+          Events.on(this.el_.contentWindow, 'resize', this.debouncedHandler_);
+        }
+        this.off('load', this.loadListener_);
+      };
 
-  // IE9 adds the port to the host property unlike everyone else. If
-  // a port identifier is added for standard ports, strip it.
-  if (details.protocol === 'http:') {
-    details.host = details.host.replace(/:80$/, '');
-  }
-
-  if (details.protocol === 'https:') {
-    details.host = details.host.replace(/:443$/, '');
-  }
-
-  if (!details.protocol) {
-    details.protocol = window.location.protocol;
-  }
-
-  if (addToBody) {
-    document.body.removeChild(div);
-  }
-
-  return details;
-};
-
-/**
- * Get absolute version of relative URL. Used to tell flash correct URL.
- *
- *
- * @param  {string} url
- *         URL to make absolute
- *
- * @return {string}
- *         Absolute URL
- *
- * @see http://stackoverflow.com/questions/470832/getting-an-absolute-url-from-a-relative-one-ie6-issue
- */
-export const getAbsoluteURL = function(url) {
-  // Check if absolute URL
-  if (!url.match(/^https?:\/\//)) {
-    // Convert to absolute URL. Flash hosted off-site needs an absolute URL.
-    const div = document.createElement('div');
-
-    div.innerHTML = `&lt;a href="${url}">x&lt;/a>`;
-    url = div.firstChild.href;
-  }
-
-  return url;
-};
-
-/**
- * Returns the extension of the passed file name. It will return an empty string
- * if passed an invalid path.
- *
- * @param {string} path
- *        The fileName path like '/path/to/file.mp4'
- *
- * @returns {string}
- *          The extension in lower case or an empty string if no
- *          extension could be found.
- */
-export const getFileExtension = function(path) {
-  if (typeof path === 'string') {
-    const splitPathRe = /^(\/?)([\s\S]*?)((?:\.{1,2}|[^\/]+?)(\.([^\.\/\?]+)))(?:[\/]*|[\?].*)$/i;
-    const pathParts = splitPathRe.exec(path);
-
-    if (pathParts) {
-      return pathParts.pop().toLowerCase();
+      this.on('load', this.loadListener_);
     }
   }
 
-  return '';
-};
+  createEl() {
+    return super.createEl('iframe', {
+      className: 'vjs-resize-manager'
+    });
+  }
 
-/**
- * Returns whether the url passed is a cross domain request or not.
- *
- * @param {string} url
- *        The url to check.
- *
- * @return {boolean}
- *         Whether it is a cross domain request or not.
- */
-export const isCrossOrigin = function(url) {
-  const winLoc = window.location;
-  const urlInfo = parseUrl(url);
+  /**
+   * Called when a resize is triggered on the iframe or a resize is observed via the ResizeObserver
+   *
+   * @fires Player#playerresize
+   */
+  resizeHandler() {
+    /**
+     * Called when the player size has changed
+     *
+     * @event Player#playerresize
+     * @type {EventTarget~Event}
+     */
+    this.player_.trigger('playerresize');
+  }
 
-  // IE8 protocol relative urls will return ':' for protocol
-  const srcProtocol = urlInfo.protocol === ':' ? winLoc.protocol : urlInfo.protocol;
+  dispose() {
+    if (this.resizeObserver_) {
+      this.resizeObserver_.unobserve(this.player_.el());
+      this.resizeObserver_.disconnect();
+    }
 
-  // Check if url is for another domain/origin
-  // IE8 doesn't know location.origin, so we won't rely on it here
-  const crossOrigin = (srcProtocol + urlInfo.host) !== (winLoc.protocol + winLoc.host);
+    if (this.el_ &amp;&amp; this.el_.contentWindow) {
+      Events.off(this.el_.contentWindow, 'resize', this.debouncedHandler_);
+    }
 
-  return crossOrigin;
-};
+    if (this.loadListener_) {
+      this.off('load', this.loadListener_);
+    }
+
+    this.ResizeObserver = null;
+    this.resizeObserver = null;
+    this.debouncedHandler_ = null;
+    this.loadListener_ = null;
+  }
+
+}
+
+Component.registerComponent('ResizeManager', ResizeManager);
+export default ResizeManager;
 </code></pre>
         </article>
     </section>
