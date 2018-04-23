@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: utils/url.js | Brightcove Player API Documentation</title>
+    <title>Source: tech/middleware.js | Brightcove Player API Documentation</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,171 +54,188 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @file url.js
- * @module url
- */
-import document from 'global/document';
-import window from 'global/window';
+            <pre class="prettyprint source linenums"><code>import { assign } from '../utils/obj.js';
+import toTitleCase from '../utils/to-title-case.js';
+
+const middlewares = {};
+const middlewareInstances = {};
+
+export const TERMINATOR = {};
+
+export function use(type, middleware) {
+  middlewares[type] = middlewares[type] || [];
+  middlewares[type].push(middleware);
+}
+
+export function getMiddleware(type) {
+  if (type) {
+    return middlewares[type];
+  }
+
+  return middlewares;
+}
+
+export function setSource(player, src, next) {
+  player.setTimeout(() => setSourceHelper(src, middlewares[src.type], next, player), 1);
+}
+
+export function setTech(middleware, tech) {
+  middleware.forEach((mw) => mw.setTech &amp;&amp; mw.setTech(tech));
+}
 
 /**
- * @typedef {Object} url:URLObject
- *
- * @property {string} protocol
- *           The protocol of the url that was parsed.
- *
- * @property {string} hostname
- *           The hostname of the url that was parsed.
- *
- * @property {string} port
- *           The port of the url that was parsed.
- *
- * @property {string} pathname
- *           The pathname of the url that was parsed.
- *
- * @property {string} search
- *           The search query of the url that was parsed.
- *
- * @property {string} hash
- *           The hash of the url that was parsed.
- *
- * @property {string} host
- *           The host of the url that was parsed.
+ * Calls a getter on the tech first, through each middleware
+ * from right to left to the player.
  */
+export function get(middleware, tech, method) {
+  return middleware.reduceRight(middlewareIterator(method), tech[method]());
+}
 
 /**
- * Resolve and parse the elements of a URL.
- *
- * @param  {String} url
- *         The url to parse
- *
- * @return {url:URLObject}
- *         An object of url details
+ * Takes the argument given to the player and calls the setter method on each
+ * middleware from left to right to the tech.
  */
-export const parseUrl = function(url) {
-  const props = ['protocol', 'hostname', 'port', 'pathname', 'search', 'hash', 'host'];
+export function set(middleware, tech, method, arg) {
+  return tech[method](middleware.reduce(middlewareIterator(method), arg));
+}
 
-  // add the url to an anchor and let the browser parse the URL
-  let a = document.createElement('a');
+/**
+ * Takes the argument given to the player and calls the `call` version of the method
+ * on each middleware from left to right.
+ * Then, call the passed in method on the tech and return the result unchanged
+ * back to the player, through middleware, this time from right to left.
+ */
+export function mediate(middleware, tech, method, arg = null) {
+  const callMethod = 'call' + toTitleCase(method);
+  const middlewareValue = middleware.reduce(middlewareIterator(callMethod), arg);
+  const terminated = middlewareValue === TERMINATOR;
+  const returnValue = terminated ? null : tech[method](middlewareValue);
 
-  a.href = url;
+  executeRight(middleware, method, returnValue, terminated);
 
-  // IE8 (and 9?) Fix
-  // ie8 doesn't parse the URL correctly until the anchor is actually
-  // added to the body, and an innerHTML is needed to trigger the parsing
-  const addToBody = (a.host === '' &amp;&amp; a.protocol !== 'file:');
-  let div;
+  return returnValue;
+}
 
-  if (addToBody) {
-    div = document.createElement('div');
-    div.innerHTML = `&lt;a href="${url}">&lt;/a>`;
-    a = div.firstChild;
-    // prevent the div from affecting layout
-    div.setAttribute('style', 'display:none; position:absolute;');
-    document.body.appendChild(div);
-  }
-
-  // Copy the specific URL properties to a new object
-  // This is also needed for IE8 because the anchor loses its
-  // properties when it's removed from the dom
-  const details = {};
-
-  for (let i = 0; i &lt; props.length; i++) {
-    details[props[i]] = a[props[i]];
-  }
-
-  // IE9 adds the port to the host property unlike everyone else. If
-  // a port identifier is added for standard ports, strip it.
-  if (details.protocol === 'http:') {
-    details.host = details.host.replace(/:80$/, '');
-  }
-
-  if (details.protocol === 'https:') {
-    details.host = details.host.replace(/:443$/, '');
-  }
-
-  if (!details.protocol) {
-    details.protocol = window.location.protocol;
-  }
-
-  if (addToBody) {
-    document.body.removeChild(div);
-  }
-
-  return details;
+export const allowedGetters = {
+  buffered: 1,
+  currentTime: 1,
+  duration: 1,
+  seekable: 1,
+  played: 1,
+  paused: 1
 };
 
-/**
- * Get absolute version of relative URL. Used to tell flash correct URL.
- *
- *
- * @param  {string} url
- *         URL to make absolute
- *
- * @return {string}
- *         Absolute URL
- *
- * @see http://stackoverflow.com/questions/470832/getting-an-absolute-url-from-a-relative-one-ie6-issue
- */
-export const getAbsoluteURL = function(url) {
-  // Check if absolute URL
-  if (!url.match(/^https?:\/\//)) {
-    // Convert to absolute URL. Flash hosted off-site needs an absolute URL.
-    const div = document.createElement('div');
-
-    div.innerHTML = `&lt;a href="${url}">x&lt;/a>`;
-    url = div.firstChild.href;
-  }
-
-  return url;
+export const allowedSetters = {
+  setCurrentTime: 1
 };
 
-/**
- * Returns the extension of the passed file name. It will return an empty string
- * if passed an invalid path.
- *
- * @param {string} path
- *        The fileName path like '/path/to/file.mp4'
- *
- * @returns {string}
- *          The extension in lower case or an empty string if no
- *          extension could be found.
- */
-export const getFileExtension = function(path) {
-  if (typeof path === 'string') {
-    const splitPathRe = /^(\/?)([\s\S]*?)((?:\.{1,2}|[^\/]+?)(\.([^\.\/\?]+)))(?:[\/]*|[\?].*)$/i;
-    const pathParts = splitPathRe.exec(path);
+export const allowedMediators = {
+  play: 1,
+  pause: 1
+};
 
-    if (pathParts) {
-      return pathParts.pop().toLowerCase();
+function middlewareIterator(method) {
+  return (value, mw) => {
+    // if the previous middleware terminated, pass along the termination
+    if (value === TERMINATOR) {
+      return TERMINATOR;
+    }
+
+    if (mw[method]) {
+      return mw[method](value);
+    }
+
+    return value;
+  };
+}
+
+function executeRight(mws, method, value, terminated) {
+  for (let i = mws.length - 1; i >= 0; i--) {
+    const mw = mws[i];
+
+    if (mw[method]) {
+      mw[method](terminated, value);
     }
   }
+}
 
-  return '';
-};
+export function clearCacheForPlayer(player) {
+  middlewareInstances[player.id()] = null;
+}
 
 /**
- * Returns whether the url passed is a cross domain request or not.
- *
- * @param {string} url
- *        The url to check.
- *
- * @return {boolean}
- *         Whether it is a cross domain request or not.
+ * {
+ *  [playerId]: [[mwFactory, mwInstance], ...]
+ * }
  */
-export const isCrossOrigin = function(url) {
-  const winLoc = window.location;
-  const urlInfo = parseUrl(url);
+function getOrCreateFactory(player, mwFactory) {
+  const mws = middlewareInstances[player.id()];
+  let mw = null;
 
-  // IE8 protocol relative urls will return ':' for protocol
-  const srcProtocol = urlInfo.protocol === ':' ? winLoc.protocol : urlInfo.protocol;
+  if (mws === undefined || mws === null) {
+    mw = mwFactory(player);
+    middlewareInstances[player.id()] = [[mwFactory, mw]];
+    return mw;
+  }
 
-  // Check if url is for another domain/origin
-  // IE8 doesn't know location.origin, so we won't rely on it here
-  const crossOrigin = (srcProtocol + urlInfo.host) !== (winLoc.protocol + winLoc.host);
+  for (let i = 0; i &lt; mws.length; i++) {
+    const [mwf, mwi] = mws[i];
 
-  return crossOrigin;
-};
+    if (mwf !== mwFactory) {
+      continue;
+    }
+
+    mw = mwi;
+  }
+
+  if (mw === null) {
+    mw = mwFactory(player);
+    mws.push([mwFactory, mw]);
+  }
+
+  return mw;
+}
+
+function setSourceHelper(src = {}, middleware = [], next, player, acc = [], lastRun = false) {
+  const [mwFactory, ...mwrest] = middleware;
+
+  // if mwFactory is a string, then we're at a fork in the road
+  if (typeof mwFactory === 'string') {
+    setSourceHelper(src, middlewares[mwFactory], next, player, acc, lastRun);
+
+  // if we have an mwFactory, call it with the player to get the mw,
+  // then call the mw's setSource method
+  } else if (mwFactory) {
+    const mw = getOrCreateFactory(player, mwFactory);
+
+    mw.setSource(assign({}, src), function(err, _src) {
+
+      // something happened, try the next middleware on the current level
+      // make sure to use the old src
+      if (err) {
+        return setSourceHelper(src, mwrest, next, player, acc, lastRun);
+      }
+
+      // we've succeeded, now we need to go deeper
+      acc.push(mw);
+
+      // if it's the same type, continue down the current chain
+      // otherwise, we want to go down the new chain
+      setSourceHelper(_src,
+          src.type === _src.type ? mwrest : middlewares[_src.type],
+          next,
+          player,
+          acc,
+          lastRun);
+    });
+  } else if (mwrest.length) {
+    setSourceHelper(src, mwrest, next, player, acc, lastRun);
+  } else if (lastRun) {
+    next(src, acc);
+  } else {
+    setSourceHelper(src, middlewares['*'], next, player, acc, true);
+  }
+}
 </code></pre>
         </article>
     </section>
