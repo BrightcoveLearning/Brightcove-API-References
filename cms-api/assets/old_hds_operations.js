@@ -1,3 +1,12 @@
+"Delete_HLS_Manifest",
+"Get_HDS_Manifest_List",
+"Get_HDS_Manifest",
+"Add_HDS_Manifest",
+"Update_HDS_Manifest",
+"Delete_HDS_Manifest",
+
+
+
 // get hds_manifests
 
 /**
