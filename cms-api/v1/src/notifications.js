@@ -21,10 +21,10 @@
  * @apiParamExample {url} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions
  *
- * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
- * @apiSuccess (Response Fields) {String[]} events array of events subscribed to
- * @apiSuccess (Response Fields) {String} id system id for the subscription
- * @apiSuccess (Response Fields) {String} service_account the Video Cloud account id
+ * @apiSuccess (200) {String} endpoint the notifications endpoint
+ * @apiSuccess (200) {String[]} events array of events subscribed to
+ * @apiSuccess (200) {String} id system id for the subscription
+ * @apiSuccess (200) {String} service_account the Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200
@@ -90,10 +90,10 @@
  *        "events":["video-change"]
  *    }
  *
- * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
- * @apiSuccess (Response Fields) {String[]} events array of events subscribed to
- * @apiSuccess (Response Fields) {String} id system id for the subscription
- * @apiSuccess (Response Fields) {String} service_account the Video Cloud account id
+ * @apiSuccess (200) {String} endpoint the notifications endpoint
+ * @apiSuccess (200) {String[]} events array of events subscribed to
+ * @apiSuccess (200) {String} id system id for the subscription
+ * @apiSuccess (200) {String} service_account the Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -155,10 +155,10 @@
  * @apiParamExample {url} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions/3019328472390
  *
- * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
- * @apiSuccess (Response Fields) {String[]} events array of events subscribed to
- * @apiSuccess (Response Fields) {String} id system id for the subscription
- * @apiSuccess (Response Fields) {String} service_account the Video Cloud account id
+ * @apiSuccess (200) {String} endpoint the notifications endpoint
+ * @apiSuccess (200) {String[]} events array of events subscribed to
+ * @apiSuccess (200) {String} id system id for the subscription
+ * @apiSuccess (200) {String} service_account the Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200
