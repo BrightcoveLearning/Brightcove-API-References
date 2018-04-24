@@ -19,7 +19,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
  * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
@@ -41,7 +41,7 @@
  * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -212,7 +212,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
   * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response
@@ -280,8 +280,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
   *
  * @apiParamExample {Url} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
@@ -300,7 +300,7 @@
  * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -475,8 +475,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Sources Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/sources
@@ -718,8 +718,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Images Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
@@ -812,8 +812,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Audio Tracks Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
@@ -898,9 +898,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
- * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} audio_track_id the id for the audio track, formed as 'language_variant'
  *
  * @apiParamExample {Url} Get Video Audio Track Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
@@ -963,9 +963,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
- * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} audio_track_id the id for the audio track, formed as 'language_variant'
  * @apiParam (Request Body Fields) {String} [language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
@@ -1033,9 +1033,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
- * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} audio_track_id the id for the audio track, formed as 'language_variant'
  * @apiParam (Request Body Fields) {String} [language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
@@ -1085,8 +1085,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Digital MasterExample:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/digital_master
@@ -1206,8 +1206,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {Url} Delete Digital Master Example:
@@ -1259,8 +1259,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
@@ -1315,8 +1315,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
@@ -1363,7 +1363,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam {String} account_id Video Cloud account ID.
   *
   * @apiParam (Request Body Fields) {String{1..255}} name video title
   * @apiParam (Request Body Fields) {String{0..250}} [description] video short description
@@ -1379,7 +1379,7 @@
   * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
   * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
-  * @apiParam (Request Body Fields) {Boolean} [cue_points.force_stop=false] whether video is force_stopped at the cue point
+  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
   * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
@@ -1415,7 +1415,7 @@
   * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
   * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
-  * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
+  * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
   * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
   * @apiSuccess (Response Fields) {String} description video short description
   * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -1566,8 +1566,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID.
  *
  * @apiParam (Request Body Fields) {String{1..255}} [name] video title
  * @apiParam (Request Body Fields) {String{..250}} [description] video short description
@@ -1587,7 +1587,7 @@
  * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
  * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
- * @apiParam (Request Body Fields) {Boolean} [cue_points.force_stop=false] whether video is force_stopped at the cue point
+ * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
@@ -1635,7 +1635,7 @@
  * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -1791,8 +1791,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
@@ -1838,8 +1838,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiParamExample {Url} Get Status of Ingest Jobs Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs
@@ -1921,9 +1921,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
- * @apiParam (Path Parameters) {String} job_id the job ID for the ingest job
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam {String} job_id the job ID for the ingest job
  *
  * @apiParamExample {Url} Get Status of Ingest Jobs Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs/ac49b1db-e6e1-477f-a2c1-70b9cd3107cb
@@ -1991,7 +1991,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam {String} account_id Video Cloud account ID.
   *
   * @apiParamExample {Url} Get Custom Fields Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/video_fields

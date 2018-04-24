@@ -16,7 +16,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
  * @apiParamExample {url} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions
@@ -80,7 +80,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {String} endpoint a URL that can handle HTTP POST requests
  * @apiParam (Request Body Fields) {String[]} events array of events subscribed to &mdash; currently only the `video-change` event is available
  *
@@ -149,8 +149,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} subscription_id the subscription ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} subscription_id the subscription ID.
  *
  * @apiParamExample {url} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions/3019328472390
@@ -212,8 +212,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} subscription_id the subscription ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} subscription_id the subscription ID.
  *
  * @apiParamExample {url} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions/24019234871230487

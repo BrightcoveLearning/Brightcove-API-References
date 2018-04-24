@@ -17,7 +17,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
  *
  * @apiParamExample {Url} List Channels Example:
@@ -86,8 +86,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} channel_name The channel name.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} channel_name The channel name.
  *
  *
  * @apiParamExample {Url} Get Channel Details Example:
@@ -154,8 +154,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} channel_name The channel name.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} channel_name The channel name.
  *
  * @apiParam (Request Body Fields) {Boolean} enforce_custom_fields=false Allow sharing only if affiliate account has all custom fields for which a value is set in the master account
  * @apiParam (Request Body Fields) {Boolean} enforce_geo=true Allow sharing only if affiliate account is enabled for geo-filtering (if the master account is enabled for geo-filtering)
@@ -228,8 +228,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} channel_name The name of the channel - usually `default`.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} channel_name The name of the channel - usually `default`.
  *
  *
  * @apiParamExample {Url} List Channel Affiliates Example:
@@ -291,9 +291,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} channel_name The name of the channel - usually `default`.
- * @apiParam (Path Parameters) {String} affiliate_account_id The affiliate's account id.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} channel_name The name of the channel - usually `default`.
+ * @apiParam {String} affiliate_account_id The affiliate's account id.
  *
  * @apiParam (Request Body Fields) {String} account_id The affiliate's account id.
  *
@@ -355,9 +355,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} channel_name The name of the channel - usually `default`.
- * @apiParam (Path Parameters) {String} affiliate_account_id The affiliate's account id.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} channel_name The name of the channel - usually `default`.
+ * @apiParam {String} affiliate_account_id The affiliate's account id.
  *
  *
  * @apiParamExample {Url} Add Affiliates:
@@ -409,7 +409,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam {String} account_id Video Cloud account ID.
   *
   *
   * @apiParamExample {Url} List Contracts Example:
@@ -483,8 +483,8 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} master_account_id Video Cloud account ID for the Master account.
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} master_account_id Video Cloud account ID for the Master account.
    *
    *
    * @apiParamExample {Url} List Contracts Example:
@@ -558,8 +558,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} master_account_id Video Cloud account ID.
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} master_account_id Video Cloud account ID.
   *
   * @apiParam (Request Body Fields) {Boolean} approved Setting approved to `true` approves the contract.
   * @apiParam (Request Body Fields) {Boolean} [auto_accept=false] Setting If `true`, shared videos will be automatically accepted; otherwise, they must be approved one by one.
@@ -640,8 +640,8 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID.
    *
    *
    * @apiParamExample {Url} List Shares Example:
@@ -718,8 +718,8 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID.
    *
    * @apiParam (Request Body Fields) {String} id affiliate account id to share to
    *
@@ -803,9 +803,9 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
-   * @apiParam (Path Parameters) {String} affiliate_account_id affiliate account id to remove the shared video from.
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID.
+   * @apiParam {String} affiliate_account_id affiliate account id to remove the shared video from.
    *
    *
    * @apiParamExample {Url} Share Video Example:
@@ -857,8 +857,8 @@
     * @apiHeader {String} Content-Type Content-Type: application/json
     * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
     *
-    * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID.
+    * @apiParam {String} account_id Video Cloud account ID.
+    * @apiParam {String} video_id Video Cloud video ID.
     *
     * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} state determines whether the video is accepted (`ACTIVE`) or rejected (`INACTIVE`)
     *
