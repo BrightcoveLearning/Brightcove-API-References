@@ -1,12 +1,55 @@
-// Create a VOD Clip by Duration from Live
+// List Credentials
 
 /**
-  * @api {post} /v1/vods Create VOD Clip
-  * @apiName Create VOD Clip
-  * @apiGroup Clips
+  * @api {get} /v1/credentials List Credentials
+  * @apiName List Credentials
+  * @apiGroup Credentials
   * @apiVersion 1.0.0
   *
-  * @apiDescription Create VOD clips from a Live Stream.
+  * @apiDescription Get a list of credentials for a Live account.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  *
+  * @apiParamExample {http} List Credentials Example:
+  *    https://api.bcovlive.io/v1/credentials
+  *
+  *
+  * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
+  * @apiSuccess (Response Fields) {String} vod_jobs.jvod_id The clip job id
+  * @apiSuccess (Response Fields) {String} vod_jobs.label The clip label (from the input)
+  * @apiSuccess (Response Fields) {String} live_job_id The clip label (from the input)
+  *
+  * @apiSuccessExample {json} Creation of a clip
+  *    {
+  *      "vod_jobs": [
+  *        {
+  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
+  *          "label": "last 60 secs of live job"
+  *        }
+  *      ],
+  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
+  *    }
+  *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  *
+  *
+  */
+
+// List Credentials
+
+/**
+  * @api {get} /v1/credentials List Credentials
+  * @apiName List Credentials
+  * @apiGroup Credentials
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Get a list of credentials for a Live account.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
