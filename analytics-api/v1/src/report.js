@@ -12,9 +12,9 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
- * @apiParam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
+ * @apiParam (URL Parameters) {String} accounts one or more Video Cloud account IDs separated by commas
+ * @apiParam (URL Parameters) {Integer} [limit=10] number of videos to return
+ * @apiParam (URL Parameters) {Integer} [offset=0] number of videos to skip in the response
  * @apiParam (URL Parameters) {String} [sort=video_view] field to sort results by (for video dimension reports, valid sort fields include the video metadata fields `video.name`, `video.tags`, `video.reference_id` and `video.custom_fields` - see ([Fields and Sort](https://support.brightcove.com/node/17997#fieldsAndSorting)))
  * @apiParam (URL Parameters) {String} [fields=video_view] fields to return for items; see [Dimensions and Fields](https://support.brightcove.com/node/17997#metrics) for the available fields for each dimension
  * @apiParam (URL Parameters) {String="account","browser_type","city","country","region","date","date-time","device_manufacturer","device_os","device_type","live_stream","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](https://support.brightcove.com/node/17997#reportDimensions) for which combined dimensions are supported
@@ -29,14 +29,14 @@
  *
  * @apiSuccess {String} account the Video Cloud account id
  * @apiSuccess {String} account.name the name of the Video Cloud account id
- * @apiSuccess {Number} item_count the total number of items matching the request
+ * @apiSuccess {Integer} item_count the total number of items matching the request
  * @apiSuccess {Object[]} items array of analytics objects for the videos returned
- * @apiSuccess {Number} items.ad_mode_begin number of times a player entered ad mode
- * @apiSuccess {Number} items.ad_mode_complete number of times a player completed ad mode
+ * @apiSuccess {Integer} items.ad_mode_begin number of times a player entered ad mode
+ * @apiSuccess {Integer} items.ad_mode_complete number of times a player completed ad mode
  * @apiSuccess {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and (for player reports) the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
  * @apiSuccess {Number} items.engagement_score the calculated engagement score for the video
  * @apiSuccess {Number} items.play_rate video views divided by video impressions
- * @apiSuccess {Number} items.play_request number of play requests received for a video
+ * @apiSuccess {Integer} items.play_request number of play requests received for a video
  * @apiSuccess {String} items.video the video id
  * @apiSuccess {String} items.duration the duration of the video in seconds
  * @apiSuccess {Number} items.video_engagement_1 number of views at the 1% point of the video duration
@@ -44,11 +44,11 @@
  * @apiSuccess {Number} items.video_engagement_50 number of views at the 50% point of the video duration
  * @apiSuccess {Number} items.video_engagement_75 number of views at the 75% point of the video duration
  * @apiSuccess {Number} items.video_engagement_100 number of views at the 100% point of the video duration
- * @apiSuccess {Number} items.video_impression number of times the video was loaded in a player
+ * @apiSuccess {Integer} items.video_impression number of times the video was loaded in a player
  * @apiSuccess {String} items.name name of the video
  * @apiSuccess {Number} items.video_percent_viewed average percentage of the video played when viewed
  * @apiSuccess {Number} items.video_seconds_viewed total seconds of the video viewed
- * @apiSuccess {Number} items.video_view number of times some portion of the video was viewed
+ * @apiSuccess {Integer} items.video_view number of times some portion of the video was viewed
  * @apiSuccess {Object} summary of all videos matching this request that had views
  * @apiSuccess {Number} video_engagement_1 number of views at the 1% point of the video duration for all videos
  * @apiSuccess {Number} video_engagement_25 number of views at the 25% point of the video duration for all videos
