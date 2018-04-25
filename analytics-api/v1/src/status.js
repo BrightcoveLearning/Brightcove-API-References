@@ -1,7 +1,7 @@
 // get status
 
 /**
- * @api {get} /data/status Get Available Date Range
+ * @api {get} /data/status
  * @apiName Get Available Date Range
  * @apiGroup Report
  * @apiVersion 1.0.0
