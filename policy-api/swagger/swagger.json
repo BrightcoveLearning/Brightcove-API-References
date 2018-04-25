@@ -1,0 +1,327 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Policy API Reference",
+    "version": "1.0.0",
+    "description": "Reference for the Brightcove Policy API, used to create policy keys to access the Playback API. This API is used to generate keys to access the Playback API outside the context of a Brightcove Player. <br><br><strong>Notes:</strong><ul><li>Policy keys are generated automatically for Brightcove Players.</li><li>To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a></li></ul>"
+  },
+  "paths": {
+    "/accounts/{account_id}/policy_keys": {
+      "post": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "Create a Policy Key",
+        "description": "Create a new policy key to access the Playback API ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "Response Fields": {
+            "description": "Response Fields",
+            "schema": {
+              "$ref": "#/definitions/Create_a_Policy_KeyResponseFields"
+            }
+          },
+          "Error 4xx": {
+            "description": "Error 4xx",
+            "schema": {
+              "$ref": "#/definitions/Create_a_Policy_KeyError4xx"
+            }
+          },
+          "Error 5xx": {
+            "description": "Error 5xx",
+            "schema": {
+              "$ref": "#/definitions/Create_a_Policy_KeyError5xx"
+            }
+          }
+        },
+        "operationId": "Create_a_Policy_Key"
+      }
+    },
+    "/accounts/{account_id}/policy_keys/{key_string}": {
+      "get": {
+        "tags": [
+          "Policy"
+        ],
+        "summary": "Get Policy",
+        "description": "Get a policy key associated with a policy key string ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID "
+          },
+          {
+            "name": "key_string",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "the key string for the policy "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "Response Fields": {
+            "description": "Response Fields",
+            "schema": {
+              "$ref": "#/definitions/Get_PolicyResponseFields"
+            }
+          },
+          "Error 4xx": {
+            "description": "Error 4xx",
+            "schema": {
+              "$ref": "#/definitions/Get_PolicyError4xx"
+            }
+          },
+          "Error 5xx": {
+            "description": "Error 5xx",
+            "schema": {
+              "$ref": "#/definitions/Get_PolicyError5xx"
+            }
+          }
+        },
+        "operationId": "Get_Policy"
+      }
+    },
+    "": {
+      "": {
+        "tags": [
+          "_Users_rcrooks_git_Brightcove_API_References_policy_api_v1_doc_main_js"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200"
+          }
+        },
+        "operationId": ""
+      }
+    }
+  },
+  "definitions": {
+    "Create_a_Policy_KeyResponseFields": {
+      "properties": {
+        "key_string": {
+          "type": "string",
+          "description": "The policy key string "
+        },
+        "key-data": {
+          "type": "object",
+          "description": "Map of key data prescribing the policy ",
+          "$ref": "#/definitions/key-data"
+        }
+      },
+      "required": [
+        "key_string",
+        "key-data"
+      ]
+    },
+    "key-data": {
+      "properties": {
+        "account-id": {
+          "type": "string",
+          "description": "The Video Cloud account id "
+        },
+        "apis": {
+          "type": "array",
+          "description": "Array of apis permitted for the key ",
+          "items": {
+            "type": "sting"
+          }
+        },
+        "allowed-domains": {
+          "type": "array",
+          "description": "Array of domains allowed to use this key ",
+          "items": {
+            "type": "sting"
+          }
+        },
+        "require-ad-config": {
+          "type": "boolean",
+          "description": "Whether Playback API requests require an ad-config-id URL parameter for server-side ad insertion "
+        },
+        "geo": {
+          "type": "object",
+          "description": "Map of geo-filtering properties ",
+          "$ref": "#/definitions/key-data.geo"
+        }
+      },
+      "required": [
+        "account-id",
+        "apis",
+        "allowed-domains",
+        "require-ad-config",
+        "geo"
+      ]
+    },
+    "key-data.geo": {
+      "properties": {
+        "countries": {
+          "type": "array",
+          "description": "Array of ISO 3166 list of 2- or 4-letter codes in lower-case (search for &quot;country codes&quot;) ",
+          "items": {
+            "type": "sting"
+          }
+        },
+        "exclude_countries": {
+          "type": "boolean",
+          "description": "If true, country array is treated as a list of countries excluded from viewing. If false, the country array is a list of countries included for viewing. "
+        }
+      },
+      "required": [
+        "countries",
+        "exclude_countries"
+      ]
+    },
+    "Create_a_Policy_KeyError4xx": {
+      "properties": {
+        "UNAUTHORIZED": {
+          "type": "json",
+          "description": "401: Authentication failed; check to make sure your policy key is correct "
+        },
+        "RESOURCE_NOT_FOUND": {
+          "type": "json",
+          "description": "404: The api couldn&#39;t find the resource you requested "
+        },
+        "NOT_AVAILABLE": {
+          "type": "json",
+          "description": "400: The resource you are requesting is temporarily unavailable "
+        }
+      },
+      "required": [
+        "UNAUTHORIZED",
+        "RESOURCE_NOT_FOUND",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "Create_a_Policy_KeyError5xx": {
+      "properties": {
+        "UNKNOWN": {
+          "type": "json",
+          "description": "500: Issue in Brightcove system; try again later. "
+        },
+        "TIMEOUT": {
+          "type": "json",
+          "description": "500: Server likely too busy; try again later. "
+        }
+      },
+      "required": [
+        "UNKNOWN",
+        "TIMEOUT"
+      ]
+    },
+    "Get_PolicyResponseFields": {
+      "properties": {
+        "key_string": {
+          "type": "string",
+          "description": "The policy key string "
+        },
+        "key-data": {
+          "type": "object",
+          "description": "Map of key data prescribing the policy ",
+          "$ref": "#/definitions/key-data"
+        }
+      },
+      "required": [
+        "key_string",
+        "key-data"
+      ]
+    },
+    "Get_PolicyError4xx": {
+      "properties": {
+        "UNAUTHORIZED": {
+          "type": "json",
+          "description": "401: Authentication failed; check to make sure your policy key is correct "
+        },
+        "RESOURCE_NOT_FOUND": {
+          "type": "json",
+          "description": "404: The api couldn&#39;t find the resource you requested "
+        },
+        "NOT_AVAILABLE": {
+          "type": "json",
+          "description": "400: The resource you are requesting is temporarily unavailable "
+        }
+      },
+      "required": [
+        "UNAUTHORIZED",
+        "RESOURCE_NOT_FOUND",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "Get_PolicyError5xx": {
+      "properties": {
+        "UNKNOWN": {
+          "type": "json",
+          "description": "500: Issue in Brightcove system; try again later. "
+        },
+        "TIMEOUT": {
+          "type": "json",
+          "description": "500: Server likely too busy; try again later. "
+        }
+      },
+      "required": [
+        "UNKNOWN",
+        "TIMEOUT"
+      ]
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "policy.api.brightcove.com",
+  "basePath": "/v1"
+}
