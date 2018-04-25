@@ -26,19 +26,19 @@
  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
  * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+ * @apiSuccess (Response Fields) {String} cue_points.type cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
  * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
@@ -58,25 +58,25 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of sharing properties (applicable only to multiple accounts)
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
@@ -87,16 +87,16 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *     HTTP/1.1 200 OK
  *     [
  *         {
@@ -161,16 +161,16 @@
  *          }
  *     ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: Resource not found
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} ILLEGAL_QUERY 400: The search string syntax was invalid - example: 1) doing a `tags` search that ends with a comma or has an unclosed quote
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: Resource not found
+ * @apiError (Error 4xx) {Object[]} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {Object[]} ILLEGAL_QUERY 400: The search string syntax was invalid - example: 1) doing a `tags` search that ends with a comma or has an unclosed quote
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -179,7 +179,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -187,7 +187,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 400 Error Response
+ * @apiErrorExample {Object[]} 400 Error Response
  *     HTTP/1.1 400 INVALID_SORT
  *     [
  *         {
@@ -217,27 +217,27 @@
   * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response
  *
- * @apiParamExample {Url} Search Count Example:
+ * @apiParamExample {String} Search Count Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {Number} count the count of videos found
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
  *     {
  *         "count": 2678
  *     }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -246,7 +246,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -254,7 +254,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 400 Error Response
+ * @apiErrorExample {Object[]} 400 Error Response
  *     HTTP/1.1 400 INVALID_SORT
  *     [
  *         {
@@ -283,7 +283,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
   *
- * @apiParamExample {Url} Get Video Example:
+ * @apiParamExample {String} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *     // or
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/ref:my_reference_id
@@ -293,7 +293,7 @@
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
  * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -317,25 +317,25 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -345,16 +345,16 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
  *    {
  *    	"id": "5566317640001",
@@ -437,12 +437,12 @@
  *    	"updated_at": "2017-09-06T13:01:03.817Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -451,7 +451,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -478,7 +478,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video Sources Example:
+ * @apiParamExample {String} Get Video Sources Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/sources
  *
  * @apiSuccess (Response Field) {String} app_name address for RTMP stream
@@ -490,13 +490,13 @@
  * @apiSuccess (Response Field) {Number} height frame height in pixels
  * @apiSuccess (Response Field) {Boolean} remote whether the source is a remote asset
  * @apiSuccess (Response Field) {Number} size file size in bytes
- * @apiSuccess (Response Field) {Url} src URL for HTTP rendition
+ * @apiSuccess (Response Field) {String} src URL for HTTP rendition
  * @apiSuccess (Response Field) {String} steam_name the stream name on the CDN
  * @apiSuccess (Response Field) {String} type the type for segmented streams
- * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
+ * @apiSuccess (Response Field) {String} uploaded_at date/time when the video was uploaded
  * @apiSuccess (Response Field) {Number} width frame width in pixels
  *
- * @apiSuccessExample {json} Dynamic Delivery Video Success Response
+ * @apiSuccessExample {Object[]} Dynamic Delivery Video Success Response
  *    HTTP/1.1 200 OK
  *    [
  *        {
@@ -544,7 +544,7 @@
  *    ]
  *
  *
- * @apiSuccessExample {json} Non Dynamic Delivery Response:
+ * @apiSuccessExample {Object[]} Non Dynamic Delivery Response:
  *    HTTP/1.1 200 OK
  *    [
  *        {
@@ -681,12 +681,12 @@
  *        }
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -695,7 +695,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -721,22 +721,22 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video Images Example:
+ * @apiParamExample {String} Get Video Images Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
  *
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} poster map of poster properties
  * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} thumbnail.src URL for the default thumbnail source image
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "poster": {
@@ -775,12 +775,12 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -789,7 +789,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -815,7 +815,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video Audio Tracks Example:
+ * @apiParamExample {String} Get Video Audio Tracks Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
  *
  * @apiSuccess (Response Fields) {String} id ID for the audio track formed as `language_variant`
@@ -824,7 +824,7 @@
  * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
  * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
  *    [
  *      {
@@ -862,12 +862,12 @@
  *      }
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -876,7 +876,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -902,7 +902,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  * @apiParam (Path Parameters) {String} audio_track_id the id for the audio track, formed as 'language_variant'
  *
- * @apiParamExample {Url} Get Video Audio Track Example:
+ * @apiParamExample {String} Get Video Audio Track Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
  *
  * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
@@ -911,7 +911,7 @@
  * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
  * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *      "id": "en_alternate",
@@ -925,12 +925,12 @@
  *      ]
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -939,7 +939,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -970,7 +970,7 @@
  * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  *
- * @apiParamExample {Url} Update Video Audio Track Request Body Example:
+ * @apiParamExample {String} Update Video Audio Track Request Body Example:
  *    {
  *        "language": "es",
  *        "is_default": true
@@ -982,7 +982,7 @@
  * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
  * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *      "id": "en_alternate",
@@ -996,12 +996,12 @@
  *      ]
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1010,7 +1010,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1040,20 +1040,20 @@
  * @apiParam (Request Body Fields) {Boolean} [is_default] whether this is the default audio track for the video **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  *
- * @apiParamExample {Url} Delete Video Audio Track Example:
+ * @apiParamExample {String} Delete Video Audio Track Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
  *
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
  *    HTTP 202 ACCEPTED or HTTP 204 NO CONTENT
  *    // note that you may get 202 because the operation is asynchronous
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1062,7 +1062,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1088,7 +1088,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video Digital MasterExample:
+ * @apiParamExample {String} Get Video Digital MasterExample:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/digital_master
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -1113,14 +1113,14 @@
  * @apiSuccess (Response Field) {String} sharded_directory
  * @apiSuccess (Response Field) {Number} size in bytes
  * @apiSuccess (Response Field) {String} type asset type
- * @apiSuccess (Response Field) {DateString} update_at date/time last modified
- * @apiSuccess (Response Field) {DateString} uploaded_at date/time added
+ * @apiSuccess (Response Field) {String} update_at date/time last modified
+ * @apiSuccess (Response Field) {String} uploaded_at date/time added
  * @apiSuccess (Response Field) {Number} version
  * @apiSuccess (Response Field) {String} video_codec the video codec
  * @apiSuccess (Response Field) {String} video_container the video container
  * @apiSuccess (Response Field) {Number} video_duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response video digital master (Dynamic Delivery):
+ * @apiSuccessExample {Object} Success Response video digital master (Dynamic Delivery):
  *    HTTP/1.1 200 OK
  *    {
  *        "id": "0e1ba58d-cc8d-438a-9db5-3bb3d79487c8",
@@ -1133,7 +1133,7 @@
  *        "updated_at": "2017-07-21T23:14:39.957Z"
  *    }
  *
- * @apiSuccessExample {json} Success Response video digital master:
+ * @apiSuccessExample {Object} Success Response video digital master:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -1169,12 +1169,12 @@
  * @apiSuccessExample {String} Success Response no digital master
  *     HTTP/1.1 204 No Content
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1183,7 +1183,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1210,21 +1210,21 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete Digital Master Example:
+  * @apiParamExample {String} Delete Digital Master Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/digital_master
   *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1233,7 +1233,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -1262,12 +1262,12 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video References Example:
+ * @apiParamExample {String} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
  * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
  *    {
  *        "playlists": [
@@ -1276,12 +1276,12 @@
  *        ]
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1290,7 +1290,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1318,18 +1318,18 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {Url} Get Video References Example:
+ * @apiParamExample {String} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
  *     HTTP/1.1 204 No Content
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1338,7 +1338,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1385,10 +1385,10 @@
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
   * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
   * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
-  * @apiParam (Request Body Fields) {DateString} [schedule.starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiParam (Request Body Fields) {DateString} [schedule.ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiParam (Request Body Fields) {String} [schedule.starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiParam (Request Body Fields) {String} [schedule.ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
   *
-  * @apiParamExample {json} Create Video Example:
+  * @apiParamExample {Object} Create Video Example:
   *     {
   *         "name": "Moose Herd",
   *         "description": "Herd of moose grazing",
@@ -1408,7 +1408,7 @@
   * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
   * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
   * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
-  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+  * @apiSuccess (Response Fields) {String} created_at when the video was created
   * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
   * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
   * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -1431,25 +1431,25 @@
   * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
   * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
   * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
-  * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
-  * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+  * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+  * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
   * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
   * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
   * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
-  * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
-  * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+  * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+  * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
   * @apiSuccess (Response Fields) {Object} link map of scheduling properties
   * @apiSuccess (Response Fields) {String} link.text text for the link
-  * @apiSuccess (Response Fields) {Url} link.url URL for the link
+  * @apiSuccess (Response Fields) {String} link.url URL for the link
   * @apiSuccess (Response Fields) {String} long_description video long description
   * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
   * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
   * @apiSuccess (Response Fields) {String} projection used for 360 videos
-  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
   * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
   * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
-  * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
   * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
   * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
   * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -1459,16 +1459,16 @@
   * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
   * @apiSuccess (Response Fields) {String[]} tags array of tags
   * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
-  * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
   * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
   * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
   * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
   * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
   * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
   * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
-  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
   *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
   *     HTTP/1.1 201 Created
   *    {
   *        "account_id": "57838016001",
@@ -1500,15 +1500,15 @@
   *    }
   *
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} BAD_VALUE 403: Spelling error or other use of non-existent field
-  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
-  * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 4xx) {Object[]} BAD_VALUE 403: Spelling error or other use of non-existent field
+  * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
+  * @apiError (Error 4xx) {Object[]} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1517,7 +1517,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+  * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
   *     HTTP/1.1 404 RESOURCE_NOT_FOUND
   *     [
   *         {
@@ -1525,7 +1525,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 409 CONFLICT
+  * @apiErrorExample {Object[]} 409 CONFLICT
   *     HTTP/1.1 409 CONFLICT
   *     [
   *         {
@@ -1595,20 +1595,20 @@
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
  * @apiParam (Request Body Fields) {String{..255}} [link.text] text for the link
  * @apiParam (Request Body Fields) {Url{..250}} [link.url] URL for the link
- * @apiParam (Request Body Fields) {DateString} published_at ISO-8601 date-time string indicating when the video was published
+ * @apiParam (Request Body Fields) {String} published_at ISO-8601 date-time string indicating when the video was published
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
- * @apiParam (Request Body Fields) {DateString} [schedule.starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {DateString} [schedule.ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {String} [schedule.starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {String} [schedule.ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {Object[]} [text_tracks="[]"] array of text track maps &mdash; **NOTE** text_tracks are **not** settable for ingested text_tracks, but **are** settable otherwise, and can be used to add text tracks to ingested or remote asset videos
- * @apiParam (Request Body Fields) {Url} text_tracks.src="" URL for the .vtt file
+ * @apiParam (Request Body Fields) {String} text_tracks.src="" URL for the .vtt file
  * @apiParam (Request Body Fields) {String="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
  * @apiParam (Request Body Fields) {String} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
  * @apiParam (Request Body Fields) {String} [text_tracks.mime_type=""] mime-type for the track
  * @apiParam (Request Body Fields) {String} [text_tracks.label=""] label for the track
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default=false] whether this is the default track
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  *
- * @apiParamExample {json} Update Video Example:
+ * @apiParamExample {Object} Update Video Example:
  *     {
  *         "name": "Moose Herd",
  *         "description": "Herd of moose grazing",
@@ -1628,7 +1628,7 @@
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
  * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -1651,25 +1651,25 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -1679,17 +1679,17 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  *
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 201 Created
  *    {
  *        "account_id": "57838016001",
@@ -1720,20 +1720,20 @@
  *        "updated_at": "2015-09-18T15:59:23.764Z"
  *    }
  *
- * @apiError (Error 4xx) {json} AD_CONFIG_INACTIVE 400: Ad configuration specified in an SSAI request is inactive
- * @apiError (Error 4xx) {json} AD_CONFIG_NOT_FOUND 400: Ad configuration specified in an SSAI request was not found
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} BAD_VALUE 403: Spelling error or other use of non-existent field
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: the JSON data was not valid - error messages vary depending on the problem
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: an unknown internal error occurred - this might be a temporary system issue, but if the problem persists, it is likely an uncaught error in the request - contact Support
- * @apiError (Error 5xx) {json} TIMEOUT 503: Server likely too busy - try again later
+ * @apiError (Error 4xx) {Object[]} AD_CONFIG_INACTIVE 400: Ad configuration specified in an SSAI request is inactive
+ * @apiError (Error 4xx) {Object[]} AD_CONFIG_NOT_FOUND 400: Ad configuration specified in an SSAI request was not found
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} BAD_VALUE 403: Spelling error or other use of non-existent field
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: You attempted to create a video with a reference id that is already in use, or add a reference id to a video which is already used by another video
+ * @apiError (Error 4xx) {Object[]} ILLEGAL_FIELD 422: Spelling error or other use of non-existent field
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: the JSON data was not valid - error messages vary depending on the problem
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: an unknown internal error occurred - this might be a temporary system issue, but if the problem persists, it is likely an uncaught error in the request - contact Support
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 503: Server likely too busy - try again later
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1742,7 +1742,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -1750,7 +1750,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -1794,19 +1794,19 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  *
- * @apiParamExample {Url} Get Video References Example:
+ * @apiParamExample {String} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
  *     HTTP/1.1 204 No Content **returned if video is deleted or not found**
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} REFERENCES_EXIST 409: The video is in one or more manual playlists
- * @apiError (Error 4xx) {json} PRE_CONDITION_FAILED 412: usually this means the caller provided an ETag that didn't match the version of the video
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} REFERENCES_EXIST 409: The video is in one or more manual playlists
+ * @apiError (Error 4xx) {Object[]} PRE_CONDITION_FAILED 412: usually this means the caller provided an ETag that didn't match the version of the video
+ * @apiError (Error 5xx) {Object[]} INTERNAL_ERROR 500: Error in the backend
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1815,7 +1815,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1841,10 +1841,10 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  *
- * @apiParamExample {Url} Get Status of Ingest Jobs Example:
+ * @apiParamExample {String} Get Status of Ingest Jobs Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *     HTTP/1.1 200
  *    [
  *    	{
@@ -1885,11 +1885,11 @@
  * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
  *
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} INTERNAL_ERROR 500: Error in the backend
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1898,7 +1898,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1925,10 +1925,10 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID (or `ref:reference_id`)
  * @apiParam (Path Parameters) {String} job_id the job ID for the ingest job
  *
- * @apiParamExample {Url} Get Status of Ingest Jobs Example:
+ * @apiParamExample {String} Get Status of Ingest Jobs Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5128433746001/ingest_jobs/ac49b1db-e6e1-477f-a2c1-70b9cd3107cb
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200
  *    {
  *    	"id": "ac49b1db-e6e1-477f-a2c1-70b9cd3107cb",
@@ -1955,11 +1955,11 @@
  * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
  *
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} INTERNAL_ERROR 500: Error in the backend
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1968,7 +1968,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1993,7 +1993,7 @@
   *
   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
   *
-  * @apiParamExample {Url} Get Custom Fields Example:
+  * @apiParamExample {String} Get Custom Fields Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/video_fields
   *
   * @apiSuccess (Response Fields) {Object[]} custom_fields array of custom field maps
@@ -2009,7 +2009,7 @@
   * @apiSuccess (Response Fields) {String} standard_fields.id data name for the field (used to access it in searches, etc.)
   * @apiSuccess (Response Fields) {Boolean} standard_fields.required whether field must have a value before video can be active
   *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
   *    {
   *    "custom_fields": [
@@ -2128,17 +2128,17 @@
   *    ]
   *
   *
-  * @apiError (Error 4xx) {json} REFERENCES_EXIST 400: You are attempting to delete a video that is included in at least one playlist
-  * @apiError (Error 4xx) {json} SHARED_VIDEO 400: Deletion of shared videos is not yet supported
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} REFERENCES_EXIST 400: You are attempting to delete a video that is included in at least one playlist
+  * @apiError (Error 4xx) {Object[]} SHARED_VIDEO 400: Deletion of shared videos is not yet supported
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -2147,7 +2147,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
