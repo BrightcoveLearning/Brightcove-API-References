@@ -481,20 +481,20 @@
  * @apiParamExample {Url} Get Video Sources Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/sources
  *
- * @apiSuccess (Response Field) {String} app_name address for RTMP stream
- * @apiSuccess (Response Field) {String} asset_id system id for the rendition
- * @apiSuccess (Response Field) {String} codec the video codec for the rendition
- * @apiSuccess (Response Field) {String} container the video container for the rendition
- * @apiSuccess (Response Field) {Number} duration duration in milliseconds
- * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in bps
- * @apiSuccess (Response Field) {Number} height frame height in pixels
- * @apiSuccess (Response Field) {Boolean} remote whether the source is a remote asset
- * @apiSuccess (Response Field) {Number} size file size in bytes
- * @apiSuccess (Response Field) {Url} src URL for HTTP rendition
- * @apiSuccess (Response Field) {String} steam_name the stream name on the CDN
- * @apiSuccess (Response Field) {String} type the type for segmented streams
- * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
- * @apiSuccess (Response Field) {Number} width frame width in pixels
+ * @apiSuccess (200) {String} app_name address for RTMP stream
+ * @apiSuccess (200) {String} asset_id system id for the rendition
+ * @apiSuccess (200) {String} codec the video codec for the rendition
+ * @apiSuccess (200) {String} container the video container for the rendition
+ * @apiSuccess (200) {Number} duration duration in milliseconds
+ * @apiSuccess (200) {Number} encoding_rate encoding rate in bps
+ * @apiSuccess (200) {Number} height frame height in pixels
+ * @apiSuccess (200) {Boolean} remote whether the source is a remote asset
+ * @apiSuccess (200) {Number} size file size in bytes
+ * @apiSuccess (200) {Url} src URL for HTTP rendition
+ * @apiSuccess (200) {String} steam_name the stream name on the CDN
+ * @apiSuccess (200) {String} type the type for segmented streams
+ * @apiSuccess (200) {DateString} uploaded_at date/time when the video was uploaded
+ * @apiSuccess (200) {Number} width frame width in pixels
  *
  * @apiSuccessExample {json} Dynamic Delivery Video Success Response
  *    HTTP/1.1 200 OK
@@ -1091,34 +1091,34 @@
  * @apiParamExample {Url} Get Video Digital MasterExample:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/digital_master
  *
- * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {Boolean} audio_only whether this assest has an audio track only
- * @apiSuccess (Response Field) {String} cdn_origin_id id on the origin CDN if any
- * @apiSuccess (Response Field) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Field) {String} controller_type video controller type
- * @apiSuccess (Response Field) {String} current_filename the file name
- * @apiSuccess (Response Field) {Object} drm DRM licensing information
- * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in bps
- * @apiSuccess (Response Field) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Field) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Field) {Object} hds HDS information
- * @apiSuccess (Response Field) {Object} hls HLS information
- * @apiSuccess (Response Field) {String} id the video id
- * @apiSuccess (Response Field) {String} name the video title
- * @apiSuccess (Response Field) {String} preview_thumbnail_asset_id thumbnail asset id
- * @apiSuccess (Response Field) {Boolean} progressive_download whether available via progressive download
- * @apiSuccess (Response Field) {String} reference_id reference id
- * @apiSuccess (Response Field) {String} remote_stream_name for remote stream types
- * @apiSuccess (Response Field) {String} remote_url for HTTP types
- * @apiSuccess (Response Field) {String} sharded_directory
- * @apiSuccess (Response Field) {Number} size in bytes
- * @apiSuccess (Response Field) {String} type asset type
- * @apiSuccess (Response Field) {DateString} update_at date/time last modified
- * @apiSuccess (Response Field) {DateString} uploaded_at date/time added
- * @apiSuccess (Response Field) {Number} version
- * @apiSuccess (Response Field) {String} video_codec the video codec
- * @apiSuccess (Response Field) {String} video_container the video container
- * @apiSuccess (Response Field) {Number} video_duration in milliseconds
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {Boolean} audio_only whether this assest has an audio track only
+ * @apiSuccess (200) {String} cdn_origin_id id on the origin CDN if any
+ * @apiSuccess (200) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+ * @apiSuccess (200) {String} controller_type video controller type
+ * @apiSuccess (200) {String} current_filename the file name
+ * @apiSuccess (200) {Object} drm DRM licensing information
+ * @apiSuccess (200) {Number} encoding_rate encoding rate in bps
+ * @apiSuccess (200) {Number} frame_height frame height in pixels
+ * @apiSuccess (200) {Number} frame_width frame width in pixels
+ * @apiSuccess (200) {Object} hds HDS information
+ * @apiSuccess (200) {Object} hls HLS information
+ * @apiSuccess (200) {String} id the video id
+ * @apiSuccess (200) {String} name the video title
+ * @apiSuccess (200) {String} preview_thumbnail_asset_id thumbnail asset id
+ * @apiSuccess (200) {Boolean} progressive_download whether available via progressive download
+ * @apiSuccess (200) {String} reference_id reference id
+ * @apiSuccess (200) {String} remote_stream_name for remote stream types
+ * @apiSuccess (200) {String} remote_url for HTTP types
+ * @apiSuccess (200) {String} sharded_directory
+ * @apiSuccess (200) {Number} size in bytes
+ * @apiSuccess (200) {String} type asset type
+ * @apiSuccess (200) {DateString} update_at date/time last modified
+ * @apiSuccess (200) {DateString} uploaded_at date/time added
+ * @apiSuccess (200) {Number} version
+ * @apiSuccess (200) {String} video_codec the video codec
+ * @apiSuccess (200) {String} video_container the video container
+ * @apiSuccess (200) {Number} video_duration in milliseconds
  *
  * @apiSuccessExample {json} Success Response video digital master (Dynamic Delivery):
  *    HTTP/1.1 200 OK
@@ -1265,7 +1265,7 @@
  * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
- * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
+ * @apiSuccess (200) {String[]} playlists array of EXPLICIT playlist ids that contain the video
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK

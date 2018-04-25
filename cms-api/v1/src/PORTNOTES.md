@@ -8,6 +8,9 @@ remove "(Path Parameters) " from all the files
 ## apiSuccess Reponse Fields
 
 `sed -i "" 's/apiSuccess (Response Fields)/apiSuccess (200)/g' *.js`
+`sed -i "" 's/apiSuccess (Response Field)/apiSuccess (200)/g' *.js`
+
+
 
 ## Cue points
 
