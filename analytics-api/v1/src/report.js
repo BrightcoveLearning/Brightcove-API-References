@@ -1,7 +1,7 @@
 // get report
 
 /**
- * @api {get} /data Get Analytics Report
+ * @api {get} /data
  * @apiName Get Analytics Report
  * @apiGroup Report
  * @apiVersion 1.0.0
