@@ -1,7 +1,7 @@
 // get alltime video views
 
 /**
- * @api {get} /alltime/accounts/:account_id/videos/:video_id Get Alltime Video Views
+ * @api {get} /alltime/accounts/:account_id/videos/:video_id
  * @apiName Get Alltime Video Views
  * @apiGroup Video Data
  * @apiVersion 1.0.0
