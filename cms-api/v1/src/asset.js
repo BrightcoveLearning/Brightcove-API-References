@@ -2474,6 +2474,7 @@
  *
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {Url} HLS Manifest Example:
@@ -2807,6 +2808,7 @@
   *
   * @apiParam {String} account_id Video Cloud account ID.
   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {Url} Delete HLS Manifest Example:
@@ -2945,6 +2947,7 @@
  *
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {Url} HDS Manifest list Example:
@@ -3279,6 +3282,7 @@
   *
   * @apiParam {String} account_id Video Cloud account ID.
   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {Url} Delete HDS Manifest list Example:
@@ -3418,6 +3422,7 @@
  *
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {Url} ISM Manifest list Example:
@@ -3751,6 +3756,7 @@
   *
   * @apiParam {String} account_id Video Cloud account ID.
   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {Url} Delete ISM Manifest list Example:
@@ -3890,6 +3896,7 @@
  *
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {Url} ISMC Manifest list Example:
@@ -4222,6 +4229,7 @@
   *
   * @apiParam {String} account_id Video Cloud account ID.
   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {Url} Delete ISMC Manifest list Example:
@@ -4363,6 +4371,7 @@
  *
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {Url} DASH Manifest list Example:
@@ -4702,6 +4711,7 @@
   *
   * @apiParam {String} account_id Video Cloud account ID.
   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {Url} Delete DASH Manifest list Example:
