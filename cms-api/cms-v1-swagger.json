@@ -42,20 +42,6 @@
             "schema": {
               "$ref": "#/definitions/Add_CaptionBody"
             }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Content-Type: application/json "
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -7284,6 +7270,67 @@
     }
   },
   "definitions": {
+    "Drm": {
+      "properties": {
+        "state": {
+          "type":"string"
+        },
+        "packager_version": {
+          "type":"string"
+        },
+        "metadata_cdn_origin_id": {
+          "type":"string"
+        },
+        "metadata_sharded_directory": {
+          "type":"string"
+        }
+      }
+    },
+    "Hds": {
+      "properties": {
+        "cdn_origin_id": {
+          "type":"string"
+        },
+        "sharded_directory": {
+          "type":"string"
+        },
+        "bcfs_provider": {
+          "type":"string"
+        },
+        "bcfs_key": {
+          "type":"string"
+        },
+        "filename": {
+          "type":"string"
+        }
+      }
+    },
+    "Hls": {
+      "properties": {
+        "encrypted": {
+          "type":"boolean"
+        },
+        "segments": {
+          "type":"array",
+          "items": {
+            "$ref": "#/definitions/HlsSegment"
+          }
+        }
+      }
+    },
+    "HlsSegment": {
+      "properties": {
+        "d": {
+          "type":"number"
+        },
+        "filename": {
+          "type":"string"
+        },
+        "encryption_key": {
+          "type":"string"
+        }
+      }
+    },
     "URL Parameters": {
       "properties": {
         "limit": {
@@ -12044,8 +12091,10 @@
         },
         "custom_fields": {
           "type": "object",
-          "description": "map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters Note: be sure to use the internal name for the field, not the display name ",
-          "$ref": "#/definitions/Update_VideoBody.custom_fields"
+          "description": "map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters. Note: be sure to use the internal name for the field, not the display name ",
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "cue_points": {
           "type": "array",
@@ -13426,7 +13475,9 @@
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters. Note: be sure to use the internal name for the field, not the display name ",
-          "$ref": "#/definitions/Create_VideoBody.custom_fields"
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "cue_points": {
           "type": "array",
