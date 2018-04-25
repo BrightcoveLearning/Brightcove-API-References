@@ -10,7 +10,13 @@ remove "(Path Parameters) " from all the files
 `sed -i "" 's/apiSuccess (Response Fields)/apiSuccess (200)/g' *.js`
 `sed -i "" 's/apiSuccess (Response Field)/apiSuccess (200)/g' *.js`
 
+## Generate swagger
 
+Use https://github.com/zshaw-brightcove/apidoc-swagger
+
+To run it: `node ~/work/apidoc-swagger-zshaw-brightcove/bin/apidocSwagger.js -i ~/work/Brightcove-API-References/cms-api/v1/src -o cms-swagger-zshaw -t`
+
+NOTE: We're checking in the generated swagger.json and starting to hack on that so it will diverge from the generated version
 
 ## Cue points
 
