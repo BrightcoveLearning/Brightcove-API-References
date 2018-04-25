@@ -29,72 +29,72 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
- * @apiSuccess (Response Fields) {String} id video id
- * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Fields) {String} created_at when the video was created
- * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
- * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {Object} custom_fields map of fieldname-value pairs
- * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
- * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type cue point type
- * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
- * @apiSuccess (Response Fields) {String} description video short description
- * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
- * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
- * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {String} folder_id id for the folder the video belongs to
- * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted whether geo-restriction is enabled for this video
- * @apiSuccess (Response Fields) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
- * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
- * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess (Response Fields) {Object} link map of scheduling properties
- * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
- * @apiSuccess (Response Fields) {String} long_description video long description
- * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
- * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
- * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {Object} sharing map of sharing properties (applicable only to multiple accounts)
- * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
- * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String[]} tags array of tags
- * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
- * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
- * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
- * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+ * @apiSuccess (200) {String} id video id
+ * @apiSuccess (200) {String} name video title
+ * @apiSuccess (200) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+ * @apiSuccess (200) {String} created_at when the video was created
+ * @apiSuccess (200) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
+ * @apiSuccess (200) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
+ * @apiSuccess (200) {Object} custom_fields map of fieldname-value pairs
+ * @apiSuccess (200) {Object} cue_points array of cue point maps
+ * @apiSuccess (200) {String} cue_points.name cue point name
+ * @apiSuccess (200) {String} cue_points.type cue point type
+ * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} description video short description
+ * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
+ * @apiSuccess (200) {Number} duration video duration in milliseconds
+ * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (200) {String} economics whether video is AD_SUPPORTED
+ * @apiSuccess (200) {String} folder_id id for the folder the video belongs to
+ * @apiSuccess (200) {Object} geo map of geo-filtering properties
+ * @apiSuccess (200) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (200) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (200) {Boolean} geo.restricted whether geo-restriction is enabled for this video
+ * @apiSuccess (200) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} images.poster map of poster properties
+ * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} link map of scheduling properties
+ * @apiSuccess (200) {String} link.text text for the link
+ * @apiSuccess (200) {String} link.url URL for the link
+ * @apiSuccess (200) {String} long_description video long description
+ * @apiSuccess (200) {Boolean} offline_enabled whether video is enabled for offline viewing
+ * @apiSuccess (200) {String} original_filename the original file name for the uploaded video
+ * @apiSuccess (200) {String} projection used for 360 videos
+ * @apiSuccess (200) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {Object} schedule map of scheduling properties
+ * @apiSuccess (200) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} state state determines whether the video is playable or not
+ * @apiSuccess (200) {Object} sharing map of sharing properties (applicable only to multiple accounts)
+ * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+ * @apiSuccess (200) {String[]} tags array of tags
+ * @apiSuccess (200) {Object} text_tracks array of text track maps
+ * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {String} text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (200) {String} text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  *
  * @apiSuccessExample {Object[]} Success Response:
  *     HTTP/1.1 200 OK
@@ -220,7 +220,7 @@
  * @apiParamExample {String} Search Count Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/videos?q=tags:nature,name:nature
  *
- * @apiSuccess (Response Fields) {Number} count the count of videos found
+ * @apiSuccess (200) {Number} count the count of videos found
  *
  * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
@@ -288,71 +288,71 @@
  *     // or
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/ref:my_reference_id
  *
- * @apiSuccess (Response Fields) {String} id video id
- * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
- * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {String} created_at when the video was created
- * @apiSuccess (Response Fields) {Object} custom_fields map of fieldname-value pairs
- * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
- * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type cue point type
- * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
- * @apiSuccess (Response Fields) {String} description video short description
- * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
- * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
- * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {String} folder_id id of the folder that contains the video
- * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted whether geo-restriction is enabled for this video
- * @apiSuccess (Response Fields) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
- * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
- * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess (Response Fields) {Object} link map of scheduling properties
- * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
- * @apiSuccess (Response Fields) {String} long_description video long description
- * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
- * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
- * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
- * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String[]} tags array of tags
- * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
- * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
- * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
- * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} id video id
+ * @apiSuccess (200) {String} name video title
+ * @apiSuccess (200) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+ * @apiSuccess (200) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
+ * @apiSuccess (200) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
+ * @apiSuccess (200) {String} created_at when the video was created
+ * @apiSuccess (200) {Object} custom_fields map of fieldname-value pairs
+ * @apiSuccess (200) {Object} cue_points array of cue point maps
+ * @apiSuccess (200) {String} cue_points.name cue point name
+ * @apiSuccess (200) {String} cue_points.type cue point type
+ * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} description video short description
+ * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
+ * @apiSuccess (200) {Number} duration video duration in milliseconds
+ * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (200) {String} economics whether video is AD_SUPPORTED
+ * @apiSuccess (200) {String} folder_id id of the folder that contains the video
+ * @apiSuccess (200) {Object} geo map of geo-filtering properties
+ * @apiSuccess (200) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (200) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (200) {Boolean} geo.restricted whether geo-restriction is enabled for this video
+ * @apiSuccess (200) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} images.poster map of poster properties
+ * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} link map of scheduling properties
+ * @apiSuccess (200) {String} link.text text for the link
+ * @apiSuccess (200) {String} link.url URL for the link
+ * @apiSuccess (200) {String} long_description video long description
+ * @apiSuccess (200) {Boolean} offline_enabled whether video is enabled for offline viewing
+ * @apiSuccess (200) {String} original_filename the original file name for the uploaded video
+ * @apiSuccess (200) {String} projection used for 360 videos
+ * @apiSuccess (200) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {Object} schedule map of scheduling properties
+ * @apiSuccess (200) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} state state determines whether the video is playable or not
+ * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+ * @apiSuccess (200) {String[]} tags array of tags
+ * @apiSuccess (200) {Object} text_tracks array of text track maps
+ * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {String} text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (200) {String} text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+ * @apiSuccess (200) {String} updated_at when the video was last modified
  *
  * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
@@ -724,17 +724,17 @@
  * @apiParamExample {String} Get Video Images Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
  *
- * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} poster map of poster properties
- * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} poster map of poster properties
+ * @apiSuccess (200) {String} poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} poster.sources array of poster source maps
+ * @apiSuccess (200) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} thumbnail.src URL for the default thumbnail source image
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -818,11 +818,11 @@
  * @apiParamExample {String} Get Video Audio Tracks Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks
  *
- * @apiSuccess (Response Fields) {String} id ID for the audio track formed as `language_variant`
- * @apiSuccess (Response Fields) {String} language language code for the audio track
- * @apiSuccess (Response Fields) {String} variant the type of audio track
- * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
- * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
+ * @apiSuccess (200) {String} id ID for the audio track formed as `language_variant`
+ * @apiSuccess (200) {String} language language code for the audio track
+ * @apiSuccess (200) {String} variant the type of audio track
+ * @apiSuccess (200) {Number} duration URL the duration of the audio track in milliseconds
+ * @apiSuccess (200) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
  * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
@@ -905,11 +905,11 @@
  * @apiParamExample {String} Get Video Audio Track Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/audio_tracks/alternate_en
  *
- * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
- * @apiSuccess (Response Fields) {String} language language code for the audio track
- * @apiSuccess (Response Fields) {String} variant the type of audio track
- * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
- * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
+ * @apiSuccess (200) {String} id ID for the audio track formed as 'language_variant'
+ * @apiSuccess (200) {String} language language code for the audio track
+ * @apiSuccess (200) {String} variant the type of audio track
+ * @apiSuccess (200) {Number} duration URL the duration of the audio track in milliseconds
+ * @apiSuccess (200) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -976,11 +976,11 @@
  *        "is_default": true
  *    }
  *
- * @apiSuccess (Response Fields) {String} id ID for the audio track formed as 'language_variant'
- * @apiSuccess (Response Fields) {String} language language code for the audio track
- * @apiSuccess (Response Fields) {String} variant the type of audio track
- * @apiSuccess (Response Fields) {Number} duration URL the duration of the audio track in milliseconds
- * @apiSuccess (Response Fields) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
+ * @apiSuccess (200) {String} id ID for the audio track formed as 'language_variant'
+ * @apiSuccess (200) {String} language language code for the audio track
+ * @apiSuccess (200) {String} variant the type of audio track
+ * @apiSuccess (200) {Number} duration URL the duration of the audio track in milliseconds
+ * @apiSuccess (200) {Number[]} encoding_rates array of encoding rates for the audio track renditions in KBPS
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -1403,70 +1403,70 @@
   *         }
   *     }
   *
-  * @apiSuccess (Response Fields) {String} id video id
-  * @apiSuccess (Response Fields) {String} name video title
-  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
-  * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
-  * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
-  * @apiSuccess (Response Fields) {String} created_at when the video was created
-  * @apiSuccess (Response Fields) {Object} custom_fields map of fieldname-value pairs
-  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
-  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
-  * @apiSuccess (Response Fields) {String} cue_points.type cue point type
-  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
-  * @apiSuccess (Response Fields) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
-  * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
-  * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
-  * @apiSuccess (Response Fields) {String} description video short description
-  * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
-  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
-  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
-  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
-  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
-  * @apiSuccess (Response Fields) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
-  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
-  * @apiSuccess (Response Fields) {Boolean} geo.restricted whether geo-restriction is enabled for this video
-  * @apiSuccess (Response Fields) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
-  * @apiSuccess (Response Fields) {Object} images map of image maps
-  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
-  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
-  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
-  * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
-  * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
-  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
-  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
-  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
-  * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
-  * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
-  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
-  * @apiSuccess (Response Fields) {String} link.text text for the link
-  * @apiSuccess (Response Fields) {String} link.url URL for the link
-  * @apiSuccess (Response Fields) {String} long_description video long description
-  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
-  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
-  * @apiSuccess (Response Fields) {String} projection used for 360 videos
-  * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
-  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
-  * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
-  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
-  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
-  * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
-  * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
-  * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
-  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
-  * @apiSuccess (Response Fields) {String[]} tags array of tags
-  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
-  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
-  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
-  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
-  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
-  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
-  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
-  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+  * @apiSuccess (200) {String} id video id
+  * @apiSuccess (200) {String} name video title
+  * @apiSuccess (200) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+  * @apiSuccess (200) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
+  * @apiSuccess (200) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
+  * @apiSuccess (200) {String} created_at when the video was created
+  * @apiSuccess (200) {Object} custom_fields map of fieldname-value pairs
+  * @apiSuccess (200) {Object} cue_points array of cue point maps
+  * @apiSuccess (200) {String} cue_points.name cue point name
+  * @apiSuccess (200) {String} cue_points.type cue point type
+  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
+  * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+  * @apiSuccess (200) {String} description video short description
+  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
+  * @apiSuccess (200) {Number} duration video duration in milliseconds
+  * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+  * @apiSuccess (200) {String} economics whether video is AD_SUPPORTED
+  * @apiSuccess (200) {Object} geo map of geo-filtering properties
+  * @apiSuccess (200) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+  * @apiSuccess (200) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
+  * @apiSuccess (200) {Boolean} geo.restricted whether geo-restriction is enabled for this video
+  * @apiSuccess (200) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
+  * @apiSuccess (200) {Object} images map of image maps
+  * @apiSuccess (200) {Object} images.poster map of poster properties
+  * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+  * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+  * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+  * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+  * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+  * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+  * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+  * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+  * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+  * @apiSuccess (200) {Object} link map of scheduling properties
+  * @apiSuccess (200) {String} link.text text for the link
+  * @apiSuccess (200) {String} link.url URL for the link
+  * @apiSuccess (200) {String} long_description video long description
+  * @apiSuccess (200) {Boolean} offline_enabled whether video is enabled for offline viewing
+  * @apiSuccess (200) {String} original_filename the original file name for the uploaded video
+  * @apiSuccess (200) {String} projection used for 360 videos
+  * @apiSuccess (200) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+  * @apiSuccess (200) {Object} schedule map of scheduling properties
+  * @apiSuccess (200) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (200) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (200) {String} state state determines whether the video is playable or not
+  * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+  * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+  * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+  * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+  * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+  * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+  * @apiSuccess (200) {String[]} tags array of tags
+  * @apiSuccess (200) {Object} text_tracks array of text track maps
+  * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+  * @apiSuccess (200) {String} text_tracks.kind kind of text track
+  * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+  * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+  * @apiSuccess (200) {String} text_tracks.label label for the track
+  * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+  * @apiSuccess (200) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+  * @apiSuccess (200) {String} updated_at when the video was last modified
   *
   * @apiSuccessExample {Object} Success Response:
   *     HTTP/1.1 201 Created
@@ -1606,7 +1606,7 @@
  * @apiParam (Request Body Fields) {String} [text_tracks.mime_type=""] mime-type for the track
  * @apiParam (Request Body Fields) {String} [text_tracks.label=""] label for the track
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default=false] whether this is the default track
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} updated_at when the video was last modified
  *
  * @apiParamExample {Object} Update Video Example:
  *     {
@@ -1623,70 +1623,70 @@
  *         }
  *     }
  *
- * @apiSuccess (Response Fields) {String} id video id
- * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
- * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {String} created_at when the video was created
- * @apiSuccess (Response Fields) {Object} custom_fields map of fieldname-value pairs
- * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
- * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type cue point type
- * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
- * @apiSuccess (Response Fields) {String} description video short description
- * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
- * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
- * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted whether geo-restriction is enabled for this video
- * @apiSuccess (Response Fields) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
- * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
- * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess (Response Fields) {Object} link map of scheduling properties
- * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
- * @apiSuccess (Response Fields) {String} long_description video long description
- * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
- * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
- * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
- * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String[]} tags array of tags
- * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
- * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
- * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
- * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} id video id
+ * @apiSuccess (200) {String} name video title
+ * @apiSuccess (200) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+ * @apiSuccess (200) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
+ * @apiSuccess (200) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
+ * @apiSuccess (200) {String} created_at when the video was created
+ * @apiSuccess (200) {Object} custom_fields map of fieldname-value pairs
+ * @apiSuccess (200) {Object} cue_points array of cue point maps
+ * @apiSuccess (200) {String} cue_points.name cue point name
+ * @apiSuccess (200) {String} cue_points.type cue point type
+ * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} description video short description
+ * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
+ * @apiSuccess (200) {Number} duration video duration in milliseconds
+ * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (200) {String} economics whether video is AD_SUPPORTED
+ * @apiSuccess (200) {Object} geo map of geo-filtering properties
+ * @apiSuccess (200) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (200) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (200) {Boolean} geo.restricted whether geo-restriction is enabled for this video
+ * @apiSuccess (200) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} images.poster map of poster properties
+ * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} link map of scheduling properties
+ * @apiSuccess (200) {String} link.text text for the link
+ * @apiSuccess (200) {String} link.url URL for the link
+ * @apiSuccess (200) {String} long_description video long description
+ * @apiSuccess (200) {Boolean} offline_enabled whether video is enabled for offline viewing
+ * @apiSuccess (200) {String} original_filename the original file name for the uploaded video
+ * @apiSuccess (200) {String} projection used for 360 videos
+ * @apiSuccess (200) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {Object} schedule map of scheduling properties
+ * @apiSuccess (200) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} state state determines whether the video is playable or not
+ * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+ * @apiSuccess (200) {String[]} tags array of tags
+ * @apiSuccess (200) {Object} text_tracks array of text track maps
+ * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {String} text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (200) {String} text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+ * @apiSuccess (200) {String} updated_at when the video was last modified
  *
  *
  * @apiSuccessExample {Object} Success Response:
@@ -1873,16 +1873,16 @@
  *    	}
  *    ]
  *
- * @apiSuccess (Response Fields) {string} id the ingest job id
- * @apiSuccess (Response Fields) {string="processing", "publishing", "finished",  "failed"} state the current state of the ingest job
- * @apiSuccess (Response Fields) {string} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {string} video_id the video id
- * @apiSuccess (Response Fields) {string} error_code the error code if the job failed
- * @apiSuccess (Response Fields) {string} error_message the error message if the job failed
- * @apiSuccess (Response Fields) {string} updated_at when the status was last updated
- * @apiSuccess (Response Fields) {string} started_at when processing started
- * @apiSuccess (Response Fields) {string} priority priority of the job (normal or low)
- * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
+ * @apiSuccess (200) {string} id the ingest job id
+ * @apiSuccess (200) {string="processing", "publishing", "finished",  "failed"} state the current state of the ingest job
+ * @apiSuccess (200) {string} account_id the Video Cloud account id
+ * @apiSuccess (200) {string} video_id the video id
+ * @apiSuccess (200) {string} error_code the error code if the job failed
+ * @apiSuccess (200) {string} error_message the error message if the job failed
+ * @apiSuccess (200) {string} updated_at when the status was last updated
+ * @apiSuccess (200) {string} started_at when processing started
+ * @apiSuccess (200) {string} priority priority of the job (normal or low)
+ * @apiSuccess (200) {string} submitted_at when the job was submitted
  *
  *
  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
@@ -1943,16 +1943,16 @@
  *    	"submitted_at": "2017-11-07T13:56:12.435Z"
  *    }
  *
- * @apiSuccess (Response Fields) {string} id the ingest job id
- * @apiSuccess (Response Fields) {string="processing", "publishing", "finished",  "failed"} state the current state of the ingest job
- * @apiSuccess (Response Fields) {string} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {string} video_id the video id
- * @apiSuccess (Response Fields) {string} error_code the error code if the job failed
- * @apiSuccess (Response Fields) {string} error_message the error message if the job failed
- * @apiSuccess (Response Fields) {string} updated_at when the status was last updated
- * @apiSuccess (Response Fields) {string} started_at when processing started
- * @apiSuccess (Response Fields) {string} priority priority of the job (normal or low)
- * @apiSuccess (Response Fields) {string} submitted_at when the job was submitted
+ * @apiSuccess (200) {string} id the ingest job id
+ * @apiSuccess (200) {string="processing", "publishing", "finished",  "failed"} state the current state of the ingest job
+ * @apiSuccess (200) {string} account_id the Video Cloud account id
+ * @apiSuccess (200) {string} video_id the video id
+ * @apiSuccess (200) {string} error_code the error code if the job failed
+ * @apiSuccess (200) {string} error_message the error message if the job failed
+ * @apiSuccess (200) {string} updated_at when the status was last updated
+ * @apiSuccess (200) {string} started_at when processing started
+ * @apiSuccess (200) {string} priority priority of the job (normal or low)
+ * @apiSuccess (200) {string} submitted_at when the job was submitted
  *
  *
  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
@@ -1996,18 +1996,18 @@
   * @apiParamExample {String} Get Custom Fields Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/video_fields
   *
-  * @apiSuccess (Response Fields) {Object[]} custom_fields array of custom field maps
-  * @apiSuccess (Response Fields) {String} custom_fields.description description (instruction for user)
-  * @apiSuccess (Response Fields) {String} custom_fields.display_name display name
-  * @apiSuccess (Response Fields) {String[]} custom_fields.enum_values array of string values for select type fields
-  * @apiSuccess (Response Fields) {String} custom_fields.id data name for the field (used to access it in searches, etc.)
-  * @apiSuccess (Response Fields) {Boolean} custom_fields.required whether field must have a value before video can be active
-  * @apiSuccess (Response Fields) {String} custom_fields.type custom field type (enum or string)
-  * @apiSuccess (Response Fields) {String} max_custom_fields maximum number of custom fields for the account
-  * @apiSuccess (Response Fields) {Object[]} standard_fields array of standard field maps
-  * @apiSuccess (Response Fields) {String} standard_fields.description description (instruction for user)
-  * @apiSuccess (Response Fields) {String} standard_fields.id data name for the field (used to access it in searches, etc.)
-  * @apiSuccess (Response Fields) {Boolean} standard_fields.required whether field must have a value before video can be active
+  * @apiSuccess (200) {Object[]} custom_fields array of custom field maps
+  * @apiSuccess (200) {String} custom_fields.description description (instruction for user)
+  * @apiSuccess (200) {String} custom_fields.display_name display name
+  * @apiSuccess (200) {String[]} custom_fields.enum_values array of string values for select type fields
+  * @apiSuccess (200) {String} custom_fields.id data name for the field (used to access it in searches, etc.)
+  * @apiSuccess (200) {Boolean} custom_fields.required whether field must have a value before video can be active
+  * @apiSuccess (200) {String} custom_fields.type custom field type (enum or string)
+  * @apiSuccess (200) {String} max_custom_fields maximum number of custom fields for the account
+  * @apiSuccess (200) {Object[]} standard_fields array of standard field maps
+  * @apiSuccess (200) {String} standard_fields.description description (instruction for user)
+  * @apiSuccess (200) {String} standard_fields.id data name for the field (used to access it in searches, etc.)
+  * @apiSuccess (200) {Boolean} standard_fields.required whether field must have a value before video can be active
   *
   * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
