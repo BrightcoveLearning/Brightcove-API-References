@@ -67,22 +67,22 @@
   *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
   *    }
   *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The Live account id (if omitted, the request will still work)
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
-  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiSuccess {Object} application The ad application object
+  * @apiSuccess {String} application.account_id The Live account id (if omitted, the request will still work)
+  * @apiSuccess {String} application.description The ad application description
+  * @apiSuccess {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess {String} application.application_id The ad application id
+  * @apiSuccess {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
@@ -190,22 +190,22 @@
   *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
   *    }
   *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The Live account id (if omitted, the request will still work)
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
-  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiSuccess {Object} application The ad application object
+  * @apiSuccess {String} application.account_id The Live account id (if omitted, the request will still work)
+  * @apiSuccess {String} application.description The ad application description
+  * @apiSuccess {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess {String} application.application_id The ad application id
+  * @apiSuccess {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
@@ -259,22 +259,22 @@
     * @apiParam (URL Parameters) {Object} [account_id] The Live account id (if you leave this out, request will still work)
     *
     *
-    * @apiSuccess (Response Fields) {Object} application The ad application object
-    * @apiSuccess (Response Fields) {String} application.account_id The account id
-    * @apiSuccess (Response Fields) {String} application.description The ad application description
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
-    * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-    * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-    * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-    * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+    * @apiSuccess {Object} application The ad application object
+    * @apiSuccess {String} application.account_id The account id
+    * @apiSuccess {String} application.description The ad application description
+    * @apiSuccess {Object} application.application_ad_configuration The ad configuration object for the application
+    * @apiSuccess {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+    * @apiSuccess {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+    * @apiSuccess {Object} application.application_ad_configuration.headers The ad configuration headers
+    * @apiSuccess {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
+    * @apiSuccess {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+    * @apiSuccess {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+    * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+    * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+    * @apiSuccess {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+    * @apiSuccess {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+    * @apiSuccess {String} application.application_id The ad application id
+    * @apiSuccess {Boolean} inserted Whether the ad application was successfully inserted
     *
     * @apiSuccessExample {json} Success response for create ad application
     *    [
@@ -332,22 +332,22 @@
   * @apiParam (URL Parameters) {Object} application_id The ad application id
   *
   *
-  * @apiSuccess (Response Fields) {Object} application The ad application object
-  * @apiSuccess (Response Fields) {String} application.account_id The account id
-  * @apiSuccess (Response Fields) {String} application.description The ad application description
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.headers The ad configuration headers
-  * @apiSuccess (Response Fields) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
-  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
-  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
-  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
-  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
-  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
+  * @apiSuccess {Object} application The ad application object
+  * @apiSuccess {String} application.account_id The account id
+  * @apiSuccess {String} application.description The ad application description
+  * @apiSuccess {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess {Object} application.application_ad_configuration.headers The ad configuration headers
+  * @apiSuccess {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess {String} application.application_id The ad application id
+  * @apiSuccess {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
@@ -391,7 +391,7 @@
   * @apiParam (URL Parameters) {Object} application_id The ad application id
   *
   *
-  * @apiSuccess (Response Fields) {String} TODO
+  * @apiSuccess {String} TODO
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
@@ -430,13 +430,13 @@
   *    }
   *
   *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {String} media_source_asset_description User identifiable description for the slate
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
+  * @apiSuccess {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess {String} account_id Id for the account
+  * @apiSuccess {String} media_source_asset_description User identifiable description for the slate
+  * @apiSuccess {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess {String} media_source_asset_type The media asset type
+  * @apiSuccess {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess {String} media_source_asset_status Current status of the ingestion of the media asset
   *
   * @apiSuccessExample {json} Success response for create slate media resource
   *    {
@@ -472,12 +472,12 @@
   *
   * @apiParam (URL Parameters) {String} SLATE_MSA_ID URL The id for the Slate media source asset
   *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
+  * @apiSuccess {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess {String} account_id Id for the account
+  * @apiSuccess {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess {String} media_source_asset_type The media asset type
+  * @apiSuccess {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess {String} media_source_asset_status Current status of the ingestion of the media asset
   *
   * @apiSuccessExample {json} Success response for delete media source asset
   *    {
@@ -511,13 +511,13 @@
   *
   * @apiParam (URL Parameters) {String} ACCOUNT_ID URL The account id
   *
-  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-  * @apiSuccess (Response Fields) {String} account_id Id for the account
-  * @apiSuccess (Response Fields) {String} media_source_asset_description User identifiable description for the slate
-  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
+  * @apiSuccess {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess {String} account_id Id for the account
+  * @apiSuccess {String} media_source_asset_description User identifiable description for the slate
+  * @apiSuccess {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess {String} media_source_asset_type The media asset type
+  * @apiSuccess {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess {String} media_source_asset_status Current status of the ingestion of the media asset
   *
   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
   *    [
@@ -580,13 +580,13 @@
    *    }
    *
    *
-   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+   * @apiSuccess {Object} beacon_set The beacon set object
+   * @apiSuccess {Object[]} beacon_set.beacon_urls Array of beacon URLs
+   * @apiSuccess {String} beacon_set.beacon_urls.beacon_url Beacon URL
+   * @apiSuccess {String} beacon_set.beacon_urls.beacon_type Beacon type
+   * @apiSuccess {String} beacon_sets.beacon_set_id Id for the beacon set
+   * @apiSuccess {String} beacon_sets.account_id Id for the account
+   * @apiSuccess {Boolean} inserted Whether the beacon set was added successfully
    *
    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
    *    {
@@ -648,13 +648,13 @@
    *    }
    *
    *
-   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+   * @apiSuccess {Object} beacon_set The beacon set object
+   * @apiSuccess {Object[]} beacon_set.beacon_urls Array of beacon URLs
+   * @apiSuccess {String} beacon_set.beacon_urls.beacon_url Beacon URL
+   * @apiSuccess {String} beacon_set.beacon_urls.beacon_type Beacon type
+   * @apiSuccess {String} beacon_sets.beacon_set_id Id for the beacon set
+   * @apiSuccess {String} beacon_sets.account_id Id for the account
+   * @apiSuccess {Boolean} inserted Whether the beacon set was added successfully
    *
    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
    *    {
@@ -709,13 +709,13 @@
      * @apiParam (URL Parameters) {String} account_id The Live account id
      *
      *
-     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+     * @apiSuccess {Object} beacon_set The beacon set object
+     * @apiSuccess {Object[]} beacon_set.beacon_urls Array of beacon URLs
+     * @apiSuccess {String} beacon_set.beacon_urls.beacon_url Beacon URL
+     * @apiSuccess {String} beacon_set.beacon_urls.beacon_type Beacon type
+     * @apiSuccess {String} beacon_sets.beacon_set_id Id for the beacon set
+     * @apiSuccess {String} beacon_sets.account_id Id for the account
+     * @apiSuccess {Boolean} inserted Whether the beacon set was added successfully
      *
      * @apiSuccessExample {json} Success response for Get Beacon Sets
      *    [{
@@ -762,13 +762,13 @@
      *
      *
      *
-     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
-     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
-     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
-     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
-     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
-     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+     * @apiSuccess {Object} beacon_set The beacon set object
+     * @apiSuccess {Object[]} beacon_set.beacon_urls Array of beacon URLs
+     * @apiSuccess {String} beacon_set.beacon_urls.beacon_url Beacon URL
+     * @apiSuccess {String} beacon_set.beacon_urls.beacon_type Beacon type
+     * @apiSuccess {String} beacon_sets.beacon_set_id Id for the beacon set
+     * @apiSuccess {String} beacon_sets.account_id Id for the account
+     * @apiSuccess {Boolean} inserted Whether the beacon set was added successfully
      *
      * @apiSuccessExample {json} Success response for Get Beacon Sets for user
      *    [{
@@ -816,8 +816,8 @@
    *
    * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
    *
-   * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
-   * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
+   * @apiSuccess {String} beacon_set_id The beacon set id
+   * @apiSuccess {Boolean} deleted Whether the beacon set was deleted successfully
    *
    * @apiSuccessExample {json} Success response for Delete Beacon Set
    *    {

@@ -21,16 +21,16 @@
  *      --request GET \
  *    https://players.api.brightcove.com/v2/plugins/%40brightcove%2fvideojs-ima3
  *
- * @apiSuccess (Response Fields) {Object[]} versions array of objects describing the versions of the plugin
- * @apiSuccess (Response Fields) {String} versions.version_number the version number
- * @apiSuccess (Response Fields) {String} versions.minimum_template_version the minimum player version required to use this plugin
- * @apiSuccess (Response Fields) {String[]} versions.stylesheets URLs for the plungin stylesheet(s)
- * @apiSuccess (Response Fields) {String[]} versions.scripts URLs for the plungin script(s)
- * @apiSuccess (Response Fields) {String} documentation URLs for the plungin documentation
- * @apiSuccess (Response Fields) {String} description Description of the plugin
- * @apiSuccess (Response Fields) {String} id The plugin id
- * @apiSuccess (Response Fields) {String} name The plugin name
- * @apiSuccess (Response Fields) {String} current_version The current version of the plugin
+ * @apiSuccess {Object[]} versions array of objects describing the versions of the plugin
+ * @apiSuccess {String} versions.version_number the version number
+ * @apiSuccess {String} versions.minimum_template_version the minimum player version required to use this plugin
+ * @apiSuccess {String[]} versions.stylesheets URLs for the plungin stylesheet(s)
+ * @apiSuccess {String[]} versions.scripts URLs for the plungin script(s)
+ * @apiSuccess {String} documentation URLs for the plungin documentation
+ * @apiSuccess {String} description Description of the plugin
+ * @apiSuccess {String} id The plugin id
+ * @apiSuccess {String} name The plugin name
+ * @apiSuccess {String} current_version The current version of the plugin
  *
  * @apiSuccessExample {JSON} Success Response:
  *    {
@@ -85,16 +85,16 @@
  *      --request GET \
  *    https://players.api.brightcove.com/v2/plugins/%40brightcove%2fvideojs-ima3
  *
- * @apiSuccess (Response Fields) {Object[]} versions array of objects describing the versions of the plugin
- * @apiSuccess (Response Fields) {String} versions.version_number the version number
- * @apiSuccess (Response Fields) {String} versions.minimum_template_version the minimum player version required to use this plugin
- * @apiSuccess (Response Fields) {String[]} versions.stylesheets URLs for the plungin stylesheet(s)
- * @apiSuccess (Response Fields) {String[]} versions.scripts URLs for the plungin script(s)
- * @apiSuccess (Response Fields) {String} documentation URLs for the plungin documentation
- * @apiSuccess (Response Fields) {String} description Description of the plugin
- * @apiSuccess (Response Fields) {String} id The plugin id
- * @apiSuccess (Response Fields) {String} name The plugin name
- * @apiSuccess (Response Fields) {String} current_version The current version of the plugin
+ * @apiSuccess {Object[]} versions array of objects describing the versions of the plugin
+ * @apiSuccess {String} versions.version_number the version number
+ * @apiSuccess {String} versions.minimum_template_version the minimum player version required to use this plugin
+ * @apiSuccess {String[]} versions.stylesheets URLs for the plungin stylesheet(s)
+ * @apiSuccess {String[]} versions.scripts URLs for the plungin script(s)
+ * @apiSuccess {String} documentation URLs for the plungin documentation
+ * @apiSuccess {String} description Description of the plugin
+ * @apiSuccess {String} id The plugin id
+ * @apiSuccess {String} name The plugin name
+ * @apiSuccess {String} current_version The current version of the plugin
  *
  * @apiSuccessExample {JSON} Success Response:
  *    {

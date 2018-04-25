@@ -23,13 +23,13 @@
  * @apiParamExample {String} List Channels Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels
  *
- * @apiSuccess (Response Fields) {String} account_id master account id
- * @apiSuccess (Response Fields) {String} name channel name
- * @apiSuccess (Response Fields) {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
- * @apiSuccess (Response Fields) {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
- * @apiSuccess (Response Fields) {String} account_name master account name
- * @apiSuccess (Response Fields) {DateTime} created_at when the channel was created
- * @apiSuccess (Response Fields) {DateTime} updated_at when the channel was last updated
+ * @apiSuccess {String} account_id master account id
+ * @apiSuccess {String} name channel name
+ * @apiSuccess {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
+ * @apiSuccess {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiSuccess {String} account_name master account name
+ * @apiSuccess {DateTime} created_at when the channel was created
+ * @apiSuccess {DateTime} updated_at when the channel was last updated
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -93,13 +93,13 @@
  * @apiParamExample {String} Get Channel Details Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default
  *
- * @apiSuccess (Response Fields) {String} account_id master account id
- * @apiSuccess (Response Fields) {String} name channel name
- * @apiSuccess (Response Fields) {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
- * @apiSuccess (Response Fields) {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
- * @apiSuccess (Response Fields) {String} account_name master account name
- * @apiSuccess (Response Fields) {DateTime} created_at when the channel was created
- * @apiSuccess (Response Fields) {DateTime} updated_at when the channel was last updated
+ * @apiSuccess {String} account_id master account id
+ * @apiSuccess {String} name channel name
+ * @apiSuccess {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
+ * @apiSuccess {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiSuccess {String} account_name master account name
+ * @apiSuccess {DateTime} created_at when the channel was created
+ * @apiSuccess {DateTime} updated_at when the channel was last updated
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -166,13 +166,13 @@
  *    	"enforce_custom_fields" : true,
  *    	"enforce_geo" : true
  *    } *
- * @apiSuccess (Response Fields) {String} account_id master account id
- * @apiSuccess (Response Fields) {String} name channel name
- * @apiSuccess (Response Fields) {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
- * @apiSuccess (Response Fields) {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
- * @apiSuccess (Response Fields) {String} account_name master account name
- * @apiSuccess (Response Fields) {DateTime} created_at when the channel was created
- * @apiSuccess (Response Fields) {DateTime} updated_at when the channel was last updated
+ * @apiSuccess {String} account_id master account id
+ * @apiSuccess {String} name channel name
+ * @apiSuccess {Boolean} enforce_custom_fields if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared
+ * @apiSuccess {Boolean} enforce_geo if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering **Note: this field is currently ignored, but this restriction will be enabled later**
+ * @apiSuccess {String} account_name master account name
+ * @apiSuccess {DateTime} created_at when the channel was created
+ * @apiSuccess {DateTime} updated_at when the channel was last updated
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -235,9 +235,9 @@
  * @apiParamExample {String} List Channel Affiliates Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default/members
  *
- * @apiSuccess (Response Fields) {String} account_id affiliate account id
- * @apiSuccess (Response Fields) {String} account_name affiliate account name
- * @apiSuccess (Response Fields) {Boolean} approved whether the affiliate has approved the relationship
+ * @apiSuccess {String} account_id affiliate account id
+ * @apiSuccess {String} account_name affiliate account name
+ * @apiSuccess {Boolean} approved whether the affiliate has approved the relationship
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -305,7 +305,7 @@
  *         "account_id": "1752604059001"
  *     }
  *
- * @apiSuccess (Response Fields) {String} account_id affiliate account id
+ * @apiSuccess {String} account_id affiliate account id
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -415,15 +415,15 @@
   * @apiParamExample {String} List Contracts Example:
   *     https://cms.api.brightcove.com/v1/accounts/1752604059001/contracts
   *
-  * @apiSuccess (Response Fields) {String} account_id affiliate account id
-  * @apiSuccess (Response Fields) {Boolean} approved whether the contract is approved
-  * @apiSuccess (Response Fields) {Boolean} auto_accept whether shared videos will be automatically accepted
-  * @apiSuccess (Response Fields) {DateTime} approved_at when the contract was approved
-  * @apiSuccess (Response Fields) {DateTime} created_at when the contract was created
-  * @apiSuccess (Response Fields) {DateTime} updated_at when the contract was last updated
-  * @apiSuccess (Response Fields) {Object} channel the channel this contract belongs to
-  * @apiSuccess (Response Fields) {String} channel.account_id the id of the Master account
-  * @apiSuccess (Response Fields) {String} channel.name the name of the channel
+  * @apiSuccess {String} account_id affiliate account id
+  * @apiSuccess {Boolean} approved whether the contract is approved
+  * @apiSuccess {Boolean} auto_accept whether shared videos will be automatically accepted
+  * @apiSuccess {DateTime} approved_at when the contract was approved
+  * @apiSuccess {DateTime} created_at when the contract was created
+  * @apiSuccess {DateTime} updated_at when the contract was last updated
+  * @apiSuccess {Object} channel the channel this contract belongs to
+  * @apiSuccess {String} channel.account_id the id of the Master account
+  * @apiSuccess {String} channel.name the name of the channel
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200 OK
@@ -490,15 +490,15 @@
    * @apiParamExample {String} List Contracts Example:
    *     https://cms.api.brightcove.com/v1/accounts/1752604059001/contracts/57838016001
    *
-   * @apiSuccess (Response Fields) {String} account_id affiliate account id
-   * @apiSuccess (Response Fields) {Boolean} approved whether the contract is approved
-   * @apiSuccess (Response Fields) {Boolean} auto_accept whether shared videos will be automatically accepted
-   * @apiSuccess (Response Fields) {DateTime} approved_at when the contract was approved
-   * @apiSuccess (Response Fields) {DateTime} created_at when the contract was created
-   * @apiSuccess (Response Fields) {DateTime} updated_at when the contract was last updated
-   * @apiSuccess (Response Fields) {Object} channel the channel this contract belongs to
-   * @apiSuccess (Response Fields) {String} channel.account_id the id of the Master account
-   * @apiSuccess (Response Fields) {String} channel.name the name of the channel
+   * @apiSuccess {String} account_id affiliate account id
+   * @apiSuccess {Boolean} approved whether the contract is approved
+   * @apiSuccess {Boolean} auto_accept whether shared videos will be automatically accepted
+   * @apiSuccess {DateTime} approved_at when the contract was approved
+   * @apiSuccess {DateTime} created_at when the contract was created
+   * @apiSuccess {DateTime} updated_at when the contract was last updated
+   * @apiSuccess {Object} channel the channel this contract belongs to
+   * @apiSuccess {String} channel.account_id the id of the Master account
+   * @apiSuccess {String} channel.name the name of the channel
    *
    * @apiSuccessExample {json} Success Response:
    *     HTTP/1.1 200 OK
@@ -573,15 +573,15 @@
   *      "auto_accept": true
   *    }
   *
-  * @apiSuccess (Response Fields) {String} account_id affiliate account id
-  * @apiSuccess (Response Fields) {Boolean} approved whether the contract is approved
-  * @apiSuccess (Response Fields) {Boolean} auto_accept whether shared videos will be automatically accepted
-  * @apiSuccess (Response Fields) {DateTime} approved_at when the contract was approved
-  * @apiSuccess (Response Fields) {DateTime} created_at when the contract was created
-  * @apiSuccess (Response Fields) {DateTime} updated_at when the contract was last updated
-  * @apiSuccess (Response Fields) {Object} channel the channel this contract belongs to
-  * @apiSuccess (Response Fields) {String} channel.account_id the id of the Master account
-  * @apiSuccess (Response Fields) {String} channel.name the name of the channel
+  * @apiSuccess {String} account_id affiliate account id
+  * @apiSuccess {Boolean} approved whether the contract is approved
+  * @apiSuccess {Boolean} auto_accept whether shared videos will be automatically accepted
+  * @apiSuccess {DateTime} approved_at when the contract was approved
+  * @apiSuccess {DateTime} created_at when the contract was created
+  * @apiSuccess {DateTime} updated_at when the contract was last updated
+  * @apiSuccess {Object} channel the channel this contract belongs to
+  * @apiSuccess {String} channel.account_id the id of the Master account
+  * @apiSuccess {String} channel.name the name of the channel
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200 OK
@@ -647,12 +647,12 @@
    * @apiParamExample {String} List Shares Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5553744346001/shares
    *
-   * @apiSuccess (Response Fields) {String} video_id the video id
-   * @apiSuccess (Response Fields) {String} affiliate_id the id of the affiliate account the video is shared to
-   * @apiSuccess (Response Fields) {String} affiliate_video_id the id of the shared video in the affiliate account
-   * @apiSuccess (Response Fields) {String} statue the status of the sharing - either `PROCESSING`, `COMPLETE`, or `FAILED`
-   * @apiSuccess (Response Fields) {DateTime} shared_at when the video was shared
-   * @apiSuccess (Response Fields) {DateTime} updated_at the video was last updated in the affiliate account
+   * @apiSuccess {String} video_id the video id
+   * @apiSuccess {String} affiliate_id the id of the affiliate account the video is shared to
+   * @apiSuccess {String} affiliate_video_id the id of the shared video in the affiliate account
+   * @apiSuccess {String} statue the status of the sharing - either `PROCESSING`, `COMPLETE`, or `FAILED`
+   * @apiSuccess {DateTime} shared_at when the video was shared
+   * @apiSuccess {DateTime} updated_at the video was last updated in the affiliate account
    *
    * @apiSuccessExample {json} Success Response:
    *     HTTP/1.1 200 OK
@@ -733,12 +733,12 @@
    *        {"id": 1485884786001}
    *     ]
    *
-   * @apiSuccess (Response Fields) {String} video_id the video id
-   * @apiSuccess (Response Fields) {String} affiliate_id the id of the affiliate account the video is shared to
-   * @apiSuccess (Response Fields) {String} affiliate_video_id the id of the shared video in the affiliate account
-   * @apiSuccess (Response Fields) {String} statue the status of the sharing - either `PROCESSING`, `COMPLETE`, or `FAILED`
-   * @apiSuccess (Response Fields) {DateTime} shared_at when the video was shared
-   * @apiSuccess (Response Fields) {DateTime} updated_at the video was last updated in the affiliate account
+   * @apiSuccess {String} video_id the video id
+   * @apiSuccess {String} affiliate_id the id of the affiliate account the video is shared to
+   * @apiSuccess {String} affiliate_video_id the id of the shared video in the affiliate account
+   * @apiSuccess {String} statue the status of the sharing - either `PROCESSING`, `COMPLETE`, or `FAILED`
+   * @apiSuccess {DateTime} shared_at when the video was shared
+   * @apiSuccess {DateTime} updated_at the video was last updated in the affiliate account
    *
    * @apiSuccessExample {json} Success Response:
    *     HTTP/1.1 200 OK
@@ -862,75 +862,75 @@
     *
     * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} state determines whether the video is accepted (`ACTIVE`) or rejected (`INACTIVE`)
     *
-    * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+    * @apiSuccess {String} updated_at when the video was last modified
     *
     * @apiParamExample {json} Update Video Example:
     *     {
     *         "state": "ACTIVE"
     *     }
     *
-    * @apiSuccess (Response Fields) {String} id video id
-    * @apiSuccess (Response Fields) {String} name video title
-    * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
-    * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
-    * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
-    * @apiSuccess (Response Fields) {String} created_at when the video was created
-    * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
-    * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
-    * @apiSuccess (Response Fields) {String} cue_points.name cue point name
-    * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
-    * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
-    * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
-    * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
-    * @apiSuccess (Response Fields) {String} description video short description
-    * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
-    * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
-    * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
-    * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
-    * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
-    * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
-    * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
-    * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
-    * @apiSuccess (Response Fields) {Object} images map of image maps
-    * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
-    * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
-    * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
-    * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
-    * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
-    * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
-    * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
-    * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
-    * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
-    * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
-    * @apiSuccess (Response Fields) {Object} link map of scheduling properties
-    * @apiSuccess (Response Fields) {String} link.text text for the link
-    * @apiSuccess (Response Fields) {String} link.url URL for the link
-    * @apiSuccess (Response Fields) {String} long_description video long description
-    * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
-    * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
-    * @apiSuccess (Response Fields) {String} projection used for 360 videos
-    * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-    * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
-    * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
-    * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-    * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-    * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
-    * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
-    * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
-    * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
-    * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
-    * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
-    * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
-    * @apiSuccess (Response Fields) {String[]} tags array of tags
-    * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
-    * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
-    * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
-    * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
-    * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
-    * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
-    * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
-    * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
-    * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+    * @apiSuccess {String} id video id
+    * @apiSuccess {String} name video title
+    * @apiSuccess {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+    * @apiSuccess {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
+    * @apiSuccess {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
+    * @apiSuccess {String} created_at when the video was created
+    * @apiSuccess {Object} custom_fields={} map of fieldname-value pairs
+    * @apiSuccess {Object} cue_points array of cue point maps
+    * @apiSuccess {String} cue_points.name cue point name
+    * @apiSuccess {String} cue_points.type=AD cue point type
+    * @apiSuccess {Number} cue_points.time time of the cue point in seconds; example: 10.527
+    * @apiSuccess {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+    * @apiSuccess {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+    * @apiSuccess {String} description video short description
+    * @apiSuccess {Number} duration video duration in milliseconds
+    * @apiSuccess {String} digital_master_id asset id of the digital master
+    * @apiSuccess {String} economics whether video is AD_SUPPORTED
+    * @apiSuccess {Object} geo map of geo-filtering properties
+    * @apiSuccess {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+    * @apiSuccess {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+    * @apiSuccess {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
+    * @apiSuccess {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
+    * @apiSuccess {Object} images map of image maps
+    * @apiSuccess {Object} images.poster map of poster properties
+    * @apiSuccess {String} images.poster.asset_id asset id for the poster
+    * @apiSuccess {Object[]} images.poster.sources array of poster source maps
+    * @apiSuccess {String} images.poster.sources.src URL for a poster source image
+    * @apiSuccess {String} images.poster.src URL for the default poster source image
+    * @apiSuccess {Object} images.thumbnail map of thumbnail properties
+    * @apiSuccess {String} images.thumbnail.asset_id asset id for the thumbnail
+    * @apiSuccess {Object[]} images.thumbnail.sources array of thumbnail source maps
+    * @apiSuccess {String} images.thumbnail.sources.src URL for a thumbnail source image
+    * @apiSuccess {String} images.thumbnail.src URL for the default thumbnail source image
+    * @apiSuccess {Object} link map of scheduling properties
+    * @apiSuccess {String} link.text text for the link
+    * @apiSuccess {String} link.url URL for the link
+    * @apiSuccess {String} long_description video long description
+    * @apiSuccess {Boolean} offline_enabled whether video is enabled for offline viewing
+    * @apiSuccess {String} original_filename the original file name for the uploaded video
+    * @apiSuccess {String} projection used for 360 videos
+    * @apiSuccess {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+    * @apiSuccess {String} reference_id video reference-id (must be unique within the account)
+    * @apiSuccess {Object} schedule map of scheduling properties
+    * @apiSuccess {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+    * @apiSuccess {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+    * @apiSuccess {String} state state determines whether the video is playable or not
+    * @apiSuccess {Object} sharing map of the sharing properties for the video
+    * @apiSuccess {Boolean} sharing.by_external_acct whether the video was shared from another account
+    * @apiSuccess {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+    * @apiSuccess {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+    * @apiSuccess {Boolean} sharing.to_external_acct whether the video is shared to another account
+    * @apiSuccess {Boolean} sharing.by_reference whether the video is shared by reference
+    * @apiSuccess {String[]} tags array of tags
+    * @apiSuccess {Object} text_tracks array of text track maps
+    * @apiSuccess {String} text_tracks.src URL for the .vtt file
+    * @apiSuccess {String} text_tracks.kind kind of text track
+    * @apiSuccess {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+    * @apiSuccess {String} text_tracks.mime_type mime-type for the track
+    * @apiSuccess {String} text_tracks.label label for the track
+    * @apiSuccess {Boolean} text_tracks.default whether this is the default track
+    * @apiSuccess {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+    * @apiSuccess {String} updated_at when the video was last modified
     *
     *
     * @apiSuccessExample {json} Success Response:

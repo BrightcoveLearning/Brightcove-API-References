@@ -146,7 +146,7 @@
  *        ]
  *    }
  *
- * @apiSuccess (Response Fields) {String} requestId The id for request
+ * @apiSuccess {String} requestId The id for request
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

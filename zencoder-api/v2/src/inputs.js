@@ -26,31 +26,31 @@
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
   *
-  * @apiSuccess (Response Fields) {Number} audio_bitrate_in_kbps Audio bitrate of the input media file
-  * @apiSuccess (Response Fields) {String} audio_codec Audio codec of the input media file
-  * @apiSuccess (Response Fields) {Number} audio_sample_rate Audio sample rate of the input media file
-  * @apiSuccess (Response Fields) {Number} audio_tracks The number of audio tracks
-  * @apiSuccess (Response Fields) {Number} channels The number of audio channels
-  * @apiSuccess (Response Fields) {DateTimeString} created_at ISO 8601 date-time string representing when the input file was created
-  * @apiSuccess (Response Fields) {Number} duration_in_ms duration_in_ms.
-  * @apiSuccess (Response Fields) {String} error_class Type of error thrown
-  * @apiSuccess (Response Fields) {String} error_message Error message thrown
-  * @apiSuccess (Response Fields) {Number} file_size_bytes File size
-  * @apiSuccess (Response Fields) {DateTimeString} finished_at ISO 8601 date-time string representing when the input file was finished
-  * @apiSuccess (Response Fields) {String} format Format of the input file
-  * @apiSuccess (Response Fields) {Number} frame_rate Frame rate of the input file
-  * @apiSuccess (Response Fields) {Number} height Frame height of the input file
-  * @apiSuccess (Response Fields) {String} id System id of the input file
-  * @apiSuccess (Response Fields) {String} md5_checksum Checksum for the input file
-  * @apiSuccess (Response Fields) {Boolean} privacy Privacy mode
-  * @apiSuccess (Response Fields) {String} state Current state of input file processing
-  * @apiSuccess (Response Fields) {Boolean} test Whether run in test (integration) mode
-  * @apiSuccess (Response Fields) {DateTimeString} updated_at ISO 8601 date-time string representing when the input file was last modified
-  * @apiSuccess (Response Fields) {Number} video_bitrate_in_kbps Video bitrate of the input media file
-  * @apiSuccess (Response Fields) {String} video_codec Video codec of the input media file
-  * @apiSuccess (Response Fields) {Number} width Frame width of the input media file
-  * @apiSuccess (Response Fields) {Number} total_bitrate_in_kbps Total bitrate of the input media file
-  * @apiSuccess (Response Fields) {String} url URL for the input media file
+  * @apiSuccess {Number} audio_bitrate_in_kbps Audio bitrate of the input media file
+  * @apiSuccess {String} audio_codec Audio codec of the input media file
+  * @apiSuccess {Number} audio_sample_rate Audio sample rate of the input media file
+  * @apiSuccess {Number} audio_tracks The number of audio tracks
+  * @apiSuccess {Number} channels The number of audio channels
+  * @apiSuccess {DateTimeString} created_at ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess {Number} duration_in_ms duration_in_ms.
+  * @apiSuccess {String} error_class Type of error thrown
+  * @apiSuccess {String} error_message Error message thrown
+  * @apiSuccess {Number} file_size_bytes File size
+  * @apiSuccess {DateTimeString} finished_at ISO 8601 date-time string representing when the input file was finished
+  * @apiSuccess {String} format Format of the input file
+  * @apiSuccess {Number} frame_rate Frame rate of the input file
+  * @apiSuccess {Number} height Frame height of the input file
+  * @apiSuccess {String} id System id of the input file
+  * @apiSuccess {String} md5_checksum Checksum for the input file
+  * @apiSuccess {Boolean} privacy Privacy mode
+  * @apiSuccess {String} state Current state of input file processing
+  * @apiSuccess {Boolean} test Whether run in test (integration) mode
+  * @apiSuccess {DateTimeString} updated_at ISO 8601 date-time string representing when the input file was last modified
+  * @apiSuccess {Number} video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess {String} video_codec Video codec of the input media file
+  * @apiSuccess {Number} width Frame width of the input media file
+  * @apiSuccess {Number} total_bitrate_in_kbps Total bitrate of the input media file
+  * @apiSuccess {String} url URL for the input media file
   *
   * @apiSuccessExample {json} Success response for get input details
   *    {
@@ -94,10 +94,10 @@
   *
   *
   *
-  * @apiSuccess (Response Fields) {String} state State for the input: pending, waiting, processing, finished, failed, or cancelled
-  * @apiSuccess (Response Fields) {Number} progress The overall percentage complete
-  * @apiSuccess (Response Fields) {String} current_event The current activity
-  * @apiSuccess (Response Fields) {Number} current_event_progress The current activity percentage complete
+  * @apiSuccess {String} state State for the input: pending, waiting, processing, finished, failed, or cancelled
+  * @apiSuccess {Number} progress The overall percentage complete
+  * @apiSuccess {String} current_event The current activity
+  * @apiSuccess {Number} current_event_progress The current activity percentage complete
   *
   * @apiSuccessExample {json} Success response for Input Progress
   *    {

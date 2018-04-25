@@ -37,25 +37,25 @@
  *    	"name": "SampleClient"
  *    }
  *
- * @apiSuccess (Response Fields) {String} name credential name
- * @apiSuccess (Response Fields) {String} name_html html version of credential name
- * @apiSuccess (Response Fields) {String} description credential description
- * @apiSuccess (Response Fields) {String} description_html html version of credential description
- * @apiSuccess (Response Fields) {String} client_id the client id
- * @apiSuccess (Response Fields) {String} client_secret client secret &mdash; note that this is the only request that will return the client secret; if you do not save it, there is no way to retrieve it again
- * @apiSuccess (Response Fields) {String} type the type - currently always equals `credential`
- * @apiSuccess (Response Fields) {String} issued_to the email address of the account user issued to
- * @apiSuccess (Response Fields) {String} issued_user system id for user issued to
- * @apiSuccess (Response Fields) {String} redirect_url currently not used
- * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
- * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {String} expires_at when the credential expires
- * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
- * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
- * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess {String} name credential name
+ * @apiSuccess {String} name_html html version of credential name
+ * @apiSuccess {String} description credential description
+ * @apiSuccess {String} description_html html version of credential description
+ * @apiSuccess {String} client_id the client id
+ * @apiSuccess {String} client_secret client secret &mdash; note that this is the only request that will return the client secret; if you do not save it, there is no way to retrieve it again
+ * @apiSuccess {String} type the type - currently always equals `credential`
+ * @apiSuccess {String} issued_to the email address of the account user issued to
+ * @apiSuccess {String} issued_user system id for user issued to
+ * @apiSuccess {String} redirect_url currently not used
+ * @apiSuccess {Boolean} trusted whether the client is trusted
+ * @apiSuccess {Boolean} revoked whether the credential is revoked
+ * @apiSuccess {String} expires_at when the credential expires
+ * @apiSuccess {String} issued_at when the credential was issued
+ * @apiSuccess {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiSuccess {Object} maximum_scope.identity map defining the account and operations
+ * @apiSuccess {String} maximum_scope.identity.type the type of account
+ * @apiSuccess {String} maximum_scope.identity.account-id the account ID
+ * @apiSuccess {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -124,25 +124,25 @@
  * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v3/client_credentials?origin_account_ids=57838016001,20318290001
  *
- * @apiSuccess (Response Fields) {String} name credential name
- * @apiSuccess (Response Fields) {String} name_html html version of credential name
- * @apiSuccess (Response Fields) {String} description credential description
- * @apiSuccess (Response Fields) {String} description_html html version of credential description
- * @apiSuccess (Response Fields) {String} client_id the client id
- * @apiSuccess (Response Fields) {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
- * @apiSuccess (Response Fields) {String} type the type - currently always equals `credential`
- * @apiSuccess (Response Fields) {String} issued_to the email address of the account user issued to
- * @apiSuccess (Response Fields) {String} issued_user system id for user issued to
- * @apiSuccess (Response Fields) {String} redirect_url currently not used
- * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
- * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {String} expires_at when the credential expires
- * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
- * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
- * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess {String} name credential name
+ * @apiSuccess {String} name_html html version of credential name
+ * @apiSuccess {String} description credential description
+ * @apiSuccess {String} description_html html version of credential description
+ * @apiSuccess {String} client_id the client id
+ * @apiSuccess {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
+ * @apiSuccess {String} type the type - currently always equals `credential`
+ * @apiSuccess {String} issued_to the email address of the account user issued to
+ * @apiSuccess {String} issued_user system id for user issued to
+ * @apiSuccess {String} redirect_url currently not used
+ * @apiSuccess {Boolean} trusted whether the client is trusted
+ * @apiSuccess {Boolean} revoked whether the credential is revoked
+ * @apiSuccess {String} expires_at when the credential expires
+ * @apiSuccess {String} issued_at when the credential was issued
+ * @apiSuccess {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiSuccess {Object} maximum_scope.identity map defining the account and operations
+ * @apiSuccess {String} maximum_scope.identity.type the type of account
+ * @apiSuccess {String} maximum_scope.identity.account-id the account ID
+ * @apiSuccess {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -235,25 +235,25 @@
  * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v3/client_credentials/1fa5f786-3418-4a69-8b78-6772f283d838
  *
- * @apiSuccess (Response Fields) {String} name credential name
- * @apiSuccess (Response Fields) {String} name_html html version of credential name
- * @apiSuccess (Response Fields) {String} description credential description
- * @apiSuccess (Response Fields) {String} description_html html version of credential description
- * @apiSuccess (Response Fields) {String} client_id the client id
- * @apiSuccess (Response Fields) {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
- * @apiSuccess (Response Fields) {String} type the type - currently always equals `credential`
- * @apiSuccess (Response Fields) {String} issued_to the email address of the account user issued to
- * @apiSuccess (Response Fields) {String} issued_user system id for user issued to
- * @apiSuccess (Response Fields) {String} redirect_url currently not used
- * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
- * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {String} expires_at when the credential expires
- * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
- * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
- * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess {String} name credential name
+ * @apiSuccess {String} name_html html version of credential name
+ * @apiSuccess {String} description credential description
+ * @apiSuccess {String} description_html html version of credential description
+ * @apiSuccess {String} client_id the client id
+ * @apiSuccess {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
+ * @apiSuccess {String} type the type - currently always equals `credential`
+ * @apiSuccess {String} issued_to the email address of the account user issued to
+ * @apiSuccess {String} issued_user system id for user issued to
+ * @apiSuccess {String} redirect_url currently not used
+ * @apiSuccess {Boolean} trusted whether the client is trusted
+ * @apiSuccess {Boolean} revoked whether the credential is revoked
+ * @apiSuccess {String} expires_at when the credential expires
+ * @apiSuccess {String} issued_at when the credential was issued
+ * @apiSuccess {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiSuccess {Object} maximum_scope.identity map defining the account and operations
+ * @apiSuccess {String} maximum_scope.identity.type the type of account
+ * @apiSuccess {String} maximum_scope.identity.account-id the account ID
+ * @apiSuccess {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -329,25 +329,25 @@
  *        "name":"SampleClient"
  *    }
  *
- * @apiSuccess (Response Fields) {String} name credential name
- * @apiSuccess (Response Fields) {String} name_html html version of credential name
- * @apiSuccess (Response Fields) {String} description credential description
- * @apiSuccess (Response Fields) {String} description_html html version of credential description
- * @apiSuccess (Response Fields) {String} client_id the client id
- * @apiSuccess (Response Fields) {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
- * @apiSuccess (Response Fields) {String} type the type - currently always equals `credential`
- * @apiSuccess (Response Fields) {String} issued_to the email address of the account user issued to
- * @apiSuccess (Response Fields) {String} issued_user system id for user issued to
- * @apiSuccess (Response Fields) {String} redirect_url currently not used
- * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
- * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {String} expires_at when the credential expires
- * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
- * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
- * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
- * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
- * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiSuccess {String} name credential name
+ * @apiSuccess {String} name_html html version of credential name
+ * @apiSuccess {String} description credential description
+ * @apiSuccess {String} description_html html version of credential description
+ * @apiSuccess {String} client_id the client id
+ * @apiSuccess {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
+ * @apiSuccess {String} type the type - currently always equals `credential`
+ * @apiSuccess {String} issued_to the email address of the account user issued to
+ * @apiSuccess {String} issued_user system id for user issued to
+ * @apiSuccess {String} redirect_url currently not used
+ * @apiSuccess {Boolean} trusted whether the client is trusted
+ * @apiSuccess {Boolean} revoked whether the credential is revoked
+ * @apiSuccess {String} expires_at when the credential expires
+ * @apiSuccess {String} issued_at when the credential was issued
+ * @apiSuccess {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiSuccess {Object} maximum_scope.identity map defining the account and operations
+ * @apiSuccess {String} maximum_scope.identity.type the type of account
+ * @apiSuccess {String} maximum_scope.identity.account-id the account ID
+ * @apiSuccess {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

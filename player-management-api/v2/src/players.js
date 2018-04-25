@@ -475,12 +475,12 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} url URL to published player
- * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
- * @apiSuccess (Response Fields) {String} preview_url URL to preview player
- * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} url URL to published player
+ * @apiSuccess {String} embed_code published player iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess {String} preview_url URL to preview player
+ * @apiSuccess {String} preview_embed_code preview player iframe tag
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -524,9 +524,9 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} preview_url URL to preview player
- * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} preview_url URL to preview player
+ * @apiSuccess {String} preview_embed_code preview player iframe tag
  *
  * @apiSuccessExample {JSON} Success Response: The response will contain links to preview player versions, so you will have to explicitly publish to get the optimized version of the player.
  * {
@@ -565,10 +565,10 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/publish
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} url URL to published player
- * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} url URL to published player
+ * @apiSuccess {String} embed_code published player iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -603,7 +603,7 @@
  *   --data '{}' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
- * @apiSuccess (Response Fields) {String} message report of player deletion
+ * @apiSuccess {String} message report of player deletion
  *
  * @apiSuccessExample {JSON} Success Response:
  * {

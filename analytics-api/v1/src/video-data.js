@@ -18,7 +18,7 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
  *
- * @apiSuccess (Response Fields) {Number} alltime_video_views all-time video views
+ * @apiSuccess {Number} alltime_video_views all-time video views
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

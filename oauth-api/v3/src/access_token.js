@@ -16,9 +16,9 @@
  * @apiParamExample {String} Create Access Token Example:
  *     https://oauth.brightcove.com/v3/access_token?grant_type=client_credentials
  *
- * @apiSuccess (Response Fields) {String} access_token the access token
- * @apiSuccess (Response Fields) {Number} expires_in how long before the token expires (seconds)
- * @apiSuccess (Response Fields) {String} type the token type - always "Bearer"
+ * @apiSuccess {String} access_token the access token
+ * @apiSuccess {Number} expires_in how long before the token expires (seconds)
+ * @apiSuccess {String} type the token type - always "Bearer"
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created

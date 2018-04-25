@@ -23,30 +23,30 @@
  * @apiParamExample {String} Rendition list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets
  *
- * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
- * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
- * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
- * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ * @apiSuccess {String} account_id the Video Cloud account id
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess {Number} frame_height frame height in pixels
+ * @apiSuccess {Number} frame_width frame width in pixels
+ * @apiSuccess {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} video_codec not applicable to remote assets
+ * @apiSuccess {String} video_container not applicable to remote assets
+ * @apiSuccess {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {Object{}} Success Response:
  *    HTTP/1.1 200 OK
@@ -174,30 +174,30 @@
  * @apiParamExample {String} Rendition list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/renditions
  *
- * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
- * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
- * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
- * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ * @apiSuccess {String} account_id the Video Cloud account id
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess {Number} frame_height frame height in pixels
+ * @apiSuccess {Number} frame_width frame width in pixels
+ * @apiSuccess {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} video_codec not applicable to remote assets
+ * @apiSuccess {String} video_container not applicable to remote assets
+ * @apiSuccess {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
@@ -308,30 +308,30 @@
  * @apiParamExample {String} Get Rendition Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/rendition/77874616001
  *
- * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
- * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
- * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
- * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ * @apiSuccess {String} account_id the Video Cloud account id
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} whether this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess {Number} frame_height frame height in pixels
+ * @apiSuccess {Number} frame_width frame width in pixels
+ * @apiSuccess {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} video_codec not applicable to remote assets
+ * @apiSuccess {String} video_container not applicable to remote assets
+ * @apiSuccess {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -432,29 +432,29 @@
  *        "frame_width": 640
  *    }
  *
- * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
- * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} account_id the Video Cloud account id
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess {Number} frame_height frame height in pixels
+ * @apiSuccess {Number} frame_width frame width in pixels
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
  * @apiParam (Request Body Fields) {String} video_codec the video codec &mdash; support for video formats -  varies across browsers and devices; for the broadest support use `h264` &mdash; __remote assets will not work properly without this field__
  * @apiParam (Request Body Fields) {String} video_container the video container such as `MP4` or `M2TS` &mdash; __remote assets will not work properly without this field__
- * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ * @apiSuccess {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -600,29 +600,29 @@
  *        "frame_width": 640
  *    }
  *
- * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
- * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
- * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
- * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
- * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
- * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ * @apiSuccess {String} account_id the Video Cloud account id
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+ * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+ * @apiSuccess {Number} frame_height frame height in pixels
+ * @apiSuccess {Number} frame_width frame width in pixels
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} video_codec not applicable to remote assets
+ * @apiSuccess {String} video_container not applicable to remote assets
+ * @apiSuccess {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -792,18 +792,18 @@
   * @apiParamExample {String} Rendition list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/renditions
   *
-  * @apiSuccess (Response Fields) {String} rendition_id the rendition id
-  * @apiSuccess (Response Fields) {Boolean} media_type media type for the rendition (`audio` or `video`)
-  * @apiSuccess (Response Fields) {Object} drm DRM packaging details (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
-  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
-  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
-  * @apiSuccess (Response Fields) {Number} duration duration in milliseconds
-  * @apiSuccess (Response Fields) {String} audio_configuration The audio configuration of the audio track
-  * @apiSuccess (Response Fields) {String} variant The variant of the HLS profile (`baseline`, `main`, or `high`)
+  * @apiSuccess {String} rendition_id the rendition id
+  * @apiSuccess {Boolean} media_type media type for the rendition (`audio` or `video`)
+  * @apiSuccess {Object} drm DRM packaging details (not applicable to remote assets)
+  * @apiSuccess {Number} encoding_rate average encoding rate in kbps
+  * @apiSuccess {Number} frame_height frame height in pixels
+  * @apiSuccess {Number} frame_width frame width in pixels
+  * @apiSuccess {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess {String} updated_at when the video was last modified
+  * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess {Number} duration duration in milliseconds
+  * @apiSuccess {String} audio_configuration The audio configuration of the audio track
+  * @apiSuccess {String} variant The variant of the HLS profile (`baseline`, `main`, or `high`)
   *
   * @apiSuccessExample {Object[]} Success Response:
   *    HTTP/1.1 200 OK
@@ -973,21 +973,21 @@
   * @apiParamExample {String} Caption list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption
   *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to captions
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to captions
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
   *
  * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
@@ -1059,21 +1059,21 @@
   * @apiParamExample {String} Caption Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption/77874616001
   *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to captions
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to captions
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
   *
   * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
@@ -1148,21 +1148,21 @@
   *        "remote_url": "http://learning-services-media.brightcove.com/captions/Video-Cloud-Analytics-Performance-Report.DFXP.xml"
   *    }
   *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to captions
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to captions
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
   *
  * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
@@ -1274,21 +1274,21 @@
   *        "remote_url": "http://learning-services-media.brightcove.com/captions/Video-Cloud-Analytics-Performance-Report.DFXP.xml"
   *    }
   *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to captions
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to captions
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
   *
  * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
@@ -1442,21 +1442,21 @@
    * @apiParamExample {String} Poster list Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster
    *
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to posters
-  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
-  * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
-  * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
-  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
-  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess {String} id the asset id
+  * @apiSuccess {Boolean} audio_only not applicable to posters
+  * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+  * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+  * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+  * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+  * @apiSuccess {String} name asset name
+  * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+  * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+  * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+  * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+  * @apiSuccess {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess {String} type the type of the asset
+  * @apiSuccess {String} updated_at when the video was last modified
+  * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
    *
   * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
@@ -1530,21 +1530,21 @@
    * @apiParamExample {String} Poster Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster/77874616001
    *
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to posters
-  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
-  * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
-  * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
-  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
-  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess {String} id the asset id
+  * @apiSuccess {Boolean} audio_only not applicable to posters
+  * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+  * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+  * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+  * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+  * @apiSuccess {String} name asset name
+  * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+  * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+  * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+  * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+  * @apiSuccess {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess {String} type the type of the asset
+  * @apiSuccess {String} updated_at when the video was last modified
+  * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
    *
   * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
@@ -1621,21 +1621,21 @@
    *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-poster.png"
    *    }
    *
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to posters
-  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
-  * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
-  * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
-  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
-  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess {String} id the asset id
+  * @apiSuccess {Boolean} audio_only not applicable to posters
+  * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+  * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+  * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+  * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+  * @apiSuccess {String} name asset name
+  * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+  * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+  * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+  * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+  * @apiSuccess {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess {String} type the type of the asset
+  * @apiSuccess {String} updated_at when the video was last modified
+  * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
    *
   * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
@@ -1748,21 +1748,21 @@
    *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-poster.png"
    *    }
    *
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to posters
-  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
-  * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
-  * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
-  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
-  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+  * @apiSuccess {String} id the asset id
+  * @apiSuccess {Boolean} audio_only not applicable to posters
+  * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+  * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+  * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+  * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+  * @apiSuccess {String} name asset name
+  * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+  * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+  * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+  * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+  * @apiSuccess {Number} size the size of the asset in bytes (integer)
+  * @apiSuccess {String} type the type of the asset
+  * @apiSuccess {String} updated_at when the video was last modified
+  * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
    *
   * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
@@ -1917,21 +1917,21 @@
  * @apiParamExample {String} Thumbnail list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2005,21 +2005,21 @@
  * @apiParamExample {String} Thumbnail Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail/77874616001
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2096,21 +2096,21 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-thumbnail.png"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2223,21 +2223,21 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-thumbnail.png"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to thumbnails
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to thumbnails
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2393,22 +2393,22 @@
  * @apiParamExample {String} HLS Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to hls_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to hls_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2479,22 +2479,22 @@
  * @apiParamExample {String} HLS Manifest Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest/77874616001
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to hls_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to hls_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2570,22 +2570,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to hls_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to hls_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2697,22 +2697,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to hls_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to hls_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2865,22 +2865,22 @@
  * @apiParamExample {String} ISM Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ism_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ism_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -2951,22 +2951,22 @@
  * @apiParamExample {String} ISM Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest/77874616001
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ism_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ism_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3042,22 +3042,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ism_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ism_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3169,22 +3169,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ism_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ism_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3337,22 +3337,22 @@
  * @apiParamExample {String} ISMC Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ismc_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ismc_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3423,22 +3423,22 @@
  * @apiParamExample {String} ISMC Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest/77874616001
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ismc_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ismc_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3514,22 +3514,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ismc_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ismc_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3640,22 +3640,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to ismc_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to ismc_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3809,22 +3809,22 @@
  * @apiParamExample {String} DASH Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to dash_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
@@ -3896,22 +3896,22 @@
  * @apiParamExample {String} DASH Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to dash_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -3988,22 +3988,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to dash_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -4114,22 +4114,22 @@
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id the asset id
- * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
- * @apiSuccess (Response Fields) {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
- * @apiSuccess (Response Fields) {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} cdn_origin_id an internally used id (not applicable to remote assets)
- * @apiSuccess (Response Fields) {String} name asset name
- * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
- * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} remote_url the url for a remote asset (not applicable to ingested assets)
- * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
- * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
- * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
+ * @apiSuccess {String} id the asset id
+ * @apiSuccess {Boolean} audio_only not applicable to dash_manifests
+ * @apiSuccess {Boolean} complete whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)
+ * @apiSuccess {String} controller_type the controller type for ingested renditions (not applicable to remote renditions or other types of assets)
+ * @apiSuccess {String} current_filename the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)
+ * @apiSuccess {String} cdn_origin_id an internally used id (not applicable to remote assets)
+ * @apiSuccess {String} name asset name
+ * @apiSuccess {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
+ * @apiSuccess {String} reference_id video reference id (must be unique within the account)
+ * @apiSuccess {String} remote_url the url for a remote asset (not applicable to ingested assets)
+ * @apiSuccess {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
+ * @apiSuccess {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess {String} type the type of the asset
+ * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess {String} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK

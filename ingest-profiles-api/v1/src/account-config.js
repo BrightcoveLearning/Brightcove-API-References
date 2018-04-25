@@ -16,15 +16,15 @@
  * @apiParamExample {json} Get Default Profile Example:
  *     https://ingestion.api.brightcove.com/v1/accounts/57838016001/configuration
  *
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} id configuration id
- * @apiSuccess (Response Fields) {String} default_profile_id profile name for video-on-demand
- * @apiSuccess (Response Fields) {String} default_live_profile_id default profile name for live streams
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} max_profile_count maximum number of custom profiles for the account
- * @apiSuccess (Response Fields) {Number} max_rendition_count maximum number of renditions per profile
- * @apiSuccess (Response Fields) {Number} version system-managed version number
+ * @apiSuccess {Number} account_id Video Cloud account id
+ * @apiSuccess {String} id configuration id
+ * @apiSuccess {String} default_profile_id profile name for video-on-demand
+ * @apiSuccess {String} default_live_profile_id default profile name for live streams
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} max_profile_count maximum number of custom profiles for the account
+ * @apiSuccess {Number} max_rendition_count maximum number of renditions per profile
+ * @apiSuccess {Number} version system-managed version number
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -85,15 +85,15 @@
  *         "default_profile_id": "high-resolution"
  *     }
  *
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} id configuration id
- * @apiSuccess (Response Fields) {String} default_profile_id profile name for video-on-demand
- * @apiSuccess (Response Fields) {String} default_live_profile_id default profile name for live streams
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} max_profile_count maximum number of custom profiles for the account
- * @apiSuccess (Response Fields) {Number} max_rendition_count maximum number of renditions per profile
- * @apiSuccess (Response Fields) {Number} version system-managed version number
+ * @apiSuccess {Number} account_id Video Cloud account id
+ * @apiSuccess {String} id configuration id
+ * @apiSuccess {String} default_profile_id profile name for video-on-demand
+ * @apiSuccess {String} default_live_profile_id default profile name for live streams
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} max_profile_count maximum number of custom profiles for the account
+ * @apiSuccess {Number} max_rendition_count maximum number of renditions per profile
+ * @apiSuccess {Number} version system-managed version number
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -171,15 +171,15 @@
  *         "default_profile_id": "high-resolution"
  *     }
  *
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} id configuration id
- * @apiSuccess (Response Fields) {String} default_profile_id profile name for video-on-demand
- * @apiSuccess (Response Fields) {String} default_live_profile_id default profile name for live streams
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} max_profile_count maximum number of custom profiles for the account
- * @apiSuccess (Response Fields) {Number} max_rendition_count maximum number of renditions per profile
- * @apiSuccess (Response Fields) {Number} version system-managed version number
+ * @apiSuccess {Number} account_id Video Cloud account id
+ * @apiSuccess {String} id configuration id
+ * @apiSuccess {String} default_profile_id profile name for video-on-demand
+ * @apiSuccess {String} default_live_profile_id default profile name for live streams
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} max_profile_count maximum number of custom profiles for the account
+ * @apiSuccess {Number} max_rendition_count maximum number of renditions per profile
+ * @apiSuccess {Number} version system-managed version number
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

@@ -81,8 +81,8 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  *     }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/configuration
  *
- * @apiSuccess (Response Fields) {String} preview_url URL to preview embed
- * @apiSuccess (Response Fields) {String} preview_embed_code preview embed iframe tag
+ * @apiSuccess {String} preview_url URL to preview embed
+ * @apiSuccess {String} preview_embed_code preview embed iframe tag
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
