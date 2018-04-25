@@ -48,7 +48,7 @@
  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object{}} Success Response:
  *    HTTP/1.1 200 OK
  *    [
  *    	{
@@ -126,15 +126,15 @@
  *    	}
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -143,7 +143,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -199,7 +199,7 @@
  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
  *    [
  *        {
@@ -259,15 +259,15 @@
  *        }
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -276,7 +276,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -333,7 +333,7 @@
  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -364,15 +364,15 @@
  *        "video_duration": 31487
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -381,7 +381,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -421,7 +421,7 @@
  * @apiParam (Request Body Fields) {String} video_codec the video codec &mdash; support for video formats -  varies across browsers and devices; for the broadest support use `h264` &mdash; __remote assets will not work properly without this field__
  * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `M2TS`
  *
- * @apiParamExample {json} Add Rendition Request Body Example:
+ * @apiParamExample {Object} Add Rendition Request Body Example:
  *    {
  *        "video_duration": 31487,
  *        "name": "RA - Great Blue Heron",
@@ -456,7 +456,7 @@
  * @apiParam (Request Body Fields) {String} video_container the video container such as `MP4` or `M2TS` &mdash; __remote assets will not work properly without this field__
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -486,19 +486,19 @@
  *        "video_duration": 31487
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 4xx) {Object[]} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -507,7 +507,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -515,7 +515,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -589,7 +589,7 @@
  * @apiParam (Request Body Fields) {String} [video_codec] the video codec &mdash; support for video formats varies across browsers and devices; for the broadest support use `h264`
  * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `M2TS`
  *
- * @apiParamExample {json} Add Rendition Request Body Example:
+ * @apiParamExample {Object} Add Rendition Request Body Example:
  *    {
  *        "video_duration": 31487,
  *        "name": "RA - Great Blue Heron",
@@ -624,7 +624,7 @@
  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -654,19 +654,19 @@
  *        "video_duration": 31487
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 4xx) {Object[]} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -675,7 +675,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -683,7 +683,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -741,18 +741,18 @@
  * @apiParamExample {Url} Delete Rendition Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/rendition/77874616001
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
  *    HTTP/1.1 204 NO CONTENT
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -761,7 +761,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -805,7 +805,7 @@
   * @apiSuccess (Response Fields) {String} audio_configuration The audio configuration of the audio track
   * @apiSuccess (Response Fields) {String} variant The variant of the HLS profile (`baseline`, `main`, or `high`)
   *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object[]} Success Response:
   *    HTTP/1.1 200 OK
   *    [
   *        {
@@ -924,15 +924,15 @@
   *        }
   *    ]
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-  * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -941,7 +941,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -989,7 +989,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
   *    {
   *        "account_id": "57838016001",
@@ -1010,15 +1010,15 @@
   *        "uploaded_at": "2015-12-18T14:52:47.758Z"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1027,7 +1027,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -1075,7 +1075,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
   *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
   *    {
   *        "account_id": "57838016001",
@@ -1096,15 +1096,15 @@
   *        "uploaded_at": "2015-12-18T14:52:47.758Z"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1113,7 +1113,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -1143,7 +1143,7 @@
   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
   *
-  * @apiParamExample {json} Add Captions Request Data Example:
+  * @apiParamExample {Object} Add Captions Request Data Example:
   *    {
   *        "remote_url": "http://learning-services-media.brightcove.com/captions/Video-Cloud-Analytics-Performance-Report.DFXP.xml"
   *    }
@@ -1164,7 +1164,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
   *    {
   *        "account_id": "57838016001",
@@ -1185,18 +1185,18 @@
   *        "uploaded_at": "2015-12-18T14:52:47.758Z"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
-  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+  * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1205,7 +1205,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+  * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
   *     HTTP/1.1 404 RESOURCE_NOT_FOUND
   *     [
   *         {
@@ -1213,7 +1213,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 409 CONFLICT
+  * @apiErrorExample {Object[]} 409 CONFLICT
   *     HTTP/1.1 409 CONFLICT
   *     [
   *         {
@@ -1269,7 +1269,7 @@
   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
   *
-  * @apiParamExample {json} Add Captions Request Data Example:
+  * @apiParamExample {Object} Add Captions Request Data Example:
   *    {
   *        "remote_url": "http://learning-services-media.brightcove.com/captions/Video-Cloud-Analytics-Performance-Report.DFXP.xml"
   *    }
@@ -1290,7 +1290,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
   *    HTTP/1.1 200 OK
   *    {
   *        "account_id": "57838016001",
@@ -1311,18 +1311,18 @@
   *        "uploaded_at": "2015-12-18T14:52:47.758Z"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
-  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+  * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -1331,7 +1331,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+  * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
   *     HTTP/1.1 404 RESOURCE_NOT_FOUND
   *     [
   *         {
@@ -1339,7 +1339,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 409 CONFLICT
+  * @apiErrorExample {Object[]} 409 CONFLICT
   *     HTTP/1.1 409 CONFLICT
   *     [
   *         {
@@ -1389,18 +1389,18 @@
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption/77874616001
    *
    *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {null} Success Response:
    *    HTTP/1.1 204 NO CONTENT
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+   * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+   * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
    *
-   * @apiErrorExample {json} 401 UNAUTHORIZED
+   * @apiErrorExample {Object[]} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
    *     [
    *         {
@@ -1409,7 +1409,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 Error Response
+   * @apiErrorExample {Object[]} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
    *         {
@@ -1458,7 +1458,7 @@
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
    *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
    *    {
    *        "account_id": "57838016001",
@@ -1481,15 +1481,15 @@
    *        "uploaded_at": "2015-12-18T14:42:22.436Z"
    *    }
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+   * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+   * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
    *
-   * @apiErrorExample {json} 401 UNAUTHORIZED
+   * @apiErrorExample {Object[]} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
    *     [
    *         {
@@ -1498,7 +1498,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 Error Response
+   * @apiErrorExample {Object[]} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
    *         {
@@ -1546,7 +1546,7 @@
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
    *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
    *    {
    *        "account_id": "57838016001",
@@ -1569,15 +1569,15 @@
    *        "uploaded_at": "2015-12-18T14:42:22.436Z"
    *    }
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+   * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+   * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
    *
-   * @apiErrorExample {json} 401 UNAUTHORIZED
+   * @apiErrorExample {Object[]} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
    *     [
    *         {
@@ -1586,7 +1586,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 Error Response
+   * @apiErrorExample {Object[]} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
    *         {
@@ -1616,7 +1616,7 @@
    * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
    *
-   * @apiParamExample {json} Add Posters Request Data Example:
+   * @apiParamExample {Object} Add Posters Request Data Example:
    *    {
    *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-poster.png"
    *    }
@@ -1637,7 +1637,7 @@
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
    *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
    *    {
    *        "account_id": "57838016001",
@@ -1660,18 +1660,18 @@
    *        "uploaded_at": "2015-12-18T14:42:22.436Z"
    *    }
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
-   * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+   * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+   * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+   * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+   * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
    *
    *
-   * @apiErrorExample {json} 401 UNAUTHORIZED
+   * @apiErrorExample {Object[]} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
    *     [
    *         {
@@ -1680,7 +1680,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+   * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
    *     HTTP/1.1 404 RESOURCE_NOT_FOUND
    *     [
    *         {
@@ -1688,7 +1688,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 409 CONFLICT
+   * @apiErrorExample {Object[]} 409 CONFLICT
    *     HTTP/1.1 409 CONFLICT
    *     [
    *         {
@@ -1743,7 +1743,7 @@
    * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
    *
-   * @apiParamExample {json} Add Posters Request Data Example:
+   * @apiParamExample {Object} Add Posters Request Data Example:
    *    {
    *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-poster.png"
    *    }
@@ -1764,7 +1764,7 @@
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
    *
-  * @apiSuccessExample {json} Success Response:
+  * @apiSuccessExample {Object} Success Response:
    *    HTTP/1.1 200 OK
    *    {
    *        "account_id": "57838016001",
@@ -1787,18 +1787,18 @@
    *        "uploaded_at": "2015-12-18T14:42:22.436Z"
    *    }
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
-   * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+   * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+   * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+   * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+   * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
    *
    *
-   * @apiErrorExample {json} 401 UNAUTHORIZED
+   * @apiErrorExample {Object[]} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
    *     [
    *         {
@@ -1807,7 +1807,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+   * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
    *     HTTP/1.1 404 RESOURCE_NOT_FOUND
    *     [
    *         {
@@ -1815,7 +1815,7 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 409 CONFLICT
+   * @apiErrorExample {Object[]} 409 CONFLICT
    *     HTTP/1.1 409 CONFLICT
    *     [
    *         {
@@ -1865,18 +1865,18 @@
     *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster/77874616001
     *
     *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
     *    HTTP/1.1 204 NO CONTENT
     *
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-    * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-    * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-    * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+    * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+    * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+    * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+    * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+    * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+    * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
     *
-    * @apiErrorExample {json} 401 UNAUTHORIZED
+    * @apiErrorExample {Object[]} 401 UNAUTHORIZED
     *     HTTP/1.1 401 UNAUTHORIZED
     *     [
     *         {
@@ -1885,7 +1885,7 @@
     *         }
     *     ]
     *
-    * @apiErrorExample {json} 404 Error Response
+    * @apiErrorExample {Object[]} 404 Error Response
     *     HTTP/1.1 404 Not Found
     *     [
     *         {
@@ -1933,7 +1933,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -1956,15 +1956,15 @@
  *        "uploaded_at": "2015-12-18T14:42:22.436Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -1973,7 +1973,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -2021,7 +2021,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2044,15 +2044,15 @@
  *        "uploaded_at": "2015-12-18T14:42:22.436Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2061,7 +2061,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -2091,7 +2091,7 @@
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  *
- * @apiParamExample {json} Add Thumbnails Request Data Example:
+ * @apiParamExample {Object[]} Add Thumbnails Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-thumbnail.png"
  *    }
@@ -2112,7 +2112,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2135,18 +2135,18 @@
  *        "uploaded_at": "2015-12-18T14:42:22.436Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2155,7 +2155,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -2163,7 +2163,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -2218,7 +2218,7 @@
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  *
- * @apiParamExample {json} Add Thumbnails Request Data Example:
+ * @apiParamExample {Object[]} Add Thumbnails Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/images/great-blue-heron-thumbnail.png"
  *    }
@@ -2239,7 +2239,7 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2262,18 +2262,18 @@
  *        "uploaded_at": "2015-12-18T14:42:22.436Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2282,7 +2282,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -2290,7 +2290,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -2340,18 +2340,18 @@
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail/77874616001
   *
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -2360,7 +2360,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -2410,7 +2410,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2431,15 +2431,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2448,7 +2448,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -2496,7 +2496,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2517,15 +2517,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2534,7 +2534,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -2565,7 +2565,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add HLS Manifest Request Data Example:
+ * @apiParamExample {Object} Add HLS Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
@@ -2587,7 +2587,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2608,17 +2608,17 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2627,7 +2627,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -2635,7 +2635,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -2692,7 +2692,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add HLS Manifest Request Data Example:
+ * @apiParamExample {Object} Add HLS Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
@@ -2714,7 +2714,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2735,18 +2735,18 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2755,7 +2755,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -2763,7 +2763,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -2813,18 +2813,18 @@
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest/77874616001
   *
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -2833,7 +2833,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -2882,7 +2882,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2903,15 +2903,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -2920,7 +2920,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -2968,7 +2968,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -2989,15 +2989,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3006,7 +3006,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -3037,7 +3037,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add ISM Manifest Request Data Example:
+ * @apiParamExample {Object} Add ISM Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
@@ -3059,7 +3059,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3080,17 +3080,17 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3099,7 +3099,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -3107,7 +3107,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -3164,7 +3164,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add ISM Manifest Request Data Example:
+ * @apiParamExample {Object} Add ISM Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
@@ -3186,7 +3186,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3207,18 +3207,18 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3227,7 +3227,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -3235,7 +3235,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -3285,18 +3285,18 @@
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest/77874616001
   *
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -3305,7 +3305,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -3354,7 +3354,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3375,15 +3375,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3392,7 +3392,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -3440,7 +3440,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3461,15 +3461,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3478,7 +3478,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -3509,7 +3509,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add ISMC Manifest Request Data Example:
+ * @apiParamExample {Object} Add ISMC Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
@@ -3531,7 +3531,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3552,17 +3552,17 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3571,7 +3571,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -3579,7 +3579,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -3635,7 +3635,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add ISMC Manifest Request Data Example:
+ * @apiParamExample {Object} Add ISMC Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
@@ -3657,7 +3657,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3678,18 +3678,18 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3698,7 +3698,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -3706,7 +3706,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -3756,18 +3756,18 @@
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest/77874616001
   *
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -3776,7 +3776,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
@@ -3826,7 +3826,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *    HTTP/1.1 200 OK
  *    [{
  *        "account_id": "57838016001",
@@ -3847,15 +3847,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3864,7 +3864,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -3913,7 +3913,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -3934,15 +3934,15 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -3951,7 +3951,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -3983,7 +3983,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add DASH Manifest Request Data Example:
+ * @apiParamExample {Object} Add DASH Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
@@ -4005,7 +4005,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -4026,17 +4026,17 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -4045,7 +4045,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -4053,7 +4053,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -4109,7 +4109,7 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [video_duration] the duration of the video in seconds
  *
- * @apiParamExample {json} Add DASH Manifest Request Data Example:
+ * @apiParamExample {Object} Add DASH Manifest Request Data Example:
  *    {
  *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
@@ -4131,7 +4131,7 @@
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -4152,18 +4152,18 @@
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+ * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ * @apiError (Error 4xx) {Object[]} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {Object[]} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
  *
  *
- * @apiErrorExample {json} 401 UNAUTHORIZED
+ * @apiErrorExample {Object[]} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
@@ -4172,7 +4172,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ * @apiErrorExample {Object[]} 404 RESOURCE_NOT_FOUND
  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
@@ -4180,7 +4180,7 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 409 CONFLICT
+ * @apiErrorExample {Object[]} 409 CONFLICT
  *     HTTP/1.1 409 CONFLICT
  *     [
  *         {
@@ -4236,18 +4236,18 @@
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
   *
   *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {null} Success Response:
   *    HTTP/1.1 204 NO CONTENT
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: The HTTP method specified is not allowed for this endpoint
+  * @apiError (Error 4xx) {Object[]} NOT_AVAILABLE 403: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 4xx) {Object[]} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 5xx) {Object[]} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {Object[]} TIMEOUT 500: Server likely too busy; try again later.
   *
-  * @apiErrorExample {json} 401 UNAUTHORIZED
+  * @apiErrorExample {Object[]} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
   *     [
   *         {
@@ -4256,7 +4256,7 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {Object[]} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
