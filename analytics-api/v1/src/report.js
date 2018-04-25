@@ -56,7 +56,7 @@
  * @apiSuccess {Number} video_engagement_75 number of views at the 75% point of the video duration for all videos
  * @apiSuccess {Number} video_engagement_100 number of views at the 100% point of the video duration for all videos
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account": "20318290001",
@@ -96,15 +96,15 @@
  *    }
  *
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {Object[]} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {Object[]} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {Object[]} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *    [
  *        {
