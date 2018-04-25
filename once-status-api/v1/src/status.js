@@ -40,7 +40,7 @@
  * @apiSuccess (Response Fields) {Boolean} steps.ingest.output.hasChanged Whether the media item has been modified
  * @apiSuccess (Response Fields) {Object} steps.ingest.output.description Description object for the media item
  * @apiSuccess (Response Fields) {String} steps.ingest.output.description.url URL for the media item
- * @apiSuccess (Response Fields) {DateString} steps.ingest.output.description.lastModified Date/time the media item was last modified
+ * @apiSuccess (Response Fields) {String} steps.ingest.output.description.lastModified Date/time the media item was last modified
  * @apiSuccess (Response Fields) {String} steps.ingest.output.description.etag Date/time the media item etag
  * @apiSuccess (Response Fields) {Number} steps.ingest.output.description.fileSize size of the output media item in bytes
  * @apiSuccess (Response Fields) {Object} steps.timedtext The timed text object for captions

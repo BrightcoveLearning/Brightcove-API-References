@@ -29,14 +29,14 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=type:EXPLICIT
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
  * @apiSuccess (Response Field) {Boolean} favorite whether playlist is in favorites list
  * @apiSuccess (Response Field) {String} id the playlist id
  * @apiSuccess (Response Field) {String} name the playlist name
  * @apiSuccess (Response Field) {String} reference_id the playlist reference id
  * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String} updated_at date/time last modified
  * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  *
@@ -126,14 +126,14 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
  * @apiSuccess (Response Field) {Boolean} favorite whether playlist is in favorites list
  * @apiSuccess (Response Field) {String} id the playlist id
  * @apiSuccess (Response Field) {String} name the playlist name
  * @apiSuccess (Response Field) {String} reference_id the playlist reference id
  * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String} updated_at date/time last modified
  * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  *
@@ -225,7 +225,7 @@
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -262,8 +262,8 @@
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of sharing properties (applicable only to multiple accounts)
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
@@ -280,7 +280,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -758,14 +758,14 @@
  *    }
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
  * @apiSuccess (Response Field) {Boolean} favorite whether playlist is in favorites list
  * @apiSuccess (Response Field) {String} id the playlist id
  * @apiSuccess (Response Field) {String} name the playlist name
  * @apiSuccess (Response Field) {String} reference_id the playlist reference id
  * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String} updated_at date/time last modified
  * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  *
@@ -876,14 +876,14 @@
  *    }
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
  * @apiSuccess (Response Field) {Boolean} favorite whether playlist is in favorites list
  * @apiSuccess (Response Field) {String} id the playlist id
  * @apiSuccess (Response Field) {String} name the playlist name
  * @apiSuccess (Response Field) {String} reference_id the playlist reference id
  * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String} updated_at date/time last modified
  * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  *

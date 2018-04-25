@@ -27,19 +27,19 @@
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/ref:my_reference_id
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
  * @apiSuccess (Response Field) {String} id the playlist id
  * @apiSuccess (Response Field) {String} name the playlist name
  * @apiSuccess (Response Field) {String} reference_id the playlist reference id
  * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String} updated_at date/time last modified
  * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  * @apiSuccess (Response Fields) {Object[]} videos array of video maps
  * @apiSuccess (Response Fields) {String} videos.id video id
  * @apiSuccess (Response Fields) {String} videos.name video title
- * @apiSuccess (Response Fields) {DateString} videos.created_at when the video was created
+ * @apiSuccess (Response Fields) {String} videos.created_at when the video was created
  * @apiSuccess (Response Fields) {Object} videos.custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} videos.cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} videos.cue_points.name cue point name
@@ -86,7 +86,7 @@
  * @apiSuccess (Response Fields) {String} videos.text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} videos.text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {DateString} videos.updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} videos.updated_at when the video was last modified
  * @apiSuccess (Response Fields) {Object} videos.ad_keys=null map of key/value pairs for ad requests
  *
  * @apiSuccessExample {json} Success Response:

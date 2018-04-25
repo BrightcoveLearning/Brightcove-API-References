@@ -49,8 +49,8 @@
  * @apiSuccess (Response Fields) {String} redirect_url currently not used
  * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
  * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {DateString} expires_at when the credential expires
- * @apiSuccess (Response Fields) {DateString} issued_at when the credential was issued
+ * @apiSuccess (Response Fields) {String} expires_at when the credential expires
+ * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
  * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
@@ -136,8 +136,8 @@
  * @apiSuccess (Response Fields) {String} redirect_url currently not used
  * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
  * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {DateString} expires_at when the credential expires
- * @apiSuccess (Response Fields) {DateString} issued_at when the credential was issued
+ * @apiSuccess (Response Fields) {String} expires_at when the credential expires
+ * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
  * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
@@ -247,8 +247,8 @@
  * @apiSuccess (Response Fields) {String} redirect_url currently not used
  * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
  * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {DateString} expires_at when the credential expires
- * @apiSuccess (Response Fields) {DateString} issued_at when the credential was issued
+ * @apiSuccess (Response Fields) {String} expires_at when the credential expires
+ * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
  * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
@@ -341,8 +341,8 @@
  * @apiSuccess (Response Fields) {String} redirect_url currently not used
  * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
  * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
- * @apiSuccess (Response Fields) {DateString} expires_at when the credential expires
- * @apiSuccess (Response Fields) {DateString} issued_at when the credential was issued
+ * @apiSuccess (Response Fields) {String} expires_at when the credential expires
+ * @apiSuccess (Response Fields) {String} issued_at when the credential was issued
  * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
  * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
  * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account

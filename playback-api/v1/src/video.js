@@ -43,7 +43,7 @@
   * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
   * @apiSuccess (Response Fields) {String} id video id
   * @apiSuccess (Response Fields) {String} name video title
-  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+  * @apiSuccess (Response Fields) {String} created_at when the video was created
   * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
   * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
   * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -92,7 +92,7 @@
   * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
   * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
   * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
-  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+  * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
   * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
   * @apiSuccess (Response Fields) {Number} count the count of videos found
   *
@@ -186,7 +186,7 @@
    * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
    * @apiSuccess (Response Fields) {String} id video id
    * @apiSuccess (Response Fields) {String} name video title
-   * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+   * @apiSuccess (Response Fields) {String} created_at when the video was created
    * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
    * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
    * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -235,7 +235,7 @@
    * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
    * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
    * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
-   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+   * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
    * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
    *
    * @apiSuccessExample {json} Success Response:
@@ -317,7 +317,7 @@
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -366,7 +366,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
  *
  * @apiSuccessExample {json} Success Response non-DRM:

@@ -40,8 +40,8 @@
  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
  * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
@@ -126,8 +126,8 @@
  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
  * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
@@ -217,8 +217,8 @@
  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
  * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:
@@ -346,8 +346,8 @@
  * @apiSuccess (Response Fields) {String} remote_stream_name name for remote streams (not applicable to asset types other than rendition)
  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
  * @apiSuccess (Response Fields) {String} type the type of the asset
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
- * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} uploaded_at when the asset was added to the video in Video Cloud
  * @apiSuccess (Response Fields) {Number} video_duration video duration in seconds (present if you included it when you created the asset)
  *
  * @apiSuccessExample {json} Success Response:

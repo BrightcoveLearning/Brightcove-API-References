@@ -24,8 +24,8 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
+ * @apiSuccess (Response Fields) {String} created_at date/time folder created
+ * @apiSuccess (Response Fields) {String} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
  * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
@@ -108,8 +108,8 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
+ * @apiSuccess (Response Fields) {String} created_at date/time folder created
+ * @apiSuccess (Response Fields) {String} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
  * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
@@ -178,7 +178,7 @@
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -211,8 +211,8 @@
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -228,7 +228,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
   *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -396,8 +396,8 @@
  *     }
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
+ * @apiSuccess (Response Fields) {String} created_at date/time folder created
+ * @apiSuccess (Response Fields) {String} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
  * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
@@ -465,8 +465,8 @@
  *     }
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
+ * @apiSuccess (Response Fields) {String} created_at date/time folder created
+ * @apiSuccess (Response Fields) {String} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
  * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
@@ -637,8 +637,8 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
+ * @apiSuccess (Response Fields) {String} created_at date/time folder created
+ * @apiSuccess (Response Fields) {String} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
  * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
