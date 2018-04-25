@@ -26,22 +26,22 @@
  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
- * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {String} created_at when the video was created
  * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example: `"adKeys": "category=sports&live=true"`
  * @apiSuccess (Response Fields) {String} clip_source_video_id The ID of the source video that was clipped to produce this video or `null` if this video is not a clip of another video
- * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (Response Fields) {Object} custom_fields map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+ * @apiSuccess (Response Fields) {String} cue_points.type cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop=false whether video is force_stopped at the cue point
+ * @apiSuccess (Response Fields) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
  * @apiSuccess (Response Fields) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -50,33 +50,33 @@
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {String} folder_id id for the folder the video belongs to
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
- * @apiSuccess (Response Fields) {Boolean} has_digital_master=false whether video has an archived master than can be used for retranscoding
+ * @apiSuccess (Response Fields) {String} geo.countries array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted whether geo-restriction is enabled for this video
+ * @apiSuccess (Response Fields) {Boolean} has_digital_master whether video has an archived master than can be used for retranscoding
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
- * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of sharing properties (applicable only to multiple accounts)
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
@@ -87,16 +87,16 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object[]} Success Response:
  *     HTTP/1.1 200 OK
  *     [
  *         {
