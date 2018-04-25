@@ -26,16 +26,16 @@
  *     // or
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/ref:my_reference_id
  *
- * @apiSuccess (Response Field) {String} account_id Video Cloud account id
- * @apiSuccess (Response Field) {String} created_at date/time created
- * @apiSuccess (Response Field) {String} description playlist description
- * @apiSuccess (Response Field) {String} id the playlist id
- * @apiSuccess (Response Field) {String} name the playlist name
- * @apiSuccess (Response Field) {String} reference_id the playlist reference id
- * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess (Response Field) {String} updated_at date/time last modified
- * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess {String} account_id Video Cloud account id
+ * @apiSuccess {String} created_at date/time created
+ * @apiSuccess {String} description playlist description
+ * @apiSuccess {String} id the playlist id
+ * @apiSuccess {String} name the playlist name
+ * @apiSuccess {String} reference_id the playlist reference id
+ * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess {String} updated_at date/time last modified
+ * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
  * @apiSuccess {Object[]} videos array of video maps
  * @apiSuccess {String} videos.id video id
  * @apiSuccess {String} videos.name video title
