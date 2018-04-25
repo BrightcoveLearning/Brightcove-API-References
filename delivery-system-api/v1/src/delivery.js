@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
+ * @apiParam {String} accountId Video Cloud account ID.
  *
  * @apiSuccess (Response Fields) {String[]} items array of items
  * @apiSuccess (Response Fields) {String} items.name repo name
@@ -51,8 +51,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
- * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
+ * @apiParam {String} accountId Video Cloud account ID.
+ * @apiParam {String} repoName The name of the repo for which to list details.
  *
  * @apiSuccess (Response Fields) {String} name repo name
  * @apiSuccess (Response Fields) {String} public_url URL for the public player
@@ -81,8 +81,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
- * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
+ * @apiParam {String} accountId Video Cloud account ID.
+ * @apiParam {String} repoName The name of the repo for which to list details.
  *
  * @apiSuccess (Response Fields) {String} name repo name
  * @apiSuccess (Response Fields) {String} public_url URL for the public player
@@ -120,8 +120,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
- * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
+ * @apiParam {String} accountId Video Cloud account ID.
+ * @apiParam {String} repoName The name of the repo for which to list details.
  *
  * @apiSuccess (Response Fields) {String} name repo name
  *
@@ -154,9 +154,9 @@
   *
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
-  * @apiParam (Path Parameters) {String} destinationFilename The name of the file in the repo, it can be different than the name of locally read file.
+  * @apiParam {String} accountId Video Cloud account ID.
+  * @apiParam {String} repoName The name of the repo for which to list details.
+  * @apiParam {String} destinationFilename The name of the file in the repo, it can be different than the name of locally read file.
   *
   * @apiParam (Form Contents Value - Note: The value can be a file or a JSON string; If using a file it must be proceeded with the @ sign) {String} sourceFilename Name of the file in the local folder, or a JSON string.
   *
@@ -190,9 +190,9 @@
    *
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
-   * @apiParam (Path Parameters) {String} filename The name of the file in the repo to delete.
+   * @apiParam {String} accountId Video Cloud account ID.
+   * @apiParam {String} repoName The name of the repo for which to list details.
+   * @apiParam {String} filename The name of the file in the repo to delete.
    *
    * @apiParamExample {curl} curl Statement:
    *    curl \
@@ -219,8 +219,8 @@
     *
     * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
     *
-    * @apiParam (Path Parameters) {String} accountId Video Cloud account ID.
-    * @apiParam (Path Parameters) {String} repoName The name of the repo for which to list details.
+    * @apiParam {String} accountId Video Cloud account ID.
+    * @apiParam {String} repoName The name of the repo for which to list details.
     *
     * @apiParamExample {curl} curl Statement:
     *    curl \

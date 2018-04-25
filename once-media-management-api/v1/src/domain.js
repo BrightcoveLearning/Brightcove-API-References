@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam {String} domainId The domain id for your Once account
  *
  * @apiParamExample {String} Get Domain Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
@@ -44,7 +44,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam {String} domainId The domain id for your Once account
  *
  * @apiParamExample {String} Get Domain Renditions Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
@@ -90,8 +90,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} renditionId The id for the rendition
+ * @apiParam {String} domainId The domain id for your Once account
+ * @apiParam {String} renditionId The id for the rendition
  *
  * @apiParamExample {String} Get Rendition Settings Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -136,7 +136,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam {String} domainId The domain id for your Once account
  *
  * @apiParamExample {String} Get Domain Publication Rules Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules
@@ -167,8 +167,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+ * @apiParam {String} domainId The domain id for your Once account
+ * @apiParam {String} publicationRuleId The publicationRule Id
  *
  * @apiParamExample {String} Get Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
@@ -230,7 +230,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam {String} domainId The domain id for your Once account
  *
  * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
  * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
@@ -321,8 +321,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+ * @apiParam {String} domainId The domain id for your Once account
+ * @apiParam {String} publicationRuleId The publicationRule Id
  *
  * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
  * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
@@ -412,8 +412,8 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+  * @apiParam {String} domainId The domain id for your Once account
+  * @apiParam {String} publicationRuleId The publicationRule Id
   *
   * @apiParamExample {String} Delete Domain Publication Rule Example:
   *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
@@ -444,7 +444,7 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+   * @apiParam {String} domainId The domain id for your Once account
    *
    * @apiParamExample {String} Get Domain Timed Text Example:
    *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText
@@ -506,8 +506,8 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-   * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+   * @apiParam {String} domainId The domain id for your Once account
+   * @apiParam {String} timedTextId The id for the timed text asset
    *
    * @apiParamExample {String} Get Domain Timed Text Example:
    *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText/a44eb311-b1a6-4d0c-ba92-d54841c51126
@@ -548,10 +548,10 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-    * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
-    * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
-    * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+    * @apiParam {String} domainId The domain id for your Once account
+    * @apiParam {String} catalogId The id for the catalog that the media item belongs to
+    * @apiParam {String} mediaItemId The id for the media item
+    * @apiParam {String} timedTextId The id for the timed text asset
     *
     *
     * @apiParamExample {String} Delete Timed Text Example:

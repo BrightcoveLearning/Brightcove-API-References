@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
+ * @apiParam {String} domain_id The domain id for your Once account
+ * @apiParam {String} catalog_id The id for the digital media catalog for your domain
  * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String{..150}} foreignKey The unique identifier for the asset (max length: 150 characters)
  * @apiParam (Request Body Fields) {String} [description] A description of the asset

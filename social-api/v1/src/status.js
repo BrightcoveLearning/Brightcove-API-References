@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} video_id Video ID
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} video_id Video ID
  *
  * @apiParam (URL Parameters) {DateTime} [before] Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp
  * @apiParam (URL Parameters) {DateTime} [since] Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp
@@ -75,8 +75,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} destination_id The Social ID of the destination
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} destination_id The Social ID of the destination
  *
  * @apiParam (URL Parameters) {DateTime} [before] Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp
  * @apiParam (URL Parameters) {DateTime} [since] Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp
@@ -138,9 +138,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} destination_id The Social ID of the destination
- * @apiParam (Path Parameters) {String} video_id Video ID
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} destination_id The Social ID of the destination
+ * @apiParam {String} video_id Video ID
  *
  *
  * @apiParamExample {http} Get Status of Video Examples:

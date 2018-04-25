@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} plugin_id plugin id - **must be URI_encoded**
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} plugin_id plugin id - **must be URI_encoded**
  *
  * @apiParamExample {curl} curl Statement:
  *    curl \
@@ -75,8 +75,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} plugin_id plugin id - **must be URI_encoded**
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} plugin_id plugin id - **must be URI_encoded**
  *
  * @apiParamExample {curl} curl Statement:
  *    curl \

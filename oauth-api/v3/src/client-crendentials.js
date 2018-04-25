@@ -312,7 +312,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
  *
- * @apiParam (Path Parameters) {String} client_id client id for the credential
+ * @apiParam {String} client_id client id for the credential
  *
  * @apiParamExample {json} Create Credentials Example:
  *    {"type":"credential",
@@ -408,7 +408,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
  *
- * @apiParam (Path Parameters) {String} client_id client id for the credential
+ * @apiParam {String} client_id client id for the credential
  *
  * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v3/client_credentials/b744071a-3dc6-4e2a-9a8a-50beca8cf53f

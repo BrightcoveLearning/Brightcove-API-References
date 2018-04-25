@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (URL Parameters) {Number{1-100}} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -68,8 +68,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  *
  * @apiParamExample {String} Get Application Details Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/2baf3c54-2baf-3c54-be91-147ffc57ebbe
@@ -179,7 +179,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name Name of the new application
  * @apiParam (Request Body Fields) {Number} [preRollAdCount] Number of single VAST ads to be requested for the preRoll position (required only if using single VAST adConfig)
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] Number of single VAST ads to be requested for the midRoll position (required only if using single VAST adConfig)
@@ -231,8 +231,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  * @apiParam (Request Body Fields) {String} name Name of the new application
  * @apiParam (Request Body Fields) {Number} [preRollAdCount] Number of single VAST ads to be requested for the preRoll position (required only if using single VAST adConfig)
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] Number of single VAST ads to be requested for the midRoll position (required only if using single VAST adConfig)
@@ -284,8 +284,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  *
  * @apiParamExample {String} Delete Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
@@ -318,8 +318,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  *
  * @apiParamExample {String} Get Application Ad Configuration Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig
@@ -410,8 +410,8 @@
 
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  * @apiParam (Request Body Fields Example 1) {Object} [preRoll] A single VAST adConfig for the preRoll slot
  * @apiParam (Request Body Fields Example 1) {String} preRoll.name The new/updated adConfig name
  * @apiParam (Request Body Fields Example 1) {String} preRoll.adServerId The adServerId which will be requested for a single VAST ad
@@ -543,8 +543,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} applicationId The application Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} applicationId The application Id
  *
  * @apiParamExample {String} Delete Ad Configurations Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig

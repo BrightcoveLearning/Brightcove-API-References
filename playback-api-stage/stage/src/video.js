@@ -29,7 +29,7 @@
   * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
   * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+  * @apiParam {String} account_id Video Cloud account ID
   *
   * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
   * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
@@ -170,8 +170,8 @@
    * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
    * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers). You need to use a [search-enabled Policy Key](https://support.brightcove.com/node/18003#Search_videos).
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
-   * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
+   * @apiParam {String} account_id Video Cloud account ID
+   * @apiParam {Number} video_id Video Cloud video ID
    *
    * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
    * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
@@ -302,8 +302,8 @@
  * @apiHeader {String} Authorization: BCOV-Policy {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  * @apiHeader {String} BCOV-Policy: {policy_key} (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {Number} video_id Video Cloud video ID
  *
  * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
  *

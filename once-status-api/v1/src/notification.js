@@ -11,7 +11,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} request_id The request_id for the job
+ * @apiParam {String} request_id The request_id for the job
  *
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/bc6cb7d4-be99-471b-adf3-7c501172b317

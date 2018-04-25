@@ -11,10 +11,10 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
- * @apiParam (Path Parameters) {String} branch branch to retrieve, master (published) or preview
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
+ * @apiParam {String} branch branch to retrieve, master (published) or preview
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -53,9 +53,9 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name player name
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
@@ -120,11 +120,11 @@ Using this endpoint does not change any configurations, it is only useful for se
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
- * @apiParam (Path Parameters) {String} playerBranch branch of the player to use, master or preview, for merged combination
- * @apiParam (Path Parameters) {String} embedBranch branch of the embed to use, master or preview, for merged combination
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
+ * @apiParam {String} playerBranch branch of the player to use, master or preview, for merged combination
+ * @apiParam {String} embedBranch branch of the embed to use, master or preview, for merged combination
  *
  * @apiParamExample {curl} curl Statement:
  * curl \

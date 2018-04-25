@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (URL Parameters) {Number{1-100}} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -68,8 +68,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
  *
  * @apiParamExample {String} Get Catalog Request Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
@@ -105,7 +105,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new catalog name
  * @apiParam (Request Body Fields) {Object[]} [renditions] An array of renditions to be assigned to the catalog. If omitted, catalog will be assigned default domain renditions.
  * @apiParam (Request Body Fields) {String} renditions.id Each renditionId to be assigned to the catalog
@@ -154,7 +154,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} id The catalog Id to be updated
  * @apiParam (Request Body Fields) {String} name The new catalog name
  *
@@ -194,8 +194,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
  *
  * @apiParamExample {String} Get Catalog Renditions Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
@@ -238,9 +238,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
- * @apiParam (Path Parameters) {String} renditionId The rendition id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
+ * @apiParam {String} renditionId The rendition id
  *
  * @apiParamExample {String} Get Catalog Rendition Settings Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -285,9 +285,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
- * @apiParam (Path Parameters) {String} renditionId The rendition id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
+ * @apiParam {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a renditionId
  *
  * @apiParamExample {json} Replace Catalog Rendition Request Body Example:
@@ -333,8 +333,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
  * @apiParamExample {json} Add Catalog Rendition Request Body Example:
@@ -370,9 +370,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog id
- * @apiParam (Path Parameters) {String} renditionId The rendition id to remove from the catalog set
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog id
+ * @apiParam {String} renditionId The rendition id to remove from the catalog set
  *
  * @apiParamExample {String} Delete Catalog Rendition Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalog/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -405,8 +405,8 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domain Id
-  * @apiParam (Path Parameters) {String} catalogId The catalog id
+  * @apiParam {String} domainId The domain Id
+  * @apiParam {String} catalogId The catalog id
   *
   * @apiParamExample {String} Get Catalog Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -445,9 +445,9 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domain Id
-   * @apiParam (Path Parameters) {String} catalogId The catalog id
-   * @apiParam (Path Parameters) {String} publicationRuleId The publication rule id
+   * @apiParam {String} domainId The domain Id
+   * @apiParam {String} catalogId The catalog id
+   * @apiParam {String} publicationRuleId The publication rule id
    *
    * @apiParamExample {String} Get Catalog Publication RulesExample:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -509,8 +509,8 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain Id
-    * @apiParam (Path Parameters) {String} catalogId The catalog id
+    * @apiParam {String} domainId The domain Id
+    * @apiParam {String} catalogId The catalog id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -604,9 +604,9 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain Id
-    * @apiParam (Path Parameters) {String} catalogId The catalog id
-    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+    * @apiParam {String} domainId The domain Id
+    * @apiParam {String} catalogId The catalog id
+    * @apiParam {String} publicationRuleId The publicationRule Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -699,9 +699,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog Id
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog Id
+ * @apiParam {String} publicationRuleId The publicationRule Id
  *
  * @apiParamExample {String} Delete Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76

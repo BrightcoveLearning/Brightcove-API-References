@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  *
  * @apiParamExample {json} Get Default Profile Example:
  *     https://ingestion.api.brightcove.com/v1/accounts/57838016001/configuration
@@ -74,7 +74,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {String} default_profile_id The id or name of the profile you want to set as the default
  * @apiParam (Request Body Fields) {String} [default_live_profile_id] The id or name of the live profile you want to set as the default
@@ -159,7 +159,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {String} id the configuration id (if you don't have it, make a GET request to get it)
  * @apiParam (Request Body Fields) {String} default_profile_id The id or name of the profile you want to set as the default

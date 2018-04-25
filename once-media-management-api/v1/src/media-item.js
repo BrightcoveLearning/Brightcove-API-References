@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId TThe catalog Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId TThe catalog Id
  * @apiParam (URL Parameters) {Number{1-100}} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String {..255}} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
@@ -85,9 +85,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog Id
- * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog Id
+ * @apiParam {String} mediaItemId The mediaItem Id
  *
  * @apiParamExample {String} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
@@ -189,9 +189,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} id The mediaItem Id (this value cannot be changed)
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog Id
+ * @apiParam {String} id The mediaItem Id (this value cannot be changed)
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog Id
  *
  * @apiParam (Request Body Fields) {String} id The mediaItem Id
  * @apiParam (Request Body Fields) {String} catalogId The catalog Id
@@ -362,9 +362,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} catalogId The catalog Id
- * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id (you can substitute `foreignKey` for `mediaItemId`)
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} catalogId The catalog Id
+ * @apiParam {String} mediaItemId The mediaItem Id (you can substitute `foreignKey` for `mediaItemId`)
  *
  * @apiParamExample {String} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
@@ -396,9 +396,9 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domain Id
-  * @apiParam (Path Parameters) {String} catalogId The catalog Id
-  * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+  * @apiParam {String} domainId The domain Id
+  * @apiParam {String} catalogId The catalog Id
+  * @apiParam {String} mediaItemId The mediaItem Id
   *
   * @apiParamExample {String} Get Media Item Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -430,10 +430,10 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domain Id
-   * @apiParam (Path Parameters) {String} catalogId The catalog Id
-   * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
-   * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+   * @apiParam {String} domainId The domain Id
+   * @apiParam {String} catalogId The catalog Id
+   * @apiParam {String} mediaItemId The mediaItem Id
+   * @apiParam {String} publicationRuleId The publicationRule Id
    *
    * @apiParamExample {String} Get Media Item Publication Rule Example:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -498,9 +498,9 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain Id
-    * @apiParam (Path Parameters) {String} catalogId The catalog Id
-    * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+    * @apiParam {String} domainId The domain Id
+    * @apiParam {String} catalogId The catalog Id
+    * @apiParam {String} mediaItemId The mediaItem Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -592,10 +592,10 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain Id
-    * @apiParam (Path Parameters) {String} catalogId The catalog Id
-    * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
-    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+    * @apiParam {String} domainId The domain Id
+    * @apiParam {String} catalogId The catalog Id
+    * @apiParam {String} mediaItemId The mediaItem Id
+    * @apiParam {String} publicationRuleId The publicationRule Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -687,10 +687,10 @@
      *
      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
      *
-     * @apiParam (Path Parameters) {String} domainId The domain Id
-     * @apiParam (Path Parameters) {String} catalogId The catalog Id
-     * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
-     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
+     * @apiParam {String} domainId The domain Id
+     * @apiParam {String} catalogId The catalog Id
+     * @apiParam {String} mediaItemId The mediaItem Id
+     * @apiParam {String} publicationRuleId The publicationRule Id
      *
      * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -723,9 +723,9 @@
      *
      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
      *
-     * @apiParam (Path Parameters) {String} domainId The domain Id
-     * @apiParam (Path Parameters) {String} catalogId The catalog Id
-     * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+     * @apiParam {String} domainId The domain Id
+     * @apiParam {String} catalogId The catalog Id
+     * @apiParam {String} mediaItemId The mediaItem Id
      *
      * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a
@@ -757,9 +757,9 @@
       *
       * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
       *
-      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
-      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      * @apiParam {String} domainId The domain id for your Once account
+      * @apiParam {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam {String} mediaItemId The id for the media item
       *
       * @apiParamExample {String} Get Media Item Timed Text Example:
       *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText
@@ -806,9 +806,9 @@
       *
       * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
       *
-      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
-      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      * @apiParam {String} domainId The domain id for your Once account
+      * @apiParam {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam {String} mediaItemId The id for the media item
       *
       * @apiParam (Request Body Fields) {String} domain The domain id
       * @apiParam (Request Body Fields) {String} catalog The catalog id
@@ -860,10 +860,10 @@
       *
       * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
       *
-      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
-      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
-      * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+      * @apiParam {String} domainId The domain id for your Once account
+      * @apiParam {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam {String} mediaItemId The id for the media item
+      * @apiParam {String} timedTextId The id for the timed text asset
       *
       * @apiParam (Request Body Fields) {String} domain The domain id
       * @apiParam (Request Body Fields) {String} catalog The catalog id

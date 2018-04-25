@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {Object} key-data Data for the policy key
  * @apiParam (Request Body Fields) {String} key-data.account-id Video Cloud account id
  * @apiParam (Request Body Fields) {String[]} [key-data.apis] Array of APIs that are permitted for this key (currently `"search"` is the only one available - this must be included to use the [search functionality](https://brightcovelearning.github.io/Brightcove-API-References/playback-api/v1/doc/index.html#api-videoGroup-Get_Videos) for the Playback API)
@@ -87,8 +87,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} key_string the key string for the policy
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} key_string the key string for the policy
  *
  * @apiParamExample {String} Get Policy Example:
  *    https://policy.api.brightcove.com/v1/accounts/57838016001/policy_keys/BCpkADawqM0tR9WJhqqyg4t8NgSulRVnfHyh6cL_U0m7RaoIq19WWR-8EPiWY1ift8zHF6Z3sfTyuXv6LY8bfTAfvzVLb1TrwGTOBJGPwWJ9dJUkny7lUoN1ygk

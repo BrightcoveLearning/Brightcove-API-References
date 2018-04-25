@@ -15,8 +15,8 @@
  *
  * @apiHeader {String} Accept: application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See [Policy API Overview](https://support.brightcove.com/node/18003) or [Policy Keys](https://support.brightcove.com/node/18125) for information on getting policy keys
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {Number} playlist_id Video Cloud playlist ID
  * @apiParam (URL Parameters) {Number{1-100}} [limit=20] The number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] The number of videos to skip
  * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)

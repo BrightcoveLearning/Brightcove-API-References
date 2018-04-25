@@ -11,9 +11,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -117,8 +117,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -299,8 +299,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name name give to player
@@ -369,9 +369,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -411,9 +411,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \

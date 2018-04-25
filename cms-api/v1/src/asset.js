@@ -16,8 +16,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} Rendition list Example:
@@ -167,8 +167,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} Rendition list Example:
@@ -300,9 +300,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id the asset id
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {String} Get Rendition Example:
@@ -405,8 +405,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {Boolean} [audio_only] whether this is only an audio track
  * @apiParam (Request Body Fields) {Number} [encoding_rate] average encoding_rate in kbps
@@ -573,9 +573,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {Boolean} [audio_only] whether this is only an audio track
  * @apiParam (Request Body Fields) {Number} [encoding_rate] average encoding_rate in kbps
@@ -733,9 +733,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id the asset id
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {String} Delete Rendition Example:
@@ -785,8 +785,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Rendition list Example:
@@ -966,8 +966,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Caption list Example:
@@ -1051,9 +1051,9 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-  * @apiParam (Path Parameters) {String} asset_id the asset id
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {String} Caption Example:
@@ -1137,8 +1137,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -1262,9 +1262,9 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-  * @apiParam (Path Parameters) {String} asset_id id for the asset
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id id for the asset
   *
   * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
   * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -1380,9 +1380,9 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-   * @apiParam (Path Parameters) {String} asset_id the asset id
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam {String} asset_id the asset id
    *
    *
    * @apiParamExample {String} Delete Caption Example:
@@ -1435,8 +1435,8 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
    *
    *
    * @apiParamExample {String} Poster list Example:
@@ -1522,9 +1522,9 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-   * @apiParam (Path Parameters) {String} asset_id the asset id
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam {String} asset_id the asset id
    *
    *
    * @apiParamExample {String} Poster Example:
@@ -1610,8 +1610,8 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
    *
    * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -1736,9 +1736,9 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
    *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-   * @apiParam (Path Parameters) {String} asset_id id for the asset
+   * @apiParam {String} account_id Video Cloud account ID.
+   * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam {String} asset_id id for the asset
    *
    * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
    * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -1856,9 +1856,9 @@
     * @apiHeader {String} Content-Type Content-Type: application/json
     * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
     *
-    * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-    * @apiParam (Path Parameters) {String} asset_id the asset id
+    * @apiParam {String} account_id Video Cloud account ID.
+    * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+    * @apiParam {String} asset_id the asset id
     *
     *
     * @apiParamExample {String} Delete Poster Example:
@@ -1910,8 +1910,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} Thumbnail list Example:
@@ -1997,9 +1997,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id the asset id
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id the asset id
  *
  *
  * @apiParamExample {String} Thumbnail Example:
@@ -2085,8 +2085,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17948))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -2211,9 +2211,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17948))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -2331,9 +2331,9 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17948))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-  * @apiParam (Path Parameters) {String} asset_id the asset id
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} asset_id the asset id
   *
   *
   * @apiParamExample {String} Delete Thumbnail Example:
@@ -2386,8 +2386,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} HLS Manifest list Example:
@@ -2472,8 +2472,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} HLS Manifest Example:
@@ -2558,8 +2558,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -2684,9 +2684,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -2805,8 +2805,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Delete HLS Manifest Example:
@@ -2858,8 +2858,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} ISM Manifest list Example:
@@ -2944,8 +2944,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} ISM Manifest list Example:
@@ -3030,8 +3030,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -3156,9 +3156,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -3277,8 +3277,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Delete ISM Manifest list Example:
@@ -3330,8 +3330,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} ISMC Manifest list Example:
@@ -3416,8 +3416,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} ISMC Manifest list Example:
@@ -3502,8 +3502,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -3627,9 +3627,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -3748,8 +3748,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Delete ISMC Manifest list Example:
@@ -3802,8 +3802,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} DASH Manifest list Example:
@@ -3889,8 +3889,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
  * @apiParamExample {String} DASH Manifest list Example:
@@ -3976,8 +3976,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -4101,9 +4101,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
- * @apiParam (Path Parameters) {String} asset_id id for the asset
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam {String} asset_id id for the asset
  *
  * @apiParam (Request Body Fields) {String} [reference_id] video reference id (must be unique within the account)
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
@@ -4228,8 +4228,8 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
   * @apiParamExample {String} Delete DASH Manifest list Example:

@@ -12,8 +12,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
  * @apiParam (Request Body Fields) {Object} [master] the video master to be ingested
  * @apiParam (Request Body Fields) {String} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
  * @apiParam (Request Body Fields) {Boolean} [master.use_archived_master] For retranscode requests, will use the archived master if set to `true`; if set to `false`, you must also include the `url` for the source video
@@ -206,9 +206,9 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
   *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
-  * @apiParam (Path Parameters) {String} source_name the video source filename - **the name should not contain any URL-reserved characters such as ?, &, # or spaces**
+  * @apiParam {String} account_id Video Cloud account ID.
+  * @apiParam {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
+  * @apiParam {String} source_name the video source filename - **the name should not contain any URL-reserved characters such as ?, &, # or spaces**
   *
   * @apiParamExample {json} Get S3 URLS Example:
   *    https://ingest.api.brightcove.com/v1/accounts/57838016001/videos/67909129001/upload-urls/greatblueheron.mp4
