@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "",
-    "version": "0.0.0",
-    "description": ""
+    "title": "CMS API Reference",
+    "version": "1.0.0",
+    "description": "Reference for the Brightcove CMS API, used to access and manage your media library. To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>. For permissions needed for OAuth credentials, see <a href=\"https://support.brightcove.com/node/17922\" target=\"_blank\">API Operations</a>"
   },
   "paths": {
     "/accounts/{account_id}/videos/{video_id}/assets/caption": {
@@ -42,6 +42,20 @@
             "schema": {
               "$ref": "#/definitions/Add_CaptionBody"
             }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -4381,6 +4395,12 @@
           },
           "503": {
             "description": "TIMEOUT: Server likely too busy - try again later "
+          },
+          "Request Body Fields": {
+            "description": "Request Body Fields",
+            "schema": {
+              "$ref": "#/definitions/Update_VideoRequestBodyFields"
+            }
           }
         },
         "operationId": "Update_Video"
@@ -11540,7 +11560,7 @@
           }
         },
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the default poster source image "
         }
       },
@@ -11553,7 +11573,7 @@
     "images.poster.sources": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for a poster source image "
         }
       },
@@ -11575,7 +11595,7 @@
           }
         },
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the default thumbnail source image "
         }
       },
@@ -11588,7 +11608,7 @@
     "images.thumbnail.sources": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for a thumbnail source image "
         }
       },
@@ -11603,7 +11623,7 @@
           "description": "text for the link "
         },
         "url": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the link "
         }
       },
@@ -11646,7 +11666,7 @@
     "text_tracks": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the .vtt file "
         },
         "kind": {
@@ -11855,11 +11875,11 @@
     "schedule": {
       "properties": {
         "starts_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         },
         "ends_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         }
       },
@@ -11891,7 +11911,7 @@
           "description": "The ID of the source video that was clipped to produce this video or null if this video is not a clip of another video "
         },
         "created_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was created "
         },
         "custom_fields": {
@@ -11968,7 +11988,7 @@
           "description": "used for 360 videos "
         },
         "published_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         },
         "reference_id": {
@@ -12002,7 +12022,7 @@
           "$ref": "#/definitions/text_tracks"
         },
         "updated_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was last modified "
         }
       },
@@ -12054,10 +12074,6 @@
           "type": "string",
           "description": "video short description "
         },
-        "ad_keys": {
-          "type": "string",
-          "description": "string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. "
-        },
         "drm_disabled": {
           "type": "boolean",
           "description": "if DRM is enabled for the account, setting this field to true will prevent this video from being DRM-protected (this field is only available for accounts enabled for Dynamic Delivery and DRM) "
@@ -12091,7 +12107,7 @@
         },
         "custom_fields": {
           "type": "object",
-          "description": "map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters. Note: be sure to use the internal name for the field, not the display name ",
+          "description": "map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters Note: be sure to use the internal name for the field, not the display name ",
           "additionalProperties": {
             "type": "string"
           }
@@ -12114,7 +12130,7 @@
           "$ref": "#/definitions/Update_VideoBody.link"
         },
         "published_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "ISO-8601 date-time string indicating when the video was published "
         },
         "schedule": {
@@ -12198,11 +12214,11 @@
     "Update_VideoBody.schedule": {
       "properties": {
         "starts_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of availability in ISO-8601 format "
         },
         "ends_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "end date-time of availability in ISO-8601 format "
         }
       },
@@ -12211,7 +12227,7 @@
     "Update_VideoBody.text_tracks": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the .vtt file "
         },
         "kind": {
@@ -12243,7 +12259,7 @@
     "Update_Video200": {
       "properties": {
         "updated_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was last modified "
         },
         "id": {
@@ -12267,7 +12283,7 @@
           "description": "The ID of the source video that was clipped to produce this video or null if this video is not a clip of another video "
         },
         "created_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was created "
         },
         "custom_fields": {
@@ -12340,7 +12356,7 @@
           "description": "used for 360 videos "
         },
         "published_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         },
         "reference_id": {
@@ -12406,6 +12422,15 @@
         "tags",
         "text_tracks"
       ]
+    },
+    "Update_VideoRequestBodyFields": {
+      "properties": {
+        "ad_keys": {
+          "type": "string",
+          "description": "string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. "
+        }
+      },
+      "required": []
     },
     "Add_AffiliateBody": {
       "properties": {
@@ -13552,11 +13577,11 @@
     "Create_VideoBody.schedule": {
       "properties": {
         "starts_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of availability in ISO-8601 format "
         },
         "ends_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "end date-time of availability in ISO-8601 format "
         }
       },
@@ -13585,7 +13610,7 @@
           "description": "The ID of the source video that was clipped to produce this video or null if this video is not a clip of another video "
         },
         "created_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was created "
         },
         "custom_fields": {
@@ -13658,7 +13683,7 @@
           "description": "used for 360 videos "
         },
         "published_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         },
         "reference_id": {
@@ -13692,7 +13717,7 @@
           "$ref": "#/definitions/text_tracks"
         },
         "updated_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was last modified "
         }
       },
@@ -13744,7 +13769,7 @@
           "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true "
         },
         "created_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was created "
         },
         "ad_keys": {
@@ -13829,7 +13854,7 @@
           "description": "used for 360 videos "
         },
         "published_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format "
         },
         "reference_id": {
@@ -13863,7 +13888,7 @@
           "$ref": "#/definitions/text_tracks"
         },
         "updated_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "when the video was last modified "
         }
       },
@@ -13995,11 +14020,11 @@
           "description": "asset type "
         },
         "update_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "date/time last modified "
         },
         "uploaded_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "date/time added "
         },
         "version": {
@@ -14417,7 +14442,7 @@
           }
         },
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the default poster source image "
         }
       },
@@ -14430,7 +14455,7 @@
     "poster.sources": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for a poster source image "
         }
       },
@@ -14452,7 +14477,7 @@
           }
         },
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for the default thumbnail source image "
         }
       },
@@ -14465,7 +14490,7 @@
     "thumbnail.sources": {
       "properties": {
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for a thumbnail source image "
         }
       },
@@ -14512,7 +14537,7 @@
           "description": "file size in bytes "
         },
         "src": {
-          "type": "url",
+          "type": "string",
           "description": "URL for HTTP rendition "
         },
         "steam_name": {
@@ -14524,7 +14549,7 @@
           "description": "the type for segmented streams "
         },
         "uploaded_at": {
-          "type": "datestring",
+          "type": "string",
           "description": "date/time when the video was uploaded "
         },
         "width": {
@@ -14549,5 +14574,10 @@
         "width"
       ]
     }
-  }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "cms.api.brightcove.com",
+  "basePath": "/v1"
 }

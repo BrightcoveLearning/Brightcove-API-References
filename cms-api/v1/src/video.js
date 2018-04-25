@@ -41,7 +41,7 @@
  * @apiSuccess (200) {String} cue_points.type cue point type
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {Boolean} cue_points.force-stop whether video is force-stopped at the cue point
  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -300,7 +300,7 @@
  * @apiSuccess (200) {String} cue_points.type cue point type
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {Boolean} cue_points.force-stop whether video is force-stopped at the cue point
  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -1379,7 +1379,7 @@
   * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
   * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
-  * @apiParam (Request Body Fields) {Boolean} [cue_points.force_stop=false] whether video is force_stopped at the cue point
+  * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
   * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
@@ -1415,7 +1415,7 @@
   * @apiSuccess (200) {String} cue_points.type cue point type
   * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
-  * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+  * @apiSuccess (200) {Boolean} cue_points.force-stop whether video is force-stopped at the cue point
   * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
   * @apiSuccess (200) {String} description video short description
   * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
@@ -1587,7 +1587,7 @@
  * @apiParam (Request Body Fields) {String="AD","CODE"} cue_points.type cue point type
  * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiParam (Request Body Fields) {String{..512}} [cue_points.metadata=null] optional metadata string (512 single-byte characters maximum)
- * @apiParam (Request Body Fields) {Boolean} [cue_points.force_stop=false] whether video is force_stopped at the cue point
+ * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2- or 4-letter codes __in lower-case__](https://www.iso.org/obp/ui/#home) (search for "country codes")
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
@@ -1635,7 +1635,7 @@
  * @apiSuccess (200) {String} cue_points.type cue point type
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
+ * @apiSuccess (200) {Boolean} cue_points.force-stop whether video is force-stopped at the cue point
  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
