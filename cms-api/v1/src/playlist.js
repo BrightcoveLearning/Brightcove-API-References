@@ -25,7 +25,7 @@
  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18010) for details. Only _search by type is currently supported for playlists &mdash; e.g. q=type:EXPLICIT.
  * @apiParam (URL Parameters) {String="name","updated_at"} [sort="updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending - note: to sort in descending order, preface the field name with a minus (-) sign
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=type:EXPLICIT
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -122,7 +122,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID, or multiple playlist ids separated by commas.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -219,7 +219,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/1403224824001/videos
  *
  * @apiSuccess (Response Fields) {String} id video id
@@ -247,16 +247,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
@@ -274,7 +274,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
@@ -621,7 +621,7 @@
  *
  * @apiParam (URL Parameters) {String} [q] search string - see[search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists
  *
  * @apiSuccess (Response Field) {Number} count count of playlists found
@@ -676,7 +676,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists/749117323001/videos
  *
  * @apiSuccess (Response Field) {Number} count count of videos
@@ -974,7 +974,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccessExample {json} Success Response:

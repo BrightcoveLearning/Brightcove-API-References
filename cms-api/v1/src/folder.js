@@ -20,7 +20,7 @@
  * @apiParam (URL Parameters) {Number} [limit=20] number of folders to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of folders to skip in the response
  *
- * @apiParamExample {Url} Get Folders Example:
+ * @apiParamExample {String} Get Folders Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
@@ -104,7 +104,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id Video Cloud folder ID.
  *
- * @apiParamExample {Url} Get Folder Information Example:
+ * @apiParamExample {String} Get Folder Information Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
@@ -172,7 +172,7 @@
  * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  *
- * @apiParamExample {Url} Get Videos in Folder Example:
+ * @apiParamExample {String} Get Videos in Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos
  *
  * @apiSuccess (Response Fields) {String} id video id
@@ -198,16 +198,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {Url} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
@@ -222,7 +222,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track

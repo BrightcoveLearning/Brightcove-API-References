@@ -17,15 +17,15 @@
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="asc","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
- * @apiParamExample {Url} Get Applications Example:
+ * @apiParamExample {String} Get Applications Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of applications in result set
  * @apiSuccess (Response Fields) {String} results.id Each applicationId
  * @apiSuccess (Response Fields) {String} results.name Each application's name
  * @apiSuccess (Response Fields) {String} results.domainId Each application's parent domainId
- * @apiSuccess (Response Fields) {Url} prev URL to GET the previous application result set (if necessary)
- * @apiSuccess (Response Fields) {Url} next URL to GET the next application result set (if necessary)
+ * @apiSuccess (Response Fields) {String} prev URL to GET the previous application result set (if necessary)
+ * @apiSuccess (Response Fields) {String} next URL to GET the next application result set (if necessary)
  * @apiSuccess (Response Fields) {Number} totalResults The total number of applications in the domain
  *
  * @apiSuccessExample {json} Success Response:
@@ -71,7 +71,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} applicationId The application Id
  *
- * @apiParamExample {Url} Get Application Details Example:
+ * @apiParamExample {String} Get Application Details Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/2baf3c54-2baf-3c54-be91-147ffc57ebbe
  *
  * @apiSuccess (Response Fields Example 1) {String} id The application Id
@@ -287,7 +287,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} applicationId The application Id
  *
- * @apiParamExample {Url} Delete Application Example:
+ * @apiParamExample {String} Delete Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {String} id The application Id
@@ -321,7 +321,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} applicationId The application Id
  *
- * @apiParamExample {Url} Get Application Ad Configuration Example:
+ * @apiParamExample {String} Get Application Ad Configuration Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig
  *
  * @apiSuccess (Response Fields Example 1) {Object} preRoll A single VAST adConfig for the preRoll slot
@@ -546,7 +546,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} applicationId The application Id
  *
- * @apiParamExample {Url} Delete Ad Configurations Example:
+ * @apiParamExample {String} Delete Ad Configurations Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig
  *
  * @apiSuccess (Response Fields) {String[]} id An array of adConfigId(s) which have been deleted

@@ -24,7 +24,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} HDS Manifest list Example:
+ * @apiParamExample {String} HDS Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hds_manifest
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -110,7 +110,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} HDS Manifest list Example:
+ * @apiParamExample {String} HDS Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hds_manifest/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -444,7 +444,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete HDS Manifest list Example:
+  * @apiParamExample {String} Delete HDS Manifest list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hds_manifest/77874616001
   *
   *

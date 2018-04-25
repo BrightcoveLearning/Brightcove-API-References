@@ -20,7 +20,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} Rendition list Example:
+ * @apiParamExample {String} Rendition list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets
  *
  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
@@ -171,7 +171,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} Rendition list Example:
+ * @apiParamExample {String} Rendition list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/renditions
  *
  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
@@ -305,7 +305,7 @@
  * @apiParam (Path Parameters) {String} asset_id the asset id
  *
  *
- * @apiParamExample {Url} Get Rendition Example:
+ * @apiParamExample {String} Get Rendition Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/rendition/77874616001
  *
  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
@@ -738,7 +738,7 @@
  * @apiParam (Path Parameters) {String} asset_id the asset id
  *
  *
- * @apiParamExample {Url} Delete Rendition Example:
+ * @apiParamExample {String} Delete Rendition Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/rendition/77874616001
  *
  * @apiSuccessExample {null} Success Response:
@@ -789,7 +789,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Rendition list Example:
+  * @apiParamExample {String} Rendition list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/renditions
   *
   * @apiSuccess (Response Fields) {String} rendition_id the rendition id
@@ -970,7 +970,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Caption list Example:
+  * @apiParamExample {String} Caption list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption
   *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -1056,7 +1056,7 @@
   * @apiParam (Path Parameters) {String} asset_id the asset id
   *
   *
-  * @apiParamExample {Url} Caption Example:
+  * @apiParamExample {String} Caption Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption/77874616001
   *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -1385,7 +1385,7 @@
    * @apiParam (Path Parameters) {String} asset_id the asset id
    *
    *
-   * @apiParamExample {Url} Delete Caption Example:
+   * @apiParamExample {String} Delete Caption Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/caption/77874616001
    *
    *
@@ -1439,7 +1439,7 @@
    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
    *
    *
-   * @apiParamExample {Url} Poster list Example:
+   * @apiParamExample {String} Poster list Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster
    *
   * @apiSuccess (Response Fields) {String} id the asset id
@@ -1527,7 +1527,7 @@
    * @apiParam (Path Parameters) {String} asset_id the asset id
    *
    *
-   * @apiParamExample {Url} Poster Example:
+   * @apiParamExample {String} Poster Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster/77874616001
    *
   * @apiSuccess (Response Fields) {String} id the asset id
@@ -1861,7 +1861,7 @@
     * @apiParam (Path Parameters) {String} asset_id the asset id
     *
     *
-    * @apiParamExample {Url} Delete Poster Example:
+    * @apiParamExample {String} Delete Poster Example:
     *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/poster/77874616001
     *
     *
@@ -1914,7 +1914,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} Thumbnail list Example:
+ * @apiParamExample {String} Thumbnail list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2002,7 +2002,7 @@
  * @apiParam (Path Parameters) {String} asset_id the asset id
  *
  *
- * @apiParamExample {Url} Thumbnail Example:
+ * @apiParamExample {String} Thumbnail Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2336,7 +2336,7 @@
   * @apiParam (Path Parameters) {String} asset_id the asset id
   *
   *
-  * @apiParamExample {Url} Delete Thumbnail Example:
+  * @apiParamExample {String} Delete Thumbnail Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/thumbnail/77874616001
   *
   *
@@ -2390,7 +2390,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} HLS Manifest list Example:
+ * @apiParamExample {String} HLS Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2476,7 +2476,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} HLS Manifest Example:
+ * @apiParamExample {String} HLS Manifest Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2809,7 +2809,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete HLS Manifest Example:
+  * @apiParamExample {String} Delete HLS Manifest Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/hls_manifest/77874616001
   *
   *
@@ -2862,7 +2862,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} ISM Manifest list Example:
+ * @apiParamExample {String} ISM Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2948,7 +2948,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} ISM Manifest list Example:
+ * @apiParamExample {String} ISM Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3281,7 +3281,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete ISM Manifest list Example:
+  * @apiParamExample {String} Delete ISM Manifest list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ism_manifest/77874616001
   *
   *
@@ -3334,7 +3334,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} ISMC Manifest list Example:
+ * @apiParamExample {String} ISMC Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3420,7 +3420,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} ISMC Manifest list Example:
+ * @apiParamExample {String} ISMC Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3752,7 +3752,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete ISMC Manifest list Example:
+  * @apiParamExample {String} Delete ISMC Manifest list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/ismc_manifest/77874616001
   *
   *
@@ -3806,7 +3806,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} DASH Manifest list Example:
+ * @apiParamExample {String} DASH Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3893,7 +3893,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} DASH Manifest list Example:
+ * @apiParamExample {String} DASH Manifest list Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -4232,7 +4232,7 @@
   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
   *
   *
-  * @apiParamExample {Url} Delete DASH Manifest list Example:
+  * @apiParamExample {String} Delete DASH Manifest list Example:
   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
   *
   *

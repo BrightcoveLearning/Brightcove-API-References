@@ -37,7 +37,7 @@
   * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign
   * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
   *
-  * @apiParamExample {Url} Search Example:
+  * @apiParamExample {String} Search Example:
   *     https://edge.api.brightcove.com/playback/v1/accounts/:account_id/videos?q=tags:nature,name:nature
   *
   * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
@@ -176,7 +176,7 @@
    * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
    * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
    *
-   * @apiParamExample {Url} Get Related Videos Example:
+   * @apiParamExample {String} Get Related Videos Example:
    *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999/related
    *     // or
    *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/ref:nature1/related
@@ -307,7 +307,7 @@
  *
  * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
  *
- * @apiParamExample {Url} Get Video Example:
+ * @apiParamExample {String} Get Video Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999
  *     // or
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/ref:my_reference_id

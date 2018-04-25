@@ -18,7 +18,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParamExample {url} Get Notifications Example:
+ * @apiParamExample {String} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions
  *
  * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
@@ -152,7 +152,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} subscription_id the subscription ID.
  *
- * @apiParamExample {url} Get Notifications Example:
+ * @apiParamExample {String} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions/3019328472390
  *
  * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
@@ -215,7 +215,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} subscription_id the subscription ID.
  *
- * @apiParamExample {url} Get Notifications Example:
+ * @apiParamExample {String} Get Notifications Example:
  *     https://cms.api.brightcove.com/v1/accounts/0098768765/subscriptions/24019234871230487
  * *
  * @apiSuccessExample {json} Success Response:

@@ -794,7 +794,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to stop.
   *
-  * @apiParamExample {url} Stop Live Stream Example:
+  * @apiParamExample {String} Stop Live Stream Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
@@ -827,7 +827,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to activate.
   *
-  * @apiParamExample {url} Activate SEP Job Example:
+  * @apiParamExample {String} Activate SEP Job Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/activate
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was activated
@@ -859,7 +859,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to deactivate.
   *
-  * @apiParamExample {url} Deactivate SEP Job Example:
+  * @apiParamExample {String} Deactivate SEP Job Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/deactivate
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was Deactivated
@@ -892,7 +892,7 @@
   *
   * @apiParam (URL Parameters) {String} jobId The job id you want details for.
   *
-  * @apiParamExample {url} Get Live Job Details Example:
+  * @apiParamExample {String} Get Live Job Details Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
   *
   * @apiSuccess (Response Fields) {Object} job Object containing the job details

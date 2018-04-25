@@ -12,7 +12,7 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
- * @apiParamExample {Url} Get Domain Example:
+ * @apiParamExample {String} Get Domain Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
  *
  * @apiSuccess (Response Fields) {String} id The domain Id
@@ -46,7 +46,7 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
- * @apiParamExample {Url} Get Domain Renditions Example:
+ * @apiParamExample {String} Get Domain Renditions Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
@@ -93,7 +93,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} renditionId The id for the rendition
  *
- * @apiParamExample {Url} Get Rendition Settings Example:
+ * @apiParamExample {String} Get Rendition Settings Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The rendition Id
@@ -138,7 +138,7 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
- * @apiParamExample {Url} Get Domain Publication Rules Example:
+ * @apiParamExample {String} Get Domain Publication Rules Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules
  *
  * @apiSuccess (Response Fields) {String[]} id A comma-separated array of publicationRuleIds configured at the Domain level (will be inherited by new catalogs)
@@ -170,7 +170,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
  *
- * @apiParamExample {Url} Get Domain Publication Rule Example:
+ * @apiParamExample {String} Get Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
  *
  * @apiSuccess (Response Fields) {String} channel (internal use only)
@@ -415,7 +415,7 @@
   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
   * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
   *
-  * @apiParamExample {Url} Delete Domain Publication Rule Example:
+  * @apiParamExample {String} Delete Domain Publication Rule Example:
   *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
   *
   * @apiSuccess (Response Fields) {String} id id of the publication rule that was deleted
@@ -446,7 +446,7 @@
    *
    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
    *
-   * @apiParamExample {Url} Get Domain Timed Text Example:
+   * @apiParamExample {String} Get Domain Timed Text Example:
    *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText
    *
    * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
@@ -509,7 +509,7 @@
    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
    * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
    *
-   * @apiParamExample {Url} Get Domain Timed Text Example:
+   * @apiParamExample {String} Get Domain Timed Text Example:
    *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText/a44eb311-b1a6-4d0c-ba92-d54841c51126
    *
    * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
@@ -554,7 +554,7 @@
     * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
     *
     *
-    * @apiParamExample {url} Delete Timed Text Example:
+    * @apiParamExample {String} Delete Timed Text Example:
     *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText/6e376b50-e8e5-46fe-922c-17199e5950cd
     *
     * @apiSuccess (Response Fields) {String} requestId The job id for the request

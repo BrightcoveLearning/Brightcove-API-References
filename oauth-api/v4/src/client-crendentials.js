@@ -121,7 +121,7 @@
  *
  * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
  *
- * @apiParamExample {Url} Create Credentials Example:
+ * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v4/client_credentials?origin_account_ids=57838016001,20318290001
  *
  * @apiSuccess (Response Fields) {String} name credential name
@@ -232,7 +232,7 @@
  *
  * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
  *
- * @apiParamExample {Url} Create Credentials Example:
+ * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v4/client_credentials/1fa5f786-3418-4a69-8b78-6772f283d838
  *
  * @apiSuccess (Response Fields) {String} name credential name
@@ -410,7 +410,7 @@
  *
  * @apiParam (Path Parameters) {String} client_id client id for the credential
  *
- * @apiParamExample {Url} Create Credentials Example:
+ * @apiParamExample {String} Create Credentials Example:
  *    https://oauth.brightcove.com/v4/client_credentials/b744071a-3dc6-4e2a-9a8a-50beca8cf53f
  *
  *

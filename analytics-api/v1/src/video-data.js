@@ -15,7 +15,7 @@
  * @apiParam (Path Parameters) {String} account_id a Video Cloud account ID
  * @apiParam (Path Parameters) {String} video_id a Video Cloud video ID
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
  *
  * @apiSuccess (Response Fields) {Number} alltime_video_views all-time video views

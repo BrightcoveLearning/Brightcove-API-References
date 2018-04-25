@@ -25,7 +25,7 @@
  * @apiParam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] ignored
  * @apiParam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data/status?accounts=20318290001&dimensions=account,device_os,country
  *
  * @apiSuccess (Response Fields) {DateString} reconciled_from the earliest date that you can use for `from` and get reconciled data

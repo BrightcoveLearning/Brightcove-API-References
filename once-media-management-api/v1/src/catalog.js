@@ -17,15 +17,15 @@
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="asc","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
- * @apiParamExample {Url} Get Catalog List Example:
+ * @apiParamExample {String} Get Catalog List Example:
  *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of catalogs in result set
  * @apiSuccess (Response Fields) {String} results.id Each catalogId
  * @apiSuccess (Response Fields) {String} results.name Each catalog’s name
  * @apiSuccess (Response Fields) {String} results.domainId Each catalog’s parent domainId
- * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
- * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {String} prev URL to get the previous result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {String} next URL to get the next result set (`null` if there is none)
  * @apiSuccess (Response Fields) {Number} total number of results
  *
  * @apiSuccessExample {json} Success Response:
@@ -71,7 +71,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
- * @apiParamExample {Url} Get Catalog Request Example:
+ * @apiParamExample {String} Get Catalog Request Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
  * @apiSuccess (Response Fields) {String} id The catalog Id
@@ -197,7 +197,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
- * @apiParamExample {Url} Get Catalog Renditions Example:
+ * @apiParamExample {String} Get Catalog Renditions Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of renditions assigned to catalog
@@ -242,7 +242,7 @@
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
  *
- * @apiParamExample {Url} Get Catalog Rendition Settings Example:
+ * @apiParamExample {String} Get Catalog Rendition Settings Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The renditionId
@@ -374,7 +374,7 @@
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id to remove from the catalog set
  *
- * @apiParamExample {Url} Delete Catalog Rendition Example:
+ * @apiParamExample {String} Delete Catalog Rendition Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalog/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The renditionId removed from the catalog rendition set
@@ -408,7 +408,7 @@
   * @apiParam (Path Parameters) {String} domainId The domain Id
   * @apiParam (Path Parameters) {String} catalogId The catalog id
   *
-  * @apiParamExample {Url} Get Catalog Publication Rules Example:
+  * @apiParamExample {String} Get Catalog Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
   *
   * @apiSuccess (Response Fields) {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the catalog (will be inherited by mediaItems ingested to the catalog)
@@ -449,7 +449,7 @@
    * @apiParam (Path Parameters) {String} catalogId The catalog id
    * @apiParam (Path Parameters) {String} publicationRuleId The publication rule id
    *
-   * @apiParamExample {Url} Get Catalog Publication RulesExample:
+   * @apiParamExample {String} Get Catalog Publication RulesExample:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
    *
    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
@@ -703,7 +703,7 @@
  * @apiParam (Path Parameters) {String} catalogId The catalog Id
  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
  *
- * @apiParamExample {Url} Delete Domain Publication Rule Example:
+ * @apiParamExample {String} Delete Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
  *
  * @apiSuccess (Response Fields) {String} id id of the publication rule that was deleted

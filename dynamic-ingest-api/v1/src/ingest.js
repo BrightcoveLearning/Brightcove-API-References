@@ -15,7 +15,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
  * @apiParam (Request Body Fields) {Object} [master] the video master to be ingested
- * @apiParam (Request Body Fields) {Url} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
+ * @apiParam (Request Body Fields) {String} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
  * @apiParam (Request Body Fields) {Boolean} [master.use_archived_master] For retranscode requests, will use the archived master if set to `true`; if set to `false`, you must also include the `url` for the source video
  * @apiParam (Request Body Fields) {String} [profile] ingest profile to use for transcoding; if absent, account default profile will be used
  * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
@@ -26,17 +26,17 @@
  * @apiParam (Request Body Fields) {String} [audio_tracks.masters.url] URL for the audio file **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String} [audio_tracks.masters.language] Language code for the audio track from the subtags in [http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
  * @apiParam (Request Body Fields) {String="main","alternate","commentary","dub","descriptive"} [audio_tracks.masters.variant] the type of audio track (default can be set for the account by contacting Brightcove Support) **Dynanic Delivery only**
- * @apiParam (Request Body Fields) {Url} text_tracks.url URL for a WebVTT file
+ * @apiParam (Request Body Fields) {String} text_tracks.url URL for a WebVTT file
  * @apiParam (Request Body Fields) {String} text_tracks.srclang ISO 639 2-letter (alpha-2) language code for the text tracks
  * @apiParam (Request Body Fields) {String="captions","subtitles","chapters","metadata"} [text_tracks.kind="captions"] how the vtt file is meant to be used
  * @apiParam (Request Body Fields) {String} [text_tracks.label] user-readable title
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default] sets the default language for captions/subtitles
  * @apiParam (Request Body Fields) {Object} [poster] the video master to be ingested
- * @apiParam (Request Body Fields) {Url} poster.url URL for the video poster image
+ * @apiParam (Request Body Fields) {String} poster.url URL for the video poster image
  * @apiParam (Request Body Fields) {Number} [poster.height] pixel height of the image
  * @apiParam (Request Body Fields) {Number} [poster.width] pixel width of the image
  * @apiParam (Request Body Fields) {Object} [thumbnail] the video master to be ingested
- * @apiParam (Request Body Fields) {Url} thumbnail.url URL for the video thumbnail image
+ * @apiParam (Request Body Fields) {String} thumbnail.url URL for the video thumbnail image
  * @apiParam (Request Body Fields) {Number} [thumbnail.height] pixel height of the image
  * @apiParam (Request Body Fields) {Number} [thumbnail.width] pixel width of the image
  * @apiParam (Request Body Fields) {Boolean} [capture-images] whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not

@@ -21,7 +21,7 @@
  * @apiParam (URL Parameters) {Number} [offset=0] The number of videos to skip
  * @apiParam (URL Parameters) {String} [ad_config_id] include [server-side ad insertion](https://support.brightcove.com/node/17906#Video_request_with_SSAI)
  *
- * @apiParamExample {Url} Get Playlists Example:
+ * @apiParamExample {String} Get Playlists Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/749117323001
  *     // or
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/ref:my_reference_id

@@ -19,7 +19,7 @@
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="asc","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
- * @apiParamExample {Url} Get Media Items Example:
+ * @apiParamExample {String} Get Media Items Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of mediaItems in result set
@@ -31,8 +31,8 @@
  * @apiSuccess (Response Fields) {String} results.title Each mediaItem’s title
  * @apiSuccess (Response Fields) {Number} results.draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
  * @apiSuccess (Response Fields) {Number} results.publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess (Response Fields) {Url} URL to GET the previous mediaItem result set (if necessary)
- * @apiSuccess (Response Fields) {Url} URL to GET the next mediaItem result set (if necessary
+ * @apiSuccess (Response Fields) {String} URL to GET the previous mediaItem result set (if necessary)
+ * @apiSuccess (Response Fields) {String} URL to GET the next mediaItem result set (if necessary
  * @apiSuccess (Response Fields) {Number} The total number of mediaItems in the catalog
  *
  * @apiSuccessExample {json} Success Response:
@@ -89,7 +89,7 @@
  * @apiParam (Path Parameters) {String} catalogId The catalog Id
  * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
  *
- * @apiParamExample {Url} Get Media Item Example:
+ * @apiParamExample {String} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
  * @apiSuccess (Response Fields) {String} id The mediaItem Id
@@ -366,7 +366,7 @@
  * @apiParam (Path Parameters) {String} catalogId The catalog Id
  * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id (you can substitute `foreignKey` for `mediaItemId`)
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {String} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
  * @apiSuccess (Response Fields) {String} delete Value will contain The mediaItem Id the message "scheduled for deletion"
@@ -400,7 +400,7 @@
   * @apiParam (Path Parameters) {String} catalogId The catalog Id
   * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
   *
-  * @apiParamExample {Url} Get Media Item Publication Rules Example:
+  * @apiParamExample {String} Get Media Item Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
   *
   * @apiSuccess (Response Fields) {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the mediaItem
@@ -435,7 +435,7 @@
    * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
    *
-   * @apiParamExample {Url} Get Media Item Publication Rule Example:
+   * @apiParamExample {String} Get Media Item Publication Rule Example:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
    *
    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
@@ -692,7 +692,7 @@
      * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
      * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
      *
-     * @apiParamExample {Url} Delete Media Item Publication Rule Example:
+     * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
      *
      * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -727,7 +727,7 @@
      * @apiParam (Path Parameters) {String} catalogId The catalog Id
      * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
      *
-     * @apiParamExample {Url} Delete Media Item Publication Rule Example:
+     * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a
      *
      * @apiSuccess (Response Fields) {String} id The mediaItem Id that was deleted
@@ -761,7 +761,7 @@
       * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
       * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
       *
-      * @apiParamExample {Url} Get Media Item Timed Text Example:
+      * @apiParamExample {String} Get Media Item Timed Text Example:
       *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText
       *
       * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects

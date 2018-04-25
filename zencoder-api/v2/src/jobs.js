@@ -1065,7 +1065,7 @@
    *
    * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
-   * @apiParamExample {url} Live Stream Custom Origin Example:
+   * @apiParamExample {String} Live Stream Custom Origin Example:
    *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
    *
    *
@@ -1091,7 +1091,7 @@
    *
    * @apiParam (URL Parameters) {String} jobId The job id for the job you want to cancel.
    *
-   * @apiParamExample {url} Live Stream Custom Origin Example:
+   * @apiParamExample {String} Live Stream Custom Origin Example:
    *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
    *
    * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped

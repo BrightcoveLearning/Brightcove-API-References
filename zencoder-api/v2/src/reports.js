@@ -15,7 +15,7 @@
   * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for VOD Example:
+  * @apiParamExample {String} Get Usage for VOD Example:
   *    https://app.zencoder.com/api/v2/reports/vod?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *
@@ -70,7 +70,7 @@
   * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for Live Example:
+  * @apiParamExample {String} Get Usage for Live Example:
   *    https://app.zencoder.com/api/v2/reports/live?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *
@@ -141,7 +141,7 @@
   * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for VOD & Live Example:
+  * @apiParamExample {String} Get Usage for VOD & Live Example:
   *    https://app.zencoder.com/api/v2/reports/all?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *

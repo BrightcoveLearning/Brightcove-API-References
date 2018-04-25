@@ -20,7 +20,7 @@
  * @apiParam (URL Parameters) {mixed} [from] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h)
  * @apiParam (URL Parameters) {mixed} [to] End time for the period covered by the report &mdash; `now` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h)
  *
- * @apiParamExample {Url} View Events Report Example:
+ * @apiParamExample {String} View Events Report Example:
  *     https://audience.api.brightcove.com/v1/accounts/1486906377/view_events?limit=10&fields=first_name&sort=video_name&where=video_id==1234567890&from=-30d&to=now
  *
  * @apiSuccess (Response Fields) {Number} count the total number of items
