@@ -1,7 +1,7 @@
 // get engagement report by account
 
 /**
- * @api {get} /engagement/accounts/:account_id Get Account Engagement
+ * @api {get} /engagement/accounts/:account_id
  * @apiName Get Account Engagement
  * @apiGroup Engagement
  * @apiVersion 1.0.0
@@ -59,7 +59,7 @@
  // get engagement report by player
 
 /**
- * @api {get} /engagement/accounts/:account_id/players/:player_id Get Player Engagement
+ * @api {get} /engagement/accounts/:account_id/players/:player_id
  * @apiName Get Player Engagement
  * @apiGroup Engagement
  * @apiVersion 1.0.0
@@ -112,8 +112,10 @@
  *        }
  *    ]
  *
- *//**
- * @api {get} /engagement/accounts/:account_id/videos/:video_id Get Video Engagement
+ */
+
+ /**
+ * @api {get} /engagement/accounts/:account_id/videos/:video_id
  * @apiName Get Video Engagement
  * @apiGroup Engagement
  * @apiVersion 1.0.0
