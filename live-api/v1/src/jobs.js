@@ -28,7 +28,7 @@
  * @apiParam (Request Body Fields) {Boolean} [encryption.key_rotation=false] Whether to use key rotation
  * @apiParam (Request Body Fields) {Number} [encryption.rotate_every=10] Interval for key rotation in video segments
  * @apiParam (Request Body Fields) {String} [encryption.external_url] The URL for the external encryption key - this field is required if you specify `type` as `external`, and the external key must match the `key` value
- * @apiParam (Request Body Fields) {Number{0-93600}} [event_length=0] Used to preset and define an end time for the live event. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
+ * @apiParam (Request Body Fields) {Number{0-93600}} [event_length=0] Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.
  * @apiParam (Request Body Fields) {Number{1-86400}} [live_dvr_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds. **Note: for SSAI jobs, the limit is `7200`.
  * @apiParam (Request Body Fields) {Number{1-600}} [live_dvr_ads_window_duration=600] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
  * @apiParam (Request Body Fields) {Number{1-5}} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
@@ -530,7 +530,7 @@
  * @apiSuccess {Boolean} ad_insertion Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiSuccess {String} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
  * @apiSuccess {Number} reconnect_time The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
- * @apiSuccess {Number} event_length The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
+ * @apiSuccess {Number} event_length Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.
  * @apiSuccess {Number} max_hls_protocol_version Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
  * @apiSuccess {String} slate id for slate of assets to be included
  * @apiSuccess {String} sep_state The current state of the job's SEP (static entry point) - possible values: 'waiting' 'pending_activation', 'activation_in_progress', 'ready', 'pending_deactivation', 'deactivation_in_progress', 'cancelled', 'finished'
@@ -906,7 +906,7 @@
   * @apiSuccess {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
   * @apiSuccess {String} job.region The Amazon AWS region to use for encoding the job
   * @apiSuccess {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
-  * @apiSuccess {Number} job.event_length The time, in seconds, that the system will keep the live stream available
+  * @apiSuccess {Number} job.event_length Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.
   * @apiSuccess {Boolean} job.live_stream Indicates whether this is a live stream or VOD
   * @apiSuccess {Boolean} job.ad_insertion Indicates whether SSAI is enabled
   * @apiSuccess {Boolean} job.metadata_passthrough `TODO`
