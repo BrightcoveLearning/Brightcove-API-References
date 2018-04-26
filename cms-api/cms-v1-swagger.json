@@ -4512,7 +4512,7 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/Get_Video_by_ID_or_Reference_ID200"
+              "$ref": "#/definitions/Video"
             }
           },
           "401": {
@@ -6310,7 +6310,10 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/Get_Videos200"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Video"
+              }
             }
           },
           "400": {
@@ -11888,7 +11891,7 @@
         "ends_at"
       ]
     },
-    "Get_Video_by_ID_or_Reference_ID200": {
+    "Video": {
       "properties": {
         "id": {
           "type": "string",
@@ -11920,9 +11923,11 @@
           "$ref": "#/definitions/custom_fields"
         },
         "cue_points": {
-          "type": "object",
-          "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "type": "array",
+          "description": "array of cue points ",
+          "items": {
+            "$ref": "#/definitions/cue_point"
+          }
         },
         "delivery_type": {
           "type": "string",
@@ -12017,9 +12022,11 @@
           }
         },
         "text_tracks": {
-          "type": "object",
-          "description": "array of text track maps ",
-          "$ref": "#/definitions/text_tracks"
+          "type": "array",
+          "description": "array of text tracks ",
+          "items": {
+            "$ref": "#/definitions/text_track"
+          }
         },
         "updated_at": {
           "type": "string",
@@ -12058,6 +12065,66 @@
         "tags",
         "text_tracks",
         "updated_at"
+      ]
+    },
+    "cue_point": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "cue point name "
+        },
+        "type": {
+          "type": "string",
+          "description": "cue point type "
+        },
+        "time": {
+          "type": "number",
+          "description": "time of the cue point in seconds; example: 10.527 "
+        },
+        "metadata": {
+          "type": "string",
+          "description": "optional metadata string (512 single-byte characters maximum) "
+        },
+        "force-stop": {
+          "type": "boolean",
+          "description": "whether video is force-stopped at the cue point "
+        }
+      },
+      "required": [
+        "type",
+        "time"
+      ]
+    },
+    "text_track": {
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "URL for the .vtt file "
+        },
+        "kind": {
+          "type": "string",
+          "description": "kind of text track "
+        },
+        "srclang": {
+          "type": "string",
+          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; "
+        },
+        "mime_type": {
+          "type": "string",
+          "description": "mime-type for the track "
+        },
+        "label": {
+          "type": "string",
+          "description": "label for the track "
+        },
+        "default": {
+          "type": "boolean",
+          "description": "whether this is the default track "
+        }
+      },
+      "required": [
+        "src",
+        "srclang"
       ]
     },
     "Update_VideoBody": {
