@@ -1,0 +1,325 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Once Ingest API Reference",
+    "version": "1.0.0",
+    "description": "Reference for the Once Ingest API, used to ingest media assets into the Once system."
+  },
+  "paths": {
+    "/{domain_id}/catalogs/{catalog_id}": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "summary": "Make Ingest Request",
+        "description": "Allows you to ingest a new video into the Once system ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "domain_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The domain id for your Once account "
+          },
+          {
+            "name": "catalog_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The id for the digital media catalog for your domain "
+          },
+          {
+            "in": "body",
+            "name": "Make_Ingest_RequestBody",
+            "description": "Allows you to ingest a new video into the Once system ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Make_Ingest_RequestBody"
+            }
+          },
+          {
+            "name": "X-BC-ONCE-API-KEY",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ": {api_key} "
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your policy key is correct "
+          },
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Make_Ingest_RequestSuccess200"
+            }
+          },
+          "Errors 404": {
+            "description": "Validation: The api couldn&#39;t find the resource you requested "
+          }
+        },
+        "operationId": "Make_Ingest_Request"
+      }
+    }
+  },
+  "definitions": {
+    "Make_Ingest_RequestBody": {
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the asset (max length: 255 characters) "
+        },
+        "foreignKey": {
+          "type": "string",
+          "description": "The unique identifier for the asset (max length: 150 characters) "
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the asset "
+        },
+        "keywords": {
+          "type": "array",
+          "description": "Array of keyword strings associated with the video ",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "description": "A map of key value pairs for Extended Metadata ",
+          "$ref": "#/definitions/Make_Ingest_RequestBody.metadata"
+        },
+        "media": {
+          "type": "object",
+          "description": "Container for the source URL of the asset being ingested ",
+          "$ref": "#/definitions/Make_Ingest_RequestBody.media"
+        },
+        "publicationRules": {
+          "type": "array",
+          "description": "An array of Publication Rules for the asset ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.publicationRules"
+          }
+        },
+        "cuePoints": {
+          "type": "array",
+          "description": "An array of Cue Points for the asset ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.cuePoints"
+          }
+        },
+        "timedText": {
+          "type": "array",
+          "description": "An array of Timed Text items for the asset ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.timedText"
+          }
+        },
+        "notifications": {
+          "type": "array",
+          "description": "An array of Notifications to be fired during ingest ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.notifications"
+          }
+        }
+      },
+      "required": [
+        "foreignKey",
+        "media"
+      ]
+    },
+    "Make_Ingest_RequestBody.metadata": {
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The key of an Extended Metadata key value pair (see the example below for key/value pairs) "
+        }
+      },
+      "required": [
+        "key"
+      ]
+    },
+    "Make_Ingest_RequestBody.media": {
+      "properties": {
+        "sourceURL": {
+          "type": "string",
+          "description": "The URL string to the source asset "
+        }
+      },
+      "required": [
+        "sourceURL"
+      ]
+    },
+    "Make_Ingest_RequestBody.publicationRules": {
+      "properties": {
+        "channel": {
+          "type": "string",
+          "description": "The Channel Guid for the Publication Rule "
+        },
+        "startDate": {
+          "type": "number",
+          "description": "The start date for the Publication Rule (epoch time in seconds) "
+        },
+        "endDate": {
+          "type": "number",
+          "description": "The end date for the Publication Rule (epoch time in seconds) "
+        },
+        "clientFilters": {
+          "type": "array",
+          "description": "An array of Client Filters for the Publication Rule ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.publicationRules.clientFilters"
+          }
+        },
+        "countryRules": {
+          "type": "array",
+          "description": "An array of Country Rules for the asset ",
+          "items": {
+            "$ref": "#/definitions/Make_Ingest_RequestBody.publicationRules.countryRules"
+          }
+        }
+      },
+      "required": [
+        "channel",
+        "startDate",
+        "endDate"
+      ]
+    },
+    "Make_Ingest_RequestBody.publicationRules.clientFilters": {
+      "properties": {
+        "variableName": {
+          "type": "string",
+          "description": "The variable name that the Client Filter will key off of "
+        },
+        "value": {
+          "type": "string",
+          "description": "The value name that the Client Filter will key off of "
+        },
+        "filterType": {
+          "type": "string",
+          "description": "The type of filtering used to compare the value "
+        },
+        "isDenied": {
+          "type": "boolean",
+          "description": "Denotes whether a successful comparison of the Client Filter is denied or allowed "
+        }
+      },
+      "required": [
+        "variableName",
+        "value",
+        "filterType",
+        "isDenied"
+      ]
+    },
+    "Make_Ingest_RequestBody.publicationRules.countryRules": {
+      "properties": {
+        "countryCode": {
+          "type": "string",
+          "description": "The Country Code for the Country Rule (ISO 639 2-letter code, such as &quot;CA&quot;) "
+        },
+        "isDenied": {
+          "type": "boolean",
+          "description": "Denotes whether a successful comparison of the Client Filter is denied or allowed "
+        }
+      },
+      "required": [
+        "countryCode",
+        "isDenied"
+      ]
+    },
+    "Make_Ingest_RequestBody.cuePoints": {
+      "properties": {
+        "valueIn": {
+          "type": "number",
+          "description": "The time in which the Cue Point will be inserted (integer) "
+        },
+        "unit": {
+          "type": "string",
+          "description": "The type of unit the time value "
+        }
+      },
+      "required": [
+        "valueIn",
+        "unit"
+      ]
+    },
+    "Make_Ingest_RequestBody.timedText": {
+      "properties": {
+        "media": {
+          "type": "object",
+          "description": "Container for the source URL of the timed text file being ingested ",
+          "$ref": "#/definitions/Make_Ingest_RequestBody.timedText.media"
+        },
+        "timedTextType": {
+          "type": "string",
+          "description": "The type to categorize the timed text item "
+        },
+        "languages": {
+          "type": "array",
+          "description": "An array of languages contained in the timed text asset (ISO-639 language codes) ",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternateId": {
+          "type": "string",
+          "description": "The optional id to associate with the timed text item, used as a descriptor or to create uniqueness "
+        }
+      },
+      "required": [
+        "media",
+        "timedTextType",
+        "languages"
+      ]
+    },
+    "Make_Ingest_RequestBody.timedText.media": {
+      "properties": {
+        "sourceURL": {
+          "type": "string",
+          "description": "The URL string to the source asset "
+        }
+      },
+      "required": [
+        "sourceURL"
+      ]
+    },
+    "Make_Ingest_RequestBody.notifications": {
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "The HTTP endpoint or sns target for your notification "
+        },
+        "notificationType": {
+          "type": "string",
+          "description": "The type of notification to be associated with, defaults to publish "
+        }
+      },
+      "required": [
+        "target"
+      ]
+    },
+    "Make_Ingest_RequestSuccess200": {
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "description": "The id for request "
+        }
+      },
+      "required": [
+        "requestId"
+      ]
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "api.unicornmedia.com",
+  "basePath": "/ingest-api"
+}

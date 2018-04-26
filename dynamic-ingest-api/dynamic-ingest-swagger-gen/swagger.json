@@ -1,0 +1,397 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Dynamic Ingest API Reference",
+    "version": "1.0.0",
+    "description": "Reference for the Brightcove Dynamic Ingest API, used to add videos, images, and captions to your media library, and to replace existing media assets. <strong style=\"color:#CC0000\">NOTE THAT BEFORE YOU INGEST A NEW VIDEO, YOU MUST FIRST MAKE A <a href=\"https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video\">CREATE VIDEO REQUEST</a>.</strong> To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>"
+  },
+  "paths": {
+    "/accounts/{account_id}/videos/{video_id}/upload-urls/{source_name}": {
+      "get": {
+        "tags": [
+          "Ingest"
+        ],
+        "summary": "Get S3 URLs",
+        "description": "Get temporary S3 URLs to upload source files for ingestion into Video Cloud. See Source File Upload for more information. NOTE that before you ingest a new video, you must first make a Create Video request. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID. "
+          },
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request "
+          },
+          {
+            "name": "source_name",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "the video source filename - the name should not contain any URL-reserved characters such as ?, &amp;, # or spaces "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Dynamic Ingest job not created. Reduce the number of concurrent jobs for this account before trying again. This error has been logged "
+          },
+          "500": {
+            "description": "INTERNAL_ERROR: Internal error, please try again later "
+          },
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Get_S3_URLsSuccess200"
+            }
+          }
+        },
+        "operationId": "Get_S3_URLs"
+      }
+    },
+    "/accounts/{account_id}/videos/{video_id}/ingest-requests": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "summary": "Ingest Media Asset",
+        "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID. "
+          },
+          {
+            "name": "video_id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request "
+          },
+          {
+            "in": "body",
+            "name": "Ingest_Media_AssetBody",
+            "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request. ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ingest_Media_AssetBody"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "PROFILE: Unable to find profile by name \nNOT_SUBMITTED: Unable to submit job, please try again later \nNO_SUCH_VIDEO: Unable to find the referenced video \nNO_SOURCE: Unable to find a source to use \nCDN_CREDENTIALS: Unable to fetch CDN credentials \nBAD_CALLBACKS: Callbacks were not in expected format \nBAD_REQUEST: Unable to parse request body. "
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+          },
+          "403": {
+            "description": "DYNAMIC_DELIVERY_NOT_ALLOWED: This account is not enabled for Dynamic Delivery, but a Dynamic Delivery profile was specified. \nCONTEXT_AWARE_ENCODING_NOT_ALLOWED: This account is not enabled for Context Aware Encoding, but a Context Aware Encoding profile was specified. "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "422": {
+            "description": "MALFORMED_SOURCE_URL: source url is malformed. \nBAD_PROTOCOL_SOURCE_URL: source url uses a unsupported protocol. \nEXCEED_MAXIMUM_VTT_SOURCES: vtt sources exceed the maximum size. \nINVALID_VTT_KIND: vtt kind is invalid. \nCONSTRAINT_VIOLATION: capture-image is not allowed if an image source is provided. \nUNPROCESSABLE_ENTITY: request data contains some unprocessable entity. "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Dynamic Ingest job not created. Reduce the number of concurrent jobs for this account before trying again. This error has been logged "
+          },
+          "500": {
+            "description": "SUBMISSION_FAILURE: Unable to submit job please try again later. \nINTERNAL_ERROR: Internal error, please try again later "
+          },
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Ingest_Media_AssetSuccess200"
+            }
+          },
+          "Unable to fetch CDN credentials ": {
+            "description": "CDN_CONFIGS:undefined"
+          },
+          "400 Both a master url and use_archived_master were set in the request. ": {
+            "description": "AMBIGUOUS_REQUEST:undefined"
+          }
+        },
+        "operationId": "Ingest_Media_Asset"
+      }
+    }
+  },
+  "definitions": {
+    "Get_S3_URLsSuccess200": {
+      "properties": {
+        "bucket": {
+          "type": "string",
+          "description": "the S3 bucket name "
+        },
+        "object_key": {
+          "type": "string",
+          "description": "the access key used for authenticating the upload request (used for multipart uploads) "
+        },
+        "access_key_id": {
+          "type": "string",
+          "description": "the access key used for authenticating the upload request (used for multipart uploads) "
+        },
+        "secret_access_key": {
+          "type": "string",
+          "description": "the secret access key used for authenticating the upload request (used for multipart uploads) "
+        },
+        "session_token": {
+          "type": "string",
+          "description": "the secret access key used for authenticating the upload request (used for multipart uploads) "
+        },
+        "SignedUrl": {
+          "type": "string",
+          "description": "this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload "
+        },
+        "ApiRequestUrl": {
+          "type": "string",
+          "description": "this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets "
+        }
+      },
+      "required": [
+        "bucket",
+        "object_key",
+        "access_key_id",
+        "secret_access_key",
+        "session_token",
+        "SignedUrl",
+        "ApiRequestUrl"
+      ]
+    },
+    "Ingest_Media_AssetBody": {
+      "properties": {
+        "master": {
+          "type": "object",
+          "description": "the video master to be ingested ",
+          "$ref": "#/definitions/Ingest_Media_AssetBody.master"
+        },
+        "profile": {
+          "type": "string",
+          "description": "ingest profile to use for transcoding; if absent, account default profile will be used "
+        },
+        "text_tracks": {
+          "type": "array",
+          "description": "array of text_track maps ",
+          "items": {
+            "$ref": "#/definitions/Ingest_Media_AssetBody.text_tracks"
+          }
+        },
+        "audio_tracks": {
+          "type": "array",
+          "description": "array of audio track objects Dynanic Delivery only ",
+          "items": {
+            "$ref": "#/definitions/Ingest_Media_AssetBody.audio_tracks"
+          }
+        },
+        "poster": {
+          "type": "object",
+          "description": "the video master to be ingested ",
+          "$ref": "#/definitions/Ingest_Media_AssetBody.poster"
+        },
+        "thumbnail": {
+          "type": "object",
+          "description": "the video master to be ingested ",
+          "$ref": "#/definitions/Ingest_Media_AssetBody.thumbnail"
+        },
+        "capture-images": {
+          "type": "boolean",
+          "description": "whether poster and thumbnail should be captured during transcoding; defaults to true if the the profile has image renditions, false if it does not "
+        },
+        "callbacks": {
+          "type": "array",
+          "description": "array of URLs that notifications should be sent to ",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": []
+    },
+    "Ingest_Media_AssetBody.master": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video "
+        },
+        "use_archived_master": {
+          "type": "boolean",
+          "description": "For retranscode requests, will use the archived master if set to true; if set to false, you must also include the url for the source video "
+        }
+      },
+      "required": []
+    },
+    "Ingest_Media_AssetBody.audio_tracks": {
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language code for the muxed in audio from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+        },
+        "merge_with_existing": {
+          "type": "boolean",
+          "description": "whether to replace existing audio tracks or add the new ones (currently only false is supported) Dynanic Delivery only "
+        },
+        "masters": {
+          "type": "array",
+          "description": "array of audio track objects Dynanic Delivery only ",
+          "items": {
+            "$ref": "#/definitions/Ingest_Media_AssetBody.audio_tracks.masters"
+          }
+        }
+      },
+      "required": []
+    },
+    "Ingest_Media_AssetBody.audio_tracks.masters": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL for the audio file Dynanic Delivery only "
+        },
+        "language": {
+          "type": "string",
+          "description": "Language code for the audio track from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+        },
+        "variant": {
+          "type": "string",
+          "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+        }
+      },
+      "required": []
+    },
+    "Ingest_Media_AssetBody.text_tracks": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL for a WebVTT file "
+        },
+        "srclang": {
+          "type": "string",
+          "description": "ISO 639 2-letter (alpha-2) language code for the text tracks "
+        },
+        "kind": {
+          "type": "string",
+          "description": "how the vtt file is meant to be used "
+        },
+        "label": {
+          "type": "string",
+          "description": "user-readable title "
+        },
+        "default": {
+          "type": "boolean",
+          "description": "sets the default language for captions/subtitles "
+        }
+      },
+      "required": [
+        "url",
+        "srclang"
+      ]
+    },
+    "Ingest_Media_AssetBody.poster": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL for the video poster image "
+        },
+        "height": {
+          "type": "number",
+          "description": "pixel height of the image "
+        },
+        "width": {
+          "type": "number",
+          "description": "pixel width of the image "
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "Ingest_Media_AssetBody.thumbnail": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL for the video thumbnail image "
+        },
+        "height": {
+          "type": "number",
+          "description": "pixel height of the image "
+        },
+        "width": {
+          "type": "number",
+          "description": "pixel width of the image "
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "Ingest_Media_AssetSuccess200": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "job id for the request "
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "ingest.api.brightcove.com",
+  "basePath": "/v1"
+}

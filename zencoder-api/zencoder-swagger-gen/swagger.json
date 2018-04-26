@@ -1,0 +1,3419 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Zencoder API Reference",
+    "version": "2.0.0",
+    "description": "Reference for the Brightcove Zencoder API, used to create and manage Zencoder encoding jobs."
+  },
+  "paths": {
+    "/v2/account": {
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Create an Account",
+        "description": "All that is required is an email address and an agreement to the terms of service. You can also send a password, but if you don&#39;t one will be generated. New accounts will be created under the Test (Free) plan. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Create_an_AccountBody",
+            "description": "All that is required is an email address and an agreement to the terms of service. You can also send a password, but if you don&#39;t one will be generated. New accounts will be created under the Test (Free) plan. ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Create_an_AccountBody"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Create_an_AccountSuccess200"
+            }
+          }
+        },
+        "operationId": "Create_an_Account"
+      },
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get Account Details",
+        "description": "Account details may be retrieved by issuing an HTTP GET to https://app.zencoder.com/api/v2/account. Account states are Active, Stopped, Suspended, and Cancelled. Billing states are Active, Past Due, and Cancelled. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Get_Account_DetailsSuccess200"
+            }
+          }
+        },
+        "operationId": "Get_Account_Details"
+      }
+    },
+    "/v2/account/live": {
+      "put": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Turn Off Integration Mode",
+        "description": "Integration mode can be turned off by issuing a PUT request to https://app.zencoder.com/api/v2/account/live. A successful response will be indicated by a HTTP status of 204 No Content ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {},
+        "operationId": "Turn_Off_Integration_Mode"
+      }
+    },
+    "/v2/account/integration": {
+      "put": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Turn On Integration Mode",
+        "description": "Integration mode can be turned on by issuing a PUT request to https://app.zencoder.com/api/v2/account/integration. A successful response will be indicated by a HTTP status of 204 No Content ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {},
+        "operationId": "Turn_On_Integration_Mode"
+      }
+    },
+    "i/v2/inputs/{inputId}": {
+      "get": {
+        "tags": [
+          "Inputs"
+        ],
+        "summary": "Get Input Details",
+        "description": "Get details of the input file for a job. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "application_ad_configuration",
+            "in": "query",
+            "required": true,
+            "type": "object",
+            "description": "The ad configuration object "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_description",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Human readable description of the configuration. "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_expected_response_type",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "The expected response type based on your ad server "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_strategy",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Specifies whether ad breaks should include single or muliple ads "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_transforms",
+            "in": "query",
+            "required": true,
+            "type": "object[]",
+            "description": "Array of ad configuration transforms. "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_transforms.xpath",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "xpath for the transform. "
+          },
+          {
+            "name": "application_ad_configuration.ad_configuration_transforms.xslt",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "xslt stylesheet for the transform. "
+          },
+          {
+            "name": "ad_configuration_url_format",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Format for the ad tag - see Server-Side Ad Insertion Using the Brightcove Live API for the available ad configuration variables. "
+          },
+          {
+            "name": "application_description",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Human readable description of the ad application. "
+          },
+          {
+            "name": "account_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Your account id. "
+          },
+          {
+            "name": "application_segment_buffer",
+            "in": "query",
+            "required": true,
+            "type": "number",
+            "description": "The amount of ad content to buffer, in seconds. "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Get_Input_DetailsSuccess200"
+            }
+          }
+        },
+        "operationId": "Get_Input_Details"
+      }
+    },
+    "/v2/inputs/{inputId}/progress": {
+      "get": {
+        "tags": [
+          "Inputs"
+        ],
+        "summary": "Input Progress",
+        "description": "Get the progress of processing for the input file. The current_event_progress number is the percent complete of the current event – so if the event is Downloading, and current_event_progress is 99.3421, then the file is almost finished downloading, but hasn&#39;t started Inspecting yet. The progress number is the overall percentage of completion for the input. The progress number is the percent complete of the current event – so if the event is Downloading, and progress is 99.3421, then the file is almost finished downloading, but hasn&#39;t started Inspecting yet. Valid states include: waiting, pending, assigning, processing, finished, failed, cancelled. Events include: downloading and inspecting. If you&#39;re getting a 404 to an input progress request, make sure that you&#39;re using the input ID, not the job or output ID, and make sure your API key is correct. A 404 means that we didn&#39;t find an input file with the specified ID for the account linked to the provided API key. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Update_Input_ProgressSuccess200"
+            }
+          }
+        },
+        "operationId": "Update_Input_Progress"
+      }
+    },
+    "/v1/jobs/{jobId}/cancel": {
+      "put": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Cancel a Job",
+        "description": "If you wish to cancel a job that has not yet finished processing you may send a request (using any HTTP method) to https://app.zencoder.com/api/v2/jobs/1234/cancel. If cancellation succeeds you will receive a 204 No Content response. Only jobs that are in the “waiting” or “processing” state may be cancelled. If you attempt to cancel a job in any other state you will receive a 409 Conflict response. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {},
+        "operationId": "Cancel_a_Job"
+      }
+    },
+    "/v2/jobs": {
+      "post": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Create a Job",
+        "description": "Encoding jobs are created by sending an HTTP POST request to https://app.zencoder.com/api/v2/jobs. The post body must include two things: the URL of a video to process and your API key. It may also include output settings for the job, including an output destination, notification settings, and transcoding settings. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Create_a_JobBody",
+            "description": "Encoding jobs are created by sending an HTTP POST request to https://app.zencoder.com/api/v2/jobs. The post body must include two things: the URL of a video to process and your API key. It may also include output settings for the job, including an output destination, notification settings, and transcoding settings. ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Create_a_JobBody"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json or application/xml "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Create_a_JobSuccess200"
+            }
+          }
+        },
+        "operationId": "Create_a_Job"
+      },
+      "get": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "List Jobs",
+        "description": "A list of jobs can be obtained by sending an HTTP GET request to https://app.zencoder.com/api/v2/jobs?api_key=93h630j1dsyshjef620qlkavnmzui3 (replace the api_key with your own). It will return an array of jobs similar to the example below. The list of thumbnails will be empty until the job is completed. By default, the results are paginated with 50 jobs per page and sorted by ID in descending order. You can pass two parameters to control the paging: page and per_page. per_page has a limit of 50. Note that historical jobs data is kept by Zencoder for 60 days - if you need to keep jobs data for longer periods, you need to retrieve it within 60 days and save it in your own data storage. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/job"
+            }
+          }
+        },
+        "operationId": "List_Jobs"
+      }
+    },
+    "/v1/jobs/{jobId}/finish": {
+      "put": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Finish a Live Job",
+        "description": "Finishes the input on a Live streaming job. Has no effect on non-Live jobs. A Live job can also finish by stopping the source stream in the broadcast software. Calling finish will disregard the reconnect_time and event_length options and finish the stream immediately, while stopping the stream in the broadcast software will respect them. Note that jobs cannot be finished when archive output is transcoding. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Finish_a_Live_JobSuccess200"
+            }
+          }
+        },
+        "operationId": "Finish_a_Live_Job"
+      }
+    },
+    "/v1/jobs/{jobId}": {
+      "get": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Get Job Details",
+        "description": "Get Job Details. Job details are available for two months after the job is submitted. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/job"
+            }
+          }
+        },
+        "operationId": "Get_Job_Details"
+      }
+    },
+    "/v1/jobs/{jobId}/progress": {
+      "put": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Job Progress",
+        "description": "Get the progress of a job. The return will contain one or more of the following keys: state, input, outputs, and progress. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Job_ProgressSuccess200"
+            }
+          }
+        },
+        "operationId": "Job_Progress"
+      }
+    },
+    "/v2/jobs/{jobId}/resubmit": {
+      "put": {
+        "tags": [
+          "Jobs"
+        ],
+        "summary": "Resubmit a Job",
+        "description": "If a job has failed processing with a transient error that may be solved by attempting processing again (such as a network timeout, or if you fix permissions on your server that had caused a download permission error) you may request that it be attempted again. You may resubmit a job for processing by sending a PUT request to https://app.zencoder.com/api/v2/jobs/1234/resubmit?api_key=93h630j1dsyshjef620qlkavnmzui3. Only jobs that are not in the “finished” state may be resubmitted. If resubmission succeeds you will receive a 204 No Content response. If you attempt to resubmit a “finished” job you will receive a 409 Conflict response. Resubmit requests are limited to prevent runaway scripts from repeatedly resubmitting a failing job. If you attempt to resubmit a job more times than the limit amount, you will receive a 403 Forbidden response. The limit is currently 5 attempts, but may change without warning. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json or application/xml "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {},
+        "operationId": "Resubmit_a_Job"
+      }
+    },
+    "i/v2/outputs/{outputId}": {
+      "get": {
+        "tags": [
+          "Outputs"
+        ],
+        "summary": "Get Output Details",
+        "description": "Get details of an Output file for a job. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Get_Output_DetailsSuccess200"
+            }
+          }
+        },
+        "operationId": "Get_Output_Details"
+      }
+    },
+    "/v2/outputs/{outputId}/progress": {
+      "get": {
+        "tags": [
+          "Outputs"
+        ],
+        "summary": "Get Output Progress",
+        "description": "Get the progress of processing for an output file. The current_event_progress number is the percent complete of the current event – so if the event is Transcoding, and current_event_progress is 99.3421, then the file is almost finished transcoding, but hasn&#39;t started uploading yet. The progress number is the overall percentage of completion for the output. The progress number is the percent complete of the current event – so if the event is Transcoding, and progress is 99.3421, then the file is almost finished transcoding, but hasn&#39;t started Uploading yet. Valid states include: waiting, queued, assigning, processing, finished, failed, cancelled, no input, and skipped. Events include: downloading, transcoding and uploading. If you&#39;re getting a 404 to a Job Progress request, make sure that you&#39;re using the output ID, not the job ID, and make sure your API key is correct. A 404 means that we didn&#39;t find an output file with the specified ID for the account linked to the provided API key. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/Get_Output_ProgressSuccess200"
+            }
+          }
+        },
+        "operationId": "Get_Output_Progress"
+      }
+    },
+    "/v2/reports/minutes": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Get Get Minutes Used",
+        "description": "In API version 2 /vod and /minutes return the same data. View the /vod documentation for more information on the available options and response fields. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "operationId": "Get_Get_Minutes_Used"
+      }
+    },
+    "/v2/reports/live": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Get Usage for Live",
+        "description": "This report returns a breakdown of live-streaming hour usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping. If you don&#39;t use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it&#39;s only partially complete. It&#39;s important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/total"
+            }
+          }
+        },
+        "operationId": "Get_Usage_for_Live"
+      }
+    },
+    "/v2/reports/vod": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Get Usage for VOD",
+        "description": "This report returns a breakdown of video on demand (videos not using live-streaming) minute usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping. If you don&#39;t use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it&#39;s only partially complete. It&#39;s important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/total"
+            }
+          }
+        },
+        "operationId": "Get_Usage_for_VOD"
+      }
+    },
+    "/v2/reports/all": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Get Usage for VOD & Live",
+        "description": "This report returns a breakdown of VOD and live-streaming usage by day and grouping. It will contain two top-level keys: total and statistics. total will contain the sum of all statistics returned in the report. statistics will contain an entry for each day and grouping, broken out by Live and VOD. If you don&#39;t use the report grouping feature of the API the report will contain only one entry per day. These statistics are collected about once per hour, but there is only one record per day (per grouping). By default this report excludes the current day from the response because it&#39;s only partially complete. It&#39;s important to note that our service operates in the UTC time zone (including billing periods). All dates and times reported will be in UTC. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Zencoder-Api-Key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Zencoder-Api-Key: {Your_API_Key} "
+          }
+        ],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200",
+            "schema": {
+              "$ref": "#/definitions/total"
+            }
+          }
+        },
+        "operationId": "Get_Usage_for_VOD___Live"
+      }
+    }
+  },
+  "definitions": {
+    "URL Parameters": {
+      "properties": {
+        "inputId": {
+          "type": "string",
+          "description": "The input id. "
+        },
+        "jobId": {
+          "type": "string",
+          "description": "The job id for the job you want to cancel. "
+        },
+        "outputId": {
+          "type": "string",
+          "description": "an Output id. "
+        }
+      },
+      "required": [
+        "inputId",
+        "jobId",
+        "outputId"
+      ]
+    },
+    "URL Params": {
+      "properties": {
+        "from": {
+          "type": "string",
+          "description": "Start date in the format YYYY-MM-DD (default: 30 days ago) "
+        },
+        "to": {
+          "type": "string",
+          "description": "End date in the format YYYY-MM-DD (default: 30 days ago "
+        },
+        "grouping": {
+          "type": "string",
+          "description": "A grouping name set in the Create a Job operation "
+        }
+      },
+      "required": []
+    },
+    "Create_an_AccountBody": {
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Email address of the account owner - must be unique "
+        },
+        "terms_of_service": {
+          "type": "string",
+          "description": "Indication that you agree to the terms of service "
+        },
+        "password": {
+          "type": "string",
+          "description": "Password "
+        },
+        "password_confirmation": {
+          "type": "string",
+          "description": "Password confirmation "
+        }
+      },
+      "required": [
+        "email",
+        "terms_of_service"
+      ]
+    },
+    "Create_an_AccountSuccess200": {
+      "properties": {
+        "api_key": {
+          "type": "string",
+          "description": "The api key used to authenticate other API requests "
+        },
+        "password": {
+          "type": "string",
+          "description": "The password submitted or an auto-generated one "
+        }
+      },
+      "required": [
+        "api_key",
+        "password"
+      ]
+    },
+    "Get_Account_DetailsSuccess200": {
+      "properties": {
+        "account_state": {
+          "type": "string",
+          "description": "Account states are active, stopped, suspended, and cancelled "
+        },
+        "plan": {
+          "type": "string",
+          "description": "The current account plan "
+        },
+        "billing_state": {
+          "type": "string",
+          "description": "Billing states are active, past due, and cancelled "
+        },
+        "minutes_used": {
+          "type": "number",
+          "description": "Minutes of encoded output used this month "
+        },
+        "minutes_included": {
+          "type": "number",
+          "description": "Minutes of encoded output included in your plan (per month) "
+        },
+        "integration_mode": {
+          "type": "boolean",
+          "description": "Whether the account is in integration (test) mode "
+        }
+      },
+      "required": [
+        "account_state",
+        "plan",
+        "billing_state",
+        "minutes_used",
+        "minutes_included",
+        "integration_mode"
+      ]
+    },
+    "Get_Input_DetailsSuccess200": {
+      "properties": {
+        "audio_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Audio bitrate of the input media file "
+        },
+        "audio_codec": {
+          "type": "string",
+          "description": "Audio codec of the input media file "
+        },
+        "audio_sample_rate": {
+          "type": "number",
+          "description": "Audio sample rate of the input media file "
+        },
+        "audio_tracks": {
+          "type": "number",
+          "description": "The number of audio tracks "
+        },
+        "channels": {
+          "type": "number",
+          "description": "The number of audio channels "
+        },
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was created "
+        },
+        "duration_in_ms": {
+          "type": "number",
+          "description": "duration_in_ms. "
+        },
+        "error_class": {
+          "type": "string",
+          "description": "Type of error thrown "
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message thrown "
+        },
+        "file_size_bytes": {
+          "type": "number",
+          "description": "File size "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was finished "
+        },
+        "format": {
+          "type": "string",
+          "description": "Format of the input file "
+        },
+        "frame_rate": {
+          "type": "number",
+          "description": "Frame rate of the input file "
+        },
+        "height": {
+          "type": "number",
+          "description": "Frame height of the input file "
+        },
+        "id": {
+          "type": "string",
+          "description": "System id of the input file "
+        },
+        "md5_checksum": {
+          "type": "string",
+          "description": "Checksum for the input file "
+        },
+        "privacy": {
+          "type": "boolean",
+          "description": "Privacy mode "
+        },
+        "state": {
+          "type": "string",
+          "description": "Current state of input file processing "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether run in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was last modified "
+        },
+        "video_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Video bitrate of the input media file "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "Video codec of the input media file "
+        },
+        "width": {
+          "type": "number",
+          "description": "Frame width of the input media file "
+        },
+        "total_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Total bitrate of the input media file "
+        },
+        "url": {
+          "type": "string",
+          "description": "URL for the input media file "
+        }
+      },
+      "required": [
+        "audio_bitrate_in_kbps",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_tracks",
+        "channels",
+        "created_at",
+        "duration_in_ms",
+        "error_class",
+        "error_message",
+        "file_size_bytes",
+        "finished_at",
+        "format",
+        "frame_rate",
+        "height",
+        "id",
+        "md5_checksum",
+        "privacy",
+        "state",
+        "test",
+        "updated_at",
+        "video_bitrate_in_kbps",
+        "video_codec",
+        "width",
+        "total_bitrate_in_kbps",
+        "url"
+      ]
+    },
+    "Update_Input_ProgressSuccess200": {
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "State for the input: pending, waiting, processing, finished, failed, or cancelled "
+        },
+        "progress": {
+          "type": "number",
+          "description": "The overall percentage complete "
+        },
+        "current_event": {
+          "type": "string",
+          "description": "The current activity "
+        },
+        "current_event_progress": {
+          "type": "number",
+          "description": "The current activity percentage complete "
+        }
+      },
+      "required": [
+        "state",
+        "progress",
+        "current_event",
+        "current_event_progress"
+      ]
+    },
+    "Create_a_JobBody": {
+      "properties": {
+        "api_key": {
+          "type": "string",
+          "description": "API key for your Zencoder account (must be included here if not passed as a header, which is the recommended way) - get your API key from (https://app.zencoder.com/api) "
+        },
+        "input": {
+          "type": "string",
+          "description": "A valid URL to a media file (HTTP/HTTPS, FTP/FTPS, SFTP, Azure, GCS, CF or S3), with or without authentication "
+        },
+        "live_stream": {
+          "type": "boolean",
+          "description": "Create a Live streaming job "
+        },
+        "region": {
+          "type": "string",
+          "description": "The AWS region or Google Compute Engine instance (beta) where Zencoder should process the job "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Enable test mode (&quot;Integration Mode&quot;) for a job "
+        },
+        "private": {
+          "type": "boolean",
+          "description": "Enable privacy mode for a job "
+        },
+        "download_connections": {
+          "type": "number",
+          "description": "Utilize multiple, simultaneous connections for download acceleration (in some circumstances) "
+        },
+        "pass_through": {
+          "type": "string",
+          "description": "Optional information to store alongside this job "
+        },
+        "mock": {
+          "type": "boolean",
+          "description": "Send a mocked job request "
+        },
+        "grouping": {
+          "type": "string",
+          "description": "A report grouping for this job "
+        },
+        "aspera_transfer_policy": {
+          "type": "string",
+          "description": "How to allocate available bandwidth for Aspera file transfers "
+        },
+        "transfer_minimum_rate": {
+          "type": "number",
+          "description": "A targeted rate in Kbps for data transfer minimums "
+        },
+        "transfer_maximum_rate": {
+          "type": "number",
+          "description": "A targeted rate in Kbps for data transfer maximums "
+        },
+        "credentials": {
+          "type": "string",
+          "description": "References saved credentials by a nickname "
+        },
+        "notifications": {
+          "type": "array",
+          "description": "An array of notification strings (valid email addresses or URLs), or hashes of url and format ",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "description": "Array of output specifications ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs"
+          }
+        },
+        "o": {
+          "type": "string",
+          "description": "[utputs.streams.source] Specifies the source media for a playlist stream manifest file "
+        }
+      },
+      "required": [
+        "input",
+        "o"
+      ]
+    },
+    "Create_a_JobBody.notifications": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials "
+        },
+        "format": {
+          "type": "string",
+          "description": "A format and content type for notifications "
+        },
+        "headers": {
+          "type": "object",
+          "description": "By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here ",
+          "$ref": "#/definitions/Create_a_JobBody.notifications.headers"
+        },
+        "event": {
+          "type": "string",
+          "description": "Live outputs have additional notification events corresponding to the progress of the file "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of file to output "
+        },
+        "label": {
+          "type": "string",
+          "description": "An optional label for this output - should be unique for the job "
+        },
+        "url": {
+          "type": "string",
+          "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file "
+        },
+        "secondary_url": {
+          "type": "string",
+          "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file "
+        },
+        "base_url": {
+          "type": "string",
+          "description": "A base S3, Cloud Files, GCS, FTP, FTPS, SFTP, Azure, or Aspera directory URL where Zencoder put the transcoded file, without a filename "
+        },
+        "filename": {
+          "type": "string",
+          "description": "The filename of a finished file "
+        },
+        "package_filename": {
+          "type": "string",
+          "description": "The filename of a packaged output "
+        },
+        "package_format": {
+          "type": "string",
+          "description": "Zip/packaging format to use for the output file(s) "
+        },
+        "device_profile": {
+          "type": "string",
+          "description": "A device profile to use for mobile device compatibility "
+        },
+        "strict": {
+          "type": "boolean",
+          "description": "Enable strict mode "
+        },
+        "master_display": {
+          "type": "object",
+          "description": "Hash of HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display"
+        },
+        "max_content_light_level": {
+          "type": "number",
+          "description": "Maximum light level for the content as a whole nits or candelas per square meter (cd/m2) - integer values (for HDR10 outputs) "
+        },
+        "max_frame_average_light_level": {
+          "type": "number",
+          "description": "Maximum average light level for content frames nits or candelas per square meter (cd/m2) - integer values. Although values up to 10000 are allowed, values in the 100-200 range will generally produce the best results (for HDR10 outputs) "
+        },
+        "skip_video": {
+          "type": "boolean",
+          "description": "Do not output a video track "
+        },
+        "skip_audio": {
+          "type": "boolean",
+          "description": "Do not output a audio track "
+        },
+        "source": {
+          "type": "string",
+          "description": "References a label on another job and uses the video created by that output for processing instead of the input file "
+        },
+        "credentials": {
+          "type": "string",
+          "description": "References saved credentials by a nickname "
+        },
+        "generate_md5_checksum": {
+          "type": "boolean",
+          "description": "Generate an MD5 checksum of the output file "
+        },
+        "parallel_upload_limit": {
+          "type": "number",
+          "description": "The maximum number of simultaneous uploads to attempt - defaults: 30 for S3, 10 for other destinations "
+        },
+        "drm": {
+          "type": "object",
+          "description": "Object containing DRM options ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.drm"
+        },
+        "headers": {
+          "type": "object",
+          "description": "HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.headers"
+        },
+        "rtmp_keep_alive": {
+          "type": "boolean",
+          "description": "Send empty script packets in an RTMP output when no data is being recieved "
+        },
+        "format": {
+          "type": "string",
+          "description": "The output format to use - defaults determined by the output filename and then video or audio codec; otherwise: mp4 (for standard outputs); ts (for segmented outputs) "
+        },
+        "video_bit_depth": {
+          "type": "string",
+          "description": "The number of bits per color channel to use - valid values are 8, 10, and 12 - Normally you wouldn&#39;t set this and instead would specify the video_codec_profile which would provide the bit depth "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "The video codec to use - defaults determined by the format, profile, or audio_codec; h264 if none are provided "
+        },
+        "video_codec_profile": {
+          "type": "string",
+          "description": "Sets the encoding profile used by the video codec; defaults: H.264: baseline, HEVC: main, VP9: 0 - see (https://support.brightcove.com/encoding-settings-video#bc-ipnav-1) for more details "
+        },
+        "audio_codec": {
+          "type": "string",
+          "description": "The audio codec to use - defaults determined by the format, profile, or video_codec; aac if none are provided "
+        },
+        "size": {
+          "type": "string",
+          "description": "The resolution of the output video (WxH, in pixels) "
+        },
+        "width": {
+          "type": "number",
+          "description": "The maximum width of the output video (in pixels) "
+        },
+        "height": {
+          "type": "number",
+          "description": "The maximum height of the output video (in pixels) "
+        },
+        "upscale": {
+          "type": "boolean",
+          "description": "Upscale the output if the input is smaller than the target output resolution "
+        },
+        "aspect_mode": {
+          "type": "string",
+          "description": "What to do when aspect ratio of input file does not match the target width/height aspect ratio "
+        },
+        "sample_aspect_ratio": {
+          "type": "string",
+          "description": "The sample (pixel) aspect ratio to be used for the output video. The size, width, height, and aspect_mode mode options all refer to the encoded pixel dimensions, not the display dimensions - sets the aspect ratio to use for sample/pixels of the output video, specified as &quot;8:9&quot;, &quot;32:27&quot;, or any other ratio of two positive integers, each between 1 and 65535 "
+        },
+        "quality": {
+          "type": "number",
+          "description": "Autoselect the best video bitrate to to match a target visual quality "
+        },
+        "video_bitrate": {
+          "type": "number",
+          "description": "A target video bitrate in kbps - not necessary if you select a quality setting, unless you want to target a specific bitrate "
+        },
+        "audio_quality": {
+          "type": "number",
+          "description": "Autoselect the best audio bitrate to to match a target sound quality "
+        },
+        "audio_bitrate": {
+          "type": "number",
+          "description": "A target audio bitrate in kbps - not necessary if you select a audio_quality setting, unless you want to target a specific bitrate "
+        },
+        "max_video_bitrate": {
+          "type": "number",
+          "description": "A maximum average bitrate "
+        },
+        "speed": {
+          "type": "number",
+          "description": "A target transcoding speed - slower encoding generally allows for more advanced compression "
+        },
+        "decoder_bitrate_cap": {
+          "type": "number",
+          "description": "Max bitrate fed to decoder buffer - typically used for video intended for streaming, or for targeting specific devices (e.g. Blu-Ray) "
+        },
+        "decoder_buffer_size": {
+          "type": "number",
+          "description": "Size of the decoder buffer, used in conjunction with bitrate_cap "
+        },
+        "one_pass": {
+          "type": "boolean",
+          "description": "Force one-pass encoding "
+        },
+        "audio_constant_bitrate": {
+          "type": "boolean",
+          "description": "Enable constant bitrate mode for audio if possible "
+        },
+        "frame_rate": {
+          "type": "number",
+          "description": "The frame rate to use - defaults to original (input) frame rate "
+        },
+        "max_frame_rate": {
+          "type": "number",
+          "description": "The maximum frame rate to use "
+        },
+        "decimate": {
+          "type": "number",
+          "description": "Reduce the input frame rate by a divisor "
+        },
+        "keyframe_interval": {
+          "type": "number",
+          "description": "The maximum number of frames between each keyframe "
+        },
+        "keyframe_rate": {
+          "type": "number",
+          "description": "The number of keyframes per second "
+        },
+        "fixed_keyframe_interval": {
+          "type": "boolean",
+          "description": "Enable fixed keyframe interval mode (VP6, VP8, VP9 and H.264 only) "
+        },
+        "forced_keyframe_interval": {
+          "type": "number",
+          "description": "Force keyframes at the specified interval (H.264 only) "
+        },
+        "forced_keyframe_rate": {
+          "type": "number",
+          "description": "Specify the number of keyframes per-second, taking frame rate into account (H.264 only) "
+        },
+        "generate_frame_index": {
+          "type": "boolean",
+          "description": "Generate a video frame index file "
+        },
+        "frame_index_filename": {
+          "type": "string",
+          "description": "Override the default filename for the frame index when generate_frame_index is enabled "
+        },
+        "video_reference_frames": {
+          "type": "number",
+          "description": "A number of reference frames to use (H.264, HEVC) - you can also use the string auto "
+        },
+        "video_codec_level": {
+          "type": "string",
+          "description": "The video codec level to use (H.264, HEVC) - the default is automatically calculated using a level chart based on the output video "
+        },
+        "video_bframes": {
+          "type": "number",
+          "description": "The maximum number of consecutive B-frames (H.264, HEVC) "
+        },
+        "color_metadata": {
+          "type": "string",
+          "description": "Preserve or discard color metadata information from the input in the output video "
+        },
+        "audio_sample_rate": {
+          "type": "number",
+          "description": "The audio sample rate, in Hz "
+        },
+        "audio_channels": {
+          "type": "number",
+          "description": "The number of audio channels - defaults to 1 if the source is mono, otherwise 2 "
+        },
+        "audio_bit_depth": {
+          "type": "number",
+          "description": "The number of bits per sample "
+        },
+        "audio_language": {
+          "type": "string",
+          "description": "Describes the language of the audio track "
+        },
+        "input_audio_channels": {
+          "type": "object",
+          "description": "Sets the input audio tracks-to-channels layout ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.input_audio_channels"
+        },
+        "output_audio_channels": {
+          "type": "object",
+          "description": "Sets the output audio tracks-to-channels layout ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.output_audio_channels"
+        },
+        "thumbnails": {
+          "type": "array",
+          "description": "Defines a set of thumbnails to be captured for each output ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.thumbnails"
+          }
+        },
+        "watermarks": {
+          "type": "array",
+          "description": "Add one or more watermarks to an output video ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.watermarks"
+          }
+        },
+        "captions_url": {
+          "type": "string",
+          "description": "URL to an SCC, DFXP, or SAMI caption file to include in the output "
+        },
+        "skip_captions": {
+          "type": "boolean",
+          "description": "Don&#39;t add or pass through captions to the output file "
+        },
+        "live_stream": {
+          "type": "boolean",
+          "description": "Create a live_stream job or output that is ready for playback within seconds "
+        },
+        "reconnect_time": {
+          "type": "number",
+          "description": "The time, in seconds, to wait for a stream to reconnect "
+        },
+        "event_length": {
+          "type": "number",
+          "description": "The minimum time, in seconds, to keep a live stream available "
+        },
+        "live_sliding_window_duration": {
+          "type": "number",
+          "description": "The time, in seconds, to keep in the HLS playlist "
+        },
+        "redundant_transcode": {
+          "type": "boolean",
+          "description": "Create a backup job that processes secondary outputs in a redundant transcoding region "
+        },
+        "rotate": {
+          "type": "number",
+          "description": "Rotate a video by number of degrees given; by default Zencoder examines the video and determines the amount of rotation needed "
+        },
+        "deinterlace": {
+          "type": "string",
+          "description": "Deinterlace input video "
+        },
+        "sharpen": {
+          "type": "boolean",
+          "description": "Apply a sharpen filter "
+        },
+        "denoise": {
+          "type": "string",
+          "description": "Apply a denoise filter "
+        },
+        "autolevel": {
+          "type": "boolean",
+          "description": "Apply a color auto-level filter "
+        },
+        "deblock": {
+          "type": "boolean",
+          "description": "Apply deblock filter "
+        },
+        "audio_gain": {
+          "type": "number",
+          "description": "Apply a gain amount to the audio, in dB "
+        },
+        "audio_normalize": {
+          "type": "boolean",
+          "description": "Normalize audio to 0dB "
+        },
+        "audio_pre_normalize": {
+          "type": "boolean",
+          "description": "Normalize the audio before applying expansion or compression effects "
+        },
+        "audio_post_normalize": {
+          "type": "boolean",
+          "description": "Normalize the audio after applying expansion or compression effects "
+        },
+        "audio_bass": {
+          "type": "number",
+          "description": "Increase or decrease the amount of bass in the audio "
+        },
+        "audio_treble": {
+          "type": "number",
+          "description": "Increase or decrease the amount of treble in the audio "
+        },
+        "audio_highpass": {
+          "type": "number",
+          "description": "Apply a high-pass filter to the audio (in Hz) "
+        },
+        "audio_lowpass": {
+          "type": "number",
+          "description": "Apply a low-pass filter to the audio (in Hz) "
+        },
+        "audio_compression_ratio": {
+          "type": "number",
+          "description": "Compress the dynamic range of the audio "
+        },
+        "audio_compression_threshold": {
+          "type": "number",
+          "description": "Compress the dynamic range of the audio "
+        },
+        "audio_expansion_ratio": {
+          "type": "number",
+          "description": "Expand the dynamic range of the audio "
+        },
+        "audio_expansion_threshold": {
+          "type": "number",
+          "description": "Expand the dynamic range of the audio "
+        },
+        "audio_fade": {
+          "type": "number",
+          "description": "Apply fade-in and fade-out effects to the audio "
+        },
+        "audio_fade_in": {
+          "type": "number",
+          "description": "Apply a fade-in effect to the audio "
+        },
+        "audio_fade_out": {
+          "type": "number",
+          "description": "Apply a fade-out effect to the audio "
+        },
+        "audio_karaoke_mode": {
+          "type": "boolean",
+          "description": "Apply a karaoke effect to the audio "
+        },
+        "start_clip": {
+          "type": "mixed",
+          "description": "Encode only a portion of the input file by setting a custom start time - may be entered as a string in HH:MM:SS.S format or as a number in seconds "
+        },
+        "clip_length": {
+          "type": "mixed",
+          "description": "Encode only a portion of the input file by setting a custom clip length - may be entered as a string in HH:MM:SS.S format or as a number in seconds "
+        },
+        "public": {
+          "type": "boolean",
+          "description": "Make the output publicly readable on S3 "
+        },
+        "rrs": {
+          "type": "boolean",
+          "description": "Amazon S3&#39;s Reduced Redundancy Storage "
+        },
+        "access_control": {
+          "type": "array",
+          "description": "Fine-grained access control rules for files sent to S3 ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.access_control"
+          }
+        },
+        "notifications": {
+          "type": "array",
+          "description": "An array of notification strings (valid email addresses or URLs), or hashes of url and format ",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skip": {
+          "type": "object",
+          "description": "A set of conditions for skipping creation of an output ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.skip"
+        },
+        "streaming_delivery_format": {
+          "type": "string",
+          "description": "Sets the format/protocol configuration for a streamable output "
+        },
+        "streaming_delivery_profile": {
+          "type": "string",
+          "description": "Sets the specific profile of a streaming delivery format "
+        },
+        "playlist_format": {
+          "type": "string",
+          "description": "Sets the format for a playlist output "
+        },
+        "segment_seconds": {
+          "type": "number",
+          "description": "Sets the maximum duration of each segment in a segmented output - values less than 2.0 are only allowed when byte_range_segmenting is enabled "
+        },
+        "alternate_audio": {
+          "type": "object",
+          "description": "Provides a set of alternate audio streams for HLS playlists ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.alternate_audio"
+        },
+        "streams": {
+          "type": "array",
+          "description": "Array of hashes containing playlist stream info ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.streams"
+          }
+        },
+        "encryption_method": {
+          "type": "string",
+          "description": "Set the encryption method to use for encrypting "
+        },
+        "encryption_key": {
+          "type": "string",
+          "description": "Set a single encryption key to use rather than having Zencoder generate one - string must be a hexadecimal string of 16 octets (32 chars long, optional &quot;0x&quot; prefix) "
+        },
+        "encryption_key_url": {
+          "type": "string",
+          "description": "Set a URL to a single encryption key to use rather than having Zencoder generate one "
+        },
+        "encryption_key_rotation_period": {
+          "type": "number",
+          "description": "Rotate to a new encryption key after a number of segments "
+        },
+        "encryption_key_url_prefix": {
+          "type": "string",
+          "description": "Prepend key URLs with the passed string "
+        },
+        "encryption_iv": {
+          "type": "string",
+          "description": "Set an initialization vector to use when encrypting - a hexadecimal string of 16 octets (32 chars long, optional &quot;0x&quot; prefix) "
+        },
+        "encryption_password": {
+          "type": "string",
+          "description": "Sets a password to use for generating an initialization vector "
+        },
+        "decryption_method": {
+          "type": "string",
+          "description": "Set the decryption algorithm to use - defaults to aes-128-cbc (if decryption_key or decryption_key_url are set) "
+        },
+        "decryption_key": {
+          "type": "string",
+          "description": "Set the decryption key to use - a hexadecimal string of 16 octets (32 chars long, optional &quot;0x&quot; prefix) "
+        },
+        "decryption_key_url": {
+          "type": "string",
+          "description": "The URL of a decryption key file to use "
+        },
+        "decryption_password": {
+          "type": "string",
+          "description": "The password used in combination with the key to decrypt the input file "
+        },
+        "h264_reference_frames": {
+          "type": "number",
+          "description": "A number of reference frames to use in H.264 video "
+        },
+        "h264_profile": {
+          "type": "string",
+          "description": "The H.264 profile to use "
+        },
+        "h264_level": {
+          "type": "string",
+          "description": "The H.264 level to use - default is automatically calculated using H.264 level chart based on the output video "
+        },
+        "h264_bframes": {
+          "type": "number",
+          "description": "The maximum number of consecutive B-frames "
+        },
+        "tuning": {
+          "type": "string",
+          "description": "Tune the output video for a specific content type "
+        },
+        "crf": {
+          "type": "number",
+          "description": "Bitrate control setting "
+        },
+        "cue_points": {
+          "type": "array",
+          "description": "Add event or navigation cue points to a FLV video ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.cue_points"
+          }
+        },
+        "vp6_temporal_down_watermark": {
+          "type": "number",
+          "description": "VP6 temporal down watermark percentage "
+        },
+        "vp6_temporal_resampling": {
+          "type": "boolean",
+          "description": "Enable or disable VP6 temporal resampling - default: true when encoding with a low number of bits per pixel; otherwise, false "
+        },
+        "vp6_undershoot_pct": {
+          "type": "number",
+          "description": "Target a slightly lower datarate "
+        },
+        "vp6_profile": {
+          "type": "string",
+          "description": "VP6 profile: vp6s or vp6e "
+        },
+        "vp6_compression_mode": {
+          "type": "string",
+          "description": "VP6 compression mode "
+        },
+        "vp6_2pass_min_section": {
+          "type": "number",
+          "description": "For two-pass VBR encoding, the lowest datarate that the encoder will allow "
+        },
+        "vp6_2pass_max_section": {
+          "type": "number",
+          "description": "For two-pass VBR encoding, the highest datarate that the encoder will allow "
+        },
+        "vp6_stream_prebuffer": {
+          "type": "number",
+          "description": "Seconds of preload that are necessary before starting playback "
+        },
+        "vp6_stream_max_buffer": {
+          "type": "number",
+          "description": "Maximum decoder buffer size "
+        },
+        "vp6_deinterlace_mode": {
+          "type": "string",
+          "description": "Deinterlace mode for VP6 "
+        },
+        "vp6_denoise_level": {
+          "type": "number",
+          "description": "Denoise level for VP6 "
+        },
+        "alpha_transparency": {
+          "type": "boolean",
+          "description": "Enable alpha transparency; currently, only supported by VP6 "
+        },
+        "constant_bitrate": {
+          "type": "boolean",
+          "description": "Use constant bitrate (CBR) encoding "
+        },
+        "hint": {
+          "type": "boolean",
+          "description": "Enable hinting of MP4 files for RTP/RTSP "
+        },
+        "mtu_size": {
+          "type": "number",
+          "description": "Set MTU size for MP4 hinting "
+        },
+        "max_aac_profile": {
+          "type": "string",
+          "description": "What is the most advanced (compressed) AAC profile to allow? "
+        },
+        "force_aac_profile": {
+          "type": "string",
+          "description": "Force the use of a particular AAC profile, rather than letting Zencoder choose the best profile for the bitrate "
+        },
+        "video_codec_preset": {
+          "type": "string",
+          "description": "Video encoding preset to allow compatibility with specific industry standards "
+        },
+        "format_preset": {
+          "type": "string",
+          "description": "Format preset to allow compatibility with specific industry standards "
+        },
+        "ts_muxrate": {
+          "type": "number",
+          "description": "The maximum rate in kbps that the transport stream can be muxed; used with the ts format only "
+        },
+        "ts_pmt_pid": {
+          "type": "number",
+          "description": "Override the packet id of the Program Map Table "
+        },
+        "ts_video_pid": {
+          "type": "number",
+          "description": "Override the packet id of video data "
+        },
+        "ts_audio_pid": {
+          "type": "number",
+          "description": "Override the packet id of audio data "
+        },
+        "ts_pcr_pid": {
+          "type": "number",
+          "description": "Override the packet id of the Program Clock Reference "
+        },
+        "ts_cbr": {
+          "type": "boolean",
+          "description": "Create CBR output by stuffing packets at the transport stream layer "
+        },
+        "lossless_video": {
+          "type": "boolean",
+          "description": "Enables lossless video encoding if supported by the video codec "
+        },
+        "aspera_transfer_policy": {
+          "type": "string",
+          "description": "How to allocate available bandwidth for Aspera file transfers "
+        },
+        "transfer_minimum_rate": {
+          "type": "number",
+          "description": "A targeted rate in Kbps for data transfer minimums "
+        },
+        "transfer_maximum_rate": {
+          "type": "number",
+          "description": "A targeted rate in Kbps for data transfer maximums "
+        },
+        "copy_video": {
+          "type": "boolean",
+          "description": "Copy the video track of the input file "
+        },
+        "copy_audio": {
+          "type": "boolean",
+          "description": "Copy the audio track of the input file "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display": {
+      "properties": {
+        "red": {
+          "type": "object",
+          "description": "Hash of red color volumes for HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display.red"
+        },
+        "green": {
+          "type": "object",
+          "description": "Hash of green color volumes for HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display.green"
+        },
+        "blue": {
+          "type": "object",
+          "description": "Hash of blue color volumes for HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display.blue"
+        },
+        "white_point": {
+          "type": "object",
+          "description": "Hash of white point color volumes for HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display.white_point"
+        },
+        "luminance": {
+          "type": "object",
+          "description": "Hash of luminance settings for HDR10 output settings ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.master_display.luminance"
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display.red": {
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "Color volume x setting for red (for HDR10 outputs) "
+        },
+        "y": {
+          "type": "number",
+          "description": "Color volume y setting for red (for HDR10 outputs) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display.green": {
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "Color volume x setting for green (for HDR10 outputs) "
+        },
+        "y": {
+          "type": "number",
+          "description": "Color volume y setting for green (for HDR10 outputs) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display.blue": {
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "Color volume x setting for blue (for HDR10 outputs) "
+        },
+        "y": {
+          "type": "number",
+          "description": "Color volume y setting for blue (for HDR10 outputs) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display.white_point": {
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "Color volume x setting for white point (for HDR10 outputs) "
+        },
+        "y": {
+          "type": "number",
+          "description": "Color volume y setting for white point (for HDR10 outputs) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.master_display.luminance": {
+      "properties": {
+        "min": {
+          "type": "number",
+          "description": "Minimum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs) "
+        },
+        "max": {
+          "type": "number",
+          "description": "Maximum luminance in nits or candelas per square meter (cd/m2) (for HDR10 outputs) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.drm": {
+      "properties": {
+        "method": {
+          "type": "string",
+          "description": "The Digital Rights Management (DRM) method used to protect content "
+        },
+        "provider": {
+          "type": "string",
+          "description": "The Digital Rights Management (DRM) provider used. Only required for PlayReady "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.drm": {
+      "properties": {
+        "user_key": {
+          "type": "string",
+          "description": "The user key from the DRM provider - 32 hexadecimal characters (with optional dashes) "
+        },
+        "server_key": {
+          "type": "string",
+          "description": "The server key from the DRM provider - 32 hexadecimal characters (with optional dashes) "
+        },
+        "content_id": {
+          "type": "string",
+          "description": "Unique identifier for the content - 32 hexadecimal characters (with optional dashes) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.thumbnails": {
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "A label to identify each set of thumbnail groups "
+        },
+        "format": {
+          "type": "string",
+          "description": "The format of the thumbnail image "
+        },
+        "number": {
+          "type": "number",
+          "description": "A number of thumbnails, evenly-spaced "
+        },
+        "start_at_first_frame": {
+          "type": "boolean",
+          "description": "Start generating the thumbnails starting at the first frame "
+        },
+        "interval": {
+          "type": "number",
+          "description": "Take thumbnails at an even interval, in seconds "
+        },
+        "interval_in_frames": {
+          "type": "number",
+          "description": "Take thumbnails at an even interval, in frames "
+        },
+        "times": {
+          "type": "array",
+          "description": "An array of times, in seconds, at which to grab a thumbnail ",
+          "items": {
+            "type": "number"
+          }
+        },
+        "aspect_mode": {
+          "type": "string",
+          "description": "How to handle a thumbnail width/height that differs from the aspect ratio of the input file "
+        },
+        "size": {
+          "type": "string",
+          "description": "Thumbnail resolution as WxH "
+        },
+        "width": {
+          "type": "number",
+          "description": "The maximum width of the thumbnail (in pixels) "
+        },
+        "height": {
+          "type": "number",
+          "description": "The maximum height of the thumbnail (in pixels) "
+        },
+        "base_url": {
+          "type": "string",
+          "description": "A base S3, Cloud Files, GCS, FTP, FTPS, or SFTP directory URL where Zencoder will place the thumbnails, without a filename "
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Prefix for thumbnail filenames "
+        },
+        "filename": {
+          "type": "string",
+          "description": "Interpolated thumbnail filename "
+        },
+        "public": {
+          "type": "boolean",
+          "description": "Make the output publicly readable on S3 "
+        },
+        "access_control": {
+          "type": "array",
+          "description": "Fine-grained access control rules for files sent to S3 ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.thumbnails.access_control"
+          }
+        },
+        "rrs": {
+          "type": "boolean",
+          "description": "Amazon S3&#39;s Reduced Redundancy Storage "
+        },
+        "headers": {
+          "type": "object",
+          "description": "HTTP headers to send with your file when we upload it - this feature is currently supported when using S3, GCS and Cloud Files ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.thumbnails.headers"
+        },
+        "credentials": {
+          "type": "string",
+          "description": "References saved credentials by a nickname "
+        },
+        "parallel_upload_limit": {
+          "type": "number",
+          "description": "The maximum number of simultaneous uploads to attempt - defaults: 30 for S3, 10 for other destinations "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.thumbnails.access_control": {
+      "properties": {
+        "permission": {
+          "type": "string",
+          "description": "A string or array of strings containing: READ, READ_ACP, WRITE_ACP, or FULL_CONTROL "
+        },
+        "grantee": {
+          "type": "string",
+          "description": "A valid S3 grantee (email, ID, or URI) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.watermarks": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The URL of a remote image file to use as a watermark "
+        },
+        "x": {
+          "type": "number",
+          "description": "Where to place a watermark, on the x axis "
+        },
+        "y": {
+          "type": "number",
+          "description": "Where to place a watermark, on the y axis "
+        },
+        "width": {
+          "type": "mixed",
+          "description": "The scaled width of a watermark - number of pixels (100)) or percentage of video width (&quot;10%&quot;) "
+        },
+        "height": {
+          "type": "mixed",
+          "description": "The scaled height of a watermark - number of pixels (10)) or percentage of video width (&quot;5%&quot;) "
+        },
+        "origin": {
+          "type": "string",
+          "description": "Which part of the output to base the watermark position on - this only affects jobs where aspect_mode is pad "
+        },
+        "opacity": {
+          "type": "number",
+          "description": "Make the watermark transparent "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.access_control": {
+      "properties": {
+        "permission": {
+          "type": "string",
+          "description": "A string or array of strings containing: READ, READ_ACP, WRITE_ACP, or FULL_CONTROL "
+        },
+        "grantee": {
+          "type": "string",
+          "description": "A valid S3 grantee (email, ID, or URI) "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.notifications": {
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials "
+        },
+        "format": {
+          "type": "string",
+          "description": "A format and content type for notifications "
+        },
+        "headers": {
+          "type": "object",
+          "description": "By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.notifications.headers"
+        },
+        "event": {
+          "type": "string",
+          "description": "Live outputs have additional notification events corresponding to the progress of the file "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.skip": {
+      "properties": {
+        "min_size": {
+          "type": "string",
+          "description": "Skip output if the source dimensions are smaller than the given dimensions (&quot;WxH&quot;) "
+        },
+        "max_size": {
+          "type": "string",
+          "description": "Skip output if the source dimensions are larger than the given dimensions (&quot;WxH&quot;) "
+        },
+        "min_duration": {
+          "type": "number",
+          "description": "Skip output if the source duration is shorter than the given duration, in seconds "
+        },
+        "max_duration": {
+          "type": "number",
+          "description": "Skip output if the source duration is longer than the given duration, in seconds "
+        },
+        "min_audio_bitrate": {
+          "type": "number",
+          "description": "Skip output if the source audio bitrate is less than the specified bitrate (in kbps) "
+        },
+        "max_audio_bitrate": {
+          "type": "number",
+          "description": "Skip output if the source audio bitrate is greater than the specified bitrate (in kbps) "
+        },
+        "min_video_bitrate": {
+          "type": "number",
+          "description": "Skip output if the source video bitrate is less than the specified bitrate (in kbps) "
+        },
+        "max_video_bitrate": {
+          "type": "number",
+          "description": "Skip output if the source video bitrate is greater than the specified bitrate (in kbps) "
+        },
+        "require_audio": {
+          "type": "boolean",
+          "description": "Skip output if the source file does not include an audio track "
+        },
+        "require_video": {
+          "type": "boolean",
+          "description": "Skip output if the source file does not include an video track "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.alternate_audio": {
+      "properties": {
+        "alternate_audio_group": {
+          "type": "array",
+          "description": "Each alternate audio group is an array of audio objects, and a name of your choosing ",
+          "items": {
+            "$ref": "#/definitions/Create_a_JobBody.outputs.alternate_audio.alternate_audio_group"
+          }
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.alternate_audio.alternate_audio_group": {
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "A label for the audio source "
+        },
+        "path": {
+          "type": "string",
+          "description": "An optional path to the M3U8 playlist for this audio rendition; if the path is not set, this alternate audio stream describes the the audio contained in the source stream "
+        },
+        "language": {
+          "type": "string",
+          "description": "The ISO 639 code for the language of the audio track, like &quot;en&quot;, &quot;es&quot;, or &quot;zh&quot; "
+        }
+      },
+      "required": [
+        "language"
+      ]
+    },
+    "Create_a_JobBody.outputs.streams": {
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Specifies the path to a stream manifest file "
+        },
+        "bandwidth": {
+          "type": "number",
+          "description": "Specifies the bandwidth of a playlist stream in kbps "
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Specifies the resolution of a playlist stream (WxH) "
+        },
+        "codecs": {
+          "type": "string",
+          "description": "Specifies the codecs used in a playlist stream - codecs in HTML5 format, such as: mp4a.40.2 "
+        },
+        "audio": {
+          "type": "string",
+          "description": "String containing the name of the audio GROUP-ID to use. This value must have been defined as an alternate_audio grouping "
+        },
+        "segment_image_url": {
+          "type": "string",
+          "description": "An image to display on audio-only segments "
+        },
+        "segment_video_snapshots": {
+          "type": "boolean",
+          "description": "When segmenting a video file into audio-only segments, take snapshots of the video as thumbnails for each segment "
+        },
+        "max_hls_protocol_version": {
+          "type": "number",
+          "description": "The maximum HLS protocol to use - default values: 3 for Live outputs, 5 for sample AES encryption; otherwise, 2 "
+        },
+        "hls_protocol_version": {
+          "type": "number",
+          "description": "HLS protocol to use - default value: automatic according to max_hls_protocol_version setting "
+        },
+        "hls_optimized_ts": {
+          "type": "boolean",
+          "description": "Optimize TS segment files for HTTP Live Streaming on iOS "
+        },
+        "prepare_for_segmenting": {
+          "type": "string",
+          "description": "Include captions and keyframe timing for segmenting "
+        },
+        "smil_base_url": {
+          "type": "string",
+          "description": "Add &lt;meta base=&quot;smil_base_url_value&quot;/&gt; to the &lt;head&gt; section of an SMIL playlist "
+        },
+        "byte_range_segmenting": {
+          "type": "boolean",
+          "description": "Configures HLS segmenting to produce a single output file rather than one file per segment "
+        },
+        "generate_keyframe_manifest": {
+          "type": "boolean",
+          "description": "Generates an HLS keyframe (I-frame) manifest which is required for fast-forward and reverse playback "
+        },
+        "keyframe_manifest_filename": {
+          "type": "string",
+          "description": "Override the default filename for the HLS keyframe manifest "
+        },
+        "allow_skipped_sources": {
+          "type": "boolean",
+          "description": "Ignore sources that are conditional outputs which have been skipped "
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobBody.outputs.cue_points": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "A cue point type "
+        },
+        "time": {
+          "type": "number",
+          "description": "A cue point time, in seconds "
+        },
+        "name": {
+          "type": "string",
+          "description": "A cue point name "
+        },
+        "data": {
+          "type": "object",
+          "description": "Cue point data (key/value pairs) ",
+          "$ref": "#/definitions/Create_a_JobBody.outputs.cue_points.data"
+        }
+      },
+      "required": []
+    },
+    "Create_a_JobSuccess200": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id for the job. "
+        },
+        "outputs": {
+          "type": "array",
+          "description": "Details on each output rendition of the Live job. ",
+          "items": {
+            "$ref": "#/definitions/outputs"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "outputs"
+      ]
+    },
+    "outputs": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id for the output "
+        },
+        "url": {
+          "type": "string",
+          "description": "Media HLS manifest for the specified rendition (non-SSAI). "
+        },
+        "label": {
+          "type": "string",
+          "description": "Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI). "
+        },
+        "state": {
+          "type": "string",
+          "description": "State for an output: pending, waiting, processing, finished, failed, or cancelled "
+        },
+        "progress": {
+          "type": "number",
+          "description": "The overall percentage complete for processing an output "
+        },
+        "current_event": {
+          "type": "string",
+          "description": "The current activity on an output "
+        },
+        "current_event_progress": {
+          "type": "number",
+          "description": "The current activity percentage complete "
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "label",
+        "state",
+        "progress",
+        "current_event",
+        "current_event_progress"
+      ]
+    },
+    "job": {
+      "properties": {
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the job was created "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the live stream was stopped "
+        },
+        "id": {
+          "type": "string",
+          "description": "The live job id "
+        },
+        "privacy": {
+          "type": "boolean",
+          "description": "Privacy mode for job "
+        },
+        "state": {
+          "type": "string",
+          "description": "The current state of the job "
+        },
+        "submitted_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the job was submitted "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether job was run in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the job was last modified "
+        },
+        "region": {
+          "type": "string",
+          "description": "The Amazon AWS region to use for encoding the job "
+        },
+        "reconnect_time": {
+          "type": "number",
+          "description": "The time, in seconds, that the system will wait for a stream to reconnect to the encoder "
+        },
+        "event_length": {
+          "type": "number",
+          "description": "The time, in seconds, that the system will keep the live stream available "
+        },
+        "live_sliding_window_duration": {
+          "type": "number",
+          "description": "The time, in seconds, kept in the live DVR manifest "
+        },
+        "live_stream": {
+          "type": "boolean",
+          "description": "Indicates whether this is a live stream or VOD "
+        },
+        "input_media_file": {
+          "type": "object",
+          "description": "Object containing properties for the input media file ",
+          "$ref": "#/definitions/job.input_media_file"
+        },
+        "stream": {
+          "type": "object",
+          "description": "Object containing properties for the live stream ",
+          "$ref": "#/definitions/job.stream"
+        },
+        "output_media_files": {
+          "type": "array",
+          "description": "Array of objects containing properties for the output media files ",
+          "items": {
+            "$ref": "#/definitions/job.output_media_files"
+          }
+        }
+      },
+      "required": [
+        "created_at",
+        "finished_at",
+        "id",
+        "privacy",
+        "state",
+        "submitted_at",
+        "test",
+        "updated_at",
+        "region",
+        "reconnect_time",
+        "event_length",
+        "live_sliding_window_duration",
+        "live_stream",
+        "input_media_file",
+        "stream",
+        "output_media_files"
+      ]
+    },
+    "job.input_media_file": {
+      "properties": {
+        "audio_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Audio bitrate of the input media file "
+        },
+        "audio_codec": {
+          "type": "string",
+          "description": "Audio codec of the input media file "
+        },
+        "audio_sample_rate": {
+          "type": "number",
+          "description": "Audio sample rate of the input media file "
+        },
+        "audio_tracks": {
+          "type": "number",
+          "description": "The number of audio tracks "
+        },
+        "channels": {
+          "type": "number",
+          "description": "The number of audio channels "
+        },
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was created "
+        },
+        "duration_in_ms": {
+          "type": "number",
+          "description": "duration_in_ms. "
+        },
+        "error_class": {
+          "type": "string",
+          "description": "Type of error thrown "
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message thrown "
+        },
+        "file_size_bytes": {
+          "type": "number",
+          "description": "File size "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was finished "
+        },
+        "format": {
+          "type": "string",
+          "description": "Format of the input file "
+        },
+        "frame_rate": {
+          "type": "number",
+          "description": "Frame rate of the input file "
+        },
+        "height": {
+          "type": "number",
+          "description": "Frame height of the input file "
+        },
+        "id": {
+          "type": "string",
+          "description": "System id of the input file "
+        },
+        "md5_checksum": {
+          "type": "string",
+          "description": "Checksum for the input file "
+        },
+        "privacy": {
+          "type": "boolean",
+          "description": "Privacy mode "
+        },
+        "state": {
+          "type": "string",
+          "description": "Current state of input file processing "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether run in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the input file was last modified "
+        },
+        "video_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Video bitrate of the input media file "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "Video codec of the input media file "
+        },
+        "width": {
+          "type": "number",
+          "description": "Frame width of the input media file "
+        },
+        "total_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Total bitrate of the input media file "
+        },
+        "url": {
+          "type": "string",
+          "description": "URL for the input media file "
+        }
+      },
+      "required": [
+        "audio_bitrate_in_kbps",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_tracks",
+        "channels",
+        "created_at",
+        "duration_in_ms",
+        "error_class",
+        "error_message",
+        "file_size_bytes",
+        "finished_at",
+        "format",
+        "frame_rate",
+        "height",
+        "id",
+        "md5_checksum",
+        "privacy",
+        "state",
+        "test",
+        "updated_at",
+        "video_bitrate_in_kbps",
+        "video_codec",
+        "width",
+        "total_bitrate_in_kbps",
+        "url"
+      ]
+    },
+    "job.stream": {
+      "properties": {
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the stream was created "
+        },
+        "duration": {
+          "type": "number",
+          "description": "ISO Duration of the stream in seconds "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the stream was finished "
+        },
+        "height": {
+          "type": "number",
+          "description": "Frame height of the stream "
+        },
+        "id": {
+          "type": "string",
+          "description": "System id of the stream "
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the stream "
+        },
+        "protocol": {
+          "type": "string",
+          "description": "Protocol of the stream "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether run in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the stream was last modified "
+        },
+        "video_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Video bitrate of the input media file "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "Video codec of the input media file "
+        },
+        "width": {
+          "type": "number",
+          "description": "Frame width of the stream "
+        },
+        "total_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Total bitrate of the stream "
+        },
+        "region": {
+          "type": "string",
+          "description": "AWS region list specified for the account "
+        },
+        "url": {
+          "type": "string",
+          "description": "URL for the stream "
+        },
+        "location": {
+          "type": "object",
+          "description": "Object representing the location of the stream ",
+          "$ref": "#/definitions/job.stream.location"
+        },
+        "destination": {
+          "type": "object",
+          "description": "Object representing the destination of the stream ",
+          "$ref": "#/definitions/job.stream.destination"
+        }
+      },
+      "required": [
+        "created_at",
+        "duration",
+        "finished_at",
+        "height",
+        "id",
+        "name",
+        "protocol",
+        "test",
+        "updated_at",
+        "video_bitrate_in_kbps",
+        "video_codec",
+        "width",
+        "total_bitrate_in_kbps",
+        "region",
+        "url",
+        "location",
+        "destination"
+      ]
+    },
+    "job.stream.location": {
+      "properties": {
+        "source": {
+          "type": "object",
+          "description": "Object representing the location source of the stream ",
+          "$ref": "#/definitions/job.stream.location.source"
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    "job.stream.location.source": {
+      "properties": {
+        "latitude": {
+          "type": "object",
+          "description": "Latitude of source file ",
+          "$ref": "#/definitions/job.stream.location.source.latitude"
+        },
+        "longitude": {
+          "type": "object",
+          "description": "Longitude of source file ",
+          "$ref": "#/definitions/job.stream.location.source.longitude"
+        },
+        "location": {
+          "type": "object",
+          "description": "Location of source file ",
+          "$ref": "#/definitions/job.stream.location.source.location"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude",
+        "location"
+      ]
+    },
+    "job.stream.destination": {
+      "properties": {
+        "source": {
+          "type": "object",
+          "description": "Object representing the destination source of the stream ",
+          "$ref": "#/definitions/job.stream.destination.source"
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    "job.stream.destination.source": {
+      "properties": {
+        "latitude": {
+          "type": "object",
+          "description": "Latitude of destination file ",
+          "$ref": "#/definitions/job.stream.destination.source.latitude"
+        },
+        "longitude": {
+          "type": "object",
+          "description": "Longitude of destination file ",
+          "$ref": "#/definitions/job.stream.destination.source.longitude"
+        },
+        "location": {
+          "type": "object",
+          "description": "Location of destination file ",
+          "$ref": "#/definitions/job.stream.destination.source.location"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude",
+        "location"
+      ]
+    },
+    "job.output_media_files": {
+      "properties": {
+        "audio_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Audio bitrate of the output media file "
+        },
+        "audio_codec": {
+          "type": "string",
+          "description": "Audio codec of the output media file "
+        },
+        "audio_sample_rate": {
+          "type": "number",
+          "description": "Audio sample rate of the output media file "
+        },
+        "audio_tracks": {
+          "type": "number",
+          "description": "The number of audio tracks "
+        },
+        "channels": {
+          "type": "number",
+          "description": "The number of audio channels "
+        },
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the output file was created "
+        },
+        "duration_in_ms": {
+          "type": "number",
+          "description": "ISO 8601 date-time string representing when the output file was created "
+        },
+        "error_class": {
+          "type": "string",
+          "description": "Type of error thrown "
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message thrown "
+        },
+        "file_size_bytes": {
+          "type": "number",
+          "description": "File size "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the output file was finished "
+        },
+        "format": {
+          "type": "string",
+          "description": "Format of the output file "
+        },
+        "fragment_duration_in_ms": {
+          "type": "number",
+          "description": "TODO "
+        },
+        "frame_rate": {
+          "type": "number",
+          "description": "Frame rate of the output file "
+        },
+        "height": {
+          "type": "number",
+          "description": "Frame height of the output file "
+        },
+        "id": {
+          "type": "string",
+          "description": "System id of the output file "
+        },
+        "md5_checksum": {
+          "type": "string",
+          "description": "Checksum for the output file "
+        },
+        "privacy": {
+          "type": "boolean",
+          "description": "Privacy mode "
+        },
+        "rfc_6381_audio_codec": {
+          "type": "string",
+          "description": "Audio codec for industry compatibility "
+        },
+        "rfc_6381_video_codec": {
+          "type": "string",
+          "description": "Video codec for industry compatibility "
+        },
+        "state": {
+          "type": "string",
+          "description": "Current state of output file processing "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when the output file was last modified "
+        },
+        "video_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Video bitrate of the output media file "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "Video codec of the output media file "
+        },
+        "width": {
+          "type": "number",
+          "description": "Frame width of the output media file "
+        },
+        "total_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Total bitrate of the output media file "
+        },
+        "keyframe_interval": {
+          "type": "number",
+          "description": "Keyframe interval for the output media file "
+        },
+        "keyframe_interval_follow_source": {
+          "type": "boolean",
+          "description": "Whether keyframe rate for the output matches the source "
+        },
+        "live_stream": {
+          "type": "number",
+          "description": "Whether the output is a live stream "
+        },
+        "playback_url": {
+          "type": "string",
+          "description": "URL for the output file "
+        },
+        "playback_url_dvr": {
+          "type": "string",
+          "description": "Live DVR url for live stream output "
+        },
+        "playback_url_vod": {
+          "type": "string",
+          "description": "URL for VOD output "
+        },
+        "playlist_type": {
+          "type": "string",
+          "description": "Playlist type for playlist output "
+        },
+        "type": {
+          "type": "string",
+          "description": "Will be playlist for playlist output "
+        },
+        "filename": {
+          "type": "string",
+          "description": "File name for the playlist manifest "
+        },
+        "dvr_filename": {
+          "type": "string",
+          "description": "File name for the DVR playlist manifest "
+        }
+      },
+      "required": [
+        "audio_bitrate_in_kbps",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_tracks",
+        "channels",
+        "created_at",
+        "duration_in_ms",
+        "error_class",
+        "error_message",
+        "file_size_bytes",
+        "finished_at",
+        "format",
+        "fragment_duration_in_ms",
+        "frame_rate",
+        "height",
+        "id",
+        "md5_checksum",
+        "privacy",
+        "rfc_6381_audio_codec",
+        "rfc_6381_video_codec",
+        "state",
+        "test",
+        "updated_at",
+        "video_bitrate_in_kbps",
+        "video_codec",
+        "width",
+        "total_bitrate_in_kbps",
+        "keyframe_interval",
+        "keyframe_interval_follow_source",
+        "live_stream",
+        "playback_url",
+        "playback_url_dvr",
+        "playback_url_vod",
+        "playlist_type",
+        "type",
+        "filename",
+        "dvr_filename"
+      ]
+    },
+    "Finish_a_Live_JobSuccess200": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The job id for the stream that was stopped "
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Job_ProgressSuccess200": {
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "The overall progress state: pending, waiting, processing, finished, failed, or cancelled "
+        },
+        "progress": {
+          "type": "number",
+          "description": "The percentage complete "
+        },
+        "input": {
+          "type": "array",
+          "description": "Progress for getting and processing the input ",
+          "items": {
+            "$ref": "#/definitions/input"
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "description": "Progress for processing the outputs ",
+          "items": {
+            "$ref": "#/definitions/outputs"
+          }
+        }
+      },
+      "required": [
+        "state",
+        "progress",
+        "input",
+        "outputs"
+      ]
+    },
+    "input": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Id for the input "
+        },
+        "state": {
+          "type": "string",
+          "description": "State for the input: pending, waiting, processing, finished, failed, or cancelled "
+        },
+        "progress": {
+          "type": "number",
+          "description": "The overall percentage complete "
+        },
+        "current_event": {
+          "type": "string",
+          "description": "The current activity "
+        },
+        "current_event_progress": {
+          "type": "number",
+          "description": "The current activity percentage complete "
+        }
+      },
+      "required": [
+        "id",
+        "state",
+        "progress",
+        "current_event",
+        "current_event_progress"
+      ]
+    },
+    "Get_Output_DetailsSuccess200": {
+      "properties": {
+        "audio_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Audio bitrate of an Output media file "
+        },
+        "audio_codec": {
+          "type": "string",
+          "description": "Audio codec of an Output media file "
+        },
+        "audio_sample_rate": {
+          "type": "number",
+          "description": "Audio sample rate of an Output media file "
+        },
+        "audio_tracks": {
+          "type": "number",
+          "description": "The number of audio tracks "
+        },
+        "channels": {
+          "type": "number",
+          "description": "The number of audio channels "
+        },
+        "created_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when an Output file was created "
+        },
+        "duration_in_ms": {
+          "type": "number",
+          "description": "duration_in_ms. "
+        },
+        "error_class": {
+          "type": "string",
+          "description": "Type of error thrown "
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message thrown "
+        },
+        "file_size_bytes": {
+          "type": "number",
+          "description": "File size "
+        },
+        "finished_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when an Output file was finished "
+        },
+        "format": {
+          "type": "string",
+          "description": "Format of an Output file "
+        },
+        "frame_rate": {
+          "type": "number",
+          "description": "Frame rate of an Output file "
+        },
+        "height": {
+          "type": "number",
+          "description": "Frame height of an Output file "
+        },
+        "id": {
+          "type": "string",
+          "description": "System id of an Output file "
+        },
+        "md5_checksum": {
+          "type": "string",
+          "description": "Checksum for an Output file "
+        },
+        "privacy": {
+          "type": "boolean",
+          "description": "Privacy mode "
+        },
+        "state": {
+          "type": "string",
+          "description": "Current state of Output file processing "
+        },
+        "test": {
+          "type": "boolean",
+          "description": "Whether run in test (integration) mode "
+        },
+        "updated_at": {
+          "type": "datetimestring",
+          "description": "ISO 8601 date-time string representing when an Output file was last modified "
+        },
+        "video_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Video bitrate of an Output media file "
+        },
+        "video_codec": {
+          "type": "string",
+          "description": "Video codec of an Output media file "
+        },
+        "width": {
+          "type": "number",
+          "description": "Frame width of an Output media file "
+        },
+        "total_bitrate_in_kbps": {
+          "type": "number",
+          "description": "Total bitrate of an Output media file "
+        },
+        "url": {
+          "type": "string",
+          "description": "URL for an Output media file "
+        }
+      },
+      "required": [
+        "audio_bitrate_in_kbps",
+        "audio_codec",
+        "audio_sample_rate",
+        "audio_tracks",
+        "channels",
+        "created_at",
+        "duration_in_ms",
+        "error_class",
+        "error_message",
+        "file_size_bytes",
+        "finished_at",
+        "format",
+        "frame_rate",
+        "height",
+        "id",
+        "md5_checksum",
+        "privacy",
+        "state",
+        "test",
+        "updated_at",
+        "video_bitrate_in_kbps",
+        "video_codec",
+        "width",
+        "total_bitrate_in_kbps",
+        "url"
+      ]
+    },
+    "Get_Output_ProgressSuccess200": {
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "State for an output: pending, waiting, processing, finished, failed, or cancelled "
+        },
+        "progress": {
+          "type": "number",
+          "description": "The overall percentage complete "
+        },
+        "current_event": {
+          "type": "string",
+          "description": "The current activity "
+        },
+        "current_event_progress": {
+          "type": "number",
+          "description": "The current activity percentage complete "
+        }
+      },
+      "required": [
+        "state",
+        "progress",
+        "current_event",
+        "current_event_progress"
+      ]
+    },
+    "total": {
+      "properties": {
+        "stream_hours": {
+          "type": "number",
+          "description": "The total streaming hours "
+        },
+        "billable_stream_hours": {
+          "type": "number",
+          "description": "The streaming hours that were billable "
+        },
+        "encoded_hours": {
+          "type": "number",
+          "description": "The total encoded hours "
+        },
+        "billable_encoded_hours": {
+          "type": "number",
+          "description": "The encoded hours that were billable "
+        },
+        "encoded_minutes": {
+          "type": "number",
+          "description": "The total encoding minutes "
+        },
+        "billable_minutes": {
+          "type": "number",
+          "description": "The encoding minutes that were billable "
+        },
+        "live": {
+          "type": "object",
+          "description": "Summary object for live usage ",
+          "$ref": "#/definitions/total.live"
+        },
+        "vod": {
+          "type": "object",
+          "description": "Summary object for VOD usage ",
+          "$ref": "#/definitions/total.vod"
+        }
+      },
+      "required": [
+        "stream_hours",
+        "billable_stream_hours",
+        "encoded_hours",
+        "billable_encoded_hours",
+        "encoded_minutes",
+        "billable_minutes",
+        "live",
+        "vod"
+      ]
+    },
+    "Get_Usage_for_LiveSuccess200": {
+      "properties": {
+        "statistics": {
+          "type": "array",
+          "description": "reports by grouping ",
+          "items": {
+            "$ref": "#/definitions/statistics"
+          }
+        }
+      },
+      "required": [
+        "statistics"
+      ]
+    },
+    "statistics": {
+      "properties": {
+        "grouping": {
+          "type": "string",
+          "description": "the grouping - null is for all ungrouped activity "
+        },
+        "collected_on": {
+          "type": "string",
+          "description": "The date of the report "
+        },
+        "stream_hours": {
+          "type": "number",
+          "description": "The total streaming hours "
+        },
+        "billable_stream_hours": {
+          "type": "number",
+          "description": "The streaming hours that were billable "
+        },
+        "encoded_hours": {
+          "type": "number",
+          "description": "The total encoded hours "
+        },
+        "billable_encoded_hours": {
+          "type": "number",
+          "description": "The encoded hours that were billable "
+        },
+        "encoded_minutes": {
+          "type": "number",
+          "description": "The encoding minutes for this group "
+        },
+        "billable_minutes": {
+          "type": "number",
+          "description": "The billable encoding minutes for this group "
+        },
+        "live": {
+          "type": "array",
+          "description": "reports by grouping for live usage ",
+          "items": {
+            "$ref": "#/definitions/statistics.live"
+          }
+        },
+        "vod": {
+          "type": "array",
+          "description": "reports by grouping for VOD usage ",
+          "items": {
+            "$ref": "#/definitions/statistics.vod"
+          }
+        }
+      },
+      "required": [
+        "grouping",
+        "collected_on",
+        "stream_hours",
+        "billable_stream_hours",
+        "encoded_hours",
+        "billable_encoded_hours",
+        "encoded_minutes",
+        "billable_minutes",
+        "live",
+        "vod"
+      ]
+    },
+    "Get_Usage_for_VODSuccess200": {
+      "properties": {
+        "statistics": {
+          "type": "array",
+          "description": "reports by grouping ",
+          "items": {
+            "$ref": "#/definitions/statistics"
+          }
+        }
+      },
+      "required": [
+        "statistics"
+      ]
+    },
+    "total.live": {
+      "properties": {
+        "stream_hours": {
+          "type": "number",
+          "description": "The total streaming hours "
+        },
+        "billable_stream_hours": {
+          "type": "number",
+          "description": "The streaming hours that were billable "
+        },
+        "encoded_hours": {
+          "type": "number",
+          "description": "The total encoded hours "
+        },
+        "billable_encoded_hours": {
+          "type": "number",
+          "description": "The encoded hours that were billable "
+        },
+        "total_hours": {
+          "type": "number",
+          "description": "The total encoded and stream hours "
+        },
+        "total_billable_hours": {
+          "type": "number",
+          "description": "The encoded and stream hours that were billable "
+        }
+      },
+      "required": [
+        "stream_hours",
+        "billable_stream_hours",
+        "encoded_hours",
+        "billable_encoded_hours",
+        "total_hours",
+        "total_billable_hours"
+      ]
+    },
+    "total.vod": {
+      "properties": {
+        "encoded_minutes": {
+          "type": "number",
+          "description": "The total encoding minutes "
+        },
+        "billable_minutes": {
+          "type": "number",
+          "description": "The encoding minutes that were billable "
+        }
+      },
+      "required": [
+        "encoded_minutes",
+        "billable_minutes"
+      ]
+    },
+    "Get_Usage_for_VOD___LiveSuccess200": {
+      "properties": {
+        "statistics": {
+          "type": "array",
+          "description": "reports by grouping ",
+          "items": {
+            "$ref": "#/definitions/statistics"
+          }
+        }
+      },
+      "required": [
+        "statistics"
+      ]
+    },
+    "statistics.live": {
+      "properties": {
+        "grouping": {
+          "type": "string",
+          "description": "the grouping - null is for all ungrouped activity "
+        },
+        "collected_on": {
+          "type": "string",
+          "description": "The date of the report "
+        },
+        "stream_hours": {
+          "type": "number",
+          "description": "The total streaming hours "
+        },
+        "billable_stream_hours": {
+          "type": "number",
+          "description": "The streaming hours that were billable "
+        },
+        "encoded_hours": {
+          "type": "number",
+          "description": "The total encoded hours "
+        },
+        "billable_encoded_hours": {
+          "type": "number",
+          "description": "The encoded hours that were billable "
+        }
+      },
+      "required": [
+        "grouping",
+        "collected_on",
+        "stream_hours",
+        "billable_stream_hours",
+        "encoded_hours",
+        "billable_encoded_hours"
+      ]
+    },
+    "statistics.vod": {
+      "properties": {
+        "grouping": {
+          "type": "string",
+          "description": "the grouping - null is for all ungrouped activity "
+        },
+        "collected_on": {
+          "type": "string",
+          "description": "The date of the report "
+        },
+        "encoded_minutes": {
+          "type": "number",
+          "description": "The encoding minutes for this group "
+        },
+        "billable_minutes": {
+          "type": "number",
+          "description": "The billable encoding minutes for this group "
+        }
+      },
+      "required": [
+        "grouping",
+        "collected_on",
+        "encoded_minutes",
+        "billable_minutes"
+      ]
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "app.zencoder.com",
+  "basePath": "/api"
+}
