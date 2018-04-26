@@ -362,7 +362,906 @@
 				"operationId": "Get_Video_by_ID_or_Reference_ID"
 			}
 		},
-		"/accounts/{account_id}/folders": {
+        "/accounts/{account_id}/counts/videos": {
+            "get": {
+                "tags": [
+                "videoGroup"
+                ],
+                "summary": "Get Video Count",
+                "description": "Gets count of videos for the account or a search ",
+                "consumes": [
+                "application/json"
+                ],
+                "produces": [
+                "application/json"
+                ],
+                "parameters": [
+                {
+                    "name": "account_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "Video Cloud account ID. "
+                },
+                {
+                    "name": "Content-Type",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Content-Type: application/json "
+                },
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+                ],
+                "responses": {
+                "200": {
+                    "description": "200",
+                    "schema": {
+                        "properties": {
+                            "count": {
+                                "type": "number",
+                                "description": "count of videos "
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "INVALID_SORT: sort parameter specified and invalid field "
+                },
+                "401": {
+                    "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                    "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                    "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                    "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                    "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                    "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+                },
+                "operationId": "Get_Video_Count"
+            }
+            },
+            "/accounts/{account_id}/videos/{video_id}/images": {
+            "get": {
+                "tags": [
+                "videoGroup"
+                ],
+                "summary": "Get Video Images",
+                "description": "Gets the images for a video ",
+                "consumes": [
+                "application/json"
+                ],
+                "produces": [
+                "application/json"
+                ],
+                "parameters": [
+                {
+                    "name": "account_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "Video Cloud account ID. "
+                },
+                {
+                    "name": "video_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "Video Cloud video ID (or ref:reference_id). "
+                },
+                {
+                    "name": "Content-Type",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Content-Type: application/json "
+                },
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+                ],
+                "responses": {
+                "200": {
+                    "description": "200",
+                    "schema": {
+                    "$ref": "#/definitions/VideoImages"
+                    }
+                },
+                "401": {
+                    "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "404": {
+                    "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                    "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                    "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                }
+                },
+                "operationId": "Get_Video_Images"
+            }
+            },
+            "/accounts/{account_id}/videos/{video_id}/sources": {
+            "get": {
+                "tags": [
+                "videoGroup"
+                ],
+                "summary": "Get Video Sources",
+                "description": "Gets an array of sources (renditions) for a video ",
+                "consumes": [
+                "application/json"
+                ],
+                "produces": [
+                "application/json"
+                ],
+                "parameters": [
+                {
+                    "name": "account_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "Video Cloud account ID. "
+                },
+                {
+                    "name": "video_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string",
+                    "description": "Video Cloud video ID (or ref:reference_id). "
+                },
+                {
+                    "name": "Content-Type",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Content-Type: application/json "
+                },
+                {
+                    "name": "Authorization",
+                    "in": "header",
+                    "required": true,
+                    "type": "string",
+                    "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+                ],
+                "responses": {
+                "200": {
+                    "description": "200",
+                    "schema": {
+                    "$ref": "#/definitions/VideoSources"
+                    }
+                },
+                "401": {
+                    "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "404": {
+                    "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                    "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                    "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                }
+                },
+                "operationId": "Get_Video_Sources"
+            }
+            },
+            "/accounts/{account_id}/videos/{video_id}/audio_tracks": {
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Video Audio Tracks",
+                  "description": "Gets the audio tracks for a video Dynamic Delivery only ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id). "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/AudioTrack"
+                          }
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Get_Video_Audio_Tracks"
+                }
+              },
+              "/accounts/{account_id}/videos/{video_id}/audio_tracks/audio_track_id": {
+                "delete": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Delete Video Audio Track",
+                  "description": "Deletes one audio track for a video by its ID Dynamic Delivery only ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id) "
+                    },
+                    {
+                      "name": "audio_track_id",
+                      "in": "query",
+                      "required": true,
+                      "type": "string",
+                      "description": "the id for the audio track, formed as &#39;language_variant&#39; "
+                    },
+                    {
+                      "name": "language",
+                      "in": "query",
+                      "required": false,
+                      "type": "string",
+                      "description": "Language code for the audio track from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+                    },
+                    {
+                      "name": "is_default",
+                      "in": "query",
+                      "required": false,
+                      "type": "boolean",
+                      "description": "whether this is the default audio track for the video Dynanic Delivery only "
+                    },
+                    {
+                      "name": "variant",
+                      "in": "query",
+                      "required": false,
+                      "type": "string",
+                      "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "201": {},
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Delete_Video_Audio_Track"
+                },
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Video Audio Track",
+                  "description": "Gets one audio track for a video by its ID Dynamic Delivery only ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id) "
+                    },
+                    {
+                      "name": "audio_track_id",
+                      "in": "query",
+                      "required": true,
+                      "type": "string",
+                      "description": "the id for the audio track, formed as &#39;language_variant&#39; "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                        "$ref": "#/definitions/AudioTrack"
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Get_Video_Audio_Track"
+                },
+                "patch": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Update Video Audio Track",
+                  "description": "Updates audio track metadata for a video Dynamic Delivery only ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id) "
+                    },
+                    {
+                      "in": "body",
+                      "name": "Update_Video_Audio_TrackBody",
+                      "description": "Updates audio track metadata for a video Dynamic Delivery only ",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/AudioTrack"
+                      }
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                        "$ref": "#/definitions/AudioTrack"
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Update_Video_Audio_Track"
+                }
+              },
+              "/accounts/{account_id}/videos/{video_id}/ingest_jobs/{job_id}": {
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Status of Ingest Job",
+                  "description": "Get the status of an ingest job associated with a video (including the orginal ingestion, replacing and retranscoding the video) ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id) "
+                    },
+                    {
+                      "name": "job_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "the job ID for the ingest job "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                        "$ref": "#/definitions/IngestJobStatus"
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    },
+                    "500": {
+                      "description": "INTERNAL_ERROR: Error in the backend "
+                    }
+                  },
+                  "operationId": "Get_Status_of_Ingest_Job"
+                }
+              },
+              "/accounts/{account_id}/videos/{video_id}/ingest_jobs": {
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Status of Ingest Jobs",
+                  "description": "Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video). NOTE: this operation only works for videos that were ingested using Dynamic Delivery profiles. ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id) "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                          "type": "array",
+                          "items": {
+                        "$ref": "#/definitions/IngestJobStatus"
+                          }
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    },
+                    "500": {
+                      "description": "INTERNAL_ERROR: Error in the backend "
+                    }
+                  },
+                  "operationId": "Get_Status_of_Ingest_Jobs"
+                }
+              },
+              "/accounts/{account_id}/videos/{video_id}/references": {
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Playlists for Video",
+                  "description": "Gets an array of Manual (EXPLICIT) playlists that contain a video object for the account ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id). "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                          "$ref": "#/definitions/PlaylistReferences"
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Get_Playlists_for_Video"
+                },
+                "delete": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Remove Video from all Playlists",
+                  "description": "Removes the video from all EXPLICIT playlists for the account ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id). "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens "
+                    }
+                  ],
+                  "responses": {
+                    "201": {},
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Remove_Video_from_all_Playlists"
+                }
+              },
+              "/accounts/{account_id}/videos/{video_id}/digital_master": {
+                "delete": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Delete Digital Master",
+                  "description": "Deletes the archived digital master for a video. Be sure to read Digital Master Delete API before using this operation to understand the implications. ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID. You can also use ref:reference_id "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "201": {},
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "403": {
+                      "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    },
+                    "500": {
+                      "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                    }
+                  },
+                  "operationId": "Delete_Digital_Master"
+                },
+                "get": {
+                  "tags": [
+                    "videoGroup"
+                  ],
+                  "summary": "Get Digital Master Info",
+                  "description": "Gets the stored digital master for a video, if any ",
+                  "consumes": [
+                    "application/json"
+                  ],
+                  "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "account_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud account ID. "
+                    },
+                    {
+                      "name": "video_id",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Video Cloud video ID (or ref:reference_id). "
+                    },
+                    {
+                      "name": "Content-Type",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Content-Type: application/json "
+                    },
+                    {
+                      "name": "Authorization",
+                      "in": "header",
+                      "required": true,
+                      "type": "string",
+                      "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "200",
+                      "schema": {
+                        "$ref": "#/definitions/DigitalMaster"
+                      }
+                    },
+                    "401": {
+                      "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                      "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "405": {
+                      "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                    },
+                    "429": {
+                      "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                    }
+                  },
+                  "operationId": "Get_Digital_Master_Info"
+                }
+              },              
+        "/accounts/{account_id}/folders": {
 			"post": {
 				"tags": [
 					"folderGroup"
@@ -1497,7 +2396,355 @@
 				},
 				"operationId": "Get_Videos_in_Playlist"
 			}
-		}
+		},
+        "/accounts/{account_id}/video_fields": {
+            "get": {
+              "tags": [
+                "videoGroup"
+              ],
+              "summary": "Get Custom Fields",
+              "description": "Gets a list of custom fields for the account ",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "account_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "Video Cloud account ID. "
+                },
+                {
+                  "name": "Content-Type",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Content-Type: application/json "
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "200",
+                  "schema": {
+                    "$ref": "#/definitions/VideoFields"
+                  }
+                },
+                "400": {
+                  "description": "REFERENCES_EXIST: You are attempting to delete a video that is included in at least one playlist \nSHARED_VIDEO: Deletion of shared videos is not yet supported "
+                },
+                "401": {
+                  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+              },
+              "operationId": "Get_Custom_Fields"
+            }
+          },
+          "/accounts/{account_id}/subscriptions": {
+            "post": {
+              "tags": [
+                "notificationGroup"
+              ],
+              "summary": "Create Subscription",
+              "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events. ",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "account_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "Video Cloud account ID "
+                },
+                {
+                  "in": "body",
+                  "name": "Create_SubscriptionBody",
+                  "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events. ",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/Subscription"
+                  }
+                },
+                {
+                  "name": "Content-Type",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Content-Type: application/json "
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "200",
+                  "schema": {
+                    "$ref": "#/definitions/Subscription"
+                  }
+                },
+                "401": {
+                  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "422": {
+                  "description": "Unprocessable_Entity: 1) You already have a subscription for the video-change event that delivers to that address; 2) the endpoint or events field is missing from the request; 3) you already have 10 subscriptions to this event "
+                },
+                "429": {
+                  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+              },
+              "operationId": "Create_Subscription"
+            },
+            "get": {
+              "tags": [
+                "notificationGroup"
+              ],
+              "summary": "Get Subscriptions List",
+              "description": "Get a list of all notification subscriptions for the account ",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "account_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "Video Cloud account ID. "
+                },
+                {
+                  "name": "Content-Type",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Content-Type: application/json "
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "200",
+                  "schema": {
+                      "type":"array",
+                      "items": {
+                    "$ref": "#/definitions/Subscription"
+                      }
+                  }
+                },
+                "401": {
+                  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+              },
+              "operationId": "Get_Subscriptions_List"
+            }
+          },
+          "/accounts/{account_id}/subscriptions/{subscription_id}": {
+            "delete": {
+              "tags": [
+                "notificationGroup"
+              ],
+              "summary": "Delete Subscription",
+              "description": "Delete a notification subscription for the account ",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "account_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "Video Cloud account ID. "
+                },
+                {
+                  "name": "subscription_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "the subscription ID. "
+                },
+                {
+                  "name": "Content-Type",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Content-Type: application/json "
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+              ],
+              "responses": {
+                "201": {},  
+                "401": {
+                  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+              },
+              "operationId": "Delete_Subscription"
+            },
+            "get": {
+              "tags": [
+                "notificationGroup"
+              ],
+              "summary": "Get Subscription",
+              "description": "Get a notification subscription for the account ",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "account_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "Video Cloud account ID. "
+                },
+                {
+                  "name": "subscription_id",
+                  "in": "path",
+                  "required": true,
+                  "type": "string",
+                  "description": "the subscription ID. "
+                },
+                {
+                  "name": "Content-Type",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Content-Type: application/json "
+                },
+                {
+                  "name": "Authorization",
+                  "in": "header",
+                  "required": true,
+                  "type": "string",
+                  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "200",
+                  "schema": {
+                    "$ref": "#/definitions/Subscription"
+                  }
+                },
+                "401": {
+                  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+                },
+                "403": {
+                  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+                },
+                "404": {
+                  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                },
+                "405": {
+                  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+                },
+                "429": {
+                  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+                },
+                "500": {
+                  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+                }
+              },
+              "operationId": "Get_Subscription"
+            }
+          }
 	},
 	"definitions": {
 		"Video": {
@@ -1581,7 +2828,7 @@
 				"images": {
 					"type": "object",
 					"description": "map of image maps ",
-					"$ref": "#/definitions/images"
+					"$ref": "#/definitions/VideoImages"
 				},
 				"link": {
 					"type": "object",
@@ -1697,59 +2944,6 @@
 				"restricted"
 			]
 		},
-		"images": {
-			"properties": {
-				"poster": {
-					"type": "object",
-					"description": "map of poster properties ",
-					"$ref": "#/definitions/image"
-				},
-				"thumbnail": {
-					"type": "object",
-					"description": "map of thumbnail properties ",
-					"$ref": "#/definitions/image"
-				}
-			},
-			"required": [
-				"poster",
-				"thumbnail"
-			]
-		},
-		"image": {
-			"properties": {
-				"asset_id": {
-					"type": "string",
-					"description": "asset id for the image "
-				},
-				"sources": {
-					"type": "array",
-					"description": "array of image source maps ",
-					"items": {
-						"$ref": "#/definitions/image.sources"
-					}
-				},
-				"src": {
-					"type": "string",
-					"description": "URL for the default image source image "
-				}
-			},
-			"required": [
-				"asset_id",
-				"sources",
-				"src"
-			]
-		},
-		"image.sources": {
-			"properties": {
-				"src": {
-					"type": "string",
-					"description": "URL for a image source image "
-				}
-			},
-			"required": [
-				"src"
-			]
-		},
 		"link": {
 			"properties": {
 				"text": {
@@ -1847,6 +3041,343 @@
 				"ends_at"
 			]
 		},
+		"VideoImages": {
+			"properties": {
+				"poster": {
+					"type": "object",
+					"description": "map of poster properties ",
+					"$ref": "#/definitions/image"
+				},
+				"thumbnail": {
+					"type": "object",
+					"description": "map of thumbnail properties ",
+					"$ref": "#/definitions/image"
+				}
+			},
+			"required": [
+				"poster",
+				"thumbnail"
+			]
+		},
+		"image": {
+			"properties": {
+				"asset_id": {
+					"type": "string",
+					"description": "asset id for the image "
+				},
+				"sources": {
+					"type": "array",
+					"description": "array of image source maps ",
+					"items": {
+						"$ref": "#/definitions/image.sources"
+					}
+				},
+				"src": {
+					"type": "string",
+					"description": "URL for the default image source image "
+				}
+			},
+			"required": [
+				"asset_id",
+				"sources",
+				"src"
+			]
+		},
+		"image.sources": {
+			"properties": {
+				"src": {
+					"type": "string",
+					"description": "URL for a image source image "
+				}
+			},
+			"required": [
+				"src"
+			]
+		},
+        "VideoSources": {
+            "properties": {
+              "app_name": {
+                "type": "string",
+                "description": "address for RTMP stream "
+              },
+              "asset_id": {
+                "type": "string",
+                "description": "system id for the rendition "
+              },
+              "codec": {
+                "type": "string",
+                "description": "the video codec for the rendition "
+              },
+              "container": {
+                "type": "string",
+                "description": "the video container for the rendition "
+              },
+              "duration": {
+                "type": "number",
+                "description": "duration in milliseconds "
+              },
+              "encoding_rate": {
+                "type": "number",
+                "description": "encoding rate in bps "
+              },
+              "height": {
+                "type": "number",
+                "description": "frame height in pixels "
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "whether the source is a remote asset "
+              },
+              "size": {
+                "type": "number",
+                "description": "file size in bytes "
+              },
+              "src": {
+                "type": "string",
+                "description": "URL for HTTP rendition "
+              },
+              "steam_name": {
+                "type": "string",
+                "description": "the stream name on the CDN "
+              },
+              "type": {
+                "type": "string",
+                "description": "the type for segmented streams "
+              },
+              "uploaded_at": {
+                "type": "string",
+                "description": "date/time when the video was uploaded "
+              },
+              "width": {
+                "type": "number",
+                "description": "frame width in pixels "
+              }
+            },
+            "required": [
+              "app_name",
+              "asset_id",
+              "codec",
+              "container",
+              "duration",
+              "encoding_rate",
+              "height",
+              "remote",
+              "size",
+              "src",
+              "steam_name",
+              "type",
+              "uploaded_at",
+              "width"
+            ]
+          },
+          "AudioTrack": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID for the audio track formed as language_variant "
+              },
+              "language": {
+                "type": "string",
+                "description": "language code for the audio track "
+              },
+              "variant": {
+                "type": "string",
+                "description": "the type of audio track "
+              },
+              "duration": {
+                "type": "number",
+                "description": "URL the duration of the audio track in milliseconds "
+              },
+              "encoding_rates": {
+                "type": "array",
+                "description": "array of encoding rates for the audio track renditions in KBPS ",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "IngestJobStatus": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "the ingest job id "
+              },
+              "state": {
+                "type": "string",
+                "description": "the current state of the ingest job "
+              },
+              "account_id": {
+                "type": "string",
+                "description": "the Video Cloud account id "
+              },
+              "video_id": {
+                "type": "string",
+                "description": "the video id "
+              },
+              "error_code": {
+                "type": "string",
+                "description": "the error code if the job failed "
+              },
+              "error_message": {
+                "type": "string",
+                "description": "the error message if the job failed "
+              },
+              "updated_at": {
+                "type": "string",
+					"format": "datetime",
+					"description": "when the status was last updated "
+              },
+              "started_at": {
+                "type": "string",
+                "description": "when processing started "
+              },
+              "priority": {
+                "type": "string",
+                "description": "priority of the job (normal or low) "
+              },
+              "submitted_at": {
+                "type": "string",
+					"format": "datetime",
+					"description": "when the job was submitted "
+              }
+            }
+          },
+          "PlaylistReferences": {
+            "properties": {
+              "playlists": {
+                "type": "array",
+                "description": "array of EXPLICIT playlist ids that contain the video ",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "playlists"
+            ]
+          },
+          "DigitalMaster": {
+            "properties": {
+              "account_id": {
+                "type": "string",
+                "description": "Video Cloud account id "
+              },
+              "audio_only": {
+                "type": "boolean",
+                "description": "whether this assest has an audio track only "
+              },
+              "cdn_origin_id": {
+                "type": "string",
+                "description": "id on the origin CDN if any "
+              },
+              "complete": {
+                "type": "boolean",
+                "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true "
+              },
+              "controller_type": {
+                "type": "string",
+                "description": "video controller type "
+              },
+              "current_filename": {
+                "type": "string",
+                "description": "the file name "
+              },
+              "drm": {
+                "type": "object",
+                "description": "DRM licensing information ",
+                "$ref": "#/definitions/drm"
+              },
+              "encoding_rate": {
+                "type": "number",
+                "description": "encoding rate in bps "
+              },
+              "frame_height": {
+                "type": "number",
+                "description": "frame height in pixels "
+              },
+              "frame_width": {
+                "type": "number",
+                "description": "frame width in pixels "
+              },
+              "hds": {
+                "type": "object",
+                "description": "HDS information ",
+                "$ref": "#/definitions/hds"
+              },
+              "hls": {
+                "type": "object",
+                "description": "HLS information ",
+                "$ref": "#/definitions/hls"
+              },
+              "id": {
+                "type": "string",
+                "description": "the video id "
+              },
+              "name": {
+                "type": "string",
+                "description": "the video title "
+              },
+              "preview_thumbnail_asset_id": {
+                "type": "string",
+                "description": "thumbnail asset id "
+              },
+              "progressive_download": {
+                "type": "boolean",
+                "description": "whether available via progressive download "
+              },
+              "reference_id": {
+                "type": "string",
+                "description": "reference id "
+              },
+              "remote_stream_name": {
+                "type": "string",
+                "description": "for remote stream types "
+              },
+              "remote_url": {
+                "type": "string",
+                "description": "for HTTP types "
+              },
+              "sharded_directory": {
+                "type": "string",
+                "description": ""
+              },
+              "size": {
+                "type": "number",
+                "description": "in bytes "
+              },
+              "type": {
+                "type": "string",
+                "description": "asset type "
+              },
+              "updated_at": {
+                "type": "string",
+					"format": "datetime",
+					"description": "date/time last modified "
+              },
+              "uploaded_at": {
+                "type": "string",
+					"format": "datetime",
+					"description": "date/time added "
+              },
+              "version": {
+                "type": "number",
+                "description": ""
+              },
+              "video_codec": {
+                "type": "string",
+                "description": "the video codec "
+              },
+              "video_container": {
+                "type": "string",
+                "description": "the video container "
+              },
+              "video_duration": {
+                "type": "number",
+                "description": "in milliseconds "
+              }
+            }
+          },
 		"Folder": {
 			"properties": {
 				"account_id": {
@@ -1929,7 +3460,160 @@
 					"description": "search string to retrieve the videos (smart playlists only) "
 				}
 			}
-		}
+		},
+        "Drm": {
+            "properties": {
+              "state": {
+                "type":"string"
+              },
+              "packager_version": {
+                "type":"string"
+              },
+              "metadata_cdn_origin_id": {
+                "type":"string"
+              },
+              "metadata_sharded_directory": {
+                "type":"string"
+              }
+            }
+          },
+          "Hds": {
+            "properties": {
+              "cdn_origin_id": {
+                "type":"string"
+              },
+              "sharded_directory": {
+                "type":"string"
+              },
+              "bcfs_provider": {
+                "type":"string"
+              },
+              "bcfs_key": {
+                "type":"string"
+              },
+              "filename": {
+                "type":"string"
+              }
+            }
+          },
+          "Hls": {
+            "properties": {
+              "encrypted": {
+                "type":"boolean"
+              },
+              "segments": {
+                "type":"array",
+                "items": {
+                  "$ref": "#/definitions/HlsSegment"
+                }
+              }
+            }
+          },
+          "HlsSegment": {
+            "properties": {
+              "d": {
+                "type":"number"
+              },
+              "filename": {
+                "type":"string"
+              },
+              "encryption_key": {
+                "type":"string"
+              }
+            }
+          },
+          "VideoFields": {
+            "properties": {
+              "max_custom_fields": {
+                "type": "string",
+                "description": "maximum number of custom fields for the account "
+              },
+              "custom_fields": {
+                "type": "array",
+                "description": "array of standard field maps ",
+                "items": {
+                  "$ref": "#/definitions/VideoFields.custom_field"
+                }
+              },
+              "standard_fields": {
+                "type": "array",
+                "description": "array of standard field maps ",
+                "items": {
+                  "$ref": "#/definitions/VideoFields.standard_field"
+                }
+              }
+            }
+          },
+          "VideoFields.custom_field": {
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "description (instruction for user) "
+              },
+              "display_name": {
+                "type": "string",
+                "description": "display name "
+              },
+              "enum_values": {
+                "type": "array",
+                "description": "array of string values for select type fields ",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "id": {
+                "type": "string",
+                "description": "data name for the field (used to access it in searches, etc.) "
+              },
+              "required": {
+                "type": "boolean",
+                "description": "whether field must have a value before video can be active "
+              },
+              "type": {
+                "type": "string",
+                "description": "custom field type (enum or string) "
+              }
+            }
+          },
+          "VideoFields.standard_field": {
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "description (instruction for user) "
+              },
+              "id": {
+                "type": "string",
+                "description": "data name for the field (used to access it in searches, etc.) "
+              },
+              "required": {
+                "type": "boolean",
+                "description": "whether field must have a value before video can be active "
+              }
+            }
+          },
+          "Subscription": {
+            "properties": {
+              "endpoint": {
+                "type": "string",
+                "description": "the notifications endpoint "
+              },
+              "events": {
+                "type": "array",
+                "description": "array of events subscribed to ",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "id": {
+                "type": "string",
+                "description": "system id for the subscription "
+              },
+              "service_account": {
+                "type": "string",
+                "description": "the Video Cloud account id "
+              }
+            }
+          }
 	},
 	"schemes": [
 		"https"

@@ -1,7 +1,12 @@
 import com.google.gson.Gson;
 import com.squareup.okhttp.*;
 
+import javax.net.ssl.*;
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.time.Instant;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -85,7 +90,31 @@ public class Oauth2Interceptor implements Interceptor {
             client.setConnectTimeout(1000, TimeUnit.MILLISECONDS);
             client.setReadTimeout(5000, TimeUnit.MILLISECONDS);
 
+            if (host.contains(".qa.") || host.contains("staging")) {
+                trustAllCerts(client);
+            }
+
             return client;
+        }
+
+        private void trustAllCerts(OkHttpClient client) {
+            try {
+                X509TrustManager trustManager = new TrustEveryoneManager();
+                TrustManager[] trustAllCerts = new TrustManager[]{trustManager};
+                // Install the all-trusting trust manager
+                SSLContext sslContext = null;
+                sslContext = SSLContext.getInstance("SSL");
+                sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+                // Create an ssl socket factory with our all-trusting manager
+                SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+                client.setSslSocketFactory(sslSocketFactory);
+                // below line requires a builder. or expose CertificationChainSomethingSomething
+                // builder.setSslSocketFactory(sslSocketFactory, trustManager);
+                client.setHostnameVerifier(new TrustEveryoneHostnameVerifier());
+            } catch (Exception e) {
+                System.out.println("Cannot trust all certs");
+                e.printStackTrace();
+            }
         }
 
         Token getToken(String clientId, String clientSecret) throws IOException {
@@ -109,5 +138,27 @@ public class Oauth2Interceptor implements Interceptor {
                 throw new IOException("Unexpected status " + response.code() + " while fetching token: " + response);
             }
         }
+    }
+
+    class TrustEveryoneManager implements X509TrustManager {
+        public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+
+        }
+
+        public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+
+        }
+
+        public X509Certificate[] getAcceptedIssuers() {
+            return new X509Certificate[0];
+        }
+
+    }
+
+    class TrustEveryoneHostnameVerifier implements HostnameVerifier {
+        public boolean verify(String hostname, SSLSession session) {
+            return true;
+        }
+
     }
 }
