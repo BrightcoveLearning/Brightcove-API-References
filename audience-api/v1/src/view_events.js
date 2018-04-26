@@ -23,17 +23,17 @@
  * @apiParamExample {String} View Events Report Example:
  *     https://audience.api.brightcove.com/v1/accounts/1486906377/view_events?limit=10&fields=first_name&sort=video_name&where=video_id==1234567890&from=-30d&to=now
  *
- * @apiSuccess {Number} count the total number of items
- * @apiSuccess {Number} limit the limit for items in this request
- * @apiSuccess {Number} offset the offset for items in this request
- * @apiSuccess {Object[]} result array of result items
- * @apiSuccess {String} result.created_at the date created
- * @apiSuccess {String} result.page_url the url for the Brightcove player
- * @apiSuccess {String} result.player_id the ID for the Brightcove player
- * @apiSuccess {String} result.video_id the Video Cloud video id
- * @apiSuccess {String} result.video_name the Video Cloud video name
- * @apiSuccess {Number} result.watched the percentage of the video watched (current playhead position / video duration)
- * @apiSuccess {Number} result.time_watched the seconds of the video watched
+ * @apiSuccess (200) {Number} count the total number of items
+ * @apiSuccess (200) {Number} limit the limit for items in this request
+ * @apiSuccess (200) {Number} offset the offset for items in this request
+ * @apiSuccess (200) {Object[]} result array of result items
+ * @apiSuccess (200) {String} result.created_at the date created
+ * @apiSuccess (200) {String} result.page_url the url for the Brightcove player
+ * @apiSuccess (200) {String} result.player_id the ID for the Brightcove player
+ * @apiSuccess (200) {String} result.video_id the Video Cloud video id
+ * @apiSuccess (200) {String} result.video_name the Video Cloud video name
+ * @apiSuccess (200) {Number} result.watched the percentage of the video watched (current playhead position / video duration)
+ * @apiSuccess (200) {Number} result.time_watched the seconds of the video watched
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

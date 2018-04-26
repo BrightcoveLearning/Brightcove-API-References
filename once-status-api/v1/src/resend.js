@@ -19,9 +19,9 @@
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/notifications/bc6cb7d4-be99-471b-adf3-7c501172b317/transcode
  *
- * @apiSuccess {Object[]} notication_type This will be the notification type you specified in the request &mdash; i.e. "transcode"
- * @apiSuccess {String} notication_type.id The single job id
- * @apiSuccess {Boolean} notication_type.submitted Whether the notification was resent
+ * @apiSuccess (200) {Object[]} notication_type This will be the notification type you specified in the request &mdash; i.e. "transcode"
+ * @apiSuccess (200) {String} notication_type.id The single job id
+ * @apiSuccess (200) {Boolean} notication_type.submitted Whether the notification was resent
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

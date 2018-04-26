@@ -33,12 +33,12 @@
  *   }
  * }
  *
- * @apiSuccess {String} key_string The policy key string
- * @apiSuccess {Object} key-data Map of key data prescribing the policy
- * @apiSuccess {String} key-data.account-id The Video Cloud account id
- * @apiSuccess {Sting[]} key-data.apis Array of apis permitted for the key
- * @apiSuccess {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
- * @apiSuccess {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
+ * @apiSuccess (200) {String} key_string The policy key string
+ * @apiSuccess (200) {Object} key-data Map of key data prescribing the policy
+ * @apiSuccess (200) {String} key-data.account-id The Video Cloud account id
+ * @apiSuccess (200) {Sting[]} key-data.apis Array of apis permitted for the key
+ * @apiSuccess (200) {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
+ * @apiSuccess (200) {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -93,12 +93,12 @@
  * @apiParamExample {String} Get Policy Example:
  *    https://policy.api.brightcove.com/v1/accounts/57838016001/policy_keys/BCpkADawqM0tR9WJhqqyg4t8NgSulRVnfHyh6cL_U0m7RaoIq19WWR-8EPiWY1ift8zHF6Z3sfTyuXv6LY8bfTAfvzVLb1TrwGTOBJGPwWJ9dJUkny7lUoN1ygk
  *
- * @apiSuccess {String} key_string The policy key string
- * @apiSuccess {Object} key-data Map of key data prescribing the policy
- * @apiSuccess {String} key-data.account-id The Video Cloud account id
- * @apiSuccess {Sting[]} key-data.apis Array of apis permitted for the key
- * @apiSuccess {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
- * @apiSuccess {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
+ * @apiSuccess (200) {String} key_string The policy key string
+ * @apiSuccess (200) {Object} key-data Map of key data prescribing the policy
+ * @apiSuccess (200) {String} key-data.account-id The Video Cloud account id
+ * @apiSuccess (200) {Sting[]} key-data.apis Array of apis permitted for the key
+ * @apiSuccess (200) {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
+ * @apiSuccess (200) {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

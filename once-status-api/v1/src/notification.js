@@ -16,22 +16,22 @@
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/bc6cb7d4-be99-471b-adf3-7c501172b317
  *
- * @apiSuccess {Object[]} notifications Array of notifications objects for the request id
- * @apiSuccess {Number} notifications.sentTime the time the notification was sent in epoch milliseconds
- * @apiSuccess {String} notifications.event the event the notification was sent for
- * @apiSuccess {String} notifications.id the id for job
- * @apiSuccess {String} notifications.status the step status sent
- * @apiSuccess {Object} notifications.notification details of the notification
- * @apiSuccess {String} notifications.notification.notification the step type for the notification
- * @apiSuccess {String} notifications.notification.request_id the job request_id
- * @apiSuccess {String} notifications.notification.domain the domain for the media item
- * @apiSuccess {String} notifications.notification.catalog the catalog for the media item
- * @apiSuccess {String} notifications.notification.title the media item title
- * @apiSuccess {Number} notifications.notification.version the media item version
- * @apiSuccess {Object} notifications.notification.metadata the media item metadata
- * @apiSuccess {Object} notifications.details the notification details
- * @apiSuccess {String} notifications.details.message the notification message
- * @apiSuccess {String[]} notifications.targets array of target URLs for the notification
+ * @apiSuccess (200) {Object[]} notifications Array of notifications objects for the request id
+ * @apiSuccess (200) {Number} notifications.sentTime the time the notification was sent in epoch milliseconds
+ * @apiSuccess (200) {String} notifications.event the event the notification was sent for
+ * @apiSuccess (200) {String} notifications.id the id for job
+ * @apiSuccess (200) {String} notifications.status the step status sent
+ * @apiSuccess (200) {Object} notifications.notification details of the notification
+ * @apiSuccess (200) {String} notifications.notification.notification the step type for the notification
+ * @apiSuccess (200) {String} notifications.notification.request_id the job request_id
+ * @apiSuccess (200) {String} notifications.notification.domain the domain for the media item
+ * @apiSuccess (200) {String} notifications.notification.catalog the catalog for the media item
+ * @apiSuccess (200) {String} notifications.notification.title the media item title
+ * @apiSuccess (200) {Number} notifications.notification.version the media item version
+ * @apiSuccess (200) {Object} notifications.notification.metadata the media item metadata
+ * @apiSuccess (200) {Object} notifications.details the notification details
+ * @apiSuccess (200) {String} notifications.details.message the notification message
+ * @apiSuccess (200) {String[]} notifications.targets array of target URLs for the notification
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

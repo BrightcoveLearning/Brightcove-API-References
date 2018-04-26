@@ -20,13 +20,13 @@
  * @apiParamExample {String} Get Applications Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess {Object[]} results Array of applications in result set
- * @apiSuccess {String} results.id Each applicationId
- * @apiSuccess {String} results.name Each application's name
- * @apiSuccess {String} results.domainId Each application's parent domainId
- * @apiSuccess {String} prev URL to GET the previous application result set (if necessary)
- * @apiSuccess {String} next URL to GET the next application result set (if necessary)
- * @apiSuccess {Number} totalResults The total number of applications in the domain
+ * @apiSuccess (200) {Object[]} results Array of applications in result set
+ * @apiSuccess (200) {String} results.id Each applicationId
+ * @apiSuccess (200) {String} results.name Each application's name
+ * @apiSuccess (200) {String} results.domainId Each application's parent domainId
+ * @apiSuccess (200) {String} prev URL to GET the previous application result set (if necessary)
+ * @apiSuccess (200) {String} next URL to GET the next application result set (if necessary)
+ * @apiSuccess (200) {Number} totalResults The total number of applications in the domain
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -193,13 +193,13 @@
  *        "postRollAdCount":0
  *    }
  *
- * @apiSuccess {String} id The application Id
- * @apiSuccess {String} name The application's name
- * @apiSuccess {String} domainId The application's parent domainId
- * @apiSuccess {Object} adConfig Will remain null until adConfig has been added (see methods below)
- * @apiSuccess {Number} preRollAdCoung The number of single VAST ads to be requested for the preRoll position
- * @apiSuccess {Number} midRollAdCoung The number of single VAST ads to be requested for the midRoll position
- * @apiSuccess {Number} postRollAdCoung The number of single VAST ads to be requested for the postRoll position
+ * @apiSuccess (200) {String} id The application Id
+ * @apiSuccess (200) {String} name The application's name
+ * @apiSuccess (200) {String} domainId The application's parent domainId
+ * @apiSuccess (200) {Object} adConfig Will remain null until adConfig has been added (see methods below)
+ * @apiSuccess (200) {Number} preRollAdCoung The number of single VAST ads to be requested for the preRoll position
+ * @apiSuccess (200) {Number} midRollAdCoung The number of single VAST ads to be requested for the midRoll position
+ * @apiSuccess (200) {Number} postRollAdCoung The number of single VAST ads to be requested for the postRoll position
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -246,13 +246,13 @@
  *        "postRollAdCount":1
  *    }
  *
- * @apiSuccess {String} id The application Id
- * @apiSuccess {String} name The application's name
- * @apiSuccess {String} domainId The application's parent domainId
- * @apiSuccess {Object} adConfig Will remain null until adConfig has been added (see methods below)
- * @apiSuccess {Number} preRollAdCoung The number of single VAST ads to be requested for the preRoll position
- * @apiSuccess {Number} midRollAdCoung The number of single VAST ads to be requested for the midRoll position
- * @apiSuccess {Number} postRollAdCoung The number of single VAST ads to be requested for the postRoll position
+ * @apiSuccess (200) {String} id The application Id
+ * @apiSuccess (200) {String} name The application's name
+ * @apiSuccess (200) {String} domainId The application's parent domainId
+ * @apiSuccess (200) {Object} adConfig Will remain null until adConfig has been added (see methods below)
+ * @apiSuccess (200) {Number} preRollAdCoung The number of single VAST ads to be requested for the preRoll position
+ * @apiSuccess (200) {Number} midRollAdCoung The number of single VAST ads to be requested for the midRoll position
+ * @apiSuccess (200) {Number} postRollAdCoung The number of single VAST ads to be requested for the postRoll position
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -290,7 +290,7 @@
  * @apiParamExample {String} Delete Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess {String} id The application Id
+ * @apiSuccess (200) {String} id The application Id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -549,7 +549,7 @@
  * @apiParamExample {String} Delete Ad Configurations Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig
  *
- * @apiSuccess {String[]} id An array of adConfigId(s) which have been deleted
+ * @apiSuccess (200) {String[]} id An array of adConfigId(s) which have been deleted
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

@@ -26,31 +26,31 @@
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
   *
-  * @apiSuccess {Number} audio_bitrate_in_kbps Audio bitrate of the input media file
-  * @apiSuccess {String} audio_codec Audio codec of the input media file
-  * @apiSuccess {Number} audio_sample_rate Audio sample rate of the input media file
-  * @apiSuccess {Number} audio_tracks The number of audio tracks
-  * @apiSuccess {Number} channels The number of audio channels
-  * @apiSuccess {DateTimeString} created_at ISO 8601 date-time string representing when the input file was created
-  * @apiSuccess {Number} duration_in_ms duration_in_ms.
-  * @apiSuccess {String} error_class Type of error thrown
-  * @apiSuccess {String} error_message Error message thrown
-  * @apiSuccess {Number} file_size_bytes File size
-  * @apiSuccess {DateTimeString} finished_at ISO 8601 date-time string representing when the input file was finished
-  * @apiSuccess {String} format Format of the input file
-  * @apiSuccess {Number} frame_rate Frame rate of the input file
-  * @apiSuccess {Number} height Frame height of the input file
-  * @apiSuccess {String} id System id of the input file
-  * @apiSuccess {String} md5_checksum Checksum for the input file
-  * @apiSuccess {Boolean} privacy Privacy mode
-  * @apiSuccess {String} state Current state of input file processing
-  * @apiSuccess {Boolean} test Whether run in test (integration) mode
-  * @apiSuccess {DateTimeString} updated_at ISO 8601 date-time string representing when the input file was last modified
-  * @apiSuccess {Number} video_bitrate_in_kbps Video bitrate of the input media file
-  * @apiSuccess {String} video_codec Video codec of the input media file
-  * @apiSuccess {Number} width Frame width of the input media file
-  * @apiSuccess {Number} total_bitrate_in_kbps Total bitrate of the input media file
-  * @apiSuccess {String} url URL for the input media file
+  * @apiSuccess (200) {Number} audio_bitrate_in_kbps Audio bitrate of the input media file
+  * @apiSuccess (200) {String} audio_codec Audio codec of the input media file
+  * @apiSuccess (200) {Number} audio_sample_rate Audio sample rate of the input media file
+  * @apiSuccess (200) {Number} audio_tracks The number of audio tracks
+  * @apiSuccess (200) {Number} channels The number of audio channels
+  * @apiSuccess (200) {DateTimeString} created_at ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess (200) {Number} duration_in_ms duration_in_ms.
+  * @apiSuccess (200) {String} error_class Type of error thrown
+  * @apiSuccess (200) {String} error_message Error message thrown
+  * @apiSuccess (200) {Number} file_size_bytes File size
+  * @apiSuccess (200) {DateTimeString} finished_at ISO 8601 date-time string representing when the input file was finished
+  * @apiSuccess (200) {String} format Format of the input file
+  * @apiSuccess (200) {Number} frame_rate Frame rate of the input file
+  * @apiSuccess (200) {Number} height Frame height of the input file
+  * @apiSuccess (200) {String} id System id of the input file
+  * @apiSuccess (200) {String} md5_checksum Checksum for the input file
+  * @apiSuccess (200) {Boolean} privacy Privacy mode
+  * @apiSuccess (200) {String} state Current state of input file processing
+  * @apiSuccess (200) {Boolean} test Whether run in test (integration) mode
+  * @apiSuccess (200) {DateTimeString} updated_at ISO 8601 date-time string representing when the input file was last modified
+  * @apiSuccess (200) {Number} video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (200) {String} video_codec Video codec of the input media file
+  * @apiSuccess (200) {Number} width Frame width of the input media file
+  * @apiSuccess (200) {Number} total_bitrate_in_kbps Total bitrate of the input media file
+  * @apiSuccess (200) {String} url URL for the input media file
   *
   * @apiSuccessExample {json} Success response for get input details
   *    {
@@ -94,10 +94,10 @@
   *
   *
   *
-  * @apiSuccess {String} state State for the input: pending, waiting, processing, finished, failed, or cancelled
-  * @apiSuccess {Number} progress The overall percentage complete
-  * @apiSuccess {String} current_event The current activity
-  * @apiSuccess {Number} current_event_progress The current activity percentage complete
+  * @apiSuccess (200) {String} state State for the input: pending, waiting, processing, finished, failed, or cancelled
+  * @apiSuccess (200) {Number} progress The overall percentage complete
+  * @apiSuccess (200) {String} current_event The current activity
+  * @apiSuccess (200) {Number} current_event_progress The current activity percentage complete
   *
   * @apiSuccessExample {json} Success response for Input Progress
   *    {

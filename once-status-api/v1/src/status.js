@@ -15,72 +15,72 @@
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/2796350e-2125-4f04-b33a-59488aaa76c7
  *
- * @apiSuccess {String} status The overall status of the job: `COMPLETE`, `PENDING`, `PROCESSING`, `SKIPPED`, `WARN` or `ERROR` (`WARN`indicates that the job completed and the video is playable, but there was an issue with processing some asset, usually timed text )
- * @apiSuccess {Number} startTime The time when the job began in epoch time (milliseconds)
- * @apiSuccess {Number} completeTime The time when the job finished in epoch time (milliseconds)
- * @apiSuccess {Object} steps The steps of the job
- * @apiSuccess {Object} steps.ingest The ingest step
- * @apiSuccess {String} steps.ingest.name The name of the step
- * @apiSuccess {String} steps.ingest.status The status of ingest step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
- * @apiSuccess {Number} steps.ingest.startTime The time when the ingest began in epoch time (milliseconds)
- * @apiSuccess {Number} steps.ingest.completeTime The time when the ingest finished in epoch time (milliseconds)
- * @apiSuccess {Object} steps.ingest.input The request inputs
- * @apiSuccess {String} steps.ingest.input.foreign_key The unique identifier for the asset
- * @apiSuccess {String} steps.ingest.input.domainId The domain id
- * @apiSuccess {String} steps.ingest.input.catalog_id The catalog id
- * @apiSuccess {String[]} steps.ingest.input.keywords The keyword array for the asset
- * @apiSuccess {Object} steps.ingest.input.metadata The metadata map for the asset
- * @apiSuccess {Object} steps.ingest.input.media The media input
- * @apiSuccess {String} steps.ingest.input.media.sourceURL The media source URL
- * @apiSuccess {Object[]} steps.ingest.input.notifications Array of notification maps
- * @apiSuccess {Object[]} steps.ingest.input.publicationRules Array of publication rule maps
- * @apiSuccess {Object[]} steps.ingest.input.cuePoints Array of cur point maps
- * @apiSuccess {Object} steps.ingest.output The job output
- * @apiSuccess {String} steps.ingest.output.mediaItemId The media item id
- * @apiSuccess {Boolean} steps.ingest.output.hasChanged Whether the media item has been modified
- * @apiSuccess {Object} steps.ingest.output.description Description object for the media item
- * @apiSuccess {String} steps.ingest.output.description.url URL for the media item
- * @apiSuccess {String} steps.ingest.output.description.lastModified Date/time the media item was last modified
- * @apiSuccess {String} steps.ingest.output.description.etag Date/time the media item etag
- * @apiSuccess {Number} steps.ingest.output.description.fileSize size of the output media item in bytes
- * @apiSuccess {Object} steps.timedtext The timed text object for captions
- * @apiSuccess {String} steps.timedtext.name The human readable name for captions
- * @apiSuccess {String} steps.timedtext.status The status of the job processing for captions
- * @apiSuccess {Number} steps.timedtext.startTime The start time for processing the captions
- * @apiSuccess {Number} steps.timedtext.completeTime The complete time for processing the captions
- * @apiSuccess {Object[]} steps.timedtext.output Array of timed text output objects
- * @apiSuccess {String} steps.timedtext.output.id The id for the output
- * @apiSuccess {String} steps.timedtext.output.timedTextType The type for this timed text set
- * @apiSuccess {Array} steps.timedtext.output.languages Array of language codes for the captions
- * @apiSuccess {Object} steps.transcode The transcode step
- * @apiSuccess {String} steps.transcode.name The name of the step
- * @apiSuccess {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
- * @apiSuccess {Number} steps.transcode.startTime The time when the transcode began in epoch time (milliseconds)
- * @apiSuccess {Number} steps.transcode.completeTime The time when the transcode finished in epoch time (milliseconds)
- * @apiSuccess {Object} steps.transcode.output map of the transcode output
- * @apiSuccess {String[]} steps.transcode.output.renditions array of rendition ids
- * @apiSuccess {Object} steps.notification The notification step
- * @apiSuccess {String} steps.notification.name The name of the step
- * @apiSuccess {String} steps.notification.status The status of notification step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
- * @apiSuccess {Number} steps.notification.startTime The time when the notification began in epoch time (milliseconds)
- * @apiSuccess {Number} steps.notification.completeTime The time when the notification finished in epoch time (milliseconds)
- * @apiSuccess {Object} steps.notification.input map of the notification inputs
- * @apiSuccess {String} steps.notification.input.mediaItemId The media item id
- * @apiSuccess {String} steps.notification.input.domainId The domain id
- * @apiSuccess {String} steps.notification.input.catalog_id The catalog id
- * @apiSuccess {Number} steps.notification.input.version The media item version
- * @apiSuccess {Number} steps.notification.input.durationMS Duration of the media item in milliseconds
- * @apiSuccess {Object[]} steps.notification.input.notificationOverrides Array of notification overrides, if any
- * @apiSuccess {Object} steps.notification.output map of the notification outputs
- * @apiSuccess {Boolean} steps.notification.output.sentNotification whether notification was sent
- * @apiSuccess {Object} steps.publish The publish step
- * @apiSuccess {String} steps.publish.name The name of the step
- * @apiSuccess {String} steps.publish.status The status of publish step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
- * @apiSuccess {Number} steps.publish.startTime The time when the publish began in epoch time (milliseconds)
- * @apiSuccess {Number} steps.publish.completeTime The time when the publish finished in epoch time (milliseconds)
- * @apiSuccess {Object} steps.publish.output map of the publish output
- * @apiSuccess {Number} steps.publish.output.version Version of the media item
- * @apiSuccess {Number} steps.publish.output.duration Duration of the media item in milliseconds
+ * @apiSuccess (200) {String} status The overall status of the job: `COMPLETE`, `PENDING`, `PROCESSING`, `SKIPPED`, `WARN` or `ERROR` (`WARN`indicates that the job completed and the video is playable, but there was an issue with processing some asset, usually timed text )
+ * @apiSuccess (200) {Number} startTime The time when the job began in epoch time (milliseconds)
+ * @apiSuccess (200) {Number} completeTime The time when the job finished in epoch time (milliseconds)
+ * @apiSuccess (200) {Object} steps The steps of the job
+ * @apiSuccess (200) {Object} steps.ingest The ingest step
+ * @apiSuccess (200) {String} steps.ingest.name The name of the step
+ * @apiSuccess (200) {String} steps.ingest.status The status of ingest step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (200) {Number} steps.ingest.startTime The time when the ingest began in epoch time (milliseconds)
+ * @apiSuccess (200) {Number} steps.ingest.completeTime The time when the ingest finished in epoch time (milliseconds)
+ * @apiSuccess (200) {Object} steps.ingest.input The request inputs
+ * @apiSuccess (200) {String} steps.ingest.input.foreign_key The unique identifier for the asset
+ * @apiSuccess (200) {String} steps.ingest.input.domainId The domain id
+ * @apiSuccess (200) {String} steps.ingest.input.catalog_id The catalog id
+ * @apiSuccess (200) {String[]} steps.ingest.input.keywords The keyword array for the asset
+ * @apiSuccess (200) {Object} steps.ingest.input.metadata The metadata map for the asset
+ * @apiSuccess (200) {Object} steps.ingest.input.media The media input
+ * @apiSuccess (200) {String} steps.ingest.input.media.sourceURL The media source URL
+ * @apiSuccess (200) {Object[]} steps.ingest.input.notifications Array of notification maps
+ * @apiSuccess (200) {Object[]} steps.ingest.input.publicationRules Array of publication rule maps
+ * @apiSuccess (200) {Object[]} steps.ingest.input.cuePoints Array of cur point maps
+ * @apiSuccess (200) {Object} steps.ingest.output The job output
+ * @apiSuccess (200) {String} steps.ingest.output.mediaItemId The media item id
+ * @apiSuccess (200) {Boolean} steps.ingest.output.hasChanged Whether the media item has been modified
+ * @apiSuccess (200) {Object} steps.ingest.output.description Description object for the media item
+ * @apiSuccess (200) {String} steps.ingest.output.description.url URL for the media item
+ * @apiSuccess (200) {String} steps.ingest.output.description.lastModified Date/time the media item was last modified
+ * @apiSuccess (200) {String} steps.ingest.output.description.etag Date/time the media item etag
+ * @apiSuccess (200) {Number} steps.ingest.output.description.fileSize size of the output media item in bytes
+ * @apiSuccess (200) {Object} steps.timedtext The timed text object for captions
+ * @apiSuccess (200) {String} steps.timedtext.name The human readable name for captions
+ * @apiSuccess (200) {String} steps.timedtext.status The status of the job processing for captions
+ * @apiSuccess (200) {Number} steps.timedtext.startTime The start time for processing the captions
+ * @apiSuccess (200) {Number} steps.timedtext.completeTime The complete time for processing the captions
+ * @apiSuccess (200) {Object[]} steps.timedtext.output Array of timed text output objects
+ * @apiSuccess (200) {String} steps.timedtext.output.id The id for the output
+ * @apiSuccess (200) {String} steps.timedtext.output.timedTextType The type for this timed text set
+ * @apiSuccess (200) {Array} steps.timedtext.output.languages Array of language codes for the captions
+ * @apiSuccess (200) {Object} steps.transcode The transcode step
+ * @apiSuccess (200) {String} steps.transcode.name The name of the step
+ * @apiSuccess (200) {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (200) {Number} steps.transcode.startTime The time when the transcode began in epoch time (milliseconds)
+ * @apiSuccess (200) {Number} steps.transcode.completeTime The time when the transcode finished in epoch time (milliseconds)
+ * @apiSuccess (200) {Object} steps.transcode.output map of the transcode output
+ * @apiSuccess (200) {String[]} steps.transcode.output.renditions array of rendition ids
+ * @apiSuccess (200) {Object} steps.notification The notification step
+ * @apiSuccess (200) {String} steps.notification.name The name of the step
+ * @apiSuccess (200) {String} steps.notification.status The status of notification step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (200) {Number} steps.notification.startTime The time when the notification began in epoch time (milliseconds)
+ * @apiSuccess (200) {Number} steps.notification.completeTime The time when the notification finished in epoch time (milliseconds)
+ * @apiSuccess (200) {Object} steps.notification.input map of the notification inputs
+ * @apiSuccess (200) {String} steps.notification.input.mediaItemId The media item id
+ * @apiSuccess (200) {String} steps.notification.input.domainId The domain id
+ * @apiSuccess (200) {String} steps.notification.input.catalog_id The catalog id
+ * @apiSuccess (200) {Number} steps.notification.input.version The media item version
+ * @apiSuccess (200) {Number} steps.notification.input.durationMS Duration of the media item in milliseconds
+ * @apiSuccess (200) {Object[]} steps.notification.input.notificationOverrides Array of notification overrides, if any
+ * @apiSuccess (200) {Object} steps.notification.output map of the notification outputs
+ * @apiSuccess (200) {Boolean} steps.notification.output.sentNotification whether notification was sent
+ * @apiSuccess (200) {Object} steps.publish The publish step
+ * @apiSuccess (200) {String} steps.publish.name The name of the step
+ * @apiSuccess (200) {String} steps.publish.status The status of publish step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (200) {Number} steps.publish.startTime The time when the publish began in epoch time (milliseconds)
+ * @apiSuccess (200) {Number} steps.publish.completeTime The time when the publish finished in epoch time (milliseconds)
+ * @apiSuccess (200) {Object} steps.publish.output map of the publish output
+ * @apiSuccess (200) {Number} steps.publish.output.version Version of the media item
+ * @apiSuccess (200) {Number} steps.publish.output.duration Duration of the media item in milliseconds
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -225,11 +225,11 @@
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses?foreignKey=wildlife07&catalog=bc6cb7d4-be99-471b-adf3-7c501172b317
  *
- * @apiSuccess {Object[]} requests Array of request objects for that foreign key / catalog
- * @apiSuccess {String} requests.request_id the request id
- * @apiSuccess {Number} requests.startTime the job start time in epoch milliseconds
- * @apiSuccess {String} requests.href the url to get the full status of the request
- * @apiSuccess {String} previousPage the url to get the next older results, if any (up to 100 results are returned at a time)
+ * @apiSuccess (200) {Object[]} requests Array of request objects for that foreign key / catalog
+ * @apiSuccess (200) {String} requests.request_id the request id
+ * @apiSuccess (200) {Number} requests.startTime the job start time in epoch milliseconds
+ * @apiSuccess (200) {String} requests.href the url to get the full status of the request
+ * @apiSuccess (200) {String} previousPage the url to get the next older results, if any (up to 100 results are returned at a time)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
