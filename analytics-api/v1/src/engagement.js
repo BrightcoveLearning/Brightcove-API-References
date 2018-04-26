@@ -15,18 +15,18 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (Path Parameters) {String} account_id a Video Cloud account ID
+ * @apiParam {String} account_id a Video Cloud account ID
  * @apiParam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  * @apiParam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001
  *
- * @apiSuccess (Response Fields) {Object} timeline detailed engagement data
- * @apiSuccess (Response Fields) {String} timeline.type type of data in the `values` array
- * @apiSuccess (Response Fields) {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess {Object} timeline detailed engagement data
+ * @apiSuccess {String} timeline.type type of data in the `values` array
+ * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "timeline":{
@@ -35,15 +35,15 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {Object[]} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {Object[]} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {Object[]} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *    [
  *        {
@@ -73,19 +73,19 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (Path Parameters) {String} account_id a Video Cloud account ID
- * @apiParam (Path Parameters) {String} [player_id] a Video Cloud player ID
+ * @apiParam {String} account_id a Video Cloud account ID
+ * @apiParam {String} [player_id] a Video Cloud player ID
  * @apiParam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  * @apiParam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001/players/1039236672001
  *
- * @apiSuccess (Response Fields) {Object} timeline detailed engagement data
- * @apiSuccess (Response Fields) {String} timeline.type type of data in the `values` array
- * @apiSuccess (Response Fields) {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess {Object} timeline detailed engagement data
+ * @apiSuccess {String} timeline.type type of data in the `values` array
+ * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "timeline":{
@@ -94,15 +94,15 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {Object[]} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {Object[]} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {Object[]} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *    [
  *        {
@@ -112,7 +112,11 @@
  *        }
  *    ]
  *
- *//**
+ */
+
+// get engagement by video
+
+/**
  * @api {get} /engagement/accounts/:account_id/videos/:video_id Get Video Engagement
  * @apiName Get Video Engagement
  * @apiGroup Engagement
@@ -127,20 +131,20 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (Path Parameters) {String} account_id a Video Cloud account ID
- * @apiParam (Path Parameters) {String} [video_id] a Video Cloud video ID
+ * @apiParam {String} account_id a Video Cloud account ID
+ * @apiParam {String} [video_id] a Video Cloud video ID
  * @apiParam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  * @apiParam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001/videos/2660272749001
  *
- * @apiSuccess (Response Fields) {Object} timeline detailed engagement data
- * @apiSuccess (Response Fields) {String} timeline.type type of data in the `values` array
- * @apiSuccess (Response Fields) {Number[]} timeline.values array of views in each 100th part of video duration
- * @apiSuccess (Response Fields) {String} video_duration the video duration in seconds
+ * @apiSuccess {Object} timeline detailed engagement data
+ * @apiSuccess {String} timeline.type type of data in the `values` array
+ * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess {String} video_duration the video duration in seconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "timeline":{
@@ -150,15 +154,15 @@
  *        "video_duration":"415"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {Object[]} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {Object[]} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {Object[]} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *    [
  *        {

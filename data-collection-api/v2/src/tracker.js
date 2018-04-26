@@ -51,7 +51,7 @@
  * @apiParam (URL Parameters: `video_engagement` Events) {Number} [video_duration] the duration of the video in seconds
  * @apiParam (URL Parameters: `video_engagement` Events) {Number} [video_seconds_viewed] count of watched seconds since the last update for `video_engagement` events
  *
- * @apiParamExample {Url} player_load event Example:
+ * @apiParamExample {String} player_load event Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
  *    http://metrics.brightcove.com/tracker
      ?event=player_load&destination=http%3A-%2F%2Fsupport.brightcove.com%2F

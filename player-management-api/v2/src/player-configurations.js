@@ -11,9 +11,9 @@
  * @apiHeader {String}  Content-Type Content-Type: application/json
  * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String}  account_id account ID
- * @apiParam (Path Parameters) {String}  player_id player ID
- * @apiParam (Path Parameters) {String}  branch Which branch to act upon, master (published) or preview.
+ * @apiParam {String}  account_id account ID
+ * @apiParam {String}  player_id player ID
+ * @apiParam {String}  branch Which branch to act upon, master (published) or preview.
  *
  * @apiParamExample {curl}  curl Statement:
  * curl \
@@ -108,8 +108,8 @@
  * @apiHeader {String}  Content-Type Content-Type: application/json
  * @apiHeader {String}  Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String}  account_id account ID
- * @apiParam (Path Parameters) {String}  player_id player ID
+ * @apiParam {String}  account_id account ID
+ * @apiParam {String}  player_id player ID
  *
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [autoadvance] autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [autoplay] indicates player should play video immediately, on platforms that allow this

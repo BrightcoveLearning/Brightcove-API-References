@@ -10,24 +10,24 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
+ * @apiParam {String} domainId The domain Id
+ * @apiParam (URL Parameters) {Number{1-100}} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="asc","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
- * @apiParamExample {Url} Get Ad Decisioning Servers Example:
+ * @apiParamExample {String} Get Ad Decisioning Servers Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers
  *
- * @apiSuccess (Response Fields) {Object[]} results Array of adServers in result set
- * @apiSuccess (Response Fields) {String} results.id Each adServerId
- * @apiSuccess (Response Fields) {String} results.name Each adServer’s name
- * @apiSuccess (Response Fields) {Url} results.baseURL Each adServer’s base URL
- * @apiSuccess (Response Fields) {String} results.domainId Each adServer’s parent domainId
- * @apiSuccess (Response Fields) {Url} prev URL to GET the previous adServer result set (if necessary)
- * @apiSuccess (Response Fields) {Url} next URL to GET the next adServer result set (if necessary)
- * @apiSuccess (Response Fields) {Number} totalResults The total number of adServer in the domain
+ * @apiSuccess {Object[]} results Array of adServers in result set
+ * @apiSuccess {String} results.id Each adServerId
+ * @apiSuccess {String} results.name Each adServer’s name
+ * @apiSuccess {String} results.baseURL Each adServer’s base URL
+ * @apiSuccess {String} results.domainId Each adServer’s parent domainId
+ * @apiSuccess {String} prev URL to GET the previous adServer result set (if necessary)
+ * @apiSuccess {String} next URL to GET the next adServer result set (if necessary)
+ * @apiSuccess {Number} totalResults The total number of adServer in the domain
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -69,17 +69,17 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domain Id
-  * @apiParam (Path Parameters) {String} adserverId The adServerId
+  * @apiParam {String} domainId The domain Id
+  * @apiParam {String} adserverId The adServerId
   *
-  * @apiParamExample {Url} Get Ad Decisioning Server Example:
+  * @apiParamExample {String} Get Ad Decisioning Server Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers/4df36e4c-f418-403d-b17e-60c99dbe65b4
   *
-  * @apiSuccess (Response Fields) {String} id The adServerId
-  * @apiSuccess (Response Fields) {String} name The adServer’s name
-  * @apiSuccess (Response Fields) {Url} baseURL  The adServer’s base URL
-  * @apiSuccess (Response Fields) {String} domainId The adServer’s parent domainId
-  * @apiSuccess (Response Fields) {Object} variables An object set of query string key/value pairs which will be inserted/appended to the base URL at request time
+  * @apiSuccess {String} id The adServerId
+  * @apiSuccess {String} name The adServer’s name
+  * @apiSuccess {String} baseURL  The adServer’s base URL
+  * @apiSuccess {String} domainId The adServer’s parent domainId
+  * @apiSuccess {Object} variables An object set of query string key/value pairs which will be inserted/appended to the base URL at request time
   *
   * @apiSuccessExample {json} Success Response:
   *    HTTP/1.1 200 OK
@@ -116,7 +116,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new adServer’s name
  * @apiParam (Request Body Fields) {String} baseURL The new adServer’s base URL
  * @apiParam (Request Body Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. **If your base URL requires no variables, include an empty variables object ("variables": {})**
@@ -135,11 +135,11 @@
  *    	}
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The adServerId
- * @apiSuccess (Response Fields) {String} name The adServer’s name
- * @apiSuccess (Response Fields) {Url} baseURL  The adServer’s base URL
- * @apiSuccess (Response Fields) {String} domainId Each adServer’s parent domainId
- * @apiSuccess (Response Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. Response variable order may not match your original input, this is expected and will not affect ad tag performance.
+ * @apiSuccess {String} id The adServerId
+ * @apiSuccess {String} name The adServer’s name
+ * @apiSuccess {String} baseURL  The adServer’s base URL
+ * @apiSuccess {String} domainId Each adServer’s parent domainId
+ * @apiSuccess {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. Response variable order may not match your original input, this is expected and will not affect ad tag performance.
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -172,7 +172,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new adServer’s name
  * @apiParam (Request Body Fields) {String} baseURL The new adServer’s base URL
  * @apiParam (Request Body Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. **If your base URL requires no variables, include an empty variables object ("variables": {})**
@@ -191,11 +191,11 @@
  *    	}
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The adServerId
- * @apiSuccess (Response Fields) {String} name The adServer’s name
- * @apiSuccess (Response Fields) {Url} baseURL  The adServer’s base URL
- * @apiSuccess (Response Fields) {String} domainId Each adServer’s parent domainId
- * @apiSuccess (Response Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. Response variable order may not match your original input, this is expected and will not affect ad tag performance.
+ * @apiSuccess {String} id The adServerId
+ * @apiSuccess {String} name The adServer’s name
+ * @apiSuccess {String} baseURL  The adServer’s base URL
+ * @apiSuccess {String} domainId Each adServer’s parent domainId
+ * @apiSuccess {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. Response variable order may not match your original input, this is expected and will not affect ad tag performance.
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -229,13 +229,13 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain Id
- * @apiParam (Path Parameters) {String} adserverId The adServerId
+ * @apiParam {String} domainId The domain Id
+ * @apiParam {String} adserverId The adServerId
  *
- * @apiParamExample {Url} Delete Ad Decisioning Server Request Body Example:
+ * @apiParamExample {String} Delete Ad Decisioning Server Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers/4df36e4c-f418-403d-b17e-60c99dbe65b4
  *
- * @apiSuccess (Response Fields) {String} id The adServerId which has been deleted
+ * @apiSuccess {String} id The adServerId which has been deleted
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

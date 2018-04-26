@@ -5,5 +5,8 @@ txtred=$(tput setaf 9) # red
 cd social-api
 echo ${txtyel}generating docs for social-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v3
+echo ${txtyel}generating swagger json
+apidoc-swagger -i ../social-api/ -o ../social-api/swagger
+echo ${txtgrn}swagger json generated
 echo ${txtgrn}Finished!
 echo ${txtrst}

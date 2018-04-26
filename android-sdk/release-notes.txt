@@ -1,5 +1,16 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 6.1.2:
+
+  SDK changes:
+
+      * Fixed an issue where the download would not resume in slow networks (down to 256kbps) after
+      killing and restarting the app.
+
+  OnceUX Plugin Changes:
+
+      * Fixed an issue where all ads will be played after seeking over multiple ad pods.
+
 Version 6.1.1:
 
   SDK changes:

@@ -1,0 +1,471 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Audience API Reference",
+    "version": "1.0.0",
+    "description": "Reference for the Brightcove Audience API, used to retrieve audience data for your accounts. To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>."
+  },
+  "paths": {
+    "/accounts/{account_id}/leads": {
+      "get": {
+        "tags": [
+          "Leads"
+        ],
+        "summary": "Get Leads",
+        "description": "Get leads for an account ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "a Video Cloud account ID "
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "number of items to return "
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "number of videos to skip in the response "
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "field to sort results by "
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": ",&quot;external_id&quot;,&quot;player_id&quot;,&quot;page_url&quot;,&quot;created_at&quot;,&quot;email_address&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;business_phone&quot;,&quot;country&quot;,&quot;company_name&quot;,&quot;industry&quot;] fields to return for items (one or more as a comma-delimited list &mdash; by default, all fields are returned) "
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "one or more field==value pairs to filter the results; fields supported are &quot;video_id&quot;, &quot;external_id&quot;, &quot;player_id&quot;, &quot;page_url&quot;, &quot;created_at&quot;, &quot;email_address&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;business_phone&quot;, &quot;country&quot;, &quot;company_name&quot;, &quot;industry&quot; "
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "mixed",
+            "description": "Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h) "
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "mixed",
+            "description": "End time for the period covered by the report &mdash; now or epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h) "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "Response Fields": {
+            "description": "Response Fields",
+            "schema": {
+              "$ref": "#/definitions/Get_LeadsResponseFields"
+            }
+          },
+          "Error 4xx": {
+            "description": "Error 4xx",
+            "schema": {
+              "$ref": "#/definitions/Get_LeadsError4xx"
+            }
+          },
+          "Error 5xx": {
+            "description": "Error 5xx",
+            "schema": {
+              "$ref": "#/definitions/Get_LeadsError5xx"
+            }
+          }
+        },
+        "operationId": "Get_Leads"
+      }
+    },
+    "/accounts/{account_id}/view_events": {
+      "get": {
+        "tags": [
+          "View_Events"
+        ],
+        "summary": "Get View Events",
+        "description": "Get view events for an account - note that only view events that have been processed will appear in the response ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "a Video Cloud account ID "
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "number of items to return "
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "number of videos to skip in the response "
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "field to sort results by "
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": ",&quot;video_name&quot;,&quot;tracking_id&quot;,&quot;external_id&quot;,&quot;player_id&quot;,&quot;page_url&quot;,&quot;watched&quot;,&quot;time_watched&quot;,&quot;created_at&quot;,&quot;updated_at&quot;,&quot;is_synced&quot;] fields to return for items (one or more as a comma-delimited list &mdash; by default, all fields are returned) "
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "one or more field==value pairs to filter the results; fields supported are &quot;video_id&quot;, &quot;video_name&quot;, &quot;tracking_id&quot;, &quot;external_id&quot;, &quot;player_id&quot;, &quot;page_url&quot;, &quot;watched&quot;, &quot;time_watched&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;is_synced&quot; "
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "mixed",
+            "description": "Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h) "
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "mixed",
+            "description": "End time for the period covered by the report &mdash; now or epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h) "
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "Response Fields": {
+            "description": "Response Fields",
+            "schema": {
+              "$ref": "#/definitions/Get_View_EventsResponseFields"
+            }
+          },
+          "Error 4xx": {
+            "description": "Error 4xx",
+            "schema": {
+              "$ref": "#/definitions/Get_View_EventsError4xx"
+            }
+          },
+          "Error 5xx": {
+            "description": "Error 5xx",
+            "schema": {
+              "$ref": "#/definitions/Get_View_EventsError5xx"
+            }
+          }
+        },
+        "operationId": "Get_View_Events"
+      }
+    },
+    "": {
+      "": {
+        "tags": [
+          "_Users_rcrooks_git_Brightcove_API_References_audience_api_v1_doc_main_js"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "Success 200": {
+            "description": "Success 200"
+          }
+        },
+        "operationId": ""
+      }
+    }
+  },
+  "definitions": {
+    "Get_LeadsResponseFields": {
+      "properties": {
+        "count": {
+          "type": "number",
+          "description": "the total number of items "
+        },
+        "limit": {
+          "type": "number",
+          "description": "the limit for items in this request "
+        },
+        "offset": {
+          "type": "number",
+          "description": "the offset for items in this request "
+        },
+        "result": {
+          "type": "array",
+          "description": "array of result items ",
+          "items": {
+            "$ref": "#/definitions/result"
+          }
+        }
+      },
+      "required": [
+        "count",
+        "limit",
+        "offset",
+        "result"
+      ]
+    },
+    "result": {
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "description": "the date created "
+        },
+        "email_address": {
+          "type": "string",
+          "description": "the lead&#39;s email address "
+        },
+        "first_name": {
+          "type": "string",
+          "description": "the lead&#39;s first name "
+        },
+        "last_name": {
+          "type": "string",
+          "description": "the lead&#39;s last name "
+        },
+        "business_phone": {
+          "type": "string",
+          "description": "the lead&#39;s phone number "
+        },
+        "country": {
+          "type": "string",
+          "description": "the lead&#39;s country "
+        },
+        "company_name": {
+          "type": "string",
+          "description": "the lead&#39;s company name "
+        },
+        "industry": {
+          "type": "string",
+          "description": "the lead&#39;s industry "
+        },
+        "page_url": {
+          "type": "string",
+          "description": "the url for the Brightcove player "
+        },
+        "player_id": {
+          "type": "string",
+          "description": "the ID for the Brightcove player "
+        },
+        "video_id": {
+          "type": "string",
+          "description": "the Video Cloud video id "
+        },
+        "video_name": {
+          "type": "string",
+          "description": "the Video Cloud video name "
+        },
+        "watched": {
+          "type": "number",
+          "description": "the percentage of the video watched (current playhead position / video duration) "
+        },
+        "time_watched": {
+          "type": "number",
+          "description": "the seconds of the video watched "
+        }
+      },
+      "required": [
+        "created_at",
+        "email_address",
+        "first_name",
+        "last_name",
+        "business_phone",
+        "country",
+        "company_name",
+        "industry",
+        "page_url",
+        "player_id",
+        "video_id",
+        "video_name",
+        "watched",
+        "time_watched"
+      ]
+    },
+    "Get_LeadsError4xx": {
+      "properties": {
+        "BAD_REQUEST_ERROR": {
+          "type": "json",
+          "description": "400: Query parameters are invalid "
+        },
+        "UNAUTHORIZED_ERROR": {
+          "type": "json",
+          "description": "401: The access token is either absent, has expired, or is invalid "
+        },
+        "RESOURCE_NOT_FOUND": {
+          "type": "json",
+          "description": "404: The URL does not exist "
+        },
+        "REQUEST_THROTTLED_ERROR": {
+          "type": "json",
+          "description": "429: The user has exceeded the rate limiting policy "
+        }
+      },
+      "required": [
+        "BAD_REQUEST_ERROR",
+        "UNAUTHORIZED_ERROR",
+        "RESOURCE_NOT_FOUND",
+        "REQUEST_THROTTLED_ERROR"
+      ]
+    },
+    "Get_LeadsError5xx": {
+      "properties": {
+        "INTERNAL_ERROR": {
+          "type": "json",
+          "description": "500: An internal error has occurred "
+        },
+        "GATEWAY_TIMEOUT_ERROR": {
+          "type": "json",
+          "description": "504: The server timed out while fulfilling your request "
+        }
+      },
+      "required": [
+        "INTERNAL_ERROR",
+        "GATEWAY_TIMEOUT_ERROR"
+      ]
+    },
+    "Get_View_EventsResponseFields": {
+      "properties": {
+        "count": {
+          "type": "number",
+          "description": "the total number of items "
+        },
+        "limit": {
+          "type": "number",
+          "description": "the limit for items in this request "
+        },
+        "offset": {
+          "type": "number",
+          "description": "the offset for items in this request "
+        },
+        "result": {
+          "type": "array",
+          "description": "array of result items ",
+          "items": {
+            "$ref": "#/definitions/result"
+          }
+        }
+      },
+      "required": [
+        "count",
+        "limit",
+        "offset",
+        "result"
+      ]
+    },
+    "Get_View_EventsError4xx": {
+      "properties": {
+        "BAD_REQUEST_ERROR": {
+          "type": "json",
+          "description": "400: Query parameters are invalid "
+        },
+        "UNAUTHORIZED_ERROR": {
+          "type": "json",
+          "description": "401: The access token is either absent, has expired, or is invalid "
+        },
+        "RESOURCE_NOT_FOUND": {
+          "type": "json",
+          "description": "404: The URL does not exist "
+        },
+        "REQUEST_THROTTLED_ERROR": {
+          "type": "json",
+          "description": "429: The user has exceeded the rate limiting policy "
+        }
+      },
+      "required": [
+        "BAD_REQUEST_ERROR",
+        "UNAUTHORIZED_ERROR",
+        "RESOURCE_NOT_FOUND",
+        "REQUEST_THROTTLED_ERROR"
+      ]
+    },
+    "Get_View_EventsError5xx": {
+      "properties": {
+        "INTERNAL_ERROR": {
+          "type": "json",
+          "description": "500: An internal error has occurred "
+        },
+        "GATEWAY_TIMEOUT_ERROR": {
+          "type": "json",
+          "description": "504: The server timed out while fulfilling your request "
+        }
+      },
+      "required": [
+        "INTERNAL_ERROR",
+        "GATEWAY_TIMEOUT_ERROR"
+      ]
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "audience.api.brightcove.com",
+  "basePath": "/v1"
+}

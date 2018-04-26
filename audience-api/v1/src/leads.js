@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {Number} account_id a Video Cloud account ID
+ * @apiParam {Number} account_id a Video Cloud account ID
  * @apiParam (URL Parameters) {Number{1..100}} [limit=25] number of items to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  * @apiParam (URL Parameters) {String="video_id","external_id","player_id","page_url","created_at","email_address","first_name","last_name","business_phone","country","company_name","industry"} [sort="created_at"] field to sort results by
@@ -20,24 +20,24 @@
  * @apiParam (URL Parameters) {mixed} [from] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h)
  * @apiParam (URL Parameters) {mixed} [to] End time for the period covered by the report &mdash; `now` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h)
  *
- * @apiParamExample {Url} Leads Report Example:
+ * @apiParamExample {String} Leads Report Example:
  *     https://audience.api.brightcove.com/v1/accounts/1486906377/leads?limit=10&fields=first_name&sort=last_name&where=video_id==1234567890&from=-30d&to=now
  *
- * @apiSuccess (Response Fields) {Number} count the total number of items
- * @apiSuccess (Response Fields) {Number} limit the limit for items in this request
- * @apiSuccess (Response Fields) {Number} offset the offset for items in this request
- * @apiSuccess (Response Fields) {Object[]} result array of result items
- * @apiSuccess (Response Fields) {String} result.created_at the date created
- * @apiSuccess (Response Fields) {String} result.email_address the lead's email address
- * @apiSuccess (Response Fields) {String} result.first_name the lead's first name
- * @apiSuccess (Response Fields) {String} result.last_name the lead's last name
- * @apiSuccess (Response Fields) {String} result.business_phone the lead's phone number
- * @apiSuccess (Response Fields) {String} result.country the lead's country
- * @apiSuccess (Response Fields) {String} result.company_name the lead's company name
- * @apiSuccess (Response Fields) {String} result.industry the lead's industry
- * @apiSuccess (Response Fields) {String} result.page_url the url for the Brightcove player
- * @apiSuccess (Response Fields) {String} result.player_id the ID for the Brightcove player
- * @apiSuccess (Response Fields) {String} result.video_id the Video Cloud video id
+ * @apiSuccess {Number} count the total number of items
+ * @apiSuccess {Number} limit the limit for items in this request
+ * @apiSuccess {Number} offset the offset for items in this request
+ * @apiSuccess {Object[]} result array of result items
+ * @apiSuccess {String} result.created_at the date created
+ * @apiSuccess {String} result.email_address the lead's email address
+ * @apiSuccess {String} result.first_name the lead's first name
+ * @apiSuccess {String} result.last_name the lead's last name
+ * @apiSuccess {String} result.business_phone the lead's phone number
+ * @apiSuccess {String} result.country the lead's country
+ * @apiSuccess {String} result.company_name the lead's company name
+ * @apiSuccess {String} result.industry the lead's industry
+ * @apiSuccess {String} result.page_url the url for the Brightcove player
+ * @apiSuccess {String} result.player_id the ID for the Brightcove player
+ * @apiSuccess {String} result.video_id the Video Cloud video id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

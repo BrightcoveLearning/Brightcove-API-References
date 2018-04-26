@@ -12,16 +12,16 @@
  * 
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} request_id The request_id for the job
- * @apiParam (Path Parameters) {String="ingest","update","transcode","timedtext","error","publish"} notification_type The notification type to be resent
- * @apiParam (Path Parameters) {String} [id] The id for a single job that you want notifications resent for
+ * @apiParam {String} request_id The request_id for the job
+ * @apiParam {String="ingest","update","transcode","timedtext","error","publish"} notification_type The notification type to be resent
+ * @apiParam {String} [id] The id for a single job that you want notifications resent for
  *
- * @apiParamExample {Url} Status Request Example:
+ * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/notifications/bc6cb7d4-be99-471b-adf3-7c501172b317/transcode
  *
- * @apiSuccess (Response Fields) {Object[]} notication_type This will be the notification type you specified in the request &mdash; i.e. "transcode"
- * @apiSuccess (Response Fields) {String} notication_type.id The single job id
- * @apiSuccess (Response Fields) {Boolean} notication_type.submitted Whether the notification was resent
+ * @apiSuccess {Object[]} notication_type This will be the notification type you specified in the request &mdash; i.e. "transcode"
+ * @apiSuccess {String} notication_type.id The single job id
+ * @apiSuccess {Boolean} notication_type.submitted Whether the notification was resent
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

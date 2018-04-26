@@ -11,9 +11,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -117,8 +117,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -127,8 +127,8 @@
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
- * @apiSuccess (Response Fields) {Object[]} items array of embed objects
- * @apiSuccess (Response Fields) {Number} item_count number of items in items array, corresponds to number of embeds, plus one for parent player
+ * @apiSuccess {Object[]} items array of embed objects
+ * @apiSuccess {Number} item_count number of items in items array, corresponds to number of embeds, plus one for parent player
  *
  * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches contains objects for the preview and master (published) embed
  * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.master contains master (published) embed object
@@ -299,8 +299,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name name give to player
@@ -336,12 +336,12 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
- * @apiSuccess (Response Fields) {String} id embed ID
- * @apiSuccess (Response Fields) {String} url URL to published embed
- * @apiSuccess (Response Fields) {String} embed_code published embed iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published embed
- * @apiSuccess (Response Fields) {String} preview_url URL to preview embed
- * @apiSuccess (Response Fields) {String} preview_embed_code preview embed iframe tag
+ * @apiSuccess {String} id embed ID
+ * @apiSuccess {String} url URL to published embed
+ * @apiSuccess {String} embed_code published embed iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published embed
+ * @apiSuccess {String} preview_url URL to preview embed
+ * @apiSuccess {String} preview_embed_code preview embed iframe tag
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -369,9 +369,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -385,10 +385,10 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/publish
  *
- * @apiSuccess (Response Fields) {String} id embed ID
- * @apiSuccess (Response Fields) {String} url URL to published embed
- * @apiSuccess (Response Fields) {String} embed_code published embed iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published embed
+ * @apiSuccess {String} id embed ID
+ * @apiSuccess {String} url URL to published embed
+ * @apiSuccess {String} embed_code published embed iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published embed
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -411,9 +411,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
- * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
+ * @apiParam {String} embed_id embed ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -423,7 +423,7 @@
  *   --data '{}' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id
  *
- * @apiSuccess (Response Fields) {String} message report of embed deletion
+ * @apiSuccess {String} message report of embed deletion
  *
  * @apiSuccessExample {JSON} Success Response:
  * {

@@ -20,7 +20,7 @@
  * @apiParam (URL Parameters) {Number} [limit=20] number of folders to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of folders to skip in the response
  *
- * @apiParamExample {Url} Get Folders Example:
+ * @apiParamExample {String} Get Folders Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
  * @apiSuccess (200) {String} account_id Video Cloud account id
@@ -104,7 +104,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {Number} folder_id Video Cloud folder ID.
  *
- * @apiParamExample {Url} Get Folder Information Example:
+ * @apiParamExample {String} Get Folder Information Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
  * @apiSuccess (200) {String} account_id Video Cloud account id
@@ -172,7 +172,7 @@
  * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  *
- * @apiParamExample {Url} Get Videos in Folder Example:
+ * @apiParamExample {String} Get Videos in Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos
  *
  * @apiSuccess (200) {String} id video id

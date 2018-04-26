@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
  * @apiParam (Request Body Fields - Dynamic Delivery) {String} name profile name (must be unique within the account)
  * @apiParam (Request Body Fields - Dynamic Delivery) {Number} account_id Video Cloud account ID.
@@ -255,95 +255,95 @@
  *      "packages": []
  *    }
  *
- * @apiSuccess (Response Fields) {String} id profile id
- * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
- * @apiSuccess (Response Fields) {String} description description of the profile
- * @apiSuccess (Response Fields) {Object} digital_master directions for archiving masters
- * @apiSuccess (Response Fields) {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
- * @apiSuccess (Response Fields) {Boolean} digital_master.distribute whether source is available for playback as a rendition
- * @apiSuccess (Response Fields) {Object} dynamic_origin specification for Dynamic Delivery Options
- * @apiSuccess (Response Fields) {Array} dynamic_origin.renditions audio and video renditions to be created
- * @apiSuccess (Response Fields) {Object[]} dynamic_origin.images specification for poster and thumbnail images
- * @apiSuccess (Response Fields) {String} dynamic_origin.images.label the image type
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.height the image height
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.width the image width
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
- * @apiSuccess (Response Fields) {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
- * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
- * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
- * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
- * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
- * @apiSuccess (Response Fields) {String} renditions.id the rendition id
- * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
- * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
- * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
- * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
- * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
- * @apiSuccess (Response Fields) {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
- * @apiSuccess (Response Fields) {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
- * @apiSuccess (Response Fields) {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
- * @apiSuccess (Response Fields) {Number} renditions.frame_rate frame rate in frames per second
- * @apiSuccess (Response Fields) {Number} renditions.h264_bframes number of bframes for h.264
- * @apiSuccess (Response Fields) {Number} renditions.h264_level h.264 profile level
- * @apiSuccess (Response Fields) {String} renditions.h264_profile h.264 profile
- * @apiSuccess (Response Fields) {Number} renditions.h264_reference_frames number of h.264 reference frames to use
- * @apiSuccess (Response Fields) {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_rate Maximum number of keyframes per second
- * @apiSuccess (Response Fields) {String} renditions.label Image type for image renditions; __required__ for image renditions
- * @apiSuccess (Response Fields) {Boolean} renditions.live_stream Whether this will be for live streaming video
- * @apiSuccess (Response Fields) {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
- * @apiSuccess (Response Fields) {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
- * @apiSuccess (Response Fields) {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
- * @apiSuccess (Response Fields) {String} renditions.media_type the media type of the rendition
- * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
- * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
- * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
- * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
- * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
- * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
- * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
- * @apiSuccess (Response Fields) {String} renditions.type transmuxing type for HLS; typical value is `segmented`
- * @apiSuccess (Response Fields) {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
- * @apiSuccess (Response Fields) {Number} renditions.video_bitrate target video bitrate in kbps
- * @apiSuccess (Response Fields) {String} renditions.video_codec target video codec
- * @apiSuccess (Response Fields) {Number} renditions.height target frame height in pixels
- * @apiSuccess (Response Fields) {Number} renditions.width target frame width in pixels
- * @apiSuccess (Response Fields) {Object[]} renditions.watermarks array of watermark maps
- * @apiSuccess (Response Fields) {String} renditions.watermarks.url URL for the watermark image
- * @apiSuccess (Response Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
- * @apiSuccess (Response Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
- * @apiSuccess (Response Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
- * @apiSuccess (Response Fields) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
+ * @apiSuccess {String} id profile id
+ * @apiSuccess {String} name profile name
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} account_id Video Cloud account ID.
+ * @apiSuccess {String} description description of the profile
+ * @apiSuccess {Object} digital_master directions for archiving masters
+ * @apiSuccess {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
+ * @apiSuccess {Boolean} digital_master.distribute whether source is available for playback as a rendition
+ * @apiSuccess {Object} dynamic_origin specification for Dynamic Delivery Options
+ * @apiSuccess {Array} dynamic_origin.renditions audio and video renditions to be created
+ * @apiSuccess {Object[]} dynamic_origin.images specification for poster and thumbnail images
+ * @apiSuccess {String} dynamic_origin.images.label the image type
+ * @apiSuccess {Number} dynamic_origin.images.height the image height
+ * @apiSuccess {Number} dynamic_origin.images.width the image width
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
+ * @apiSuccess {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
+ * @apiSuccess {Object[]} renditions array of rendition maps
+ * @apiSuccess {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
+ * @apiSuccess {Number} renditions.audio_bitrate audio bitrate in kbps
+ * @apiSuccess {Number} renditions.audio_channels number of audio channels
+ * @apiSuccess {String} renditions.id the rendition id
+ * @apiSuccess {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiSuccess {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
+ * @apiSuccess {Number} renditions.crf 1-51, not used by default.
+ * @apiSuccess {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
+ * @apiSuccess {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
+ * @apiSuccess {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
+ * @apiSuccess {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
+ * @apiSuccess {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
+ * @apiSuccess {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
+ * @apiSuccess {Number} renditions.frame_rate frame rate in frames per second
+ * @apiSuccess {Number} renditions.h264_bframes number of bframes for h.264
+ * @apiSuccess {Number} renditions.h264_level h.264 profile level
+ * @apiSuccess {String} renditions.h264_profile h.264 profile
+ * @apiSuccess {Number} renditions.h264_reference_frames number of h.264 reference frames to use
+ * @apiSuccess {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
+ * @apiSuccess {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
+ * @apiSuccess {Number} renditions.keyframe_rate Maximum number of keyframes per second
+ * @apiSuccess {String} renditions.label Image type for image renditions; __required__ for image renditions
+ * @apiSuccess {Boolean} renditions.live_stream Whether this will be for live streaming video
+ * @apiSuccess {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiSuccess {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
+ * @apiSuccess {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
+ * @apiSuccess {String} renditions.media_type the media type of the rendition
+ * @apiSuccess {Boolean} renditions.one_pass force one-pass encoding
+ * @apiSuccess {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
+ * @apiSuccess {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
+ * @apiSuccess {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
+ * @apiSuccess {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
+ * @apiSuccess {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiSuccess {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
+ * @apiSuccess {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
+ * @apiSuccess {String} renditions.type transmuxing type for HLS; typical value is `segmented`
+ * @apiSuccess {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
+ * @apiSuccess {Number} renditions.video_bitrate target video bitrate in kbps
+ * @apiSuccess {String} renditions.video_codec target video codec
+ * @apiSuccess {Number} renditions.height target frame height in pixels
+ * @apiSuccess {Number} renditions.width target frame width in pixels
+ * @apiSuccess {Object[]} renditions.watermarks array of watermark maps
+ * @apiSuccess {String} renditions.watermarks.url URL for the watermark image
+ * @apiSuccess {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
+ * @apiSuccess {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
+ * @apiSuccess {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
+ * @apiSuccess {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
+ * @apiSuccess {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -463,101 +463,101 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
  *
  *
- * @apiParamExample {Url} Get Profiles Example:
+ * @apiParamExample {String} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles
  *
- * @apiSuccess (Response Fields) {String} id profile id
- * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
- * @apiSuccess (Response Fields) {String} description description of the profile
- * @apiSuccess (Response Fields) {Object} digital_master directions for archiving masters
- * @apiSuccess (Response Fields) {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
- * @apiSuccess (Response Fields) {Boolean} digital_master.distribute whether source is available for playback as a rendition
- * @apiSuccess (Response Fields) {Object} dynamic_origin specification for Dynamic Delivery Options
- * @apiSuccess (Response Fields) {Array} dynamic_origin.renditions audio and video renditions to be created
- * @apiSuccess (Response Fields) {Object[]} dynamic_origin.images specification for poster and thumbnail images
- * @apiSuccess (Response Fields) {String} dynamic_origin.images.label the image type
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.height the image height
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.width the image width
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
- * @apiSuccess (Response Fields) {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
- * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
- * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
- * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
- * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
- * @apiSuccess (Response Fields) {String} renditions.id the rendition id
- * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
- * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
- * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
- * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
- * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
- * @apiSuccess (Response Fields) {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
- * @apiSuccess (Response Fields) {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
- * @apiSuccess (Response Fields) {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
- * @apiSuccess (Response Fields) {Number} renditions.frame_rate frame rate in frames per second
- * @apiSuccess (Response Fields) {Number} renditions.h264_bframes number of bframes for h.264
- * @apiSuccess (Response Fields) {Number} renditions.h264_level h.264 profile level
- * @apiSuccess (Response Fields) {String} renditions.h264_profile h.264 profile
- * @apiSuccess (Response Fields) {Number} renditions.h264_reference_frames number of h.264 reference frames to use
- * @apiSuccess (Response Fields) {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_rate Maximum number of keyframes per second
- * @apiSuccess (Response Fields) {String} renditions.label Image type for image renditions; __required__ for image renditions
- * @apiSuccess (Response Fields) {Boolean} renditions.live_stream Whether this will be for live streaming video
- * @apiSuccess (Response Fields) {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
- * @apiSuccess (Response Fields) {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
- * @apiSuccess (Response Fields) {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
- * @apiSuccess (Response Fields) {String} renditions.media_type the media type of the rendition
- * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
- * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
- * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
- * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
- * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
- * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
- * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
- * @apiSuccess (Response Fields) {String} renditions.type transmuxing type for HLS; typical value is `segmented`
- * @apiSuccess (Response Fields) {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
- * @apiSuccess (Response Fields) {Number} renditions.video_bitrate target video bitrate in kbps
- * @apiSuccess (Response Fields) {String} renditions.video_codec target video codec
- * @apiSuccess (Response Fields) {Number} renditions.height target frame height in pixels
- * @apiSuccess (Response Fields) {Number} renditions.width target frame width in pixels
- * @apiSuccess (Response Fields) {Object[]} renditions.watermarks array of watermark maps
- * @apiSuccess (Response Fields) {String} renditions.watermarks.url URL for the watermark image
- * @apiSuccess (Response Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
- * @apiSuccess (Response Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
- * @apiSuccess (Response Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
- * @apiSuccess (Response Fields) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
+ * @apiSuccess {String} id profile id
+ * @apiSuccess {String} name profile name
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} account_id Video Cloud account ID.
+ * @apiSuccess {String} description description of the profile
+ * @apiSuccess {Object} digital_master directions for archiving masters
+ * @apiSuccess {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
+ * @apiSuccess {Boolean} digital_master.distribute whether source is available for playback as a rendition
+ * @apiSuccess {Object} dynamic_origin specification for Dynamic Delivery Options
+ * @apiSuccess {Array} dynamic_origin.renditions audio and video renditions to be created
+ * @apiSuccess {Object[]} dynamic_origin.images specification for poster and thumbnail images
+ * @apiSuccess {String} dynamic_origin.images.label the image type
+ * @apiSuccess {Number} dynamic_origin.images.height the image height
+ * @apiSuccess {Number} dynamic_origin.images.width the image width
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
+ * @apiSuccess {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
+ * @apiSuccess {Object[]} renditions array of rendition maps
+ * @apiSuccess {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
+ * @apiSuccess {Number} renditions.audio_bitrate audio bitrate in kbps
+ * @apiSuccess {Number} renditions.audio_channels number of audio channels
+ * @apiSuccess {String} renditions.id the rendition id
+ * @apiSuccess {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiSuccess {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
+ * @apiSuccess {Number} renditions.crf 1-51, not used by default.
+ * @apiSuccess {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
+ * @apiSuccess {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
+ * @apiSuccess {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
+ * @apiSuccess {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
+ * @apiSuccess {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
+ * @apiSuccess {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
+ * @apiSuccess {Number} renditions.frame_rate frame rate in frames per second
+ * @apiSuccess {Number} renditions.h264_bframes number of bframes for h.264
+ * @apiSuccess {Number} renditions.h264_level h.264 profile level
+ * @apiSuccess {String} renditions.h264_profile h.264 profile
+ * @apiSuccess {Number} renditions.h264_reference_frames number of h.264 reference frames to use
+ * @apiSuccess {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
+ * @apiSuccess {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
+ * @apiSuccess {Number} renditions.keyframe_rate Maximum number of keyframes per second
+ * @apiSuccess {String} renditions.label Image type for image renditions; __required__ for image renditions
+ * @apiSuccess {Boolean} renditions.live_stream Whether this will be for live streaming video
+ * @apiSuccess {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiSuccess {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
+ * @apiSuccess {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
+ * @apiSuccess {String} renditions.media_type the media type of the rendition
+ * @apiSuccess {Boolean} renditions.one_pass force one-pass encoding
+ * @apiSuccess {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
+ * @apiSuccess {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
+ * @apiSuccess {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
+ * @apiSuccess {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
+ * @apiSuccess {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiSuccess {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
+ * @apiSuccess {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
+ * @apiSuccess {String} renditions.type transmuxing type for HLS; typical value is `segmented`
+ * @apiSuccess {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
+ * @apiSuccess {Number} renditions.video_bitrate target video bitrate in kbps
+ * @apiSuccess {String} renditions.video_codec target video codec
+ * @apiSuccess {Number} renditions.height target frame height in pixels
+ * @apiSuccess {Number} renditions.width target frame width in pixels
+ * @apiSuccess {Object[]} renditions.watermarks array of watermark maps
+ * @apiSuccess {String} renditions.watermarks.url URL for the watermark image
+ * @apiSuccess {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
+ * @apiSuccess {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
+ * @apiSuccess {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
+ * @apiSuccess {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
+ * @apiSuccess {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -641,102 +641,102 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} profile_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} profile_id Video Cloud account ID.
  *
  *
- * @apiParamExample {Url} Get Profiles Example:
+ * @apiParamExample {String} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles/527d210ae4b0024db7acb05c
  *
- * @apiSuccess (Response Fields) {String} id profile id
- * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
- * @apiSuccess (Response Fields) {String} description description of the profile
- * @apiSuccess (Response Fields) {Object} digital_master directions for archiving masters
- * @apiSuccess (Response Fields) {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
- * @apiSuccess (Response Fields) {Boolean} digital_master.distribute whether source is available for playback as a rendition
- * @apiSuccess (Response Fields) {Object} dynamic_origin specification for Dynamic Delivery Options
- * @apiSuccess (Response Fields) {Array} dynamic_origin.renditions audio and video renditions to be created
- * @apiSuccess (Response Fields) {Object[]} dynamic_origin.images specification for poster and thumbnail images
- * @apiSuccess (Response Fields) {String} dynamic_origin.images.label the image type
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.height the image height
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.width the image width
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
- * @apiSuccess (Response Fields) {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
- * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
- * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
- * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
- * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
- * @apiSuccess (Response Fields) {String} renditions.id the rendition id
- * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
- * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
- * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
- * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
- * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
- * @apiSuccess (Response Fields) {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
- * @apiSuccess (Response Fields) {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
- * @apiSuccess (Response Fields) {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
- * @apiSuccess (Response Fields) {Number} renditions.frame_rate frame rate in frames per second
- * @apiSuccess (Response Fields) {Number} renditions.h264_bframes number of bframes for h.264
- * @apiSuccess (Response Fields) {Number} renditions.h264_level h.264 profile level
- * @apiSuccess (Response Fields) {String} renditions.h264_profile h.264 profile
- * @apiSuccess (Response Fields) {Number} renditions.h264_reference_frames number of h.264 reference frames to use
- * @apiSuccess (Response Fields) {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_rate Maximum number of keyframes per second
- * @apiSuccess (Response Fields) {String} renditions.label Image type for image renditions; __required__ for image renditions
- * @apiSuccess (Response Fields) {Boolean} renditions.live_stream Whether this will be for live streaming video
- * @apiSuccess (Response Fields) {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
- * @apiSuccess (Response Fields) {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
- * @apiSuccess (Response Fields) {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
- * @apiSuccess (Response Fields) {String} renditions.media_type the media type of the rendition
- * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
- * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
- * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
- * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
- * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
- * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
- * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
- * @apiSuccess (Response Fields) {String} renditions.type transmuxing type for HLS; typical value is `segmented`
- * @apiSuccess (Response Fields) {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
- * @apiSuccess (Response Fields) {Number} renditions.video_bitrate target video bitrate in kbps
- * @apiSuccess (Response Fields) {String} renditions.video_codec target video codec
- * @apiSuccess (Response Fields) {Number} renditions.height target frame height in pixels
- * @apiSuccess (Response Fields) {Number} renditions.width target frame width in pixels
- * @apiSuccess (Response Fields) {Object[]} renditions.watermarks array of watermark maps
- * @apiSuccess (Response Fields) {String} renditions.watermarks.url URL for the watermark image
- * @apiSuccess (Response Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
- * @apiSuccess (Response Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
- * @apiSuccess (Response Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
- * @apiSuccess (Response Fields) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
+ * @apiSuccess {String} id profile id
+ * @apiSuccess {String} name profile name
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} account_id Video Cloud account ID.
+ * @apiSuccess {String} description description of the profile
+ * @apiSuccess {Object} digital_master directions for archiving masters
+ * @apiSuccess {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
+ * @apiSuccess {Boolean} digital_master.distribute whether source is available for playback as a rendition
+ * @apiSuccess {Object} dynamic_origin specification for Dynamic Delivery Options
+ * @apiSuccess {Array} dynamic_origin.renditions audio and video renditions to be created
+ * @apiSuccess {Object[]} dynamic_origin.images specification for poster and thumbnail images
+ * @apiSuccess {String} dynamic_origin.images.label the image type
+ * @apiSuccess {Number} dynamic_origin.images.height the image height
+ * @apiSuccess {Number} dynamic_origin.images.width the image width
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
+ * @apiSuccess {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
+ * @apiSuccess {Object[]} renditions array of rendition maps
+ * @apiSuccess {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
+ * @apiSuccess {Number} renditions.audio_bitrate audio bitrate in kbps
+ * @apiSuccess {Number} renditions.audio_channels number of audio channels
+ * @apiSuccess {String} renditions.id the rendition id
+ * @apiSuccess {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiSuccess {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
+ * @apiSuccess {Number} renditions.crf 1-51, not used by default.
+ * @apiSuccess {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
+ * @apiSuccess {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
+ * @apiSuccess {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
+ * @apiSuccess {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
+ * @apiSuccess {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
+ * @apiSuccess {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
+ * @apiSuccess {Number} renditions.frame_rate frame rate in frames per second
+ * @apiSuccess {Number} renditions.h264_bframes number of bframes for h.264
+ * @apiSuccess {Number} renditions.h264_level h.264 profile level
+ * @apiSuccess {String} renditions.h264_profile h.264 profile
+ * @apiSuccess {Number} renditions.h264_reference_frames number of h.264 reference frames to use
+ * @apiSuccess {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
+ * @apiSuccess {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
+ * @apiSuccess {Number} renditions.keyframe_rate Maximum number of keyframes per second
+ * @apiSuccess {String} renditions.label Image type for image renditions; __required__ for image renditions
+ * @apiSuccess {Boolean} renditions.live_stream Whether this will be for live streaming video
+ * @apiSuccess {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiSuccess {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
+ * @apiSuccess {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
+ * @apiSuccess {String} renditions.media_type the media type of the rendition
+ * @apiSuccess {Boolean} renditions.one_pass force one-pass encoding
+ * @apiSuccess {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
+ * @apiSuccess {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
+ * @apiSuccess {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
+ * @apiSuccess {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
+ * @apiSuccess {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiSuccess {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
+ * @apiSuccess {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
+ * @apiSuccess {String} renditions.type transmuxing type for HLS; typical value is `segmented`
+ * @apiSuccess {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
+ * @apiSuccess {Number} renditions.video_bitrate target video bitrate in kbps
+ * @apiSuccess {String} renditions.video_codec target video codec
+ * @apiSuccess {Number} renditions.height target frame height in pixels
+ * @apiSuccess {Number} renditions.width target frame width in pixels
+ * @apiSuccess {Object[]} renditions.watermarks array of watermark maps
+ * @apiSuccess {String} renditions.watermarks.url URL for the watermark image
+ * @apiSuccess {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
+ * @apiSuccess {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
+ * @apiSuccess {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
+ * @apiSuccess {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
+ * @apiSuccess {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -818,8 +818,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} profile_id the profile ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} profile_id the profile ID.
  *
  * @apiParam (Request Body Fields - Dynamic Delivery) {String} name profile name (must be unique within the account)
  * @apiParam (Request Body Fields - Dynamic Delivery) {Number} account_id Video Cloud account ID.
@@ -971,95 +971,95 @@
  *      "packages": []
  *    }
  *
- * @apiSuccess (Response Fields) {String} id profile id
- * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
- * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
- * @apiSuccess (Response Fields) {String} description description of the profile
- * @apiSuccess (Response Fields) {Object} digital_master directions for archiving masters
- * @apiSuccess (Response Fields) {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
- * @apiSuccess (Response Fields) {Boolean} digital_master.distribute whether source is available for playback as a rendition
- * @apiSuccess (Response Fields) {Object} dynamic_origin specification for Dynamic Delivery Options
- * @apiSuccess (Response Fields) {Array} dynamic_origin.renditions audio and video renditions to be created
- * @apiSuccess (Response Fields) {Object[]} dynamic_origin.images specification for poster and thumbnail images
- * @apiSuccess (Response Fields) {String} dynamic_origin.images.label the image type
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.height the image height
- * @apiSuccess (Response Fields) {Number} dynamic_origin.images.width the image width
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
- * @apiSuccess (Response Fields) {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
- * @apiSuccess (Response Fields) {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
- * @apiSuccess (Response Fields) {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
- * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
- * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
- * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
- * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
- * @apiSuccess (Response Fields) {String} renditions.id the rendition id
- * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
- * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
- * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
- * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
- * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
- * @apiSuccess (Response Fields) {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
- * @apiSuccess (Response Fields) {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
- * @apiSuccess (Response Fields) {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
- * @apiSuccess (Response Fields) {Number} renditions.frame_rate frame rate in frames per second
- * @apiSuccess (Response Fields) {Number} renditions.h264_bframes number of bframes for h.264
- * @apiSuccess (Response Fields) {Number} renditions.h264_level h.264 profile level
- * @apiSuccess (Response Fields) {String} renditions.h264_profile h.264 profile
- * @apiSuccess (Response Fields) {Number} renditions.h264_reference_frames number of h.264 reference frames to use
- * @apiSuccess (Response Fields) {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
- * @apiSuccess (Response Fields) {Number} renditions.keyframe_rate Maximum number of keyframes per second
- * @apiSuccess (Response Fields) {String} renditions.label Image type for image renditions; __required__ for image renditions
- * @apiSuccess (Response Fields) {Boolean} renditions.live_stream Whether this will be for live streaming video
- * @apiSuccess (Response Fields) {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
- * @apiSuccess (Response Fields) {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
- * @apiSuccess (Response Fields) {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
- * @apiSuccess (Response Fields) {String} renditions.media_type the media type of the rendition
- * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
- * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
- * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
- * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
- * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
- * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
- * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
- * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
- * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
- * @apiSuccess (Response Fields) {String} renditions.type transmuxing type for HLS; typical value is `segmented`
- * @apiSuccess (Response Fields) {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
- * @apiSuccess (Response Fields) {Number} renditions.video_bitrate target video bitrate in kbps
- * @apiSuccess (Response Fields) {String} renditions.video_codec target video codec
- * @apiSuccess (Response Fields) {Number} renditions.height target frame height in pixels
- * @apiSuccess (Response Fields) {Number} renditions.width target frame width in pixels
- * @apiSuccess (Response Fields) {Object[]} renditions.watermarks array of watermark maps
- * @apiSuccess (Response Fields) {String} renditions.watermarks.url URL for the watermark image
- * @apiSuccess (Response Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
- * @apiSuccess (Response Fields) {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
- * @apiSuccess (Response Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
- * @apiSuccess (Response Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
- * @apiSuccess (Response Fields) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
+ * @apiSuccess {String} id profile id
+ * @apiSuccess {String} name profile name
+ * @apiSuccess {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
+ * @apiSuccess {Number} account_id Video Cloud account ID.
+ * @apiSuccess {String} description description of the profile
+ * @apiSuccess {Object} digital_master directions for archiving masters
+ * @apiSuccess {String} digital_master.rendition rendition that will be used as master (`passthrough` = source optimized for online delivery)
+ * @apiSuccess {Boolean} digital_master.distribute whether source is available for playback as a rendition
+ * @apiSuccess {Object} dynamic_origin specification for Dynamic Delivery Options
+ * @apiSuccess {Array} dynamic_origin.renditions audio and video renditions to be created
+ * @apiSuccess {Object[]} dynamic_origin.images specification for poster and thumbnail images
+ * @apiSuccess {String} dynamic_origin.images.label the image type
+ * @apiSuccess {Number} dynamic_origin.images.height the image height
+ * @apiSuccess {Number} dynamic_origin.images.width the image width
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options defines rendition options for CAE profiles
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min_renditions minimum number of renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_renditions maximum number of renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.min-resolution defines the minimum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.width defines the minimum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.min-resolution.height defines the minimum height for renditions
+ * @apiSuccess {Object} dynamic_origin.dynamic_profile_options.max-resolution defines the maximum resolution for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.width defines the maximum width for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max-resolution.height defines the maximum height for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_bitrate maximum bitrate for renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate maximum bitrate for the lowest bitrate rendition
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.max_frame_rate maximum framerate for the renditions
+ * @apiSuccess {Number} dynamic_origin.dynamic_profile_options.keyframe_rate keyframes per second for the renditions
+ * @apiSuccess {Boolean} dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration whether at least one rendition used in the profile will be baseline profile
+ * @apiSuccess {Object[]} renditions array of rendition maps
+ * @apiSuccess {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
+ * @apiSuccess {Number} renditions.audio_bitrate audio bitrate in kbps
+ * @apiSuccess {Number} renditions.audio_channels number of audio channels
+ * @apiSuccess {String} renditions.id the rendition id
+ * @apiSuccess {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiSuccess {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
+ * @apiSuccess {Number} renditions.crf 1-51, not used by default.
+ * @apiSuccess {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
+ * @apiSuccess {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
+ * @apiSuccess {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
+ * @apiSuccess {Number} renditions.fixed_keyframe_interval Forces a keyframe every X frames, but still allows additional keyframes
+ * @apiSuccess {Number} renditions.forced_keyframe_rate Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
+ * @apiSuccess {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
+ * @apiSuccess {Number} renditions.frame_rate frame rate in frames per second
+ * @apiSuccess {Number} renditions.h264_bframes number of bframes for h.264
+ * @apiSuccess {Number} renditions.h264_level h.264 profile level
+ * @apiSuccess {String} renditions.h264_profile h.264 profile
+ * @apiSuccess {Number} renditions.h264_reference_frames number of h.264 reference frames to use
+ * @apiSuccess {Boolean} renditions.hls_optimized_ts Time segments optimized for HLS
+ * @apiSuccess {Number} renditions.keyframe_interval Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
+ * @apiSuccess {Number} renditions.keyframe_rate Maximum number of keyframes per second
+ * @apiSuccess {String} renditions.label Image type for image renditions; __required__ for image renditions
+ * @apiSuccess {Boolean} renditions.live_stream Whether this will be for live streaming video
+ * @apiSuccess {Number} renditions.live_sliding_window_duration Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiSuccess {Number} renditions.max_video_bitrate Maximum video bitrate (h.264 only)
+ * @apiSuccess {Number} renditions.max_frame_rate Limits the frame rate rather than sets it, use as an alternative to frame rate
+ * @apiSuccess {String} renditions.media_type the media type of the rendition
+ * @apiSuccess {Boolean} renditions.one_pass force one-pass encoding
+ * @apiSuccess {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
+ * @apiSuccess {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](https://support.brightcove.com/node/18040)
+ * @apiSuccess {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
+ * @apiSuccess {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
+ * @apiSuccess {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiSuccess {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
+ * @apiSuccess {String} renditions.streaming_delivery_profile Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
+ * @apiSuccess {String} renditions.type transmuxing type for HLS; typical value is `segmented`
+ * @apiSuccess {Boolean} renditions.upscale whether to upsize the frames if the source frame size is smaller than the target
+ * @apiSuccess {Number} renditions.video_bitrate target video bitrate in kbps
+ * @apiSuccess {String} renditions.video_codec target video codec
+ * @apiSuccess {Number} renditions.height target frame height in pixels
+ * @apiSuccess {Number} renditions.width target frame width in pixels
+ * @apiSuccess {Object[]} renditions.watermarks array of watermark maps
+ * @apiSuccess {String} renditions.watermarks.url URL for the watermark image
+ * @apiSuccess {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
+ * @apiSuccess {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
+ * @apiSuccess {Object[]} packages array of package maps for DRM (see [Content Security](https://support.brightcove.com/node/18038))
+ * @apiSuccess {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
+ * @apiSuccess {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
+ * @apiSuccess {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -1179,11 +1179,11 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/node/17925))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} profile_id Video Cloud account ID.
+ * @apiParam {String} account_id Video Cloud account ID.
+ * @apiParam {String} profile_id Video Cloud account ID.
  *
  *
- * @apiParamExample {Url} Get Profiles Example:
+ * @apiParamExample {String} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles/527d210ae4b0024db7acb05c
  *
  *

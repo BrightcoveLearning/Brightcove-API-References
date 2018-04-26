@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
+ * @apiParam {String} domain_id The domain id for your Once account
+ * @apiParam {String} catalog_id The id for the digital media catalog for your domain
  * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String{..150}} foreignKey The unique identifier for the asset (max length: 150 characters)
  * @apiParam (Request Body Fields) {String} [description] A description of the asset
@@ -19,7 +19,7 @@
  * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
  * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
  * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
- * @apiParam (Request Body Fields) {Url} media.sourceURL The URL string to the source asset
+ * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
  * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
  * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
  * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
@@ -37,12 +37,12 @@
  * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
  * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
  * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiParam (Request Body Fields) {Url} timedText.media.sourceURL The URL string to the source asset
+ * @apiParam (Request Body Fields) {String} timedText.media.sourceURL The URL string to the source asset
  * @apiParam (Request Body Fields) {String="Subtitle","Caption"} timedText.timedTextType The type to categorize the timed text item
  * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
  * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
  * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
- * @apiParam (Request Body Fields) {Url} notifications.target The HTTP endpoint or sns target for your notification
+ * @apiParam (Request Body Fields) {String} notifications.target The HTTP endpoint or sns target for your notification
  * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
  * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
@@ -146,7 +146,7 @@
  *        ]
  *    }
  *
- * @apiSuccess (Response Fields) {String} requestId The id for request
+ * @apiSuccess {String} requestId The id for request
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -198,8 +198,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -390,8 +390,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [autoadvance] autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [autoplay] indicates player should play video immediately, on platforms that allow this
@@ -475,12 +475,12 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} url URL to published player
- * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
- * @apiSuccess (Response Fields) {String} preview_url URL to preview player
- * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} url URL to published player
+ * @apiSuccess {String} embed_code published player iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess {String} preview_url URL to preview player
+ * @apiSuccess {String} preview_embed_code preview player iframe tag
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -507,8 +507,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParam (Request Body Fields) {String} name player name
  * @apiParam (Request Body Fields) {String} [description] player description
@@ -524,9 +524,9 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} preview_url URL to preview player
- * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} preview_url URL to preview player
+ * @apiSuccess {String} preview_embed_code preview player iframe tag
  *
  * @apiSuccessExample {JSON} Success Response: The response will contain links to preview player versions, so you will have to explicitly publish to get the optimized version of the player.
  * {
@@ -550,8 +550,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -565,10 +565,10 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/publish
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} url URL to published player
- * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess {String} id player ID
+ * @apiSuccess {String} url URL to published player
+ * @apiSuccess {String} embed_code published player iframe tag
+ * @apiSuccess {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -592,8 +592,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id account ID
- * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam {String} account_id account ID
+ * @apiParam {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -603,7 +603,7 @@
  *   --data '{}' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
- * @apiSuccess (Response Fields) {String} message report of player deletion
+ * @apiSuccess {String} message report of player deletion
  *
  * @apiSuccessExample {JSON} Success Response:
  * {

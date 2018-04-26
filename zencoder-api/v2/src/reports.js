@@ -11,22 +11,22 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
-  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
-  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {String} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for VOD Example:
+  * @apiParamExample {String} Get Usage for VOD Example:
   *    https://app.zencoder.com/api/v2/reports/vod?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *
-  * @apiSuccess (Response Fields) {Object} total Summary object
-  * @apiSuccess (Response Fields) {Number} total.encoded_minutes The total encoding minutes
-  * @apiSuccess (Response Fields) {Number} total.billable_minutes The encoding minutes that were billable
-  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
-  * @apiSuccess (Response Fields) {String} statistics.grouping the grouping - `null` is for all ungrouped activity
-  * @apiSuccess (Response Fields) {DateString} statistics.collected_on The date of the report
-  * @apiSuccess (Response Fields) {Number} statistics.encoded_minutes The encoding minutes for this group
-  * @apiSuccess (Response Fields) {Number} statistics.billable_minutes The billable encoding minutes for this group
+  * @apiSuccess {Object} total Summary object
+  * @apiSuccess {Number} total.encoded_minutes The total encoding minutes
+  * @apiSuccess {Number} total.billable_minutes The encoding minutes that were billable
+  * @apiSuccess {Object[]} statistics reports by grouping
+  * @apiSuccess {String} statistics.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess {String} statistics.collected_on The date of the report
+  * @apiSuccess {Number} statistics.encoded_minutes The encoding minutes for this group
+  * @apiSuccess {Number} statistics.billable_minutes The billable encoding minutes for this group
   *
   * @apiSuccessExample {json} Get Usage for VOD
   *    {
@@ -66,26 +66,26 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
-  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
-  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {String} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for Live Example:
+  * @apiParamExample {String} Get Usage for Live Example:
   *    https://app.zencoder.com/api/v2/reports/live?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *
-  * @apiSuccess (Response Fields) {Object} total Summary object
-  * @apiSuccess (Response Fields) {Number} total.stream_hours The total streaming hours
-  * @apiSuccess (Response Fields) {Number} total.billable_stream_hours The streaming hours that were billable
-  * @apiSuccess (Response Fields) {Number} total.encoded_hours The total encoded hours
-  * @apiSuccess (Response Fields) {Number} total.billable_encoded_hours The encoded hours that were billable
-  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
-  * @apiSuccess (Response Fields) {String} statistics.grouping the grouping - `null` is for all ungrouped activity
-  * @apiSuccess (Response Fields) {DateString} statistics.collected_on The date of the report
-  * @apiSuccess (Response Fields) {Number} statistics.stream_hours The total streaming hours
-  * @apiSuccess (Response Fields) {Number} statistics.billable_stream_hours The streaming hours that were billable
-  * @apiSuccess (Response Fields) {Number} statistics.encoded_hours The total encoded hours
-  * @apiSuccess (Response Fields) {Number} statistics.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess {Object} total Summary object
+  * @apiSuccess {Number} total.stream_hours The total streaming hours
+  * @apiSuccess {Number} total.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess {Number} total.encoded_hours The total encoded hours
+  * @apiSuccess {Number} total.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess {Object[]} statistics reports by grouping
+  * @apiSuccess {String} statistics.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess {String} statistics.collected_on The date of the report
+  * @apiSuccess {Number} statistics.stream_hours The total streaming hours
+  * @apiSuccess {Number} statistics.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess {Number} statistics.encoded_hours The total encoded hours
+  * @apiSuccess {Number} statistics.billable_encoded_hours The encoded hours that were billable
   *
   * @apiSuccessExample {json} Get Usage for Live
   *    {
@@ -137,38 +137,38 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
-  * @apiParam (URL Params) {DateString} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
-  * @apiParam (URL Params) {DateString} [to] End date in the format YYYY-MM-DD (default: 30 days ago
+  * @apiParam (URL Params) {String} [from] Start date in the format YYYY-MM-DD (default: 30 days ago)
+  * @apiParam (URL Params) {String} [to] End date in the format YYYY-MM-DD (default: 30 days ago
   * @apiParam (URL Params) {String} [grouping] A grouping name set in the [Create a Job](#api-Jobs-Create_a_Job) operation
   *
-  * @apiParamExample {url} Get Usage for VOD & Live Example:
+  * @apiParamExample {String} Get Usage for VOD & Live Example:
   *    https://app.zencoder.com/api/v2/reports/all?from=2017-01-01&to=2017-01-31&grouping=myGroup
   *
   *
-  * @apiSuccess (Response Fields) {Object} total Summary object
-  * @apiSuccess (Response Fields) {Object} total.live Summary object for live usage
-  * @apiSuccess (Response Fields) {Number} total.live.stream_hours The total streaming hours
-  * @apiSuccess (Response Fields) {Number} total.live.billable_stream_hours The streaming hours that were billable
-  * @apiSuccess (Response Fields) {Number} total.live.encoded_hours The total encoded hours
-  * @apiSuccess (Response Fields) {Number} total.live.billable_encoded_hours The encoded hours that were billable
-  * @apiSuccess (Response Fields) {Number} total.live.total_hours The total encoded and stream hours
-  * @apiSuccess (Response Fields) {Number} total.live.total_billable_hours The encoded and stream hours that were billable
-  * @apiSuccess (Response Fields) {Object} total.vod Summary object for VOD usage
-  * @apiSuccess (Response Fields) {Number} total.vod.encoded_minutes The total encoding minutes
-  * @apiSuccess (Response Fields) {Number} total.vod.billable_minutes The encoding minutes that were billable
-  * @apiSuccess (Response Fields) {Object[]} statistics reports by grouping
-  * @apiSuccess (Response Fields) {Object[]} statistics.live reports by grouping for live usage
-  * @apiSuccess (Response Fields) {String} statistics.live.grouping the grouping - `null` is for all ungrouped activity
-  * @apiSuccess (Response Fields) {DateString} statistics.live.collected_on The date of the report
-  * @apiSuccess (Response Fields) {Number} statistics.live.stream_hours The total streaming hours
-  * @apiSuccess (Response Fields) {Number} statistics.live.billable_stream_hours The streaming hours that were billable
-  * @apiSuccess (Response Fields) {Number} statistics.live.encoded_hours The total encoded hours
-  * @apiSuccess (Response Fields) {Number} statistics.live.billable_encoded_hours The encoded hours that were billable
-  * @apiSuccess (Response Fields) {Object[]} statistics.vod reports by grouping for VOD usage
-  * @apiSuccess (Response Fields) {String} statistics.vod.grouping the grouping - `null` is for all ungrouped activity
-  * @apiSuccess (Response Fields) {DateString} statistics.vod.collected_on The date of the report
-  * @apiSuccess (Response Fields) {Number} statistics.vod.encoded_minutes The encoding minutes for this group
-  * @apiSuccess (Response Fields) {Number} statistics.vod.billable_minutes The billable encoding minutes for this group
+  * @apiSuccess {Object} total Summary object
+  * @apiSuccess {Object} total.live Summary object for live usage
+  * @apiSuccess {Number} total.live.stream_hours The total streaming hours
+  * @apiSuccess {Number} total.live.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess {Number} total.live.encoded_hours The total encoded hours
+  * @apiSuccess {Number} total.live.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess {Number} total.live.total_hours The total encoded and stream hours
+  * @apiSuccess {Number} total.live.total_billable_hours The encoded and stream hours that were billable
+  * @apiSuccess {Object} total.vod Summary object for VOD usage
+  * @apiSuccess {Number} total.vod.encoded_minutes The total encoding minutes
+  * @apiSuccess {Number} total.vod.billable_minutes The encoding minutes that were billable
+  * @apiSuccess {Object[]} statistics reports by grouping
+  * @apiSuccess {Object[]} statistics.live reports by grouping for live usage
+  * @apiSuccess {String} statistics.live.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess {String} statistics.live.collected_on The date of the report
+  * @apiSuccess {Number} statistics.live.stream_hours The total streaming hours
+  * @apiSuccess {Number} statistics.live.billable_stream_hours The streaming hours that were billable
+  * @apiSuccess {Number} statistics.live.encoded_hours The total encoded hours
+  * @apiSuccess {Number} statistics.live.billable_encoded_hours The encoded hours that were billable
+  * @apiSuccess {Object[]} statistics.vod reports by grouping for VOD usage
+  * @apiSuccess {String} statistics.vod.grouping the grouping - `null` is for all ungrouped activity
+  * @apiSuccess {String} statistics.vod.collected_on The date of the report
+  * @apiSuccess {Number} statistics.vod.encoded_minutes The encoding minutes for this group
+  * @apiSuccess {Number} statistics.vod.billable_minutes The billable encoding minutes for this group
   *
   * @apiSuccessExample {json} Get Usage for VOD & Live
   *    {

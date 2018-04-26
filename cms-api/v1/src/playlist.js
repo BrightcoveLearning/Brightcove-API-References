@@ -25,7 +25,7 @@
  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](https://support.brightcove.com/node/18010) for details. Only _search by type is currently supported for playlists &mdash; e.g. q=type:EXPLICIT.
  * @apiParam (URL Parameters) {String="name","updated_at"} [sort="updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending - note: to sort in descending order, preface the field name with a minus (-) sign
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=type:EXPLICIT
  *
  * @apiSuccess (200) {String} account_id Video Cloud account id
@@ -122,7 +122,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {Number} playlist_id Video Cloud playlist ID, or multiple playlist ids separated by commas.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccess (200) {String} account_id Video Cloud account id
@@ -219,7 +219,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/1403224824001/videos
  *
  * @apiSuccess (200) {String} id video id
@@ -621,7 +621,7 @@
  *
  * @apiParam (URL Parameters) {String} [q] search string - see[search guide](https://support.brightcove.com/node/18005#combinesearchcriteria) for details
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists
  *
  * @apiSuccess (200) {Number} count count of playlists found
@@ -676,7 +676,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists/749117323001/videos
  *
  * @apiSuccess (200) {Number} count count of videos
@@ -974,7 +974,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  * @apiParam {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {Url} Search for Playlists Example:
+ * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccessExample {json} Success Response:

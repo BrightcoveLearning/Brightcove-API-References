@@ -20,7 +20,7 @@
  * @apiParam {String} account_id Video Cloud account ID.
  *
  *
- * @apiParamExample {Url} List Channels Example:
+ * @apiParamExample {String} List Channels Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels
  *
  * @apiSuccess (200) {String} account_id master account id
@@ -90,7 +90,7 @@
  * @apiParam {String} channel_name The channel name.
  *
  *
- * @apiParamExample {Url} Get Channel Details Example:
+ * @apiParamExample {String} Get Channel Details Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default
  *
  * @apiSuccess (200) {String} account_id master account id
@@ -232,7 +232,7 @@
  * @apiParam {String} channel_name The name of the channel - usually `default`.
  *
  *
- * @apiParamExample {Url} List Channel Affiliates Example:
+ * @apiParamExample {String} List Channel Affiliates Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default/members
  *
  * @apiSuccess (200) {String} account_id affiliate account id
@@ -297,10 +297,10 @@
  *
  * @apiParam (Request Body Fields) {String} account_id The affiliate's account id.
  *
- * @apiParamExample {Url} Add Affiliates:
+ * @apiParamExample {String} Add Affiliates:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default/members/1752604059001
  *
- * @apiParamExample {Url} Add Affiliates Request Body:
+ * @apiParamExample {String} Add Affiliates Request Body:
  *     {
  *         "account_id": "1752604059001"
  *     }
@@ -360,7 +360,7 @@
  * @apiParam {String} affiliate_account_id The affiliate's account id.
  *
  *
- * @apiParamExample {Url} Add Affiliates:
+ * @apiParamExample {String} Add Affiliates:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/channels/default/members/1752604059001
  *
  *
@@ -412,7 +412,7 @@
   * @apiParam {String} account_id Video Cloud account ID.
   *
   *
-  * @apiParamExample {Url} List Contracts Example:
+  * @apiParamExample {String} List Contracts Example:
   *     https://cms.api.brightcove.com/v1/accounts/1752604059001/contracts
   *
   * @apiSuccess (200) {String} account_id affiliate account id
@@ -487,7 +487,7 @@
    * @apiParam {String} master_account_id Video Cloud account ID for the Master account.
    *
    *
-   * @apiParamExample {Url} List Contracts Example:
+   * @apiParamExample {String} List Contracts Example:
    *     https://cms.api.brightcove.com/v1/accounts/1752604059001/contracts/57838016001
    *
    * @apiSuccess (200) {String} account_id affiliate account id
@@ -564,10 +564,10 @@
   * @apiParam (Request Body Fields) {Boolean} approved Setting approved to `true` approves the contract.
   * @apiParam (Request Body Fields) {Boolean} [auto_accept=false] Setting If `true`, shared videos will be automatically accepted; otherwise, they must be approved one by one.
   *
-  * @apiParamExample {Url} Approve Contract Example:
+  * @apiParamExample {String} Approve Contract Example:
   *     https://cms.api.brightcove.com/v1/accounts/1752604059001/contracts/57838016001
   *
-  * @apiParamExample {Url} Approve Contract Request Body Example:
+  * @apiParamExample {String} Approve Contract Request Body Example:
   *    {
   *      "approved": true,
   *      "auto_accept": true
@@ -644,7 +644,7 @@
    * @apiParam {String} video_id Video Cloud video ID.
    *
    *
-   * @apiParamExample {Url} List Shares Example:
+   * @apiParamExample {String} List Shares Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5553744346001/shares
    *
    * @apiSuccess (200) {String} video_id the video id
@@ -724,10 +724,10 @@
    * @apiParam (Request Body Fields) {String} id affiliate account id to share to
    *
    *
-   * @apiParamExample {Url} Share Video Example:
+   * @apiParamExample {String} Share Video Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5553744346001/shares
    *
-   * @apiParamExample {Url} Share Video Request Example:
+   * @apiParamExample {String} Share Video Request Example:
    *     [
    *        {"id": 1752604059001},
    *        {"id": 1485884786001}
@@ -808,7 +808,7 @@
    * @apiParam {String} affiliate_account_id affiliate account id to remove the shared video from.
    *
    *
-   * @apiParamExample {Url} Share Video Example:
+   * @apiParamExample {String} Share Video Example:
    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/5553744346001/shares/1485884786001
    *
    *

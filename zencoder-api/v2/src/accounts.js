@@ -24,8 +24,8 @@
   *    }
   *
   *
-  * @apiSuccess (Response Fields) {String} api_key The api key used to authenticate other API requests
-  * @apiSuccess (Response Fields) {String} password The password submitted or an auto-generated one
+  * @apiSuccess {String} api_key The api key used to authenticate other API requests
+  * @apiSuccess {String} password The password submitted or an auto-generated one
   *
   * @apiSuccessExample {json} Create an Account
   *    {
@@ -49,12 +49,12 @@
   * @apiHeader {String} Zencoder-Api-Key Zencoder-Api-Key: {Your_API_Key}
   *
   *
-  * @apiSuccess (Response Fields) {String} account_state Account states are `active`, `stopped`, `suspended`, and `cancelled`
-  * @apiSuccess (Response Fields) {String} plan The current account plan
-  * @apiSuccess (Response Fields) {String} billing_state Billing states are `active`, `past due`, and `cancelled`
-  * @apiSuccess (Response Fields) {Number} minutes_used Minutes of encoded output used this month
-  * @apiSuccess (Response Fields) {Number} minutes_included Minutes of encoded output included in your plan (per month)
-  * @apiSuccess (Response Fields) {Boolean} integration_mode Whether the account is in integration (test) mode
+  * @apiSuccess {String} account_state Account states are `active`, `stopped`, `suspended`, and `cancelled`
+  * @apiSuccess {String} plan The current account plan
+  * @apiSuccess {String} billing_state Billing states are `active`, `past due`, and `cancelled`
+  * @apiSuccess {Number} minutes_used Minutes of encoded output used this month
+  * @apiSuccess {Number} minutes_included Minutes of encoded output included in your plan (per month)
+  * @apiSuccess {Boolean} integration_mode Whether the account is in integration (test) mode
   *
   * @apiSuccessExample {json} Get Account Details
   *    {

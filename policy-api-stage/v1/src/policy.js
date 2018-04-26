@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields) {Object} key-data Data for the policy key
  * @apiParam (Request Body Fields) {String} key-data.account-id Video Cloud account id
  * @apiParam (Request Body Fields) {String[]} [key-data.apis] Array of APIs that are permitted for this key (currently `"search"` is the only one available - this must be included to use the [search functionality](https://brightcovelearning.github.io/Brightcove-API-References/playback-api/v1/doc/index.html#api-videoGroup-Get_Videos) for the Playback API)
@@ -33,12 +33,12 @@
  *   }
  * }
  *
- * @apiSuccess (Response Fields) {String} key_string The policy key string
- * @apiSuccess (Response Fields) {Object} key-data Map of key data prescribing the policy
- * @apiSuccess (Response Fields) {String} key-data.account-id The Video Cloud account id
- * @apiSuccess (Response Fields) {Sting[]} key-data.apis Array of apis permitted for the key
- * @apiSuccess (Response Fields) {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
- * @apiSuccess (Response Fields) {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
+ * @apiSuccess {String} key_string The policy key string
+ * @apiSuccess {Object} key-data Map of key data prescribing the policy
+ * @apiSuccess {String} key-data.account-id The Video Cloud account id
+ * @apiSuccess {Sting[]} key-data.apis Array of apis permitted for the key
+ * @apiSuccess {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
+ * @apiSuccess {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -87,18 +87,18 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
- * @apiParam (Path Parameters) {String} key_string the key string for the policy
+ * @apiParam {String} account_id Video Cloud account ID
+ * @apiParam {String} key_string the key string for the policy
  *
- * @apiParamExample {Url} Get Policy Example:
+ * @apiParamExample {String} Get Policy Example:
  *    https://policy.api.brightcove.com/v1/accounts/57838016001/policy_keys/BCpkADawqM0tR9WJhqqyg4t8NgSulRVnfHyh6cL_U0m7RaoIq19WWR-8EPiWY1ift8zHF6Z3sfTyuXv6LY8bfTAfvzVLb1TrwGTOBJGPwWJ9dJUkny7lUoN1ygk
  *
- * @apiSuccess (Response Fields) {String} key_string The policy key string
- * @apiSuccess (Response Fields) {Object} key-data Map of key data prescribing the policy
- * @apiSuccess (Response Fields) {String} key-data.account-id The Video Cloud account id
- * @apiSuccess (Response Fields) {Sting[]} key-data.apis Array of apis permitted for the key
- * @apiSuccess (Response Fields) {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
- * @apiSuccess (Response Fields) {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
+ * @apiSuccess {String} key_string The policy key string
+ * @apiSuccess {Object} key-data Map of key data prescribing the policy
+ * @apiSuccess {String} key-data.account-id The Video Cloud account id
+ * @apiSuccess {Sting[]} key-data.apis Array of apis permitted for the key
+ * @apiSuccess {Sting[]} key-data.allowed-domains Array of domains allowed to use this key
+ * @apiSuccess {Boolean} key-data.require-ad-config=false Whether Playback API requests require an `ad-config-id` URL parameter for server-side ad insertion
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK

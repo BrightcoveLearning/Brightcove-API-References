@@ -13,9 +13,9 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
- * @apiParam (URL Parameters) {Number} [limit=10] ignored
- * @apiParam (URL Parameters) {Number} [offset=0] ignored
+ * @apiParam (URL Parameters) {String} accounts one or more Video Cloud account IDs separated by commas
+ * @apiParam (URL Parameters) {Integer} [limit=10] ignored
+ * @apiParam (URL Parameters) {Integer} [offset=0] ignored
  * @apiParam (URL Parameters) {String} [sort=video_view] ignored
  * @apiParam (URL Parameters) {String} [fields=video_view] ignored
  * @apiParam (URL Parameters) {String="account","city","country","region","date","date-time","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](https://support.brightcove.com/node/17997#reportDimensions) for which combined dimensions are supported
@@ -25,13 +25,13 @@
  * @apiParam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] ignored
  * @apiParam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
  *
- * @apiParamExample {Url} Video Dimension Report Example:
+ * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data/status?accounts=20318290001&dimensions=account,device_os,country
  *
- * @apiSuccess (Response Fields) {DateString} reconciled_from the earliest date that you can use for `from` and get reconciled data
- * @apiSuccess (Response Fields) {DateString} reconciled_to the latest date that you can use for `to` and get reconciled data (realtime data may be available for later dates)
+ * @apiSuccess {String} reconciled_from the earliest date that you can use for `from` and get reconciled data
+ * @apiSuccess {String} reconciled_to the latest date that you can use for `to` and get reconciled data (realtime data may be available for later dates)
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "reconciled_from": "2015-10-19",
@@ -39,15 +39,15 @@
  *    }
  *
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {Object[]} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {Object[]} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {Object[]} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {Object[]} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {Object[]} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {Object[]} 404 Error Response
  *    HTTP/1.1 400 BAD_REQUEST
  *    [
  *        {
