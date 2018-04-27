@@ -55,7 +55,7 @@
           "type": "string"
         },
         "drm": {
-          "$ref": "#/definitions/drm",
+          "$ref": "#/definitions/Drm",
           "description": "DRM licensing information ",
           "type": "object"
         },
@@ -72,12 +72,12 @@
           "type": "number"
         },
         "hds": {
-          "$ref": "#/definitions/hds",
+          "$ref": "#/definitions/Hds",
           "description": "HDS information ",
           "type": "object"
         },
         "hls": {
-          "$ref": "#/definitions/hls",
+          "$ref": "#/definitions/Hls",
           "description": "HLS information ",
           "type": "object"
         },
@@ -991,7 +991,7 @@
         "channel": {
           "type": "object",
           "description": "the channel this contract belongs to ",
-          "$ref": "#/definitions/channel"
+          "$ref": "#/definitions/Channel"
         }
       }
     },
@@ -1026,7 +1026,7 @@
           "type": "string",
           "description": "the asset id "
         },
-        "whether": {
+        "audio_only": {
           "type": "boolean",
           "description": "this rendition contains only an audio track, no video track (a rendition for low bandwidth devices) "
         },
@@ -1049,7 +1049,7 @@
         "drm": {
           "type": "object",
           "description": "DRM packaging details (not applicable to remote assets) ",
-          "$ref": "#/definitions/drm"
+          "$ref": "#/definitions/Drm"
         },
         "encoding_rate": {
           "type": "number",
@@ -1328,11 +1328,6 @@
         "media_type": {
           "type": "boolean",
           "description": "media type for the rendition (audio or video) "
-        },
-        "drm": {
-          "type": "object",
-          "description": "DRM packaging details (not applicable to remote assets) ",
-          "$ref": "#/definitions/drm"
         },
         "encoding_rate": {
           "type": "number",
@@ -2805,7 +2800,9 @@
           "application/json"
         ],
         "responses": {
-          "201": {},
+          "204": {
+			  "description": "Item was deleted"
+		  },
           "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
@@ -3468,8 +3465,10 @@
           "application/json"
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "404": {
@@ -3673,8 +3672,10 @@
           "application/json"
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -4006,8 +4007,10 @@
           "application/json"
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "404": {
@@ -4383,7 +4386,7 @@
             "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
           }
         },
-        "operationId": "List_Shares"
+        "operationId": "Get_Share"
       },
       "delete": {
         "tags": [
@@ -4435,8 +4438,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -4589,8 +4594,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -5094,87 +5101,6 @@
           }
         },
         "operationId": "List_Contracts"
-      },
-      "AddAffiliate": {
-        "properties": {
-          "account_id": {
-            "type": "string",
-            "description": "The affiliate&#39;s account id. "
-          }
-        },
-        "required": [
-          "account_id"
-        ]
-      },
-      "Channel": {
-        "properties": {
-          "account_id": {
-            "type": "string",
-            "description": "master account id "
-          },
-          "name": {
-            "type": "string",
-            "description": "channel name "
-          },
-          "enforce_custom_fields": {
-            "type": "boolean",
-            "description": "if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared "
-          },
-          "enforce_geo": {
-            "type": "boolean",
-            "description": "if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering Note: this field is currently ignored, but this restriction will be enabled later "
-          },
-          "account_name": {
-            "type": "string",
-            "description": "master account name "
-          },
-          "created_at": {
-            "type": "string",
-            "format": "datetime",
-            "description": "when the channel was created "
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "datetime",
-            "description": "when the channel was last updated "
-          }
-        }
-      },
-      "Contract": {
-        "properties": {
-          "account_id": {
-            "type": "string",
-            "description": "affiliate account id "
-          },
-          "approved": {
-            "type": "boolean",
-            "description": "whether the contract is approved "
-          },
-          "auto_accept": {
-            "type": "boolean",
-            "description": "whether shared videos will be automatically accepted "
-          },
-          "approved_at": {
-            "type": "string",
-            "format": "datetime",
-            "description": "when the contract was approved "
-          },
-          "created_at": {
-            "type": "string",
-            "format": "datetime",
-            "description": "when the contract was created "
-          },
-          "updated_at": {
-            "type": "string",
-            "format": "datetime",
-            "description": "when the contract was last updated "
-          },
-          "channel": {
-            "type": "object",
-            "description": "the channel this contract belongs to ",
-            "$ref": "#/definitions/Channel"
-          }
-        }
       }
     },
     "/accounts/{account_id}/videos/{video_id}/assets": {
@@ -6803,8 +6729,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7046,8 +6974,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7289,8 +7219,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7532,8 +7464,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7775,8 +7709,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8018,8 +7954,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8261,8 +8199,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8504,8 +8444,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8747,8 +8689,10 @@
           }
         ],
         "responses": {
-          "201": {},
-          "401": {
+			"204": {
+				"description": "Item was deleted"
+			},
+			"401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
