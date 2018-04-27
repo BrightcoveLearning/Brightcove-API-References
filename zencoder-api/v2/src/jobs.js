@@ -175,6 +175,7 @@
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade] Apply fade-in and fade-out effects to the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_in] Apply a fade-in effect to the audio
  * @apiParam (Request Body Fields) {Number{1.0-30.0}} [outputs.audio_fade_out] Apply a fade-out effect to the audio
+ * @apiParam (Request Body Fields) {Number{-60-60}} [outputs.audio_loudness_level] Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (-23dB for EBU R.128)
  * @apiParam (Request Body Fields) {Boolean} [outputs.audio_karaoke_mode=false] Apply a karaoke effect to the audio
  * @apiParam (Request Body Fields) {Mixed} [outputs.start_clip] Encode only a portion of the input file by setting a custom start time - may be entered as a string in HH:MM:SS.S format or as a number in seconds
  * @apiParam (Request Body Fields) {Mixed} [outputs.clip_length] Encode only a portion of the input file by setting a custom clip length - may be entered as a string in HH:MM:SS.S format or as a number in seconds
