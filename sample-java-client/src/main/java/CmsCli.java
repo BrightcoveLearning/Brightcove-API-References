@@ -4,31 +4,87 @@ import com.brightcove.cmsapi.Configuration;
 import com.brightcove.cmsapi.api.PlaylistGroupApi;
 import com.brightcove.cmsapi.api.VideoGroupApi;
 import com.brightcove.cmsapi.model.Video;
+import com.google.gson.Gson;
 import config.Config;
+import options.CliOptions;
+import org.apache.commons.cli.CommandLine;
 
-public class SdkClient {
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.List;
+
+public class CmsCli {
 
     static String CONTENT_TYPE = "application/json";
     static String FAKE_OAUTH_TOKEN = "whatever";
 
-    public static void main(String[] args) throws Exception {
-        if (args == null || args.length != 1) {
-            System.err.println("ERROR: Provide path to config file");
-            System.exit(1);
-        }
+    Config config;
+    CommandLine cmd;
+    VideoGroupApi videoApi;
+    PlaylistGroupApi playlistApi;
 
-        Config config = Config.load(args[0]);
+    public static void main(String[] args) throws Exception {
+
+        CommandLine cmd = CliOptions.read(args);
+        Config config = Config.load(cmd.getOptionValue(CliOptions.CONFIG_FILE));
         ApiClient apiClient = Configuration.getDefaultApiClient();
         apiClient.setBasePath(config.getCmsHost() + "/v1");
         config.initializeOauth(apiClient);
 
+        new CmsCli(config, cmd);
+    }
+
+    public CmsCli(Config config, CommandLine cmd) throws FileNotFoundException {
+        this.config = config;
+        this.cmd = cmd;
+        this.videoApi = new VideoGroupApi();
+        this.playlistApi = new PlaylistGroupApi();
+        if (cmd.hasOption(CliOptions.GET_VIDEO)) {
+            getVideo(cmd.getOptionValue(CliOptions.GET_VIDEO));
+        } else if (cmd.hasOption(CliOptions.GET_VIDEOS)) {
+            getVideos();
+        } else if (cmd.hasOption(CliOptions.CREATE_VIDEO)) {
+            createVideo(cmd.getOptionValue(CliOptions.CREATE_VIDEO));
+        } else if (cmd.hasOption(CliOptions.PATCH_VIDEO)) {
+            patchVideo(cmd.getOptionValue(CliOptions.PATCH_VIDEO));
+        } else {
+            CliOptions.printUsage();
+            System.exit(1);
+        }
+    }
+
+    private void getVideo(String videoId) {
+        Video video = videoApi.getVideoByIDOrReferenceID(config.getAccountId(), videoId, CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        System.out.println(video);
+    }
+
+    private void getVideos() {
+        List<Video> videos = videoApi.getVideos(config.getAccountId(), CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        System.out.println(videos);
+    }
+
+    private void createVideo(String jsonFilePath) throws FileNotFoundException {
+        Gson gson = new Gson();
+        Video v = gson.fromJson(new FileReader(jsonFilePath), Video.class);
         try {
-            //doStuff();
-            readStuff();
+            System.out.println(videoApi.createVideo(config.getAccountId(), v, CONTENT_TYPE, FAKE_OAUTH_TOKEN));
         } catch (ApiException e) {
-            System.err.println("Request failed");
+            System.err.println("Created failed: " + e.getMessage());
             System.err.println("status: " + e.getCode());
-            System.err.println("header: " + e.getResponseHeaders());
+            System.err.println(e.getResponseBody());
+        }
+    }
+
+    private void patchVideo(String jsonFilePath) throws FileNotFoundException {
+        Gson gson = new Gson();
+        Video v = gson.fromJson(new FileReader(jsonFilePath), Video.class);
+        String id = v.getId();
+        v.setId(null);
+        try {
+            System.out.println(videoApi.updateVideo(config.getAccountId(), id, v, CONTENT_TYPE, FAKE_OAUTH_TOKEN));
+        } catch (ApiException e) {
+            System.err.println("Update failed: " + e.getMessage());
+            System.err.println("status: " + e.getCode());
             System.err.println(e.getResponseBody());
         }
     }

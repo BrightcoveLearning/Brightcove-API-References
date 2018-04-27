@@ -15,10 +15,11 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'io.gsonfire:gson-fire:1.8.0'
     compile 'org.threeten:threetenbp:1.3.5'
+    compile 'commons-cli:commons-cli:1.4'
 }
 
 task(run, dependsOn: 'build', type: JavaExec) {
-    main = 'SdkClient'
+    main = 'CmsCli'
     classpath = sourceSets.main.runtimeClasspath
     args 'qa.properties'
 }
@@ -30,6 +31,6 @@ jar {
         }
     }
     manifest {
-        attributes 'Main-Class': 'SdkClient'
+        attributes 'Main-Class': 'CmsCli'
     }
 }

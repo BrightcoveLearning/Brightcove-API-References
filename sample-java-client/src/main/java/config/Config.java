@@ -41,6 +41,10 @@ public class Config {
         return prop.getProperty("cms_host");
     }
 
+    public String getAccountId() {
+        return prop.getProperty("account_id");
+    }
+
     public void initializeOauth(ApiClient apiClient) {
         Oauth2Interceptor oauth2Interceptor = new Oauth2Interceptor(getClientId(), getClientSecret(), getOauthHost());
         apiClient.getHttpClient().interceptors().add(oauth2Interceptor);
