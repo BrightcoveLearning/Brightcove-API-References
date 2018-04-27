@@ -868,6 +868,55 @@
 				"srclang"
 			]
 		},
+		"ShareVideoRequest": {
+			"properties": {
+			  "id": {
+				"type": "string",
+				"description": "affiliate account id to share to "
+			  }
+			},
+			"required": [
+			  "id"
+			]
+		  },
+		"VideoShare": {
+			"properties": {
+			  "video_id": {
+				"type": "string",
+				"description": "the video id "
+			  },
+			  "affiliate_id": {
+				"type": "string",
+				"description": "the id of the affiliate account the video is shared to "
+			  },
+			  "affiliate_video_id": {
+				"type": "string",
+				"description": "the id of the shared video in the affiliate account "
+			  },
+			  "statue": {
+				"type": "string",
+				"description": "the status of the sharing - either PROCESSING, COMPLETE, or FAILED "
+			  },
+			  "shared_at": {
+				"type": "string",
+					"format": "datetime",
+					"description": "when the video was shared "
+			  },
+			  "updated_at": {
+				"type": "string",
+					"format": "datetime",
+				"description": "the video was last updated in the affiliate account "
+			  }
+			},
+			"required": [
+			  "video_id",
+			  "affiliate_id",
+			  "affiliate_video_id",
+			  "statue",
+			  "shared_at",
+			  "updated_at"
+			]
+		  },
 		"AddAffiliate": {
 			"properties": {
 			  "account_id": {
@@ -3735,6 +3784,305 @@
 				]
 			}
 		},
+		"/accounts/{account_id}/videos/{video_id}/shares": {
+			"get": {
+			  "tags": [
+				"mediasharingGroup"
+			  ],
+			  "summary": "List Shares",
+			  "description": "Lists the existing shares for an account - this is a Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
+			  "consumes": [
+				"application/json"
+			  ],
+			  "produces": [
+				"application/json"
+			  ],
+			  "parameters": [
+				{
+				  "name": "account_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud account ID. "
+				},
+				{
+				  "name": "video_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud video ID. "
+				},
+				{
+				  "name": "Content-Type",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Content-Type: application/json "
+				},
+				{
+				  "name": "Authorization",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+				}
+			  ],
+			  "responses": {
+				"200": {
+				  "description": "200",
+				  "schema": {
+					"type": "array",
+					"items": {
+				  "$ref": "#/definitions/VideoShare"
+					}
+				}
+				},
+				"401": {
+				  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+				},
+				"403": {
+				  "description": "NOT_AVAILABLE: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support "
+				},
+				"404": {
+				  "description": "RESOURCE_NOT_FOUND: Resource not found "
+				},
+				"429": {
+				  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+				},
+				"500": {
+				  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+				}
+			  },
+			  "operationId": "List_Shares"
+			},
+			"post": {
+			  "tags": [
+				"mediasharingGroup"
+			  ],
+			  "summary": "Share Video",
+			  "description": "Shares a video to one or more affiliates - this is an Master account operation - if the video has already been shared to an affiliate, this operation will re-share it and overwrite any affiliate metadata changes ",
+			  "consumes": [
+				"application/json"
+			  ],
+			  "produces": [
+				"application/json"
+			  ],
+			  "parameters": [
+				{
+				  "name": "account_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud account ID. "
+				},
+				{
+				  "name": "video_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud video ID. "
+				},
+				{
+				  "in": "body",
+				  "name": "Share_VideoBody",
+				  "description": "Shares a video to one or more affiliates - this is an Master account operation - if the video has already been shared to an affiliate, this operation will re-share it and overwrite any affiliate metadata changes ",
+				  "required": true,
+				  "schema": {
+					  "type": "array",
+					  "items": {
+					"$ref": "#/definitions/ShareVideoRequest"
+					  }
+				  }
+				},
+				{
+				  "name": "Content-Type",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Content-Type: application/json "
+				},
+				{
+				  "name": "Authorization",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+				}
+			  ],
+			  "responses": {
+				"200": {
+				  "description": "200",
+				  "schema": {
+					  "type": "array",
+					  "items": {
+					"$ref": "#/definitions/VideoShare"
+					  }
+				  }
+				},
+				"401": {
+				  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+				},
+				"403": {
+				  "description": "NOT_AVAILABLE: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support "
+				},
+				"404": {
+				  "description": "RESOURCE_NOT_FOUND: Resource not found "
+				},
+				"429": {
+				  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+				},
+				"500": {
+				  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+				}
+			  },
+			  "operationId": "Share_Video"
+			}
+		  },
+		  "/accounts/{account_id}/videos/{video_id}/shares/{affiliate_account_id}": {
+			"get": {
+				"tags": [
+				  "mediasharingGroup"
+				],
+				"summary": "List Shares",
+				"description": "Lists the existing shares for an account - this is a Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
+				"consumes": [
+				  "application/json"
+				],
+				"produces": [
+				  "application/json"
+				],
+				"parameters": [
+				  {
+					"name": "account_id",
+					"in": "path",
+					"required": true,
+					"type": "string",
+					"description": "Video Cloud account ID. "
+				  },
+				  {
+					"name": "video_id",
+					"in": "path",
+					"required": true,
+					"type": "string",
+					"description": "Video Cloud video ID. "
+				  },
+				  {
+					"name": "affiliate_account_id",
+					"in": "path",
+					"required": true,
+					"type": "string",
+					"description": "Video Cloud affiliate account ID. "
+				  },
+				  {
+					"name": "Content-Type",
+					"in": "header",
+					"required": true,
+					"type": "string",
+					"description": "Content-Type: application/json "
+				  },
+				  {
+					"name": "Authorization",
+					"in": "header",
+					"required": true,
+					"type": "string",
+					"description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+				  }
+				],
+				"responses": {
+				  "200": {
+					"description": "200",
+					"schema": {
+					  "$ref": "#/definitions/VideoShare"
+				    }
+				  },
+				  "401": {
+					"description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+				  },
+				  "403": {
+					"description": "NOT_AVAILABLE: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support "
+				  },
+				  "404": {
+					"description": "RESOURCE_NOT_FOUND: Resource not found "
+				  },
+				  "429": {
+					"description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+				  },
+				  "500": {
+					"description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+				  }
+				},
+				"operationId": "List_Shares"
+			  },
+			  "delete": {
+			  "tags": [
+				"mediasharingGroup"
+			  ],
+			  "summary": "Unshare Video",
+			  "description": "Unshares a video with a specific affiliate - this is an Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
+			  "consumes": [
+				"application/json"
+			  ],
+			  "produces": [
+				"application/json"
+			  ],
+			  "parameters": [
+				{
+				  "name": "account_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud account ID. "
+				},
+				{
+				  "name": "video_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "Video Cloud video ID. "
+				},
+				{
+				  "name": "affiliate_account_id",
+				  "in": "path",
+				  "required": true,
+				  "type": "string",
+				  "description": "affiliate account id to remove the shared video from. "
+				},
+				{
+				  "name": "Content-Type",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Content-Type: application/json "
+				},
+				{
+				  "name": "Authorization",
+				  "in": "header",
+				  "required": true,
+				  "type": "string",
+				  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+				}
+			  ],
+			  "responses": {
+				"201": {},
+				"401": {
+				  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+				},
+				"403": {
+				  "description": "NOT_AVAILABLE: The resource you are requesting is  unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support "
+				},
+				"404": {
+				  "description": "RESOURCE_NOT_FOUND: Resource not found "
+				},
+				"429": {
+				  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+				},
+				"500": {
+				  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+				}
+			  },
+			  "operationId": "Unshare_Video"
+			}
+		  },
 		"/accounts/{account_id}/channels/{channel_name}/members/{affiliate_account_id}": {
 			"put": {
 			  "tags": [
