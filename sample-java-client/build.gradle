@@ -20,4 +20,16 @@ dependencies {
 task(run, dependsOn: 'build', type: JavaExec) {
     main = 'SdkClient'
     classpath = sourceSets.main.runtimeClasspath
+    args 'qa.properties'
+}
+
+jar {
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes 'Main-Class': 'SdkClient'
+    }
 }

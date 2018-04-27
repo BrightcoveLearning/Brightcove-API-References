@@ -3,79 +3,88 @@ import com.brightcove.cmsapi.ApiException;
 import com.brightcove.cmsapi.Configuration;
 import com.brightcove.cmsapi.api.PlaylistGroupApi;
 import com.brightcove.cmsapi.api.VideoGroupApi;
-import com.brightcove.cmsapi.model.Playlist;
 import com.brightcove.cmsapi.model.Video;
-
-import java.math.BigDecimal;
-import java.util.List;
+import config.Config;
 
 public class SdkClient {
 
-    //static String ACCESS_TOKEN = "";
+    static String CONTENT_TYPE = "application/json";
+    static String FAKE_OAUTH_TOKEN = "whatever";
 
-    // PROD
-//    static String CLIENT_ID = "646724fb-f8dc-4661-b2e4-b2a46d28bedb";
-//    static String CLIENT_SECRET = "iH4Jn-wtNjPTNl_ynmkkbMkOVP1viJDw4ymJPzH46m_6uqwU98NfH1B9NCvoCD9LmoH3tbnxQ6abJX6dYMgSGg";
-//    static String OAUTH_URL = "https://oauth.brightcove.com";
-//    static String CMS_URL = "https://cms.api.brightcove.com";
+    public static void main(String[] args) throws Exception {
+        if (args == null || args.length != 1) {
+            System.err.println("ERROR: Provide path to config file");
+            System.exit(1);
+        }
 
-    // QA
-    static String CLIENT_ID = "5759e50a-5559-4507-909e-5c74685f010e";
-    static String CLIENT_SECRET = "gWUelgJGlbMnZTJ0dMa82D-s2yWcdEO2gWUy1AF38gPGjJ-OCdgvwJnyhj9dEShDladyIuhX_g4DDLhNPswDfw";
-    static String OAUTH_URL = "https://oauth.qa.brightcove.com";
-    static String CMS_URL = "https://cms.api.qa.brightcove.com";
-
-    public static void main(String[] args) {
+        Config config = Config.load(args[0]);
         ApiClient apiClient = Configuration.getDefaultApiClient();
-        apiClient.setBasePath(CMS_URL + "/v1");
-        configureOauth(apiClient, CLIENT_ID, CLIENT_SECRET, OAUTH_URL);
+        apiClient.setBasePath(config.getCmsHost() + "/v1");
+        config.initializeOauth(apiClient);
 
+        try {
+            //doStuff();
+            readStuff();
+        } catch (ApiException e) {
+            System.err.println("Request failed");
+            System.err.println("status: " + e.getCode());
+            System.err.println("header: " + e.getResponseHeaders());
+            System.err.println(e.getResponseBody());
+        }
+    }
+
+    static void readStuff() {
         String accountId = "10930819";
         String videoId = "5446397641001";
         String playlistId = "63787966001";
 
-        getVideos(accountId);
-        getVideo(accountId, videoId);
-        getPlaylist(accountId, playlistId);
+        VideoGroupApi videoApi = new VideoGroupApi();
+        PlaylistGroupApi playlistApi = new PlaylistGroupApi();
+
+        System.out.println(videoApi.getVideoByIDOrReferenceID(accountId, videoId, "application/json", "wrong"));
     }
 
-    static void getVideos(String accountId) {
-        VideoGroupApi apiInstance = new VideoGroupApi();
-        try {
-            List<Video> result = apiInstance.getVideos(accountId, "application/json", "wrong");
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception");
-            e.printStackTrace();
-        }
-    }
+    static void doStuff() {
+        String accountId = "10930819";
+        String videoId = "5446397641001";
+        String playlistId = "63787966001";
 
-    static void getVideo(String accountId, String videoId) {
-        VideoGroupApi apiInstance = new VideoGroupApi();
-        try {
-            Video result = apiInstance.getVideoByIDOrReferenceID(accountId, videoId, "application/json", "wrong");
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception");
-            e.printStackTrace();
-        }
-    }
+        VideoGroupApi videoApi = new VideoGroupApi();
+        PlaylistGroupApi playlistApi = new PlaylistGroupApi();
 
-    static void getPlaylist(String accountId, String playlistId) {
-        PlaylistGroupApi apiInstance = new PlaylistGroupApi();
-        try {
-            Playlist result = apiInstance.getPlaylistByID(accountId, new BigDecimal(playlistId), "application/json", "wrong");
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception");
-            e.printStackTrace();
-        }
-    }
+        //System.out.println(videoApi.getVideos(accountId, "application/json", "wrong"));
+        //System.out.println(videoApi.getVideoByIDOrReferenceID(accountId, videoId, "application/json", "wrong"));
+        //System.out.println(playlistApi.getPlaylistByID(accountId, new BigDecimal(playlistId), "application/json", "wrong"));
 
-    public static void configureOauth(ApiClient apiClient, String clientId, String clientSecret, String oauthUrl) {
-        Oauth2Interceptor oauth2Interceptor = new Oauth2Interceptor(clientId, clientSecret, oauthUrl);
-        apiClient.getHttpClient().interceptors().add(oauth2Interceptor);
-    }
+        Video newVideo = new Video();
+        newVideo.name("I came from an sdk");
+        Video created = videoApi.createVideo(accountId, newVideo, CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        created.setDescription("New video");
+        String newVideoId = created.getId();
+        System.out.println("Created " + created);
 
+        created.setName("I was modified in the sdk");
+        created.setHasDigitalMaster(null);
+        created.setId(null);
+        created.setImages(null);
+        created.setDescription("modified once");
+        Video updatedVideo = videoApi.updateVideo(accountId, newVideoId, created, CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        System.out.println("----");
+        System.out.println(updatedVideo.getName());
+        System.out.println(updatedVideo.getDescription());
+
+        updatedVideo.setDescription(null);
+        updatedVideo.setHasDigitalMaster(null);
+        updatedVideo.setId(null);
+        updatedVideo.setImages(null);
+        updatedVideo.setName("another new name");
+
+        videoApi.updateVideo(accountId, newVideoId, updatedVideo, CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        Video currentVideo = videoApi.getVideoByIDOrReferenceID(accountId, newVideoId, CONTENT_TYPE, FAKE_OAUTH_TOKEN);
+        System.out.println("----");
+        System.out.println(currentVideo.getName());
+        System.out.println(currentVideo.getDescription());
+
+    }
 
 }

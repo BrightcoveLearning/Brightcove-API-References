@@ -1,3 +1,5 @@
+package oauth;
+
 import com.google.gson.Gson;
 import com.squareup.okhttp.*;
 
@@ -20,7 +22,7 @@ public class Oauth2Interceptor implements Interceptor {
 
     private Token token;
 
-    Oauth2Interceptor(String clientId, String clientSecret, String oauthHost) {
+    public Oauth2Interceptor(String clientId, String clientSecret, String oauthHost) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         oauthClient = new OauthClient(oauthHost);
