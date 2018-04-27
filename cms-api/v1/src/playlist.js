@@ -28,17 +28,17 @@
  * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=type:EXPLICIT
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time created
- * @apiSuccess {String} description playlist description
- * @apiSuccess {Boolean} favorite whether playlist is in favorites list
- * @apiSuccess {String} id the playlist id
- * @apiSuccess {String} name the playlist name
- * @apiSuccess {String} reference_id the playlist reference id
- * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess {String} updated_at date/time last modified
- * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time created
+ * @apiSuccess (200) {String} description playlist description
+ * @apiSuccess (200) {Boolean} favorite whether playlist is in favorites list
+ * @apiSuccess (200) {String} id the playlist id
+ * @apiSuccess (200) {String} name the playlist name
+ * @apiSuccess (200) {String} reference_id the playlist reference id
+ * @apiSuccess (200) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (200) {String} updated_at date/time last modified
+ * @apiSuccess (200) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (200) {String} search search string to retrieve the videos (smart playlists only)
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -125,17 +125,17 @@
  * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time created
- * @apiSuccess {String} description playlist description
- * @apiSuccess {Boolean} favorite whether playlist is in favorites list
- * @apiSuccess {String} id the playlist id
- * @apiSuccess {String} name the playlist name
- * @apiSuccess {String} reference_id the playlist reference id
- * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess {String} updated_at date/time last modified
- * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time created
+ * @apiSuccess (200) {String} description playlist description
+ * @apiSuccess (200) {Boolean} favorite whether playlist is in favorites list
+ * @apiSuccess (200) {String} id the playlist id
+ * @apiSuccess (200) {String} name the playlist name
+ * @apiSuccess (200) {String} reference_id the playlist reference id
+ * @apiSuccess (200) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (200) {String} updated_at date/time last modified
+ * @apiSuccess (200) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (200) {String} search search string to retrieve the videos (smart playlists only)
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -222,65 +222,65 @@
  * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/1403224824001/videos
  *
- * @apiSuccess {String} id video id
- * @apiSuccess {String} name video title
- * @apiSuccess {Boolean} complete whether processing is complete
- * @apiSuccess {String} created_at when the video was created
- * @apiSuccess {Object} custom_fields={} map of fieldname-value pairs
- * @apiSuccess {Object} cue_points array of cue point maps
- * @apiSuccess {String} cue_points.name cue point name
- * @apiSuccess {String} cue_points.type=AD cue point type
- * @apiSuccess {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
- * @apiSuccess {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
- * @apiSuccess {String} description video short description
- * @apiSuccess {Number} duration video duration in milliseconds
- * @apiSuccess {String} digital_master_id asset id of the digital master
- * @apiSuccess {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
- * @apiSuccess {String} folder_id id for the folder the video belongs to
- * @apiSuccess {Object} geo map of geo-filtering properties
- * @apiSuccess {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
- * @apiSuccess {Object} images map of image maps
- * @apiSuccess {Object} images.poster map of poster properties
- * @apiSuccess {String} images.poster.asset_id asset id for the poster
- * @apiSuccess {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess {String} images.poster.src URL for the default poster source image
- * @apiSuccess {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess {Object} link map of scheduling properties
- * @apiSuccess {String} link.text text for the link
- * @apiSuccess {String} link.url URL for the link
- * @apiSuccess {String} long_description video long description
- * @apiSuccess {Boolean} offline_enabled whether video is enabled for offline viewing
- * @apiSuccess {String} original_filename the original file name for the uploaded video
- * @apiSuccess {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess {Object} schedule map of scheduling properties
- * @apiSuccess {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess {String} state state determines whether the video is playable or not
- * @apiSuccess {Object} sharing map of sharing properties (applicable only to multiple accounts)
- * @apiSuccess {Object} sharing map of the sharing properties for the video
- * @apiSuccess {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess {String} tags array of tags
- * @apiSuccess {Object} text_tracks array of text track maps
- * @apiSuccess {String} text_tracks.src URL for the .vtt file
- * @apiSuccess {String} text_tracks.kind kind of text track
- * @apiSuccess {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess {String} text_tracks.label label for the track
- * @apiSuccess {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} id video id
+ * @apiSuccess (200) {String} name video title
+ * @apiSuccess (200) {Boolean} complete whether processing is complete
+ * @apiSuccess (200) {String} created_at when the video was created
+ * @apiSuccess (200) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (200) {Object} cue_points array of cue point maps
+ * @apiSuccess (200) {String} cue_points.name cue point name
+ * @apiSuccess (200) {String} cue_points.type=AD cue point type
+ * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} description video short description
+ * @apiSuccess (200) {Number} duration video duration in milliseconds
+ * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (200) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (200) {String} folder_id id for the folder the video belongs to
+ * @apiSuccess (200) {Object} geo map of geo-filtering properties
+ * @apiSuccess (200) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (200) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (200) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} images.poster map of poster properties
+ * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} link map of scheduling properties
+ * @apiSuccess (200) {String} link.text text for the link
+ * @apiSuccess (200) {String} link.url URL for the link
+ * @apiSuccess (200) {String} long_description video long description
+ * @apiSuccess (200) {Boolean} offline_enabled whether video is enabled for offline viewing
+ * @apiSuccess (200) {String} original_filename the original file name for the uploaded video
+ * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {Object} schedule map of scheduling properties
+ * @apiSuccess (200) {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} state state determines whether the video is playable or not
+ * @apiSuccess (200) {Object} sharing map of sharing properties (applicable only to multiple accounts)
+ * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+ * @apiSuccess (200) {String} tags array of tags
+ * @apiSuccess (200) {Object} text_tracks array of text track maps
+ * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {String} text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (200) {String} text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -624,7 +624,7 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists
  *
- * @apiSuccess {Number} count count of playlists found
+ * @apiSuccess (200) {Number} count count of playlists found
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -679,7 +679,7 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists/749117323001/videos
  *
- * @apiSuccess {Number} count count of videos
+ * @apiSuccess (200) {Number} count count of videos
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -757,17 +757,17 @@
  *        "search": "tags:\"sealife\",\"water\""
  *    }
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time created
- * @apiSuccess {String} description playlist description
- * @apiSuccess {Boolean} favorite whether playlist is in favorites list
- * @apiSuccess {String} id the playlist id
- * @apiSuccess {String} name the playlist name
- * @apiSuccess {String} reference_id the playlist reference id
- * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess {String} updated_at date/time last modified
- * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time created
+ * @apiSuccess (200) {String} description playlist description
+ * @apiSuccess (200) {Boolean} favorite whether playlist is in favorites list
+ * @apiSuccess (200) {String} id the playlist id
+ * @apiSuccess (200) {String} name the playlist name
+ * @apiSuccess (200) {String} reference_id the playlist reference id
+ * @apiSuccess (200) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (200) {String} updated_at date/time last modified
+ * @apiSuccess (200) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (200) {String} search search string to retrieve the videos (smart playlists only)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -875,17 +875,17 @@
  *        ]
  *    }
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time created
- * @apiSuccess {String} description playlist description
- * @apiSuccess {Boolean} favorite whether playlist is in favorites list
- * @apiSuccess {String} id the playlist id
- * @apiSuccess {String} name the playlist name
- * @apiSuccess {String} reference_id the playlist reference id
- * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess {String} updated_at date/time last modified
- * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time created
+ * @apiSuccess (200) {String} description playlist description
+ * @apiSuccess (200) {Boolean} favorite whether playlist is in favorites list
+ * @apiSuccess (200) {String} id the playlist id
+ * @apiSuccess (200) {String} name the playlist name
+ * @apiSuccess (200) {String} reference_id the playlist reference id
+ * @apiSuccess (200) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (200) {String} updated_at date/time last modified
+ * @apiSuccess (200) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (200) {String} search search string to retrieve the videos (smart playlists only)
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK

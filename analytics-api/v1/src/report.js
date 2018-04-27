@@ -27,34 +27,34 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data?accounts=20318290001&dimensions=video&fields=video_view,video_impression&limit=1
  *
- * @apiSuccess {String} account the Video Cloud account id
- * @apiSuccess {String} account.name the name of the Video Cloud account id
- * @apiSuccess {Integer} item_count the total number of items matching the request
- * @apiSuccess {Object[]} items array of analytics objects for the videos returned
- * @apiSuccess {Integer} items.ad_mode_begin number of times a player entered ad mode
- * @apiSuccess {Integer} items.ad_mode_complete number of times a player completed ad mode
- * @apiSuccess {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and (for player reports) the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
- * @apiSuccess {Number} items.engagement_score the calculated engagement score for the video
- * @apiSuccess {Number} items.play_rate video views divided by video impressions
- * @apiSuccess {Integer} items.play_request number of play requests received for a video
- * @apiSuccess {String} items.video the video id
- * @apiSuccess {String} items.duration the duration of the video in seconds
- * @apiSuccess {Number} items.video_engagement_1 number of views at the 1% point of the video duration
- * @apiSuccess {Number} items.video_engagement_25 number of views at the 25% point of the video duration
- * @apiSuccess {Number} items.video_engagement_50 number of views at the 50% point of the video duration
- * @apiSuccess {Number} items.video_engagement_75 number of views at the 75% point of the video duration
- * @apiSuccess {Number} items.video_engagement_100 number of views at the 100% point of the video duration
- * @apiSuccess {Integer} items.video_impression number of times the video was loaded in a player
- * @apiSuccess {String} items.name name of the video
- * @apiSuccess {Number} items.video_percent_viewed average percentage of the video played when viewed
- * @apiSuccess {Number} items.video_seconds_viewed total seconds of the video viewed
- * @apiSuccess {Integer} items.video_view number of times some portion of the video was viewed
- * @apiSuccess {Object} summary of all videos matching this request that had views
- * @apiSuccess {Number} video_engagement_1 number of views at the 1% point of the video duration for all videos
- * @apiSuccess {Number} video_engagement_25 number of views at the 25% point of the video duration for all videos
- * @apiSuccess {Number} video_engagement_50 number of views at the 50% point of the video duration for all videos
- * @apiSuccess {Number} video_engagement_75 number of views at the 75% point of the video duration for all videos
- * @apiSuccess {Number} video_engagement_100 number of views at the 100% point of the video duration for all videos
+ * @apiSuccess (200) {String} account the Video Cloud account id
+ * @apiSuccess (200) {String} account.name the name of the Video Cloud account id
+ * @apiSuccess (200) {Integer} item_count the total number of items matching the request
+ * @apiSuccess (200) {Object[]} items array of analytics objects for the videos returned
+ * @apiSuccess (200) {Integer} items.ad_mode_begin number of times a player entered ad mode
+ * @apiSuccess (200) {Integer} items.ad_mode_complete number of times a player completed ad mode
+ * @apiSuccess (200) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and (for player reports) the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
+ * @apiSuccess (200) {Number} items.engagement_score the calculated engagement score for the video
+ * @apiSuccess (200) {Number} items.play_rate video views divided by video impressions
+ * @apiSuccess (200) {Integer} items.play_request number of play requests received for a video
+ * @apiSuccess (200) {String} items.video the video id
+ * @apiSuccess (200) {String} items.duration the duration of the video in seconds
+ * @apiSuccess (200) {Number} items.video_engagement_1 number of views at the 1% point of the video duration
+ * @apiSuccess (200) {Number} items.video_engagement_25 number of views at the 25% point of the video duration
+ * @apiSuccess (200) {Number} items.video_engagement_50 number of views at the 50% point of the video duration
+ * @apiSuccess (200) {Number} items.video_engagement_75 number of views at the 75% point of the video duration
+ * @apiSuccess (200) {Number} items.video_engagement_100 number of views at the 100% point of the video duration
+ * @apiSuccess (200) {Integer} items.video_impression number of times the video was loaded in a player
+ * @apiSuccess (200) {String} items.name name of the video
+ * @apiSuccess (200) {Number} items.video_percent_viewed average percentage of the video played when viewed
+ * @apiSuccess (200) {Number} items.video_seconds_viewed total seconds of the video viewed
+ * @apiSuccess (200) {Integer} items.video_view number of times some portion of the video was viewed
+ * @apiSuccess (200) {Object} summary of all videos matching this request that had views
+ * @apiSuccess (200) {Number} video_engagement_1 number of views at the 1% point of the video duration for all videos
+ * @apiSuccess (200) {Number} video_engagement_25 number of views at the 25% point of the video duration for all videos
+ * @apiSuccess (200) {Number} video_engagement_50 number of views at the 50% point of the video duration for all videos
+ * @apiSuccess (200) {Number} video_engagement_75 number of views at the 75% point of the video duration for all videos
+ * @apiSuccess (200) {Number} video_engagement_100 number of views at the 100% point of the video duration for all videos
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK

@@ -28,8 +28,8 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data/status?accounts=20318290001&dimensions=account,device_os,country
  *
- * @apiSuccess {String} reconciled_from the earliest date that you can use for `from` and get reconciled data
- * @apiSuccess {String} reconciled_to the latest date that you can use for `to` and get reconciled data (realtime data may be available for later dates)
+ * @apiSuccess (200) {String} reconciled_from the earliest date that you can use for `from` and get reconciled data
+ * @apiSuccess (200) {String} reconciled_to the latest date that you can use for `to` and get reconciled data (realtime data may be available for later dates)
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK

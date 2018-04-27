@@ -23,14 +23,14 @@
  * @apiParamExample {http} Get Status of Video Examples:
  *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/video/1234
  *
- * @apiSuccess {Number} video_id The video id
- * @apiSuccess {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
- * @apiSuccess {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
- * @apiSuccess {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
- * @apiSuccess {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
- * @apiSuccess {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
- * @apiSuccess {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
- * @apiSuccess {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
+ * @apiSuccess (200) {Number} video_id The video id
+ * @apiSuccess (200) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
+ * @apiSuccess (200) {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
+ * @apiSuccess (200) {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
+ * @apiSuccess (200) {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
+ * @apiSuccess (200) {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
+ * @apiSuccess (200) {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
+ * @apiSuccess (200) {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
@@ -86,14 +86,14 @@
  * @apiParamExample {http} Get Status of Videos for Destination Example:
  *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/destination/123-abc
  *
- * @apiSuccess {Number} video_id The video id
- * @apiSuccess {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
- * @apiSuccess {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
- * @apiSuccess {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
- * @apiSuccess {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
- * @apiSuccess {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
- * @apiSuccess {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
- * @apiSuccess {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
+ * @apiSuccess (200) {Number} video_id The video id
+ * @apiSuccess (200) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
+ * @apiSuccess (200) {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
+ * @apiSuccess (200) {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
+ * @apiSuccess (200) {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
+ * @apiSuccess (200) {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
+ * @apiSuccess (200) {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
+ * @apiSuccess (200) {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK
@@ -146,14 +146,14 @@
  * @apiParamExample {http} Get Status of Video Examples:
  *    https://social.api.brightcove.com/v1/accounts/57838016001/social-status/destination/123-abc/video/1234
  *
- * @apiSuccess {Number} video_id The video id
- * @apiSuccess {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
- * @apiSuccess {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
- * @apiSuccess {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
- * @apiSuccess {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
- * @apiSuccess {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
- * @apiSuccess {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
- * @apiSuccess {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
+ * @apiSuccess (200) {Number} video_id The video id
+ * @apiSuccess (200) {DateTime} time The time at which Social last attempted to modify the video on the remote social platform
+ * @apiSuccess (200) {String} remote_url The URL of the video on the remote social platform.  May not exist.  (e.g.,  If the last action was `DELETE`, or an `UPLOAD` with result `ERROR`.)
+ * @apiSuccess (200) {String} destination_id The Social ID of the destination to which this remote_url points (UUID)
+ * @apiSuccess (200) {String} action The last action Social attempted to take for this video with respect to this destination (`UPLOAD`, `UPDATE`, or `DELETE`)
+ * @apiSuccess (200) {String} result The result of the last action Social attempted (`SUCCESS` or 'ERROR')
+ * @apiSuccess (200) {String} error The error that Social encountered while trying to complete this action.  Will only exist if the 'result' was `ERROR`
+ * @apiSuccess (200) {String} distribution_method Whether this video was distributed automatically via an Autosync, or manually via Single Video Publish (svp)
  *
  * @apiSuccessExample {json} Success Response:
  * HTTP/1.1 200 OK

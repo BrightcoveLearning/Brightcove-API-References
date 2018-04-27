@@ -22,9 +22,9 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001
  *
- * @apiSuccess {Object} timeline detailed engagement data
- * @apiSuccess {String} timeline.type type of data in the `values` array
- * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess (200) {Object} timeline detailed engagement data
+ * @apiSuccess (200) {String} timeline.type type of data in the `values` array
+ * @apiSuccess (200) {Number[]} timeline.values array of views in each 100th part of video duration
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -81,9 +81,9 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001/players/1039236672001
  *
- * @apiSuccess {Object} timeline detailed engagement data
- * @apiSuccess {String} timeline.type type of data in the `values` array
- * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess (200) {Object} timeline detailed engagement data
+ * @apiSuccess (200) {String} timeline.type type of data in the `values` array
+ * @apiSuccess (200) {Number[]} timeline.values array of views in each 100th part of video duration
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK
@@ -139,10 +139,10 @@
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001/videos/2660272749001
  *
- * @apiSuccess {Object} timeline detailed engagement data
- * @apiSuccess {String} timeline.type type of data in the `values` array
- * @apiSuccess {Number[]} timeline.values array of views in each 100th part of video duration
- * @apiSuccess {String} video_duration the video duration in seconds
+ * @apiSuccess (200) {Object} timeline detailed engagement data
+ * @apiSuccess (200) {String} timeline.type type of data in the `values` array
+ * @apiSuccess (200) {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess (200) {String} video_duration the video duration in seconds
  *
  * @apiSuccessExample {Object} Success Response:
  *    HTTP/1.1 200 OK

@@ -88,7 +88,7 @@
  *        ]
  *    }
  *
- * @apiSuccess {String} id job id for the request
+ * @apiSuccess (200) {String} id job id for the request
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -213,13 +213,13 @@
   * @apiParamExample {json} Get S3 URLS Example:
   *    https://ingest.api.brightcove.com/v1/accounts/57838016001/videos/67909129001/upload-urls/greatblueheron.mp4
   *
-  * @apiSuccess {String} bucket  the S3 bucket name
-  * @apiSuccess {String} object_key the access key used for authenticating the upload request (used for multipart uploads)
-  * @apiSuccess {String} access_key_id the access key used for authenticating the upload request (used for multipart uploads)
-  * @apiSuccess {String} secret_access_key the secret access key used for authenticating the upload request (used for multipart uploads)
-  * @apiSuccess {String} session_token the secret access key used for authenticating the upload request (used for multipart uploads)
-  * @apiSuccess {String} SignedUrl this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload
-  * @apiSuccess {String} ApiRequestUrl this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets
+  * @apiSuccess (200) {String} bucket  the S3 bucket name
+  * @apiSuccess (200) {String} object_key the access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (200) {String} access_key_id the access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (200) {String} secret_access_key the secret access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (200) {String} session_token the secret access key used for authenticating the upload request (used for multipart uploads)
+  * @apiSuccess (200) {String} SignedUrl this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload
+  * @apiSuccess (200) {String} ApiRequestUrl this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets
   *
   * @apiSuccessExample {json} Success Response:
   *    HTTP/1.1 200 OK

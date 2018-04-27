@@ -109,10 +109,10 @@
   *        ]
   *    }
   *
-  * @apiSuccess {Object} vod_jobs The clip response object
-  * @apiSuccess {String} vod_jobs.jvod_id The clip job id
-  * @apiSuccess {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess {String} live_job_id The clip label (from the input)
+  * @apiSuccess (200) {Object} vod_jobs The clip response object
+  * @apiSuccess (200) {String} vod_jobs.jvod_id The clip job id
+  * @apiSuccess (200) {String} vod_jobs.label The clip label (from the input)
+  * @apiSuccess (200) {String} live_job_id The clip label (from the input)
   *
   * @apiSuccessExample {json} Creation of a clip
   *    {

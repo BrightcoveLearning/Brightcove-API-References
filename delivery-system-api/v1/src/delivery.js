@@ -13,10 +13,10 @@
  *
  * @apiParam {String} accountId Video Cloud account ID.
  *
- * @apiSuccess {String[]} items array of items
- * @apiSuccess {String} items.name repo name
- * @apiSuccess {String} items.public_url URL for the public player
- * @apiSuccess {String} items.repo_url URL for the repository
+ * @apiSuccess (200) {String[]} items array of items
+ * @apiSuccess (200) {String} items.name repo name
+ * @apiSuccess (200) {String} items.public_url URL for the public player
+ * @apiSuccess (200) {String} items.repo_url URL for the repository
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200
@@ -54,9 +54,9 @@
  * @apiParam {String} accountId Video Cloud account ID.
  * @apiParam {String} repoName The name of the repo for which to list details.
  *
- * @apiSuccess {String} name repo name
- * @apiSuccess {String} public_url URL for the public player
- * @apiSuccess {String} repo_url URL for the repository
+ * @apiSuccess (200) {String} name repo name
+ * @apiSuccess (200) {String} public_url URL for the public player
+ * @apiSuccess (200) {String} repo_url URL for the repository
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200
@@ -84,9 +84,9 @@
  * @apiParam {String} accountId Video Cloud account ID.
  * @apiParam {String} repoName The name of the repo for which to list details.
  *
- * @apiSuccess {String} name repo name
- * @apiSuccess {String} public_url URL for the public player
- * @apiSuccess {String} repo_url URL for the repository
+ * @apiSuccess (200) {String} name repo name
+ * @apiSuccess (200) {String} public_url URL for the public player
+ * @apiSuccess (200) {String} repo_url URL for the repository
  *
  * @apiSuccessExample {json} Success Response 200:
  *     HTTP/1.1 200
@@ -123,7 +123,7 @@
  * @apiParam {String} accountId Video Cloud account ID.
  * @apiParam {String} repoName The name of the repo for which to list details.
  *
- * @apiSuccess {String} name repo name
+ * @apiSuccess (200) {String} name repo name
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200
@@ -167,8 +167,8 @@
   *      --request PUT \
   *      https://repos.api.brightcove.com/v1/accounts/:accountId/repos/:repoName/files/:destinationFilename
   *
-  * @apiSuccess {String} name Destination filename
-  * @apiSuccess {String} public_url URL to use for referencing the file (contrasted to the repo URL)
+  * @apiSuccess (200) {String} name Destination filename
+  * @apiSuccess (200) {String} public_url URL to use for referencing the file (contrasted to the repo URL)
   *
   * @apiSuccessExample {json} Success Response:
   *     HTTP/1.1 200

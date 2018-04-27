@@ -26,68 +26,68 @@
  *     // or
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/ref:my_reference_id
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time created
- * @apiSuccess {String} description playlist description
- * @apiSuccess {String} id the playlist id
- * @apiSuccess {String} name the playlist name
- * @apiSuccess {String} reference_id the playlist reference id
- * @apiSuccess {String} type the playlist type: EXPLICIT or smart playlist type
- * @apiSuccess {String} updated_at date/time last modified
- * @apiSuccess {String[]} video_ids array of video ids (EXPLICIT playlists only)
- * @apiSuccess {String} search search string to retrieve the videos (smart playlists only)
- * @apiSuccess {Object[]} videos array of video maps
- * @apiSuccess {String} videos.id video id
- * @apiSuccess {String} videos.name video title
- * @apiSuccess {String} videos.created_at when the video was created
- * @apiSuccess {Object} videos.custom_fields={} map of fieldname-value pairs
- * @apiSuccess {Object} videos.cue_points array of cue point maps
- * @apiSuccess {String} videos.cue_points.name cue point name
- * @apiSuccess {String} videos.cue_points.type=AD cue point type
- * @apiSuccess {Number} videos.cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess {String} videos.cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess {Boolean} videos.cue_points.force-stop=false whether video is force-stopped at the cue point
- * @apiSuccess {String} videos.description video short description
- * @apiSuccess {Number} videos.duration video duration in milliseconds
- * @apiSuccess {String} videos.economics whether video is AD_SUPPORTED
- * @apiSuccess {Object[]} videos.poster_sources array of poster source maps (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.poster_sources.src URL for a poster source image (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.poster URL for the default poster source image
- * @apiSuccess {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
- * @apiSuccess {Object[]} videos.thumbnail_sources array of thumbnail source maps (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.thumbnail_sources.src URL for a thumbnail source image (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.thumbnail URL for the default thumbnail source image
- * @apiSuccess {Object} videos.link map of scheduling properties
- * @apiSuccess {String} videos.link.text text for the link
- * @apiSuccess {String} videos.link.url URL for the link
- * @apiSuccess {String} videos.long_description video long description
- * @apiSuccess {Boolean} videos.offline_enabled whether video is enabled for offline viewing
- * @apiSuccess {String} videos.reference_id video reference-id (must be unique within the account)
- * @apiSuccess {String[]} videos.tags array of tags
- * @apiSuccess {Object[]} videos.sources array of video sources (renditions)
- * @apiSuccess {Number} videos.sources.avg_bitrate average bitrate
- * @apiSuccess {Number} videos.sources.width frame width in pixels
- * @apiSuccess {Number} videos.sources.height frame height in pixels
- * @apiSuccess {Number} videos.sources.size size in bytes
- * @apiSuccess {Number} videos.sources.duration duration in milliseconds
- * @apiSuccess {String} videos.sources.asset_id the asset id for the source
- * @apiSuccess {String} videos.sources.stream_name the stream name for the source
- * @apiSuccess {String} videos.sources.codec the video codec
- * @apiSuccess {String} videos.sources.container the video container
- * @apiSuccess {String} videos.sources.app_name the address for rtmp streams
- * @apiSuccess {String} videos.sources.type the type (for HLS streams)
- * @apiSuccess {Object} videos.text_tracks array of text track maps
- * @apiSuccess {String} videos.text_tracks.src URL for the .vtt file
- * @apiSuccess {Object[]} videos.text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
- * @apiSuccess {String} videos.text_tracks.kind kind of text track
- * @apiSuccess {String} videos.text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess {String} videos.text_tracks.mime_type mime_type for the track
- * @apiSuccess {String} videos.text_tracks.label label for the track
- * @apiSuccess {Boolean} videos.text_tracks.default whether this is the default track
- * @apiSuccess {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
- * @apiSuccess {String} videos.updated_at when the video was last modified
- * @apiSuccess {Object} videos.ad_keys=null map of key/value pairs for ad requests
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time created
+ * @apiSuccess (200) {String} description playlist description
+ * @apiSuccess (200) {String} id the playlist id
+ * @apiSuccess (200) {String} name the playlist name
+ * @apiSuccess (200) {String} reference_id the playlist reference id
+ * @apiSuccess (200) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (200) {String} updated_at date/time last modified
+ * @apiSuccess (200) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (200) {String} search search string to retrieve the videos (smart playlists only)
+ * @apiSuccess (200) {Object[]} videos array of video maps
+ * @apiSuccess (200) {String} videos.id video id
+ * @apiSuccess (200) {String} videos.name video title
+ * @apiSuccess (200) {String} videos.created_at when the video was created
+ * @apiSuccess (200) {Object} videos.custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (200) {Object} videos.cue_points array of cue point maps
+ * @apiSuccess (200) {String} videos.cue_points.name cue point name
+ * @apiSuccess (200) {String} videos.cue_points.type=AD cue point type
+ * @apiSuccess (200) {Number} videos.cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} videos.cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} videos.cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (200) {String} videos.description video short description
+ * @apiSuccess (200) {Number} videos.duration video duration in milliseconds
+ * @apiSuccess (200) {String} videos.economics whether video is AD_SUPPORTED
+ * @apiSuccess (200) {Object[]} videos.poster_sources array of poster source maps (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.poster_sources.src URL for a poster source image (note that in many cases there will be one source with a `src` value identical to the `poster` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.poster URL for the default poster source image
+ * @apiSuccess (200) {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
+ * @apiSuccess (200) {Object[]} videos.thumbnail_sources array of thumbnail source maps (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.thumbnail_sources.src URL for a thumbnail source image (note that in many cases there will be one source with a `src` value identical to the `thumbnail` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.thumbnail URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} videos.link map of scheduling properties
+ * @apiSuccess (200) {String} videos.link.text text for the link
+ * @apiSuccess (200) {String} videos.link.url URL for the link
+ * @apiSuccess (200) {String} videos.long_description video long description
+ * @apiSuccess (200) {Boolean} videos.offline_enabled whether video is enabled for offline viewing
+ * @apiSuccess (200) {String} videos.reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {String[]} videos.tags array of tags
+ * @apiSuccess (200) {Object[]} videos.sources array of video sources (renditions)
+ * @apiSuccess (200) {Number} videos.sources.avg_bitrate average bitrate
+ * @apiSuccess (200) {Number} videos.sources.width frame width in pixels
+ * @apiSuccess (200) {Number} videos.sources.height frame height in pixels
+ * @apiSuccess (200) {Number} videos.sources.size size in bytes
+ * @apiSuccess (200) {Number} videos.sources.duration duration in milliseconds
+ * @apiSuccess (200) {String} videos.sources.asset_id the asset id for the source
+ * @apiSuccess (200) {String} videos.sources.stream_name the stream name for the source
+ * @apiSuccess (200) {String} videos.sources.codec the video codec
+ * @apiSuccess (200) {String} videos.sources.container the video container
+ * @apiSuccess (200) {String} videos.sources.app_name the address for rtmp streams
+ * @apiSuccess (200) {String} videos.sources.type the type (for HLS streams)
+ * @apiSuccess (200) {Object} videos.text_tracks array of text track maps
+ * @apiSuccess (200) {String} videos.text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {Object[]} videos.text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value identical to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (200) {String} videos.text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} videos.text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} videos.text_tracks.mime_type mime_type for the track
+ * @apiSuccess (200) {String} videos.text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} videos.text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
+ * @apiSuccess (200) {String} videos.updated_at when the video was last modified
+ * @apiSuccess (200) {Object} videos.ad_keys=null map of key/value pairs for ad requests
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK

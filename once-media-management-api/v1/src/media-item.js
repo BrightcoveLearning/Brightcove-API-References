@@ -22,18 +22,18 @@
  * @apiParamExample {String} Get Media Items Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems
  *
- * @apiSuccess {Object[]} results Array of mediaItems in result set
- * @apiSuccess {String} results.id Each mediaItem’s Id
- * @apiSuccess {String} results.catalogId Each mediaItem’s parent catalog Id
- * @apiSuccess {String} results.domainId Each mediaItem’s parent domain Id
- * @apiSuccess {Boolean} results.isAd (Internal use only)
- * @apiSuccess {String} results.foreignKey Each mediaItem’s foreignKey
- * @apiSuccess {String} results.title Each mediaItem’s title
- * @apiSuccess {Number} results.draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {Number} results.publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {String} URL to GET the previous mediaItem result set (if necessary)
- * @apiSuccess {String} URL to GET the next mediaItem result set (if necessary
- * @apiSuccess {Number} The total number of mediaItems in the catalog
+ * @apiSuccess (200) {Object[]} results Array of mediaItems in result set
+ * @apiSuccess (200) {String} results.id Each mediaItem’s Id
+ * @apiSuccess (200) {String} results.catalogId Each mediaItem’s parent catalog Id
+ * @apiSuccess (200) {String} results.domainId Each mediaItem’s parent domain Id
+ * @apiSuccess (200) {Boolean} results.isAd (Internal use only)
+ * @apiSuccess (200) {String} results.foreignKey Each mediaItem’s foreignKey
+ * @apiSuccess (200) {String} results.title Each mediaItem’s title
+ * @apiSuccess (200) {Number} results.draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {Number} results.publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {String} URL to GET the previous mediaItem result set (if necessary)
+ * @apiSuccess (200) {String} URL to GET the next mediaItem result set (if necessary
+ * @apiSuccess (200) {Number} The total number of mediaItems in the catalog
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -92,31 +92,31 @@
  * @apiParamExample {String} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess {String} id The mediaItem Id
- * @apiSuccess {String} catalogId The mediaItem’s parent catalog Id
- * @apiSuccess {String} domainId The mediaItem’s parent domain Id
- * @apiSuccess {String} foreignKey The mediaItem’s foreignKey
- * @apiSuccess {String} title The mediaItem’s title
- * @apiSuccess {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {Number} publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {Number} description Text description of the video
- * @apiSuccess {String[]} keywords Array of video keywords
- * @apiSuccess {Object[]} Array of cue point objects
- * @apiSuccess {String} cuePoints.unit Unit of time (currently only seconds are supported)
+ * @apiSuccess (200) {String} id The mediaItem Id
+ * @apiSuccess (200) {String} catalogId The mediaItem’s parent catalog Id
+ * @apiSuccess (200) {String} domainId The mediaItem’s parent domain Id
+ * @apiSuccess (200) {String} foreignKey The mediaItem’s foreignKey
+ * @apiSuccess (200) {String} title The mediaItem’s title
+ * @apiSuccess (200) {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {Number} publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {Number} description Text description of the video
+ * @apiSuccess (200) {String[]} keywords Array of video keywords
+ * @apiSuccess (200) {Object[]} Array of cue point objects
+ * @apiSuccess (200) {String} cuePoints.unit Unit of time (currently only seconds are supported)
 
- * @apiSuccess {String} cuePoints.valueIn Time of cue point
- * @apiSuccess {Object[]} publicationRules Array of Publication Rules
- * @apiSuccess {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
- * @apiSuccess {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
- * @apiSuccess {Object[]} publicationRules.clientFilters Array of client-based filters
- * @apiSuccess {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
- * @apiSuccess {String} clientFilters.value A string against which requests will be filtered,
- * @apiSuccess {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
- * @apiSuccess {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted,
- * @apiSuccess {Object[]} countryRules Array of country-based filters,
- * @apiSuccess {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
- * @apiSuccess {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
- * @apiSuccess {Object[]} metadata Array of Extended Metadata key-value pairs
+ * @apiSuccess (200) {String} cuePoints.valueIn Time of cue point
+ * @apiSuccess (200) {Object[]} publicationRules Array of Publication Rules
+ * @apiSuccess (200) {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiSuccess (200) {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
+ * @apiSuccess (200) {Object[]} publicationRules.clientFilters Array of client-based filters
+ * @apiSuccess (200) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+ * @apiSuccess (200) {String} clientFilters.value A string against which requests will be filtered,
+ * @apiSuccess (200) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+ * @apiSuccess (200) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted,
+ * @apiSuccess (200) {Object[]} countryRules Array of country-based filters,
+ * @apiSuccess (200) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+ * @apiSuccess (200) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (200) {Object[]} metadata Array of Extended Metadata key-value pairs
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -265,31 +265,31 @@
  *        }
  *    }
  *
- * @apiSuccess {String} id The mediaItem Id
- * @apiSuccess {String} catalogId The mediaItem’s parent catalog Id
- * @apiSuccess {String} domainId The mediaItem’s parent domain Id
- * @apiSuccess {String} foreignKey The mediaItem’s foreignKey
- * @apiSuccess {String} title The mediaItem’s title
- * @apiSuccess {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {Number} publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
- * @apiSuccess {Number} description Text description of the video
- * @apiSuccess {String[]} keywords Array of video keywords
- * @apiSuccess {Object[]} Array of cue point objects
- * @apiSuccess {String} cuePoints.unit Unit of time (currently only seconds are supported)
+ * @apiSuccess (200) {String} id The mediaItem Id
+ * @apiSuccess (200) {String} catalogId The mediaItem’s parent catalog Id
+ * @apiSuccess (200) {String} domainId The mediaItem’s parent domain Id
+ * @apiSuccess (200) {String} foreignKey The mediaItem’s foreignKey
+ * @apiSuccess (200) {String} title The mediaItem’s title
+ * @apiSuccess (200) {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {Number} publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (200) {Number} description Text description of the video
+ * @apiSuccess (200) {String[]} keywords Array of video keywords
+ * @apiSuccess (200) {Object[]} Array of cue point objects
+ * @apiSuccess (200) {String} cuePoints.unit Unit of time (currently only seconds are supported)
 
- * @apiSuccess {String} cuePoints.valueIn Time of cue point
- * @apiSuccess {Object[]} publicationRules Array of Publication Rules
- * @apiSuccess {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
- * @apiSuccess {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
- * @apiSuccess {Object[]} publicationRules.clientFilters Array of client-based filters
- * @apiSuccess {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
- * @apiSuccess {String} clientFilters.value A string against which requests will be filtered,
- * @apiSuccess {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
- * @apiSuccess {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted,
- * @apiSuccess {Object[]} countryRules Array of country-based filters,
- * @apiSuccess {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
- * @apiSuccess {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
- * @apiSuccess {Object[]} metadata Array of Extended Metadata key-value pairs
+ * @apiSuccess (200) {String} cuePoints.valueIn Time of cue point
+ * @apiSuccess (200) {Object[]} publicationRules Array of Publication Rules
+ * @apiSuccess (200) {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiSuccess (200) {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
+ * @apiSuccess (200) {Object[]} publicationRules.clientFilters Array of client-based filters
+ * @apiSuccess (200) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+ * @apiSuccess (200) {String} clientFilters.value A string against which requests will be filtered,
+ * @apiSuccess (200) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+ * @apiSuccess (200) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted,
+ * @apiSuccess (200) {Object[]} countryRules Array of country-based filters,
+ * @apiSuccess (200) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+ * @apiSuccess (200) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (200) {Object[]} metadata Array of Extended Metadata key-value pairs
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -369,7 +369,7 @@
  * @apiParamExample {String} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess {String} delete Value will contain The mediaItem Id the message "scheduled for deletion"
+ * @apiSuccess (200) {String} delete Value will contain The mediaItem Id the message "scheduled for deletion"
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -403,7 +403,7 @@
   * @apiParamExample {String} Get Media Item Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
   *
-  * @apiSuccess {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the mediaItem
+  * @apiSuccess (200) {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the mediaItem
   *
   * @apiSuccessExample {json} Success Response:
   *    HTTP/1.1 200 OK
@@ -438,20 +438,20 @@
    * @apiParamExample {String} Get Media Item Publication Rule Example:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
    *
-   * @apiSuccess {Number} startDate Epoch time (in seconds) when publication rule becomes effective
-   * @apiSuccess {Number} endDate Epoch time (in seconds) when publication rule expires
-   * @apiSuccess {Object[]} clientFilters Array of client-based filters
-   * @apiSuccess {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
-   * @apiSuccess {String} clientFilters.value A string against which requests will be filtered
-   * @apiSuccess {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
-   * @apiSuccess {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
-   * @apiSuccess {Object[]} countryRules Array of country-based filters
-   * @apiSuccess {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
-   * @apiSuccess {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-   * @apiSuccess {String} id The publicationRule Id
-   * @apiSuccess {String} domain The publication rule’s parent domain Id
-   * @apiSuccess {String} catalog The publication rule’s parent catalog Id
-   * @apiSuccess {String} mediaItem The publication rule’s parent mediaItem Id
+   * @apiSuccess (200) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+   * @apiSuccess (200) {Number} endDate Epoch time (in seconds) when publication rule expires
+   * @apiSuccess (200) {Object[]} clientFilters Array of client-based filters
+   * @apiSuccess (200) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
+   * @apiSuccess (200) {String} clientFilters.value A string against which requests will be filtered
+   * @apiSuccess (200) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+   * @apiSuccess (200) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (200) {Object[]} countryRules Array of country-based filters
+   * @apiSuccess (200) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+   * @apiSuccess (200) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (200) {String} id The publicationRule Id
+   * @apiSuccess (200) {String} domain The publication rule’s parent domain Id
+   * @apiSuccess (200) {String} catalog The publication rule’s parent catalog Id
+   * @apiSuccess (200) {String} mediaItem The publication rule’s parent mediaItem Id
    *
    * @apiSuccessExample {json} Success Response:
    *    HTTP/1.1 200 OK
@@ -532,20 +532,20 @@
     *        ]
     *    }
     *
-    * @apiSuccess {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
-    * @apiSuccess {Number} endDate Epoch time (in seconds) when publication rule expires,
-    * @apiSuccess {Object[]} clientFilters Array of client-based filters,
-    * @apiSuccess {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
-    * @apiSuccess {String} clientFilters.value A string against which requests will be filtered,
-    * @apiSuccess {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
-    * @apiSuccess {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess {Object[]} countryRules Array of country-based filters,
-    * @apiSuccess {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
-    * @apiSuccess {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess {String} id The publicationRule Id
-    * @apiSuccess {String} domain The publication rule’s parent domain Id
-    * @apiSuccess {String} catalog The publication rule’s parent catalog Id
-    * @apiSuccess {String} mediaItem The publication rule’s parent mediaItem Id
+    * @apiSuccess (200) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (200) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (200) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (200) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (200) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (200) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (200) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (200) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (200) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (200) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (200) {String} id The publicationRule Id
+    * @apiSuccess (200) {String} domain The publication rule’s parent domain Id
+    * @apiSuccess (200) {String} catalog The publication rule’s parent catalog Id
+    * @apiSuccess (200) {String} mediaItem The publication rule’s parent mediaItem Id
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -627,20 +627,20 @@
     *        ]
     *    }
     *
-    * @apiSuccess {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
-    * @apiSuccess {Number} endDate Epoch time (in seconds) when publication rule expires,
-    * @apiSuccess {Object[]} clientFilters Array of client-based filters,
-    * @apiSuccess {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
-    * @apiSuccess {String} clientFilters.value A string against which requests will be filtered,
-    * @apiSuccess {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
-    * @apiSuccess {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess {Object[]} countryRules Array of country-based filters,
-    * @apiSuccess {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
-    * @apiSuccess {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess {String} id The publicationRule Id
-    * @apiSuccess {String} domain The publication rule’s parent domain Id
-    * @apiSuccess {String} catalog The publication rule’s parent catalog Id
-    * @apiSuccess {String} mediaItem The publication rule’s parent mediaItem Id
+    * @apiSuccess (200) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (200) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (200) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (200) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (200) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (200) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (200) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (200) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (200) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (200) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (200) {String} id The publicationRule Id
+    * @apiSuccess (200) {String} domain The publication rule’s parent domain Id
+    * @apiSuccess (200) {String} catalog The publication rule’s parent catalog Id
+    * @apiSuccess (200) {String} mediaItem The publication rule’s parent mediaItem Id
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -695,7 +695,7 @@
      * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
      *
-     * @apiSuccess {String} id the publication rule id
+     * @apiSuccess (200) {String} id the publication rule id
      *
      * @apiSuccessExample {json} Success Response:
      *    HTTP/1.1 200 OK
@@ -730,7 +730,7 @@
      * @apiParamExample {String} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a
      *
-     * @apiSuccess {String} id The mediaItem Id that was deleted
+     * @apiSuccess (200) {String} id The mediaItem Id that was deleted
      *
      * @apiSuccessExample {json} Success Response:
      *    HTTP/1.1 200 OK
@@ -764,10 +764,10 @@
       * @apiParamExample {String} Get Media Item Timed Text Example:
       *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText
       *
-      * @apiSuccess {Object[]} results Array of timedText objects
-      * @apiSuccess {String} results.id Each timedText Id
-      * @apiSuccess {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
-      * @apiSuccess {String} results.timedTextType The type  of the timed text: `CAPTION` or `SUBTITLE`
+      * @apiSuccess (200) {Object[]} results Array of timedText objects
+      * @apiSuccess (200) {String} results.id Each timedText Id
+      * @apiSuccess (200) {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+      * @apiSuccess (200) {String} results.timedTextType The type  of the timed text: `CAPTION` or `SUBTITLE`
       *
       * @apiSuccessExample {json} Success Response:
       *    HTTP/1.1 200 OK
@@ -833,7 +833,7 @@
       *        }
       *    }
       *
-      * @apiSuccess {String} requestId The job id for the request
+      * @apiSuccess (200) {String} requestId The job id for the request
       *
       * @apiSuccessExample {json} Success Response:
       *    HTTP/1.1 200 OK
@@ -888,7 +888,7 @@
       *        }
       *    }
       *
-      * @apiSuccess {String} requestId The job id for the request
+      * @apiSuccess (200) {String} requestId The job id for the request
       *
       * @apiSuccessExample {json} Success Response:
       *    HTTP/1.1 200 OK

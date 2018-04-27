@@ -23,12 +23,12 @@
  * @apiParamExample {String} Get Folders Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time folder created
- * @apiSuccess {String} updated_at date/time folder last modified
- * @apiSuccess {String} id system id for the folder
- * @apiSuccess {String} name folder name
- * @apiSuccess {String} video_count number of videos in the folder
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time folder created
+ * @apiSuccess (200) {String} updated_at date/time folder last modified
+ * @apiSuccess (200) {String} id system id for the folder
+ * @apiSuccess (200) {String} name folder name
+ * @apiSuccess (200) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -107,12 +107,12 @@
  * @apiParamExample {String} Get Folder Information Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time folder created
- * @apiSuccess {String} updated_at date/time folder last modified
- * @apiSuccess {String} id system id for the folder
- * @apiSuccess {String} name folder name
- * @apiSuccess {String} video_count number of videos in the folder
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time folder created
+ * @apiSuccess (200) {String} updated_at date/time folder last modified
+ * @apiSuccess (200) {String} id system id for the folder
+ * @apiSuccess (200) {String} name folder name
+ * @apiSuccess (200) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -175,60 +175,60 @@
  * @apiParamExample {String} Get Videos in Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos
  *
- * @apiSuccess {String} id video id
- * @apiSuccess {String} name video title
- * @apiSuccess {Boolean} complete whether processing is complete
- * @apiSuccess {String} created_at when the video was created
- * @apiSuccess {Object} custom_fields={} map of fieldname-value pairs
- * @apiSuccess {Object} cue_points array of cue point maps
- * @apiSuccess {String} cue_points.name cue point name
- * @apiSuccess {String} cue_points.type=AD cue point type
- * @apiSuccess {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
- * @apiSuccess {String} description video short description
- * @apiSuccess {Number} duration video duration in milliseconds
- * @apiSuccess {String} digital_master_id asset id of the digital master
- * @apiSuccess {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
- * @apiSuccess {Object} geo map of geo-filtering properties
- * @apiSuccess {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
- * @apiSuccess {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
- * @apiSuccess {Object} images map of image maps
- * @apiSuccess {Object} images.poster map of poster properties
- * @apiSuccess {String} images.poster.asset_id asset id for the poster
- * @apiSuccess {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess {String} images.poster.src URL for the default poster source image
- * @apiSuccess {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess {Object} link map of scheduling properties
- * @apiSuccess {String} link.text text for the link
- * @apiSuccess {String} link.url URL for the link
- * @apiSuccess {String} long_description video long description
- * @apiSuccess {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess {Object} schedule map of scheduling properties
- * @apiSuccess {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess {String} state state determines whether the video is playable or not
- * @apiSuccess {Object} sharing map of the sharing properties for the video
- * @apiSuccess {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess {String[]} tags array of tags
- * @apiSuccess {Object} text_tracks array of text track maps
- * @apiSuccess {String} text_tracks.src URL for the .vtt file
- * @apiSuccess {String} text_tracks.kind kind of text track
- * @apiSuccess {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess {String} text_tracks.label label for the track
- * @apiSuccess {Boolean} text_tracks.default whether this is the default track
- * @apiSuccess {String} updated_at when the video was last modified
+ * @apiSuccess (200) {String} id video id
+ * @apiSuccess (200) {String} name video title
+ * @apiSuccess (200) {Boolean} complete whether processing is complete
+ * @apiSuccess (200) {String} created_at when the video was created
+ * @apiSuccess (200) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (200) {Object} cue_points array of cue point maps
+ * @apiSuccess (200) {String} cue_points.name cue point name
+ * @apiSuccess (200) {String} cue_points.type=AD cue point type
+ * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (200) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (200) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (200) {String} description video short description
+ * @apiSuccess (200) {Number} duration video duration in milliseconds
+ * @apiSuccess (200) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (200) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (200) {Object} geo map of geo-filtering properties
+ * @apiSuccess (200) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for "country codes")
+ * @apiSuccess (200) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (200) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
+ * @apiSuccess (200) {Object} images map of image maps
+ * @apiSuccess (200) {Object} images.poster map of poster properties
+ * @apiSuccess (200) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (200) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (200) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (200) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (200) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (200) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (200) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (200) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (200) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (200) {Object} link map of scheduling properties
+ * @apiSuccess (200) {String} link.text text for the link
+ * @apiSuccess (200) {String} link.url URL for the link
+ * @apiSuccess (200) {String} long_description video long description
+ * @apiSuccess (200) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (200) {Object} schedule map of scheduling properties
+ * @apiSuccess (200) {String} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (200) {String} state state determines whether the video is playable or not
+ * @apiSuccess (200) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (200) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (200) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (200) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (200) {Boolean} sharing.by_reference whether the video is shared by reference
+ * @apiSuccess (200) {String[]} tags array of tags
+ * @apiSuccess (200) {Object} text_tracks array of text track maps
+ * @apiSuccess (200) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (200) {String} text_tracks.kind kind of text track
+ * @apiSuccess (200) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (200) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (200) {String} text_tracks.label label for the track
+ * @apiSuccess (200) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (200) {String} updated_at when the video was last modified
   *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -395,12 +395,12 @@
  *         "name": "mammals"
  *     }
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time folder created
- * @apiSuccess {String} updated_at date/time folder last modified
- * @apiSuccess {String} id system id for the folder
- * @apiSuccess {String} name folder name
- * @apiSuccess {String} video_count number of videos in the folder
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time folder created
+ * @apiSuccess (200) {String} updated_at date/time folder last modified
+ * @apiSuccess (200) {String} id system id for the folder
+ * @apiSuccess (200) {String} name folder name
+ * @apiSuccess (200) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
@@ -464,12 +464,12 @@
  *         "name": "quadrupeds"
  *     }
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time folder created
- * @apiSuccess {String} updated_at date/time folder last modified
- * @apiSuccess {String} id system id for the folder
- * @apiSuccess {String} name folder name
- * @apiSuccess {String} video_count number of videos in the folder
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time folder created
+ * @apiSuccess (200) {String} updated_at date/time folder last modified
+ * @apiSuccess (200) {String} id system id for the folder
+ * @apiSuccess (200) {String} name folder name
+ * @apiSuccess (200) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -636,12 +636,12 @@
  * @apiParamExample {json} Update Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
- * @apiSuccess {String} account_id Video Cloud account id
- * @apiSuccess {String} created_at date/time folder created
- * @apiSuccess {String} updated_at date/time folder last modified
- * @apiSuccess {String} id system id for the folder
- * @apiSuccess {String} name folder name
- * @apiSuccess {String} video_count number of videos in the folder
+ * @apiSuccess (200) {String} account_id Video Cloud account id
+ * @apiSuccess (200) {String} created_at date/time folder created
+ * @apiSuccess (200) {String} updated_at date/time folder last modified
+ * @apiSuccess (200) {String} id system id for the folder
+ * @apiSuccess (200) {String} name folder name
+ * @apiSuccess (200) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 204 No Content
