@@ -1015,6 +1015,378 @@
 			  "account_name",
 			  "approved"
 			]
+		  },
+		  "VideoAsset": {
+			"properties": {
+			  "account_id": {
+				"type": "string",
+				"description": "the Video Cloud account id "
+			  },
+			  "id": {
+				"type": "string",
+				"description": "the asset id "
+			  },
+			  "whether": {
+				"type": "boolean",
+				"description": "this rendition contains only an audio track, no video track (a rendition for low bandwidth devices) "
+			  },
+			  "cdn_origin_id": {
+				"type": "string",
+				"description": "an internally used id (not applicable to remote assets) "
+			  },
+			  "complete": {
+				"type": "boolean",
+				"description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+			  },
+			  "controller_type": {
+				"type": "string",
+				"description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets) "
+			  },
+			  "current_filename": {
+				"type": "string",
+				"description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets) "
+			  },
+			  "drm": {
+				"type": "object",
+				"description": "DRM packaging details (not applicable to remote assets) ",
+				"$ref": "#/definitions/drm"
+			  },
+			  "encoding_rate": {
+				"type": "number",
+				"description": "average encoding rate in kbps "
+			  },
+			  "frame_height": {
+				"type": "number",
+				"description": "frame height in pixels "
+			  },
+			  "frame_width": {
+				"type": "number",
+				"description": "frame width in pixels "
+			  },
+			  "key_systems": {
+				"type": "array",
+				"description": "array of strings that denote the kind of encryption used for DRM packaged renditions ",
+				"items": {
+				  "type": "string"
+				}
+			  },
+			  "name": {
+				"type": "string",
+				"description": "asset name "
+			  },
+			  "progressive_download": {
+				"type": "boolean",
+				"description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions) "
+			  },
+			  "reference_id": {
+				"type": "string",
+				"description": "video reference id (must be unique within the account) "
+			  },
+			  "remote_url": {
+				"type": "string",
+				"description": "the url for a remote asset (not applicable to ingested assets) "
+			  },
+			  "remote_stream_name": {
+				"type": "string",
+				"description": "name for remote streams (not applicable to asset types other than rendition) "
+			  },
+			  "size": {
+				"type": "number",
+				"description": "the size of the asset in bytes (integer) "
+			  },
+			  "type": {
+				"type": "string",
+				"description": "the type of the asset "
+			  },
+			  "updated_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the video was last modified "
+			  },
+			  "uploaded_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the asset was added to the video in Video Cloud "
+			  },
+			  "video_codec": {
+				"type": "string",
+				"description": "not applicable to remote assets "
+			  },
+			  "video_container": {
+				"type": "string",
+				"description": "not applicable to remote assets "
+			  },
+			  "video_duration": {
+				"type": "number",
+				"description": "duration in milliseconds "
+			  }
+			},
+			"required": [
+			  "account_id",
+			  "id",
+			  "whether",
+			  "cdn_origin_id",
+			  "complete",
+			  "controller_type",
+			  "current_filename",
+			  "drm",
+			  "encoding_rate",
+			  "frame_height",
+			  "frame_width",
+			  "key_systems",
+			  "name",
+			  "progressive_download",
+			  "reference_id",
+			  "remote_url",
+			  "remote_stream_name",
+			  "size",
+			  "type",
+			  "updated_at",
+			  "uploaded_at",
+			  "video_codec",
+			  "video_container",
+			  "video_duration"
+			]
+		  },
+		  "TextAsset": {
+			"properties": {
+			  "id": {
+				"type": "string",
+				"description": "the asset id "
+			  },
+			  "audio_only": {
+				"type": "boolean",
+				"description": "not applicable to ism_manifests "
+			  },
+			  "complete": {
+				"type": "boolean",
+				"description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+			  },
+			  "controller_type": {
+				"type": "string",
+				"description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets) "
+			  },
+			  "current_filename": {
+				"type": "string",
+				"description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets) "
+			  },
+			  "cdn_origin_id": {
+				"type": "string",
+				"description": "an internally used id (not applicable to remote assets) "
+			  },
+			  "name": {
+				"type": "string",
+				"description": "asset name "
+			  },
+			  "progressive_download": {
+				"type": "boolean",
+				"description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions) "
+			  },
+			  "reference_id": {
+				"type": "string",
+				"description": "video reference id (must be unique within the account) "
+			  },
+			  "remote_url": {
+				"type": "string",
+				"description": "the url for a remote asset (not applicable to ingested assets) "
+			  },
+			  "remote_stream_name": {
+				"type": "string",
+				"description": "name for remote streams (not applicable to asset types other than rendition) "
+			  },
+			  "size": {
+				"type": "number",
+				"description": "the size of the asset in bytes (integer) "
+			  },
+			  "type": {
+				"type": "string",
+				"description": "the type of the asset "
+			  },
+			  "updated_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the video was last modified "
+			  },
+			  "uploaded_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the asset was added to the video in Video Cloud "
+			  },
+			  "video_duration": {
+				"type": "number",
+				"description": "video duration in seconds (present if you included it when you created the asset) "
+			  }
+			},
+			"required": [
+			  "id",
+			  "audio_only",
+			  "complete",
+			  "controller_type",
+			  "current_filename",
+			  "cdn_origin_id",
+			  "name",
+			  "progressive_download",
+			  "reference_id",
+			  "remote_url",
+			  "remote_stream_name",
+			  "size",
+			  "type",
+			  "updated_at",
+			  "uploaded_at",
+			  "video_duration"
+			]
+		  },
+		  "ImageAsset": {
+			"properties": {
+			  "id": {
+				"type": "string",
+				"description": "the asset id "
+			  },
+			  "audio_only": {
+				"type": "boolean",
+				"description": "not applicable to posters "
+			  },
+			  "complete": {
+				"type": "boolean",
+				"description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+			  },
+			  "controller_type": {
+				"type": "string",
+				"description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets) "
+			  },
+			  "current_filename": {
+				"type": "string",
+				"description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets) "
+			  },
+			  "cdn_origin_id": {
+				"type": "string",
+				"description": "an internally used id (not applicable to remote assets) "
+			  },
+			  "name": {
+				"type": "string",
+				"description": "asset name "
+			  },
+			  "progressive_download": {
+				"type": "boolean",
+				"description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions) "
+			  },
+			  "reference_id": {
+				"type": "string",
+				"description": "video reference id (must be unique within the account) "
+			  },
+			  "remote_url": {
+				"type": "string",
+				"description": "the url for a remote asset (not applicable to ingested assets) "
+			  },
+			  "remote_stream_name": {
+				"type": "string",
+				"description": "name for remote streams (not applicable to asset types other than rendition) "
+			  },
+			  "size": {
+				"type": "number",
+				"description": "the size of the asset in bytes (integer) "
+			  },
+			  "type": {
+				"type": "string",
+				"description": "the type of the asset "
+			  },
+			  "updated_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the video was last modified "
+			  },
+			  "uploaded_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the asset was added to the video in Video Cloud "
+			  }
+			},
+			"required": [
+			  "id",
+			  "audio_only",
+			  "complete",
+			  "controller_type",
+			  "current_filename",
+			  "cdn_origin_id",
+			  "name",
+			  "progressive_download",
+			  "reference_id",
+			  "remote_url",
+			  "remote_stream_name",
+			  "size",
+			  "type",
+			  "updated_at",
+			  "uploaded_at"
+			]
+		  },
+		  "DynamicRendition": {
+			"properties": {
+			  "rendition_id": {
+				"type": "string",
+				"description": "the rendition id "
+			  },
+			  "media_type": {
+				"type": "boolean",
+				"description": "media type for the rendition (audio or video) "
+			  },
+			  "drm": {
+				"type": "object",
+				"description": "DRM packaging details (not applicable to remote assets) ",
+				"$ref": "#/definitions/drm"
+			  },
+			  "encoding_rate": {
+				"type": "number",
+				"description": "average encoding rate in kbps "
+			  },
+			  "frame_height": {
+				"type": "number",
+				"description": "frame height in pixels "
+			  },
+			  "frame_width": {
+				"type": "number",
+				"description": "frame width in pixels "
+			  },
+			  "size": {
+				"type": "number",
+				"description": "the size of the asset in bytes (integer) "
+			  },
+			  "updated_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the video was last modified "
+			  },
+			  "uploaded_at": {
+				"type": "string",
+				"format": "datetime",
+                "description": "when the asset was added to the video in Video Cloud "
+			  },
+			  "duration": {
+				"type": "number",
+				"description": "duration in milliseconds "
+			  },
+			  "audio_configuration": {
+				"type": "string",
+				"description": "The audio configuration of the audio track "
+			  },
+			  "variant": {
+				"type": "string",
+				"description": "The variant of the HLS profile (baseline, main, or high) "
+			  }
+			},
+			"required": [
+			  "rendition_id",
+			  "media_type",
+			  "drm",
+			  "encoding_rate",
+			  "frame_height",
+			  "frame_width",
+			  "size",
+			  "updated_at",
+			  "uploaded_at",
+			  "duration",
+			  "audio_configuration",
+			  "variant"
+			]
 		  }
 	},
 	"host": "cms.api.brightcove.com",
@@ -1319,7 +1691,7 @@
 					{
 						"description": "Create a new folder for the account ",
 						"in": "body",
-						"name": "Create_FolderBody",
+						"name": "Folder",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Folder"
@@ -1547,7 +1919,7 @@
 					{
 						"description": "Update the folder name ",
 						"in": "body",
-						"name": "Update_Folder_NameBody",
+						"name": "Folder",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Folder"
@@ -1906,7 +2278,7 @@
 					{
 						"description": "Creates a new playlist ",
 						"in": "body",
-						"name": "Create_PlaylistBody",
+						"name": "Playlist",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Playlist"
@@ -2118,7 +2490,7 @@
 					{
 						"description": "Updates a playlist for the account ",
 						"in": "body",
-						"name": "Update_PlaylistBody",
+						"name": "Playlist",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Playlist"
@@ -2333,7 +2705,7 @@
 					{
 						"description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events. ",
 						"in": "body",
-						"name": "Create_SubscriptionBody",
+						"name": "Subscription",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Subscription"
@@ -2681,7 +3053,7 @@
 					{
 						"description": "Create a new video object in the account. Note: this does not ingest a video file - use the Dynamic Ingest API for ingestion ",
 						"in": "body",
-						"name": "Create_VideoBody",
+						"name": "Video",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Video"
@@ -2890,7 +3262,7 @@
 					{
 						"description": "Update a video&#39;s metadata note that this API does not ingest any media files - use the Dynamic Ingest API for ingestion. Also note that replacing WebVTT text tracks is a two-step operation - see Add WebVTT Captions for details. ",
 						"in": "body",
-						"name": "Update_VideoBody",
+						"name": "Video",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/Video"
@@ -3210,7 +3582,7 @@
 					{
 						"description": "Updates audio track metadata for a video Dynamic Delivery only ",
 						"in": "body",
-						"name": "Update_Video_Audio_TrackBody",
+						"name": "AudioTrack",
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/AudioTrack"
@@ -3884,7 +4256,7 @@
 				},
 				{
 				  "in": "body",
-				  "name": "Share_VideoBody",
+				  "name": "ShareVideoRequest",
 				  "description": "Shares a video to one or more affiliates - this is an Master account operation - if the video has already been shared to an affiliate, this operation will re-share it and overwrite any affiliate metadata changes ",
 				  "required": true,
 				  "schema": {
@@ -4120,7 +4492,7 @@
 				},
 				{
 				  "in": "body",
-				  "name": "Add_AffiliateBody",
+				  "name": "AddAffiliate",
 				  "description": "Adds an affiliate to a channel - this is a Master account operation ",
 				  "required": true,
 				  "schema": {
@@ -4804,7 +5176,3769 @@
 				}
 			  }
 			}
-			}
+			},
+			"/accounts/{account_id}/videos/{video_id}/assets": {
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Assets",
+				  "description": "Gets assets for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/VideoAsset"
+						}						
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Assets"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/dynamic_renditions": {
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Dynamic Renditions",
+				  "description": "Gets a list of dynamic renditions for a Dynamic Delivery video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/DynamicRendition"
+						}						
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Dynamic_Renditions"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/caption": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add Caption",
+				  "description": "Adds a caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_CaptionBody",
+					  "description": "Adds a caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_Caption"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Caption List",
+				  "description": "Gets the caption file for a given video (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/TextAsset"
+						}						
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Caption_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/dash_manifests": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add DASH Manifest",
+				  "description": "Adds a location for a remote DASH manifest Notes: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_DASH_ManifestBody",
+					  "description": "Adds a location for a remote DASH manifest Notes: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_DASH_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get DASH Manifest List",
+				  "description": "Gets the dash_manifests for a given video. Notes: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/TextAsset"
+						}						
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_DASH_Manifest_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/hds_manifest": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add HDS Manifest",
+				  "description": "Adds the location of an hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_HDS_ManifestBody",
+					  "description": "Adds the location of an hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_HDS_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get HDS Manifest List",
+				  "description": "Gets the hds_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/TextAsset"
+						}						
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_HDS_Manifest_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/hls_manifest": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add HLS Manifest",
+				  "description": "Adds the location of an hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_HLS_ManifestBody",
+					  "description": "Adds the location of an hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_HLS_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get HLS Manifest List",
+				  "description": "Gets the hls_manifest for a given video. Notes: 1) you can use /videos/ref:reference_id instead of /videos/video_id 2) this method only returns a remote asset HTL manifest, not manifests for ingested videos ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/TextAsset"
+						}
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_HLS_Manifest_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/ismc_manifest": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add ISMC Manifest",
+				  "description": "Adds the location of an ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_ISMC_ManifestBody",
+					  "description": "Adds the location of an ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_ISMC_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get ISMC Manifest List",
+				  "description": "Gets the ismc_manifest files for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"type": "array",
+						"items": {
+					  "$ref": "#/definitions/TextAsset"
+						}
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_ISMC_Manifest_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/ism_manifest": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add ISM Manifest",
+				  "description": "Adds the location of an ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_ISM_ManifestBody",
+					  "description": "Adds the location of an ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_ISM_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get ISM Manifest List",
+				  "description": "Gets the ism_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						  "type": "array",
+						  "items": {
+						"$ref": "#/definitions/TextAsset"
+						  }
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_ISM_Manifest_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/poster": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add Poster",
+				  "description": "Adds a poster file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_PosterBody",
+					  "description": "Adds a poster file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_Poster"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Poster List",
+				  "description": "Gets the poster file for a given video. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						  "type": "array",
+						  "items": {
+						"$ref": "#/definitions/ImageAsset"
+						  }
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Poster_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/renditions": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add Rendition",
+				  "description": "Add a remote rendition to the given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_RenditionBody",
+					  "description": "Add a remote rendition to the given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/VideoAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/VideoAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable \nMIXED_REMOTE_NOT_ALLOWED: Remote renditions may not be added to ingested videos "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_Rendition"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Rendition List",
+				  "description": "Gets a list of renditions for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						  "type": "array",
+						  "items": {
+						"$ref": "#/definitions/VideoAsset"
+						  }
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Rendition_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/thumbnail": {
+				"post": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Add Thumbnail",
+				  "description": "Adds a thumbnail file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "in": "body",
+					  "name": "Add_ThumbnailBody",
+					  "description": "Adds a thumbnail file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"201": {
+					  "description": "201",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Add_Thumbnail"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Thumbnail List",
+				  "description": "Gets the thumbnail for a given video. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						  "type": "array",
+						  "items": {
+						"$ref": "#/definitions/ImageAsset"
+						  }
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Thumbnail_List"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/caption/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete Caption",
+				  "description": "Deletes a caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_Caption"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Caption",
+				  "description": "Gets a caption file for a given video (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Caption"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update Caption",
+				  "description": "Updates the location of a remote caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_CaptionBody",
+					  "description": "Updates the location of a remote caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_Caption"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/dash_manifests/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete DASH Manifest",
+				  "description": "Deletes an dash_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_DASH_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get DASH Manifest",
+				  "description": "Gets a dash_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_DASH_Manifest"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update DASH Manifest",
+				  "description": "Updates the location of a remote dash_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_DASH_ManifestBody",
+					  "description": "Updates the location of a remote dash_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_DASH_Manifest"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/hds_manifest/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete HDS Manifest",
+				  "description": "Deletes an hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_HDS_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get HDS Manifest",
+				  "description": "Gets the hds_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_HDS_Manifest"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update HDS Manifest",
+				  "description": "Updates the location of a remote hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_HDS_ManifestBody",
+					  "description": "Updates the location of a remote hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_HDS_Manifest"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/hls_manifest/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete HLS Manifest",
+				  "description": "Deletes an hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_HLS_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get HLS Manifest",
+				  "description": "Gets an hls_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_HLS_Manifest"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update HLS Manifest",
+				  "description": "Updates the location of a remote hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_HLS_ManifestBody",
+					  "description": "Updates the location of a remote hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_HLS_Manifest"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/ismc_manifest/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete ISMC Manifest",
+				  "description": "Deletes an ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_ISMC_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get ISMC Manifest",
+				  "description": "Gets the ismc_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_ISMC_Manifest"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update ISMC Manifest",
+				  "description": "Updates the location of a remote ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_ISMC_ManifestBody",
+					  "description": "Updates the location of a remote ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_ISMC_Manifest"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/ism_manifest/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete ISM Manifest",
+				  "description": "Deletes an ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_ISM_Manifest"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get ISM Manifest",
+				  "description": "Gets an ism_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_ISM_Manifest"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update ISM Manifest",
+				  "description": "Updates the location of a remote ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_ISM_ManifestBody",
+					  "description": "Updates the location of a remote ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/TextAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_ISM_Manifest"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/poster/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete Poster",
+				  "description": "Deletes a poster file for a remote asset. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_Poster"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Poster",
+				  "description": "Gets a poster file for a given video. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Poster"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update Poster",
+				  "description": "Updates the location of a remote poster file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_PosterBody",
+					  "description": "Updates the location of a remote poster file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_Poster"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/renditions/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete Rendition",
+				  "description": "Deletes a rendition for the given video. Note: this operation is only for remote renditions for remote asset videos &mdash; do not use it for renditions created by Video Cloud for ingested videos ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_Rendition"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Rendition",
+				  "description": "Gets a specified rendition for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/VideoAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Rendition"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update Rendition",
+				  "description": "Update the location for a remote rendition. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_RenditionBody",
+					  "description": "Update the location for a remote rendition. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/VideoAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/VideoAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable \nMIXED_REMOTE_NOT_ALLOWED: Remote renditions may not be added to ingested videos "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_Rendition"
+				}
+			  },
+			  "/accounts/{account_id}/videos/{video_id}/assets/thumbnail/{asset_id}": {
+				"delete": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Delete Thumbnail",
+				  "description": "Deletes a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					  "201": {},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Delete_Thumbnail"
+				},
+				"get": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Get Thumbnail",
+				  "description": "Gets a thumbnail file for a given video. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "the asset id "
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Get_Thumbnail"
+				},
+				"patch": {
+				  "tags": [
+					"assetGroup"
+				  ],
+				  "summary": "Update Thumbnail",
+				  "description": "Updates the location of a remote thumbnail file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+				  "consumes": [
+					"application/json"
+				  ],
+				  "produces": [
+					"application/json"
+				  ],
+				  "parameters": [
+					{
+					  "name": "account_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud account ID. "
+					},
+					{
+					  "name": "video_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "Video Cloud video ID. You can also use ref:reference_id "
+					},
+					{
+					  "name": "asset_id",
+					  "in": "path",
+					  "required": true,
+					  "type": "string",
+					  "description": "id for the asset "
+					},
+					{
+					  "in": "body",
+					  "name": "Update_ThumbnailBody",
+					  "description": "Updates the location of a remote thumbnail file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+					  "required": true,
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					{
+					  "name": "Content-Type",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Content-Type: application/json "
+					},
+					{
+					  "name": "Authorization",
+					  "in": "header",
+					  "required": true,
+					  "type": "string",
+					  "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+					}
+				  ],
+				  "responses": {
+					"200": {
+					  "description": "200",
+					  "schema": {
+						"$ref": "#/definitions/ImageAsset"
+					  }
+					},
+					"401": {
+					  "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+					},
+					"403": {
+					  "description": "NOT_AVAILABLE: The resource you are requesting is temporarily unavailable "
+					},
+					"404": {
+					  "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+					},
+					"405": {
+					  "description": "METHOD_NOT_ALLOWED: The HTTP method specified is not allowed for this endpoint "
+					},
+					"409": {
+					  "description": "REFERENCE_ID_IN_USE: The specified reference id is already in use "
+					},
+					"422": {
+					  "description": "VALIDATION_ERROR: &quot;remote_url"
+					},
+					"429": {
+					  "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
+					},
+					"500": {
+					  "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+					}
+				  },
+				  "operationId": "Update_Thumbnail"
+				}
+			  }
 	},
 	"schemes": [
 		"https"
