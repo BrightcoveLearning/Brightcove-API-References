@@ -62,8 +62,8 @@
  *                "video_name": "Horses Heading to the Track",
  *                "watched": 99
  *            }, ...
- *        }
- *    ]
+ *        ]
+ *    }
  *
  *
  * @apiError (Error 4xx) {json} BAD_REQUEST_ERROR 400: Query parameters are invalid
