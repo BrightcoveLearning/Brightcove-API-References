@@ -32,7 +32,7 @@
  * @apiParam (Request Body Fields) {Number{1-86400}} [live_dvr_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds. **Note: for SSAI jobs, the limit is `7200`.
  * @apiParam (Request Body Fields) {Number{1-600}} [live_dvr_ads_window_duration=600] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
  * @apiParam (Request Body Fields) {Number{1-5}} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
- * @apiParam (Request Body Fields) {Mixed[]} [notifications] Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiParam (Request Body Fields) {Array} [notifications] Array of notification destination objects or strings - notifications defined here are for **job-level events**.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiParam (Request Body Fields) {String} [notifications.event] Event to send the notification for.
  * @apiParam (Request Body Fields) {String} notifications.url Destination for the notification.
  * @apiParam (Request Body Fields) {String} [notifications.credentials] Credentials The name of the credentials configured in your account for this address
@@ -72,7 +72,7 @@
  * @apiParam (Request Body Fields) {String="aac"} [outputs.audio_codec] The output audio codec to use. Note: Only aac is supported.
  * @apiParam (Request Body Fields) {Number{16-1024}} outputs.audio_bitrate An output bitrate setting for the audio track, in Kbps
  * @apiParam (Request Body Fields) {Number{2-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
- * @apiParam (Request Body Fields) {mixed[]} [outputs.notifications] Array of notification destination objects or strings - notifications defined here are for events specific to the output.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiParam (Request Body Fields) {mixed[]} [outputs.notifications] Array of notification destination objects or strings - notifications defined here are **for events specific to the output**.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiParam (Request Body Fields) {String} outputs.notifications.url Destination for the notification.
  * @apiParam (Request Body Fields) {String} [outputs.notifications.event] Event to send the notification for.
  * @apiParam (Request Body Fields) {String} [outputs.notifications.credentials] Credentials The name of the credentials configured in your account for this address
