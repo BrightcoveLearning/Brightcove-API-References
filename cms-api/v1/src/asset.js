@@ -1605,7 +1605,7 @@
    * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
-   * @apiDescription Adds a poster file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](https://support.brightcove.com/node/17948). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+   * @apiDescription Adds a poster file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](https://support.brightcove.com/node/17948). **Notes**: 1) you can use `/videos/ref:reference_id` instead of `/videos/video_id`; 2) only one poster can be added to a video.
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
