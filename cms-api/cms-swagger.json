@@ -720,7 +720,6 @@
       },
       "required": [
         "app_name",
-        "asset_id",
         "codec",
         "container",
         "duration",
@@ -731,7 +730,6 @@
         "src",
         "steam_name",
         "type",
-        "uploaded_at",
         "width"
       ]
     },
@@ -804,7 +802,6 @@
         }
       },
       "required": [
-        "asset_id",
         "sources",
         "src"
       ]
@@ -882,13 +879,6 @@
           "readOnly": true
         }
       },
-      "required": [
-        "by_external_acct",
-        "by_id",
-        "source_id",
-        "to_external_acct",
-        "by_reference"
-      ]
     },
     "text_track": {
       "properties": {
@@ -968,10 +958,7 @@
       "required": [
         "video_id",
         "affiliate_id",
-        "affiliate_video_id",
-        "statue",
-        "shared_at",
-        "updated_at"
+        "affiliate_video_id"
       ]
     },
     "AddAffiliate": {
@@ -1191,11 +1178,7 @@
         }
       },
       "required": [
-        "account_id",
-        "id",
         "whether",
-        "cdn_origin_id",
-        "complete",
         "controller_type",
         "current_filename",
         "drm",
@@ -1210,8 +1193,6 @@
         "remote_stream_name",
         "size",
         "type",
-        "updated_at",
-        "uploaded_at",
         "video_codec",
         "video_container",
         "video_duration"
@@ -1292,12 +1273,9 @@
         }
       },
       "required": [
-        "id",
         "audio_only",
-        "complete",
         "controller_type",
         "current_filename",
-        "cdn_origin_id",
         "name",
         "progressive_download",
         "reference_id",
@@ -1305,8 +1283,6 @@
         "remote_stream_name",
         "size",
         "type",
-        "updated_at",
-        "uploaded_at",
         "video_duration"
       ]
     },
@@ -1381,21 +1357,16 @@
         }
       },
       "required": [
-        "id",
         "audio_only",
-        "complete",
         "controller_type",
         "current_filename",
-        "cdn_origin_id",
         "name",
         "progressive_download",
         "reference_id",
         "remote_url",
         "remote_stream_name",
         "size",
-        "type",
-        "updated_at",
-        "uploaded_at"
+        "type"
       ]
     },
     "DynamicRendition": {
@@ -2881,8 +2852,8 @@
         ],
         "responses": {
           "204": {
-			  "description": "Item was deleted"
-		  },
+        "description": "Item was deleted"
+      },
           "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
@@ -3545,10 +3516,10 @@
           "application/json"
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "404": {
@@ -3752,10 +3723,10 @@
           "application/json"
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -4087,10 +4058,10 @@
           "application/json"
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "404": {
@@ -4518,10 +4489,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -4674,10 +4645,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -6809,10 +6780,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7054,10 +7025,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7299,10 +7270,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7544,10 +7515,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -7789,10 +7760,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8034,10 +8005,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8279,10 +8250,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8524,10 +8495,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
@@ -8769,10 +8740,10 @@
           }
         ],
         "responses": {
-			"204": {
-				"description": "Item was deleted"
-			},
-			"401": {
+      "204": {
+        "description": "Item was deleted"
+      },
+      "401": {
             "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
           },
           "403": {
