@@ -878,7 +878,7 @@
           "type": "boolean",
           "readOnly": true
         }
-      },
+      }
     },
     "text_track": {
       "properties": {
