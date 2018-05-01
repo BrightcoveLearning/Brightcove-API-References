@@ -267,7 +267,8 @@
       "properties": {
         "account_id": {
           "description": "the Video Cloud account id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "error_code": {
           "description": "the error code if the job failed ",
