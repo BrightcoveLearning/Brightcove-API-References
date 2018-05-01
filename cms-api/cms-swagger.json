@@ -16,7 +16,8 @@
         },
         "id": {
           "description": "ID for the audio track formed as language_variant ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "language": {
           "description": "language code for the audio track ",
@@ -32,7 +33,8 @@
       "properties": {
         "account_id": {
           "description": "Video Cloud account id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "audio_only": {
           "description": "whether this assest has an audio track only ",
@@ -40,11 +42,13 @@
         },
         "cdn_origin_id": {
           "description": "id on the origin CDN if any ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "complete": {
           "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "controller_type": {
           "description": "video controller type ",
@@ -52,7 +56,8 @@
         },
         "current_filename": {
           "description": "the file name ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "drm": {
           "$ref": "#/definitions/Drm",
@@ -83,7 +88,8 @@
         },
         "id": {
           "description": "the video id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "name": {
           "description": "the video title ",
@@ -91,7 +97,8 @@
         },
         "preview_thumbnail_asset_id": {
           "description": "thumbnail asset id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "progressive_download": {
           "description": "whether available via progressive download ",
@@ -111,7 +118,8 @@
         },
         "sharded_directory": {
           "description": "",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "size": {
           "description": "in bytes ",
@@ -124,16 +132,19 @@
         "updated_at": {
           "description": "date/time last modified ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "uploaded_at": {
           "description": "date/time added ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "version": {
           "description": "",
-          "type": "number"
+          "type": "number",
+          "readOnly": true
         },
         "video_codec": {
           "description": "the video codec ",
@@ -152,16 +163,20 @@
     "Drm": {
       "properties": {
         "metadata_cdn_origin_id": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "metadata_sharded_directory": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "packager_version": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "state": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -169,16 +184,19 @@
       "properties": {
         "account_id": {
           "description": "Video Cloud account id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "created_at": {
           "description": "date/time folder created ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "id": {
           "description": "system id for the folder ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "name": {
           "description": "folder name ",
@@ -187,11 +205,13 @@
         "updated_at": {
           "description": "date/time folder last modified ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "video_count": {
           "description": "number of videos in the folder ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -204,20 +224,23 @@
           "type": "string"
         },
         "cdn_origin_id": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "filename": {
           "type": "string"
         },
         "sharded_directory": {
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
     "Hls": {
       "properties": {
         "encrypted": {
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "segments": {
           "items": {
