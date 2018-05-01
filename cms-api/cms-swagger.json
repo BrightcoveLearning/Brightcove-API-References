@@ -272,15 +272,18 @@
         },
         "error_code": {
           "description": "the error code if the job failed ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "error_message": {
           "description": "the error message if the job failed ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "id": {
           "description": "the ingest job id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "priority": {
           "description": "priority of the job (normal or low) ",
@@ -288,21 +291,25 @@
         },
         "started_at": {
           "description": "when processing started ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "state": {
           "description": "the current state of the ingest job ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "submitted_at": {
           "description": "when the job was submitted ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "updated_at": {
           "description": "when the status was last updated ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "video_id": {
           "description": "the video id ",
@@ -314,12 +321,14 @@
       "properties": {
         "account_id": {
           "description": "Video Cloud account id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "created_at": {
           "description": "date/time created ",
           "format": "date-time",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "description": {
           "description": "playlist description ",
@@ -331,7 +340,8 @@
         },
         "id": {
           "description": "the playlist id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "name": {
           "description": "the playlist name ",
@@ -352,7 +362,8 @@
         "updated_at": {
           "description": "date/time last modified ",
           "format": "date-time",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "video_ids": {
           "description": "array of video ids (EXPLICIT playlists only) ",
@@ -392,7 +403,8 @@
         },
         "id": {
           "description": "system id for the subscription ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "service_account": {
           "description": "the Video Cloud account id ",
@@ -412,12 +424,14 @@
         },
         "complete": {
           "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "created_at": {
           "description": "when the video was created ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "cue_points": {
           "description": "array of cue points ",
@@ -443,7 +457,8 @@
         },
         "digital_master_id": {
           "description": "asset id of the digital master ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "drm_disabled": {
           "description": "if true, the video is not DRM-packaged ",
@@ -468,11 +483,13 @@
         },
         "has_digital_master": {
           "description": "whether video has an archived master than can be used for retranscoding ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "id": {
           "description": "video id ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "images": {
           "$ref": "#/definitions/VideoImages",
@@ -498,7 +515,8 @@
         },
         "original_filename": {
           "description": "the original file name for the uploaded video ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "projection": {
           "description": "used for 360 videos ",
@@ -507,7 +525,8 @@
         "published_at": {
           "description": "start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "reference_id": {
           "description": "video reference-id (must be unique within the account) ",
@@ -544,7 +563,8 @@
         "updated_at": {
           "description": "when the video was last modified ",
           "format": "datetime",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         }
       }
     },
@@ -589,7 +609,8 @@
         },
         "id": {
           "description": "data name for the field (used to access it in searches, etc.) ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "required": {
           "description": "whether field must have a value before video can be active ",
@@ -609,7 +630,8 @@
         },
         "id": {
           "description": "data name for the field (used to access it in searches, etc.) ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "required": {
           "description": "whether field must have a value before video can be active ",
@@ -643,7 +665,8 @@
         },
         "asset_id": {
           "description": "system id for the rendition ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "codec": {
           "description": "the video codec for the rendition ",
@@ -687,7 +710,8 @@
         },
         "uploaded_at": {
           "description": "date/time when the video was uploaded ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "width": {
           "description": "frame width in pixels ",
@@ -764,7 +788,8 @@
       "properties": {
         "asset_id": {
           "description": "asset id for the image ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "sources": {
           "description": "array of image source maps ",
@@ -833,23 +858,28 @@
       "properties": {
         "by_external_acct": {
           "description": "whether the video was shared from another account ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "by_id": {
           "description": "id of the account that shared the video; note that this field is populated only for the shared copy, not for the original video ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "by_reference": {
           "description": "whether the video is shared by reference ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         },
         "source_id": {
           "description": "id of the video in its original account; note that this field is populated only for the shared copy, not for the original video ",
-          "type": "string"
+          "type": "string",
+          "readOnly": true
         },
         "to_external_acct": {
           "description": "whether the video is shared to another account ",
-          "type": "boolean"
+          "type": "boolean",
+          "readOnly": true
         }
       },
       "required": [
@@ -919,17 +949,20 @@
         },
         "statue": {
           "type": "string",
-          "description": "the status of the sharing - either PROCESSING, COMPLETE, or FAILED "
+          "description": "the status of the sharing - either PROCESSING, COMPLETE, or FAILED ",
+          "readOnly": true
         },
         "shared_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the video was shared "
+          "description": "when the video was shared ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "the video was last updated in the affiliate account "
+          "description": "the video was last updated in the affiliate account ",
+          "readOnly": true
         }
       },
       "required": [
@@ -953,7 +986,8 @@
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "master account id "
+          "description": "master account id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
@@ -965,7 +999,7 @@
         },
         "enforce_geo": {
           "type": "boolean",
-          "description": "if true, and master account is enabled for geo-filtering, will allow sharing only if the affiliate account is also enabled for geo-filtering Note: this field is currently ignored, but this restriction will be enabled later "
+          "description": "if true, and master account is enabled for geo-filtering"
         },
         "account_name": {
           "type": "string",
@@ -974,12 +1008,14 @@
         "created_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the channel was created "
+          "description": "when the channel was created ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the channel was last updated "
+          "description": "when the channel was last updated ",
+          "readOnly": true
         }
       }
     },
@@ -1000,17 +1036,20 @@
         "approved_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the contract was approved "
+          "description": "when the contract was approved ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the contract was created "
+          "description": "when the contract was created ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the contract was last updated "
+          "description": "when the contract was last updated ",
+          "readOnly": true
         },
         "channel": {
           "type": "object",
@@ -1044,11 +1083,13 @@
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "the Video Cloud account id "
+          "description": "the Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "the asset id "
+          "description": "the asset id ",
+          "readOnly": true
         },
         "audio_only": {
           "type": "boolean",
@@ -1056,11 +1097,13 @@
         },
         "cdn_origin_id": {
           "type": "string",
-          "description": "an internally used id (not applicable to remote assets) "
+          "description": "an internally used id (not applicable to remote assets) ",
+          "readOnly": true
         },
         "complete": {
           "type": "boolean",
-          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) ",
+          "readOnly": true
         },
         "controller_type": {
           "type": "string",
@@ -1125,12 +1168,14 @@
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "uploaded_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the asset was added to the video in Video Cloud "
+          "description": "when the asset was added to the video in Video Cloud ",
+          "readOnly": true
         },
         "video_codec": {
           "type": "string",
@@ -1176,7 +1221,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "the asset id "
+          "description": "the asset id ",
+          "readOnly": true
         },
         "audio_only": {
           "type": "boolean",
@@ -1184,7 +1230,8 @@
         },
         "complete": {
           "type": "boolean",
-          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) ",
+          "readOnly": true
         },
         "controller_type": {
           "type": "string",
@@ -1196,7 +1243,8 @@
         },
         "cdn_origin_id": {
           "type": "string",
-          "description": "an internally used id (not applicable to remote assets) "
+          "description": "an internally used id (not applicable to remote assets) ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
@@ -1229,12 +1277,14 @@
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "uploaded_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the asset was added to the video in Video Cloud "
+          "description": "when the asset was added to the video in Video Cloud ",
+          "readOnly": true
         },
         "video_duration": {
           "type": "number",
@@ -1264,7 +1314,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "the asset id "
+          "description": "the asset id ",
+          "readOnly": true
         },
         "audio_only": {
           "type": "boolean",
@@ -1272,7 +1323,8 @@
         },
         "complete": {
           "type": "boolean",
-          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) "
+          "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied) ",
+          "readOnly": true
         },
         "controller_type": {
           "type": "string",
@@ -1284,7 +1336,8 @@
         },
         "cdn_origin_id": {
           "type": "string",
-          "description": "an internally used id (not applicable to remote assets) "
+          "description": "an internally used id (not applicable to remote assets) ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
@@ -1317,12 +1370,14 @@
         "updated_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "uploaded_at": {
           "type": "string",
           "format": "datetime",
-          "description": "when the asset was added to the video in Video Cloud "
+          "description": "when the asset was added to the video in Video Cloud ",
+          "readOnly": true
         }
       },
       "required": [
