@@ -3,7 +3,8 @@ var BCLS = ( function (window, document) {
   img = document.createElement('img'),
   aDocs = document.createElement('a'),
   aHome = document.createElement('a'),
-  txt = document.createTextNode(' | ');
+  txt = document.createTextNode(' | '),
+  frag = document.createDocumentFragment();
   img.setAttribute('src', 'https://learning-services-media.brightcove.com/doc-assets/general/images/bc-logo-ondark.png');
   img.setAttribute('alt', 'Brightcove');
   aDocs.setAttribute('href', 'https://support.brightcove.com');
@@ -11,8 +12,9 @@ var BCLS = ( function (window, document) {
   aHome.setAttribute('href', '../index.html');
   aHome.textContent = 'API References Index';
   topbar_wrapper.innerHTML = '';
-  topbar_wrapper.appendChild(img);
-  topbar_wrapper.appendChild(aHome);
-  topbar_wrapper.appendChild(txt);
-  topbar_wrapper.appendChild(aDocs);
+  frag.appendChild(img);
+  frag.appendChild(aHome);
+  frag.appendChild(txt);
+  frag.appendChild(aDocs);
+  topbar_wrapper.appendChild(frag);
 })(window, document);
