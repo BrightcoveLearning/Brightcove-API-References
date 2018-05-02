@@ -29,6 +29,9 @@
         margin:0;
         background: #fafafa;
       }
+      a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
 
@@ -72,6 +75,7 @@
         aHome.textContent = 'API References Index';
         topbar_wrapper.innerHTML = '';
         frag.appendChild(img);
+        frag.appendChild(txt);
         frag.appendChild(aHome);
         frag.appendChild(txt);
         frag.appendChild(aDocs);
