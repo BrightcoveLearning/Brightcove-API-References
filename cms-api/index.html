@@ -36,6 +36,9 @@
       .topbar-a {
         margin-left: 1em;
       }
+      .topbar-img {
+        margin-right: 1em;
+      }
     </style>
   </head>
 
@@ -72,6 +75,7 @@
         frag = document.createDocumentFragment();
         img.setAttribute('src', 'https://learning-services-media.brightcove.com/doc-assets/general/images/bc-logo-ondark-small.png');
         img.setAttribute('alt', 'Brightcove');
+        img.setAttribute('class', 'topbar-img');
         aDocs.setAttribute('href', 'https://support.brightcove.com');
         aDocs.setAttribute('class', 'topbar-a');
         aDocs.textContent = 'Brightcove Docs';
