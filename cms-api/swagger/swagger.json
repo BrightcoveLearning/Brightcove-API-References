@@ -1451,8 +1451,8 @@
         "parameters": [
           {
             "description": "Video Cloud account ID.",
-           "in":"path",
-           "name": "account_id",
+            "in": "path",
+            "name": "account_id",
             "required": true,
             "type": "string"
           },
