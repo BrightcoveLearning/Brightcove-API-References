@@ -6499,7 +6499,7 @@
           "assetGroup"
         ],
         "summary": "Get Rendition List",
-        "description": "Gets a list of renditions for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
+        "description": "Gets a list of renditions for a given video. Notes: 1) this endpoint is for renditions created using the legacy ingest profiles - for Dynamic Deliver renditions, use the `/accounts/{account_id}/videos/{video_id}/assets/dynamic_renditions` endpoint; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
         "consumes": [
           "application/json"
         ],
