@@ -1450,9 +1450,9 @@
         "operationId": "Get_Playlist_Count",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
-            "in": "path",
-            "name": "account_id",
+            "description": "Video Cloud account ID.",
+           "in":"path",
+           "name": "account_id",
             "required": true,
             "type": "string"
           },
@@ -1517,14 +1517,14 @@
         "operationId": "Get_Video_Count_in_Playlist",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud playlist ID. ",
+            "description": "Video Cloud playlist ID.",
             "in": "path",
             "name": "playlist_id",
             "required": true,
@@ -1591,7 +1591,7 @@
         "operationId": "Get_Video_Count",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -1646,7 +1646,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Video Count",
@@ -1664,7 +1664,7 @@
         "operationId": "Get_Folders",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -1711,7 +1711,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Folders",
@@ -1783,7 +1783,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Create Folder",
@@ -1859,7 +1859,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Delete Folder",
@@ -1875,14 +1875,14 @@
         "operationId": "Get_FolderInformation",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud folder ID. ",
+            "description": "Video Cloud folder ID.",
             "in": "path",
             "name": "folder_id",
             "required": true,
@@ -1932,7 +1932,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Folder Information",
@@ -2011,7 +2011,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Update Folder Name",
@@ -2029,14 +2029,14 @@
         "operationId": "Get_Videos_in_Folder",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "the folder ID. ",
+            "description": "the folder ID.",
             "in": "path",
             "name": "folder_id",
             "required": true,
@@ -2086,7 +2086,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Videos in Folder",
@@ -2162,7 +2162,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Remove Video from Folder",
@@ -2233,7 +2233,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Add Video to Folder",
@@ -2251,7 +2251,7 @@
         "operationId": "Get_Playlists",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -2314,7 +2314,7 @@
         "operationId": "Create_Playlist",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -2391,14 +2391,14 @@
         "operationId": "Delete_Playlists",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud playlist ID. ",
+            "description": "Video Cloud playlist ID.",
             "in": "path",
             "name": "playlist_id",
             "required": true,
@@ -2452,14 +2452,14 @@
         "operationId": "Get_Playlist_by_ID",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud playlist ID, or multiple playlist ids separated by commas. ",
+            "description": "Video Cloud playlist ID, or multiple playlist ids separated by commas.",
             "in": "path",
             "name": "playlist_id",
             "required": true,
@@ -2519,14 +2519,14 @@
         "operationId": "Update_Playlist",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud playlist ID. ",
+            "description": "Video Cloud playlist ID.",
             "in": "path",
             "name": "playlist_id",
             "required": true,
@@ -2603,14 +2603,14 @@
         "operationId": "Get_Videos_in_Playlist",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud playlist ID. ",
+            "description": "Video Cloud playlist ID.",
             "in": "path",
             "name": "playlist_id",
             "required": true,
@@ -2675,7 +2675,7 @@
         "operationId": "Get_Subscriptions_List",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -2725,7 +2725,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Subscriptions List",
@@ -2737,7 +2737,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events. ",
+        "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events.",
         "operationId": "Create_Subscription",
         "parameters": [
           {
@@ -2748,7 +2748,7 @@
             "type": "string"
           },
           {
-            "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events. ",
+            "description": "Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will not trigger change events.",
             "in": "body",
             "name": "Subscription",
             "required": true,
@@ -2800,7 +2800,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Create Subscription",
@@ -2818,14 +2818,14 @@
         "operationId": "Delete_Subscription",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "the subscription ID. ",
+            "description": "the subscription ID.",
             "in": "path",
             "name": "subscription_id",
             "required": true,
@@ -2869,7 +2869,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Delete Subscription",
@@ -2885,14 +2885,14 @@
         "operationId": "Get_Subscription",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "the subscription ID. ",
+            "description": "the subscription ID.",
             "in": "path",
             "name": "subscription_id",
             "required": true,
@@ -2939,7 +2939,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Subscription",
@@ -2957,7 +2957,7 @@
         "operationId": "Get_Custom_Fields",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3007,7 +3007,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Custom Fields",
@@ -3025,7 +3025,7 @@
         "operationId": "Get_Videos",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3075,7 +3075,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Get Videos",
@@ -3091,7 +3091,7 @@
         "operationId": "Create_Video",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3168,7 +3168,7 @@
         "operationId": "Delete_Video",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3229,7 +3229,7 @@
         "operationId": "Get_Video_by_ID_or_Reference_ID",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3289,25 +3289,25 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Update a video&#39;s metadata note that this API does not ingest any media files - use the Dynamic Ingest API for ingestion. Also note that replacing WebVTT text tracks is a two-step operation - see Add WebVTT Captions for details. ",
+        "description": "Update a video&#39;s metadata note that this API does not ingest any media files - use the Dynamic Ingest API for ingestion. Also note that replacing WebVTT text tracks is a two-step operation - see Add WebVTT Captions for details.",
         "operationId": "Update_Video",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID. ",
+            "description": "Video Cloud video ID.",
             "in": "path",
             "name": "video_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Update a video&#39;s metadata note that this API does not ingest any media files - use the Dynamic Ingest API for ingestion. Also note that replacing WebVTT text tracks is a two-step operation - see Add WebVTT Captions for details. ",
+            "description": "Update a video&#39;s metadata note that this API does not ingest any media files - use the Dynamic Ingest API for ingestion. Also note that replacing WebVTT text tracks is a two-step operation - see Add WebVTT Captions for details.",
             "in": "body",
             "name": "Video",
             "required": true,
@@ -3386,14 +3386,14 @@
         "operationId": "Get_Video_Audio_Tracks",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -3686,11 +3686,11 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Deletes the archived digital master for a video. Be sure to read Digital Master Delete API before using this operation to understand the implications. ",
+        "description": "Deletes the archived digital master for a video. Be sure to read Digital Master Delete API before using this operation to understand the implications.",
         "operationId": "Delete_Digital_Master",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3741,7 +3741,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "summary": "Delete Digital Master",
@@ -3757,14 +3757,14 @@
         "operationId": "Get_Digital_Master_Info",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -3823,14 +3823,14 @@
         "operationId": "Get_Video_Images",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -3885,11 +3885,11 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video). NOTE: this operation only works for videos that were ingested using Dynamic Delivery profiles. ",
+        "description": "Get the status of all ingest jobs associated with a video (including the orginal ingestion, replacing and retranscoding the video). NOTE: this operation only works for videos that were ingested using Dynamic Delivery profiles.",
         "operationId": "Get_Status_of_Ingest_Jobs",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -3955,7 +3955,7 @@
         "operationId": "Get_Status_of_Ingest_Job",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
@@ -4025,14 +4025,14 @@
         "operationId": "Remove_Video_from_all_Playlists",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -4086,14 +4086,14 @@
         "operationId": "Get_Playlists_for_Video",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -4152,14 +4152,14 @@
         "operationId": "Get_Video_Sources",
         "parameters": [
           {
-            "description": "Video Cloud account ID. ",
+            "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
             "required": true,
             "type": "string"
           },
           {
-            "description": "Video Cloud video ID (or ref:reference_id). ",
+            "description": "Video Cloud video ID (or ref:reference_id).",
             "in": "path",
             "name": "video_id",
             "required": true,
@@ -4228,14 +4228,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud video ID. "
+            "description": "Video Cloud video ID."
           },
           {
             "name": "Content-Type",
@@ -4275,7 +4275,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "List_Shares"
@@ -4298,14 +4298,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud video ID. "
+            "description": "Video Cloud video ID."
           },
           {
             "in": "body",
@@ -4357,7 +4357,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Share_Video"
@@ -4382,21 +4382,21 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud video ID. "
+            "description": "Video Cloud video ID."
           },
           {
             "name": "affiliate_account_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud affiliate account ID. "
+            "description": "Video Cloud affiliate account ID."
           },
           {
             "name": "Content-Type",
@@ -4433,7 +4433,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Share"
@@ -4456,21 +4456,21 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud video ID. "
+            "description": "Video Cloud video ID."
           },
           {
             "name": "affiliate_account_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "affiliate account id to remove the shared video from. "
+            "description": "affiliate account id to remove the shared video from."
           },
           {
             "name": "Content-Type",
@@ -4504,7 +4504,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Unshare_Video"
@@ -4529,21 +4529,21 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "channel_name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the channel - usually default. "
+            "description": "The name of the channel - usually default."
           },
           {
             "name": "affiliate_account_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The affiliate's account id. "
+            "description": "The affiliate's account id."
           },
           {
             "in": "body",
@@ -4589,7 +4589,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_Affiliate"
@@ -4612,21 +4612,21 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "channel_name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the channel - usually default. "
+            "description": "The name of the channel - usually default."
           },
           {
             "name": "affiliate_account_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The affiliate&#39;s account id. "
+            "description": "The affiliate&#39;s account id."
           },
           {
             "name": "Content-Type",
@@ -4660,7 +4660,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Remove_Affiliate"
@@ -4685,7 +4685,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "in": "body",
@@ -4731,7 +4731,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Approve_Contract"
@@ -4756,14 +4756,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "channel_name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The channel name. "
+            "description": "The channel name."
           },
           {
             "name": "Content-Type",
@@ -4800,7 +4800,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Channel_Details"
@@ -4823,14 +4823,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "channel_name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The channel name. "
+            "description": "The channel name."
           },
           {
             "in": "body",
@@ -4876,7 +4876,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_Channel"
@@ -4901,14 +4901,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "master_account_id",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID for the Master account. "
+            "description": "Video Cloud account ID for the Master account."
           },
           {
             "name": "Content-Type",
@@ -4945,7 +4945,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Contract"
@@ -4970,14 +4970,14 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "channel_name",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the channel - usually default. "
+            "description": "The name of the channel - usually default."
           },
           {
             "name": "Content-Type",
@@ -5017,7 +5017,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "List_Channel_Affiliates"
@@ -5042,7 +5042,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "Content-Type",
@@ -5082,7 +5082,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "List_Channels"
@@ -5107,7 +5107,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "Content-Type",
@@ -5147,7 +5147,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "List_Contracts"
@@ -5172,7 +5172,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5222,7 +5222,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Assets"
@@ -5247,7 +5247,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5297,7 +5297,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Dynamic_Renditions"
@@ -5322,7 +5322,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5384,7 +5384,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_Caption"
@@ -5407,7 +5407,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5457,7 +5457,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Caption_List"
@@ -5482,7 +5482,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5541,7 +5541,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_DASH_Manifest"
@@ -5564,7 +5564,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5614,7 +5614,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_DASH_Manifest_List"
@@ -5639,7 +5639,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5698,7 +5698,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_HDS_Manifest"
@@ -5721,7 +5721,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5771,7 +5771,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_HDS_Manifest_List"
@@ -5796,7 +5796,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5855,7 +5855,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_HLS_Manifest"
@@ -5878,7 +5878,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -5928,7 +5928,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_HLS_Manifest_List"
@@ -5953,7 +5953,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6012,7 +6012,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_ISMC_Manifest"
@@ -6035,7 +6035,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6085,7 +6085,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_ISMC_Manifest_List"
@@ -6110,7 +6110,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6169,7 +6169,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_ISM_Manifest"
@@ -6192,7 +6192,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6242,7 +6242,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_ISM_Manifest_List"
@@ -6267,7 +6267,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6329,7 +6329,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_Poster"
@@ -6352,7 +6352,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6402,7 +6402,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Poster_List"
@@ -6427,7 +6427,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6489,7 +6489,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_Rendition"
@@ -6512,7 +6512,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6562,7 +6562,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Rendition_List"
@@ -6587,7 +6587,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6649,7 +6649,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Add_Thumbnail"
@@ -6672,7 +6672,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6722,7 +6722,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Thumbnail_List"
@@ -6747,7 +6747,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6798,7 +6798,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_Caption"
@@ -6821,7 +6821,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6875,7 +6875,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Caption"
@@ -6898,7 +6898,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -6967,7 +6967,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_Caption"
@@ -6992,7 +6992,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7043,7 +7043,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_DASH_Manifest"
@@ -7066,7 +7066,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7120,7 +7120,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_DASH_Manifest"
@@ -7143,7 +7143,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7212,7 +7212,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_DASH_Manifest"
@@ -7237,7 +7237,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7288,7 +7288,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_HDS_Manifest"
@@ -7311,7 +7311,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7365,7 +7365,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_HDS_Manifest"
@@ -7388,7 +7388,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7457,7 +7457,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_HDS_Manifest"
@@ -7482,7 +7482,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7533,7 +7533,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_HLS_Manifest"
@@ -7556,7 +7556,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7610,7 +7610,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_HLS_Manifest"
@@ -7633,7 +7633,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7702,7 +7702,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_HLS_Manifest"
@@ -7727,7 +7727,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7778,7 +7778,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_ISMC_Manifest"
@@ -7801,7 +7801,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7855,7 +7855,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_ISMC_Manifest"
@@ -7878,7 +7878,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -7947,7 +7947,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_ISMC_Manifest"
@@ -7972,7 +7972,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8023,7 +8023,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_ISM_Manifest"
@@ -8046,7 +8046,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8100,7 +8100,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_ISM_Manifest"
@@ -8123,7 +8123,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8192,7 +8192,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_ISM_Manifest"
@@ -8217,7 +8217,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8268,7 +8268,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_Poster"
@@ -8291,7 +8291,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8345,7 +8345,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Poster"
@@ -8368,7 +8368,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8437,7 +8437,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_Poster"
@@ -8462,7 +8462,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8513,7 +8513,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_Rendition"
@@ -8536,7 +8536,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8590,7 +8590,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Rendition"
@@ -8613,7 +8613,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8682,7 +8682,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_Rendition"
@@ -8707,7 +8707,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8758,7 +8758,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Delete_Thumbnail"
@@ -8781,7 +8781,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8835,7 +8835,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Get_Thumbnail"
@@ -8858,7 +8858,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Video Cloud account ID. "
+            "description": "Video Cloud account ID."
           },
           {
             "name": "video_id",
@@ -8927,7 +8927,7 @@
             "description": "TOO_MANY_REQUESTS: You are submitting too many simultaneous requests or too many requests per second "
           },
           "500": {
-            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later. "
+            "description": "UNKNOWN: Issue in Brightcove system; try again later. \nTIMEOUT: Server likely too busy; try again later."
           }
         },
         "operationId": "Update_Thumbnail"
