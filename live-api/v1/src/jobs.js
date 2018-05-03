@@ -135,7 +135,7 @@
  *     //If not, the system will return an error in the job creation request.
  *    {
  *        "live_stream": true,
- *        "region": "my-region-list,
+ *        "region": "my-region-list",
  *        "reconnect_time": 20,
  *        "outputs": [
  *            {
@@ -337,7 +337,7 @@
  *    {
  *            "ad_insertion": true,
  *            "live_stream": true,
- *            "region": "my-region-list,
+ *            "region": "my-region-list",
  *            "reconnect_time": 180,
  *            "slate": "bbbff5ad67a94941be8cb987ba23049d",
  *            "notifications": [
@@ -1021,7 +1021,7 @@
   *        "submitted_at": "2016-11-06T20:12:46.571Z",
   *        "test": false,
   *        "updated_at": "2016-11-06T20:42:55.980Z",
-  *        "region": "my-region-list,
+  *        "region": "my-region-list",
   *        "reconnect_time": 20,
   *        "event_length": 0,
   *        "live_stream": true,
@@ -1071,7 +1071,7 @@
   *          "width": null,
   *          "total_bitrate_in_kbps": null,
   *          "duration": 1478464996.063,
-  *          "region": "my-region-list,
+  *          "region": "my-region-list",
   *          "url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
   *          "location": {
   *            "source": {
