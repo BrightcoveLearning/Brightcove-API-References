@@ -1538,7 +1538,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1605,7 +1605,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1678,7 +1678,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1750,7 +1750,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1829,7 +1829,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1896,7 +1896,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -1978,7 +1978,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2050,7 +2050,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2132,7 +2132,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2206,7 +2206,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2265,7 +2265,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2337,7 +2337,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2412,7 +2412,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2473,7 +2473,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2549,7 +2549,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2624,7 +2624,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2689,7 +2689,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2764,7 +2764,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2839,7 +2839,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2906,7 +2906,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -2971,7 +2971,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3039,7 +3039,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3189,7 +3189,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3250,7 +3250,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3323,7 +3323,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3407,7 +3407,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3504,7 +3504,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3572,7 +3572,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3645,7 +3645,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3711,7 +3711,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3778,7 +3778,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3844,7 +3844,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3910,7 +3910,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -3983,7 +3983,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -4107,7 +4107,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -4173,7 +4173,7 @@
             "type": "string"
           },
           {
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) ",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) ",
             "in": "header",
             "name": "Authorization",
             "required": true,
@@ -4249,7 +4249,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4331,7 +4331,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4410,7 +4410,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4484,7 +4484,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4566,7 +4566,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4640,7 +4640,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4708,7 +4708,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4777,7 +4777,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4853,7 +4853,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4922,7 +4922,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -4991,7 +4991,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5056,7 +5056,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5121,7 +5121,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5193,7 +5193,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5268,7 +5268,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5352,7 +5352,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5428,7 +5428,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5512,7 +5512,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5669,7 +5669,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5742,7 +5742,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5826,7 +5826,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5899,7 +5899,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -5983,7 +5983,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6056,7 +6056,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6140,7 +6140,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6213,7 +6213,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6297,7 +6297,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6373,7 +6373,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6457,7 +6457,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6533,7 +6533,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6617,7 +6617,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6693,7 +6693,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6775,7 +6775,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6849,7 +6849,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -6935,7 +6935,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7020,7 +7020,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7094,7 +7094,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7180,7 +7180,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7265,7 +7265,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7339,7 +7339,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7425,7 +7425,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7510,7 +7510,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7584,7 +7584,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7670,7 +7670,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7829,7 +7829,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -7915,7 +7915,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8000,7 +8000,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8074,7 +8074,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8160,7 +8160,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8245,7 +8245,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8319,7 +8319,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8405,7 +8405,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8490,7 +8490,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8564,7 +8564,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8650,7 +8650,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8735,7 +8735,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8809,7 +8809,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
@@ -8895,7 +8895,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
           }
         ],
         "responses": {
