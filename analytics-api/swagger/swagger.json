@@ -99,7 +99,7 @@
           {
             "name": "player_id",
             "in": "path",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": "a Video Cloud player ID "
           },
@@ -175,7 +175,7 @@
           {
             "name": "video_id",
             "in": "path",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": "a Video Cloud video ID "
           },
