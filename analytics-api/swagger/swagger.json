@@ -484,7 +484,8 @@
     "summary": {
       "properties": {
         "video_engagement_75": {
-          "type" :
+          "type" : "integer",
+          "description": "Average views at 75% point for returned items"
         }
       }
     },
@@ -492,11 +493,11 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "type of data in the values array "
+          "description": "type of data in the values array"
         },
         "values": {
           "type": "array",
-          "description": "array of views in each 100th part of video duration ",
+          "description": "array of views in each 100th part of video duration",
           "items": {
             "type": "number"
           }
@@ -511,7 +512,7 @@
       "properties": {
         "video_duration": {
           "type": "string",
-          "description": "the video duration in seconds "
+          "description": "the video duration in seconds"
         }
       },
       "required": [
@@ -522,11 +523,11 @@
       "properties": {
         "account": {
           "type": "string",
-          "description": "the Video Cloud account id "
+          "description": "the Video Cloud account id"
         },
         "item_count": {
           "type": "integer",
-          "description": "the total number of items matching the request "
+          "description": "the total number of items matching the request"
         },
         "items": {
           "type": "array",
