@@ -491,9 +491,21 @@
           "type" : "integer",
           "description": "Total ad mode complete events received for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
+        "active_media": {
+          "type" : "integer",
+          "description": "Total active videos in account(s) - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
         "bytes_delivered": {
           "type" : "integer",
           "description": "Total bytes of data delivered for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "daily_unique_viewers": {
+          "type" : "integer",
+          "description": "Total daily unique viewers for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "drm_bytes_packaged": {
+          "type" : "number",
+          "description": "Total DRM bytes packaged for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
         "engagement_score": {
           "type" : "number",
@@ -503,6 +515,10 @@
           "type" : "integer",
           "description": "Total DRM licenses serverd for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
+        "live_seconds_streamed": {
+          "type" : "number",
+          "description": "Total second of live video streamed for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
         "play_rate": {
           "type" : "number",
           "description": "Average play rate for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
@@ -510,6 +526,10 @@
         "play_request": {
           "type" : "integer",
           "description": "Total play requests for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "player_load": {
+          "type" : "integer",
+          "description": "Total player loads for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
         "video_engagement_1": {
           "type" : "number",
