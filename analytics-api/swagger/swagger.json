@@ -481,6 +481,13 @@
         "dimensions"
       ]
     },
+    "summary": {
+      "properties": {
+        "video_engagement_75": {
+          "type" :
+        }
+      }
+    },
     "timeline": {
       "properties": {
         "type": {
