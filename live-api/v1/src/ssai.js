@@ -391,7 +391,8 @@
   * @apiParam (URL Parameters) {Object} application_id The ad application id
   *
   *
-  * @apiSuccess (200) {String} TODO
+  * @apiSuccess (200) {String} application_id The ad application id
+  * @apiSuccess (200) {Boolean} deleted Confirmation of deletion
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
