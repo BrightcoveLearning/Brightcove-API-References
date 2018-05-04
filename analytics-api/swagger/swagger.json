@@ -499,6 +499,14 @@
           "type" : "number",
           "description": "Average engagement score for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
+        "play_rate": {
+          "type" : "integer",
+          "description": "Average play rate for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "play_request": {
+          "type" : "integer",
+          "description": "Total play requests for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
         "video_engagement_1": {
           "type" : "number",
           "description": "Average views at 1% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
@@ -518,6 +526,14 @@
         "video_engagement_100": {
           "type" : "number",
           "description": "Average views at 100% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_impression": {
+          "type" : "integer",
+          "description": "Total video impressions for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_view": {
+          "type" : "integer",
+          "description": "Total video views for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
       }
     },
