@@ -483,10 +483,42 @@
     },
     "summary": {
       "properties": {
-        "video_engagement_75": {
+        "ad_mode_begin": {
           "type" : "integer",
-          "description": "Average views at 75% point for returned items"
-        }
+          "description": "Total ad mode begin events received for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "ad_mode_complete": {
+          "type" : "integer",
+          "description": "Total ad mode complete events received for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "bytes_delivered": {
+          "type" : "integer",
+          "description": "Total bytes of data delivered for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "engagement_score": {
+          "type" : "number",
+          "description": "Average engagement score for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_engagement_1": {
+          "type" : "number",
+          "description": "Average views at 1% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_engagement_25": {
+          "type" : "number",
+          "description": "Average views at 25% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_engagement_50": {
+          "type" : "number",
+          "description": "Average views at 50% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_engagement_75": {
+          "type" : "number",
+          "description": "Average views at 75% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
+        "video_engagement_100": {
+          "type" : "number",
+          "description": "Average views at 100% point for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
+        },
       }
     },
     "timeline": {
