@@ -242,6 +242,37 @@
         ],
         "parameters": [
           {
+            "name": "accounts",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "One or more account ids, separated by commas"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 10
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by (prefix with `-` for descending order)",
+            "default": 0
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -304,7 +335,11 @@
         ],
         "parameters": [
           {
-            "$ref": "#/definitions/URL Parameters/properties/accounts"
+            "name": "accounts",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "One or more account ids, separated by commas"
           },
           {
             "name": "Content-Type",
@@ -446,7 +481,7 @@
         },
         "accounts": {
           "type": "string",
-          "description": "one or more Video Cloud account IDs separated by commas",
+          "description": "one or more Video Cloud account IDs separated by commas "
         },
         "limit": {
           "type": "integer",
