@@ -304,6 +304,29 @@
         ],
         "parameters": [
           {
+            "name": "accounts",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "One or more account ids, separated by commas"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "number of items to return",
+            "default": 10
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "number of items to skip",
+            "default": 0
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
