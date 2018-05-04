@@ -500,7 +500,7 @@
           "description": "Average engagement score for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
         "play_rate": {
-          "type" : "integer",
+          "type" : "number",
           "description": "Average play rate for all items - note that properties included in the summary vary depending on the dimension(s) and fields requested"
         },
         "play_request": {
