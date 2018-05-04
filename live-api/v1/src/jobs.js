@@ -899,19 +899,14 @@
   * @apiSuccess (200) {DateTimeString} job.created_at ISO 8601 date-time string representing when the job was created
   * @apiSuccess (200) {DateTimeString} job.finished_at ISO 8601 date-time string representing when the live stream was stopped
   * @apiSuccess (200) {String} job.id The live job id
-  * @apiSuccess (200) {Boolean} job.privacy `TODO`
   * @apiSuccess (200) {String} job.state The current state of the job - possible values for Live jobs are `standby`, `waiting`, `processing`, `disconnected`. `finishing`, `finished`, `cancelling`, `cancelled`, `failed`; possible values for VOD jobs are `waiting_finish_live`, `waiting`, `processing`, `creating_asset`, `cancelling`, `cancelled`, `finished`, `failed`
   * @apiSuccess (200) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
-  * @apiSuccess (200) {Boolean} job.test `TODO`
   * @apiSuccess (200) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
   * @apiSuccess (200) {String} job.region The Amazon AWS region to use for encoding the job
   * @apiSuccess (200) {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
   * @apiSuccess (200) {Number} job.event_length Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.
   * @apiSuccess (200) {Boolean} job.live_stream Indicates whether this is a live stream or VOD
   * @apiSuccess (200) {Boolean} job.ad_insertion Indicates whether SSAI is enabled
-  * @apiSuccess (200) {Boolean} job.metadata_passthrough `TODO`
-  * @apiSuccess (200) {Number} job.out_worker_bytes `TODO`
-  * @apiSuccess (200) {Number} job.out_worker_bytes_rate `TODO`
   * @apiSuccess (200) {String} job.playback_url Playback URL for the live stream
   * @apiSuccess (200) {String} job.playback_url_dvr Playback URL for the live DVR
   * @apiSuccess (200) {Object} job.input_media_file Object containing properties for the input media file
@@ -931,9 +926,7 @@
   * @apiSuccess (200) {Number} job.input_media_file.height Frame height of the input file
   * @apiSuccess (200) {String} job.input_media_file.id System id of the input file
   * @apiSuccess (200) {String} job.input_media_file.md5_checksum Checksum for the input file
-  * @apiSuccess (200) {Boolean} job.input_media_file.privacy `TODO`
   * @apiSuccess (200) {String} job.input_media_file.state Current state of input file processing
-  * @apiSuccess (200) {Boolean} job.input_media_file.test `TODO`
   * @apiSuccess (200) {DateTimeString} job.input_media_file.updated_at ISO 8601 date-time string representing when the input file was last modified
   * @apiSuccess (200) {Number} job.input_media_file.video_bitrate_in_kbps Video bitrate of the input media file
   * @apiSuccess (200) {String} job.input_media_file.video_codec Video codec of the input media file
@@ -949,7 +942,6 @@
   * @apiSuccess (200) {String} job.stream.id System id of the stream
   * @apiSuccess (200) {String} job.stream.name Name of the stream
   * @apiSuccess (200) {String} job.stream.protocol Protocol of the stream
-  * @apiSuccess (200) {Boolean} job.stream.test `TODO`
   * @apiSuccess (200) {DateTimeString} job.stream.updated_at ISO 8601 date-time string representing when the stream was last modified
   * @apiSuccess (200) {Number} job.stream.video_bitrate_in_kbps Video bitrate of the input media file
   * @apiSuccess (200) {String} job.stream.video_codec Video codec of the input media file
@@ -959,16 +951,8 @@
   * @apiSuccess (200) {String} job.stream.url URL for the stream
   * @apiSuccess (200) {Object} job.stream.location Object representing the location of the stream
   * @apiSuccess (200) {Object} job.stream.location.source Object representing the location source of the stream
-  * @apiSuccess (200) {Object} job.stream.location.source.latitude `TODO`
-  * @apiSuccess (200) {Object} job.stream.location.source.longitude `TODO`
-  * @apiSuccess (200) {Object} job.stream.location.source.location `TODO`
   * @apiSuccess (200) {Object} job.stream.destination Object representing the destination of the stream
   * @apiSuccess (200) {Object} job.stream.destination.source Object representing the destination source of the stream
-  * @apiSuccess (200) {Object} job.stream.destination.source.latitude `TODO`
-  * @apiSuccess (200) {Object} job.stream.destination.source.longitude `TODO`
-  * @apiSuccess (200) {Object} job.stream.destination.source.location `TODO`
-  * @apiSuccess (200) {Number} job.stream.in_worker_bytes `TODO`
-  * @apiSuccess (200) {Number} job.stream.in_worker_bytes_rate `TODO`
   * @apiSuccess (200) {Object[]} job.output_media_files Array of objects containing properties for the output media files
   * @apiSuccess (200) {Number} job.output_media_files.audio_bitrate_in_kbps Audio bitrate of the output media file
   * @apiSuccess (200) {String} job.output_media_files.audio_codec Audio codec of the output media file
@@ -982,16 +966,11 @@
   * @apiSuccess (200) {Number} job.output_media_files.file_size_bytes File size
   * @apiSuccess (200) {DateTimeString} job.output_media_files.finished_at ISO 8601 date-time string representing when the output file was finished
   * @apiSuccess (200) {String} job.output_media_files.format Format of the output file
-  * @apiSuccess (200) {Number} job.output_media_files.fragment_duration_in_ms `TODO`
   * @apiSuccess (200) {Number} job.output_media_files.frame_rate Frame rate of the output file
   * @apiSuccess (200) {Number} job.output_media_files.height Frame height of the output file
   * @apiSuccess (200) {String} job.output_media_files.id System id of the output file
   * @apiSuccess (200) {String} job.output_media_files.md5_checksum Checksum for the output file
-  * @apiSuccess (200) {Boolean} job.output_media_files.privacy `TODO`
-  * @apiSuccess (200) {String} job.output_media_files.rfc_6381_audio_codec `TODO`
-  * @apiSuccess (200) {String} job.output_media_files.rfc_6381_video_codec `TODO`
   * @apiSuccess (200) {String} job.output_media_files.state Current state of output file processing
-  * @apiSuccess (200) {Boolean} job.output_media_files.test `TODO`
   * @apiSuccess (200) {DateTimeString} job.output_media_files.updated_at ISO 8601 date-time string representing when the output file was last modified
   * @apiSuccess (200) {Number} job.output_media_files.video_bitrate_in_kbps Video bitrate of the output media file
   * @apiSuccess (200) {String} job.output_media_files.video_codec Video codec of the output media file
