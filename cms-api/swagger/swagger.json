@@ -3025,6 +3025,31 @@
         "operationId": "Get_Videos",
         "parameters": [
           {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 20
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by (prefix with `-` for descending order)",
+            "default": "-updated_at"
+            "enum":
+          },
+          {
             "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
