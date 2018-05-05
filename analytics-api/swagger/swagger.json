@@ -297,6 +297,39 @@
             "enum": ["account", "city", "country", "region", "date", "date-time", "device_os", "device_type", "player", "referrer_domain", "destination_domain", "search_terms", "source_type", "video"]
           },
           {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Start time for the period covered by the report — `alltime` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)",
+            "default":  "(30 days before now)"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "End time for the period covered by the report — `now` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)",
+            "default":  "now"
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "format to return the results in",
+            "default":  "json",
+            "enum": ["csv", "json", "xlxs"]
+          },
+          {
+            "name": "reconciled",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned",
+            "default":  true
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
