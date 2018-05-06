@@ -18,6 +18,11 @@
  *
  * @apiParam {String} accountId Video Cloud account ID.
  *
+ * @apiParamExample {cURL} Get Repos apiParamExample
+ *    curl --request GET \
+ *      --url https://repos.api.brightcove.com/v1/accounts/1752604059001/repos \
+ *      --header 'authorization: Bearer YOUR_ACCESS_TOKEN'
+ *
  * @apiSuccess (200) {String[]} items array of items
  * @apiSuccess (200) {String} items.name repo name
  * @apiSuccess (200) {String} items.public_url URL for the public player
