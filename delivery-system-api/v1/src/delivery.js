@@ -1,3 +1,8 @@
+/**
+* @apiDefine RepositoriesGroup Repositories
+* Repository operations allow you to manage git repositories associated with Brightcove Players. See [Deliuery System API Overview](https://support.brightcove.com/overview-delivery-system-api) for more information.
+*/
+
 // get repositories
 
 /**
@@ -38,15 +43,15 @@
  *
  */
 
-// get single repository
+// get Repositories
 
 /**
  * @api {get} /accounts/:accountId/repos/:repoName Get Repository
  * @apiName Get Repository
- * @apiGroup Single Repository
+ * @apiGroup Repositories
  * @apiVersion 1.0.0
  *
- * @apiDescription This will retrieve the details for a single repository.
+ * @apiDescription This will retrieve the details for a Repositories.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
@@ -68,15 +73,15 @@
  *
  */
 
-// create single repository
+// create Repositories
 
 /**
  * @api {put} /accounts/:accountId/repos/:repoName Create Repository
  * @apiName Create Repository
- * @apiGroup Single Repository
+ * @apiGroup Repositories
  * @apiVersion 1.0.0
  *
- * @apiDescription This will create a single repository, if it does not exist. A response of 200 means the repository already existed. A response of 201 means repository was successfully created.
+ * @apiDescription This will create a Repositories, if it does not exist. A response of 200 means the repository already existed. A response of 201 means repository was successfully created.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
@@ -107,15 +112,15 @@
  *
  */
 
-// delete single repository
+// delete Repositories
 
 /**
  * @api {delete} /accounts/:accountId/repos/:repoName Delete Repository
  * @apiName Delete Repository
- * @apiGroup Single Repository
+ * @apiGroup Repositories
  * @apiVersion 1.0.0
  *
- * @apiDescription This will delete a single repository.
+ * @apiDescription This will delete a Repositories.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
@@ -134,12 +139,8 @@
  */
 
  /**
-  * @apiDefine devsystemgroup Manipulating Files
-  * There is nothing in the Manipulating Files calls to the API to display the contents of a file, but you can do so in these two ways:
-  * <ul>
-  *   <li>Browse the <code>public_url</code> that is part of the response in the file add/update</li>
-  *   <li>Use cURL to the file: <code>curl http://players.brightcove.net/:accountId/repos/:repoName/files/:filename</code></li>
-  * </ul>
+  * @apiDefine FilesGroup Manipulating Files
+  * There is nothing in the Manipulating Files calls to the API to display the contents of a file, but you can do so in these two ways: 1) Browse the `public_url` that is part of the response in the file add/update; 2) Use cURL to the file: `curl http://players.brightcove.net/:accountId/repos/:repoName/files/:filename`
   */
 
  // add or update file
