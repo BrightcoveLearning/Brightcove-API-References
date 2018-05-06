@@ -5,7 +5,7 @@ txtgrn=$(tput setaf 6) # Green
 txtred=$(tput setaf 9) # red
 cd data-collection-api
 echo ${txtyel}generating swagger json
-node $SWAGGER_DIR/bin/apidocSwagger.js -i ./v1/src -o ./swagger -t
+node $SWAGGER_DIR/bin/apidocSwagger.js -i ./v2/src -o ./swagger -t
 echo ${txtgrn}swagger json generated
 echo ${txtgrn}Finished!
 echo ${txtrst}
