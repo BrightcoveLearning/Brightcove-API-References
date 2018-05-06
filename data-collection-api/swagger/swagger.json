@@ -19,7 +19,30 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "account",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Account ID **for all requests**"
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "domain **for all requests**",
+            "enum": ["videocloud"]
+          },
+          {
+            "name": "account",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Account ID **for all requests**"
+          },
+        ],
         "responses": {
           "400": {
             "description": "BAD_REQUEST: The message fields of the response contains information about what caused the error such as invalid value for sort parameter \nUNSUPPORTED_FIELD_COMBINATION_ERROR: The message fields of the response contains information about what invalid fields were specifed "
