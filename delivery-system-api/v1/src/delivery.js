@@ -177,7 +177,7 @@
  /**
   * @api {put} /accounts/:accountId/repos/:repoName/files/:destinationFilename Add/Update File
   * @apiName Add/Update File
-  * @apiGroup devsystemgroup
+  * @apiGroup FilesGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription This will add or update a file. The wanted file name is at the end of the endpoint. The <code>form contents</code> can be a file name, including relative path, or any string. If the file has a <code>.json</code> extension, it will be checked for valid JSON format.
@@ -215,7 +215,7 @@
   /**
    * @api {delete} /accounts/:accountId/repos/:repoName/files/:filename Delete File
    * @apiName Delete File
-   * @apiGroup devsystemgroup
+   * @apiGroup FilesGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a file in a repo.
@@ -246,7 +246,7 @@
    /**
     * @api {get} /accounts/:accountId/repos/:repoName/files List Files
     * @apiName List Files
-    * @apiGroup devsystemgroup
+    * @apiGroup FilesGroup
     * @apiVersion 1.0.0
     *
     * @apiDescription Lists all the files in a repo.
