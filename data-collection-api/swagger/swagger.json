@@ -49,6 +49,20 @@
             "type": "string",
             "description": "Override to specify the manufacturer of the device that originated the event in cases where the User Agent is unreliable. *Not typically included*) **for all requests**"
           },
+          {
+            "name": "device_os_version",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The version of os being used by the device. When not specified, this will be calculated by parsing the user agent string for the tracking request. *Not typically included*) **for all requests**"
+          },
+          {
+            "name": "device_type",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Override to specify the type of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. *Not typically included*) **for all requests**"
+          },
         ],
         "responses": {
           "400": {
