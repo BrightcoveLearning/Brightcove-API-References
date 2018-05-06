@@ -118,8 +118,7 @@
           "type": "string",
           "description": "The destination url associated with the catalog_request event "
         }
-      },
-      "required": []
+      }
     },
     "URL Parameters: `catalog_response` Events": {
       "properties": {
@@ -131,8 +130,7 @@
           "type": "number",
           "description": "The time, in milliseconds, between the catalog_request event and the catalog_response event "
         }
-      },
-      "required": []
+      }
     },
     "URL Parameters: `error` Events": {
       "properties": {
@@ -140,8 +138,7 @@
           "type": "number",
           "description": "A platform specific error code associated with the event "
         }
-      },
-      "required": []
+      }
     },
     "URL Parameters: `video_impression` Events": {
       "properties": {
@@ -153,8 +150,7 @@
           "type": "string",
           "description": "the video name "
         }
-      },
-      "required": []
+      }
     },
     "URL Parameters: `video_view` Events": {
       "properties": {
@@ -170,8 +166,7 @@
           "type": "string",
           "description": "The time, in milliseconds, between initiation of playback and the first frame of the video being rendered. This can be different depending on the experience, for instance, if there are no pre-roll ads configured, this measurement is the time between the play_request and video_view events. If there is a preroll ad, the time between ad_mode_begin and ad_mode_complete should not be included "
         }
-      },
-      "required": []
+      }
     },
     "URL Parameters: `video_engagement` Events": {
       "properties": {
@@ -243,8 +238,7 @@
           "type": "number",
           "description": "count of watched seconds since the last update for video_engagement events "
         }
-      },
-      "required": []
+      }
     }
   },
   "schemes": [
