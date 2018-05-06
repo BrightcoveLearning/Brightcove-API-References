@@ -1450,22 +1450,6 @@
         "operationId": "Get_Playlist_Count",
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "description": "Number of items to return",
-            "default": 20
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "description": "Number of items to skip",
-            "default": 0
-          },
-          {
             "name": "sort",
             "in": "query",
             "required": false,
@@ -1622,22 +1606,6 @@
         "description": "Gets count of videos for the account or a search ",
         "operationId": "Get_Video_Count",
         "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "description": "Number of items to return",
-            "default": 20
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "description": "Number of items to skip",
-            "default": 0
-          },
           {
             "name": "sort",
             "in": "query",
