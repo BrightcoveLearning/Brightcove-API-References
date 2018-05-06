@@ -28,55 +28,6 @@
             "description": "a Video Cloud account ID "
           },
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "number",
-            "description": "number of items to return "
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "number",
-            "description": "number of videos to skip in the response "
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "field to sort results by "
-          },
-          {
-            "name": "fields",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": ",&quot;external_id&quot;,&quot;player_id&quot;,&quot;page_url&quot;,&quot;created_at&quot;,&quot;email_address&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;business_phone&quot;,&quot;country&quot;,&quot;company_name&quot;,&quot;industry&quot;] fields to return for items (one or more as a comma-delimited list &mdash; by default, all fields are returned) "
-          },
-          {
-            "name": "where",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "one or more field==value pairs to filter the results; fields supported are &quot;video_id&quot;, &quot;external_id&quot;, &quot;player_id&quot;, &quot;page_url&quot;, &quot;created_at&quot;, &quot;email_address&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;business_phone&quot;, &quot;country&quot;, &quot;company_name&quot;, &quot;industry&quot; "
-          },
-          {
-            "name": "from",
-            "in": "query",
-            "required": false,
-            "type": "mixed",
-            "description": "Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h) "
-          },
-          {
-            "name": "to",
-            "in": "query",
-            "required": false,
-            "type": "mixed",
-            "description": "End time for the period covered by the report &mdash; now or epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h) "
-          },
-          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -92,23 +43,29 @@
           }
         ],
         "responses": {
-          "Response Fields": {
-            "description": "Response Fields",
+          "200": {
+            "description": "200",
             "schema": {
-              "$ref": "#/definitions/Get_LeadsResponseFields"
+              "$ref": "#/definitions/Get_Leads200"
             }
           },
-          "Error 4xx": {
-            "description": "Error 4xx",
-            "schema": {
-              "$ref": "#/definitions/Get_LeadsError4xx"
-            }
+          "400": {
+            "description": "BAD_REQUEST_ERROR: Query parameters are invalid "
           },
-          "Error 5xx": {
-            "description": "Error 5xx",
-            "schema": {
-              "$ref": "#/definitions/Get_LeadsError5xx"
-            }
+          "401": {
+            "description": "UNAUTHORIZED_ERROR: The access token is either absent, has expired, or is invalid "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The URL does not exist "
+          },
+          "429": {
+            "description": "REQUEST_THROTTLED_ERROR: The user has exceeded the rate limiting policy "
+          },
+          "500": {
+            "description": "INTERNAL_ERROR: An internal error has occurred "
+          },
+          "504": {
+            "description": "GATEWAY_TIMEOUT_ERROR: The server timed out while fulfilling your request "
           }
         },
         "operationId": "Get_Leads"
@@ -136,55 +93,6 @@
             "description": "a Video Cloud account ID "
           },
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "number",
-            "description": "number of items to return "
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "number",
-            "description": "number of videos to skip in the response "
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "field to sort results by "
-          },
-          {
-            "name": "fields",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": ",&quot;video_name&quot;,&quot;tracking_id&quot;,&quot;external_id&quot;,&quot;player_id&quot;,&quot;page_url&quot;,&quot;watched&quot;,&quot;time_watched&quot;,&quot;created_at&quot;,&quot;updated_at&quot;,&quot;is_synced&quot;] fields to return for items (one or more as a comma-delimited list &mdash; by default, all fields are returned) "
-          },
-          {
-            "name": "where",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "one or more field==value pairs to filter the results; fields supported are &quot;video_id&quot;, &quot;video_name&quot;, &quot;tracking_id&quot;, &quot;external_id&quot;, &quot;player_id&quot;, &quot;page_url&quot;, &quot;watched&quot;, &quot;time_watched&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;is_synced&quot; "
-          },
-          {
-            "name": "from",
-            "in": "query",
-            "required": false,
-            "type": "mixed",
-            "description": "Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h) "
-          },
-          {
-            "name": "to",
-            "in": "query",
-            "required": false,
-            "type": "mixed",
-            "description": "End time for the period covered by the report &mdash; now or epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h) "
-          },
-          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -200,51 +108,70 @@
           }
         ],
         "responses": {
-          "Response Fields": {
-            "description": "Response Fields",
+          "200": {
+            "description": "200",
             "schema": {
-              "$ref": "#/definitions/Get_View_EventsResponseFields"
+              "$ref": "#/definitions/Get_View_Events200"
             }
           },
-          "Error 4xx": {
-            "description": "Error 4xx",
-            "schema": {
-              "$ref": "#/definitions/Get_View_EventsError4xx"
-            }
+          "400": {
+            "description": "BAD_REQUEST_ERROR: Query parameters are invalid "
           },
-          "Error 5xx": {
-            "description": "Error 5xx",
-            "schema": {
-              "$ref": "#/definitions/Get_View_EventsError5xx"
-            }
+          "401": {
+            "description": "UNAUTHORIZED_ERROR: The access token is either absent, has expired, or is invalid "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The URL does not exist "
+          },
+          "429": {
+            "description": "REQUEST_THROTTLED_ERROR: The user has exceeded the rate limiting policy "
+          },
+          "500": {
+            "description": "INTERNAL_ERROR: An internal error has occurred "
+          },
+          "504": {
+            "description": "GATEWAY_TIMEOUT_ERROR: The server timed out while fulfilling your request "
           }
         },
         "operationId": "Get_View_Events"
       }
-    },
-    "": {
-      "": {
-        "tags": [
-          "_Users_rcrooks_git_Brightcove_API_References_audience_api_v1_doc_main_js"
-        ],
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "Success 200": {
-            "description": "Success 200"
-          }
-        },
-        "operationId": ""
-      }
     }
   },
   "definitions": {
-    "Get_LeadsResponseFields": {
+    "URL Parameters": {
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "number of items to return "
+        },
+        "offset": {
+          "type": "number",
+          "description": "number of videos to skip in the response "
+        },
+        "sort": {
+          "type": "string",
+          "description": "field to sort results by "
+        },
+        "fields": {
+          "type": "string",
+          "description": ",&quot;external_id&quot;,&quot;player_id&quot;,&quot;page_url&quot;,&quot;created_at&quot;,&quot;email_address&quot;,&quot;first_name&quot;,&quot;last_name&quot;,&quot;business_phone&quot;,&quot;country&quot;,&quot;company_name&quot;,&quot;industry&quot;] fields to return for items (one or more as a comma-delimited list &mdash; by default, all fields are returned) "
+        },
+        "where": {
+          "type": "string",
+          "description": "one or more field==value pairs to filter the results; fields supported are &quot;video_id&quot;, &quot;external_id&quot;, &quot;player_id&quot;, &quot;page_url&quot;, &quot;created_at&quot;, &quot;email_address&quot;, &quot;first_name&quot;, &quot;last_name&quot;, &quot;business_phone&quot;, &quot;country&quot;, &quot;company_name&quot;, &quot;industry&quot; "
+        },
+        "from": {
+          "type": "mixed",
+          "description": "Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as -2d or -6h) "
+        },
+        "to": {
+          "type": "mixed",
+          "description": "End time for the period covered by the report &mdash; now or epoch time in milliseconds or a date in the format yyyy-mm-dd (such as 2013-09-26) or a relative date in d (days), h (hours), m (minutes), s (seconds) (such as 2d or 6h) "
+        }
+      },
+      "required": []
+    },
+    "Get_Leads200": {
       "properties": {
         "count": {
           "type": "number",
@@ -349,49 +276,7 @@
         "time_watched"
       ]
     },
-    "Get_LeadsError4xx": {
-      "properties": {
-        "BAD_REQUEST_ERROR": {
-          "type": "json",
-          "description": "400: Query parameters are invalid "
-        },
-        "UNAUTHORIZED_ERROR": {
-          "type": "json",
-          "description": "401: The access token is either absent, has expired, or is invalid "
-        },
-        "RESOURCE_NOT_FOUND": {
-          "type": "json",
-          "description": "404: The URL does not exist "
-        },
-        "REQUEST_THROTTLED_ERROR": {
-          "type": "json",
-          "description": "429: The user has exceeded the rate limiting policy "
-        }
-      },
-      "required": [
-        "BAD_REQUEST_ERROR",
-        "UNAUTHORIZED_ERROR",
-        "RESOURCE_NOT_FOUND",
-        "REQUEST_THROTTLED_ERROR"
-      ]
-    },
-    "Get_LeadsError5xx": {
-      "properties": {
-        "INTERNAL_ERROR": {
-          "type": "json",
-          "description": "500: An internal error has occurred "
-        },
-        "GATEWAY_TIMEOUT_ERROR": {
-          "type": "json",
-          "description": "504: The server timed out while fulfilling your request "
-        }
-      },
-      "required": [
-        "INTERNAL_ERROR",
-        "GATEWAY_TIMEOUT_ERROR"
-      ]
-    },
-    "Get_View_EventsResponseFields": {
+    "Get_View_Events200": {
       "properties": {
         "count": {
           "type": "number",
@@ -418,48 +303,6 @@
         "limit",
         "offset",
         "result"
-      ]
-    },
-    "Get_View_EventsError4xx": {
-      "properties": {
-        "BAD_REQUEST_ERROR": {
-          "type": "json",
-          "description": "400: Query parameters are invalid "
-        },
-        "UNAUTHORIZED_ERROR": {
-          "type": "json",
-          "description": "401: The access token is either absent, has expired, or is invalid "
-        },
-        "RESOURCE_NOT_FOUND": {
-          "type": "json",
-          "description": "404: The URL does not exist "
-        },
-        "REQUEST_THROTTLED_ERROR": {
-          "type": "json",
-          "description": "429: The user has exceeded the rate limiting policy "
-        }
-      },
-      "required": [
-        "BAD_REQUEST_ERROR",
-        "UNAUTHORIZED_ERROR",
-        "RESOURCE_NOT_FOUND",
-        "REQUEST_THROTTLED_ERROR"
-      ]
-    },
-    "Get_View_EventsError5xx": {
-      "properties": {
-        "INTERNAL_ERROR": {
-          "type": "json",
-          "description": "500: An internal error has occurred "
-        },
-        "GATEWAY_TIMEOUT_ERROR": {
-          "type": "json",
-          "description": "504: The server timed out while fulfilling your request "
-        }
-      },
-      "required": [
-        "INTERNAL_ERROR",
-        "GATEWAY_TIMEOUT_ERROR"
       ]
     }
   },
