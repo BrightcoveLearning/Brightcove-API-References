@@ -6,6 +6,167 @@
     "description": "Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every <code>git push</code>, to players.brightcove.com. To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>"
   },
   "paths": {
+    "/accounts/{accountId}/repos/{repoName}/files/{destinationFilename}": {
+      "put": {
+        "tags": [
+          "FilesGroup"
+        ],
+        "summary": "Add/Update File",
+        "description": "This will add or update a file. The wanted file name is at the end of the endpoint. The form contents can be a file name, including relative path, or any string. If the file has a .json extension, it will be checked for valid JSON format. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID. "
+          },
+          {
+            "name": "repoName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the repo for which to list details. "
+          },
+          {
+            "name": "destinationFilename",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the file in the repo, it can be different than the name of locally read file. "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "$ref": "#/definitions/Add_Update_File200"
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          }
+        },
+        "operationId": "Add_Update_File"
+      }
+    },
+    "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
+      "delete": {
+        "tags": [
+          "FilesGroup"
+        ],
+        "summary": "Delete File",
+        "description": "Deletes a file in a repo. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID. "
+          },
+          {
+            "name": "repoName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the repo for which to list details. "
+          },
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the file in the repo to delete. "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          }
+        },
+        "operationId": "Delete_File"
+      }
+    },
+    "/accounts/{accountId}/repos/{repoName}/files": {
+      "get": {
+        "tags": [
+          "FilesGroup"
+        ],
+        "summary": "List Files",
+        "description": "Lists all the files in a repo. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Video Cloud account ID. "
+          },
+          {
+            "name": "repoName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the repo for which to list details. "
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          }
+        },
+        "operationId": "List_Files"
+      }
+    },
     "/accounts/{accountId}/repos/{repoName}": {
       "put": {
         "tags": [
@@ -234,167 +395,6 @@
         },
         "operationId": "Get_All_Repositories"
       }
-    },
-    "/accounts/{accountId}/repos/{repoName}/files/{destinationFilename}": {
-      "put": {
-        "tags": [
-          "devsystemgroup"
-        ],
-        "summary": "Add/Update File",
-        "description": "This will add or update a file. The wanted file name is at the end of the endpoint. The form contents can be a file name, including relative path, or any string. If the file has a .json extension, it will be checked for valid JSON format. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Video Cloud account ID. "
-          },
-          {
-            "name": "repoName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the repo for which to list details. "
-          },
-          {
-            "name": "destinationFilename",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the file in the repo, it can be different than the name of locally read file. "
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "schema": {
-              "$ref": "#/definitions/Add_Update_File200"
-            }
-          },
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          }
-        },
-        "operationId": "Add_Update_File"
-      }
-    },
-    "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
-      "delete": {
-        "tags": [
-          "devsystemgroup"
-        ],
-        "summary": "Delete File",
-        "description": "Deletes a file in a repo. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Video Cloud account ID. "
-          },
-          {
-            "name": "repoName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the repo for which to list details. "
-          },
-          {
-            "name": "filename",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the file in the repo to delete. "
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          }
-        },
-        "operationId": "Delete_File"
-      }
-    },
-    "/accounts/{accountId}/repos/{repoName}/files": {
-      "get": {
-        "tags": [
-          "devsystemgroup"
-        ],
-        "summary": "List Files",
-        "description": "Lists all the files in a repo. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Video Cloud account ID. "
-          },
-          {
-            "name": "repoName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The name of the repo for which to list details. "
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed; check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          }
-        },
-        "operationId": "List_Files"
-      }
     }
   },
   "definitions": {
@@ -407,6 +407,22 @@
       },
       "required": [
         "sourceFilename"
+      ]
+    },
+    "Add_Update_File200": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Destination filename "
+        },
+        "public_url": {
+          "type": "string",
+          "description": "URL to use for referencing the file (contrasted to the repo URL) "
+        }
+      },
+      "required": [
+        "name",
+        "public_url"
       ]
     },
     "Create_Repository200": {
@@ -495,22 +511,6 @@
         "name",
         "public_url",
         "repo_url"
-      ]
-    },
-    "Add_Update_File200": {
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Destination filename "
-        },
-        "public_url": {
-          "type": "string",
-          "description": "URL to use for referencing the file (contrasted to the repo URL) "
-        }
-      },
-      "required": [
-        "name",
-        "public_url"
       ]
     }
   },
