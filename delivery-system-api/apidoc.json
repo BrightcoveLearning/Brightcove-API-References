@@ -5,12 +5,12 @@
     "title": "Delivery System API Reference",
     "url" : "https://repos.api.brightcove.com/v1",
     "order": [
-        "Repositories",
-        "Single_Repository",
+        "RepositoriesGroup",
+        "Get_Repositories"
         "Get_Repository",
         "Create_Repository",
         "Delete_Repository",
-        "devsystemgroup",
+        "FilesGroup",
         "Manipulating_Files",
         "Add_Update_File",
         "Delete_File",
