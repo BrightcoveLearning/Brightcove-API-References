@@ -1450,6 +1450,38 @@
         "operationId": "Get_Playlist_Count",
         "parameters": [
           {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 20
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending - note: to sort in descending order, preface the field name with a minus (-) sign",
+            "default": "-updated_at",
+            "enum": ["name", "updated_at"]
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Search string - see [search guide](https://support.brightcove.com/cms-api-playlists-search) for details. Only search by type is currently supported for playlists — e.g. q=type:EXPLICIT."
+          },
+          {
             "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
@@ -1590,6 +1622,38 @@
         "description": "Gets count of videos for the account or a search ",
         "operationId": "Get_Video_Count",
         "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 20
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by (prefix with `-` for descending order)",
+            "default": "-updated_at",
+            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Search string - see [search guide](https://support.brightcove.com/cmsplayback-api-videos-search) for details"
+          },
           {
             "description": "Video Cloud account ID.",
             "in": "path",
@@ -3054,9 +3118,7 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "Search string - see [search guide]() for details",
-            "default": "-updated_at",
-            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
+            "description": "Search string - see [search guide](https://support.brightcove.com/cmsplayback-api-videos-search) for details"
           },
           {
             "description": "Video Cloud account ID.",
