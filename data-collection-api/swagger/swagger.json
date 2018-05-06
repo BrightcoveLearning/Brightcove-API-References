@@ -148,6 +148,55 @@
             "type": "string",
             "description": "The encoded height of the video rendition in pixels **for and `video_engagement` event requests**"
           },
+          {
+            "name": "rendition_width",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The encoded width of the video rendition in pixels **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "rebuffering_seconds",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The number of seconds the user spent waiting for video to playback due to un-requested delay during the engagement period **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "rebuffering_count",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "The number of times playback stopped due to re-buffering during the represented engagement period delay during the engagement period **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "forward_buffer_seconds",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The number of seconds of video currently residing in the forward buffer **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "measured_bps",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The ratio of the number of bits included in the most recently downloaded segment to the time spend downloading that segment, in bits per second **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "player_width",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The current pixel width of the player at the end of the engagement range **for and `video_engagement` event requests**"
+          },
+          {
+            "name": "player_height",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The current pixel height of the player at the end of the engagement range **for and `video_engagement` event requests**"
+          },
         ],
         "responses": {
           "400": {
