@@ -111,92 +111,113 @@
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The time, in milliseconds, between initiation of playback and the first frame of the video being rendered. This can be different depending on the experience, for instance, if there are no pre-roll ads configured, this measurement is the time between the play_request and video_view events. If there is a preroll ad, the time between ad_mode_begin and ad_mode_complete should not be included **for and `video_view` event requests**"
+            "description": "The time, in milliseconds, between initiation of playback and the first frame of the video being rendered. This can be different depending on the experience, for instance, if there are no pre-roll ads configured, this measurement is the time between the play_request and video_view events. If there is a preroll ad, the time between ad_mode_begin and ad_mode_complete should not be included **for `video_view` event requests**"
           },
           {
             "name": "range",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The range of the video video viewed for video_engagement events in the format StartSecond..EndSecond - range can be left out of an engagement event to show that during the period covered by the event, there was no viewing activity. (for example, when there is only re-buffering activity) **for and `video_engagement` event requests**"
+            "description": "The range of the video video viewed for video_engagement events in the format StartSecond..EndSecond - range can be left out of an engagement event to show that during the period covered by the event, there was no viewing activity. (for example, when there is only re-buffering activity) **for `video_engagement` event requests**"
           },
           {
             "name": "rendition_url",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The url to the most recently selected rendition. For example, for an HLS stream this would be the url to the most recently selected variant **for and `video_engagement` event requests**"
+            "description": "The url to the most recently selected rendition. For example, for an HLS stream this would be the url to the most recently selected variant **for `video_engagement` event requests**"
           },
           {
             "name": "rendition_indicated_bps",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The indicated bitrate, in bits per second, of the most recently selected rendition **for and `video_engagement` event requests**"
+            "description": "The indicated bitrate, in bits per second, of the most recently selected rendition **for `video_engagement` event requests**"
           },
           {
             "name": "rendition_mime_type",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The mime type of the most recently selected rendition **for and `video_engagement` event requests**"
+            "description": "The mime type of the most recently selected rendition **for `video_engagement` event requests**"
           },
           {
             "name": "rendition_height",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The encoded height of the video rendition in pixels **for and `video_engagement` event requests**"
+            "description": "The encoded height of the video rendition in pixels **for `video_engagement` event requests**"
           },
           {
             "name": "rendition_width",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "The encoded width of the video rendition in pixels **for and `video_engagement` event requests**"
+            "description": "The encoded width of the video rendition in pixels **for `video_engagement` event requests**"
           },
           {
             "name": "rebuffering_seconds",
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The number of seconds the user spent waiting for video to playback due to un-requested delay during the engagement period **for and `video_engagement` event requests**"
+            "description": "The number of seconds the user spent waiting for video to playback due to un-requested delay during the engagement period **for `video_engagement` event requests**"
           },
           {
             "name": "rebuffering_count",
             "in": "query",
             "required": false,
             "type": "integer",
-            "description": "The number of times playback stopped due to re-buffering during the represented engagement period delay during the engagement period **for and `video_engagement` event requests**"
+            "description": "The number of times playback stopped due to re-buffering during the represented engagement period delay during the engagement period **for `video_engagement` event requests**"
           },
           {
             "name": "forward_buffer_seconds",
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The number of seconds of video currently residing in the forward buffer **for and `video_engagement` event requests**"
+            "description": "The number of seconds of video currently residing in the forward buffer **for `video_engagement` event requests**"
           },
           {
             "name": "measured_bps",
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The ratio of the number of bits included in the most recently downloaded segment to the time spend downloading that segment, in bits per second **for and `video_engagement` event requests**"
+            "description": "The ratio of the number of bits included in the most recently downloaded segment to the time spend downloading that segment, in bits per second **for `video_engagement` event requests**"
           },
           {
             "name": "player_width",
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The current pixel width of the player at the end of the engagement range **for and `video_engagement` event requests**"
+            "description": "The current pixel width of the player at the end of the engagement range **for `video_engagement` event requests**"
           },
           {
             "name": "player_height",
             "in": "query",
             "required": false,
             "type": "number",
-            "description": "The current pixel height of the player at the end of the engagement range **for and `video_engagement` event requests**"
+            "description": "The current pixel height of the player at the end of the engagement range **for `video_engagement` event requests**"
           },
+          {
+            "name": "dropped_frames",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "The number of dropped frames duriung the engagement range **for `video_engagement` event requests**"
+          },
+          {
+            "name": "video_duration",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "The duration of the video in seconds **for `video_engagement` event requests**"
+          },
+          {
+            "name": "video_seconds_viewed",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The count of watched seconds since the last update for video_engagement events **for `video_engagement` event requests**"
+          }
         ],
         "responses": {
           "400": {
