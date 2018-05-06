@@ -99,6 +99,12 @@
  * @apiParam {String} accountId Video Cloud account ID.
  * @apiParam {String} repoName The name of the repo for which to list details.
  *
+ *
+ * @apiParamExample {cURL} Get Repos apiParamExample
+ *    curl --request PUT \
+ *      --url https://repos.api.brightcove.com/v1/accounts/1752604059001/repos/myRepo \
+ *      --header 'authorization: Bearer YOUR_ACCESS_TOKEN'
+ *
  * @apiSuccess (200) {String} name repo name
  * @apiSuccess (200) {String} public_url URL for the public player
  * @apiSuccess (200) {String} repo_url URL for the repository
@@ -137,6 +143,12 @@
  *
  * @apiParam {String} accountId Video Cloud account ID.
  * @apiParam {String} repoName The name of the repo for which to list details.
+ *
+ *
+ * @apiParamExample {cURL} Get Repos apiParamExample
+ *    curl --request DELETE \
+ *      --url https://repos.api.brightcove.com/v1/accounts/1752604059001/repos/myRepo \
+ *      --header 'authorization: Bearer YOUR_ACCESS_TOKEN'
  *
  * @apiSuccess (200) {String} name repo name
  *
