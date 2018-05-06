@@ -3046,8 +3046,17 @@
             "required": false,
             "type": "string",
             "description": "Field to sort results by (prefix with `-` for descending order)",
-            "default": "-updated_at"
-            "enum":
+            "default": "-updated_at",
+            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Search string - see [search guide]() for details",
+            "default": "-updated_at",
+            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
           },
           {
             "description": "Video Cloud account ID.",
