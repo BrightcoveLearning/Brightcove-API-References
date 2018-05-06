@@ -21,6 +21,61 @@
         ],
         "parameters": [
           {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 25
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by (prefix with `-` for descending order)",
+            "default": "created_at",
+            "enum": ["video_id", "video_name", "tracking_id", "external_id", "player_id", "page_url", "watched", "time_watched", "created_at", "updated_at", "is_synced"]
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Fields to return",
+            "default": "video_id,video_name,tracking_id,external_id,player_id,page_url,watched,time_watched,created_at,updated_at,is_synced",
+            "enum": ["video_id", "video_name", "tracking_id", "external_id", "player_id", "page_url", "watched", "time_watched", "created_at", "updated_at", "is_synced"]
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "0ne or more field==value pairs to filter the results; fields supported are `video_id`, `video_name`, `tracking_id`, `external_id`, `player_id`, `page_url`, `watched`, `time_watched`, `created_at`, `updated_at`, `is_synced`"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Start time for the period covered by the report — epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in `d` (days), `h` (hours), `m` (minutes), `s` (seconds) (such as `-2d` or `-6h`)"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "End time for the period covered by the report — epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in `d` (days), `h` (hours), `m` (minutes), `s` (seconds) (such as `-2d` or `-6h`)"
+          },
+          {
             "name": "account_id",
             "in": "path",
             "required": true,
@@ -85,6 +140,61 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 25
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by (prefix with `-` for descending order)",
+            "default": "created_at",
+            "enum": ["video_id", "video_name", "tracking_id", "external_id", "player_id", "page_url", "watched", "time_watched", "created_at", "updated_at", "is_synced"]
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Fields to return",
+            "default": "video_id,video_name,tracking_id,external_id,player_id,page_url,watched,time_watched,created_at,updated_at,is_synced",
+            "enum": ["video_id", "video_name", "tracking_id", "external_id", "player_id", "page_url", "watched", "time_watched", "created_at", "updated_at", "is_synced"]
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "0ne or more field==value pairs to filter the results; fields supported are `video_id`, `video_name`, `tracking_id`, `external_id`, `player_id`, `page_url`, `watched`, `time_watched`, `created_at`, `updated_at`, `is_synced`"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Start time for the period covered by the report — epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in `d` (days), `h` (hours), `m` (minutes), `s` (seconds) (such as `-2d` or `-6h`)"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "End time for the period covered by the report — epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`) or a relative date in `d` (days), `h` (hours), `m` (minutes), `s` (seconds) (such as `-2d` or `-6h`)"
+          },
           {
             "name": "account_id",
             "in": "path",
