@@ -1696,6 +1696,22 @@
         "operationId": "Get_Folders",
         "parameters": [
           {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 20
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
+          {
             "description": "Video Cloud account ID.",
             "in": "path",
             "name": "account_id",
@@ -2060,6 +2076,22 @@
         "description": "Gets list of video objects in a folder ",
         "operationId": "Get_Videos_in_Folder",
         "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to return",
+            "default": 20
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Number of items to skip",
+            "default": 0
+          },
           {
             "description": "Video Cloud account ID.",
             "in": "path",
