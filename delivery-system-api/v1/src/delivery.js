@@ -45,7 +45,8 @@
  *      ],
  *        "item_count": 2
  *    }
- *
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  */
 
 // get Repository
@@ -81,6 +82,8 @@
  *      "repo_url": "https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/firstRepo"
  *    }
  *
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  */
 
 // create Repositories
@@ -126,6 +129,8 @@
  *      "repo_url": "https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/newRepo"
  *    }
  *
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  */
 
 // delete Repositories
@@ -158,6 +163,8 @@
  *      Successfully deleted repo MyRepoName.
  *    }
  *
+ * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  */
 
  /**
@@ -199,6 +206,8 @@
   *       "name": "newname.txt",
   *       "public_url": "http://players.brightcove.net/1507807800001/testRepo1/newname.txt"
   *     }
+  * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
   */
 
   // delete a file
@@ -228,6 +237,8 @@
    *     {
    *       message: "The call was successful."
    *     }
+   * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
    */
 
    // list all files
@@ -263,4 +274,6 @@
     *        }],
     *        "item_count": 2
     *      }
+    * @apiError (Error 4xx) {Object[]} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+    * @apiError (Error 4xx) {Object[]} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
     */
