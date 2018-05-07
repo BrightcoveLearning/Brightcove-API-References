@@ -3,7 +3,7 @@
   "info": {
     "title": "Ingest Profiles API Reference",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters. To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/developer-tools-and-concepts)"
+    "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters. To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>"
   },
   "paths": {
     "/accounts/{account_id}/configuration": {
@@ -39,7 +39,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -99,7 +99,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -116,7 +116,7 @@
             "description": "NOT_AUTHORIZED: Credentials are required to access this resource. "
           },
           "404": {
-            "description": "NOT_FOUND: The api could not find the resource you requested "
+            "description": "NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
           "409": {
             "description": "CONFLICT: Account configuration already exists for 57838016001; please delete the configuration first, or update it instead. "
@@ -165,7 +165,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -224,7 +224,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -284,7 +284,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -347,7 +347,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -399,7 +399,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -457,7 +457,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "description": "Authorization: Bearer access_token (see Getting Access Tokens) "
           }
         ],
         "responses": {
@@ -523,7 +523,7 @@
           "description": "names of audio and video renditions to include - see Standard Ingest Profiles - renditions for available renditions you can choose from "
         },
         "dynamic_origin.images": {
-          "type": "array",
+          "type": "object[]",
           "description": "array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion) "
         },
         "dynamic_origin.images.label": {
@@ -577,7 +577,7 @@
           "description": "names of audio-only renditions to include - see Standard Ingest Profiles - renditions for available renditions you can choose from "
         },
         "dynamic_origin.images": {
-          "type": "array",
+          "type": "object[]",
           "description": "array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion) "
         },
         "dynamic_origin.images.label": {
@@ -686,7 +686,7 @@
           "description": "whether to make the master playable as a rendition by pushing it to the CDN(s) "
         },
         "renditions": {
-          "type": "array",
+          "type": "object[]",
           "description": "array of rendition maps "
         },
         "renditions.aspect_mode": {
@@ -886,7 +886,7 @@
           "description": "target frame width in pixels "
         },
         "renditions.watermarks": {
-          "type": "array",
+          "type": "object[]",
           "description": "array of watermark maps "
         },
         "renditions.watermarks.url": {
@@ -910,11 +910,11 @@
           "description": "distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge) - decimal values like 10.5% are not permitted "
         },
         "packages": {
-          "type": "array",
+          "type": "object[]",
           "description": "array of package maps for DRM (see Content Security) "
         },
         "packages.drm": {
-          "type": "array",
+          "type": "string[]",
           "description": "for MPEG-DASH, array of DRM types to apply, e.g. [&quot;widevine&quot;, &quot;playready&quot;] "
         },
         "packages.package_type": {
@@ -922,7 +922,7 @@
           "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine "
         },
         "packages.renditions": {
-          "type": "array",
+          "type": "mixed",
           "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s "
         }
       },
@@ -1670,7 +1670,7 @@
           "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine "
         },
         "renditions": {
-          "type": "array",
+          "type": "mixed",
           "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s "
         }
       },
