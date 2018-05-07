@@ -9,7 +9,7 @@
     "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
       "put": {
         "tags": [
-          "Files"
+          "FilesGroup"
         ],
         "summary": "Add/Update File",
         "description": "This will add or update a file. The wanted file name is at the end of the endpoint. The form contents can be a file name, including relative path, or any string. If the file has a .json extension, it will be checked for valid JSON format. ",
@@ -67,7 +67,7 @@
       },
       "delete": {
         "tags": [
-          "Files"
+          "FilesGroup"
         ],
         "summary": "Delete File",
         "description": "Deletes a file in a repo. ",
@@ -121,7 +121,7 @@
     "/accounts/{accountId}/repos/{repoName}/files": {
       "get": {
         "tags": [
-          "Files"
+          "FilesGroup"
         ],
         "summary": "List Files",
         "description": "Lists all the files in a repo. ",
