@@ -1297,11 +1297,11 @@
           },
           {
             "name": "source_type",
-            "description": ""
+            "description": "Source such as search or direct link"
           },
           {
             "name": "video",
-            "description": ""
+            "description": "Analytics by video"
           }
         ]
       },
