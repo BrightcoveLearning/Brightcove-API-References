@@ -6,7 +6,7 @@
     "description": "Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every <code>git push</code>, to players.brightcove.com. To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>"
   },
   "paths": {
-    "/accounts/{accountId}/repos/{repoName}/files/{destinationFilename}": {
+    "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
       "put": {
         "tags": [
           "FilesGroup"
@@ -66,7 +66,6 @@
         "operationId": "Add_Update_File"
       }
     },
-    "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
       "delete": {
         "tags": [
           "FilesGroup"
@@ -341,14 +340,13 @@
           }
         },
         "operationId": "Get_Repository"
-      }
-    },
+      },
     "/accounts/{accountId}/repos": {
       "get": {
         "tags": [
           "Repositories"
         ],
-        "summary": "Get All Repositories",
+        "summary": "List Repositories",
         "description": "This will list the details for all repositories in an account. ",
         "consumes": [
           "application/json"
