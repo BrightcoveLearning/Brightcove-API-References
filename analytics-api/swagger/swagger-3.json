@@ -1249,51 +1249,51 @@
         "x-enum-elements": [
           {
             "name": "account",
-            "description": ""
+            "description": "Analytics data for account as a whole"
           },
           {
             "name": "city",
-            "description": ""
+            "description": "Geo analytics for cities"
           },
           {
             "name": "country",
-            "description": ""
+            "description": "Geo analytics for countries"
           },
           {
             "name": "region",
-            "description": ""
+            "description": "Geo analytics for regions of countries"
           },
           {
             "name": "date",
-            "description": ""
+            "description": "Daily analytics for a range of days"
           },
           {
             "name": "datetime",
-            "description": ""
+            "description": "Hourly analytics for a range of hours - available for the previous 32 days"
           },
           {
             "name": "device_os",
-            "description": ""
+            "description": "Analytics by device operating systems"
           },
           {
             "name": "device_type",
-            "description": ""
+            "description": "Analytics by device type"
           },
           {
             "name": "player",
-            "description": ""
+            "description": "Analytics by player"
           },
           {
             "name": "referrer_domain",
-            "description": ""
+            "description": "Analytics by referring domain"
           },
           {
             "name": "destination_domain",
-            "description": ""
+            "description": "Analytics by the destination domain"
           },
           {
             "name": "search_terms",
-            "description": ""
+            "description": "Search terms that brought the user to the page"
           },
           {
             "name": "source_type",
