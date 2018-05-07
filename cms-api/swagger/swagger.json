@@ -1520,7 +1520,7 @@
         },
         "summary": "Get Playlist Count",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       }
     },
@@ -1594,7 +1594,7 @@
         },
         "summary": "Get Video Count in Playlist",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       }
     },
@@ -1683,7 +1683,7 @@
         },
         "summary": "Get Video Count",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -1764,7 +1764,7 @@
         },
         "summary": "Get Folders",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       },
       "post": {
@@ -1836,7 +1836,7 @@
         },
         "summary": "Create Folder",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       }
     },
@@ -1912,7 +1912,7 @@
         },
         "summary": "Delete Folder",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       },
       "get": {
@@ -1985,7 +1985,7 @@
         },
         "summary": "Get Folder Information",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       },
       "patch": {
@@ -2064,7 +2064,7 @@
         },
         "summary": "Update Folder Name",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       }
     },
@@ -2155,7 +2155,7 @@
         },
         "summary": "Get Videos in Folder",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       }
     },
@@ -2231,7 +2231,7 @@
         },
         "summary": "Remove Video from Folder",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       },
       "put": {
@@ -2302,7 +2302,7 @@
         },
         "summary": "Add Video to Folder",
         "tags": [
-          "folderGroup"
+          "Folders"
         ]
       }
     },
@@ -2398,7 +2398,7 @@
         },
         "summary": "Get Playlists",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       },
       "post": {
@@ -2473,7 +2473,7 @@
         },
         "summary": "Create Playlist",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       }
     },
@@ -2536,7 +2536,7 @@
         },
         "summary": "Delete Playlist",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       },
       "get": {
@@ -2603,7 +2603,7 @@
         },
         "summary": "Get Playlist by ID",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       },
       "patch": {
@@ -2685,7 +2685,7 @@
         },
         "summary": "Update Playlist",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       }
     },
@@ -2757,7 +2757,7 @@
         },
         "summary": "Get Videos in Playlist",
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ]
       }
     },
@@ -2825,7 +2825,7 @@
         },
         "summary": "Get Subscriptions List",
         "tags": [
-          "notificationGroup"
+          "Notifications"
         ]
       },
       "post": {
@@ -2900,7 +2900,7 @@
         },
         "summary": "Create Subscription",
         "tags": [
-          "notificationGroup"
+          "Notifications"
         ]
       }
     },
@@ -2969,7 +2969,7 @@
         },
         "summary": "Delete Subscription",
         "tags": [
-          "notificationGroup"
+          "Notifications"
         ]
       },
       "get": {
@@ -3039,7 +3039,7 @@
         },
         "summary": "Get Subscription",
         "tags": [
-          "notificationGroup"
+          "Notifications"
         ]
       }
     },
@@ -3107,7 +3107,7 @@
         },
         "summary": "Get Custom Fields",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -3207,7 +3207,7 @@
         },
         "summary": "Get Videos",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "post": {
@@ -3282,7 +3282,7 @@
         },
         "summary": "Create Video",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -3345,7 +3345,7 @@
         },
         "summary": "Delete Video",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "get": {
@@ -3409,7 +3409,7 @@
         },
         "summary": "Get Video by ID or Reference ID",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "patch": {
@@ -3500,7 +3500,7 @@
         },
         "summary": "Update Video",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -3569,7 +3569,7 @@
         },
         "summary": "Get Video Audio Tracks",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -3660,7 +3660,7 @@
         },
         "summary": "Delete Video Audio Track",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "get": {
@@ -3731,7 +3731,7 @@
         },
         "summary": "Get Video Audio Track",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "patch": {
@@ -3804,7 +3804,7 @@
         },
         "summary": "Update Video Audio Track",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -3873,7 +3873,7 @@
         },
         "summary": "Delete Digital Master",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "get": {
@@ -3937,7 +3937,7 @@
         },
         "summary": "Get Digital Master Info",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -4003,7 +4003,7 @@
         },
         "summary": "Get Video Images",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -4069,7 +4069,7 @@
         },
         "summary": "Get Status of Ingest Jobs",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -4139,7 +4139,7 @@
         },
         "summary": "Get Status of Ingest Job",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -4202,7 +4202,7 @@
         },
         "summary": "Remove Video from all Playlists",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       },
       "get": {
@@ -4266,7 +4266,7 @@
         },
         "summary": "Get Playlists for Video",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
@@ -4332,14 +4332,14 @@
         },
         "summary": "Get Video Sources",
         "tags": [
-          "videoGroup"
+          "Videos"
         ]
       }
     },
     "/accounts/{account_id}/videos/{video_id}/shares": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "List Shares",
         "description": "Lists the existing shares for an account - this is a Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
@@ -4409,7 +4409,7 @@
       },
       "post": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Share Video",
         "description": "Shares a video to one or more affiliates - this is an Master account operation - if the video has already been shared to an affiliate, this operation will re-share it and overwrite any affiliate metadata changes ",
@@ -4493,7 +4493,7 @@
     "/accounts/{account_id}/videos/{video_id}/shares/{affiliate_account_id}": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "List Shares",
         "description": "Lists the existing shares for an account - this is a Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
@@ -4567,7 +4567,7 @@
       },
       "delete": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Unshare Video",
         "description": "Unshares a video with a specific affiliate - this is an Master account operation - do this before sharing to insure that you are not re-sharing to an affiliate, which would overwrite any affiliate metadata changes ",
@@ -4640,7 +4640,7 @@
     "/accounts/{account_id}/channels/{channel_name}/members/{affiliate_account_id}": {
       "put": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Add Affiliate",
         "description": "Adds an affiliate to a channel - this is a Master account operation ",
@@ -4723,7 +4723,7 @@
       },
       "delete": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Remove Affiliate",
         "description": "Removes an affiliate from a channel - this is a Master account operation ",
@@ -4796,7 +4796,7 @@
     "/accounts/{account_id}/contracts/master_account_id": {
       "patch": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Approve Contract",
         "description": "Gets a list of available sharing contracts - this is an Affiliate account operation ",
@@ -4867,7 +4867,7 @@
     "/accounts/{account_id}/channels/{channel_name}": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Get Channel Details",
         "description": "Gets settings for a sharing channel (currently there is only one default channel) - this is a Master account operation ",
@@ -4934,7 +4934,7 @@
       },
       "patch": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Update Channel",
         "description": "Updates settings for a sharing channel (currently there is only one default channel) - this is a Master account operation ",
@@ -5012,7 +5012,7 @@
     "/accounts/{account_id}/contracts/{master_account_id}": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "Get Contract",
         "description": "Gets a contract for a specific Master account - this is an Affiliate account operation ",
@@ -5081,7 +5081,7 @@
     "/accounts/{account_id}/channels/{channel_name}/members": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "List Channel Affiliates",
         "description": "Gets a list of affiliates for a channel - this is a Master account operation ",
@@ -5153,7 +5153,7 @@
     "/accounts/{account_id}/channels": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "List Channels",
         "description": "Gets a list of channels (currently there is only one default channel) - this is a Master account operation ",
@@ -5218,7 +5218,7 @@
     "/accounts/{account_id}/contracts": {
       "get": {
         "tags": [
-          "mediasharingGroup"
+          "Media Sharing"
         ],
         "summary": "List Contracts",
         "description": "Gets a list of available sharing contracts - this is an Affiliate account operation ",
@@ -5283,7 +5283,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets": {
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Assets",
         "description": "Gets assets for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5358,7 +5358,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/dynamic_renditions": {
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Dynamic Renditions",
         "description": "Gets a list of dynamic renditions for a Dynamic Delivery video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5433,7 +5433,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/caption": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add Caption",
         "description": "Adds a caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5518,7 +5518,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Caption List",
         "description": "Gets the caption file for a given video (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5593,7 +5593,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/dash_manifests": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add DASH Manifest",
         "description": "Adds a location for a remote DASH manifest Notes: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5675,7 +5675,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get DASH Manifest List",
         "description": "Gets the dash_manifests for a given video. Notes: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5750,7 +5750,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/hds_manifest": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add HDS Manifest",
         "description": "Adds the location of an hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5832,7 +5832,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get HDS Manifest List",
         "description": "Gets the hds_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5907,7 +5907,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/hls_manifest": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add HLS Manifest",
         "description": "Adds the location of an hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -5989,7 +5989,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get HLS Manifest List",
         "description": "Gets the hls_manifest for a given video. Notes: 1) you can use /videos/ref:reference_id instead of /videos/video_id 2) this method only returns a remote asset HTL manifest, not manifests for ingested videos ",
@@ -6064,7 +6064,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/ismc_manifest": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add ISMC Manifest",
         "description": "Adds the location of an ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6146,7 +6146,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get ISMC Manifest List",
         "description": "Gets the ismc_manifest files for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6221,7 +6221,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/ism_manifest": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add ISM Manifest",
         "description": "Adds the location of an ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6303,7 +6303,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get ISM Manifest List",
         "description": "Gets the ism_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6378,7 +6378,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/poster": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add Poster",
         "description": "Adds a poster file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6463,7 +6463,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Poster List",
         "description": "Gets the poster file for a given video. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6538,7 +6538,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/renditions": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add Rendition",
         "description": "Add a remote rendition to the given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6623,7 +6623,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Rendition List",
         "description": "Gets a list of renditions for a given video. Notes: 1) this endpoint is for renditions created using the legacy ingest profiles - for Dynamic Deliver renditions, use the `/accounts/{account_id}/videos/{video_id}/assets/dynamic_renditions` endpoint; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6698,7 +6698,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/thumbnail": {
       "post": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Add Thumbnail",
         "description": "Adds a thumbnail file for a remote asset. Ingested assets must be added via the Dynamic Ingest API. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6783,7 +6783,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Thumbnail List",
         "description": "Gets the thumbnail for a given video. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6858,7 +6858,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/caption/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete Caption",
         "description": "Deletes a caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -6932,7 +6932,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Caption",
         "description": "Gets a caption file for a given video (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7009,7 +7009,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update Caption",
         "description": "Updates the location of a remote caption file for a remote asset (DFXP captions for the Smart Player). Note: 1) the caption endpoint is ONLY for working with DFXP captions used in the legacy Smart Player - WebVTT captions (text_tracks) for the new Brightcove Player are managed using the Update Video operation; 2) you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7103,7 +7103,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/dash_manifests/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete DASH Manifest",
         "description": "Deletes an dash_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7177,7 +7177,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get DASH Manifest",
         "description": "Gets a dash_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7254,7 +7254,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update DASH Manifest",
         "description": "Updates the location of a remote dash_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7348,7 +7348,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/hds_manifest/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete HDS Manifest",
         "description": "Deletes an hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7422,7 +7422,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get HDS Manifest",
         "description": "Gets the hds_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7499,7 +7499,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update HDS Manifest",
         "description": "Updates the location of a remote hds_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7593,7 +7593,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/hls_manifest/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete HLS Manifest",
         "description": "Deletes an hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7667,7 +7667,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get HLS Manifest",
         "description": "Gets an hls_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7744,7 +7744,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update HLS Manifest",
         "description": "Updates the location of a remote hls_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7838,7 +7838,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/ismc_manifest/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete ISMC Manifest",
         "description": "Deletes an ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7912,7 +7912,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get ISMC Manifest",
         "description": "Gets the ismc_manifest file for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -7989,7 +7989,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update ISMC Manifest",
         "description": "Updates the location of a remote ismc_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8083,7 +8083,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/ism_manifest/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete ISM Manifest",
         "description": "Deletes an ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8157,7 +8157,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get ISM Manifest",
         "description": "Gets an ism_manifest for a given video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8234,7 +8234,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update ISM Manifest",
         "description": "Updates the location of a remote ism_manifest file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8328,7 +8328,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/poster/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete Poster",
         "description": "Deletes a poster file for a remote asset. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8402,7 +8402,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Poster",
         "description": "Gets a poster file for a given video. Note that you can only add one poster for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8479,7 +8479,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update Poster",
         "description": "Updates the location of a remote poster file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8573,7 +8573,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/renditions/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete Rendition",
         "description": "Deletes a rendition for the given video. Note: this operation is only for remote renditions for remote asset videos &mdash; do not use it for renditions created by Video Cloud for ingested videos ",
@@ -8647,7 +8647,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Rendition",
         "description": "Gets a specified rendition for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8724,7 +8724,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update Rendition",
         "description": "Update the location for a remote rendition. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8818,7 +8818,7 @@
     "/accounts/{account_id}/videos/{video_id}/assets/thumbnail/{asset_id}": {
       "delete": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Delete Thumbnail",
         "description": "Deletes a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8892,7 +8892,7 @@
       },
       "get": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Get Thumbnail",
         "description": "Gets a thumbnail file for a given video. Note that you can only add one thumbnail for a video. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
@@ -8969,7 +8969,7 @@
       },
       "patch": {
         "tags": [
-          "assetGroup"
+          "Assets"
         ],
         "summary": "Update Thumbnail",
         "description": "Updates the location of a remote thumbnail file for a remote asset. Note: you can use /videos/ref:reference_id instead of /videos/video_id ",
