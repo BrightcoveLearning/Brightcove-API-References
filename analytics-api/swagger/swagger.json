@@ -205,7 +205,7 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/timeline"
+              "$ref": "#/definitions/Get_Video_Engagement200"
             }
           },
           "400": {
@@ -787,8 +787,6 @@
           }
         },
         "summary": {
-          "type": "object",
-          "description": "of all videos matching this request that had views ",
           "$ref": "#/definitions/summary"
         },
         "video_engagement_1": {
