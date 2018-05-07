@@ -175,7 +175,7 @@
  // add or update file
 
  /**
-  * @api {put} /accounts/:accountId/repos/:repoName/files/:destinationFilename Add/Update File
+  * @api {put} /accounts/:accountId/repos/:repoName/files/:filename Add/Update File
   * @apiName Add/Update File
   * @apiGroup FilesGroup
   * @apiVersion 1.0.0
@@ -186,7 +186,7 @@
   *
   * @apiParam {String} accountId Video Cloud account ID.
   * @apiParam {String} repoName The name of the repo for which to list details.
-  * @apiParam {String} destinationFilename The name of the file in the repo, it can be different than the name of locally read file.
+  * @apiParam {String} filename The name of the file in the repo, it can be different than the name of locally read file.
   *
   * @apiParam (Form Contents Value - Note: The value can be a file or a JSON string; If using a file it must be proceeded with the @ sign) {String} sourceFilename Name of the file in the local folder, or a JSON string.
   *
@@ -195,7 +195,7 @@
   *      --user :email \
   *      --form contents=@sourceFilename \
   *      --request PUT \
-  *      https://repos.api.brightcove.com/v1/accounts/:accountId/repos/:repoName/files/:destinationFilename
+  *      https://repos.api.brightcove.com/v1/accounts/:accountId/repos/:repoName/files/:fileName
   *
   * @apiSuccess (200) {String} name Destination filename
   * @apiSuccess (200) {String} public_url URL to use for referencing the file (contrasted to the repo URL)
