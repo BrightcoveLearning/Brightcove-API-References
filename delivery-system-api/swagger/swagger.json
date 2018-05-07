@@ -3,13 +3,13 @@
   "info": {
     "title": "Delivery System API Reference",
     "version": "1.0.0",
-    "description": "Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every <code>git push</code>, to players.brightcove.com. To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>"
+    "description": "Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every <code>git push</code>, to players.brightcove.com. To test API requests, you can use our <a href=\"https://support.brightcove.com/node/17910\" target=\"_blank\">API Testing Tools</a>"
   },
   "paths": {
     "/accounts/{accountId}/repos/{repoName}/files/{filename}": {
       "put": {
         "tags": [
-          "FilesGroup"
+          "Files"
         ],
         "summary": "Add/Update File",
         "description": "This will add or update a file. The wanted file name is at the end of the endpoint. The form contents can be a file name, including relative path, or any string. If the file has a .json extension, it will be checked for valid JSON format. ",
@@ -67,7 +67,7 @@
       },
       "delete": {
         "tags": [
-          "FilesGroup"
+          "Files"
         ],
         "summary": "Delete File",
         "description": "Deletes a file in a repo. ",
@@ -121,7 +121,7 @@
     "/accounts/{accountId}/repos/{repoName}/files": {
       "get": {
         "tags": [
-          "FilesGroup"
+          "Files"
         ],
         "summary": "List Files",
         "description": "Lists all the files in a repo. ",
@@ -339,13 +339,14 @@
           }
         },
         "operationId": "Get_Repository"
-      },
+      }
+    },
     "/accounts/{accountId}/repos": {
       "get": {
         "tags": [
           "Repositories"
         ],
-        "summary": "List Repositories",
+        "summary": "Get All Repositories",
         "description": "This will list the details for all repositories in an account. ",
         "consumes": [
           "application/json"
