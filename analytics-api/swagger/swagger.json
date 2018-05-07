@@ -530,7 +530,7 @@
     "/alltime/accounts/{account_id}/videos/{video_id}": {
       "get": {
         "tags": [
-          "Video_Data"
+          "Video Data"
         ],
         "summary": "Get Alltime Video Views",
         "description": "returns the total alltime video views for a video ",
