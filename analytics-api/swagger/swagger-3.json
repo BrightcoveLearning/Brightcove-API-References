@@ -998,14 +998,14 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "type of data in the values array"
+            "description": "The type of the timeline array"
           },
           "values": {
             "type": "array",
             "items": {
               "type": "number"
             },
-            "description": "array of views in each 100th part of video duration"
+            "description": "Array of views in each 100th part of video duration"
           }
         }
       },
