@@ -35,7 +35,7 @@
             "description": "The name of the repo for which to list details. "
           },
           {
-            "name": "destinationFilename",
+            "name": "filename",
             "in": "path",
             "required": true,
             "type": "string",
@@ -64,8 +64,7 @@
           }
         },
         "operationId": "Add_Update_File"
-      }
-    },
+      },
       "delete": {
         "tags": [
           "FilesGroup"
