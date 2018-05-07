@@ -523,7 +523,7 @@
           "description": "names of audio and video renditions to include - see Standard Ingest Profiles - renditions for available renditions you can choose from "
         },
         "dynamic_origin.images": {
-          "type": "object[]",
+          "type": "array",
           "description": "array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion) "
         },
         "dynamic_origin.images.label": {
@@ -577,7 +577,7 @@
           "description": "names of audio-only renditions to include - see Standard Ingest Profiles - renditions for available renditions you can choose from "
         },
         "dynamic_origin.images": {
-          "type": "object[]",
+          "type": "array",
           "description": "array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion) "
         },
         "dynamic_origin.images.label": {
@@ -686,7 +686,7 @@
           "description": "whether to make the master playable as a rendition by pushing it to the CDN(s) "
         },
         "renditions": {
-          "type": "object[]",
+          "type": "array",
           "description": "array of rendition maps "
         },
         "renditions.aspect_mode": {
@@ -886,7 +886,7 @@
           "description": "target frame width in pixels "
         },
         "renditions.watermarks": {
-          "type": "object[]",
+          "type": "array",
           "description": "array of watermark maps "
         },
         "renditions.watermarks.url": {
@@ -910,11 +910,11 @@
           "description": "distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge) - decimal values like 10.5% are not permitted "
         },
         "packages": {
-          "type": "object[]",
+          "type": "array",
           "description": "array of package maps for DRM (see Content Security) "
         },
         "packages.drm": {
-          "type": "string[]",
+          "type": "array",
           "description": "for MPEG-DASH, array of DRM types to apply, e.g. [&quot;widevine&quot;, &quot;playready&quot;] "
         },
         "packages.package_type": {
@@ -922,7 +922,7 @@
           "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine "
         },
         "packages.renditions": {
-          "type": "mixed",
+          "type": "array",
           "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s "
         }
       },
@@ -1670,7 +1670,7 @@
           "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine "
         },
         "renditions": {
-          "type": "mixed",
+          "type": "array",
           "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s "
         }
       },
