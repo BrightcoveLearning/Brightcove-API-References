@@ -17,7 +17,7 @@
  * @apiParam (Request Body Fields) {String="us-west-1", "us-west-2","us-east-1","ap-southeast-2", "ap-northeast-1","ap-southeast-1", "eu-central-1", "sa-east-1"} region AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support.
  * @apiParam (Request Body Fields) {Number{-60.0-60.0}} [ad_audio_loudness_level] Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (`-23dB` for **EBU R.128**) The recommended setting is `-23`.
  * @apiParam (Request Body Fields) {String} [beacon_set] ID for a beacon set (for SSAI only).
- * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish.
+ * @apiParam (Request Body Fields) {Number{1-1800}} [reconnect_time=1800] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish.
  * @apiParam (Request Body Fields) {String} [slate] Id for a set of slate assets
  * @apiParam (Request Body Fields) {Boolean} [static=false] Whether this is a static entry point (SEP) job
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
