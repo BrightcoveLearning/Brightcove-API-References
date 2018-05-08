@@ -6,7 +6,7 @@
   * @apiGroup Credentials
   * @apiVersion 1.0.0
   *
-  * @apiDescription Get a list of credentials for a Live account.
+  * @apiDescription This endpoint can be used to get user credentials for a given user provided one has an API key.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -16,8 +16,8 @@
   *    https://api.bcovlive.io/v1/credentials
   *
   *
-  * @apiSuccess (200) {Object} vod_jobs The clip response object
-  * @apiSuccess (200) {String} vod_jobs.jvod_id The clip job id
+  * @apiSuccess (200) {Object} user_id The user's id
+  * @apiSuccess (200) {Object[]} credentials Array of credentials objects
   * @apiSuccess (200) {String} vod_jobs.label The clip label (from the input)
   * @apiSuccess (200) {String} live_job_id The clip label (from the input)
   *
