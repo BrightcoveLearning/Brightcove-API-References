@@ -730,6 +730,13 @@
         ],
         "parameters": [
           {
+            "name": "application_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ad application id"
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
