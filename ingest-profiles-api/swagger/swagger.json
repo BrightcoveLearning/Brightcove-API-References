@@ -722,8 +722,6 @@
           "$ref": "#/definitions/Create_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for renditions and images - Dynamic Delivery and CAE profiles only ",
           "$ref": "#/definitions/Create_Ingest_ProfileBody.dynamic_origin"
         },
         "renditions": {
@@ -1189,8 +1187,6 @@
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1719,8 +1715,6 @@
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1781,8 +1775,6 @@
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1831,8 +1823,6 @@
           "$ref": "#/definitions/Update_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for renditions and images ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.dynamic_origin"
         },
         "renditions": {
@@ -2293,8 +2283,6 @@
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
