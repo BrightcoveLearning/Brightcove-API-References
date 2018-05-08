@@ -1367,10 +1367,6 @@
         "account_id": {
           "type": "object",
           "description": "The Live account id (if you leave this out, request will still work) "
-        },
-        "account_id": {
-          "type": "string",
-          "description": "URL The account id "
         }
       },
       "required": [
