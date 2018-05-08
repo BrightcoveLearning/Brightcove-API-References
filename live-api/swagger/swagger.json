@@ -784,6 +784,13 @@
         ],
         "parameters": [
           {
+            "name": "application_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ad application id"
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -830,6 +837,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "application_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ad application id"
+          },
           {
             "in": "body",
             "name": "Update_Ad_ConfigurationBody",
@@ -891,6 +905,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "SLATE_MSA_ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The slate media source asset id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
