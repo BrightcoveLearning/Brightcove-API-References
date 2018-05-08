@@ -1,66 +1,92 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "title": "Dynamic Ingest API Reference",
-    "version": "1.0.0",
-    "description": "Reference for the Brightcove Dynamic Ingest API, used to add videos, images, and captions to your media library, and to replace existing media assets. **NOTE THAT BEFORE YOU INGEST A NEW VIDEO, YOU MUST FIRST MAKE A [CREATE VIDEO REQUEST](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/swagger.html#/Videos/Create_Video).** To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>"
+    "description": "Reference for the Brightcove Dynamic Ingest API, used to add videos, images, and captions to your media library, and to replace existing media assets. **NOTE THAT BEFORE YOU INGEST A NEW VIDEO, YOU MUST FIRST MAKE A [CREATE VIDEO REQUEST](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/swagger.html#/Videos/Create_Video).** To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>",
+    "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "https://ingest.api.brightcove.com/v1",
+      "variables": {}
+    }
+  ],
   "paths": {
     "/accounts/{account_id}/videos/{video_id}/upload-urls/{source_name}": {
       "get": {
         "tags": [
           "Ingest"
         ],
-        "summary": "Get S3 URLs",
+        "summary": "Get_S3_URLs",
         "description": "Get temporary S3 URLs to upload source files for ingestion into Video Cloud. See Source File Upload for more information. NOTE that before you ingest a new video, you must first make a Create Video request. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "operationId": "GetS3Urls",
         "parameters": [
           {
             "name": "account_id",
             "in": "path",
+            "description": "Video Cloud account ID.",
             "required": true,
-            "type": "string",
-            "description": "Video Cloud account ID. "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "video_id",
             "in": "path",
+            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request",
             "required": true,
-            "type": "number",
-            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
           },
           {
             "name": "source_name",
             "in": "path",
+            "description": "the video source filename - the name should not contain any URL-reserved characters such as ?, &amp;, # or spaces",
             "required": true,
-            "type": "string",
-            "description": "the video source filename - the name should not contain any URL-reserved characters such as ?, &amp;, # or spaces "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "Content-Type",
             "in": "header",
+            "description": "Content-Type: application/json",
             "required": true,
-            "type": "string",
-            "description": "Content-Type: application/json "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "Authorization",
             "in": "header",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))",
             "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "200",
-            "schema": {
-              "$ref": "#/definitions/Get_S3_URLs200"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "$ref": "#/components/schemas/GetS3Urls200"
+                }
+              }
             }
           },
           "401": {
@@ -76,7 +102,14 @@
             "description": "INTERNAL_ERROR: Internal error, please try again later "
           }
         },
-        "operationId": "Get_S3_URLs"
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
       }
     },
     "/accounts/{account_id}/videos/{video_id}/ingest-requests": {
@@ -84,58 +117,77 @@
         "tags": [
           "Ingest"
         ],
-        "summary": "Ingest Media Asset",
+        "summary": "Ingest_Media_Asset",
         "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "operationId": "IngestMediaAsset",
         "parameters": [
           {
             "name": "account_id",
             "in": "path",
+            "description": "Video Cloud account ID.",
             "required": true,
-            "type": "string",
-            "description": "Video Cloud account ID. "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "video_id",
             "in": "path",
+            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request",
             "required": true,
-            "type": "number",
-            "description": "Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the Create Video request "
-          },
-          {
-            "in": "body",
-            "name": "Ingest_Media_AssetBody",
-            "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request. ",
-            "required": true,
+            "style": "simple",
+            "explode": false,
             "schema": {
-              "$ref": "#/definitions/Ingest_Media_AssetBody"
+              "type": "number"
             }
           },
           {
             "name": "Content-Type",
             "in": "header",
+            "description": "Content-Type: application/json",
             "required": true,
-            "type": "string",
-            "description": "Content-Type: application/json "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "Authorization",
             "in": "header",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))",
             "required": true,
-            "type": "string",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens)) "
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
+        "requestBody": {
+          "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library. NOTE that before you ingest a new video, you must first make a Create Video request.",
+                "$ref": "#/components/schemas/IngestMediaAssetbody"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "200",
-            "schema": {
-              "$ref": "#/definitions/Ingest_Media_Asset200"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "$ref": "#/components/schemas/IngestMediaAsset200"
+                }
+              }
             }
           },
           "400": {
@@ -158,240 +210,249 @@
           },
           "500": {
             "description": "SUBMISSION_FAILURE: Unable to submit job please try again later. \nINTERNAL_ERROR: Internal error, please try again later "
-          },
-          "Unable to fetch CDN credentials ": {
-            "description": "CDN_CONFIGS:undefined"
-          },
-          "400 Both a master url and use_archived_master were set in the request. ": {
-            "description": "AMBIGUOUS_REQUEST:undefined"
           }
         },
-        "operationId": "Ingest_Media_Asset"
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
       }
     }
   },
-  "definitions": {
-    "Get_S3_URLs200": {
-      "properties": {
-        "bucket": {
-          "type": "string",
-          "description": "the S3 bucket name "
-        },
-        "object_key": {
-          "type": "string",
-          "description": "the access key used for authenticating the upload request (used for multipart uploads) "
-        },
-        "access_key_id": {
-          "type": "string",
-          "description": "the access key used for authenticating the upload request (used for multipart uploads) "
-        },
-        "secret_access_key": {
-          "type": "string",
-          "description": "the secret access key used for authenticating the upload request (used for multipart uploads) "
-        },
-        "session_token": {
-          "type": "string",
-          "description": "the secret access key used for authenticating the upload request (used for multipart uploads) "
-        },
-        "SignedUrl": {
-          "type": "string",
-          "description": "this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload "
-        },
-        "ApiRequestUrl": {
-          "type": "string",
-          "description": "this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets "
-        }
-      },
-      "required": [
-        "bucket",
-        "object_key",
-        "access_key_id",
-        "secret_access_key",
-        "session_token",
-        "SignedUrl",
-        "ApiRequestUrl"
-      ]
-    },
-    "Ingest_Media_AssetBody": {
-      "properties": {
-        "master": {
-          "type": "object",
-          "description": "the video master to be ingested ",
-          "$ref": "#/definitions/Ingest_Media_AssetBody.master"
-        },
-        "profile": {
-          "type": "string",
-          "description": "ingest profile to use for transcoding; if absent, account default profile will be used "
-        },
-        "text_tracks": {
-          "type": "array",
-          "description": "array of text_track maps ",
-          "items": {
-            "$ref": "#/definitions/Ingest_Media_AssetBody.text_tracks"
-          }
-        },
-        "audio_tracks": {
-          "type": "array",
-          "description": "array of audio track objects Dynanic Delivery only ",
-          "items": {
-            "$ref": "#/definitions/Ingest_Media_AssetBody.audio_tracks"
-          }
-        },
-        "poster": {
-          "type": "object",
-          "description": "the video master to be ingested ",
-          "$ref": "#/definitions/Ingest_Media_AssetBody.poster"
-        },
-        "thumbnail": {
-          "type": "object",
-          "description": "the video master to be ingested ",
-          "$ref": "#/definitions/Ingest_Media_AssetBody.thumbnail"
-        },
-        "capture-images": {
-          "type": "boolean",
-          "description": "whether poster and thumbnail should be captured during transcoding; defaults to true if the the profile has image renditions, false if it does not "
-        },
-        "callbacks": {
-          "type": "array",
-          "description": "array of URLs that notifications should be sent to ",
-          "items": {
-            "type": "string"
+  "components": {
+    "schemas": {
+      "GetS3Urls200": {
+        "title": "Get_S3_URLs200",
+        "required": [
+          "bucket",
+          "object_key",
+          "access_key_id",
+          "secret_access_key",
+          "session_token",
+          "SignedUrl",
+          "ApiRequestUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "type": "string",
+            "description": "the S3 bucket name"
+          },
+          "object_key": {
+            "type": "string",
+            "description": "the access key used for authenticating the upload request (used for multipart uploads)"
+          },
+          "access_key_id": {
+            "type": "string",
+            "description": "the access key used for authenticating the upload request (used for multipart uploads)"
+          },
+          "secret_access_key": {
+            "type": "string",
+            "description": "the secret access key used for authenticating the upload request (used for multipart uploads)"
+          },
+          "session_token": {
+            "type": "string",
+            "description": "the secret access key used for authenticating the upload request (used for multipart uploads)"
+          },
+          "SignedUrl": {
+            "type": "string",
+            "description": "this is a shorthand S3 url that you can PUT your source file(s) to if you have relatively small videos and are not implementing multipart upload"
+          },
+          "ApiRequestUrl": {
+            "type": "string",
+            "description": "this is the URL you will include in your Dynamic Ingest POST request for the Master url or url for the image/text_tracks assets"
           }
         }
       },
-      "required": []
-    },
-    "Ingest_Media_AssetBody.master": {
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video "
-        },
-        "use_archived_master": {
-          "type": "boolean",
-          "description": "For retranscode requests, will use the archived master if set to true; if set to false, you must also include the url for the source video "
-        }
-      },
-      "required": []
-    },
-    "Ingest_Media_AssetBody.audio_tracks": {
-      "properties": {
-        "language": {
-          "type": "string",
-          "description": "Language code for the muxed in audio from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
-        },
-        "merge_with_existing": {
-          "type": "boolean",
-          "description": "whether to replace existing audio tracks or add the new ones (currently only false is supported) Dynanic Delivery only "
-        },
-        "masters": {
-          "type": "array",
-          "description": "array of audio track objects Dynanic Delivery only ",
-          "items": {
-            "$ref": "#/definitions/Ingest_Media_AssetBody.audio_tracks.masters"
+      "IngestMediaAssetbody": {
+        "title": "Ingest_Media_AssetBody",
+        "type": "object",
+        "properties": {
+          "master": {
+            "description": "the video master to be ingested",
+            "$ref": "#/components/schemas/IngestMediaAssetbody.master"
+          },
+          "profile": {
+            "type": "string",
+            "description": "ingest profile to use for transcoding; if absent, account default profile will be used"
+          },
+          "text_tracks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IngestMediaAssetbody.textTracks"
+            },
+            "description": "array of text_track maps"
+          },
+          "audio_tracks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IngestMediaAssetbody.audioTracks"
+            },
+            "description": "array of audio track objects Dynanic Delivery only"
+          },
+          "poster": {
+            "description": "the video master to be ingested",
+            "$ref": "#/components/schemas/IngestMediaAssetbody.poster"
+          },
+          "thumbnail": {
+            "description": "the video master to be ingested",
+            "$ref": "#/components/schemas/IngestMediaAssetbody.thumbnail"
+          },
+          "capture-images": {
+            "type": "boolean",
+            "description": "whether poster and thumbnail should be captured during transcoding; defaults to true if the the profile has image renditions, false if it does not"
+          },
+          "callbacks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "array of URLs that notifications should be sent to"
           }
         }
       },
-      "required": []
-    },
-    "Ingest_Media_AssetBody.audio_tracks.masters": {
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "URL for the audio file Dynanic Delivery only "
-        },
-        "language": {
-          "type": "string",
-          "description": "Language code for the audio track from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
-        },
-        "variant": {
-          "type": "string",
-          "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only "
+      "IngestMediaAssetbody.master": {
+        "title": "Ingest_Media_AssetBody.master",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video"
+          },
+          "use_archived_master": {
+            "type": "boolean",
+            "description": "For retranscode requests, will use the archived master if set to true; if set to false, you must also include the url for the source video"
+          }
         }
       },
-      "required": []
-    },
-    "Ingest_Media_AssetBody.text_tracks": {
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "URL for a WebVTT file "
-        },
-        "srclang": {
-          "type": "string",
-          "description": "ISO 639 2-letter (alpha-2) language code for the text tracks "
-        },
-        "kind": {
-          "type": "string",
-          "description": "how the vtt file is meant to be used "
-        },
-        "label": {
-          "type": "string",
-          "description": "user-readable title "
-        },
-        "default": {
-          "type": "boolean",
-          "description": "sets the default language for captions/subtitles "
+      "IngestMediaAssetbody.textTracks": {
+        "title": "Ingest_Media_AssetBody.text_tracks",
+        "required": [
+          "url",
+          "srclang"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL for a WebVTT file"
+          },
+          "srclang": {
+            "type": "string",
+            "description": "ISO 639 2-letter (alpha-2) language code for the text tracks"
+          },
+          "kind": {
+            "type": "string",
+            "description": "how the vtt file is meant to be used"
+          },
+          "label": {
+            "type": "string",
+            "description": "user-readable title"
+          },
+          "default": {
+            "type": "boolean",
+            "description": "sets the default language for captions/subtitles"
+          }
         }
       },
-      "required": [
-        "url",
-        "srclang"
-      ]
-    },
-    "Ingest_Media_AssetBody.poster": {
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "URL for the video poster image "
-        },
-        "height": {
-          "type": "number",
-          "description": "pixel height of the image "
-        },
-        "width": {
-          "type": "number",
-          "description": "pixel width of the image "
+      "IngestMediaAssetbody.audioTracks": {
+        "title": "Ingest_Media_AssetBody.audio_tracks",
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "Language code for the muxed in audio from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only"
+          },
+          "merge_with_existing": {
+            "type": "boolean",
+            "description": "whether to replace existing audio tracks or add the new ones (currently only false is supported) Dynanic Delivery only"
+          },
+          "masters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IngestMediaAssetbody.audioTracks.masters"
+            },
+            "description": "array of audio track objects Dynanic Delivery only"
+          }
         }
       },
-      "required": [
-        "url"
-      ]
-    },
-    "Ingest_Media_AssetBody.thumbnail": {
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "URL for the video thumbnail image "
-        },
-        "height": {
-          "type": "number",
-          "description": "pixel height of the image "
-        },
-        "width": {
-          "type": "number",
-          "description": "pixel width of the image "
+      "IngestMediaAssetbody.audioTracks.masters": {
+        "title": "Ingest_Media_AssetBody.audio_tracks.masters",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL for the audio file Dynanic Delivery only"
+          },
+          "language": {
+            "type": "string",
+            "description": "Language code for the audio track from the subtags in http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only"
+          },
+          "variant": {
+            "type": "string",
+            "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only"
+          }
         }
       },
-      "required": [
-        "url"
-      ]
-    },
-    "Ingest_Media_Asset200": {
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "job id for the request "
+      "IngestMediaAssetbody.poster": {
+        "title": "Ingest_Media_AssetBody.poster",
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL for the video poster image"
+          },
+          "height": {
+            "type": "number",
+            "description": "pixel height of the image"
+          },
+          "width": {
+            "type": "number",
+            "description": "pixel width of the image"
+          }
         }
       },
-      "required": [
-        "id"
-      ]
+      "IngestMediaAssetbody.thumbnail": {
+        "title": "Ingest_Media_AssetBody.thumbnail",
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL for the video thumbnail image"
+          },
+          "height": {
+            "type": "number",
+            "description": "pixel height of the image"
+          },
+          "width": {
+            "type": "number",
+            "description": "pixel width of the image"
+          }
+        }
+      },
+      "IngestMediaAsset200": {
+        "title": "Ingest_Media_Asset200",
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "job id for the request"
+          }
+        }
+      }
     }
-  },
-  "schemes": [
-    "https"
-  ],
-  "host": "ingest.api.brightcove.com",
-  "basePath": "/v1"
+  }
 }
