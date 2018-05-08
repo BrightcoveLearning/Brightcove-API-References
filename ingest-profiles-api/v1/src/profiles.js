@@ -17,21 +17,15 @@
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID.
  * @apiParam (Request Body Fields) {String} [description] description of the profile
  * @apiParam (Request Body Fields) {Object} [digital_master] specification for archiving a master
- * @apiParam (Request Body Fields) {String} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master
+ * @apiParam (Request Body Fields) {String="passthrough", "none"} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master
  * @apiParam (Request Body Fields) {Boolean} [digital_master.distribute=false] whether to make the master playable as a rendition by pushing it to the CDN(s)
  * @apiParam (Request Body Fields) {Object} dynamic_origin specification for renditions and images - **Dynamic Delivery and CAE profiles only**
- * @apiParam (Request Body Fields) {Array} dynamic_origin.renditions names of audio and video renditions to include - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from
+ * @apiParam (Request Body Fields) {Array} dynamic_origin.renditions names of audio and video renditions to include (**audio only for CAE profiles**) - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from
  * @apiParam (Request Body Fields) {Object[]} [dynamic_origin.images] array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion)
  * @apiParam (Request Body Fields) {String="poster","thumbnail"} [dynamic_origin.images.label] the kind of image this will be
  * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.height] the height of the image in pixels
  * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.width] the width of the image in pixels
  *
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} name profile name (must be unique within the account)
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} account_id Video Cloud account ID.
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} [description] description of the profile
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [digital_master] specification for archiving a master
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} dynamic_origin specification for renditions and images
  * @apiParam (Request Body Fields - Context Aware Encoding) {Array} dynamic_origin.renditions names of **audio-only** renditions to include - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from
  * @apiParam (Request Body Fields - Context Aware Encoding) {Object[]} [dynamic_origin.images] array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion)
  * @apiParam (Request Body Fields - Context Aware Encoding) {String="poster","thumbnail"} [dynamic_origin.images.label] the kind of image this will be
