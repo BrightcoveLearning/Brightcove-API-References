@@ -1365,7 +1365,7 @@
           "description": "URL The id for the beacon set "
         },
         "account_id": {
-          "type": "object",
+          "type": "string",
           "description": "The Live account id (if you leave this out, request will still work) "
         }
       },
