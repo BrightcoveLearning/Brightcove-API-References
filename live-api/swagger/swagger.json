@@ -947,7 +947,7 @@
         "operationId": "Delete_Slate_Media_Source_Asset"
       }
     },
-    "/v1/ssai/beaconset/BEACON_SET_ID": {
+    "/v1/ssai/beaconset/{BEACON_SET_ID}": {
       "delete": {
         "tags": [
           "SSAI"
@@ -961,6 +961,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "BEACON_SET_ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The beacon set id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1008,6 +1015,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "BEACON_SET_ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The beacon set id"
+          },
           {
             "in": "body",
             "name": "Update_beacon_setBody",
@@ -1070,6 +1084,13 @@
         ],
         "parameters": [
           {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -1104,7 +1125,7 @@
         "operationId": "Get_Account_Ad_Configurations"
       }
     },
-    "/v1/ssai/slates/{ACCOUNT_ID}": {
+    "/v1/ssai/slates/{account_id}": {
       "get": {
         "tags": [
           "SSAI"
@@ -1118,6 +1139,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1167,6 +1195,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1333,7 +1368,7 @@
           "type": "object",
           "description": "The Live account id (if you leave this out, request will still work) "
         },
-        "ACCOUNT_ID": {
+        "account_id": {
           "type": "string",
           "description": "URL The account id "
         }
@@ -1343,7 +1378,7 @@
         "application_id",
         "SLATE_MSA_ID",
         "BEACON_SET_ID",
-        "ACCOUNT_ID"
+        "account_id"
       ]
     },
     "Create_VOD_ClipBody": {
