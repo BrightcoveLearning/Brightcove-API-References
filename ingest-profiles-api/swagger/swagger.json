@@ -719,8 +719,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "specification for archiving a master ",
           "$ref": "#/definitions/Create_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
@@ -1188,8 +1186,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
@@ -1720,8 +1716,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
@@ -1784,8 +1778,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
@@ -1836,8 +1828,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "specification for archiving a master ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
@@ -2300,8 +2290,6 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
