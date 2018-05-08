@@ -28,27 +28,21 @@
  * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.width] the width of the image in pixels
  *
  * @apiParam (Request Body Fields) {Object} dynamic_origin.dynamic_profile_options Defines rendition options **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} dynamic_origin.dynamic_profile_options.min_renditions Minimum number of renditions to create **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} dynamic_origin.dynamic_profile_options.max_renditions Maximum number of renditions to create **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [dynamic_origin.dynamic_profile_options.min_resolution] Defines the minimum resolution for **for CAE profiles only** renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.height] Minimum height for renditions **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.width] Minimum width for renditions **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions Minimum number of renditions to create **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions Maximum number of renditions to create **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Object} [dynamic_origin.dynamic_profile_options.min_resolution] Defines the minimum resolution for **for CAE profiles only** renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.height] Minimum height for renditions **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.width] Minimum width for renditions **for CAE profiles only**
  *
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [dynamic_origin.dynamic_profile_options.max_resolution] Defines the maximum resolution for renditions **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.height=source-height] Maximum height for renditions **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.width=source-width] Maximum width for renditions **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_bitrate] Maximum bitrate for renditions in kbps **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate] Maximum bitrate for lowest bitrate rendition in kbps **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_frame_rate=30] Maximum framerate for renditions in fps **for CAE profiles only**
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.keyframe_rate=0.5] The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second)
- * @apiParam (Request Body Fields - Context Aware Encoding) {Boolean} [dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration=false] At least one rendition used in the profile will be baseline profile
+ * @apiParam (Request Body Fields) {Object} [dynamic_origin.dynamic_profile_options.max_resolution] Defines the maximum resolution for renditions **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.height=source-height] Maximum height for renditions **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.width=source-width] Maximum width for renditions **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_bitrate] Maximum bitrate for renditions in kbps **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate] Maximum bitrate for lowest bitrate rendition in kbps **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_frame_rate=30] Maximum framerate for renditions in fps **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.keyframe_rate=0.5] The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second) **for CAE profiles only**
+ * @apiParam (Request Body Fields) {Boolean} [dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration=false] At least one rendition used in the profile will be baseline profile **for CAE profiles only**
  *
- * @apiParam (Request Body Fields - Legacy Ingest) {String} name profile name (must be unique within the account)
- * @apiParam (Request Body Fields - Legacy Ingest) {Number} account_id Video Cloud account ID.
- * @apiParam (Request Body Fields - Legacy Ingest) {String} [description] description of the profile
- * @apiParam (Request Body Fields - Legacy Ingest) {Object} [digital_master] specification for archiving a master
- * @apiParam (Request Body Fields - Legacy Ingest) {String} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery), a reference id for a rendition specified in the `renditions`, or `none` if you do not want to archive a master
- * @apiParam (Request Body Fields - Legacy Ingest) {Boolean} [digital_master.distribute=false] whether to make the master playable as a rendition by pushing it to the CDN(s)
  * @apiParam (Request Body Fields - Legacy Ingest) {Object[]} renditions array of rendition maps
  * @apiParam (Request Body Fields - Legacy Ingest) {String="preserve","stretch","crop","pad"} [renditions.aspect_mode="preserve"] how to handle mismatch between source and rendition aspect ratio
  * @apiParam (Request Body Fields - Legacy Ingest) {Number} renditions.audio_bitrate audio bitrate in kbps
@@ -824,32 +818,32 @@
  * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.height] the height of the image in pixels
  * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.width] the width of the image in pixels
  *
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} name profile name (must be unique within the account)
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} account_id Video Cloud account ID.
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} [description] description of the profile
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [digital_master] specification for archiving a master
- * @apiParam (Request Body Fields - Context Aware Encoding) {String} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} dynamic_origin specification for renditions and images
- * @apiParam (Request Body Fields - Context Aware Encoding) {Array} dynamic_origin.renditions names of **audio-only** renditions to include - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object[]} [dynamic_origin.images] array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion)
- * @apiParam (Request Body Fields - Context Aware Encoding) {String="poster","thumbnail"} [dynamic_origin.images.label] the kind of image this will be
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.images.height] the height of the image in pixels
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.images.width] the width of the image in pixels
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} dynamic_origin.dynamic_profile_options Defines rendition options for CAE profiles
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} dynamic_origin.dynamic_profile_options.min_renditions Minimum number of renditions to create
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} dynamic_origin.dynamic_profile_options.max_renditions Maximum number of renditions to create
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [dynamic_origin.dynamic_profile_options.min_resolution] Defines the minimum resolution for renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.height] Minimum height for renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.width] Minimum width for renditions
+ * @apiParam (Request Body Fields) {String} name profile name (must be unique within the account)
+ * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID.
+ * @apiParam (Request Body Fields) {String} [description] description of the profile
+ * @apiParam (Request Body Fields) {Object} [digital_master] specification for archiving a master
+ * @apiParam (Request Body Fields) {String} [digital_master.rendition=none] rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master
+ * @apiParam (Request Body Fields) {Object} dynamic_origin specification for renditions and images
+ * @apiParam (Request Body Fields) {Array} dynamic_origin.renditions names of **audio-only** renditions to include - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from
+ * @apiParam (Request Body Fields) {Object[]} [dynamic_origin.images] array of image specifications for poster and thumbnail (if omitted, no images will be captured during ingestion)
+ * @apiParam (Request Body Fields) {String="poster","thumbnail"} [dynamic_origin.images.label] the kind of image this will be
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.height] the height of the image in pixels
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.images.width] the width of the image in pixels
+ * @apiParam (Request Body Fields) {Object} dynamic_origin.dynamic_profile_options Defines rendition options for CAE profiles
+ * @apiParam (Request Body Fields) {Number} dynamic_origin.dynamic_profile_options.min_renditions Minimum number of renditions to create
+ * @apiParam (Request Body Fields) {Number} dynamic_origin.dynamic_profile_options.max_renditions Maximum number of renditions to create
+ * @apiParam (Request Body Fields) {Object} [dynamic_origin.dynamic_profile_options.min_resolution] Defines the minimum resolution for renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.height] Minimum height for renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.min_resolution.width] Minimum width for renditions
  *
- * @apiParam (Request Body Fields - Context Aware Encoding) {Object} [dynamic_origin.dynamic_profile_options.max_resolution] Defines the maximum resolution for renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.height=source-height] Maximum height for renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.width=source-width] Maximum width for renditions
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_bitrate] Maximum bitrate for renditions in kbps
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate] Maximum bitrate for lowest bitrate rendition in kbps
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.max_frame_rate=30] Maximum framerate for renditions in fps
- * @apiParam (Request Body Fields - Context Aware Encoding) {Number} [dynamic_origin.dynamic_profile_options.keyframe_rate=0.5] The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second)
- * @apiParam (Request Body Fields - Context Aware Encoding) {Boolean} [dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration=false] At least one rendition used in the profile will be baseline profile
+ * @apiParam (Request Body Fields) {Object} [dynamic_origin.dynamic_profile_options.max_resolution] Defines the maximum resolution for renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.height=source-height] Maximum height for renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_resolution.width=source-width] Maximum width for renditions
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_bitrate] Maximum bitrate for renditions in kbps
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_first_rendition_bitrate] Maximum bitrate for lowest bitrate rendition in kbps
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.max_frame_rate=30] Maximum framerate for renditions in fps
+ * @apiParam (Request Body Fields) {Number} [dynamic_origin.dynamic_profile_options.keyframe_rate=0.5] The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second)
+ * @apiParam (Request Body Fields) {Boolean} [dynamic_origin.dynamic_profile_options.select_baseline_profile_configuration=false] At least one rendition used in the profile will be baseline profile
  *
  * @apiParam (Request Body Fields - Legacy Ingest) {String} name profile name (must be unique within the account)
  * @apiParam (Request Body Fields - Legacy Ingest) {Number} account_id Video Cloud account ID.
