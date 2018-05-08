@@ -684,25 +684,14 @@
           "description": "maximum number of custom profiles for the account "
         },
         "max_rendition_count": {
-          "type": "number",
+          "type": "integer",
           "description": "maximum number of renditions per profile "
         },
         "version": {
           "type": "number",
           "description": "system-managed version number "
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "default_profile_id",
-        "default_live_profile_id",
-        "date_created",
-        "date_last_modified",
-        "max_profile_count",
-        "max_rendition_count",
-        "version"
-      ]
+      }
     },
     "Create_Ingest_ProfileBody": {
       "properties": {
@@ -719,13 +708,9 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "specification for archiving a master ",
           "$ref": "#/definitions/Create_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for renditions and images - Dynamic Delivery and CAE profiles only ",
           "$ref": "#/definitions/Create_Ingest_ProfileBody.dynamic_origin"
         },
         "renditions": {
@@ -761,8 +746,7 @@
           "type": "boolean",
           "description": "whether to make the master playable as a rendition by pushing it to the CDN(s) "
         }
-      },
-      "required": []
+      }
     },
     "Create_Ingest_ProfileBody.dynamic_origin": {
       "properties": {
@@ -1188,13 +1172,9 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1255,8 +1235,6 @@
           }
         },
         "dynamic_profile_options": {
-          "type": "object",
-          "description": "defines rendition options for CAE profiles ",
           "$ref": "#/definitions/dynamic_origin.dynamic_profile_options"
         }
       },
@@ -1298,13 +1276,9 @@
           "description": "maximum number of renditions "
         },
         "min-resolution": {
-          "type": "object",
-          "description": "defines the minimum resolution for renditions ",
           "$ref": "#/definitions/dynamic_origin.dynamic_profile_options.min-resolution"
         },
         "max-resolution": {
-          "type": "object",
-          "description": "defines the maximum resolution for renditions ",
           "$ref": "#/definitions/dynamic_origin.dynamic_profile_options.max-resolution"
         },
         "max_bitrate": {
@@ -1495,8 +1469,6 @@
           "description": "A reference id for the rendition that is unique within the account - required for DRM packaging "
         },
         "skip": {
-          "type": "object",
-          "description": "A set of conditions for skippiung creation of this rendition see Conditional Output ",
           "$ref": "#/definitions/renditions.skip"
         },
         "skip_video": {
@@ -1683,7 +1655,7 @@
           "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine "
         },
         "renditions": {
-          "type": "mixed",
+          "type": "array",
           "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s "
         }
       },
@@ -1720,13 +1692,9 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1784,13 +1752,9 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "directions for archiving masters ",
           "$ref": "#/definitions/digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for Dynamic Delivery Options ",
           "$ref": "#/definitions/dynamic_origin"
         },
         "renditions": {
@@ -1836,13 +1800,9 @@
           "description": "description of the profile "
         },
         "digital_master": {
-          "type": "object",
-          "description": "specification for archiving a master ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.digital_master"
         },
         "dynamic_origin": {
-          "type": "object",
-          "description": "specification for renditions and images ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.dynamic_origin"
         },
         "renditions": {
@@ -1933,13 +1893,9 @@
           "description": "Maximum number of renditions to create "
         },
         "min_resolution": {
-          "type": "object",
-          "description": "Defines the minimum resolution for renditions ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.dynamic_origin.dynamic_profile_options.min_resolution"
         },
         "max_resolution": {
-          "type": "object",
-          "description": "Defines the maximum resolution for renditions ",
           "$ref": "#/definitions/Update_Ingest_ProfileBody.dynamic_origin.dynamic_profile_options.max_resolution"
         },
         "max_bitrate": {
