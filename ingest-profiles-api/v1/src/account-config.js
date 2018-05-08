@@ -26,7 +26,7 @@
  * @apiSuccess (200) {Number} max_rendition_count maximum number of renditions per profile
  * @apiSuccess (200) {Number} version system-managed version number
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {object} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": 57838016001,
@@ -40,10 +40,10 @@
  *        "version": 1442409154636
  *    }
  *
- * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource
+ * @apiError (Error 4xx) {array} NOT_AUTHORIZED 401: Credentials are required to access this resource
  * @apiError (Error 4xx) {html} NOT_FOUND 404: The api couldn't find the resource you requested
  *
- * @apiErrorExample {json} 409 Error Response
+ * @apiErrorExample {array} 409 Error Response
  *    HTTP/1.1 404 NOT_FOUND
  *    [
  *        {
@@ -52,7 +52,7 @@
  *        }
  *    ]
  *
- * @apiErrorExample {html} 404 Error Response
+ * @apiErrorExample {string} 404 Error Response
  *    HTTP/1.1 404 NOT_FOUND
  *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 *    <title>Error 404 NOT_FOUND</title> </head>
