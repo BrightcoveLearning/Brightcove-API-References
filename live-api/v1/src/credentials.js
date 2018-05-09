@@ -125,8 +125,8 @@
   *    {
   *    	"user_id": {{ user_id  }},
   *    	"credential_default_for_type": true,
-  *    	"credential_label": "videocloud-credential",
-  *    	"credential_type": "videocloud",
+  *    	"credential_label": "oauth-credential",
+  *    	"credential_type": "oauth",
   *      "credential_public": "3e23bbec-59b8-4861-b5ba-7c26e110a746",
   *    	"credential_private": "Nil7Md7VpQ50A3KVV4eeMrZSR7FdeZA_3JS5jV9pBBI0skwWA",
   *        "oauth_settings": {
@@ -160,13 +160,15 @@
   * @apiParam (Request Body Fields) {String="ftp","oauth","s3","videocloud","zencoder"} credential_type The credential type
   * @apiParam (Request Body Fields) {String} credential_private Private key or password depending on the type
   * @apiParam (Request Body Fields) {String} credential_public Public key or password depending on the type
+  * @apiParam (Request Body Fields) {Object} [oauth_settings]  OAuth settings for OAuth credentials needed to send notifications to a notification URL **Required for oauth type credentials**
+  * @apiParam (Request Body Fields) {Object} oauth_settings.url  OAuth access token URL for OAuth credentials needed to send notifications to a notification URL
   *
-  * @apiParamExample {json} Create a Video Cloud Credential for Request Body Example:
+  * @apiParamExample {json} Create a OAuth Credential for Notifications Request Body Example:
   *    {
   *    	"user_id": {{ user_id  }},
   *    	"credential_default_for_type": true,
-  *    	"credential_label": "videocloud-credential",
-  *    	"credential_type": "videocloud",
+  *    	"credential_label": "oauth-credential",
+  *    	"credential_type": "oauth",
   *      "credential_public": "3e23bbec-59b8-4861-b5ba-7c26e110a746",
   *    	"credential_private": "Nil7Md7VpQ50A3KVV4eeMrZSR7FdeZA_3JS5jV9pBBI0skwWA",
   *        "oauth_settings": {
