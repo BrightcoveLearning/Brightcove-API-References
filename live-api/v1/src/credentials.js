@@ -188,6 +188,17 @@
  *            "url": "https://oauth.brightcove.com/v4/access_token"
  *        }
  *    }
+ * @apiSuccess (200) {String} credential_id The credential id
+ * @apiSuccess (200) {String} user_id The user id
+ * @apiSuccess (200) {String} user_id The user id
+ *
+ * @apiSuccessExample {Object}
+ *   http/1.1 200 OK
+ *    {
+ *    	"credential_id": "2fc6b698ce264db3900375a4694607a6",
+ *    	"user_id": "c2691d4d039040be96c190a949d754a7",
+ *    	"credential_label": "videocloud-credential"
+ *    }
  *
  * @apiError (Error 4xx) {json} BAD_REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
@@ -210,7 +221,8 @@
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  * @apiParam (Path) {string} credential_id The credential id
  *
- * @apiSuccess
+ * @apiSuccessExample {null}
+ *    http/1.1 204 NO_CONTENT
  *
  * @apiError (Error 4xx) {json} BAD_REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
