@@ -38,7 +38,7 @@
  * @apiSuccess (200) {Number} items.play_rate video views divided by video impressions
  * @apiSuccess (200) {Integer} items.play_request number of play requests received for a video
  * @apiSuccess (200) {String} items.video the video id
- * @apiSuccess (200) {String} items.duration the duration of the video in seconds
+ * @apiSuccess (200) {String} items.duration the duration of the video in seconds (note that the duration is available only if there is at least one `video_view`)
  * @apiSuccess (200) {Number} items.video_engagement_1 number of views at the 1% point of the video duration
  * @apiSuccess (200) {Number} items.video_engagement_25 number of views at the 25% point of the video duration
  * @apiSuccess (200) {Number} items.video_engagement_50 number of views at the 50% point of the video duration
