@@ -29,6 +29,11 @@
     "Update_beacon_set",
     "Get_beacon_sets",
     "Get_beacon_sets_for_user",
-    "Delete_beacon_set"
+    "Delete_beacon_set",
+    "Credentials",
+    "Get_Credentials",
+    "Create_Credential",
+    "Update_Credential",
+    "Delete_Credential"
   ]
 }
