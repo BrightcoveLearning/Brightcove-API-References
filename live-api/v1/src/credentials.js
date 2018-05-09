@@ -16,10 +16,15 @@
   *    https://api.bcovlive.io/v1/credentials
   *
   *
-  * @apiSuccess (200) {Object} user_id The user's id
-  * @apiSuccess (200) {Object[]} credentials Array of credentials objects
-  * @apiSuccess (200) {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess (200) {String} live_job_id The clip label (from the input)
+  * @apiSuccess (200) {Object} user_id The user id
+  * @apiSuccess (200) {Object[]}  Array of credentials objects
+  * @apiSuccess (200) {Boolean} credentials.credential_default_for_type The clip label (from the input)
+  * @apiSuccess (200) {String} credentials.user_id The user id
+  * @apiSuccess (200) {String} credentials.credential_private The private key for the credential (not shown; represented by asterisks)
+  * @apiSuccess (200) {String} credentials.type The credential type
+  * @apiSuccess (200) {String} credentials.label The label used to reference the credential in requests
+  * @apiSuccess (200) {String} credentials.credential_id The credential id
+  * @apiSuccess (200) {String} credentials.credential_public The public key for the credential
   *
   * @apiSuccessExample {Object} Creation of a clip
   {
@@ -96,15 +101,15 @@
   *
   */
 
-// Create OAuth Credential
+// Create  Credential
 
 /**
-  * @api {post} /v1/credentials Create OAuth Credential
-  * @apiName Create OAuth Credential
+  * @api {post} /v1/credentials Create Credential
+  * @apiName Create Credential
   * @apiGroup Credentials
   * @apiVersion 1.0.0
   *
-  * @apiDescription Create an OAuth credential for notifications.
+  * @apiDescription Create a new credential.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -112,7 +117,7 @@
   * @apiParam (Request Body Fields) {String} user_id The user id, which you can get from the List Credentials response.
   * @apiParam (Request Body Fields) {Boolean} credential_default_for_type Whether these are the default credentials for the request type
   * @apiParam (Request Body Fields) {String} credential_label Label for the credential
-  * @apiParam (Request Body Fields) {Number} credential_type Duration of the clip in seconds
+  * @apiParam (Request Body Fields) {String="oauth","s3","videocloud","zencoder" } credential_type The credential type
   * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
   * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
   * @apiParam (Request Body Fields) {Number} outputs.stream_start_timecode Start for the clip as an SMPTE timecode for the live stream
@@ -151,83 +156,3 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by Unix Epoch time:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by timestamp”,
-  *                "start_time": 1471375580,
-  *                "end_time": 1471375640,
-  *                "url": "s3://yourS3bucket/live/test_stream_timestamp.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiParamExample {json} Create a VOD Clip by duration:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs if live job",
-  *                "duration": 60,
-  *                "credentials": "VC_CREDENTIALS",
-  *                "videocloud": {
-  *                    "video": {
-  *                        "name": "TEST"
-  *                    },
-  *                    "ingest": { }
-  *                }
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiParamExample {json} Create a VOD Clip by stream timecodes:
-  *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "Clipping using Timecode from-01:10:18:15 to-01:11:08:15",
-  *                "stream_start_timecode": "01:10:18:15",
-  *                "stream_end_timecode": "01:11:08:15",
-  *                "credentials": "VC_CREDENTIALS",
-  *                "videocloud": {
-  *                    "video": {
-  *                        "name": "One Minute Clip",
-  *                        "tags": ["live", "clip"]
-  *                    },
-  *                    "ingest": {
-  *                        "profile": "high-resolution",
-  *                        "capture-images": true
-  *                    }
-  *                },
-  *                "notifications": ["http://myserver.com/api/notification_listener?type=jvod"]
-  *            }
-  *        ]
-  *    }
-  *
-  * @apiSuccess (200) {Object} vod_jobs The clip response object
-  * @apiSuccess (200) {String} vod_jobs.jvod_id The clip job id
-  * @apiSuccess (200) {String} vod_jobs.label The clip label (from the input)
-  * @apiSuccess (200) {String} live_job_id The clip label (from the input)
-  *
-  * @apiSuccessExample {json} Creation of a clip
-  *    {
-  *      "vod_jobs": [
-  *        {
-  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
-  *          "label": "last 60 secs of live job"
-  *        }
-  *      ],
-  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
-  *    }
-  *
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  *
-  *
-  */
