@@ -1135,7 +1135,7 @@
           },
           "duration": {
             "type": "string",
-            "description": "the duration of the video in seconds"
+            "description": "the duration of the video in seconds (note that the duration is available only if there is at least one `video_view`)"
           },
           "video_engagement_1": {
             "type": "number",
