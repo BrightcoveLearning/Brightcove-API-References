@@ -92,8 +92,6 @@
   		}
   	]
   }  *
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
@@ -114,45 +112,70 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Request Body Fields) {String} user_id The user id, which you can get from the List Credentials response.
+  * @apiParam (Request Body Fields) {String} user_id GUID for which the credentials are being created.
   * @apiParam (Request Body Fields) {Boolean} credential_default_for_type Whether these are the default credentials for the request type
   * @apiParam (Request Body Fields) {String} credential_label Label for the credential
-  * @apiParam (Request Body Fields) {String="oauth","s3","videocloud","zencoder" } credential_type The credential type
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_start_timecode Start for the clip as an SMPTE timecode for the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.stream_end_timecode End for the clip as an SMPTE timecode for the live stream
-  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
-  * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
-  * @apiParam (Request Body Fields) {String} outputs.credentials The name of the credentials configured in your account for this address - A credential label for a valid client id + client secret should have been created when your Live account was set up, the credential label sent to you. If you do not have it, please <a href="https://help.brightcove.com/en/contact">Contact Brightcove Support</a>
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [CMS API Reference](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video)
-  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video ingestion - see the [Dynamic Ingest Reference](https://brightcovelearning.github.io/Brightcove-API-References/dynamic-ingest-api/v1/doc/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
+  * @apiParam (Request Body Fields) {String="ftp","oauth","s3","videocloud","zencoder"} credential_type The credential type
+  * @apiParam (Request Body Fields) {String} credential_private Private key or password depending on the type
+  * @apiParam (Request Body Fields) {String} credential_public Public key or password depending on the type
+  * @apiParam (Request Body Fields) {Object} [oauth_settings]  OAuth settings for OAuth credentials needed to send notifications to a notification URL **Required for oauth type credentials**
+  * @apiParam (Request Body Fields) {Object} oauth_settings.url  OAuth access token URL for OAuth credentials needed to send notifications to a notification URL
   *
-  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  * @apiParamExample {json} Create a OAuth Credential for Notifications Request Body Example:
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "last 60 secs of live job",
-  *                "duration": 60,
-  *                "url": "ftp://log:pass@yourftpserver.com:21/live/test_dur60.mp4"
-  *            }
-  *        ]
+  *    	"user_id": {{ user_id  }},
+  *    	"credential_default_for_type": true,
+  *    	"credential_label": "videocloud-credential",
+  *    	"credential_type": "videocloud",
+  *      "credential_public": "3e23bbec-59b8-4861-b5ba-7c26e110a746",
+  *    	"credential_private": "Nil7Md7VpQ50A3KVV4eeMrZSR7FdeZA_3JS5jV9pBBI0skwWA",
+  *        "oauth_settings": {
+  *            "url": "https://oauth.brightcove.com/v4/access_token"
+  *        }
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  */
+
+
+// Update  Credential
+
+/**
+  * @api {put} /v1/credentials/:credential_id Update Credential
+  * @apiName Update Credential
+  * @apiGroup Credentials
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Update a credential.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (Request Body Fields) {String} user_id GUID for which the credentials are being created.
+  * @apiParam (Request Body Fields) {Boolean} credential_default_for_type Whether these are the default credentials for the request type
+  * @apiParam (Request Body Fields) {String} credential_label Label for the credential
+  * @apiParam (Request Body Fields) {String="ftp","oauth","s3","videocloud","zencoder"} credential_type The credential type
+  * @apiParam (Request Body Fields) {String} credential_private Private key or password depending on the type
+  * @apiParam (Request Body Fields) {String} credential_public Public key or password depending on the type
+  *
+  * @apiParamExample {json} Create a Video Cloud Credential for Request Body Example:
   *    {
-  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
-  *        "outputs":[
-  *            {
-  *                "label": "60 secs by stream from min 2 to min 3",
-  *                "stream_start_time": 120,
-  *                "stream_end_time": 180,
-  *                "url": "ftp://yourftpserver.com/live/test_stream_min2to3.mp4",
-  *                "credentials": "YOUR_CREDENTIALS"
-  *            }
-  *        ]
+  *    	"user_id": {{ user_id  }},
+  *    	"credential_default_for_type": true,
+  *    	"credential_label": "videocloud-credential",
+  *    	"credential_type": "videocloud",
+  *      "credential_public": "3e23bbec-59b8-4861-b5ba-7c26e110a746",
+  *    	"credential_private": "Nil7Md7VpQ50A3KVV4eeMrZSR7FdeZA_3JS5jV9pBBI0skwWA",
+  *        "oauth_settings": {
+  *            "url": "https://oauth.brightcove.com/v4/access_token"
+  *        }
   *    }
   *
+  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  */
