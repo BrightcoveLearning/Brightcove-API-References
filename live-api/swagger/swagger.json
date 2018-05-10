@@ -57,10 +57,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -72,8 +72,8 @@
         "tags": [
           "Credentials"
         ],
-        "summary": "Create OAuth Credential",
-        "description": "Create an OAuth credential for notifications. ",
+        "summary": "Create Credential",
+        "description": "Create a new credential. ",
         "consumes": [
           "application/json"
         ],
@@ -83,11 +83,11 @@
         "parameters": [
           {
             "in": "body",
-            "name": "Create_OAuth_CredentialBody",
-            "description": "Create an OAuth credential for notifications. ",
+            "name": "Create_CredentialBody",
+            "description": "Create a new credential. ",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Create_OAuth_CredentialBody"
+              "$ref": "#/definitions/Create_CredentialBody"
             }
           },
           {
@@ -109,8 +109,11 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/vod_jobs"
+              "$ref": "#/definitions/Create_Credential200"
             }
+          },
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details "
           },
           "401": {
             "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details "
@@ -118,21 +121,18 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
-            "description": "BAD: Invalid input value - see Live API Error Messages for more details "
-          },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
-        "operationId": "Create_OAuth_Credential"
+        "operationId": "Create_Credential"
       },
       "get": {
         "tags": [
           "Credentials"
         ],
         "summary": "List Credentials",
-        "description": "Get a list of credentials for a Live account. ",
+        "description": "This endpoint can be used to get user credentials for a given user provided one has an API key. ",
         "consumes": [
           "application/json"
         ],
@@ -159,7 +159,7 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/vod_jobs"
+              "$ref": "#/definitions/user_id"
             }
           },
           "401": {
@@ -168,14 +168,116 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
-            "description": "BAD: Invalid input value - see Live API Error Messages for more details "
-          },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "List_Credentials"
+      }
+    },
+    "/v1/credentials/{credential_id}": {
+      "delete": {
+        "tags": [
+          "Credentials"
+        ],
+        "summary": "Delete Credential",
+        "description": "Delete a credential. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "X-API-KEY: {APIKey} "
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details "
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          },
+          "SERVER ERROR 500": {
+            "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
+          }
+        },
+        "operationId": "Delete_Credential"
+      },
+      "put": {
+        "tags": [
+          "Credentials"
+        ],
+        "summary": "Update Credential",
+        "description": "Update a credential. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Update_CredentialBody",
+            "description": "Update a credential. ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Update_CredentialBody"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "X-API-KEY: {APIKey} "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "$ref": "#/definitions/Update_Credential200"
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details "
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          },
+          "SERVER ERROR 500": {
+            "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
+          }
+        },
+        "operationId": "Update_Credential"
       }
     },
     "/v1/jobs/{jobId}/activate": {
@@ -192,13 +294,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -227,7 +322,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -248,13 +343,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -283,7 +371,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -341,10 +429,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid region - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: After filtering, there is no job to process - see Live API Error Messages for more details "
           }
         },
@@ -365,13 +453,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -400,7 +481,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -421,13 +502,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -456,7 +530,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -477,13 +551,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "in": "body",
             "name": "Insert_ID3_timed_metadataBody",
@@ -521,10 +588,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -545,13 +612,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "jobId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live job id"
-          },
           {
             "in": "body",
             "name": "Manual_Ad_Cue_Point_InsertionBody",
@@ -589,10 +649,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -650,7 +710,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -708,7 +768,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -729,13 +789,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -764,7 +817,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -783,13 +836,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -818,7 +864,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -837,13 +883,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "in": "body",
             "name": "Update_Ad_ConfigurationBody",
@@ -881,10 +920,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -905,13 +944,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "SLATE_MSA_ID",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The slate media source asset id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -940,14 +972,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Delete_Slate_Media_Source_Asset"
       }
     },
-    "/v1/ssai/beaconset/{BEACON_SET_ID}": {
+    "/v1/ssai/beaconset/BEACON_SET_ID": {
       "delete": {
         "tags": [
           "SSAI"
@@ -961,13 +993,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "BEACON_SET_ID",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The beacon set id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -996,7 +1021,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1015,13 +1040,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "BEACON_SET_ID",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The beacon set id"
-          },
           {
             "in": "body",
             "name": "Update_beacon_setBody",
@@ -1059,10 +1077,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1083,13 +1101,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1118,14 +1129,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Get_Account_Ad_Configurations"
       }
     },
-    "/v1/ssai/slates/{account_id}": {
+    "/v1/ssai/slates/{ACCOUNT_ID}": {
       "get": {
         "tags": [
           "SSAI"
@@ -1139,13 +1150,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1174,7 +1178,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1195,13 +1199,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1230,7 +1227,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1279,7 +1276,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1337,7 +1334,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -1346,6 +1343,17 @@
     }
   },
   "definitions": {
+    "Path": {
+      "properties": {
+        "credential_id": {
+          "type": "string",
+          "description": "The credential id "
+        }
+      },
+      "required": [
+        "credential_id"
+      ]
+    },
     "URL Parameters": {
       "properties": {
         "jobId": {
@@ -1365,8 +1373,12 @@
           "description": "URL The id for the beacon set "
         },
         "account_id": {
-          "type": "string",
+          "type": "object",
           "description": "The Live account id (if you leave this out, request will still work) "
+        },
+        "ACCOUNT_ID": {
+          "type": "string",
+          "description": "URL The account id "
         }
       },
       "required": [
@@ -1374,7 +1386,7 @@
         "application_id",
         "SLATE_MSA_ID",
         "BEACON_SET_ID",
-        "account_id"
+        "ACCOUNT_ID"
       ]
     },
     "Create_VOD_ClipBody": {
@@ -1503,11 +1515,11 @@
         "live_job_id"
       ]
     },
-    "Create_OAuth_CredentialBody": {
+    "Create_CredentialBody": {
       "properties": {
         "user_id": {
           "type": "string",
-          "description": "The user id, which you can get from the List Credentials response. "
+          "description": "GUID for which the credentials are being created. "
         },
         "credential_default_for_type": {
           "type": "boolean",
@@ -1518,107 +1530,186 @@
           "description": "Label for the credential "
         },
         "credential_type": {
-          "type": "number",
-          "description": "Duration of the clip in seconds "
+          "type": "string",
+          "description": "The credential type "
+        },
+        "credential_private": {
+          "type": "string",
+          "description": "Private key or password depending on the type "
+        },
+        "credential_public": {
+          "type": "string",
+          "description": "Public key or password depending on the type "
+        },
+        "oauth_settings": {
+          "type": "object",
+          "description": "OAuth settings for OAuth credentials needed to send notifications to a notification URL Required for oauth type credentials ",
+          "$ref": "#/definitions/Create_CredentialBody.oauth_settings"
         }
       },
       "required": [
         "user_id",
         "credential_default_for_type",
         "credential_label",
-        "credential_type"
+        "credential_type",
+        "credential_private",
+        "credential_public"
       ]
     },
-    "Create_OAuth_CredentialBody.outputs": {
+    "Create_CredentialBody.oauth_settings": {
       "properties": {
-        "stream_start_time": {
-          "type": "number",
-          "description": "Start time in seconds for the clip relative to the start time of the live stream "
-        },
-        "stream_end_time": {
-          "type": "number",
-          "description": "End time in seconds for the clip relative to the start time of the live stream "
-        },
-        "stream_start_timecode": {
-          "type": "number",
-          "description": "Start for the clip as an SMPTE timecode for the live stream "
-        },
-        "stream_end_timecode": {
-          "type": "number",
-          "description": "End for the clip as an SMPTE timecode for the live stream "
-        },
-        "start_time": {
-          "type": "number",
-          "description": "Start time for the clip in Epoch (Unix) time (seconds) "
-        },
-        "end_time": {
-          "type": "number",
-          "description": "End time for the clip in Epoch (Unix) time (seconds) "
-        },
         "url": {
-          "type": "string",
-          "description": "URL for the clip "
-        },
-        "credentials": {
-          "type": "string",
-          "description": "The name of the credentials configured in your account for this address - A credential label for a valid client id + client secret should have been created when your Live account was set up, the credential label sent to you. If you do not have it, please Contact Brightcove Support "
-        },
-        "videocloud": {
           "type": "object",
-          "description": "An object containing inputs for Video Cloud ingestion ",
-          "$ref": "#/definitions/Create_OAuth_CredentialBody.outputs.videocloud"
+          "description": "OAuth access token URL for OAuth credentials needed to send notifications to a notification URL ",
+          "$ref": "#/definitions/Create_CredentialBody.oauth_settings.url"
         }
       },
       "required": [
-        "stream_start_time",
-        "stream_end_time",
-        "stream_start_timecode",
-        "stream_end_timecode",
-        "start_time",
-        "end_time",
-        "url",
-        "credentials",
-        "videocloud"
+        "url"
       ]
     },
-    "Create_OAuth_CredentialBody.outputs.videocloud": {
+    "Create_Credential200": {
       "properties": {
-        "video": {
-          "type": "object",
-          "description": "An object containing inputs for Video Cloud video object creation - see the CMS API Reference ",
-          "$ref": "#/definitions/Create_OAuth_CredentialBody.outputs.videocloud.video"
+        "credential_id": {
+          "type": "string",
+          "description": "The credential id "
         },
-        "ingest": {
-          "type": "object",
-          "description": "An object containing inputs for Video Cloud video ingestion - see the Dynamic Ingest Reference - do not include the master field, as that information will be provided by the Live API ",
-          "$ref": "#/definitions/Create_OAuth_CredentialBody.outputs.videocloud.ingest"
+        "user_id": {
+          "type": "string",
+          "description": "The user id "
         }
       },
       "required": [
-        "video",
-        "ingest"
+        "credential_id",
+        "user_id"
       ]
     },
-    "Create_OAuth_Credential200": {
-      "properties": {
-        "live_job_id": {
-          "type": "string",
-          "description": "The clip label (from the input) "
-        }
-      },
-      "required": [
-        "live_job_id"
-      ]
+    "user_id": {
+      "properties": {},
+      "required": []
     },
     "List_Credentials200": {
       "properties": {
-        "live_job_id": {
-          "type": "string",
-          "description": "The clip label (from the input) "
+        "Array": {
+          "type": "array",
+          "description": "of credentials objects ",
+          "items": {
+            "$ref": "#/definitions/Array"
+          }
         }
       },
       "required": [
-        "live_job_id"
+        "Array"
+      ]
+    },
+    "credentials": {
+      "properties": {
+        "credential_default_for_type": {
+          "type": "boolean",
+          "description": "The clip label (from the input) "
+        },
+        "user_id": {
+          "type": "string",
+          "description": "The user id "
+        },
+        "credential_private": {
+          "type": "string",
+          "description": "The private key for the credential (not shown; represented by asterisks) "
+        },
+        "type": {
+          "type": "string",
+          "description": "The credential type "
+        },
+        "label": {
+          "type": "string",
+          "description": "The label used to reference the credential in requests "
+        },
+        "credential_id": {
+          "type": "string",
+          "description": "The credential id "
+        },
+        "credential_public": {
+          "type": "string",
+          "description": "The public key for the credential "
+        }
+      },
+      "required": [
+        "credential_default_for_type",
+        "user_id",
+        "credential_private",
+        "type",
+        "label",
+        "credential_id",
+        "credential_public"
+      ]
+    },
+    "Update_CredentialBody": {
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "GUID for which the credentials are being created. "
+        },
+        "credential_default_for_type": {
+          "type": "boolean",
+          "description": "Whether these are the default credentials for the request type "
+        },
+        "credential_label": {
+          "type": "string",
+          "description": "Label for the credential "
+        },
+        "credential_type": {
+          "type": "string",
+          "description": "The credential type "
+        },
+        "credential_private": {
+          "type": "string",
+          "description": "Private key or password depending on the type "
+        },
+        "credential_public": {
+          "type": "string",
+          "description": "Public key or password depending on the type "
+        },
+        "oauth_settings": {
+          "type": "object",
+          "description": "OAuth settings for OAuth credentials needed to send notifications to a notification URL Required for oauth type credentials ",
+          "$ref": "#/definitions/Update_CredentialBody.oauth_settings"
+        }
+      },
+      "required": [
+        "user_id",
+        "credential_default_for_type",
+        "credential_label",
+        "credential_type",
+        "credential_private",
+        "credential_public"
+      ]
+    },
+    "Update_CredentialBody.oauth_settings": {
+      "properties": {
+        "url": {
+          "type": "object",
+          "description": "OAuth access token URL for OAuth credentials needed to send notifications to a notification URL ",
+          "$ref": "#/definitions/Update_CredentialBody.oauth_settings.url"
+        }
+      },
+      "required": [
+        "url"
+      ]
+    },
+    "Update_Credential200": {
+      "properties": {
+        "credential_id": {
+          "type": "string",
+          "description": "The credential id "
+        },
+        "user_id": {
+          "type": "string",
+          "description": "The user id "
+        }
+      },
+      "required": [
+        "credential_id",
+        "user_id"
       ]
     },
     "Activate_SEP_Stream200": {
@@ -1904,11 +1995,11 @@
         },
         "width": {
           "type": "number",
-          "description": "Video frame width. If no width is supplied, we will use the original width, or scale to size of height setting. "
+          "description": "Video frame width. If no width is supplied, we will use 640 pixels. "
         },
         "height": {
           "type": "number",
-          "description": "Video frame height. If no height is supplied, we will use the original height, or scale to size or width setting. "
+          "description": "Video frame height. If no height is supplied, we will use 480 pixels. "
         },
         "video_codec": {
           "type": "string",
