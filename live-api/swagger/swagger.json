@@ -57,7 +57,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -429,7 +429,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid region - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -588,7 +588,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -649,7 +649,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -710,7 +710,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -768,7 +768,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -920,7 +920,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -1077,7 +1077,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
           "SERVER ERROR 500": {
@@ -1334,7 +1334,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "REQUEST 400": {
+          "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
