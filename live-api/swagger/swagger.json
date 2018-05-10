@@ -1185,62 +1185,6 @@
         "operationId": "Update_beacon_set"
       }
     },
-    "/v1/ssai/applications/{account_id}": {
-      "get": {
-        "tags": [
-          "SSAI"
-        ],
-        "summary": "Get Account Ad Configurations",
-        "description": "Get ad applications for an account. ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "Content-Type: application/json "
-          },
-          {
-            "name": "X-API-KEY",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": "X-API-KEY: {APIKey} "
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "schema": {
-              "$ref": "#/definitions/application"
-            }
-          },
-          "401": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
-          },
-          "500": {
-            "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
-          }
-        },
-        "operationId": "Get_Account_Ad_Configurations"
-      }
-    },
     "/v1/ssai/slates/{account_id}": {
       "get": {
         "tags": [
