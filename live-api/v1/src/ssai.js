@@ -288,7 +288,7 @@
     *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler",
     *          "ad_configuration_expected_response_type": "Dfp"
     *        },
-    *        "account_id": "ACCOUNT_ID"
+    *        "account_id": "account_id"
     *      },
     *      {
     *        "application_id": "APPLICATION_ID_2",
@@ -305,7 +305,7 @@
     *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}",
     *          "ad_configuration_expected_response_type": "Dfp"
     *        },
-    *        "account_id": "ACCOUNT_ID"
+    *        "account_id": "account_id"
     *      }
     *    ]
     *
@@ -365,7 +365,7 @@
   *        "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}",
   *        "ad_configuration_expected_response_type": "Dfp"
   *      },
-  *      "account_id": "ACCOUNT_ID"
+  *      "account_id": "account_id"
   *    }
   *
   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
@@ -426,7 +426,7 @@
   * @apiParamExample {json} Ingest Slate Media Source Asset example:
   *    {
   *        "source_url": "https://somesourceasset.com/slate-to-ingest.mp4",
-  *        "account_id": "ACCOUNT_ID",
+  *        "account_id": "account_id",
   *        "source_description": "User identifiable description for the slate"
   *    }
   *
@@ -442,7 +442,7 @@
   * @apiSuccessExample {json} Success response for create slate media resource
   *    {
   *      "media_source_asset_id": "NEW_UUID",
-  *      "account_id": "ACCOUNT_ID",
+  *      "account_id": "account_id",
   *      "media_source_asset_default": false,
   *      "media_source_asset_type": "slate",
   *      "media_source_asset_url": "https://somesourceasset.com/slate-to-ingest.mp4",
@@ -461,7 +461,7 @@
   // Delete Slate Media Source Asset
 
 /**
-  * @api {delete} /v1/ssai/slates/:SLATE_MSA_ID Delete Slate Media Source Asset
+  * @api {delete} /v1/ssai/slates/:slate_msa_id Delete Slate Media Source Asset
   * @apiName Delete Slate Media Source Asset
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -471,7 +471,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} SLATE_MSA_ID URL The id for the Slate media source asset
+  * @apiParam (URL Parameters) {String} slate_msa_id The id for the Slate media source asset
   *
   * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
   * @apiSuccess (200) {String} account_id Id for the account
@@ -487,7 +487,7 @@
   *      "media_source_asset_url": "http://someS3urlpath/media.mp4",
   *      "media_source_asset_default": false,
   *      "media_source_asset_status": "ready",
-  *      "account_id": "ACCOUNT_ID"
+  *      "account_id": "account_id"
   *    }
   *
   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
@@ -500,7 +500,7 @@
   // Get Slate Media Source Assets
 
 /**
-  * @api {get} /v1/ssai/slates/:ACCOUNT_ID Get Slate Media Source Assets
+  * @api {get} /v1/ssai/slates/:account_id Get Slate Media Source Assets
   * @apiName Get Slate Media Source Assets
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -510,7 +510,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} ACCOUNT_ID URL The account id
+  * @apiParam (URL Parameters) {String} account_id URL The account id
   *
   * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
   * @apiSuccess (200) {String} account_id Id for the account
@@ -527,7 +527,7 @@
   *        "media_source_asset_type": "slate",
   *        "media_source_asset_default": false,
   *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-  *        "account_id": "ACCOUNT_ID",
+  *        "account_id": "account_id",
   *        "media_source_asset_status": "ready"
   *      },
   *      {
@@ -535,7 +535,7 @@
   *        "media_source_asset_type": "slate",
   *        "media_source_asset_default": true,
   *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-  *        "account_id": "ACCOUNT_ID",
+  *        "account_id": "account_id",
   *        "media_source_asset_status": "ready"
   *      }
   *    ]
@@ -617,7 +617,7 @@
  // Update a beacon set
 
  /**
-   * @api {put} /v1/ssai/beaconset/BEACON_SET_ID Update beacon set
+   * @api {put} /v1/ssai/beaconset/beacon_set_id Update beacon set
    * @apiName Update beacon set
    * @apiGroup SSAI
    * @apiVersion 1.0.0
@@ -627,7 +627,7 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+   * @apiParam (URL Parameters) {String} beacon_set_id URL The id for the beacon set
    * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
    * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see ( https://support.brightcove.com/node/17763#Beacons) for the valid beacon variables
@@ -661,7 +661,7 @@
    *    {
    *        "beacon_set": {
    *            "account_id": "USER's ACCOUNT ID",
-   *            "beacon_set_id": "BEACON_SET_ID",
+   *            "beacon_set_id": "beacon_set_id",
    *            "beacon_urls": [{
    *                "beacon_url": "https://myserver.com/beaconRX/load",
    *                "beacon_type": "Load"
@@ -671,7 +671,7 @@
    *                "beacon_type": "Play"
    *            }],
    *            "updated_beacon_set": {
-   *                "beacon_set_id": "BEACON_SET_ID",
+   *                "beacon_set_id": "beacon_set_id",
    *                "beacon_urls": [{
    *                    "beacon_url": "https://myserver.com/beaconRX/load",
    *                    "beacon_type": "Load"
@@ -721,7 +721,7 @@
      * @apiSuccessExample {json} Success response for Get Beacon Sets
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_1",
+     *        "beacon_set_id": "beacon_set_id_1",
      *        "beacon_urls": [{
      *            "beacon_url": "https://myserver.com/beaconRX/load",
      *            "beacon_type": "Load"
@@ -729,7 +729,7 @@
      *    },
      *    {
      *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_2",
+     *        "beacon_set_id": "beacon_set_id_2",
      *        "beacon_urls": [{
      *           "beacon_url": "https://myserver.com/beaconRX2/load",
      *           "beacon_type": "Load"
@@ -774,7 +774,7 @@
      * @apiSuccessExample {json} Success response for Get Beacon Sets for user
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_1",
+     *        "beacon_set_id": "beacon_set_id_1",
      *        "beacon_urls": [{
      *            "beacon_url": "https://myserver.com/beaconRX/load",
      *            "beacon_type": "Load"
@@ -782,7 +782,7 @@
      *    },
      *    {
      *        "account_id": "USER's ACCOUNT ID",
-     *        "beacon_set_id": "BEACON_SET_ID_2",
+     *        "beacon_set_id": "beacon_set_id_2",
      *        "beacon_urls": [{
      *           "beacon_url": "https://myserver.com/beaconRX2/load",
      *           "beacon_type": "Load"
@@ -805,7 +805,7 @@
  // Delete a beacon set
 
  /**
-   * @api {delete} /v1/ssai/beaconset/BEACON_SET_ID Delete beacon set
+   * @api {delete} /v1/ssai/beaconset/beacon_set_id Delete beacon set
    * @apiName Delete beacon set
    * @apiGroup SSAI
    * @apiVersion 1.0.0
@@ -815,14 +815,14 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+   * @apiParam (URL Parameters) {String} beacon_set_id URL The id for the beacon set
    *
    * @apiSuccess (200) {String} beacon_set_id The beacon set id
    * @apiSuccess (200) {Boolean} deleted Whether the beacon set was deleted successfully
    *
    * @apiSuccessExample {json} Success response for Delete Beacon Set
    *    {
-   *      "beacon_set_id": "BEACON_SET_ID",
+   *      "beacon_set_id": "beacon_set_id",
    *      "deleted": true
    *    }
    *
