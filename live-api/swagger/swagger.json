@@ -57,10 +57,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -121,7 +121,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -168,7 +168,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -189,13 +189,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "credential_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The credential id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -221,7 +214,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -240,13 +233,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "credential_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The credential id"
-          },
           {
             "in": "body",
             "name": "Update_CredentialBody",
@@ -287,14 +273,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Update_Credential"
       }
     },
-    "/v1/jobs/{job_id}/activate": {
+    "/v1/jobs/{jobId}/activate": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -308,13 +294,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -343,14 +322,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Activate_SEP_Stream"
       }
     },
-    "/v1/jobs/{job_id}/cancel": {
+    "/v1/jobs/{jobId}/cancel": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -364,13 +343,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -399,7 +371,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -457,17 +429,17 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid region - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: After filtering, there is no job to process - see Live API Error Messages for more details "
           }
         },
         "operationId": "Create_a_Live_Job"
       }
     },
-    "/v1/jobs/{job_id}/deactivate": {
+    "/v1/jobs/{jobId}/deactivate": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -481,13 +453,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -516,14 +481,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Deactivate_SEP_Stream"
       }
     },
-    "/v1/jobs/{job_id}": {
+    "/v1/jobs/{jobId}": {
       "get": {
         "tags": [
           "Live_Jobs"
@@ -537,13 +502,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -572,14 +530,14 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Get_Live_Job_Details"
       }
     },
-    "/v1/jobs/{job_id}/id3tag": {
+    "/v1/jobs/{jobId}/id3tag": {
       "post": {
         "tags": [
           "Live_Jobs"
@@ -593,13 +551,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "in": "body",
             "name": "Insert_ID3_timed_metadataBody",
@@ -637,17 +588,17 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Insert_ID3_timed_metadata"
       }
     },
-    "/v1/jobs/{job_id}/cuepoint": {
+    "/v1/jobs/{jobId}/cuepoint": {
       "post": {
         "tags": [
           "Live_Jobs"
@@ -661,13 +612,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "job_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description" :"the job id"
-          },
           {
             "in": "body",
             "name": "Manual_Ad_Cue_Point_InsertionBody",
@@ -705,10 +649,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -766,7 +710,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -824,7 +768,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -845,13 +789,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -880,7 +817,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -899,13 +836,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -934,7 +864,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -953,13 +883,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "application_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The ad application id"
-          },
           {
             "in": "body",
             "name": "Update_Ad_ConfigurationBody",
@@ -997,10 +920,10 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1021,13 +944,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "slate_msa_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The slale media asset id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1056,7 +972,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1077,13 +993,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "beacon_set_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The beacon set id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1112,7 +1021,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1131,13 +1040,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "beacon_set_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The beacon set id"
-          },
           {
             "in": "body",
             "name": "Update_beacon_setBody",
@@ -1175,14 +1077,63 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
         "operationId": "Update_beacon_set"
+      }
+    },
+    "/v1/ssai/applications/{account_id}": {
+      "get": {
+        "tags": [
+          "SSAI"
+        ],
+        "summary": "Get Account Ad Configurations",
+        "description": "Get ad applications for an account. ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Content-Type: application/json "
+          },
+          {
+            "name": "X-API-KEY",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "X-API-KEY: {APIKey} "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "$ref": "#/definitions/application"
+            }
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          },
+          "SERVER ERROR 500": {
+            "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
+          }
+        },
+        "operationId": "Get_Account_Ad_Configurations"
       }
     },
     "/v1/ssai/slates/{account_id}": {
@@ -1199,13 +1150,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1234,7 +1178,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1255,13 +1199,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The Live account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1290,7 +1227,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1339,7 +1276,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "500": {
+          "SERVER ERROR 500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1397,7 +1334,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "400": {
+          "REQUEST 400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           }
         },
@@ -1419,33 +1356,32 @@
     },
     "URL Parameters": {
       "properties": {
-        "job_id": {
+        "jobId": {
           "type": "string",
           "description": "The job id for the stream you want to activate. "
         },
         "application_id": {
-          "type": "string",
+          "type": "object",
           "description": "The ad application id "
         },
         "slate_msa_id": {
           "type": "string",
-          "description": "URL The id for the Slate media source asset "
+          "description": "The id for the Slate media source asset "
         },
         "beacon_set_id": {
           "type": "string",
           "description": "URL The id for the beacon set "
         },
         "account_id": {
-          "type": "string",
-          "description": "The account id "
+          "type": "object",
+          "description": "The Live account id (if you leave this out, request will still work) "
         }
       },
       "required": [
-        "job_id",
+        "jobId",
         "application_id",
         "slate_msa_id",
-        "beacon_set_id",
-        "account_id"
+        "beacon_set_id"
       ]
     },
     "Create_VOD_ClipBody": {
