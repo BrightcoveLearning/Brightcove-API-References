@@ -853,6 +853,13 @@
             "description": "Content-Type: application/json "
           },
           {
+            "name": "application_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The ad application id"
+          },
+          {
             "name": "X-API-KEY",
             "in": "header",
             "required": true,
@@ -1417,7 +1424,7 @@
           "description": "The job id for the stream you want to activate. "
         },
         "application_id": {
-          "type": "object",
+          "type": "string",
           "description": "The ad application id "
         },
         "SLATE_MSA_ID": {
