@@ -26,7 +26,7 @@
  * @apiSuccess (200) {String} credentials.credential_id The credential id
  * @apiSuccess (200) {String} credentials.credential_public The public key for the credential
  *
- * @apiSuccessExample {Object} Creation of a clip
+ * @apiSuccessExample {Object} List Credentials
  *    HTTP/1.1 200 OK
  *    {
  *    	"user_id": "c2691d4d039040be96c190a949d754a7",
