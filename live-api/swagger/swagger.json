@@ -60,7 +60,7 @@
           "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -121,7 +121,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -168,7 +168,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -214,7 +214,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -273,7 +273,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -322,7 +322,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -371,7 +371,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -432,7 +432,7 @@
           "400": {
             "description": "BAD: Invalid region - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: After filtering, there is no job to process - see Live API Error Messages for more details "
           }
         },
@@ -481,7 +481,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -530,7 +530,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -591,7 +591,7 @@
           "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -652,7 +652,7 @@
           "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -817,7 +817,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -864,7 +864,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -923,7 +923,7 @@
           "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -972,7 +972,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1021,7 +1021,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1080,7 +1080,7 @@
           "400": {
             "description": "BAD: Invalid input value - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1129,7 +1129,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1178,7 +1178,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1227,7 +1227,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
@@ -1276,7 +1276,7 @@
           "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
           },
-          "SERVER ERROR 500": {
+          "500": {
             "description": "INTERNAL: DB getItem, no results found - see Live API Error Messages for more details "
           }
         },
