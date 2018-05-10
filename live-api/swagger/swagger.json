@@ -190,6 +190,13 @@
         ],
         "parameters": [
           {
+            "name": "credential_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The credential id"
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -233,6 +240,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "credential_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The credential id"
+          },
           {
             "in": "body",
             "name": "Update_CredentialBody",
