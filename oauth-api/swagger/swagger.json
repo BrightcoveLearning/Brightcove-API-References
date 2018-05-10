@@ -217,6 +217,13 @@
         ],
         "parameters": [
           {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "client id for the credential "
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
