@@ -1007,7 +1007,7 @@ slate_msa_id{
         "operationId": "Update_Ad_Configuration"
       }
     },
-    "/v1/ssai/slates/{SLATE_MSA_ID}": {
+    "/v1/ssai/slates/{slate_msa_id}": {
       "delete": {
         "tags": [
           "SSAI"
@@ -1021,6 +1021,13 @@ slate_msa_id{
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "slate_msa_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The slale media asset id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1056,7 +1063,7 @@ slate_msa_id{
         "operationId": "Delete_Slate_Media_Source_Asset"
       }
     },
-    "/v1/ssai/beaconset/BEACON_SET_ID": {
+    "/v1/ssai/beaconset/beacon_set_id": {
       "delete": {
         "tags": [
           "SSAI"
@@ -1070,6 +1077,13 @@ slate_msa_id{
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "beacon_set_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The beacon set id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1117,6 +1131,13 @@ slate_msa_id{
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "beacon_set_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The beacon set id"
+          },
           {
             "in": "body",
             "name": "Update_beacon_setBody",
@@ -1179,6 +1200,13 @@ slate_msa_id{
         ],
         "parameters": [
           {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "required": true,
@@ -1213,7 +1241,7 @@ slate_msa_id{
         "operationId": "Get_Account_Ad_Configurations"
       }
     },
-    "/v1/ssai/slates/{ACCOUNT_ID}": {
+    "/v1/ssai/slates/{account_id}": {
       "get": {
         "tags": [
           "SSAI"
@@ -1227,6 +1255,13 @@ slate_msa_id{
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1276,6 +1311,13 @@ slate_msa_id{
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Live account id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -1441,11 +1483,11 @@ slate_msa_id{
           "type": "string",
           "description": "The ad application id "
         },
-        "SLATE_MSA_ID": {
+        "slate_msa_id": {
           "type": "string",
           "description": "URL The id for the Slate media source asset "
         },
-        "BEACON_SET_ID": {
+        "beacon_set_id": {
           "type": "string",
           "description": "URL The id for the beacon set "
         },
@@ -1453,7 +1495,7 @@ slate_msa_id{
           "type": "object",
           "description": "The Live account id (if you leave this out, request will still work) "
         },
-        "ACCOUNT_ID": {
+        "account_id": {
           "type": "string",
           "description": "URL The account id "
         }
@@ -1461,9 +1503,9 @@ slate_msa_id{
       "required": [
         "job_id",
         "application_id",
-        "SLATE_MSA_ID",
-        "BEACON_SET_ID",
-        "ACCOUNT_ID"
+        "slate_msa_id",
+        "beacon_set_id",
+        "account_id"
       ]
     },
     "Create_VOD_ClipBody": {
