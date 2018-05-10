@@ -294,7 +294,7 @@
         "operationId": "Update_Credential"
       }
     },
-    "/v1/jobs/{jobId}/activate": {
+    "/v1/jobs/{job_id}/activate": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -308,6 +308,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -343,7 +350,7 @@
         "operationId": "Activate_SEP_Stream"
       }
     },
-    "/v1/jobs/{jobId}/cancel": {
+    "/v1/jobs/{job_id}/cancel": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -357,6 +364,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -453,7 +467,7 @@
         "operationId": "Create_a_Live_Job"
       }
     },
-    "/v1/jobs/{jobId}/deactivate": {
+    "/v1/jobs/{job_id}/deactivate": {
       "put": {
         "tags": [
           "Live_Jobs"
@@ -467,6 +481,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -502,7 +523,7 @@
         "operationId": "Deactivate_SEP_Stream"
       }
     },
-    "/v1/jobs/{jobId}": {
+    "/v1/jobs/{job_id}": {
       "get": {
         "tags": [
           "Live_Jobs"
@@ -516,6 +537,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "name": "Content-Type",
             "in": "header",
@@ -551,7 +579,7 @@
         "operationId": "Get_Live_Job_Details"
       }
     },
-    "/v1/jobs/{jobId}/id3tag": {
+    "/v1/jobs/{job_id}/id3tag": {
       "post": {
         "tags": [
           "Live_Jobs"
@@ -565,6 +593,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "in": "body",
             "name": "Insert_ID3_timed_metadataBody",
@@ -612,7 +647,7 @@
         "operationId": "Insert_ID3_timed_metadata"
       }
     },
-    "/v1/jobs/{jobId}/cuepoint": {
+    "/v1/jobs/{job_id}/cuepoint": {
       "post": {
         "tags": [
           "Live_Jobs"
@@ -626,6 +661,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description" :"the job id"
+          },
           {
             "in": "body",
             "name": "Manual_Ad_Cue_Point_InsertionBody",
@@ -1370,7 +1412,7 @@
     },
     "URL Parameters": {
       "properties": {
-        "jobId": {
+        "job_id": {
           "type": "string",
           "description": "The job id for the stream you want to activate. "
         },
@@ -1396,7 +1438,7 @@
         }
       },
       "required": [
-        "jobId",
+        "job_id",
         "application_id",
         "SLATE_MSA_ID",
         "BEACON_SET_ID",
