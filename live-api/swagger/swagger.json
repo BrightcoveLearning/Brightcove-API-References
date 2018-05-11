@@ -1240,7 +1240,7 @@
         "operationId": "Get_Account_Ad_Configurations"
       }
     },
-    "/v1/ssai/slates/{account_id}": {
+    "/v1/ssai/slates/": {
       "get": {
         "tags": [
           "SSAI"
@@ -1254,13 +1254,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The account id"
-          },
           {
             "name": "Content-Type",
             "in": "header",
