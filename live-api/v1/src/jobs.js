@@ -86,7 +86,7 @@
  * @apiParam (Request Body Fields) {String} [outputs.notifications.event] Event to send the notification for.
  * @apiParam (Request Body Fields) {String} outputs.notifications.url Destination for the notification.
  *
- * @apiParamExample {json} Standard Live Stream Example:
+ * @apiParamExample {object} Standard Live Stream Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -128,11 +128,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream Transmuxed Rendition Example:
- *     // When using a transmuxed rendition within a multi-bitrate HLS output,
- *     // the segment_size and keyframe_interval should be avoided on any of the outputs
- *     // to ensure segments and keyframes follow the input GOP structure.
- *     //If not, the system will return an error in the job creation request.
+ * @apiParamExample {object} Live Stream Transmuxed Rendition Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -172,7 +168,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream with VOD Example:
+ * @apiParamExample {object} Live Stream with VOD Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -195,7 +191,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream with VOD and Notifications Example:
+ * @apiParamExample {object} Live Stream with VOD and Notifications Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -241,7 +237,7 @@
  *        }]
  *    }
  *
- * @apiParamExample {json} Live Stream with Multiple Output Playlists Example:
+ * @apiParamExample {object} Live Stream with Multiple Output Playlists Example:
  *   {
  *       "live_stream": true,
  *       "region": "my-region-list",
@@ -285,10 +281,6 @@
  *    }
  *
  * @apiParamExample {json} Live Stream with a Multiple CDN Config Example:
- *     // When using your own FTP or S3 origin location,
- *     // your CDN must be configured to fallback to your origin location.
- *     // The Brightcove Live system will not validate that the origin locations
- *     // for the CDN’s provided in the job request.
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
