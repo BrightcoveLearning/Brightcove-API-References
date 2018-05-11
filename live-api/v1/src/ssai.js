@@ -22,7 +22,7 @@
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xslt xslt stylesheet for the transform.
   * @apiParam (Request Body Fields) {String} ad_configuration_url_format Format for the ad tag - see [SSAI Using the Brightcove Live API](https://support.brightcove.com/server-side-ad-insertion-using-brightcove-live-api#ad_configuration_variables) for the available ad configuration variables.
   * @apiParam (Request Body Fields) {String} application_description Human readable description of the ad application.
-  * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work).
+  * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work)
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
   * @apiParamExample {object} Create an ad configuration (single ad response) example:
