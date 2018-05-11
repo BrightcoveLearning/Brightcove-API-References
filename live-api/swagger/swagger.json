@@ -3623,5 +3623,5 @@
   "schemes": [
     "https"
   ],
-  "basePath": "api.bcovlive.io"
+  "basePath": "api.bcovlive.io/v1"
 }
