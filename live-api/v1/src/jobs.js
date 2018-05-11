@@ -720,47 +720,47 @@
  *    }
  *
  *
- * @apiSuccessExample {json} Success Response Live Stream with SSAI and VOD output:
+ * @apiSuccessExample {object} Success Response Live Stream with SSAI and VOD output:
  *    HTTP/1.1 200 OK
  *    {
  *       "id": "3158f1c9bc5c462182079f434ba4ae0a",
  *       "outputs": [
  *          {
  *             "id": "03158f1c9bc5c462182079f434ba4ae0a",
- *             "playback_url":"http://host/jobId/us-west-2/profile_0/chunklist.m3u8",
- *             "Playback_url_dvr": "http://host/jobId/us-west-2/profile_0/chunklist_dvr.m3u8",
- *             "playback_url_vod": "http://host/jobId/us-west-2/profile_0/chunklist_vod.m3u8",
+ *             "playback_url":"http://host/job_id/us-west-2/profile_0/chunklist.m3u8",
+ *             "Playback_url_dvr": "http://host/job_id/us-west-2/profile_0/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/job_id/us-west-2/profile_0/chunklist_vod.m3u8",
  *             "label": "Out0"
  *          },
  *          {
  *             "id": "13158f1c9bc5c462182079f434ba4ae0a",
- *             "playback_url": "http://host/jobId/us-west-2/profile_1/chunklist.m3u8",
- *             "playback_url_dvr": "http://host/jobId/us-west-2/profile_1/chunklist_dvr.m3u8",
- *             "playback_url_vod": "http://host/jobId/us-west-2/profile_1/chunklist_vod.m3u8",
+ *             "playback_url": "http://host/job_id/us-west-2/profile_1/chunklist.m3u8",
+ *             "playback_url_dvr": "http://host/job_id/us-west-2/profile_1/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/job_id/us-west-2/profile_1/chunklist_vod.m3u8",
  *             "label": "Out1"
  *          },
  *          {
  *             "id": "23158f1c9bc5c462182079f434ba4ae0a",
- *             "playback_url": "http://host/jobId/us-west-2/profile_2/chunklist.m3u8",
- *             "playback_url_dvr": "http://host/jobId/us-west-2/profile_2/chunklist_dvr.m3u8",
- *             "playback_url_vod": "http://host/jobId/us-west-2/profile_2/chunklist_vod.m3u8",
+ *             "playback_url": "http://host/job_id/us-west-2/profile_2/chunklist.m3u8",
+ *             "playback_url_dvr": "http://host/job_id/us-west-2/profile_2/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/job_id/us-west-2/profile_2/chunklist_vod.m3u8",
  *             "label": "Out2"
  *          }
  *       ],
  *       "stream_url": "rtmp://ep6-usw2.a-live.io:1935/3158f1c9bc5c462182079f434ba4ae0a",
  *       "stream_name": "alive",
- *       "playback_url": "http://host/jobId/us-west-2/playlist.m3u8",
- *       "playback_url_dvr": "http://host/jobId/us-west-2/playlist_dvr.m3u8"
+ *       "playback_url": "http://host/job_id/us-west-2/playlist.m3u8",
+ *       "playback_url_dvr": "http://host/job_id/us-west-2/playlist_dvr.m3u8"
  *    }
  *
- * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid region - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
- * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
- * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
- * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (400) {object} BAD REQUEST: Invalid region - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (400) {object} BAD REQUEST: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (4oo) {object} BAD REQUEST: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (500) {object} INTERNAL SERVER ERROR: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
  *
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {object} 404 Error Response
  *    HTTP/1.1 404 Not Found
  *    {
  *        "error_code": "NOT_FOUND",
@@ -774,7 +774,7 @@
  // Cancel Live Job
 
  /**
-  * @api {put} /v1/jobs/:jobId/cancel Cancel Live Job
+  * @api {put} /v1/jobs/:job_id/cancel Cancel Live Job
   * @apiName Cancel Live Job
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -784,30 +784,30 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to stop.
+  * @apiParam (Path) {String} job_id The job id.
   *
   * @apiParamExample {String} Stop Live Stream Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/cancel
   *
   * @apiSuccess (200) {String} id The job id for the stream that was stopped
   *
-  * @apiSuccessExample {json} Success Response Stop a Live Stream:
+  * @apiSuccessExample {object} Success Response Stop a Live Stream:
   *    HTTP/1.1 200 OK
   *    {
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   */
 
  // Activate SEP Stream
 
  /**
-  * @api {put} /v1/jobs/:jobId/activate Activate SEP Stream
+  * @api {put} /v1/jobs/:job_id/activate Activate SEP Stream
   * @apiName Activate SEP Stream
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -817,29 +817,30 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to activate.
+  * @apiParam (Path) {String} job_id The job id.
   *
   * @apiParamExample {String} Activate SEP Job Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/activate
   *
   * @apiSuccess (200) {String} id The job id for the stream that was activated
   *
-  * @apiSuccessExample {json} Success Response Stop a Live Stream:
+  * @apiSuccessExample {object} Success Response Stop a Live Stream:
   *    HTTP/1.1 200 OK
   *    {
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   */
 
  // Deactivate SEP Stream
 
  /**
-  * @api {put} /v1/jobs/:jobId/deactivate Deactivate SEP Stream
+  * @api {put} /v1/jobs/:job_id/deactivate Deactivate SEP Stream
   * @apiName Deactivate SEP Stream
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -849,7 +850,7 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} jobId The job id for the stream you want to deactivate.
+  * @apiParam (Path) {String} job_id The job id.
   *
   * @apiParamExample {String} Deactivate SEP Job Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a/deactivate
@@ -872,7 +873,7 @@
 // Get Live Job Details
 
  /**
-  * @api {get} /v1/jobs/:jobId Get Live Job Details
+  * @api {get} /v1/jobs/:job_id Get Live Job Details
   * @apiName Get Live Job Details
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -882,7 +883,7 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+  * @apiParam (URL Parameters) {String} job_id The job id you want details for.
   *
   * @apiParamExample {String} Get Live Job Details Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
@@ -1157,7 +1158,7 @@
 // Manual Ad Cue Point Insertion
 
 /**
-  * @api {post} /v1/jobs/:jobId/cuepoint Manual Ad Cue Point Insertion
+  * @api {post} /v1/jobs/:job_id/cuepoint Manual Ad Cue Point Insertion
   * @apiName Manual Ad Cue Point Insertion
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -1167,7 +1168,7 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+  * @apiParam (URL Parameters) {String} job_id The job id you want details for.
   * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds
   * @apiParam (Request Body Fields) {String} timecode When to insert the cuepoint in HH:MM:SS:FF from the stream start (FF = frames); if omitted, the cuepoint will be inserted immediately
   * @apiParam (Request Body Fields) {Object} [ad_server_data] a set of any variables (key/value pairs) that should be passed to the adServer
@@ -1211,7 +1212,7 @@
   // Insert ID3 timed metadata
 
   /**
-    * @api {post} /v1/jobs/:jobId/id3tag Insert ID3 timed metadata
+    * @api {post} /v1/jobs/:job_id/id3tag Insert ID3 timed metadata
     * @apiName Insert ID3 timed metadata
     * @apiGroup Live_Jobs
     * @apiVersion 1.0.0
@@ -1222,7 +1223,7 @@
     * @apiHeader {String} Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
     *
-    * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+    * @apiParam (URL Parameters) {String} job_id The job id you want details for.
     * @apiParam (Request Body Fields) {Object} id3_tag An object containing variables for the ID3 timed metadata
     * @apiParam (Request Body Fields) {String{1..4}} id3_tag.name A name for the tag
     * @apiParam (Request Body Fields) {String} id3_tag.value A value for the tag (maximum string data size 256KB)
