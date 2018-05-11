@@ -280,7 +280,7 @@
  *       }]
  *    }
  *
- * @apiParamExample {json} Live Stream with a Multiple CDN Config Example:
+ * @apiParamExample {object} Live Stream with a Multiple CDN Config Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -325,7 +325,7 @@
  *
  *
  *
- * @apiParamExample {json} Live Stream with SSAI and VOD output Example:
+ * @apiParamExample {object} Live Stream with SSAI and VOD output Example:
  *    {
  *            "ad_insertion": true,
  *            "live_stream": true,
@@ -361,7 +361,7 @@
  *            }]
  *    }
  *
- * @apiParamExample {json} Standard Live Stream with Internal Encryption Example:
+ * @apiParamExample {object} Standard Live Stream with Internal Encryption Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -397,7 +397,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Standard Live Stream with Internal Encryption and Passphrase Example:
+ * @apiParamExample {object} Standard Live Stream with Internal Encryption and Passphrase Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -433,7 +433,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Standard Live Stream with Internal Encryption and Rotation Example:
+ * @apiParamExample {object} Standard Live Stream with Internal Encryption and Rotation Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
@@ -470,7 +470,7 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Standard Live Stream with External URL and Key Example:
+ * @apiParamExample {object} Standard Live Stream with External URL and Key Example:
  *    {
  *        "live_stream": true,
  *        "region": "my-region-list",
