@@ -27,7 +27,7 @@
   * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [CMS API Reference](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-videoGroup-Create_Video)
   * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video ingestion - see the [Dynamic Ingest Reference](https://brightcovelearning.github.io/Brightcove-API-References/dynamic-ingest-api/v1/doc/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
   *
-  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  * @apiParamExample {object} Create a VOD Clip by Duration from Live Request Body Example:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -39,7 +39,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
+  * @apiParamExample {object} Create a VOD Clip by an Offset from the Start Request Body Example:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -53,7 +53,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by Unix Epoch time:
+  * @apiParamExample {object} Create a VOD Clip by Unix Epoch time:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -67,7 +67,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by duration:
+  * @apiParamExample {object} Create a VOD Clip by duration:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -85,7 +85,7 @@
   *        ]
   *    }
   *
-  * @apiParamExample {json} Create a VOD Clip by stream timecodes:
+  * @apiParamExample {object} Create a VOD Clip by stream timecodes:
   *    {
   *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
   *        "outputs":[
@@ -114,7 +114,8 @@
   * @apiSuccess (200) {String} vod_jobs.label The clip label (from the input)
   * @apiSuccess (200) {String} live_job_id The clip label (from the input)
   *
-  * @apiSuccessExample {json} Creation of a clip
+  * @apiSuccessExample {Object} Creation of a clip
+  *    HTTP/1.1 200 OK
   *    {
   *      "vod_jobs": [
   *        {
@@ -125,11 +126,11 @@
   *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
   *    }
   *
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (400) {object} BAD_REQUEST: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (400) {object} BAD_REQUEST: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL_SERVER_ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   *
   */
