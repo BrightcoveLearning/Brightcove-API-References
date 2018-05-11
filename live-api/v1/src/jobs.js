@@ -863,9 +863,10 @@
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: After filtering, there is no job to process - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   */
 
@@ -883,7 +884,7 @@
   * @apiHeader {String} Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} job_id The job id you want details for.
+  * @apiParam (URL Parameters) {String} job_id The job id.
   *
   * @apiParamExample {String} Get Live Job Details Example:
   *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
@@ -981,7 +982,7 @@
   * @apiSuccess (200) {String} job.output_media_files.filename File name for the playlist manifest
   * @apiSuccess (200) {String} job.output_media_files.dvr_filename File name for the DVR playlist manifest
   *
-  * @apiSuccessExample {json} Success Response Get Live Job Details:
+  * @apiSuccessExample {object} Success Response Get Live Job Details:
   *    HTTP/1.1 200 OK
   *    {
   *      "job": {
@@ -1148,9 +1149,9 @@
   *      }
   *    }
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-  * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+  * @apiError (500) {object} INTERNAL SERVER ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   *
   *
   */
@@ -1243,7 +1244,8 @@
     * @apiSuccess (200) {String} id3_tag.tag_name The ID3 tag name
     * @apiSuccess (200) {String} id3_tag.tag_value The ID3 tag value
     *
-    * @apiSuccessExample {json} Success response for ID3 timed metadata Insertion
+    * @apiSuccessExample {object} Success response for ID3 timed metadata Insertion
+    *    HTTP/1.1 200 OK
     *    {
     *      "id": "JOB_ID",
     *      "id3_tag": {
@@ -1252,10 +1254,9 @@
     *      }
     *    }
     *
-    * @apiError (Error 4xx) {json} BAD REQUEST 400: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-    * @apiError (Error 4xx) {json} BAD REQUEST 400: The notification target type is not supported currently - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-    * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
-    * @apiError (Error 5xx) {json} INTERNAL SERVER ERROR 500: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+    * @apiError (400) {object} BAD REQUEST: Invalid input value - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+    * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+    * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+    * @apiError (500) {object} INTERNAL SERVER ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
     *
     */
