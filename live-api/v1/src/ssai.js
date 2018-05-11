@@ -43,7 +43,7 @@
   *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
   *        },
   *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *        "account_id": "USER'S ACCOUNT ID"
   *    }
   *
   * @apiParamExample {json} Create an ad configuration (multiple ad response) example:
@@ -64,11 +64,11 @@
   *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
   *        },
   *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *        "account_id": "USER'S ACCOUNT ID"
   *    }
   *
   * @apiSuccess (200) {Object} application The ad application object
-  * @apiSuccess (200) {String} application.account_id The Live account id (if omitted, the request will still work)
+  * @apiSuccess (200) {String} application.account_id The Live account id
   * @apiSuccess (200) {String} application.description The ad application description
   * @apiSuccess (200) {Object} application.application_ad_configuration The ad configuration object for the application
   * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
@@ -145,7 +145,7 @@
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_transforms.xslt xslt stylesheet for the transform.
   * @apiParam (Request Body Fields) {String} ad_configuration_url_format Format for the ad tag - see [SSAI Using the Brightcove Live API](https://support.brightcove.com/server-side-ad-insertion-using-brightcove-live-api#ad_configuration_variables) for the available ad configuration variables.
   * @apiParam (Request Body Fields) {String} application_description Human readable description of the ad application.
-  * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work).
+  * @apiParam (Request Body Fields) {String} [account_id] Your Live account id (if you leave this blank, the request will still work)
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
   * @apiParamExample {object} Update an ad configuration (single ad response) example:
@@ -166,7 +166,7 @@
   *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
   *        },
   *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *        "account_id": "USER'S ACCOUNT ID"
   *    }
   *
   * @apiParamExample {json} Update an ad configuration (multiple ad response) example:
@@ -188,11 +188,11 @@
   *            "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}"
   *        },
   *        "application_description": "Human readable description of the ad application",
-  *        "account_id": "USER'S ACCOUNT ID" [Optional - When omitted, Account ID of requesting user is used]
+  *        "account_id": "USER'S ACCOUNT ID"
   *    }
   *
   * @apiSuccess (200) {Object} application The ad application object
-  * @apiSuccess (200) {String} application.account_id The Live account id (if omitted, the request will still work)
+  * @apiSuccess (200) {String} application.account_id The Live account id
   * @apiSuccess (200) {String} application.description The ad application description
   * @apiSuccess (200) {Object} application.application_ad_configuration The ad configuration object for the application
   * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
@@ -258,7 +258,7 @@
     * @apiHeader {String} Content-Type Content-Type: application/json
     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
     *
-    * @apiParam {Path) {Object} [account_id] The Live account id (if you leave this out, request will still work)
+    * @apiParam {Path) {string} account_id The Live account id
     *
     *
     * @apiSuccess (200) {Object} application The ad application object
@@ -516,7 +516,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (URL Parameters) {String} account_id URL The account id
+  * @apiParam (Path) {String} account_id URL The account id
   *
   * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
   * @apiSuccess (200) {String} account_id Id for the account
@@ -526,7 +526,8 @@
   * @apiSuccess (200) {String} media_source_asset_url URL for the media asset to be ingested
   * @apiSuccess (200) {String} media_source_asset_status Current status of the ingestion of the media asset
   *
-  * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+  * @apiSuccessExample {Object[]} Success response for Get Slate Media Source Assets
+  *    HTTP/1.1 200 OK
   *    [
   *      {
   *        "media_source_asset_id": "MSA_UUID_1",
@@ -573,7 +574,7 @@
    *
    * @apiParamExample {json} Create beacon set example:
    *    {
-   *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
+   *        "account_id": "USER's ACCOUNT ID",
    *        "beacon_urls": [
    *            {
    *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
@@ -595,7 +596,8 @@
    * @apiSuccess (200) {String} beacon_sets.account_id Id for the account
    * @apiSuccess (200) {Boolean} inserted Whether the beacon set was added successfully
    *
-   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+   * @apiSuccessExample {object} Success response for Get Slate Media Source Assets
+   *    HTTP/1.1 200 OK
    *    {
    *        "beacon_set": {
    *            "beacon_urls": [{
@@ -633,13 +635,13 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (URL Parameters) {String} beacon_set_id URL The id for the beacon set
+   * @apiParam (Path) {String} beacon_set_id URL The id for the beacon set
    * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
    * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see ( https://support.brightcove.com/node/17763#Beacons) for the valid beacon variables
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see ( https://support.brightcove.com/node/17763#Beacons) for the valid beacon types
    *
-   * @apiParamExample {json} Ingest Slate Media Source Asset example:
+   * @apiParamExample {object} Ingest Slate Media Source Asset example:
    *    {
    *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
    *        "beacon_urls": [
@@ -664,6 +666,7 @@
    * @apiSuccess (200) {Boolean} inserted Whether the beacon set was added successfully
    *
    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+   *    HTTP/1.1 200 OK
    *    {
    *        "beacon_set": {
    *            "account_id": "USER's ACCOUNT ID",
@@ -713,7 +716,7 @@
      * @apiHeader {String} Content-Type Content-Type: application/json
      * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
      *
-     * @apiParam (URL Parameters) {String} account_id The Live account id
+     * @apiParam (Path) {String} account_id The Live account id
      *
      *
      * @apiSuccess (200) {Object} beacon_set The beacon set object
@@ -725,6 +728,7 @@
      * @apiSuccess (200) {Boolean} inserted Whether the beacon set was added successfully
      *
      * @apiSuccessExample {json} Success response for Get Beacon Sets
+     *    HTTP/1.1 200 OK
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
      *        "beacon_set_id": "beacon_set_id_1",
@@ -821,7 +825,7 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (URL Parameters) {String} beacon_set_id URL The id for the beacon set
+   * @apiParam (Path) {String} beacon_set_id URL The id for the beacon set
    *
    * @apiSuccess (200) {String} beacon_set_id The beacon set id
    * @apiSuccess (200) {Boolean} deleted Whether the beacon set was deleted successfully
