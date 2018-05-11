@@ -51,8 +51,17 @@
               "$ref": "#/definitions/vod_jobs"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Create_VOD_Clip"
@@ -103,8 +112,17 @@
               "$ref": "#/definitions/Create_Credential200"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Create_Credential"
@@ -144,11 +162,14 @@
               "$ref": "#/definitions/user_id"
             }
           },
-          "500": {
-            "description": "INTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "List_Credentials"
@@ -184,8 +205,17 @@
           }
         ],
         "responses": {
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "204": {
+            "description": "NO_CONTENT: the credential was deleted"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Delete_Credential"
@@ -234,8 +264,17 @@
               "$ref": "#/definitions/Update_Credential200"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Update_Credential"
@@ -277,8 +316,14 @@
               "$ref": "#/definitions/Activate_SEP_Stream200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Activate_SEP_Stream"
@@ -320,8 +365,14 @@
               "$ref": "#/definitions/Cancel_Live_Job200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Cancel_Live_Job"
@@ -372,8 +423,17 @@
               "$ref": "#/definitions/Create_a_Live_Job200"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid region - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: After filtering, there is no job to process - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Create_a_Live_Job"
@@ -415,8 +475,14 @@
               "$ref": "#/definitions/Deactivate_SEP_Stream200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Deactivate_SEP_Stream"
@@ -458,8 +524,14 @@
               "$ref": "#/definitions/job"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_Live_Job_Details"
@@ -510,8 +582,17 @@
               "$ref": "#/definitions/Insert_ID3_timed_metadata200"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Insert_ID3_timed_metadata"
@@ -623,8 +704,17 @@
               "$ref": "#/definitions/application"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Create_Ad_Configuration"
@@ -675,8 +765,17 @@
               "$ref": "#/definitions/beacon_set"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Create_beacon_set"
@@ -718,8 +817,14 @@
               "$ref": "#/definitions/Delete_Ad_Configuration200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Delete_Ad_Configuration"
@@ -759,8 +864,14 @@
               "$ref": "#/definitions/application"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_Ad_Configuration"
@@ -809,8 +920,17 @@
               "$ref": "#/definitions/application"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Update_Ad_Configuration"
@@ -852,8 +972,14 @@
               "$ref": "#/definitions/Delete_Slate_Media_Source_Asset200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Delete_Slate_Media_Source_Asset"
@@ -895,8 +1021,14 @@
               "$ref": "#/definitions/Delete_beacon_set200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Delete_beacon_set"
@@ -945,8 +1077,17 @@
               "$ref": "#/definitions/beacon_set"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Update_beacon_set"
@@ -988,8 +1129,14 @@
               "$ref": "#/definitions/application"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_Account_Ad_Configurations"
@@ -1031,8 +1178,14 @@
               "$ref": "#/definitions/Get_Slate_Media_Source_Assets200"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_Slate_Media_Source_Assets"
@@ -1074,8 +1227,14 @@
               "$ref": "#/definitions/beacon_set"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_beacon_sets"
@@ -1117,8 +1276,14 @@
               "$ref": "#/definitions/beacon_set"
             }
           },
-          "": {
-            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details \nINTERNAL_SERVER_ERROR: DB getItem, no results found - see Live API Error Messages for more details "
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Get_beacon_sets_for_user"
@@ -1169,8 +1334,17 @@
               "$ref": "#/definitions/Ingest_Slate_Media_Source_Asset200"
             }
           },
-          "": {
-            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details \nUNAUTHORIZED: Unauthorized - see Live API Error Messages for more details \nRESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details "
+          "400": {
+            "description": "BAD_REQUEST: Invalid input value - see Live API Error Messages for more details"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Unauthorized - see Live API Error Messages for more details"
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested - see Live API Error Messages for more details"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: see Live API Error Messages for more details"
           }
         },
         "operationId": "Ingest_Slate_Media_Source_Asset"
