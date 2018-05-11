@@ -535,7 +535,7 @@
  * @apiSuccess (200) {String} add_cdns.prepend Typically, a domain or path to prepend to addresses
  * @apiSuccess (200) {String} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  *
- * @apiSuccessExample {json} Success Response Standard Live Stream:
+ * @apiSuccessExample {object} Success Response Standard Live Stream:
  *    HTTP/1.1 200 OK
  *    {
  *    	"id": "6666482ac53b4f9bac473157c0897bde",
@@ -582,7 +582,7 @@
  *    	"playback_url_dvr": "https://bcovlive-a.akamaihd.net/6666482ac53b4f9bac473157c0897bde/us-west-2/NA/playlist_dvr.m3u8"
  *    }
  *
- * @apiSuccessExample {json} Success Response Live Stream with Multiple Output Playlists:
+ * @apiSuccessExample {object} Success Response Live Stream with Multiple Output Playlists:
  *    HTTP/1.1 200 OK
  *    {
  *      "id": "edcd4d356228417d80345a0c91864efe",
