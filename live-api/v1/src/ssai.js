@@ -133,7 +133,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Path) {Object} application_id The ad application id
+  * @apiParam (Path) {String} application_id The ad application id
   * @apiParam (Request Body Fields) {Object} application_ad_configuration The ad configuration object
   * @apiParam (Request Body Fields) {String} application_ad_configuration.ad_configuration_description Human readable description of the configuration.
   * @apiParam (Request Body Fields) {String="Dfp","Vast","SmartXML"} application_ad_configuration.ad_configuration_expected_response_type The expected response type based on your ad server
@@ -332,7 +332,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Path) {Object} application_id The ad application id
+  * @apiParam (Path) {String} application_id The ad application id
   *
   *
   * @apiSuccess (200) {Object} application The ad application object
@@ -392,7 +392,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Path) {Object} application_id The ad application id
+  * @apiParam (Path) {String} application_id The ad application id
   *
   *
   * @apiSuccess (200) {String} application_id The ad application id
@@ -782,6 +782,7 @@
      * @apiSuccess (200) {Boolean} inserted Whether the beacon set was added successfully
      *
      * @apiSuccessExample {json} Success response for Get Beacon Sets for user
+     *    HTTP/1.1 200 OK
      *    [{
      *        "account_id": "USER's ACCOUNT ID",
      *        "beacon_set_id": "beacon_set_id_1",
@@ -831,6 +832,7 @@
    * @apiSuccess (200) {Boolean} deleted Whether the beacon set was deleted successfully
    *
    * @apiSuccessExample {json} Success response for Delete Beacon Set
+   *    HTTP/1.1 200 OK
    *    {
    *      "beacon_set_id": "beacon_set_id",
    *      "deleted": true
