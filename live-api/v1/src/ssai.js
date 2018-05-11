@@ -46,7 +46,7 @@
  *        "account_id": "USER'S ACCOUNT ID"
  *    }
  *
- * @apiParamExample {json} Create an ad configuration (multiple ad response) example:
+ * @apiParamExample {object} Create an ad configuration (multiple ad response) example:
  *    {
  *        "application_ad_configuration": {
  *            "ad_configuration_description": "Human readable description of the configuration",
@@ -169,7 +169,7 @@
  *        "account_id": "USER'S ACCOUNT ID"
  *    }
  *
- * @apiParamExample {json} Update an ad configuration (multiple ad response) example:
+ * @apiParamExample {object} Update an ad configuration (multiple ad response) example:
  *    {
  *        "application_ad_configuration": {
  *            "ad_configuration_description": "Human readable description of the configuration",
@@ -258,8 +258,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
- * @apiParam {Path) {string} account_id The Live account id
- *
+ * @apiParam (Path) {string} account_id The Live account id
  *
  * @apiSuccess (200) {Object} application The ad application object
  * @apiSuccess (200) {String} application.account_id The account id
