@@ -1687,10 +1687,6 @@
         "user_id"
       ]
     },
-    "user_id": {
-      "properties": {},
-      "required": []
-    },
     "List_Credentials200": {
       "properties": {
         "Array": {
