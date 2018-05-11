@@ -516,7 +516,7 @@
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
   *
-  * @apiParam (Path) {String} account_id URL The account id
+  * @apiParam (Path) {String} account_id The account id
   *
   * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
   * @apiSuccess (200) {String} account_id Id for the account
@@ -635,7 +635,7 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (Path) {String} beacon_set_id URL The id for the beacon set
+   * @apiParam (Path) {String} beacon_set_id The id for the beacon set
    * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
    * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see ( https://support.brightcove.com/node/17763#Beacons) for the valid beacon variables
@@ -717,7 +717,6 @@
      * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
      *
      * @apiParam (Path) {String} account_id The Live account id
-     *
      *
      * @apiSuccess (200) {Object} beacon_set The beacon set object
      * @apiSuccess (200) {Object[]} beacon_set.beacon_urls Array of beacon URLs
@@ -826,7 +825,7 @@
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
    *
-   * @apiParam (Path) {String} beacon_set_id URL The id for the beacon set
+   * @apiParam (Path) {String} beacon_set_id The id for the beacon set
    *
    * @apiSuccess (200) {String} beacon_set_id The beacon set id
    * @apiSuccess (200) {Boolean} deleted Whether the beacon set was deleted successfully
