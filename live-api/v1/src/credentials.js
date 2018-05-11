@@ -140,7 +140,7 @@
  * @apiSuccess (200) {String} user_id The user id
  *
  * @apiSuccessExample {Object}
- *   http/1.1 200 OK
+ *   HTTP/1.1 200 OK
  *    {
  *    	"credential_id": "2fc6b698ce264db3900375a4694607a6",
  *    	"user_id": "c2691d4d039040be96c190a949d754a7",
@@ -193,7 +193,7 @@
  * @apiSuccess (200) {String} user_id The user id
  *
  * @apiSuccessExample {Object}
- *   http/1.1 200 OK
+ *   HTTP/1.1 200 OK
  *    {
  *    	"credential_id": "2fc6b698ce264db3900375a4694607a6",
  *    	"user_id": "c2691d4d039040be96c190a949d754a7",
