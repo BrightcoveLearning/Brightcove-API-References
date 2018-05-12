@@ -1592,6 +1592,20 @@
         "ingest"
       ]
     },
+    "Create_VOD_ClipBody.outputs.videocloud.video": {
+      "properties": {
+        "tags": [
+          
+        ],
+        "reference_id": "Reference id for the clip",
+        "description": "Video description",
+        "name": "Name of the video clip"
+      },
+      "required": [
+        "video",
+        "ingest"
+      ]
+    },
     "vod_jobs": {
       "properties": {
         "jvod_id": {
@@ -2023,7 +2037,9 @@
           "$ref": "#/definitions/Create_a_Live_JobBody.add_cdns.token_auth.media"
         }
       },
-      "required": []
+      "required": [
+        
+      ]
     },
     "Create_a_Live_JobBody.add_cdns.token_auth.media": {
       "properties": {
@@ -2040,7 +2056,9 @@
           "description": "The time to live in seconds - either end_time or ttl is required "
         }
       },
-      "required": []
+      "required": [
+        
+      ]
     },
     "Create_a_Live_JobBody.outputs": {
       "properties": {
