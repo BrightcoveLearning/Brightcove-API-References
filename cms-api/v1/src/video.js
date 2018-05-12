@@ -42,7 +42,7 @@
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
  * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin`, `live_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
  * @apiSuccess (200) {Number} duration video duration in milliseconds
@@ -301,7 +301,7 @@
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
  * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin`, `live_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
  * @apiSuccess (200) {Number} duration video duration in milliseconds
@@ -1416,7 +1416,7 @@
   * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
   * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
   * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
-  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+  * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin`, `live_origin` or `unknown`
   * @apiSuccess (200) {String} description video short description
   * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
   * @apiSuccess (200) {Number} duration video duration in milliseconds
@@ -1636,7 +1636,7 @@
  * @apiSuccess (200) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (200) {String} cue_points.metadata optional metadata string (128 single-byte characters maximum)
  * @apiSuccess (200) {Boolean} cue_points.force_stop whether video is force_stopped at the cue point
- * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin` or `unknown`
+ * @apiSuccess (200) {String} delivery_type video delivery type - `remote`, `static_origin`, `dynamic_origin`, `live_origin` or `unknown`
  * @apiSuccess (200) {String} description video short description
  * @apiSuccess (200) {Boolean} drm_disabled if `true`, the video is not DRM-packaged
  * @apiSuccess (200) {Number} duration video duration in milliseconds
