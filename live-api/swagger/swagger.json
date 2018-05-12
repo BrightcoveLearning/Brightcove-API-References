@@ -1594,7 +1594,7 @@
     },
     "Create_VOD_ClipBody.outputs.videocloud.video": {
       "properties": {
-        "economics": "String",
+        "economics": "whether the video supports ads",
         "tags": [
           
         ],
