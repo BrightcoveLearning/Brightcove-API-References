@@ -2995,17 +2995,12 @@
         "account_id": {
           "type": "string",
           "description": "Your Live account id (if you leave this blank, the request will still work) "
-        },
-        "application_segment_buffer": {
-          "type": "number",
-          "description": "The amount of ad content to buffer, in seconds. "
         }
       },
       "required": [
         "application_ad_configuration",
         "ad_configuration_url_format",
-        "application_description",
-        "application_segment_buffer"
+        "application_description"
       ]
     },
     "Create_Ad_ConfigurationBody.application_ad_configuration": {
@@ -3309,17 +3304,12 @@
         "account_id": {
           "type": "string",
           "description": "Your Live account id (if you leave this blank, the request will still work) "
-        },
-        "application_segment_buffer": {
-          "type": "number",
-          "description": "The amount of ad content to buffer, in seconds. "
         }
       },
       "required": [
         "application_ad_configuration",
         "ad_configuration_url_format",
-        "application_description",
-        "application_segment_buffer"
+        "application_description"
       ]
     },
     "Update_Ad_ConfigurationBody.application_ad_configuration": {
