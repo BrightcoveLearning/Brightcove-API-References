@@ -2169,7 +2169,9 @@
         }
       },
       "required": [
-        "auth_type","key","token_name"
+        "auth_type",
+        "key",
+        "token_name"
       ]
     },
     "Create_a_Live_JobBody.add_cdns.token_auth.media": {
@@ -2186,10 +2188,7 @@
           "type": "ttl",
           "description": "The time to live in seconds - either end_time or ttl is required "
         }
-      },
-      "required": [
-
-      ]
+      }
     },
     "Create_a_Live_JobBody.outputs": {
       "properties": {
