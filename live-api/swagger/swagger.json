@@ -1640,6 +1640,11 @@
             "$ref": "#/definitions/Create_VOD_ClipBody.outputs.videocloud.video.cue_point"
           }
         },
+        "geo": {
+          "$ref": "#/definitions/Create_VOD_ClipBody.outputs.videocloud.video.geo",
+          "description": "map of geo-filtering properties ",
+          "type": "object"
+        },
       },
       "required": [
         "name"
@@ -1669,7 +1674,32 @@
           "enum": ["AD", "CODE"],
           "default": "AD"
         }
-      }
+      },
+      "required": [
+        "type",
+        "time"
+      ]
+    },
+    "Create_VOD_ClipBody.outputs.videocloud.video.geo": {
+      "properties": {
+        "countries": {
+          "description": "array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/#home) (search for &quot;country codes&quot;) ",
+          "type": "string"
+        },
+        "exclude_countries": {
+          "description": "if true, country array is treated as a list of countries excluded from viewing ",
+          "type": "boolean"
+        },
+        "restricted": {
+          "description": "whether geo-restriction is enabled for this video ",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "countries",
+        "exclude_countries",
+        "restricted"
+      ]
     },
     "vod_jobs": {
       "properties": {
