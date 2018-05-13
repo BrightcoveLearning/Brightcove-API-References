@@ -1594,17 +1594,30 @@
     },
     "Create_VOD_ClipBody.outputs.videocloud.video": {
       "properties": {
-        "economics": "whether the video supports ads",
-        "tags": [
-          
-        ],
-        "reference_id": "Reference id for the clip",
-        "description": "Video description",
-        "name": "Name of the video clip"
+        "economics": {
+          "description":"whether the video supports ads",
+          "type": "string",
+          "enum": ["AD_SUPPORTED", "FREE"]
+        },
+        "tags": {
+          "description": "Array of tags for the video - note that  tags are string that may not contain a comma",
+          "type" : "array"
+        },
+        "reference_id": {
+          "description": "Reference id for the clip - must be unique within the account",
+          "type": "string"
+        },
+        "description": {
+          "description":"Video short description",
+          "type": "string"
+        },
+        "name": {
+          "description":"Title of the video clip",
+          "type"" "string"
+        }
       },
       "required": [
-        "video",
-        "ingest"
+        "name"
       ]
     },
     "vod_jobs": {
@@ -2039,7 +2052,7 @@
         }
       },
       "required": [
-        
+
       ]
     },
     "Create_a_Live_JobBody.add_cdns.token_auth.media": {
@@ -2058,7 +2071,7 @@
         }
       },
       "required": [
-        
+
       ]
     },
     "Create_a_Live_JobBody.outputs": {
