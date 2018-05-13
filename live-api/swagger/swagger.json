@@ -1724,6 +1724,23 @@
         "ends_at"
       ]
     },
+    "Create_VOD_ClipBody.outputs.videocloud.ingest": {
+      "properties": {
+        "profile": {
+          "description": "The ingest profile to use - we recommend that you do **not** include this filed and use the account default profile instead",
+          "type": "string"
+        },
+        "capture-images": {
+          "description": "Whether Video Cloud should capture poster and thumbnail images at the midpoint of the clip",
+          "type": "boolean",
+          "default": "true"
+        },
+        "notifications": {
+          "description": "An array of URLs that nofications for the ingest job should be sent to",
+          "type": "array"
+        }
+      }
+    },
     "vod_jobs": {
       "properties": {
         "jvod_id": {
