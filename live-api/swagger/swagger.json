@@ -2504,11 +2504,11 @@
     "job": {
       "properties": {
         "created_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the job was created "
         },
         "finished_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the live stream was stopped "
         },
         "id": {
@@ -2520,11 +2520,11 @@
           "description": "The current state of the job - possible values for Live jobs are standby, waiting, processing, disconnected. finishing, finished, cancelling, cancelled, failed; possible values for VOD jobs are waiting_finish_live, waiting, processing, creating_asset, cancelling, cancelled, finished, failed "
         },
         "submitted_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the job was submitted "
         },
         "updated_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the job was last modified "
         },
         "region": {
@@ -2620,7 +2620,7 @@
           "description": "The number of audio channels "
         },
         "created_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the input file was created "
         },
         "duration_in_ms": {
@@ -2640,7 +2640,7 @@
           "description": "File size "
         },
         "finished_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the input file was finished "
         },
         "format": {
@@ -2668,7 +2668,7 @@
           "description": "Current state of input file processing "
         },
         "updated_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the input file was last modified "
         },
         "video_bitrate_in_kbps": {
@@ -2721,7 +2721,7 @@
     "job.stream": {
       "properties": {
         "created_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the stream was created "
         },
         "duration": {
@@ -2729,7 +2729,7 @@
           "description": "ISO Duration of the stream in seconds "
         },
         "finished_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the stream was finished "
         },
         "height": {
@@ -2749,7 +2749,7 @@
           "description": "Protocol of the stream "
         },
         "updated_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the stream was last modified "
         },
         "video_bitrate_in_kbps": {
@@ -2853,7 +2853,7 @@
           "description": "The number of audio channels "
         },
         "created_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the output file was created "
         },
         "duration_in_ms": {
@@ -2873,7 +2873,7 @@
           "description": "File size "
         },
         "finished_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the output file was finished "
         },
         "format": {
@@ -2901,7 +2901,7 @@
           "description": "Current state of output file processing "
         },
         "updated_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "ISO 8601 date-time string representing when the output file was last modified "
         },
         "video_bitrate_in_kbps": {
@@ -3114,7 +3114,7 @@
           "description": "The cuepoint insertion accuracy - may be segment or frame "
         },
         "inserted_at": {
-          "type": "datetimestring",
+          "type": "string",
           "description": "Time when the cue point was inserted in the stream "
         }
       },
