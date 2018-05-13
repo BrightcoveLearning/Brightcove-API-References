@@ -10072,7 +10072,8 @@
           },
           "id": {
             "type": "string",
-            "description": "ID for the audio track formed as language_variant"
+            "description": "ID for the audio track formed as language_variant",
+            "readOnly": true
           },
           "language": {
             "type": "string",
@@ -10138,7 +10139,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the video id"
+            "description": "the video id",
+            "readOnly": true
           },
           "name": {
             "type": "string",
@@ -10284,7 +10286,8 @@
           },
           "id": {
             "type": "string",
-            "description": "system id for the folder"
+            "description": "system id for the folder",
+            "readOnly": true
           },
           "name": {
             "type": "string",
@@ -10318,7 +10321,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the ingest job id"
+            "description": "the ingest job id",
+            "readOnly": true
           },
           "priority": {
             "type": "string",
@@ -10369,7 +10373,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the playlist id"
+            "description": "the playlist id",
+            "readOnly": true
           },
           "name": {
             "type": "string",
@@ -10434,7 +10439,8 @@
           },
           "id": {
             "type": "string",
-            "description": "system id for the subscription"
+            "description": "system id for the subscription",
+            "readOnly": true
           },
           "service_account": {
             "type": "string",
@@ -10515,7 +10521,8 @@
           },
           "id": {
             "type": "string",
-            "description": "video id"
+            "description": "video id",
+            "readOnly": true
           },
           "images": {
             "description": "map of image maps",
@@ -11190,7 +11197,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the asset id"
+            "description": "the asset id",
+            "readOnly": true
           },
           "audio_only": {
             "type": "boolean",
@@ -11277,7 +11285,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the asset id"
+            "description": "the asset id",
+            "readOnly": true
           },
           "complete": {
             "type": "boolean",
@@ -11355,7 +11364,8 @@
           },
           "id": {
             "type": "string",
-            "description": "the asset id"
+            "description": "the asset id",
+            "readOnly": true
           },
           "complete": {
             "type": "boolean",
