@@ -2505,27 +2505,33 @@
       "properties": {
         "created_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the job was created "
+          "description": "ISO 8601 date-time string representing when the job was created ",
+          "readOnly": true
         },
         "finished_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the live stream was stopped "
+          "description": "ISO 8601 date-time string representing when the live stream was stopped ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "The live job id "
+          "description": "The live job id ",
+          "readOnly": true
         },
         "state": {
           "type": "string",
-          "description": "The current state of the job - possible values for Live jobs are standby, waiting, processing, disconnected. finishing, finished, cancelling, cancelled, failed; possible values for VOD jobs are waiting_finish_live, waiting, processing, creating_asset, cancelling, cancelled, finished, failed "
+          "description": "The current state of the job - possible values for Live jobs are standby, waiting, processing, disconnected. finishing, finished, cancelling, cancelled, failed; possible values for VOD jobs are waiting_finish_live, waiting, processing, creating_asset, cancelling, cancelled, finished, failed ",
+          "readOnly": true
         },
         "submitted_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the job was submitted "
+          "description": "ISO 8601 date-time string representing when the job was submitted ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the job was last modified "
+          "description": "ISO 8601 date-time string representing when the job was last modified ",
+          "readOnly": true
         },
         "region": {
           "type": "string",
@@ -2549,11 +2555,13 @@
         },
         "playback_url": {
           "type": "string",
-          "description": "Playback URL for the live stream "
+          "description": "Playback URL for the live stream ",
+          "readOnly": true
         },
         "playback_url_dvr": {
           "type": "string",
-          "description": "Playback URL for the live DVR "
+          "description": "Playback URL for the live DVR ",
+          "readOnly": true
         },
         "input_media_file": {
           "type": "object",
