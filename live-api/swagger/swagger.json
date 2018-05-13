@@ -2306,7 +2306,7 @@
         "videocloud": {
           "type": "object",
           "description": "Video Cloud customer have the option to push their clips directly through Dynamic Ingest. Options &quot;{&quot;video&quot;: {&quot;name&quot;}, &quot;ingest&quot;: { }&quot;. The video object will be sent to the CMS API and can include (description, tags, etc.). Note: the account_id and reference_id will be added automatically. If overriding the reference_id, ensure that the id does not already exist or the job will fail. For more information see: CMS-API-CreateVideo. The ingest object will be sent to the Dynamic Ingest API and can include (master, profile, poster, callbacks, etc). Note: the account_id and video_id are added automatically. For more information see: DI-API-IngestVideo. ",
-          "$ref": "#/definitions/Create_a_Live_JobBody.outputs.videocloud"
+          "$ref": "#/definitions/Create_VOD_ClipBody.outputs.videocloud"
         }
       },
       "required": [
