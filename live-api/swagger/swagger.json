@@ -1935,9 +1935,8 @@
     "Update_CredentialBody.oauth_settings": {
       "properties": {
         "url": {
-          "type": "object",
-          "description": "OAuth access token URL for OAuth credentials needed to send notifications to a notification URL ",
-          "$ref": "#/definitions/Update_CredentialBody.oauth_settings.url"
+          "type": "string",
+          "description": "OAuth access token URL for OAuth credentials needed to send notifications to a notification URL "
         }
       },
       "required": [
