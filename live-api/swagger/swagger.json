@@ -159,7 +159,7 @@
           "200": {
             "description": "200",
             "schema": {
-              "$ref": "#/definitions/user_id"
+              "$ref": "#/definitions/List_Credentials200"
             }
           },
           "401": {
@@ -1842,7 +1842,7 @@
           "type": "array",
           "description": "of credentials objects ",
           "items": {
-            "$ref": "#/definitions/Array"
+            "$ref": "#/definitions/credentials"
           }
         }
       },
