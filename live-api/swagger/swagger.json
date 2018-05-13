@@ -1616,9 +1616,13 @@
           "type": "string"
         },
         "state": {
+          "description":"Whether the video should be active or inactive",
+          "type": "string"
+        },
+        "custom_fileds": {
           "description":"Whether",
           "type": "string"
-        }
+        },
       },
       "required": [
         "name"
