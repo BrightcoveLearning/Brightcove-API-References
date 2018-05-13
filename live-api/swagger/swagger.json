@@ -1617,16 +1617,38 @@
         },
         "state": {
           "description":"Whether the video should be active or inactive",
-          "type": "string"
+          "type": "string",
+          "enum": ["ACTIVE", "INACTIVE"],
+          "default": "ACTIVE"
         },
-        "custom_fileds": {
-          "description":"Whether",
-          "type": "string"
+        "custom_fields": {
+          "description":"An object whose properties are `fieldname`:`value` pairs - be sure to the *internal* name of the field",
+          "type": "object"
+        },
+        "drm_disabled": {
+          "description":"Use to disable DRM packaging for this video - applies only to DRM-enabled accounts",
+          "type": "boolean",
+        },
+        "long_description": {
+          "description":"A longer description of the video",
+          "type": "string",
+        },
+        "cue_points": {
+          "description":"Array of cuepoint objects",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Create_VOD_ClipBody.outputs.videocloud.video.cue_point"
+          }
         },
       },
       "required": [
         "name"
       ]
+    },
+    "Create_VOD_ClipBody.outputs.videocloud.video.cue_point": {
+      "properties": {
+
+      }
     },
     "vod_jobs": {
       "properties": {
