@@ -753,7 +753,9 @@
         },
         "type": {
           "description": "cue point type ",
-          "type": "string"
+          "type": "string",
+          "enum": ["AD", "CODE"],
+          "default": "AD"
         }
       },
       "required": [
