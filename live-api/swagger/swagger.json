@@ -2164,12 +2164,12 @@
         },
         "media": {
           "type": "object",
-          "description": "Your Akamai token token name ",
+          "description": "Object containing tokenization properites",
           "$ref": "#/definitions/Create_a_Live_JobBody.add_cdns.token_auth.media"
         }
       },
       "required": [
-
+        "auth_type","key","token_name"
       ]
     },
     "Create_a_Live_JobBody.add_cdns.token_auth.media": {
