@@ -1614,6 +1614,10 @@
         "name": {
           "description":"Title of the video clip",
           "type": "string"
+        },
+        "state": {
+          "description":"Whether",
+          "type": "string"
         }
       },
       "required": [
