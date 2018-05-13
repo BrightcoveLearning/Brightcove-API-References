@@ -1627,11 +1627,11 @@
         },
         "drm_disabled": {
           "description":"Use to disable DRM packaging for this video - applies only to DRM-enabled accounts",
-          "type": "boolean",
+          "type": "boolean"
         },
         "long_description": {
           "description":"A longer description of the video",
-          "type": "string",
+          "type": "string"
         },
         "cue_points": {
           "description":"Array of cuepoint objects",
