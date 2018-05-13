@@ -984,170 +984,333 @@
   *
   * @apiSuccessExample {object} Success Response Get Live Job Details:
   *    HTTP/1.1 200 OK
-  *    {
-  *      "job": {
-  *        "created_at": "2016-11-06T20:12:46.571Z",
-  *        "finished_at": "2016-11-06T20:43:16.063Z",
-  *        "id": "edb92295e0f744f088f473ac047538c3",
-  *        "privacy": false,
-  *        "state": "finished",
-  *        "submitted_at": "2016-11-06T20:12:46.571Z",
-  *        "test": false,
-  *        "updated_at": "2016-11-06T20:42:55.980Z",
-  *        "region": "my-region-list",
-  *        "reconnect_time": 20,
-  *        "event_length": 0,
-  *        "live_stream": true,
-  *        "ad_insertion": false,
-  *        "metadata_passthrough": false,
-  *        "out_worker_bytes": 0,
-  *        "out_worker_bytes_rate": 0,
-  *        "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
-  *        "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
-  *        "input_media_file": {
-  *          "audio_bitrate_in_kbps": null,
-  *          "audio_codec": null,
-  *          "audio_sample_rate": null,
-  *          "audio_tracks": null,
-  *          "channels": null,
-  *          "created_at": "2016-11-06T20:12:46.571Z",
-  *          "duration_in_ms": 1478464996063,
-  *          "error_class": null,
-  *          "error_message": null,
-  *          "file_size_bytes": null,
-  *          "finished_at": "2016-11-06T20:43:16.063Z",
-  *          "format": null,
-  *          "frame_rate": null,
-  *          "height": null,
-  *          "id": "input-edb92295e0f744f088f473ac047538c3",
-  *          "md5_checksum": null,
-  *          "privacy": false,
-  *          "state": "finished",
-  *          "test": false,
-  *          "updated_at": "2016-11-06T20:42:55.980Z",
-  *          "video_bitrate_in_kbps": null,
-  *          "video_codec": null,
-  *          "width": null,
-  *          "total_bitrate_in_kbps": null,
-  *          "url": null
-  *        },
-  *        "stream": {
-  *          "created_at": null,
-  *          "finished_at": "2016-11-06T20:43:16.063Z",
-  *          "height": null,
-  *          "id": "stream-edb92295e0f744f088f473ac047538c3",
-  *          "name": "alive",
-  *          "protocol": null,
-  *          "state": null,
-  *          "test": false,
-  *          "updated_at": null,
-  *          "width": null,
-  *          "total_bitrate_in_kbps": null,
-  *          "duration": 1478464996.063,
-  *          "region": "my-region-list",
-  *          "url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
-  *          "location": {
-  *            "source": {
-  *              "latitude": null,
-  *              "longitude": null,
-  *              "location": null
-  *            },
-  *            "destination": {
-  *              "latitude": null,
-  *              "longitude": null,
-  *              "location": null
-  *            },
-  *            "distance": null
-  *          },
-  *          "in_worker_bytes": 0,
-  *          "in_worker_bytes_rate": 0
-  *        },
-  *        "output_media_files": [
-  *          {
-  *            "audio_bitrate_in_kbps": 196.608,
-  *            "audio_codec": "AAC",
-  *            "audio_sample_rate": null,
-  *            "channels": null,
-  *            "created_at": "2016-11-06T20:12:46.571Z",
-  *            "duration_in_ms": 1478464996063,
-  *            "error_class": null,
-  *            "error_message": null,
-  *            "file_size_bytes": null,
-  *            "finished_at": "2016-11-06T20:43:16.063Z",
-  *            "format": null,
-  *            "fragment_duration_in_ms": null,
-  *            "frame_rate": null,
-  *            "height": 540,
-  *            "id": "0-edb92295e0f744f088f473ac047538c3",
-  *            "md5_checksum": null,
-  *            "privacy": false,
-  *            "rfc_6381_audio_codec": null,
-  *            "rfc_6381_video_codec": null,
-  *            "state": "finished",
-  *            "test": false,
-  *            "updated_at": "2016-11-06T20:42:55.980Z",
-  *            "video_bitrate_in_kbps": 1887.232,
-  *            "video_codec": "H.264",
-  *            "video_codec_profile": "main",
-  *            "width": 960,
-  *            "label": "hls720p",
-  *            "total_bitrate_in_kbps": 2083.84,
-  *            "keyframe_interval": 60,
-  *            "keyframe_interval_follow_source": false,
-  *            "segment_seconds": 6,
-  *            "live_stream": true,
-  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
-  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
-  *            "playback_url_vod": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8"
-  *          },
-  *          {
-  *            "audio_bitrate_in_kbps": 196.608,
-  *            "audio_codec": "AAC",
-  *            "audio_sample_rate": null,
-  *            "channels": null,
-  *            "created_at": "2016-11-06T20:12:46.571Z",
-  *            "duration_in_ms": 1478464996063,
-  *            "error_class": null,
-  *            "error_message": null,
-  *            "file_size_bytes": null,
-  *            "finished_at": "2016-11-06T20:43:16.063Z",
-  *            "format": null,
-  *            "fragment_duration_in_ms": null,
-  *            "frame_rate": null,
-  *            "height": 360,
-  *            "id": "1-edb92295e0f744f088f473ac047538c3",
-  *            "md5_checksum": null,
-  *            "privacy": false,
-  *            "rfc_6381_audio_codec": null,
-  *            "rfc_6381_video_codec": null,
-  *            "state": "finished",
-  *            "test": false,
-  *            "updated_at": "2016-11-06T20:42:55.980Z",
-  *            "video_bitrate_in_kbps": 838.656,
-  *            "video_codec": "H.264",
-  *            "video_codec_profile": "main",
-  *            "width": 640,
-  *            "label": "hls480p",
-  *            "total_bitrate_in_kbps": 1035.264,
-  *            "keyframe_interval": 60,
-  *            "keyframe_interval_follow_source": false,
-  *            "segment_seconds": 6,
-  *            "live_stream": true,
-  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
-  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
-  *            "playback_url_vod": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8"
-  *          },
-  *          {
-  *            "playlist_type": "defaultS3",
-  *            "type": "playlist",
-  *            "filename": "playlist.m3u8",
-  *            "dvr_filename": "playlist_dvr.m3u8",
-  *            "playback_url": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
-  *            "playback_url_dvr": "http://bcovlive-a.akamaihd.net/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
-  *          }
-  *        ]
-  *      }
-  *    }
+  *     {
+  *       "job": {
+  *         "job_out_bytes": 0,
+  *         "job_playlists": [
+  *           {
+  *             "delivery": {
+  *               "media_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *               "ssai_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *               "media_cdn_protocol": "https",
+  *               "ssai_cdn_protocol": "https",
+  *               "ssai_manifest_append": "_ssaiM"
+  *             },
+  *             "masterLocation": "alive-pr-us-west-2-media",
+  *             "default_playlist_name": "playlist.m3u8",
+  *             "label_sources": [
+  *               "hls360p",
+  *               "hls540p",
+  *               "hls720p"
+  *             ],
+  *             "label": "playlist_all",
+  *             "type": {
+  *               "protocol": "HTTP",
+  *               "profile": "BcovAliveCupertino",
+  *               "name": "defaultS3",
+  *               "streaming_delivery_format": "hls",
+  *               "video_format": "mpeg-ts",
+  *               "pushpublish": "bcov",
+  *               "type": "S3"
+  *             },
+  *             "profile_sources": [
+  *               "profile_0",
+  *               "profile_1",
+  *               "profile_2"
+  *             ],
+  *             "default_dvr_playlist_name": "playlist_dvr.m3u8",
+  *             "playlist_name": "playlist-all.m3u8",
+  *             "default_chunklist_name": "chunklist.m3u8",
+  *             "default_dvr_chunklist_name": "chunklist_dvr.m3u8",
+  *             "playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all.m3u8",
+  *             "default_vod_chunklist_name": "chunklist_vod.m3u8",
+  *             "default_s3_bucket": "alive-pr-[[region]]-media",
+  *             "dvr_playlist_name": "playlist-all_dvr.m3u8",
+  *             "default_s3_bucket_ads": "alive-pr-[[region]]-ads",
+  *             "playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all_dvr.m3u8"
+  *           },
+  *           {
+  *             "delivery": {
+  *               "media_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *               "ssai_cdn_prepend": "bcovlive-a.akamaihd.net",
+  *               "media_cdn_protocol": "https",
+  *               "ssai_cdn_protocol": "https",
+  *               "ssai_manifest_append": "_ssaiM"
+  *             },
+  *             "masterLocation": "alive-pr-us-west-2-media",
+  *             "default_playlist_name": "playlist.m3u8",
+  *             "label_sources": [
+  *               "hls360p",
+  *               "hls540p"
+  *             ],
+  *             "label": "playlist_sd",
+  *             "type": {
+  *               "protocol": "HTTP",
+  *               "profile": "BcovAliveCupertino",
+  *               "name": "defaultS3",
+  *               "streaming_delivery_format": "hls",
+  *               "video_format": "mpeg-ts",
+  *               "pushpublish": "bcov",
+  *               "type": "S3"
+  *             },
+  *             "profile_sources": [
+  *               "profile_1",
+  *               "profile_2"
+  *             ],
+  *             "default_dvr_playlist_name": "playlist_dvr.m3u8",
+  *             "playlist_name": "playlist-sd.m3u8",
+  *             "default_chunklist_name": "chunklist.m3u8",
+  *             "default_dvr_chunklist_name": "chunklist_dvr.m3u8",
+  *             "playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-sd.m3u8",
+  *             "default_vod_chunklist_name": "chunklist_vod.m3u8",
+  *             "default_s3_bucket": "alive-pr-[[region]]-media",
+  *             "dvr_playlist_name": "playlist-sd_dvr.m3u8",
+  *             "default_s3_bucket_ads": "alive-pr-[[region]]-ads",
+  *             "playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-sd_dvr.m3u8"
+  *           }
+  *         ],
+  *         "job_raw_input": {
+  *           "outputs": [
+  *             {
+  *               "video_codec": "h264",
+  *               "keyframe_interval": 60,
+  *               "live_stream": true,
+  *               "segment_seconds": 4,
+  *               "width": 1280,
+  *               "h264_profile": "high",
+  *               "label": "hls720p",
+  *               "video_bitrate": 2100,
+  *               "height": 720
+  *             },
+  *             {
+  *               "video_codec": "h264",
+  *               "keyframe_interval": 60,
+  *               "live_stream": true,
+  *               "segment_seconds": 4,
+  *               "width": 960,
+  *               "h264_profile": "main",
+  *               "label": "hls540p",
+  *               "video_bitrate": 1500,
+  *               "height": 540
+  *             },
+  *             {
+  *               "video_codec": "h264",
+  *               "keyframe_interval": 60,
+  *               "live_stream": true,
+  *               "segment_seconds": 4,
+  *               "width": 640,
+  *               "h264_profile": "main",
+  *               "label": "hls360p",
+  *               "video_bitrate": 800,
+  *               "height": 360
+  *             },
+  *             {
+  *               "label": "playlist_all",
+  *               "filename": "playlist-all.m3u8",
+  *               "type": "playlist",
+  *               "streams": [
+  *                 {
+  *                   "source": "hls720p"
+  *                 },
+  *                 {
+  *                   "source": "hls540p"
+  *                 },
+  *                 {
+  *                   "source": "hls360p"
+  *                 }
+  *               ]
+  *             },
+  *             {
+  *               "label": "playlist_sd",
+  *               "filename": "playlist-sd.m3u8",
+  *               "type": "playlist",
+  *               "streams": [
+  *                 {
+  *                   "source": "hls540p"
+  *                 },
+  *                 {
+  *                   "source": "hls360p"
+  *                 }
+  *               ]
+  *             }
+  *           ],
+  *           "live_stream": true,
+  *           "live_sliding_window_duration": 57600,
+  *           "region": "us-west-2",
+  *           "reconnect_time": 1800
+  *         },
+  *         "job_id": "0bf4fab1ac38467584bf4301dca9ab0c",
+  *         "job_group_all_stream_name": "all",
+  *         "final_housekeeping": true,
+  *         "job_in_bytes_rate": 0,
+  *         "job_region": "us-west-2",
+  *         "job_in_bytes": 0,
+  *         "job_load": 340,
+  *         "job_input": {
+  *           "live_dvr_ads_window_duration_ms": 600000,
+  *           "vod_sliding_window_duration_ms": 86399000,
+  *           "ext_x_version": 3,
+  *           "static": false,
+  *           "number_of_segments_in_dvr_chunklist": 14400,
+  *           "reconnect_time_ms": 1800000,
+  *           "randomize_chunk_url": true,
+  *           "ad_insertion": false,
+  *           "max_waiting_time_ms": 1800000,
+  *           "metadata_passthrough": false,
+  *           "vod_enabled": true,
+  *           "live_sliding_window_duration_ms": 57600000,
+  *           "segment_duration_ms": 4000,
+  *           "live_dvr_sliding_window_duration_ms": 57600000,
+  *           "event_length_ms": 0,
+  *           "number_of_segments_in_live_chunklist": 3,
+  *           "number_of_segments_in_vod_chunklist": 21599,
+  *           "channel_type": "event",
+  *           "region": "us-west-2"
+  *         },
+  *         "account_billing_id": "NA",
+  *         "job_cleaning_started_at": 1525825011737,
+  *         "job_stream_url": "rtmp://ep2-usw2.bcovlive.io:1935/0bf4fab1ac38467584bf4301dca9ab0c",
+  *         "job_ssai_state": "none",
+  *         "job_outputs": [
+  *           {
+  *             "video_height": 720,
+  *             "video_width": 1280,
+  *             "audio_codec": "AAC",
+  *             "type": {
+  *               "protocol": "HTTP",
+  *               "profile": "BcovAliveCupertino",
+  *               "name": "defaultS3",
+  *               "streaming_delivery_format": "hls",
+  *               "video_format": "mpeg-ts",
+  *               "pushpublish": "bcov",
+  *               "type": "S3"
+  *             },
+  *             "video_fit_mode": "stretch",
+  *             "profile_name": "profile_0",
+  *             "segment_duration_ms": 4000,
+  *             "playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist.m3u8",
+  *             "video_keyframe_interval_follow_source": false,
+  *             "playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *             "video_codec": "H.264",
+  *             "video_codec_level": "3.1",
+  *             "playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist_vod.m3u8",
+  *             "audio_bitrate_bps": 196608,
+  *             "gpuid": -1,
+  *             "video_keyframe_interval": 60,
+  *             "label": "hls720p",
+  *             "info_streaming_delivery_format": "hls",
+  *             "video_codec_profile": "high",
+  *             "name": "Out0",
+  *             "info_format": "mpeg-ts",
+  *             "video_bitrate_bps": 2150400,
+  *             "ui_playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist.m3u8",
+  *             "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist_dvr.m3u8",
+  *             "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_0/chunklist_vod.m3u8"
+  *           },
+  *           {
+  *             "video_height": 540,
+  *             "video_width": 960,
+  *             "audio_codec": "AAC",
+  *             "type": {
+  *               "protocol": "HTTP",
+  *               "profile": "BcovAliveCupertino",
+  *               "name": "defaultS3",
+  *               "streaming_delivery_format": "hls",
+  *               "video_format": "mpeg-ts",
+  *               "pushpublish": "bcov",
+  *               "type": "S3"
+  *             },
+  *             "video_fit_mode": "stretch",
+  *             "profile_name": "profile_1",
+  *             "segment_duration_ms": 4000,
+  *             "playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist.m3u8",
+  *             "video_keyframe_interval_follow_source": false,
+  *             "playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *             "video_codec": "H.264",
+  *             "video_codec_level": "3.1",
+  *             "playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist_vod.m3u8",
+  *             "audio_bitrate_bps": 196608,
+  *             "gpuid": -1,
+  *             "video_keyframe_interval": 60,
+  *             "label": "hls540p",
+  *             "info_streaming_delivery_format": "hls",
+  *             "video_codec_profile": "main",
+  *             "name": "Out1",
+  *             "info_format": "mpeg-ts",
+  *             "video_bitrate_bps": 1536000,
+  *             "ui_playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist.m3u8",
+  *             "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist_dvr.m3u8",
+  *             "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_1/chunklist_vod.m3u8"
+  *           },
+  *           {
+  *             "video_height": 360,
+  *             "video_width": 640,
+  *             "audio_codec": "AAC",
+  *             "type": {
+  *               "protocol": "HTTP",
+  *               "profile": "BcovAliveCupertino",
+  *               "name": "defaultS3",
+  *               "streaming_delivery_format": "hls",
+  *               "video_format": "mpeg-ts",
+  *               "pushpublish": "bcov",
+  *               "type": "S3"
+  *             },
+  *             "video_fit_mode": "stretch",
+  *             "profile_name": "profile_2",
+  *             "segment_duration_ms": 4000,
+  *             "playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist.m3u8",
+  *             "video_keyframe_interval_follow_source": false,
+  *             "playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *             "video_codec": "H.264",
+  *             "video_codec_level": "3.1",
+  *             "playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist_vod.m3u8",
+  *             "audio_bitrate_bps": 196608,
+  *             "gpuid": -1,
+  *             "video_keyframe_interval": 60,
+  *             "label": "hls360p",
+  *             "info_streaming_delivery_format": "hls",
+  *             "video_codec_profile": "main",
+  *             "name": "Out2",
+  *             "info_format": "mpeg-ts",
+  *             "video_bitrate_bps": 819200,
+  *             "ui_playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist.m3u8",
+  *             "ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist_dvr.m3u8",
+  *             "ui_playback_url_vod": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/profile_2/chunklist_vod.m3u8"
+  *           }
+  *         ],
+  *         "job_tick": 137,
+  *         "job_transcoding_template_name": "0bf4fab1ac38467584bf4301dca9ab0c_trans_template",
+  *         "job_cleaning_in_progress": false,
+  *         "cloud_id": "ede5802b4167493eae6f8a93ac98f352",
+  *         "job_sep_state": "finished",
+  *         "job_state": "finished",
+  *         "sep_data": {
+  *
+  *         },
+  *         "job_created_at": 1525218350091,
+  *         "account_id": "a95ac581551b4478b27910e5675db1f8",
+  *         "job_stream_name": "alive",
+  *         "job_cleaning_error": false,
+  *         "job_out_bytes_rate": 0,
+  *         "job_finished_at": 1525220173639,
+  *         "user_id": "c2691d4d039040be96c190a949d754a7",
+  *         "job_streaming_started_at": 0,
+  *         "job_app_name": "0bf4fab1ac38467584bf4301dca9ab0c",
+  *         "job_cancelling_flag": false,
+  *         "job_last_state_change_at": 1525220173639,
+  *         "encryption": {
+  *
+  *         },
+  *         "permitted_to_add_dependent_vods": true,
+  *         "vods": [
+  *
+  *         ],
+  *         "job_playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all.m3u8",
+  *         "job_playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all_dvr.m3u8",
+  *         "job_ui_playback_url": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all.m3u8",
+  *         "job_ui_playback_url_dvr": "https://bcovlive-a.akamaihd.net/0bf4fab1ac38467584bf4301dca9ab0c/us-west-2/NA/playlist-all_dvr.m3u8"
+  *       }
+  *     }
   *
   * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
   * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
