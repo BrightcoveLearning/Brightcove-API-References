@@ -10282,7 +10282,8 @@
           },
           "created_at": {
             "type": "string",
-            "description": "date/time folder created"
+            "description": "date/time folder created",
+            "readOnly": true
           },
           "id": {
             "type": "string",
@@ -10361,7 +10362,8 @@
           "created_at": {
             "type": "string",
             "description": "date/time created",
-            "format": "date-time"
+            "format": "date-time",
+            "readOnly": true
           },
           "description": {
             "type": "string",
@@ -10466,7 +10468,8 @@
           },
           "created_at": {
             "type": "string",
-            "description": "when the video was created"
+            "description": "when the video was created",
+            "readOnly": true
           },
           "cue_points": {
             "type": "array",
@@ -11032,7 +11035,8 @@
           },
           "created_at": {
             "type": "string",
-            "description": "when the channel was created"
+            "description": "when the channel was created",
+            "readOnly": true
           },
           "updated_at": {
             "type": "string",
@@ -11062,7 +11066,8 @@
           },
           "created_at": {
             "type": "string",
-            "description": "when the contract was created"
+            "description": "when the contract was created",
+            "readOnly": true
           },
           "updated_at": {
             "type": "string",
