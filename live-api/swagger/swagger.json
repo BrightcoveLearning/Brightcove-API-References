@@ -1645,6 +1645,11 @@
           "description": "map of geo-filtering properties ",
           "type": "object"
         },
+        "schedule": {
+          "$ref": "#/definitions/Create_VOD_ClipBody.outputs.videocloud.video.schedule",
+          "description": "map of scheduling properties ",
+          "type": "object"
+        }
       },
       "required": [
         "name"
@@ -1699,6 +1704,24 @@
         "countries",
         "exclude_countries",
         "restricted"
+      ]
+    },
+    "Create_VOD_ClipBody.outputs.videocloud.video.schedule": {
+      "properties": {
+        "ends_at": {
+          "description": "end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format ",
+          "format": "datetime",
+          "type": "string"
+        },
+        "starts_at": {
+          "description": "start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format ",
+          "format": "datetime",
+          "type": "string"
+        }
+      },
+      "required": [
+        "starts_at",
+        "ends_at"
       ]
     },
     "vod_jobs": {
