@@ -2177,15 +2177,15 @@
     "Create_a_Live_JobBody.add_cdns.token_auth.media": {
       "properties": {
         "start_time": {
-          "type": "mixed",
+          "type": "integer",
           "description": "The time to apply token auth - &quot;now&quot; or epoch time in seconds "
         },
         "end_time": {
-          "type": "number",
+          "type": "integer",
           "description": "The time to end token auth, epoch time in seconds "
         },
         "ttl": {
-          "type": "ttl",
+          "type": "integer",
           "description": "The time to live in seconds - either end_time or ttl is required "
         }
       }
