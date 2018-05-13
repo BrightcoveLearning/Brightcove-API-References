@@ -1976,10 +1976,7 @@
           "type": "string",
           "description": "The job id for the stream that was stopped "
         }
-      },
-      "required": [
-        "id"
-      ]
+      }
     },
     "Create_a_Live_JobBody": {
       "properties": {
