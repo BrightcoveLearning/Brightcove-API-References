@@ -1613,7 +1613,7 @@
         },
         "name": {
           "description":"Title of the video clip",
-          "type"" "string"
+          "type": "string"
         }
       },
       "required": [
