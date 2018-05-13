@@ -1647,7 +1647,28 @@
     },
     "Create_VOD_ClipBody.outputs.videocloud.video.cue_point": {
       "properties": {
-
+        "force-stop": {
+          "description": "whether video is force-stopped at the cue point ",
+          "type": "boolean"
+        },
+        "metadata": {
+          "description": "optional metadata string (512 single-byte characters maximum) ",
+          "type": "string"
+        },
+        "name": {
+          "description": "cue point name ",
+          "type": "string"
+        },
+        "time": {
+          "description": "time of the cue point in seconds; example: 10.527 ",
+          "type": "number"
+        },
+        "type": {
+          "description": "cue point type ",
+          "type": "string",
+          "enum": ["AD", "CODE"],
+          "default": "AD"
+        }
       }
     },
     "vod_jobs": {
