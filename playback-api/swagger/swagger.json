@@ -944,117 +944,113 @@
       "properties": {
         "avg_bitrate": {
           "type": "number",
-          "description": "average bitrate "
+          "description": "average bitrate ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
-          "description": "frame width in pixels "
+          "description": "frame width in pixels ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
-          "description": "frame height in pixels "
+          "description": "frame height in pixels ",
+          "readOnly": true
         },
         "size": {
           "type": "number",
-          "description": "size in bytes "
+          "description": "size in bytes ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "duration in milliseconds "
+          "description": "duration in milliseconds ",
+          "readOnly": true
         },
         "asset_id": {
           "type": "string",
-          "description": "the asset id for the source "
+          "description": "the asset id for the source ",
+          "readOnly": true
         },
         "stream_name": {
           "type": "string",
-          "description": "the stream name for the source "
+          "description": "the stream name for the source ",
+          "readOnly": true
         },
         "codec": {
           "type": "string",
-          "description": "the video codec "
+          "description": "the video codec ",
+          "readOnly": true
         },
         "container": {
           "type": "string",
-          "description": "the video container "
+          "description": "the video container ",
+          "readOnly": true
         },
         "app_name": {
           "type": "string",
-          "description": "the address for rtmp streams "
+          "description": "the address for rtmp streams ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the type (for HLS streams) "
+          "description": "the type (for HLS streams) ",
+          "readOnly": true
         },
         "key_systems": {
           "type": "object",
           "description": "a list of objects where each defines the type of encryption used for a DRM packaged source – if this object is defined, then its source is content protected ",
           "$ref": "#/definitions/sources.key_systems"
-        }
-      },
-      "required": [
-        "avg_bitrate",
-        "width",
-        "height",
-        "size",
-        "duration",
-        "asset_id",
-        "stream_name",
-        "codec",
-        "container",
-        "app_name",
-        "type",
-        "key_systems"
-      ]
+        },
+        "readOnly": true
+      }
     },
     "text_tracks": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for the .vtt file "
+          "description": "URL for the .vtt file ",
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of sources for .vtt files (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/text_tracks.sources"
-          }
+          },
+          "readOnly": true
         },
         "kind": {
           "type": "string",
-          "description": "kind of text track "
+          "description": "kind of text track ",
+          "readOnly": true
         },
         "srclang": {
           "type": "string",
-          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; "
+          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; ",
+          "readOnly": true
         },
         "mime_type": {
           "type": "string",
-          "description": "mime_type for the track "
+          "description": "mime_type for the track ",
+          "readOnly": true
         },
         "label": {
           "type": "string",
-          "description": "label for the track "
+          "description": "label for the track ",
+          "readOnly": true
         },
         "default": {
           "type": "boolean",
-          "description": "whether this is the default track "
+          "description": "whether this is the default track ",
+          "readOnly": true
         },
         "in_band_metadata_track_dispatch_type": {
           "type": "string",
-          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest "
+          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src",
-        "sources",
-        "kind",
-        "srclang",
-        "mime_type",
-        "label",
-        "default",
-        "in_band_metadata_track_dispatch_type"
-      ]
+      }
     },
     "text_tracks.sources": {
       "properties": {
@@ -1062,245 +1058,260 @@
           "type": "string",
           "description": "URL for the .vtt file (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) "
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "Get_Video_by_ID_or_Reference_ID200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields"
+          "$ref": "#/definitions/custom_fields",
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "$ref": "#/definitions/cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is AD_SUPPORTED ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
           "description": "array of text track maps ",
-          "$ref": "#/definitions/text_tracks"
+          "$ref": "#/definitions/text_tracks",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys"
+          "$ref": "#/definitions/ad_keys",
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys"
-      ]
+      }
     },
     "Get_Videos200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields"
+          "$ref": "#/definitions/custom_fields",
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "$ref": "#/definitions/cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is `AD_SUPPORTED` ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
@@ -1309,44 +1320,20 @@
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys"
+          "readOnly": true
         },
         "count": {
           "type": "number",
-          "description": "the count of videos found "
+          "description": "the count of videos found ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys",
-        "count"
-      ]
+      }
     }
   },
   "schemes": [
