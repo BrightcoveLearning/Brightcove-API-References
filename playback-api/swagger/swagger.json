@@ -31,7 +31,7 @@
             "name": "playlist_id",
             "in": "path",
             "required": true,
-            "type": "number",
+            "type": "string",
             "description": "Video Cloud playlist ID "
           },
           {
