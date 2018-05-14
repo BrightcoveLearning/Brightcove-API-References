@@ -2725,7 +2725,8 @@
         },
         "duration": {
           "type": "number",
-          "description": "ISO Duration of the stream in seconds "
+          "description": "ISO Duration of the stream in seconds ",
+          "readOnly": true
         },
         "finished_at": {
           "type": "string",
@@ -2734,7 +2735,8 @@
         },
         "height": {
           "type": "number",
-          "description": "Frame height of the stream "
+          "description": "Frame height of the stream ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
@@ -2747,7 +2749,8 @@
         },
         "protocol": {
           "type": "string",
-          "description": "Protocol of the stream "
+          "description": "Protocol of the stream ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
@@ -2756,11 +2759,13 @@
         },
         "video_bitrate_in_kbps": {
           "type": "number",
-          "description": "Video bitrate of the input media file "
+          "description": "Video bitrate of the input media file ",
+          "readOnly": true
         },
         "video_codec": {
           "type": "string",
-          "description": "Video codec of the input media file "
+          "description": "Video codec of the input media file ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
@@ -2768,7 +2773,8 @@
         },
         "total_bitrate_in_kbps": {
           "type": "number",
-          "description": "Total bitrate of the stream "
+          "description": "Total bitrate of the stream ",
+          "readOnly": true
         },
         "region": {
           "type": "string",
@@ -2788,22 +2794,7 @@
           "description": "Object representing the destination of the stream ",
           "$ref": "#/definitions/job.stream.destination"
         }
-      },
-      "required": [
-        "duration",
-        "height",
-        "id",
-        "name",
-        "protocol",
-        "video_bitrate_in_kbps",
-        "video_codec",
-        "width",
-        "total_bitrate_in_kbps",
-        "region",
-        "url",
-        "location",
-        "destination"
-      ]
+      }
     },
     "job.stream.location": {
       "properties": {
@@ -3759,5 +3750,5 @@
   "schemes": [
     "https"
   ],
-  "basePath": "api.bcovlive.io/v1"
+  "host": "cms.api.brightcove.com"
 }
