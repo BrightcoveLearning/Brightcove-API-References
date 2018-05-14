@@ -2586,19 +2586,11 @@
         }
       },
       "required": [
-        "created_at",
-        "finished_at",
-        "id",
-        "state",
-        "submitted_at",
-        "updated_at",
         "region",
         "reconnect_time",
         "event_length",
         "live_stream",
         "ad_insertion",
-        "playback_url",
-        "playback_url_dvr",
         "input_media_file",
         "slate",
         "stream",
@@ -2609,122 +2601,120 @@
       "properties": {
         "audio_bitrate_in_kbps": {
           "type": "number",
-          "description": "Audio bitrate of the input media file "
+          "description": "Audio bitrate of the input media file ",
+          "readOnly": true
         },
         "audio_codec": {
           "type": "string",
-          "description": "Audio codec of the input media file "
+          "description": "Audio codec of the input media file ",
+          "readOnly": true
         },
         "audio_sample_rate": {
           "type": "number",
-          "description": "Audio sample rate of the input media file "
+          "description": "Audio sample rate of the input media file ",
+          "readOnly": true
         },
         "audio_tracks": {
           "type": "number",
-          "description": "The number of audio tracks "
+          "description": "The number of audio tracks ",
+          "readOnly": true
         },
         "channels": {
           "type": "number",
-          "description": "The number of audio channels "
+          "description": "The number of audio channels ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the input file was created "
+          "description": "ISO 8601 date-time string representing when the input file was created ",
+          "readOnly": true
         },
         "duration_in_ms": {
           "type": "number",
-          "description": "duration_in_ms. "
+          "description": "duration_in_ms. ",
+          "readOnly": true
         },
         "error_class": {
           "type": "string",
-          "description": "Type of error thrown "
+          "description": "Type of error thrown ",
+          "readOnly": true
         },
         "error_message": {
           "type": "string",
-          "description": "Error message thrown "
+          "description": "Error message thrown ",
+          "readOnly": true
         },
         "file_size_bytes": {
           "type": "number",
-          "description": "File size "
+          "description": "File size ",
+          "readOnly": true
         },
         "finished_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the input file was finished "
+          "description": "ISO 8601 date-time string representing when the input file was finished ",
+          "readOnly": true
         },
         "format": {
           "type": "string",
-          "description": "Format of the input file "
+          "description": "Format of the input file ",
+          "readOnly": true
         },
         "frame_rate": {
           "type": "number",
-          "description": "Frame rate of the input file "
+          "description": "Frame rate of the input file ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
-          "description": "Frame height of the input file "
+          "description": "Frame height of the input file ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "System id of the input file "
+          "description": "System id of the input file ",
+          "readOnly": true
         },
         "md5_checksum": {
           "type": "string",
-          "description": "Checksum for the input file "
+          "description": "Checksum for the input file ",
+          "readOnly": true
         },
         "state": {
           "type": "string",
-          "description": "Current state of input file processing "
+          "description": "Current state of input file processing ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the input file was last modified "
+          "description": "ISO 8601 date-time string representing when the input file was last modified ",
+          "readOnly": true
         },
         "video_bitrate_in_kbps": {
           "type": "number",
-          "description": "Video bitrate of the input media file "
+          "description": "Video bitrate of the input media file ",
+          "readOnly": true
         },
         "video_codec": {
           "type": "string",
-          "description": "Video codec of the input media file "
+          "description": "Video codec of the input media file ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
-          "description": "Frame width of the input media file "
+          "description": "Frame width of the input media file ",
+          "readOnly": true
         },
         "total_bitrate_in_kbps": {
           "type": "number",
-          "description": "Total bitrate of the input media file "
+          "description": "Total bitrate of the input media file ",
+          "readOnly": true
         },
         "url": {
           "type": "string",
-          "description": "URL for the input media file "
+          "description": "URL for the input media file ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "audio_bitrate_in_kbps",
-        "audio_codec",
-        "audio_sample_rate",
-        "audio_tracks",
-        "channels",
-        "created_at",
-        "duration_in_ms",
-        "error_class",
-        "error_message",
-        "file_size_bytes",
-        "finished_at",
-        "format",
-        "frame_rate",
-        "height",
-        "id",
-        "md5_checksum",
-        "state",
-        "updated_at",
-        "video_bitrate_in_kbps",
-        "video_codec",
-        "width",
-        "total_bitrate_in_kbps",
-        "url"
-      ]
+      }
     },
     "job.stream": {
       "properties": {
