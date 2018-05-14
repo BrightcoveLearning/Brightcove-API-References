@@ -340,60 +340,70 @@
           "type": "string",
           "description": "field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that plays_total and plays_trailing_week are not included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign "
         }
-      },
-      "required": []
+      }
     },
     "Get_Playlists_by_ID_or_Reference_ID200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "date/time created "
+          "description": "date/time created ",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "playlist description "
+          "description": "playlist description ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "the playlist id "
+          "description": "the playlist id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "the playlist name "
+          "description": "the playlist name ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "the playlist reference id "
+          "description": "the playlist reference id ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the playlist type: EXPLICIT or smart playlist type "
+          "description": "the playlist type: EXPLICIT or smart playlist type ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "date/time last modified "
+          "description": "date/time last modified ",
+          "readOnly": true
         },
         "video_ids": {
           "type": "array",
           "description": "array of video ids (EXPLICIT playlists only) ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "search": {
           "type": "string",
-          "description": "search string to retrieve the videos (smart playlists only) "
+          "description": "search string to retrieve the videos (smart playlists only) ",
+          "readOnly": true
         },
         "videos": {
           "type": "array",
           "description": "array of video maps ",
           "items": {
             "$ref": "#/definitions/videos"
-          }
+          },
+          "readOnly": true
         }
       }
     },
