@@ -2837,10 +2837,6 @@
           "readOnly": true
         }
       }
-      },
-      "required": [
-        "source"
-      ]
     },
     "job.output_media_files": {
       "properties": {
@@ -3768,5 +3764,4 @@
         "media_source_asset_status"
       ]
     }
-  }
 }
