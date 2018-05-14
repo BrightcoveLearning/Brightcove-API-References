@@ -565,98 +565,96 @@
           "type": "boolean",
           "description": "whether video is force-stopped at the cue point "
         }
-      },
-      "required": [
-        "name",
-        "type",
-        "time",
-        "metadata",
-        "force-stop"
-      ]
+      }
     },
     "videos.poster_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "videos.thumbnail_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "videos.link": {
       "properties": {
         "text": {
           "type": "string",
-          "description": "text for the link "
+          "description": "text for the link ",
+          "readOnly": true
         },
         "url": {
           "type": "string",
-          "description": "URL for the link "
+          "description": "URL for the link ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "text",
-        "url"
-      ]
+      }
     },
     "videos.sources": {
       "properties": {
         "avg_bitrate": {
           "type": "number",
-          "description": "average bitrate "
+          "description": "average bitrate ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
-          "description": "frame width in pixels "
+          "description": "frame width in pixels ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
-          "description": "frame height in pixels "
+          "description": "frame height in pixels ",
+          "readOnly": true
         },
         "size": {
           "type": "number",
-          "description": "size in bytes "
+          "description": "size in bytes ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "duration in milliseconds "
+          "description": "duration in milliseconds ",
+          "readOnly": true
         },
         "asset_id": {
           "type": "string",
-          "description": "the asset id for the source "
+          "description": "the asset id for the source ",
+          "readOnly": true
         },
         "stream_name": {
           "type": "string",
-          "description": "the stream name for the source "
+          "description": "the stream name for the source ",
+          "readOnly": true
         },
         "codec": {
           "type": "string",
-          "description": "the video codec "
+          "description": "the video codec ",
+          "readOnly": true
         },
         "container": {
           "type": "string",
-          "description": "the video container "
+          "description": "the video container ",
+          "readOnly": true
         },
         "app_name": {
           "type": "string",
-          "description": "the address for rtmp streams "
+          "description": "the address for rtmp streams ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the type (for HLS streams) "
+          "description": "the type (for HLS streams) ",
+          "readOnly": true
         }
       }
     },
