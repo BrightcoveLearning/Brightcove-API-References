@@ -969,7 +969,6 @@
           "description": "a list of objects where each defines the type of encryption used for a DRM packaged source – if this object is defined, then its source is content protected ",
           "$ref": "#/definitions/sources.key_systems",
           "readOnly": true
-        }
     },
     "text_tracks": {
       "properties": {
