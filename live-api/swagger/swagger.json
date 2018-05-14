@@ -2730,7 +2730,8 @@
       "properties": {
         "created_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the stream was created "
+          "description": "ISO 8601 date-time string representing when the stream was created ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
@@ -2738,7 +2739,8 @@
         },
         "finished_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the stream was finished "
+          "description": "ISO 8601 date-time string representing when the stream was finished ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
@@ -2746,7 +2748,8 @@
         },
         "id": {
           "type": "string",
-          "description": "System id of the stream "
+          "description": "System id of the stream ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
@@ -2758,7 +2761,8 @@
         },
         "updated_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the stream was last modified "
+          "description": "ISO 8601 date-time string representing when the stream was last modified ",
+          "readOnly": true
         },
         "video_bitrate_in_kbps": {
           "type": "number",
@@ -2796,14 +2800,11 @@
         }
       },
       "required": [
-        "created_at",
         "duration",
-        "finished_at",
         "height",
         "id",
         "name",
         "protocol",
-        "updated_at",
         "video_bitrate_in_kbps",
         "video_codec",
         "width",
@@ -2862,7 +2863,8 @@
         },
         "created_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the output file was created "
+          "description": "ISO 8601 date-time string representing when the output file was created ",
+          "readOnly": true
         },
         "duration_in_ms": {
           "type": "number",
@@ -2870,11 +2872,13 @@
         },
         "error_class": {
           "type": "string",
-          "description": "Type of error thrown "
+          "description": "Type of error thrown ",
+          "readOnly": true
         },
         "error_message": {
           "type": "string",
-          "description": "Error message thrown "
+          "description": "Error message thrown ",
+          "readOnly": true
         },
         "file_size_bytes": {
           "type": "number",
@@ -2898,19 +2902,23 @@
         },
         "id": {
           "type": "string",
-          "description": "System id of the output file "
+          "description": "System id of the output file ",
+          "readOnly": true
         },
         "md5_checksum": {
           "type": "string",
-          "description": "Checksum for the output file "
+          "description": "Checksum for the output file ",
+          "readOnly": true
         },
         "state": {
           "type": "string",
-          "description": "Current state of output file processing "
+          "description": "Current state of output file processing ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "ISO 8601 date-time string representing when the output file was last modified "
+          "description": "ISO 8601 date-time string representing when the output file was last modified ",
+          "readOnly": true
         },
         "video_bitrate_in_kbps": {
           "type": "number",
@@ -2929,7 +2937,7 @@
           "description": "Total bitrate of the output media file "
         },
         "keyframe_interval": {
-          "type": "number",
+          "type": "integer",
           "description": "Keyframe interval for the output media file "
         },
         "keyframe_interval_follow_source": {
@@ -2937,24 +2945,28 @@
           "description": "Whether keyframe rate for the output matches the source "
         },
         "live_stream": {
-          "type": "number",
+          "type": "boolean",
           "description": "Whether the output is a live stream "
         },
         "playback_url": {
           "type": "string",
-          "description": "URL for the output file "
+          "description": "URL for the output file ",
+          "readOnly": true
         },
         "playback_url_dvr": {
           "type": "string",
-          "description": "Live DVR url for live stream output "
+          "description": "Live DVR url for live stream output ",
+          "readOnly": true
         },
         "playback_url_vod": {
           "type": "string",
-          "description": "URL for VOD output "
+          "description": "URL for VOD output ",
+          "readOnly": true
         },
         "playlist_type": {
           "type": "string",
-          "description": "Playlist type for playlist output "
+          "description": "Playlist type for playlist output ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
@@ -2975,19 +2987,11 @@
         "audio_sample_rate",
         "audio_tracks",
         "channels",
-        "created_at",
         "duration_in_ms",
-        "error_class",
-        "error_message",
         "file_size_bytes",
-        "finished_at",
         "format",
         "frame_rate",
         "height",
-        "id",
-        "md5_checksum",
-        "state",
-        "updated_at",
         "video_bitrate_in_kbps",
         "video_codec",
         "width",
@@ -2995,10 +2999,6 @@
         "keyframe_interval",
         "keyframe_interval_follow_source",
         "live_stream",
-        "playback_url",
-        "playback_url_dvr",
-        "playback_url_vod",
-        "playlist_type",
         "type",
         "filename",
         "dvr_filename"
