@@ -5,6 +5,10 @@
     "version": "1.0.0",
     "description": "Reference for the Brightcove Live API, used to create and manage live streaming events."
   },
+  "schemes": [
+    "https"
+  ],
+  "host": "cms.api.brightcove.com",
   "paths": {
     "/v1/vods": {
       "post": {
@@ -2798,23 +2802,41 @@
     },
     "job.stream.location": {
       "properties": {
-        "source": {
-          "type": "object",
-          "description": "Object representing the location source of the stream ",
-          "$ref": "#/definitions/job.stream.location.source"
+        "latitude": {
+          "type": "string",
+          "description": "Latitude of the location source",
+          "readOnly": true
+        },
+        "longitude": {
+          "type": "string",
+          "description": "Longitude of the location source",
+          "readOnly": true
+        },
+        "location": {
+          "type": "string",
+          "description": "Longitude of the location source",
+          "readOnly": true
         }
-      },
-      "required": [
-        "source"
-      ]
+      }
     },
     "job.stream.destination": {
       "properties": {
-        "source": {
-          "type": "object",
-          "description": "Object representing the destination source of the stream ",
-          "$ref": "#/definitions/job.stream.destination.source"
+        "latitude": {
+          "type": "string",
+          "description": "Latitude of the location source",
+          "readOnly": true
+        },
+        "longitude": {
+          "type": "string",
+          "description": "Longitude of the location source",
+          "readOnly": true
+        },
+        "location": {
+          "type": "string",
+          "description": "Longitude of the location source",
+          "readOnly": true
         }
+      }
       },
       "required": [
         "source"
@@ -3746,9 +3768,5 @@
         "media_source_asset_status"
       ]
     }
-  },
-  "schemes": [
-    "https"
-  ],
-  "host": "cms.api.brightcove.com"
+  }
 }
