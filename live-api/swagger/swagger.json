@@ -3268,8 +3268,7 @@
         },
         "ad_configuration_variables": {
           "type": "object",
-          "description": "Key/value pairs for the ad server URL template ",
-          "$ref": "#/definitions/application.application_ad_configuration.ad_configuration_variables"
+          "description": "Key/value pairs for the ad server URL template "
         }
       },
       "required": [
@@ -3476,8 +3475,7 @@
         },
         "ad_configuration_headers": {
           "type": "object",
-          "description": "An optional JSON object that can contain zero or more key-value-pairs, for which both key and value must be strings.  All of the standard URL substitutions are valid for headers. ",
-          "$ref": "#/definitions/Update_Ad_ConfigurationBody.application_ad_configuration.ad_configuration_headers"
+          "description": "An optional JSON object that can contain zero or more key-value-pairs, for which both key and value must be strings.  All of the standard URL substitutions are valid for headers. "
         },
         "ad_configuration_headers_for_impressions": {
           "type": "boolean",
