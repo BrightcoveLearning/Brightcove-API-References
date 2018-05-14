@@ -459,111 +459,104 @@
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/videos.thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/videos.link"
+          "$ref": "#/definitions/videos.link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/videos.sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
           "description": "array of text track maps ",
-          "$ref": "#/definitions/videos.text_tracks"
+          "$ref": "#/definitions/videos.text_tracks",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/videos.ad_keys"
+          "$ref": "#/definitions/videos.ad_keys",
+          "readOnly": true
         }
-      },
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys"
-      ]
+      }
     },
     "videos.cue_points": {
       "properties": {
         "name": {
           "type": "string",
-          "description": "cue point name "
+          "description": "cue point name ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "cue point type "
+          "description": "cue point type ",
+          "readOnly": true
         },
         "time": {
           "type": "number",
-          "description": "time of the cue point in seconds; example: 10.527 "
+          "description": "time of the cue point in seconds; example: 10.527 ",
+          "readOnly": true
         },
         "metadata": {
           "type": "string",
-          "description": "optional metadata string (128 single-byte characters maximum) "
+          "description": "optional metadata string (128 single-byte characters maximum) ",
+          "readOnly": true
         },
         "force-stop": {
           "type": "boolean",
-          "description": "whether video is force-stopped at the cue point "
+          "description": "whether video is force-stopped at the cue point ",
+          "readOnly": true
         }
       }
     },
