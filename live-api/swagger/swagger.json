@@ -3249,8 +3249,7 @@
         },
         "headers": {
           "type": "object",
-          "description": "The ad configuration headers ",
-          "$ref": "#/definitions/application.application_ad_configuration.headers"
+          "description": "The ad configuration headers "
         },
         "ad_configuration_strategy": {
           "type": "string",
