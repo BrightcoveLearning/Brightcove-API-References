@@ -39,7 +39,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ": application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See Policy API Overview or Policy Keys for information on getting policy keys "
+            "description": " application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See Policy API Overview or Policy Keys for information on getting policy keys"
           }
         ],
         "responses": {
