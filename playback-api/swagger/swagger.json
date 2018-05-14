@@ -395,67 +395,64 @@
             "$ref": "#/definitions/videos"
           }
         }
-      },
-      "required": [
-        "account_id",
-        "created_at",
-        "description",
-        "id",
-        "name",
-        "reference_id",
-        "type",
-        "updated_at",
-        "video_ids",
-        "search",
-        "videos"
-      ]
+      }
     },
     "videos": {
       "properties": {
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/videos.custom_fields"
+          "$ref": "#/definitions/videos.custom_fields",
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/videos.cue_points"
+          "$ref": "#/definitions/videos.cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is AD_SUPPORTED ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/videos.poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
