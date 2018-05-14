@@ -8,7 +8,7 @@
   "schemes": [
     "https"
   ],
-  "host": "cms.api.brightcove.com",
+  "host": "https://api.bcovlive.io",
   "paths": {
     "/v1/vods": {
       "post": {
