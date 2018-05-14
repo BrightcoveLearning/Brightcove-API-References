@@ -3080,8 +3080,7 @@
         },
         "ad_server_data": {
           "type": "object",
-          "description": "a set of any variables (key/value pairs) that should be passed to the adServer ",
-          "$ref": "#/definitions/Manual_Ad_Cue_Point_InsertionBody.ad_server_data"
+          "description": "a set of any variables (key/value pairs) that should be passed to the adServer "
         }
       },
       "required": [
@@ -3764,4 +3763,5 @@
         "media_source_asset_status"
       ]
     }
+  }
 }
