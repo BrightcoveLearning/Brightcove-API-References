@@ -964,51 +964,57 @@
           "readOnly": true
         },
         "text_tracks": {
-          "properties": {
-            "src": {
-              "type": "string",
-              "description": "URL for the .vtt file ",
-              "readOnly": true
-            },
-            "sources": {
-              "type": "array",
-              "description": "array of sources for .vtt files (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
-              "items": {
-                "$ref": "#/definitions/text_tracks.sources"
-              },
-              "readOnly": true
-            },
-            "kind": {
-              "type": "string",
-              "description": "kind of text track ",
-              "readOnly": true
-            },
-            "srclang": {
-              "type": "string",
-              "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; ",
-              "readOnly": true
-            },
-            "mime_type": {
-              "type": "string",
-              "description": "mime_type for the track ",
-              "readOnly": true
-            },
-            "label": {
-              "type": "string",
-              "description": "label for the track ",
-              "readOnly": true
-            },
-            "default": {
-              "type": "boolean",
-              "description": "whether this is the default track ",
-              "readOnly": true
-            },
-            "in_band_metadata_track_dispatch_type": {
-              "type": "string",
-              "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
-              "readOnly": true
-            }
-          }
+          "type": "object",
+          "description": "array of text track maps ",
+          "$ref": "#/definitions/text_tracks",
+          "readOnly": true
+        }
+      }
+    },
+    "text_tracks": {
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "URL for the .vtt file ",
+          "readOnly": true
+        },
+        "sources": {
+          "type": "array",
+          "description": "array of sources for .vtt files (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "items": {
+            "$ref": "#/definitions/text_tracks.sources"
+          },
+          "readOnly": true
+        },
+        "kind": {
+          "type": "string",
+          "description": "kind of text track ",
+          "readOnly": true
+        },
+        "srclang": {
+          "type": "string",
+          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; ",
+          "readOnly": true
+        },
+        "mime_type": {
+          "type": "string",
+          "description": "mime_type for the track ",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "label for the track ",
+          "readOnly": true
+        },
+        "default": {
+          "type": "boolean",
+          "description": "whether this is the default track ",
+          "readOnly": true
+        },
+        "in_band_metadata_track_dispatch_type": {
+          "type": "string",
+          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
+          "readOnly": true
         }
       }
     },
