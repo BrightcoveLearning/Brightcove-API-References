@@ -64,6 +64,12 @@
  * @apiError (404) {object}  NOT_FOUND
  * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
  * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiErrorExample {object} Bad Request Example
+ *    HTTP/1.1 400 BAD_REQUEST
+ *    {
+ *    	"message": "JSON syntax error: Unexpected token }",
+ *    	"error_code": "PLAYER_MANAGEMENT_ERROR"
+ *    }
  */
 
 
@@ -134,4 +140,10 @@
  * @apiError (404) {object}  NOT_FOUND
  * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
  * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiErrorExample {object} Bad Request Example
+ *    HTTP/1.1 400 BAD_REQUEST
+ *    {
+ *    	"message": "JSON syntax error: Unexpected token }",
+ *    	"error_code": "PLAYER_MANAGEMENT_ERROR"
+ *    }
  */
