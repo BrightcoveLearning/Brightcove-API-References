@@ -420,7 +420,6 @@
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/videos.custom_fields",
           "readOnly": true
         },
         "cue_points": {
