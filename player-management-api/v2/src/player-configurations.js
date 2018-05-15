@@ -59,7 +59,7 @@
  * @apiSuccess (200) {JSON}  plugins.options configuration options for plugin
  * @apiSuccess (200) {String}  preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
  * @apiSuccess (200) {String[]}  scripts URLs to JavaScript files that should be included with the player
- * @apiSuccess (200) {Mixed}  skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
+ * @apiSuccess (200) {boolean}  skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
  * @apiSuccess (200) {Object}  studio_configuration object containing playlist information normally set in Studio
  * @apiSuccess (200) {Object}  studio_configuration.player object containing playlist information
  * @apiSuccess (200) {Boolean}  studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
