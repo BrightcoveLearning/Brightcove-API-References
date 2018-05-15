@@ -16,11 +16,11 @@
  * @apiParam (Path) {String}  branch Which branch to act upon, master (published) or preview.
  *
  * @apiParamExample {string}  curl Statement:
- * curl \
- *  --header "Content-Type: application/json" \
- *  --user :email \
- *  --request GET \
- *  https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration/:branch
+ *     curl \
+ *      --header "Content-Type: application/json" \
+ *      --user :email \
+ *      --request GET \
+ *      https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration/:branch
  *
  * @apiSuccess (Response Fields) {Boolean}  autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiSuccess (Response Fields) {Boolean}  autoplay indicates player should play video immediately, on platforms that allow this
@@ -72,27 +72,27 @@
  * @apiSuccess (Response Fields) {String}  video_cloud.video if using a Video Cloud video asset, that asset's ID
  *
  * @apiSuccessExample {object}  Success Response:
- * {
- *   "plugins": [{
- *     "options": {
- *      //options for FreeWheel plugin
- *     } ,
- *     "name": "FreeWheelPlugin"
- *   } ],
- *   "stylesheets": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.css"],
- *   "scripts": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.js"],
- *   "video_cloud": {
- *     "policy_key": "BCpkADawqM2hW41DM2bNvmn2LE24Lqet7lfKzRB8Tv-FYlVtVijTGqAhjCEiLZmHO84vptg3hBAFVqXI4diQ-51q7fceX- * BY0GTcRoS9pv5HaOdh6F4nrCCapgmIzDNCvdYTqIh73BnZDSWh",
- *     "video": null
- *   } ,
- *   "player": {
- *     "template": {
- *       "name": "single-video-template",
- *       "version": "1.14.26"
+ *     {
+ *       "plugins": [{
+ *         "options": {
+ *          //options for FreeWheel plugin
+ *         } ,
+ *         "name": "FreeWheelPlugin"
+ *       } ],
+ *       "stylesheets": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.css"],
+ *       "scripts": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.js"],
+ *       "video_cloud": {
+ *         "policy_key": "BCpkADawqM2hW41DM2bNvmn2LE24Lqet7lfKzRB8Tv-FYlVtVijTGqAhjCEiLZmHO84vptg3hBAFVqXI4diQ-51q7fceX- * BY0GTcRoS9pv5HaOdh6F4nrCCapgmIzDNCvdYTqIh73BnZDSWh",
+ *         "video": null
+ *       } ,
+ *       "player": {
+ *         "template": {
+ *           "name": "single-video-template",
+ *           "version": "1.14.26"
+ *         }
+ *       } ,
+ *       "techOrder": ["html5", "hls", "flash"]
  *     }
- *   } ,
- *   "techOrder": ["html5", "hls", "flash"]
- * }
 */
 
 // Update a player configuration
@@ -160,17 +160,17 @@
  * @apiParam (Request Body) {String} [video_cloud.video] if using a Video Cloud video asset, that asset's ID
  *
  * @apiParamExample {string}  curl Statement:
- * curl \
- *   --header "Content-Type: application/json" \
- *   --user :email \
- *   --request PATCH \
- *   --data '{
- *       "languages": [
- *         "de",
- *         "es"
- *       ]
- *     } ' \
- *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration
+ *     curl \
+ *       --header "Content-Type: application/json" \
+ *       --user :email \
+ *       --request PATCH \
+ *       --data '{
+ *           "languages": [
+ *             "de",
+ *             "es"
+ *           ]
+ *         } ' \
+ *       https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration
  *
  * @apiSuccess (Response Fields) {String}  accountId account ID
  * @apiSuccess (Response Fields) {Object}  branches contains objects for the preview and master (published) player
@@ -286,59 +286,59 @@
  * @apiSuccess (Response Fields) {String}  url URL to player
  *
  * @apiSuccessExample {object}  Success Response:
- * {
- *   "accountId": "1507807800001",
- *   "id": "2c4b8938-92d1-4cd1-a423-5758ed0dbbf3",
- *   "name": "MySamplePlayer",
- *   "branches": {
- *     "master": {
- *       "template_updated_at": "2015-10-18T17:39:39.217Z",
- *       "updated_at": "2015-10-18T17:39:39.217Z",
- *       "configuration": {
- *         "player": {
- *           "template": {
- *             "version": "1.14.26",
- *             "name": "single-video-template"
- *           }
+ *     {
+ *       "accountId": "1507807800001",
+ *       "id": "2c4b8938-92d1-4cd1-a423-5758ed0dbbf3",
+ *       "name": "MySamplePlayer",
+ *       "branches": {
+ *         "master": {
+ *           "template_updated_at": "2015-10-18T17:39:39.217Z",
+ *           "updated_at": "2015-10-18T17:39:39.217Z",
+ *           "configuration": {
+ *             "player": {
+ *               "template": {
+ *                 "version": "1.14.26",
+ *                 "name": "single-video-template"
+ *               }
+ *             } ,
+ *             "video_cloud": {
+ *               "policy_key": "BCpkADawqM2NeH2Zbd_AJIYQZZZN-Y0ckwE8pIn3wUwEwoWegW4dQUdpcgqtd-msVbmWR3A-yipV5lR2uLwUm1YtYee7vK37jJN7403poM8ZJxxlxId1DpqsLfbTIOAsVj3O0elfJNIMZcj7"
+ *             } ,
+ *             "media": {
+ *               "sources": [{
+ *                 "type": "video/mp4",
+ *                 "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
+ *               } ]
+ *             }
+ *           } ,
+ *           "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3/master/embeds/default/master/index.html"
  *         } ,
- *         "video_cloud": {
- *           "policy_key": "BCpkADawqM2NeH2Zbd_AJIYQZZZN-Y0ckwE8pIn3wUwEwoWegW4dQUdpcgqtd-msVbmWR3A-yipV5lR2uLwUm1YtYee7vK37jJN7403poM8ZJxxlxId1DpqsLfbTIOAsVj3O0elfJNIMZcj7"
- *         } ,
- *         "media": {
- *           "sources": [{
- *             "type": "video/mp4",
- *             "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
- *           } ]
+ *         "preview": {
+ *           "template_updated_at": "2015-10-18T17:39:39.212Z",
+ *           "updated_at": "2015-10-18T17:44:17.438Z",
+ *           "configuration": {
+ *             "player": {
+ *               "template": {
+ *                 "version": "1.14.26",
+ *                 "name": "single-video-template"
+ *               }
+ *             } ,
+ *             "video_cloud": {
+ *               "policy_key": "BCpkADawqM2NeH2Zbd_AJIYQZZZN-Y0ckwE8pIn3wUwEwoWegW4dQUdpcgqtd-msVbmWR3A-yipV5lR2uLwUm1YtYee7vK37jJN7403poM8ZJxxlxId1DpqsLfbTIOAsVj3O0elfJNIMZcj7"
+ *             } ,
+ *             "media": {
+ *               "sources": [{
+ *                 "type": "video/mp4",
+ *                 "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
+ *               } ]
+ *             } ,
+ *             "languages": ["de", "es"]
+ *           } ,
+ *           "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3/preview/embeds/default/master/index.html"
  *         }
  *       } ,
- *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3/master/embeds/default/master/index.html"
- *     } ,
- *     "preview": {
- *       "template_updated_at": "2015-10-18T17:39:39.212Z",
- *       "updated_at": "2015-10-18T17:44:17.438Z",
- *       "configuration": {
- *         "player": {
- *           "template": {
- *             "version": "1.14.26",
- *             "name": "single-video-template"
- *           }
- *         } ,
- *         "video_cloud": {
- *           "policy_key": "BCpkADawqM2NeH2Zbd_AJIYQZZZN-Y0ckwE8pIn3wUwEwoWegW4dQUdpcgqtd-msVbmWR3A-yipV5lR2uLwUm1YtYee7vK37jJN7403poM8ZJxxlxId1DpqsLfbTIOAsVj3O0elfJNIMZcj7"
- *         } ,
- *         "media": {
- *           "sources": [{
- *             "type": "video/mp4",
- *             "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
- *           } ]
- *         } ,
- *         "languages": ["de", "es"]
- *       } ,
- *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3/preview/embeds/default/master/index.html"
+ *       "created_at": "2015-10-18T17:39:39.212Z",
+ *       "embed_count": 1,
+ *       "url": "http://players.brightcove.net/1507807800001/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3_default/index.html"
  *     }
- *   } ,
- *   "created_at": "2015-10-18T17:39:39.212Z",
- *   "embed_count": 1,
- *   "url": "http://players.brightcove.net/1507807800001/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3_default/index.html"
- * }
 */
