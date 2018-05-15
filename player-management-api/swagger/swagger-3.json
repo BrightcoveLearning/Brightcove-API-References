@@ -1,30 +1,41 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Brightcove CMS API Reference",
-    "description": "Reference for the Brightcove CMS API, used to access and manage your media library. To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>. For permissions needed for OAuth credentials, see <a href=\"https://support.brightcove.com/api-operations-client-credentials-requests\" target=\"_blank\">API Operations</a>. For information on authenticating API requests, see <a href=\"https://support.brightcove.com/overview-oauth-api-v4\">OAuth Overview</a>.",
-    "version": "1.0.0"
+    "title": "Brightcove Player Management API Reference",
+    "description": "Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/node/17910). If you haven't gone through the [Quick Start to Player Management](https://support.brightcove.com/node/18268), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API. If you are working with this API for the first time, read the [Player Management API Overview](https://support.brightcove.com/node/18269). Remember that after making any configuration changes you **MUST** re-publish your player. <strong>Note:</strong> Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
+    "version": "2.0.0"
   },
   "servers": [
     {
-      "url": "https://cms.api.brightcove.com/v1",
+      "url": "https://players.api.brightcove.com/v2",
       "variables": {}
     }
   ],
   "paths": {
-    "/accounts/{account_id}/counts/playlists": {
+    "/accounts/{account_id}/players/{player_id}": {
       "get": {
         "tags": [
-          "Playlists"
+          "Players"
         ],
-        "summary": "Get_Playlist_Count",
-        "description": "Gets a count of playlists in the account for the account ",
-        "operationId": "GetPlaylistCount",
+        "summary": "Get a single player",
+        "description": "Get a player by ID",
+        "operationId": "GetPlayer",
         "parameters": [
           {
             "name": "account_id",
             "in": "path",
-            "description": "Video Cloud account ID.",
+            "description": "Video Cloud or Brightcove Player account ID.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "path",
+            "description": "The player ID.",
             "required": true,
             "style": "simple",
             "explode": false,
