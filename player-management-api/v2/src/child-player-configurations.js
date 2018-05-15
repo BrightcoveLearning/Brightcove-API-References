@@ -36,11 +36,11 @@
  *       },
  *       "name": "MySampleEmbedPlayer2"
  *     }
- * @apiError (400)  BAD_REQUEST
- * @apiError (401)  INVALID_AUTHENTICATION
- * @apiError (404)  NOT_FOUND
- * @apiError (429)  RATE_LIMIT_EXCEEDED
- * @apiError (500)  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST
+ * @apiError (401) {object}  INVALID_AUTHENTICATION
+ * @apiError (404) {object}  NOT_FOUND
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR
 */
 
 // Update an Embed Configuration
@@ -94,11 +94,11 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/6afea3cd-adfd-45ac-9e47-3242a7f46754/master/embeds/53c02fa5-6344-4c39-be04-b19cdcb69665/preview/index.html",
  *       "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/6afea3cd-adfd-45ac-9e47-3242a7f46754/master/embeds/53c02fa5-6344-4c39-be04-b19cdcb69665/preview/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  *     }
- * @apiError (400)  BAD_REQUEST
- * @apiError (401)  INVALID_AUTHENTICATION
- * @apiError (404)  NOT_FOUND
- * @apiError (429)  RATE_LIMIT_EXCEEDED
- * @apiError (500)  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST
+ * @apiError (401) {object}  INVALID_AUTHENTICATION
+ * @apiError (404) {object}  NOT_FOUND
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR
 */
 
 
@@ -165,9 +165,9 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  *       "embed_id": "53c02fa5-6344-4c39-be04-b19cdcb69665",
  *       "player_name": "MySamplePlayer"
  *     }
- * @apiError (400)  BAD_REQUEST
- * @apiError (401)  INVALID_AUTHENTICATION
- * @apiError (404)  NOT_FOUND
- * @apiError (429)  RATE_LIMIT_EXCEEDED
- * @apiError (500)  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST
+ * @apiError (401) {object}  INVALID_AUTHENTICATION
+ * @apiError (404) {object}  NOT_FOUND
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR
 */
