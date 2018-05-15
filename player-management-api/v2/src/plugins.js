@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} plugin_id plugin id - **must be URI_encoded**
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} plugin_id plugin id - **must be URI_encoded**
  *
  * @apiParamExample {curl} curl Statement:
  *    curl \
@@ -59,11 +59,11 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
- * @apiError (400)  BAD_REQUEST
- * @apiError (401)  INVALID_AUTHENTICATION
- * @apiError (404)  NOT_FOUND
- * @apiError (429)  RATE_LIMIT_EXCEEDED
- * @apiError (500)  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST
+ * @apiError (401) {object}  INVALID_AUTHENTICATION
+ * @apiError (404) {object}  NOT_FOUND
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR
  */
 
 
@@ -129,9 +129,9 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
- * @apiError (400)  BAD_REQUEST
- * @apiError (401)  INVALID_AUTHENTICATION
- * @apiError (404)  NOT_FOUND
- * @apiError (429)  RATE_LIMIT_EXCEEDED
- * @apiError (500)  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST
+ * @apiError (401) {object}  INVALID_AUTHENTICATION
+ * @apiError (404) {object}  NOT_FOUND
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR
  */
