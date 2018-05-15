@@ -251,6 +251,18 @@
               "type": "string",
               "description": "The player description"
           },
+            "branches": {
+              "type": "object",
+              "description": "The branches of the player - contains objects for the preview and master (published) player",
+              "properties": {
+                  "preview" {
+                      "type": "object",
+                      "description": "The preview branch of the player",
+                      "properties"
+                  }
+              }
+          },
+          },
             "preview_url": {
               "type": "string",
               "description": "URL to preview player",
