@@ -61,7 +61,7 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiParam (Request Body) {String} description player description
  * @apiParam (Request Body) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -84,7 +84,7 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiSuccess (200) {String} preview_url URL to preview embed
  * @apiSuccess (200) {String} preview_embed_code preview embed iframe tag
  *
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  * {
  *   "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/6afea3cd-adfd-45ac-9e47-3242a7f46754/master/embeds/53c02fa5-6344-4c39-be04-b19cdcb69665/preview/index.html",
  *   "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/6afea3cd-adfd-45ac-9e47-3242a7f46754/master/embeds/53c02fa5-6344-4c39-be04-b19cdcb69665/preview/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
@@ -100,33 +100,23 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieve the configuration for a parent/child combination of master and preview branches.
-
- <strong>If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand.</strong> For example:
-
- `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`
-
- Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. You can fetch the resulting JSON configuration of any of these four combinations:
-
-- published parent - published child
-- published parent - preview child
-- preview parent - published child
-- preview parent - preview child
-
-Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
-
-
+ * @apiDescription Retrieve the configuration for a parent/child combination of master and preview branches. <strong>If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand.</strong> For example: `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`. Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. You can fetch the resulting JSON configuration of any of these four combinations:
+*    - published parent - published child
+*    - published parent - preview child
+*    - preview parent - published child
+*    - preview parent - preview child
+* Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
- * @apiParam {String} playerBranch branch of the player to use, master or preview, for merged combination
- * @apiParam {String} embedBranch branch of the embed to use, master or preview, for merged combination
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
+ * @apiParam (Path) {String} playerBranch branch of the player to use, master or preview, for merged combination
+ * @apiParam (Path) {String} embedBranch branch of the embed to use, master or preview, for merged combination
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -135,7 +125,7 @@ Using this endpoint does not change any configurations, it is only useful for se
  *
  * @apiSuccess (200) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  * {
  *   "media": {
  *     "sources": [{
