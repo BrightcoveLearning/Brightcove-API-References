@@ -11,23 +11,23 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
- * @apiParam {String} branch branch to retrieve, master (published) or preview
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
+ * @apiParam (Path) {String} branch branch to retrieve, master (published) or preview
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  *  curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/configuration/:branch
  *
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  * {
  *   "configuration": {
  *     "video_cloud": {
@@ -53,13 +53,13 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
  *
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name player name
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
+ * @apiParam (Request Body) {String} name player name
+ * @apiParam (Request Body) {String} description player description
+ * @apiParam (Request Body) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -133,7 +133,7 @@ Using this endpoint does not change any configurations, it is only useful for se
  *   --request GET \
  *   "https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embedID/configuration/merged?playerBranch=master&embedBranch=preview"
  *
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
