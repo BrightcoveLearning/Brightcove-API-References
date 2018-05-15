@@ -349,7 +349,7 @@
  * @apiSuccess (200) {String} preview_url URL to preview embed
  * @apiSuccess (200) {String} preview_embed_code preview embed iframe tag
  *
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  *     {
  *       "id": "5835c089-1eec-4360-bf3a-959b2e4fa0d5",
  *       "url": "http://players.brightcove.net/1507807800001/6d2dee37-0612-4ab9-a4ca-18ae7e39c6d5_5835c089-1eec-4360-bf3a-959b2e4fa0d5/index.html",
