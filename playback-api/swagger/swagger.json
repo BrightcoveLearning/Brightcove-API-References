@@ -1010,8 +1010,8 @@
               "type": "string",
               "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
               "readOnly": true
-            }
           }
+        }
         },
         "text_tracks.sources": {
           "properties": {
