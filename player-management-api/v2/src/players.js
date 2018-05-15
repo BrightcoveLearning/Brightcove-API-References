@@ -595,17 +595,17 @@
  * @apiParam (Path) {String} player_id player ID
  *
  * @apiParamExample {string} curl Statement:
- * curl \
- *   --header "Content-Type: application/json" \
- *   --user :email \
- *   --request DELETE \
- *   --data '{}' \
- *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
+ *     curl \
+ *       --header "Content-Type: application/json" \
+ *       --user :email \
+ *       --request DELETE \
+ *       --data '{}' \
+ *       https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
  * @apiSuccess (200) {String} message report of player deletion
  *
  * @apiSuccessExample {object} Success Response:
- * {
- *   "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
- * }
+ *     {
+ *       "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
+ *     }
 */
