@@ -182,11 +182,11 @@
  *       "embed_count": 1,
  *       "url": "http://players.brightcove.net/1507807800001/03b7c3de-bebf-46ee- *aaac-10877e4d9c4d_default/index.html"
  *     }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -387,11 +387,11 @@
  *     ],
  *     "item_count": 25
  *
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -512,11 +512,11 @@
  *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html",
  *       "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  *     }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -565,11 +565,11 @@
  *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html",
  *       "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  *     }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -619,11 +619,11 @@
  *       "embed_code": "<iframe src='//players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html'  * allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
  *       "embed_in_page": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/in_page.embed"
  *     }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -662,11 +662,11 @@
  *     {
  *       "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
  *     }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {

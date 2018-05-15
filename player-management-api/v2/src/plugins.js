@@ -59,11 +59,11 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
@@ -135,11 +135,11 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
- * @apiError (400) {object}  BAD_REQUEST
- * @apiError (401) {object}  INVALID_AUTHENTICATION
- * @apiError (404) {object}  NOT_FOUND
- * @apiError (429) {object}  RATE_LIMIT_EXCEEDED
- * @apiError (500) {object}  INTERNAL_SERVER_ERROR
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
  * @apiErrorExample {object} Bad Request Example
  *    HTTP/1.1 400 BAD_REQUEST
  *    {
