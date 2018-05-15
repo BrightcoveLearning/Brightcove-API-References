@@ -525,7 +525,6 @@
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/videos.ad_keys",
           "readOnly": true
         }
       }
