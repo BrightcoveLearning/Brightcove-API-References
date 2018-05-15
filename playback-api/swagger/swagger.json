@@ -1049,7 +1049,6 @@
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields",
           "readOnly": true
         },
         "cue_points": {
@@ -1155,7 +1154,6 @@
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys",
           "readOnly": true
         }
       }
@@ -1185,7 +1183,6 @@
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields",
           "readOnly": true
         },
         "cue_points": {
