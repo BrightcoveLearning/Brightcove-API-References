@@ -187,8 +187,7 @@
  * @apiSuccess (200 {String} items.embed.preview_url URL to preview embed
  * @apiSuccess (200 {String} items.embed.repository_url URL to repository of embed
  * @apiSuccess (200 {String} items.embed.url URL to embed
- * - Note: Fields in configuration objects will be displayed in the response only if explicitly set
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  * {
  *   "items": [{
  *     "branches": {
@@ -286,27 +285,25 @@
  *
  * @apiDescription Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published.
 
- When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are:
- - scripts
- - stylesheets
- - plugins
- - sources
-
- You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called `array_prepend` or `array_append` the data will be correspondingly prepended or appended to the common player's data for the like field.
-
- See the **Array fields** section of the <a href="https://support.brightcove.com/node/18263#arrayfields">Embeds Guide</a> for a complete discussion.
+ * When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are:
+ * - scripts
+ * - stylesheets
+ * - plugins
+ * - sources
+ * You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called `array_prepend` or `array_append` the data will be correspondingly prepended or appended to the common player's data for the like field.
+ * See the **Array fields** section of the <a href="https://support.brightcove.com/node/18263#arrayfields">Embeds Guide</a> for a complete discussion.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
  *
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name name give to player
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
+ * @apiParam (Request Body) {String} description player description
+ * @apiParam (Request Body) {String} name name give to player
+ * @apiParam (Request Body) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  * //This curl statement creates an embed that uses a Video Cloud asset
  * curl \
  *   --header "Content-Type: application/json" \
