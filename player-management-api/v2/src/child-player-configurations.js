@@ -120,12 +120,7 @@
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieve the configuration for a parent/child combination of master and preview branches. <strong>If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand.</strong> For example: `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`. Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. You can fetch the resulting JSON configuration of any of these four combinations:
-*    - published parent - published child
-*    - published parent - preview child
-*    - preview parent - published child
-*    - preview parent - preview child
-* Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
+ * @apiDescription Retrieve the configuration for a parent/child combination of master and preview branches. <strong>If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand.</strong> For example: `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`. Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
