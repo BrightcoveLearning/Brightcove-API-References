@@ -233,11 +233,24 @@
         "title": "GetPlayerResponse",
         "type": "object",
         "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "The account id",
+              "readOnly": true
+            },
             "id": {
               "type": "string",
               "description": "The player id",
               "readOnly": true
             },
+            "name": {
+              "type": "string",
+              "description": "The player name"
+            },
+            "description": {
+              "type": "string",
+              "description": "The player description"
+          },
             "preview_url": {
               "type": "string",
               "description": "URL to preview player",
