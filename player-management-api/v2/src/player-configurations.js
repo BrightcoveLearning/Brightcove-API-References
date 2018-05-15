@@ -22,54 +22,54 @@
  *      --request GET \
  *      https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration/:branch
  *
- * @apiSuccess (Response Fields) {Boolean}  autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
- * @apiSuccess (Response Fields) {Boolean}  autoplay indicates player should play video immediately, on platforms that allow this
- * @apiSuccess (Response Fields) {Boolean}  compatibility provides compatibility with the Player 1.x.x API - you should not change this setting
- * @apiSuccess (Response Fields) {Object}  css object containing CSS color overrides
- * @apiSuccess (Response Fields) {Object}  css.controlBarColor background color of control bar
- * @apiSuccess (Response Fields) {Object}  css.controlColor color of buttons and text in control bar
- * @apiSuccess (Response Fields) {Object}  css.progressColor color of progress bar
- * @apiSuccess (Response Fields) {Boolean}  errors indicates if the error messages plugin should be excluded
- * @apiSuccess (Response Fields) {Boolean}  fullscreenControl indicates whether the fullscreen control should be shown in the control bar
- * @apiSuccess (Response Fields) {String[]}  languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
- * @apiSuccess (Response Fields) {Boolean}  loop indicates if the video should play over as soon as it ends
- * @apiSuccess (Response Fields) {Object}  media media information for non-Video Cloud media
- * @apiSuccess (Response Fields) {Object[]}  media.sources array of media source objects
- * @apiSuccess (Response Fields) {String}  media.sources.height height of the video
- * @apiSuccess (Response Fields) {String}  media.sources.poster.highres URL to the poster image
- * @apiSuccess (Response Fields) {String}  media.sources.src URL to media asset
- * @apiSuccess (Response Fields) {String}  media.sources.title content of the &lt;title&gt; element of the page
- * @apiSuccess (Response Fields) {Object[]}  media.sources.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
- * @apiSuccess (Response Fields) {String}  media.sources.width width of the video
- * @apiSuccess (Response Fields) {String}  media.src URL to media asset
- * @apiSuccess (Response Fields) {Objects[]}  media.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  media.tracks.label text label for the track, for instance `English` for an English language text track
- * @apiSuccess (Response Fields) {String}  media.tracks.src URL to source of track, required in a track object
- * @apiSuccess (Response Fields) {String}  media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
- * @apiSuccess (Response Fields) {Object}  player player information object
- * @apiSuccess (Response Fields) {Boolean}  player.inactive indicates if a player is inactive
- * @apiSuccess (Response Fields) {Object}  player.template specific template details
- * @apiSuccess (Response Fields) {String}  player.template.name name of player template
- * @apiSuccess (Response Fields) {String}  player.template.version version of player template
- * @apiSuccess (Response Fields) {Boolean}  playlist indicates if a playlist should be used
- * @apiSuccess (Response Fields) {Boolean}  playlist.playOnSelect indicates if a video loaded from a playlist should play on load
- * @apiSuccess (Response Fields) {Object[]}  plugins array of plugin objects
- * @apiSuccess (Response Fields) {String}  plugins.name name of plugin
- * @apiSuccess (Response Fields) {JSON}  plugins.options configuration options for plugin
- * @apiSuccess (Response Fields) {String}  preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
- * @apiSuccess (Response Fields) {String[]}  scripts URLs to JavaScript files that should be included with the player
- * @apiSuccess (Response Fields) {Mixed}  skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
- * @apiSuccess (Response Fields) {Object}  studio_configuration object containing playlist information normally set in Studio
- * @apiSuccess (Response Fields) {Object}  studio_configuration.player object containing playlist information
- * @apiSuccess (Response Fields) {Boolean}  studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
- * @apiSuccess (Response Fields) {String}  studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String}  studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String[]}  stylesheets URLs to CSS files that should be included with the player
- * @apiSuccess (Response Fields) {String[]}  techOrder order that playback technologies should be used; only visible if changed from default
- * @apiSuccess (Response Fields) {Object}  video_cloud Video Cloud configuration information
- * @apiSuccess (Response Fields) {String}  video_cloud.policy_key policy key for Video Cloud account
- * @apiSuccess (Response Fields) {String}  video_cloud.video if using a Video Cloud video asset, that asset's ID
+ * @apiSuccess (200) {Boolean}  autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (200) {Boolean}  autoplay indicates player should play video immediately, on platforms that allow this
+ * @apiSuccess (200) {Boolean}  compatibility provides compatibility with the Player 1.x.x API - you should not change this setting
+ * @apiSuccess (200) {Object}  css object containing CSS color overrides
+ * @apiSuccess (200) {Object}  css.controlBarColor background color of control bar
+ * @apiSuccess (200) {Object}  css.controlColor color of buttons and text in control bar
+ * @apiSuccess (200) {Object}  css.progressColor color of progress bar
+ * @apiSuccess (200) {Boolean}  errors indicates if the error messages plugin should be excluded
+ * @apiSuccess (200) {Boolean}  fullscreenControl indicates whether the fullscreen control should be shown in the control bar
+ * @apiSuccess (200) {String[]}  languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
+ * @apiSuccess (200) {Boolean}  loop indicates if the video should play over as soon as it ends
+ * @apiSuccess (200) {Object}  media media information for non-Video Cloud media
+ * @apiSuccess (200) {Object[]}  media.sources array of media source objects
+ * @apiSuccess (200) {String}  media.sources.height height of the video
+ * @apiSuccess (200) {String}  media.sources.poster.highres URL to the poster image
+ * @apiSuccess (200) {String}  media.sources.src URL to media asset
+ * @apiSuccess (200) {String}  media.sources.title content of the &lt;title&gt; element of the page
+ * @apiSuccess (200) {Object[]}  media.sources.tracks array of track objects
+ * @apiSuccess (200) {String}  media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
+ * @apiSuccess (200) {String}  media.sources.width width of the video
+ * @apiSuccess (200) {String}  media.src URL to media asset
+ * @apiSuccess (200) {Objects[]}  media.tracks array of track objects
+ * @apiSuccess (200) {String}  media.tracks.label text label for the track, for instance `English` for an English language text track
+ * @apiSuccess (200) {String}  media.tracks.src URL to source of track, required in a track object
+ * @apiSuccess (200) {String}  media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
+ * @apiSuccess (200) {Object}  player player information object
+ * @apiSuccess (200) {Boolean}  player.inactive indicates if a player is inactive
+ * @apiSuccess (200) {Object}  player.template specific template details
+ * @apiSuccess (200) {String}  player.template.name name of player template
+ * @apiSuccess (200) {String}  player.template.version version of player template
+ * @apiSuccess (200) {Boolean}  playlist indicates if a playlist should be used
+ * @apiSuccess (200) {Boolean}  playlist.playOnSelect indicates if a video loaded from a playlist should play on load
+ * @apiSuccess (200) {Object[]}  plugins array of plugin objects
+ * @apiSuccess (200) {String}  plugins.name name of plugin
+ * @apiSuccess (200) {JSON}  plugins.options configuration options for plugin
+ * @apiSuccess (200) {String}  preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
+ * @apiSuccess (200) {String[]}  scripts URLs to JavaScript files that should be included with the player
+ * @apiSuccess (200) {Mixed}  skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
+ * @apiSuccess (200) {Object}  studio_configuration object containing playlist information normally set in Studio
+ * @apiSuccess (200) {Object}  studio_configuration.player object containing playlist information
+ * @apiSuccess (200) {Boolean}  studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
+ * @apiSuccess (200) {String}  studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String}  studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String[]}  stylesheets URLs to CSS files that should be included with the player
+ * @apiSuccess (200) {String[]}  techOrder order that playback technologies should be used; only visible if changed from default
+ * @apiSuccess (200) {Object}  video_cloud Video Cloud configuration information
+ * @apiSuccess (200) {String}  video_cloud.policy_key policy key for Video Cloud account
+ * @apiSuccess (200) {String}  video_cloud.video if using a Video Cloud video asset, that asset's ID
  *
  * @apiSuccessExample {object}  Success Response:
  *     {
@@ -177,118 +177,118 @@
  *         } ' \
  *       https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration
  *
- * @apiSuccess (Response Fields) {String}  accountId account ID
- * @apiSuccess (Response Fields) {Object}  branches contains objects for the preview and master (published) player
- * @apiSuccess (Response Fields) {Object}  branches.master contains master (published) player object
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration configuration of master player
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.autoplay indicates player should play video immediately, on platforms that allow this
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.css object containing CSS color overrides
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.css.controlBarColor background color of control bar
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.css.controlColor color of buttons and text in control bar
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.css.progressColor color of progress bar
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.errors indicates if the error messages plugin should be excluded
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.fullscreenControl indicates whether the fullscreen control should be shown in the control bar
- * @apiSuccess (Response Fields) {String[]}  branches.master.configuration.languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.loop indicates if the video should play over as soon as it ends
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.media media information for non-Video Cloud media
- * @apiSuccess (Response Fields) {Object[]}  branches.master.configuration.media.sources array of media source objects
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.height height of the video
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.poster.highres URL to the poster image
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.src URL to media asset
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.title content of the &lt;title&gt; element of the page
- * @apiSuccess (Response Fields) {Object[]}  branches.master.configuration.media.sources.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.sources.width width of the video
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.src URL to media asset
- * @apiSuccess (Response Fields) {Objects[]}  branches.master.configuration.media.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.tracks.label text label for the track, for instance `English` for an English language text track
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.tracks.src URL to source of track, required in a track object
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.player player information object
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.player.inactive indicates if a player is inactive
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.player.template specific template details
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.player.template.name name of player template
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.player.template.version version of player template
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.playlist indicates if a playlist should be used
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.playlist.playOnSelect indicates if a video loaded from a playlist should play on load
- * @apiSuccess (Response Fields) {Object[]}  branches.master.configuration.plugins array of plugin objects
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.plugins.name name of plugin
- * @apiSuccess (Response Fields) {JSON}  branches.master.configuration.plugins.options configuration options for plugin
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
- * @apiSuccess (Response Fields) {String[]}  branches.master.configuration.scripts URLs to JavaScript files that should be included with the player
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.studio_configuration object containing playlist information normally set in Studio
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.studio_configuration.player object containing playlist information
- * @apiSuccess (Response Fields) {Boolean}  branches.master.configuration.studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String[]}  branches.master.configuration.stylesheets URLs to CSS files that should be included with the player
- * @apiSuccess (Response Fields) {String[]}  branches.master.configuration.techOrder order that playback technologies should be used; only visible if changed from default
- * @apiSuccess (Response Fields) {Object}  branches.master.configuration.video_cloud Video Cloud configuration information
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.video_cloud.policy_key policy key for Video Cloud account
- * @apiSuccess (Response Fields) {String}  branches.master.configuration.video_cloud.video if using a Video Cloud video asset, that asset's ID
- * @apiSuccess (Response Fields) {String}  branches.master.master_url URL of master player
- * @apiSuccess (Response Fields) {String}  branches.master.template_updated_at time of last update to player template
- * @apiSuccess (Response Fields) {String}  branches.master.updated_at time of last update to master player
- * @apiSuccess (Response Fields) {Object}  branches.preview contains preview player object
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration configuration of preview player
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.autoplay indicates player should play video immediately, on platforms that allow this
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.css object containing CSS color overrides
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.css.controlBarColor background color of control bar
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.css.controlColor color of buttons and text in control bar
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.css.progressColor color of progress bar
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.errors indicates if the error messages plugin should be excluded
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.fullscreenControl indicates whether the fullscreen control should be shown in the control bar
- * @apiSuccess (Response Fields) {String[]}  branches.preview.configuration.languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.loop indicates if the video should play over as soon as it ends
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.media media information for non-Video Cloud media
- * @apiSuccess (Response Fields) {Object[]}  branches.preview.configuration.media.sources array of media source objects
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.height height of the video
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.poster.highres URL to the poster image
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.src URL to media asset
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.title content of the &lt;title&gt; element of the page
- * @apiSuccess (Response Fields) {Object[]}  branches.preview.configuration.media.sources.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.sources.width width of the video
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.src URL to media asset
- * @apiSuccess (Response Fields) {Objects[]}  branches.preview.configuration.media.tracks array of track objects
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.tracks.label text label for the track, for instance `English` for an English language text track
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.tracks.src URL to source of track, required in a track object
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.player player information object
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.player.inactive indicates if a player is inactive
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.player.template specific template details
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.player.template.name name of player template
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.player.template.version version of player template
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.playlist indicates if a playlist should be used
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.playlist.playOnSelect indicates if a video loaded from a playlist should play on load
- * @apiSuccess (Response Fields) {Object[]}  branches.preview.configuration.plugins array of plugin objects
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.plugins.name name of plugin
- * @apiSuccess (Response Fields) {object}  branches.preview.configuration.plugins.options configuration options for plugin
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
- * @apiSuccess (Response Fields) {String[]}  branches.preview.configuration.scripts URLs to JavaScript files that should be included with the player
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.studio_configuration object containing playlist information normally set in Studio
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.studio_configuration.player object containing playlist information
- * @apiSuccess (Response Fields) {Boolean}  branches.preview.configuration.studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
- * @apiSuccess (Response Fields) {String[]}  branches.preview.configuration.stylesheets URLs to CSS files that should be included with the player
- * @apiSuccess (Response Fields) {String[]}  branches.preview.configuration.techOrder order that playback technologies should be used; only visible if changed from default
- * @apiSuccess (Response Fields) {Object}  branches.preview.configuration.video_cloud Video Cloud configuration information
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.video_cloud.policy_key policy key for Video Cloud account
- * @apiSuccess (Response Fields) {String}  branches.preview.configuration.video_cloud.video if using a Video Cloud video asset, that asset's ID
- * @apiSuccess (Response Fields) {String}  branches.preview.preview_url URL of preview player
- * @apiSuccess (Response Fields) {String}  branches.preview.template_updated_at time of last update to player template
- * @apiSuccess (Response Fields) {String}  branches.preview.updated_at time of last update to preview player
- * @apiSuccess (Response Fields) {String}  created_at player creation time
- * @apiSuccess (Response Fields) {String}  description player description
- * @apiSuccess (Response Fields) {String}  embed_count number of embeds, will always be at least 1
- * @apiSuccess (Response Fields) {String}  id video id
- * @apiSuccess (Response Fields) {String}  name name give to player
- * @apiSuccess (Response Fields) {String}  url URL to player
+ * @apiSuccess (200) {String}  accountId account ID
+ * @apiSuccess (200) {Object}  branches contains objects for the preview and master (published) player
+ * @apiSuccess (200) {Object}  branches.master contains master (published) player object
+ * @apiSuccess (200) {Object}  branches.master.configuration configuration of master player
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.autoplay indicates player should play video immediately, on platforms that allow this
+ * @apiSuccess (200) {Object}  branches.master.configuration.css object containing CSS color overrides
+ * @apiSuccess (200) {Object}  branches.master.configuration.css.controlBarColor background color of control bar
+ * @apiSuccess (200) {Object}  branches.master.configuration.css.controlColor color of buttons and text in control bar
+ * @apiSuccess (200) {Object}  branches.master.configuration.css.progressColor color of progress bar
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.errors indicates if the error messages plugin should be excluded
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.fullscreenControl indicates whether the fullscreen control should be shown in the control bar
+ * @apiSuccess (200) {String[]}  branches.master.configuration.languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.loop indicates if the video should play over as soon as it ends
+ * @apiSuccess (200) {Object}  branches.master.configuration.media media information for non-Video Cloud media
+ * @apiSuccess (200) {Object[]}  branches.master.configuration.media.sources array of media source objects
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.height height of the video
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.poster.highres URL to the poster image
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.src URL to media asset
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.title content of the &lt;title&gt; element of the page
+ * @apiSuccess (200) {Object[]}  branches.master.configuration.media.sources.tracks array of track objects
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
+ * @apiSuccess (200) {String}  branches.master.configuration.media.sources.width width of the video
+ * @apiSuccess (200) {String}  branches.master.configuration.media.src URL to media asset
+ * @apiSuccess (200) {Objects[]}  branches.master.configuration.media.tracks array of track objects
+ * @apiSuccess (200) {String}  branches.master.configuration.media.tracks.label text label for the track, for instance `English` for an English language text track
+ * @apiSuccess (200) {String}  branches.master.configuration.media.tracks.src URL to source of track, required in a track object
+ * @apiSuccess (200) {String}  branches.master.configuration.media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
+ * @apiSuccess (200) {Object}  branches.master.configuration.player player information object
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.player.inactive indicates if a player is inactive
+ * @apiSuccess (200) {Object}  branches.master.configuration.player.template specific template details
+ * @apiSuccess (200) {String}  branches.master.configuration.player.template.name name of player template
+ * @apiSuccess (200) {String}  branches.master.configuration.player.template.version version of player template
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.playlist indicates if a playlist should be used
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.playlist.playOnSelect indicates if a video loaded from a playlist should play on load
+ * @apiSuccess (200) {Object[]}  branches.master.configuration.plugins array of plugin objects
+ * @apiSuccess (200) {String}  branches.master.configuration.plugins.name name of plugin
+ * @apiSuccess (200) {JSON}  branches.master.configuration.plugins.options configuration options for plugin
+ * @apiSuccess (200) {String}  branches.master.configuration.preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
+ * @apiSuccess (200) {String[]}  branches.master.configuration.scripts URLs to JavaScript files that should be included with the player
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
+ * @apiSuccess (200) {Object}  branches.master.configuration.studio_configuration object containing playlist information normally set in Studio
+ * @apiSuccess (200) {Object}  branches.master.configuration.studio_configuration.player object containing playlist information
+ * @apiSuccess (200) {Boolean}  branches.master.configuration.studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
+ * @apiSuccess (200) {String}  branches.master.configuration.studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String}  branches.master.configuration.studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String[]}  branches.master.configuration.stylesheets URLs to CSS files that should be included with the player
+ * @apiSuccess (200) {String[]}  branches.master.configuration.techOrder order that playback technologies should be used; only visible if changed from default
+ * @apiSuccess (200) {Object}  branches.master.configuration.video_cloud Video Cloud configuration information
+ * @apiSuccess (200) {String}  branches.master.configuration.video_cloud.policy_key policy key for Video Cloud account
+ * @apiSuccess (200) {String}  branches.master.configuration.video_cloud.video if using a Video Cloud video asset, that asset's ID
+ * @apiSuccess (200) {String}  branches.master.master_url URL of master player
+ * @apiSuccess (200) {String}  branches.master.template_updated_at time of last update to player template
+ * @apiSuccess (200) {String}  branches.master.updated_at time of last update to master player
+ * @apiSuccess (200) {Object}  branches.preview contains preview player object
+ * @apiSuccess (200) {Object}  branches.preview.configuration configuration of preview player
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.autoplay indicates player should play video immediately, on platforms that allow this
+ * @apiSuccess (200) {Object}  branches.preview.configuration.css object containing CSS color overrides
+ * @apiSuccess (200) {Object}  branches.preview.configuration.css.controlBarColor background color of control bar
+ * @apiSuccess (200) {Object}  branches.preview.configuration.css.controlColor color of buttons and text in control bar
+ * @apiSuccess (200) {Object}  branches.preview.configuration.css.progressColor color of progress bar
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.errors indicates if the error messages plugin should be excluded
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.fullscreenControl indicates whether the fullscreen control should be shown in the control bar
+ * @apiSuccess (200) {String[]}  branches.preview.configuration.languages languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.loop indicates if the video should play over as soon as it ends
+ * @apiSuccess (200) {Object}  branches.preview.configuration.media media information for non-Video Cloud media
+ * @apiSuccess (200) {Object[]}  branches.preview.configuration.media.sources array of media source objects
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.height height of the video
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.poster.highres URL to the poster image
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.src URL to media asset
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.title content of the &lt;title&gt; element of the page
+ * @apiSuccess (200) {Object[]}  branches.preview.configuration.media.sources.tracks array of track objects
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.sources.width width of the video
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.src URL to media asset
+ * @apiSuccess (200) {Objects[]}  branches.preview.configuration.media.tracks array of track objects
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.tracks.label text label for the track, for instance `English` for an English language text track
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.tracks.src URL to source of track, required in a track object
+ * @apiSuccess (200) {String}  branches.preview.configuration.media.tracks.srclang 2 letter code (valid BCP 47 language tag) for the language of the text track, for example
+ * @apiSuccess (200) {Object}  branches.preview.configuration.player player information object
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.player.inactive indicates if a player is inactive
+ * @apiSuccess (200) {Object}  branches.preview.configuration.player.template specific template details
+ * @apiSuccess (200) {String}  branches.preview.configuration.player.template.name name of player template
+ * @apiSuccess (200) {String}  branches.preview.configuration.player.template.version version of player template
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.playlist indicates if a playlist should be used
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.playlist.playOnSelect indicates if a video loaded from a playlist should play on load
+ * @apiSuccess (200) {Object[]}  branches.preview.configuration.plugins array of plugin objects
+ * @apiSuccess (200) {String}  branches.preview.configuration.plugins.name name of plugin
+ * @apiSuccess (200) {object}  branches.preview.configuration.plugins.options configuration options for plugin
+ * @apiSuccess (200) {String}  branches.preview.configuration.preload informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded; the options are `auto`, `metadata`, and `none`
+ * @apiSuccess (200) {String[]}  branches.preview.configuration.scripts URLs to JavaScript files that should be included with the player
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.skin indicates is the default look-and-feel will be used with the player; set to false when creating a new, highly customized skin
+ * @apiSuccess (200) {Object}  branches.preview.configuration.studio_configuration object containing playlist information normally set in Studio
+ * @apiSuccess (200) {Object}  branches.preview.configuration.studio_configuration.player object containing playlist information
+ * @apiSuccess (200) {Boolean}  branches.preview.configuration.studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
+ * @apiSuccess (200) {String}  branches.preview.configuration.studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String}  branches.preview.configuration.studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (200) {String[]}  branches.preview.configuration.stylesheets URLs to CSS files that should be included with the player
+ * @apiSuccess (200) {String[]}  branches.preview.configuration.techOrder order that playback technologies should be used; only visible if changed from default
+ * @apiSuccess (200) {Object}  branches.preview.configuration.video_cloud Video Cloud configuration information
+ * @apiSuccess (200) {String}  branches.preview.configuration.video_cloud.policy_key policy key for Video Cloud account
+ * @apiSuccess (200) {String}  branches.preview.configuration.video_cloud.video if using a Video Cloud video asset, that asset's ID
+ * @apiSuccess (200) {String}  branches.preview.preview_url URL of preview player
+ * @apiSuccess (200) {String}  branches.preview.template_updated_at time of last update to player template
+ * @apiSuccess (200) {String}  branches.preview.updated_at time of last update to preview player
+ * @apiSuccess (200) {String}  created_at player creation time
+ * @apiSuccess (200) {String}  description player description
+ * @apiSuccess (200) {String}  embed_count number of embeds, will always be at least 1
+ * @apiSuccess (200) {String}  id video id
+ * @apiSuccess (200) {String}  name name give to player
+ * @apiSuccess (200) {String}  url URL to player
  *
  * @apiSuccessExample {object}  Success Response:
  *     {
