@@ -169,6 +169,13 @@
         ],
         "parameters": [
           {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
+          {
             "name": "account_id",
             "in": "path",
             "required": true,
@@ -263,6 +270,29 @@
             "required": false,
             "type": "string",
             "description": "The number of videos to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to skip"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are not included in the response - note: to sort in descending order, preface the sort field name with a minus (`-`) sign",
+            "default": "-updated_at",
+            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
           },
           {
             "name": "account_id",
