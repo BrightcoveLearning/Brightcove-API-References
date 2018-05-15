@@ -182,6 +182,11 @@
  *       "embed_count": 1,
  *       "url": "http://players.brightcove.net/1507807800001/03b7c3de-bebf-46ee- *aaac-10877e4d9c4d_default/index.html"
  *     }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
  */
 
 
@@ -376,6 +381,11 @@
  *     ],
  *     "item_count": 25
  *
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
  */
 
  // Create a player
@@ -490,7 +500,11 @@
  *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html",
  *       "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  *     }
-
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
  */
 
 // Update a single player (not player configuration)
@@ -533,7 +547,11 @@
  *       "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html",
  *       "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  *     }
-
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
 */
 
 // Publish a player
@@ -570,12 +588,18 @@
  * @apiSuccess (200) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
  *
  * @apiSuccessExample {object} Success Response:
+ *     HTTP/1.1 200 OK
  *     {
  *       "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
  *       "url": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html",
  *       "embed_code": "<iframe src='//players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html'  * allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
  *       "embed_in_page": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/in_page.embed"
  *     }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
 */
 
 // Delete a player
@@ -608,4 +632,9 @@
  *     {
  *       "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
  *     }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
 */
