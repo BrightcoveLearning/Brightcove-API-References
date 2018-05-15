@@ -86,7 +86,22 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to return"
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
+          {
             "name": "account_id",
             "in": "path",
             "required": true,
