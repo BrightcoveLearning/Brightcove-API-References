@@ -730,7 +730,6 @@
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields",
           "readOnly": true
         },
         "cue_points": {
