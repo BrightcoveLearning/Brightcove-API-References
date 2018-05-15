@@ -19,7 +19,29 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of playlists to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of playlists to skip"
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
+  {
             "name": "account_id",
             "in": "path",
             "required": true,
