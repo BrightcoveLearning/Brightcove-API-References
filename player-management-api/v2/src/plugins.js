@@ -59,6 +59,11 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
  */
 
 
@@ -97,6 +102,7 @@
  * @apiSuccess (200) {String} current_version The current version of the plugin
  *
  * @apiSuccessExample {JSON} Success Response:
+ *    HTTP/1.1 200 OK
  *    {
  *      "versions": [{
  *        "version_number": "2.x",
@@ -123,4 +129,9 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
  */
