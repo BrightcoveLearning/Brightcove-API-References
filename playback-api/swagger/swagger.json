@@ -167,7 +167,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
             "name": "account_id",
             "in": "path",
             "required": true,
@@ -248,7 +249,22 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [{
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "search string - see [search guide](https://support.brightcove.com/cmsplayback-api-videos-search) for details"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to return"
+          },
+          {
             "name": "account_id",
             "in": "path",
             "required": true,
