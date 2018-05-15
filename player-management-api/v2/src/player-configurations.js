@@ -93,6 +93,11 @@
  *       } ,
  *       "techOrder": ["html5", "hls", "flash"]
  *     }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
 */
 
 // Update a player configuration
@@ -341,4 +346,9 @@
  *       "embed_count": 1,
  *       "url": "http://players.brightcove.net/1507807800001/2c4b8938-92d1-4cd1-a423-5758ed0dbbf3_default/index.html"
  *     }
+ * @apiError (400)  BAD_REQUEST
+ * @apiError (401)  INVALID_AUTHENTICATION
+ * @apiError (404)  NOT_FOUND
+ * @apiError (429)  RATE_LIMIT_EXCEEDED
+ * @apiError (500)  INTERNAL_SERVER_ERROR
 */
