@@ -162,36 +162,36 @@
  * @apiSuccess (200) {String} items.repository_url URL to repository of player
  * @apiSuccess (200) {String} items.url URL to published player
  *
- * @apiSuccess (200 {Object} items.embed.branches contains objects for the preview and master (published) embed
- * @apiSuccess (200 {Object} items.embed.branches.master contains master (published) embed object
- * @apiSuccess (200 {Object} items.embed.branches.master.configuration configuration of master embed
- * @apiSuccess (200 {Object} items.embed.branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (200 {String} items.embed.branches.master.name name of master (published) version of embed
- * @apiSuccess (200 {String} items.embed.branches.master.updated_at last update time for master (published) version of embed
- * @apiSuccess (200 {Object} items.embed.branches.preview contains preview embed object
- * @apiSuccess (200 {Object} items.embed.branches.preview.configuration configuration of preview embed
- * @apiSuccess (200 {Object} items.embed.branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (200 {String} items.embed.branches.preview.name name of preview version of the embed
- * @apiSuccess (200 {String} items.embed.branches.preview.updated_at last update time of preview version of embed
- * @apiSuccess (200 {String} items.embed.embed_code published embed iframe tag
- * @apiSuccess (200 {String} items.embed.embed_in_page URL to browse to retrieve the in-page embed code for embed
- * @apiSuccess (200 {String} items.embed.id id embed
- * @apiSuccess (200 {String} items.embed.name name of embed
- * @apiSuccess (200 {String} items.embed.preview_embed_code preview iframe tag for embed
- * @apiSuccess (200 {Object} items.embed.publish_request publish request information
- * @apiSuccess (200 {String} items.embed.publish_request.author email address of person requesting embed creation
- * @apiSuccess (200 {String} items.embed.publish_request.buildLog URL to build information
- * @apiSuccess (200 {String} items.embed.publish_request.comment comment on action, e.g. `Player created`
- * @apiSuccess (200 {String} items.embed.publish_request.elapsed_time time in milliseconds of embed creation
- * @apiSuccess (200 {String} items.embed.publish_request.errorCode error code, if no error value is `null`
- * @apiSuccess (200 {String} items.embed.publish_request.errorMessage error message, if no error value is `null`
- * @apiSuccess (200 {String} items.embed.publish_request.queue_msg_id unique identifier of message
- * @apiSuccess (200 {String} items.embed.publish_request.requested_at time of embed creation request
- * @apiSuccess (200 {String} items.embed.publish_request.retries number of retries to create embed
- * @apiSuccess (200 {String} items.embed.publish_request.status status of request, for e.g. `COMPLETE`
- * @apiSuccess (200 {String} items.embed.preview_url URL to preview embed
- * @apiSuccess (200 {String} items.embed.repository_url URL to repository of embed
- * @apiSuccess (200 {String} items.embed.url URL to embed
+ * @apiSuccess (200) {Object} items.embed.branches contains objects for the preview and master (published) embed
+ * @apiSuccess (200) {Object} items.embed.branches.master contains master (published) embed object
+ * @apiSuccess (200) {Object} items.embed.branches.master.configuration configuration of master embed
+ * @apiSuccess (200) {Object} items.embed.branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {String} items.embed.branches.master.name name of master (published) version of embed
+ * @apiSuccess (200) {String} items.embed.branches.master.updated_at last update time for master (published) version of embed
+ * @apiSuccess (200) {Object} items.embed.branches.preview contains preview embed object
+ * @apiSuccess (200) {Object} items.embed.branches.preview.configuration configuration of preview embed
+ * @apiSuccess (200) {Object} items.embed.branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {String} items.embed.branches.preview.name name of preview version of the embed
+ * @apiSuccess (200) {String} items.embed.branches.preview.updated_at last update time of preview version of embed
+ * @apiSuccess (200) {String} items.embed.embed_code published embed iframe tag
+ * @apiSuccess (200) {String} items.embed.embed_in_page URL to browse to retrieve the in-page embed code for embed
+ * @apiSuccess (200) {String} items.embed.id id embed
+ * @apiSuccess (200) {String} items.embed.name name of embed
+ * @apiSuccess (200) {String} items.embed.preview_embed_code preview iframe tag for embed
+ * @apiSuccess (200) {Object} items.embed.publish_request publish request information
+ * @apiSuccess (200) {String} items.embed.publish_request.author email address of person requesting embed creation
+ * @apiSuccess (200) {String} items.embed.publish_request.buildLog URL to build information
+ * @apiSuccess (200) {String} items.embed.publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (200) {String} items.embed.publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (200) {String} items.embed.publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (200) {String} items.embed.publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (200) {String} items.embed.publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (200) {String} items.embed.publish_request.requested_at time of embed creation request
+ * @apiSuccess (200) {String} items.embed.publish_request.retries number of retries to create embed
+ * @apiSuccess (200) {String} items.embed.publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (200) {String} items.embed.preview_url URL to preview embed
+ * @apiSuccess (200) {String} items.embed.repository_url URL to repository of embed
+ * @apiSuccess (200) {String} items.embed.url URL to embed
  * @apiSuccessExample {object} Success Response:
  *     {
  *       "items": [{
