@@ -3,13 +3,13 @@
   "info": {
     "title": "Playback API Reference",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Playback API, used for client-side access video and playlist information.<br><br><strong>Notes:</strong><ul><li>Customers using IP Restriction <strong>must</strong> use <code>https://edge-elb.api.brightcove.com/playback/v1</code> instead of the standard URL (Use <code>edge-elb.api...</code> vs the normal <code>edge.api...</code>). To learn how to restrict playback for all the players in an account, see the <a href=\"https://support.brightcove.com/node/8065\">Restricting Video Playback Using IP Address</a> document.<br><br></li><li>The raw API JSON response is not suitable with the player. Use the <code>player.catalog.transformVideoResponse()</code> function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility. For details, see the <a href=\"https://support.brightcove.com/node/18108\">Player Catalog</a> document.</li></ul>"
+    "description": "Reference for the Brightcove Playback API, used for client-side access video and playlist information.<br><br><strong>Notes:</strong><ul><li>Customers using IP Restriction <strong>must</strong> use <code>https://edge-elb.api.brightcove.com/playback/v1</code> instead of the standard URL (Use <code>edge-elb.api...</code> vs the normal <code>edge.api...</code>). To learn how to restrict playback for all the players in an account, see the <a href=\"https://support.brightcove.com/node/8065\">Restricting Video Playback Using IP Address</a> document.<br><br></li><li>The raw API JSON response is not suitable with the player. Use the `player.catalog.transformVideoResponse()` function to convert each video object in the response into a format compatible with the player. This includes duration times and https image compatibility. For details, see the <a href=\"https://support.brightcove.com/node/18108\">Player Catalog</a> document.</li></ul>"
   },
   "paths": {
     "/accounts/{account_id}/playlists/{playlist_id}": {
       "get": {
         "tags": [
-          "playlistGroup"
+          "Playlists"
         ],
         "summary": "Get Playlist by ID or Reference ID",
         "description": "Gets a playlist object for an account, based on playlist ID or reference ID.   ",
@@ -21,6 +21,27 @@
         ],
         "parameters": [
           {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of playlists to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of playlists to skip"
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
+  {
             "name": "account_id",
             "in": "path",
             "required": true,
@@ -31,7 +52,7 @@
             "name": "playlist_id",
             "in": "path",
             "required": true,
-            "type": "number",
+            "type": "string",
             "description": "Video Cloud playlist ID "
           },
           {
@@ -39,7 +60,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ": application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See Policy API Overview or Policy Keys for information on getting policy keys "
+            "description": "application/json;pk=policy_key (there are 3 ways to authenticate &mdash; use one of these three headers) See Policy API Overview or Policy Keys for information on getting policy keys"
           }
         ],
         "responses": {
@@ -49,29 +70,26 @@
               "$ref": "#/definitions/Get_Playlists_by_ID_or_Reference_ID200"
             }
           },
-          "error_subcode": {
+          "400": {
             "description": "BAD_REQUEST:  DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request \nNOT_FOUND:  PLAYLIST_NOT_FOUND - The requested resource is not available. "
           },
-          "Must be a legal policy key in an appropriate header. ": {
+          "401": {
             "description": "INVALID_POLICY_KEY:undefined"
           },
-          "error_subcodes": {
+          "403": {
             "description": "ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  DOMAIN - The video is restricted from playing on the current domain  CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference  CLIENT_IP - The video is restricted at the current IP address  POLICY_ERROR - Error when evaluating the policy key "
           },
-          "Only GET, HEAD and OPTIONS are allowed for this api. ": {
-            "description": "METHOD_NOT_ALLOWED:undefined"
+          "405": {
+            "description": "METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this api."
           },
-          "Internal server error. ": {
-            "description": "SERVER_ERROR:undefined"
+          "500": {
+            "description": "SERVER_ERROR:internal server error"
           },
-          "Got a bad response from a backend server.  Various *_RETRIEVE_FAILURE error codes": {
-            "description": "SERVER_ERROR: ACCOUNT_RETRIEVE_FAILURE, PLAYLIST_RETRIEVE_FAILURE, PLAYLIST_VIDEOS_RETRIEVE_FAILURE. "
+          "502": {
+            "description": "SERVER_ERROR:Got a bad response from a backend server"
           },
-          "Returned this response from a backend server. ": {
-            "description": "SERVICE_UNAVAILABLE:undefined"
-          },
-          "Either a backend server or one of the servers they rely on timed out. ": {
-            "description": "SERVER_TIMEOUT:undefined"
+          "504": {
+            "description": "SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out."
           }
         },
         "operationId": "Get_Playlists_by_ID_or_Reference_ID"
@@ -91,6 +109,20 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to return"
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
           {
             "name": "account_id",
             "in": "path",
@@ -134,26 +166,26 @@
               "$ref": "#/definitions/Get_Related_Videos_by_ID_or_Reference_ID200"
             }
           },
-          "error_subcode": {
+          "400": {
             "description": "BAD_REQUEST:    DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request    INVALID_SEARCH - The search parameters are not valid    ILLEGAL_QUERY - The search string syntax was invalid - example\nACCESS_DENIED:    ACCOUNT_ID  - The account id in the policy key does not match the account in the api request    API  - The policy key is not search-enabled when attempting to perform a search    CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference    CLIENT_IP - The video is restricted at the current IP address    DOMAIN - The video is restricted from playing on the current domain    POLICY_ERROR - Error when evaluating the policy key \nFORBIDDEN:    VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable\nNOT_FOUND:    VIDEO_NOT_FOUND - The requested resource is not available. "
           },
-          "Must be a legal policy key in an appropriate header. ": {
+          "401": {
             "description": "INVALID_POLICY_KEY:undefined"
           },
-          "Only GET, HEAD and OPTIONS are allowed for this api. ": {
-            "description": "METHOD_NOT_ALLOWED:undefined"
+          "403": {
+            "description": "ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  DOMAIN - The video is restricted from playing on the current domain  CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference  CLIENT_IP - The video is restricted at the current IP address  POLICY_ERROR - Error when evaluating the policy key "
           },
-          "Internal server error. ": {
-            "description": "SERVER_ERROR:undefined"
+          "405": {
+            "description": "METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this api."
           },
-          "Got a bad response from a backend server.    Various *_RETRIEVE_FAILURE error codes": {
-            "description": "SERVER_ERROR: ACCOUNT_RETRIEVE_FAILURE, VIDEO_RETRIEVE_FAILURE, VIDEO_URLS_RETRIEVE_FAILURE. "
+          "500": {
+            "description": "SERVER_ERROR:internal server error"
           },
-          "Returned this response from a backend server. ": {
-            "description": "SERVICE_UNAVAILABLE:undefined"
+          "502": {
+            "description": "SERVER_ERROR:Got a bad response from a backend server"
           },
-          "Either a backend server or one of the servers they rely on timed out. ": {
-            "description": "SERVER_TIMEOUT:undefined"
+          "504": {
+            "description": "SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out."
           }
         },
         "operationId": "Get_Related_Videos_by_ID_or_Reference_ID"
@@ -173,6 +205,13 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
           {
             "name": "account_id",
             "in": "path",
@@ -216,26 +255,26 @@
               "$ref": "#/definitions/Get_Video_by_ID_or_Reference_ID200"
             }
           },
-          "error_subcode": {
-            "description": "BAD_REQUEST:  DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request \nACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference  CLIENT_IP - The video is restricted at the current IP address  DOMAIN - The video is restricted from playing on the current domain  POLICY_ERROR - Error when evaluating the policy key  VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the three reasons that videos are not playable\nNOT_FOUND:  VIDEO_NOT_FOUND - The requested resource is not available. "
+          "400": {
+            "description": "BAD_REQUEST:    DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request    INVALID_SEARCH - The search parameters are not valid    ILLEGAL_QUERY - The search string syntax was invalid - example\nACCESS_DENIED:    ACCOUNT_ID  - The account id in the policy key does not match the account in the api request    API  - The policy key is not search-enabled when attempting to perform a search    CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference    CLIENT_IP - The video is restricted at the current IP address    DOMAIN - The video is restricted from playing on the current domain    POLICY_ERROR - Error when evaluating the policy key \nFORBIDDEN:    VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable\nNOT_FOUND:    VIDEO_NOT_FOUND - The requested resource is not available. "
           },
-          "Must be a legal policy key in an appropriate header. ": {
+          "401": {
             "description": "INVALID_POLICY_KEY:undefined"
           },
-          "Only GET, HEAD and OPTIONS are allowed for this api. ": {
-            "description": "METHOD_NOT_ALLOWED:undefined"
+          "403": {
+            "description": "ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  DOMAIN - The video is restricted from playing on the current domain  CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference  CLIENT_IP - The video is restricted at the current IP address  POLICY_ERROR - Error when evaluating the policy key "
           },
-          "Internal server error. ": {
-            "description": "SERVER_ERROR:undefined"
+          "405": {
+            "description": "METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this api."
           },
-          "Got a bad response from a backend server.  Various *_RETRIEVE_FAILURE error codes": {
-            "description": "SERVER_ERROR: ACCOUNT_RETRIEVE_FAILURE, VIDEO_RETRIEVE_FAILURE, VIDEO_URLS_RETRIEVE_FAILURE. "
+          "500": {
+            "description": "SERVER_ERROR:internal server error"
           },
-          "Returned this response from a backend server. ": {
-            "description": "SERVICE_UNAVAILABLE:undefined"
+          "502": {
+            "description": "SERVER_ERROR:Got a bad response from a backend server"
           },
-          "Either a backend server or one of the servers they rely on timed out. . ": {
-            "description": "SERVER_TIMEOUT:undefined"
+          "504": {
+            "description": "SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out."
           }
         },
         "operationId": "Get_Video_by_ID_or_Reference_ID"
@@ -255,6 +294,43 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "search string - see [search guide](https://support.brightcove.com/cmsplayback-api-videos-search) for details"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The number of videos to skip"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are not included in the response - note: to sort in descending order, preface the sort field name with a minus (`-`) sign",
+            "default": "-updated_at",
+            "enum": ["name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"]
+          },
+          {
+            "name": "ad_config_id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "include [server-side ad insertion](https://support.brightcove.com/overview-playback-api#Video_request_with_SSAI)"
+          },
           {
             "name": "account_id",
             "in": "path",
@@ -291,26 +367,26 @@
               "$ref": "#/definitions/Get_Videos200"
             }
           },
-          "error_subcode": {
-            "description": "BAD_REQUEST:   DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request   INVALID_SEARCH - The search parameters are not valid   ILLEGAL_QUERY - The search string syntax was invalid - example\nACCESS_DENIED:   ACCOUNT_ID  - The account id in the policy key does not match the account in the api request   API  - The policy key is not search-enabled when attempting to perform a search   CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference   CLIENT_IP - The video is restricted at the current IP address   DOMAIN - The video is restricted from playing on the current domain   POLICY_ERROR - Error when evaluating the policy key \nFORBIDDEN:   VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable\nNOT_FOUND:   VIDEO_NOT_FOUND - The requested resource is not available. "
+          "400": {
+            "description": "BAD_REQUEST:    DUPLICATE_PARAMETERS - The same parameter name was provided more than once in the request    INVALID_SEARCH - The search parameters are not valid    ILLEGAL_QUERY - The search string syntax was invalid - example\nACCESS_DENIED:    ACCOUNT_ID  - The account id in the policy key does not match the account in the api request    API  - The policy key is not search-enabled when attempting to perform a search    CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference    CLIENT_IP - The video is restricted at the current IP address    DOMAIN - The video is restricted from playing on the current domain    POLICY_ERROR - Error when evaluating the policy key \nFORBIDDEN:    VIDEO_NOT_PLAYABLE - For a single video request, the video exists, but is not allowed to be played now. That could be any of the four reasons that videos are not playable\nNOT_FOUND:    VIDEO_NOT_FOUND - The requested resource is not available. "
           },
-          "Must be a legal policy key in an appropriate header. ": {
+          "401": {
             "description": "INVALID_POLICY_KEY:undefined"
           },
-          "Only GET, HEAD and OPTIONS are allowed for this api. ": {
-            "description": "METHOD_NOT_ALLOWED:undefined"
+          "403": {
+            "description": "ACCESS_DENIED:  ACCOUNT_ID  - The account id in the policy key does not match the account in the api request  DOMAIN - The video is restricted from playing on the current domain  CLIENT_GEO - The video is restricted from playing in the current geo region; the message will contain additional information about the specific issue. For more details, see the Playback API Error Reference  CLIENT_IP - The video is restricted at the current IP address  POLICY_ERROR - Error when evaluating the policy key "
           },
-          "Internal server error. ": {
-            "description": "SERVER_ERROR:undefined"
+          "405": {
+            "description": "METHOD_NOT_ALLOWED:Only GET, HEAD and OPTIONS are allowed for this api."
           },
-          "Got a bad response from a backend server.   Various *_RETRIEVE_FAILURE error codes": {
-            "description": "SERVER_ERROR: ACCOUNT_RETRIEVE_FAILURE, VIDEO_RETRIEVE_FAILURE, VIDEO_URLS_RETRIEVE_FAILURE. "
+          "500": {
+            "description": "SERVER_ERROR:internal server error"
           },
-          "Returned this response from a backend server. ": {
-            "description": "SERVICE_UNAVAILABLE:undefined"
+          "502": {
+            "description": "SERVER_ERROR:Got a bad response from a backend server"
           },
-          "Either a backend server or one of the servers they rely on timed out. ": {
-            "description": "SERVER_TIMEOUT:undefined"
+          "504": {
+            "description": "SERVER_TIMEOUT:Either a backend server or one of the servers they rely on timed out."
           }
         },
         "operationId": "Get_Videos"
@@ -340,495 +416,493 @@
           "type": "string",
           "description": "field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that plays_total and plays_trailing_week are not included in the response - note: to sort in descending order, preface the sort field name with a minus (-) sign "
         }
-      },
-      "required": []
+      }
     },
     "Get_Playlists_by_ID_or_Reference_ID200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "date/time created "
+          "description": "date/time created ",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "playlist description "
+          "description": "playlist description ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "the playlist id "
+          "description": "the playlist id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "the playlist name "
+          "description": "the playlist name ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "the playlist reference id "
+          "description": "the playlist reference id ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the playlist type: EXPLICIT or smart playlist type "
+          "description": "the playlist type: EXPLICIT or smart playlist type ",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "date/time last modified "
+          "description": "date/time last modified ",
+          "readOnly": true
         },
         "video_ids": {
           "type": "array",
           "description": "array of video ids (EXPLICIT playlists only) ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "search": {
           "type": "string",
-          "description": "search string to retrieve the videos (smart playlists only) "
+          "description": "search string to retrieve the videos (smart playlists only) ",
+          "readOnly": true
         },
         "videos": {
           "type": "array",
           "description": "array of video maps ",
           "items": {
             "$ref": "#/definitions/videos"
-          }
+          },
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "created_at",
-        "description",
-        "id",
-        "name",
-        "reference_id",
-        "type",
-        "updated_at",
-        "video_ids",
-        "search",
-        "videos"
-      ]
+      }
     },
     "videos": {
       "properties": {
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/videos.custom_fields"
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/videos.cue_points"
+          "$ref": "#/definitions/videos.cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is AD_SUPPORTED ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/videos.poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/videos.thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/videos.link"
+          "$ref": "#/definitions/videos.link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/videos.sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
           "description": "array of text track maps ",
-          "$ref": "#/definitions/videos.text_tracks"
+          "$ref": "#/definitions/videos.text_tracks",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/videos.ad_keys"
+          "readOnly": true
         }
-      },
-      "required": [
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys"
-      ]
+      }
     },
     "videos.cue_points": {
       "properties": {
         "name": {
           "type": "string",
-          "description": "cue point name "
+          "description": "cue point name ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "cue point type "
+          "description": "cue point type ",
+          "readOnly": true
         },
         "time": {
           "type": "number",
-          "description": "time of the cue point in seconds; example: 10.527 "
+          "description": "time of the cue point in seconds; example: 10.527 ",
+          "readOnly": true
         },
         "metadata": {
           "type": "string",
-          "description": "optional metadata string (128 single-byte characters maximum) "
+          "description": "optional metadata string (128 single-byte characters maximum) ",
+          "readOnly": true
         },
         "force-stop": {
           "type": "boolean",
-          "description": "whether video is force-stopped at the cue point "
+          "description": "whether video is force-stopped at the cue point ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "name",
-        "type",
-        "time",
-        "metadata",
-        "force-stop"
-      ]
+      }
     },
     "videos.poster_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "videos.thumbnail_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "videos.link": {
       "properties": {
         "text": {
           "type": "string",
-          "description": "text for the link "
+          "description": "text for the link ",
+          "readOnly": true
         },
         "url": {
           "type": "string",
-          "description": "URL for the link "
+          "description": "URL for the link ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "text",
-        "url"
-      ]
+      }
     },
     "videos.sources": {
       "properties": {
         "avg_bitrate": {
           "type": "number",
-          "description": "average bitrate "
+          "description": "average bitrate ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
-          "description": "frame width in pixels "
+          "description": "frame width in pixels ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
-          "description": "frame height in pixels "
+          "description": "frame height in pixels ",
+          "readOnly": true
         },
         "size": {
           "type": "number",
-          "description": "size in bytes "
+          "description": "size in bytes ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "duration in milliseconds "
+          "description": "duration in milliseconds ",
+          "readOnly": true
         },
         "asset_id": {
           "type": "string",
-          "description": "the asset id for the source "
+          "description": "the asset id for the source ",
+          "readOnly": true
         },
         "stream_name": {
           "type": "string",
-          "description": "the stream name for the source "
+          "description": "the stream name for the source ",
+          "readOnly": true
         },
         "codec": {
           "type": "string",
-          "description": "the video codec "
+          "description": "the video codec ",
+          "readOnly": true
         },
         "container": {
           "type": "string",
-          "description": "the video container "
+          "description": "the video container ",
+          "readOnly": true
         },
         "app_name": {
           "type": "string",
-          "description": "the address for rtmp streams "
+          "description": "the address for rtmp streams ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the type (for HLS streams) "
+          "description": "the type (for HLS streams) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "avg_bitrate",
-        "width",
-        "height",
-        "size",
-        "duration",
-        "asset_id",
-        "stream_name",
-        "codec",
-        "container",
-        "app_name",
-        "type"
-      ]
+      }
     },
     "videos.text_tracks": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for the .vtt file "
+          "description": "URL for the .vtt file ",
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of sources for .vtt files (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/videos.text_tracks.sources"
-          }
+          },
+          "readOnly": true
         },
         "kind": {
           "type": "string",
-          "description": "kind of text track "
+          "description": "kind of text track ",
+          "readOnly": true
         },
         "srclang": {
           "type": "string",
-          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; "
+          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; ",
+          "readOnly": true
         },
         "mime_type": {
           "type": "string",
-          "description": "mime_type for the track "
+          "description": "mime_type for the track ",
+          "readOnly": true
         },
         "label": {
           "type": "string",
-          "description": "label for the track "
+          "description": "label for the track ",
+          "readOnly": true
         },
         "default": {
           "type": "boolean",
-          "description": "whether this is the default track "
+          "description": "whether this is the default track ",
+          "readOnly": true
         },
         "in_band_metadata_track_dispatch_type": {
           "type": "string",
-          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest "
+          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src",
-        "sources",
-        "kind",
-        "srclang",
-        "mime_type",
-        "label",
-        "default",
-        "in_band_metadata_track_dispatch_type"
-      ]
+      }
     },
     "videos.text_tracks.sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for the .vtt file (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for the .vtt file (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "Get_Related_Videos_by_ID_or_Reference_ID200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields"
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "$ref": "#/definitions/cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is AD_SUPPORTED ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
@@ -837,224 +911,193 @@
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys"
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys"
-      ]
+      }
     },
     "cue_points": {
       "properties": {
         "name": {
           "type": "string",
-          "description": "cue point name "
+          "description": "cue point name ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "cue point type "
+          "description": "cue point type ",
+          "readOnly": true
         },
         "time": {
           "type": "number",
-          "description": "time of the cue point in seconds; example: 10.527 "
+          "description": "time of the cue point in seconds; example: 10.527 ",
+          "readOnly": true
         },
         "metadata": {
           "type": "string",
-          "description": "optional metadata string (128 single-byte characters maximum) "
+          "description": "optional metadata string (128 single-byte characters maximum) ",
+          "readOnly": true
         },
         "force-stop": {
           "type": "boolean",
-          "description": "whether video is force-stopped at the cue point "
+          "description": "whether video is force-stopped at the cue point ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "name",
-        "type",
-        "time",
-        "metadata",
-        "force-stop"
-      ]
+      }
     },
     "poster_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) "
+          "description": "URL for a poster source image (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "thumbnail_sources": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https)   image "
+          "description": "URL for a thumbnail source image (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) image ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "link": {
       "properties": {
         "text": {
           "type": "string",
-          "description": "text for the link "
+          "description": "text for the link ",
+          "readOnly": true
         },
         "url": {
           "type": "string",
-          "description": "URL for the link "
+          "description": "URL for the link ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "text",
-        "url"
-      ]
+      }
     },
     "sources": {
       "properties": {
         "avg_bitrate": {
           "type": "number",
-          "description": "average bitrate "
+          "description": "average bitrate ",
+          "readOnly": true
         },
         "width": {
           "type": "number",
-          "description": "frame width in pixels "
+          "description": "frame width in pixels ",
+          "readOnly": true
         },
         "height": {
           "type": "number",
-          "description": "frame height in pixels "
+          "description": "frame height in pixels ",
+          "readOnly": true
         },
         "size": {
           "type": "number",
-          "description": "size in bytes "
+          "description": "size in bytes ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "duration in milliseconds "
+          "description": "duration in milliseconds ",
+          "readOnly": true
         },
         "asset_id": {
           "type": "string",
-          "description": "the asset id for the source "
+          "description": "the asset id for the source ",
+          "readOnly": true
         },
         "stream_name": {
           "type": "string",
-          "description": "the stream name for the source "
+          "description": "the stream name for the source ",
+          "readOnly": true
         },
         "codec": {
           "type": "string",
-          "description": "the video codec "
+          "description": "the video codec ",
+          "readOnly": true
         },
         "container": {
           "type": "string",
-          "description": "the video container "
+          "description": "the video container ",
+          "readOnly": true
         },
         "app_name": {
           "type": "string",
-          "description": "the address for rtmp streams "
+          "description": "the address for rtmp streams ",
+          "readOnly": true
         },
         "type": {
           "type": "string",
-          "description": "the type (for HLS streams) "
+          "description": "the type (for HLS streams) ",
+          "readOnly": true
         },
         "key_systems": {
           "type": "object",
           "description": "a list of objects where each defines the type of encryption used for a DRM packaged source – if this object is defined, then its source is content protected ",
-          "$ref": "#/definitions/sources.key_systems"
+          "readOnly": true
+        },
+        "text_tracks": {
+          "type": "object",
+          "description": "array of text track maps ",
+          "$ref": "#/definitions/text_tracks",
+          "readOnly": true
         }
-      },
-      "required": [
-        "avg_bitrate",
-        "width",
-        "height",
-        "size",
-        "duration",
-        "asset_id",
-        "stream_name",
-        "codec",
-        "container",
-        "app_name",
-        "type",
-        "key_systems"
-      ]
+      }
     },
     "text_tracks": {
       "properties": {
         "src": {
           "type": "string",
-          "description": "URL for the .vtt file "
+          "description": "URL for the .vtt file ",
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of sources for .vtt files (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/text_tracks.sources"
-          }
+          },
+          "readOnly": true
         },
         "kind": {
           "type": "string",
-          "description": "kind of text track "
+          "description": "kind of text track ",
+          "readOnly": true
         },
         "srclang": {
           "type": "string",
-          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; "
+          "description": "2-letter language code, such as &quot;en&quot; or &quot;ko&quot; ",
+          "readOnly": true
         },
         "mime_type": {
           "type": "string",
-          "description": "mime_type for the track "
+          "description": "mime_type for the track ",
+          "readOnly": true
         },
         "label": {
           "type": "string",
-          "description": "label for the track "
+          "description": "label for the track ",
+          "readOnly": true
         },
         "default": {
           "type": "boolean",
-          "description": "whether this is the default track "
+          "description": "whether this is the default track ",
+          "readOnly": true
         },
         "in_band_metadata_track_dispatch_type": {
           "type": "string",
-          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest "
+          "description": "If this field is present, it means that references for this text track are available in the associated video&#39;s manifest ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "src",
-        "sources",
-        "kind",
-        "srclang",
-        "mime_type",
-        "label",
-        "default",
-        "in_band_metadata_track_dispatch_type"
-      ]
+      }
     },
     "text_tracks.sources": {
       "properties": {
@@ -1062,245 +1105,257 @@
           "type": "string",
           "description": "URL for the .vtt file (note that in many cases there will be one source with a src value identical to the text_tracks.src value, but this array is included in case there are multiple protocols available, such as http and https) "
         }
-      },
-      "required": [
-        "src"
-      ]
+      }
     },
     "Get_Video_by_ID_or_Reference_ID200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields"
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "$ref": "#/definitions/cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is AD_SUPPORTED ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
           "description": "array of text track maps ",
-          "$ref": "#/definitions/text_tracks"
+          "$ref": "#/definitions/text_tracks",
+          "readOnly": true
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys"
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys"
-      ]
+      }
     },
     "Get_Videos200": {
       "properties": {
         "account_id": {
           "type": "string",
-          "description": "Video Cloud account id "
+          "description": "Video Cloud account id ",
+          "readOnly": true
         },
         "id": {
           "type": "string",
-          "description": "video id "
+          "description": "video id ",
+          "readOnly": true
         },
         "name": {
           "type": "string",
-          "description": "video title "
+          "description": "video title ",
+          "readOnly": true
         },
         "created_at": {
           "type": "string",
-          "description": "when the video was created "
+          "description": "when the video was created ",
+          "readOnly": true
         },
         "custom_fields": {
           "type": "object",
           "description": "map of fieldname-value pairs ",
-          "$ref": "#/definitions/custom_fields"
+          "readOnly": true
         },
         "cue_points": {
           "type": "object",
           "description": "array of cue point maps ",
-          "$ref": "#/definitions/cue_points"
+          "$ref": "#/definitions/cue_points",
+          "readOnly": true
         },
         "description": {
           "type": "string",
-          "description": "video short description "
+          "description": "video short description ",
+          "readOnly": true
         },
         "duration": {
           "type": "number",
-          "description": "video duration in milliseconds "
+          "description": "video duration in milliseconds ",
+          "readOnly": true
         },
         "economics": {
           "type": "string",
-          "description": "whether video is AD_SUPPORTED "
+          "description": "whether video is `AD_SUPPORTED` ",
+          "readOnly": true
         },
         "poster_sources": {
           "type": "array",
           "description": "array of poster source maps (note that in many cases there will be one source with a src value identical to the poster value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/poster_sources"
-          }
+          },
+          "readOnly": true
         },
         "poster": {
           "type": "string",
-          "description": "URL for the default poster source image "
+          "description": "URL for the default poster source image ",
+          "readOnly": true
         },
         "projection": {
           "type": "string",
-          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; "
+          "description": "The mapping projection for 360° videos, e.g. &quot;equirectangular&quot; ",
+          "readOnly": true
         },
         "thumbnail_sources": {
           "type": "array",
           "description": "array of thumbnail source maps (note that in many cases there will be one source with a src value identical to the thumbnail value, but this array is included in case there are multiple protocols available, such as http and https) ",
           "items": {
             "$ref": "#/definitions/thumbnail_sources"
-          }
+          },
+          "readOnly": true
         },
         "thumbnail": {
           "type": "string",
-          "description": "URL for the default thumbnail source image "
+          "description": "URL for the default thumbnail source image ",
+          "readOnly": true
         },
         "link": {
           "type": "object",
           "description": "map of scheduling properties ",
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/link",
+          "readOnly": true
         },
         "long_description": {
           "type": "string",
-          "description": "video long description "
+          "description": "video long description ",
+          "readOnly": true
         },
         "offline_enabled": {
           "type": "boolean",
-          "description": "whether video is enabled for offline viewing "
+          "description": "whether video is enabled for offline viewing ",
+          "readOnly": true
         },
         "reference_id": {
           "type": "string",
-          "description": "video reference-id (must be unique within the account) "
+          "description": "video reference-id (must be unique within the account) ",
+          "readOnly": true
         },
         "tags": {
           "type": "array",
           "description": "array of tags ",
           "items": {
             "type": "string"
-          }
+          },
+          "readOnly": true
         },
         "sources": {
           "type": "array",
           "description": "array of video sources (renditions) ",
           "items": {
             "$ref": "#/definitions/sources"
-          }
+          },
+          "readOnly": true
         },
         "text_tracks": {
           "type": "object",
@@ -1309,44 +1364,20 @@
         },
         "updated_at": {
           "type": "string",
-          "description": "when the video was last modified "
+          "description": "when the video was last modified ",
+          "readOnly": true
         },
         "ad_keys": {
           "type": "object",
           "description": "map of key/value pairs for ad requests ",
-          "$ref": "#/definitions/ad_keys"
+          "readOnly": true
         },
         "count": {
           "type": "number",
-          "description": "the count of videos found "
+          "description": "the count of videos found ",
+          "readOnly": true
         }
-      },
-      "required": [
-        "account_id",
-        "id",
-        "name",
-        "created_at",
-        "custom_fields",
-        "cue_points",
-        "description",
-        "duration",
-        "economics",
-        "poster_sources",
-        "poster",
-        "projection",
-        "thumbnail_sources",
-        "thumbnail",
-        "link",
-        "long_description",
-        "offline_enabled",
-        "reference_id",
-        "tags",
-        "sources",
-        "text_tracks",
-        "updated_at",
-        "ad_keys",
-        "count"
-      ]
+      }
     }
   },
   "schemes": [

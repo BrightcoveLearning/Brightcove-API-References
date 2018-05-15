@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} plugin_id plugin id - **must be URI_encoded**
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} plugin_id plugin id - **must be URI_encoded**
  *
  * @apiParamExample {curl} curl Statement:
  *    curl \
@@ -59,6 +59,17 @@
  *      "name": "ima3",
  *      "current_version": "2.x"
  *    }
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
+ * @apiErrorExample {object} Bad Request Example
+ *    HTTP/1.1 400 BAD_REQUEST
+ *    {
+ *    	"message": "JSON syntax error: Unexpected token }",
+ *    	"error_code": "PLAYER_MANAGEMENT_ERROR"
+ *    }
  */
 
 
@@ -75,8 +86,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} plugin_id plugin id - **must be URI_encoded**
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} plugin_id plugin id - **must be URI_encoded**
  *
  * @apiParamExample {curl} curl Statement:
  *    curl \
@@ -97,6 +108,7 @@
  * @apiSuccess (200) {String} current_version The current version of the plugin
  *
  * @apiSuccessExample {JSON} Success Response:
+ *    HTTP/1.1 200 OK
  *    {
  *      "versions": [{
  *        "version_number": "2.x",
@@ -122,5 +134,16 @@
  *      "id": "@brightcove/videojs-ima3",
  *      "name": "ima3",
  *      "current_version": "2.x"
+ *    }
+ * @apiError (400) {object}  BAD_REQUEST the syntax of the API call is likely incorrect
+ * @apiError (401) {object}  INVALID_AUTHENTICATION check if the password was entered correctly, or that you have followed the OAuth instructions correctly
+ * @apiError (404) {object}  NOT_FOUND check if the resource exists and the URL used in the API call is correct
+ * @apiError (429) {object}  RATE_LIMIT_EXCEEDED too many requests per second
+ * @apiError (500) {object}  INTERNAL_SERVER_ERROR there was an error trying to fulfill the request
+ * @apiErrorExample {object} Bad Request Example
+ *    HTTP/1.1 400 BAD_REQUEST
+ *    {
+ *    	"message": "JSON syntax error: Unexpected token }",
+ *    	"error_code": "PLAYER_MANAGEMENT_ERROR"
  *    }
  */
