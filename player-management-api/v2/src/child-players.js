@@ -303,8 +303,7 @@
  * @apiParam (Request Body) {String} name name give to player
  * @apiParam (Request Body) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
  *
- * @apiParamExample {string} curl Statement:
- * //This curl statement creates an embed that uses a Video Cloud asset
+ * @apiParamExample {string} creates an embed that uses a Video Cloud asset:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -317,7 +316,7 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
- * //This curl statement creates an embed that uses a video asset from a URL (standalone Brightcove Player customer)
+ * @apiParamExample {string} creates an embed that uses a video asset from a URL:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
