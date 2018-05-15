@@ -11,49 +11,49 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
  *
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches contains objects for the preview and master (published) embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.master contains master (published) embed object
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.master.configuration configuration of master embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} branches.master.name name of master (published) version of embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} branches.master.updated_at last update time for master (published) version of embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.preview contains preview embed object
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.preview.configuration configuration of preview embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} branches.preview.name name of preview version of the embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} branches.preview.updated_at last update time of preview version of embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} embed_code published embed iframe tag
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} embed_in_page URL to browse to retrieve the in-page embed code for embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} id id embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} name name of embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} preview_embed_code preview iframe tag for embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} publish_request publish request information
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.author email address of person requesting embed creation
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.buildLog URL to build information
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.comment comment on action, e.g. `Player created`
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.elapsed_time time in milliseconds of embed creation
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.errorCode error code, if no error value is `null`
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.errorMessage error message, if no error value is `null`
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.queue_msg_id unique identifier of message
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.requested_at time of embed creation request
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.retries number of retries to create embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} publish_request.status status of request, for e.g. `COMPLETE`
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} preview_url URL to preview embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} repository_url URL to repository of embed
- * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} url URL to embed
+ * @apiSuccess (200) {Object} branches contains objects for the preview and master (published) embed
+ * @apiSuccess (200) {Object} branches.master contains master (published) embed object
+ * @apiSuccess (200) {Object} branches.master.configuration configuration of master embed
+ * @apiSuccess (200) {Object} branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {String} branches.master.name name of master (published) version of embed
+ * @apiSuccess (200) {String} branches.master.updated_at last update time for master (published) version of embed
+ * @apiSuccess (200) {Object} branches.preview contains preview embed object
+ * @apiSuccess (200) {Object} branches.preview.configuration configuration of preview embed
+ * @apiSuccess (200) {Object} branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200) {String} branches.preview.name name of preview version of the embed
+ * @apiSuccess (200) {String} branches.preview.updated_at last update time of preview version of embed
+ * @apiSuccess (200) {String} embed_code published embed iframe tag
+ * @apiSuccess (200) {String} embed_in_page URL to browse to retrieve the in-page embed code for embed
+ * @apiSuccess (200) {String} id id embed
+ * @apiSuccess (200) {String} name name of embed
+ * @apiSuccess (200) {String} preview_embed_code preview iframe tag for embed
+ * @apiSuccess (200) {Object} publish_request publish request information
+ * @apiSuccess (200) {String} publish_request.author email address of person requesting embed creation
+ * @apiSuccess (200) {String} publish_request.buildLog URL to build information
+ * @apiSuccess (200) {String} publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (200) {String} publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (200) {String} publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (200) {String} publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (200) {String} publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (200) {String} publish_request.requested_at time of embed creation request
+ * @apiSuccess (200) {String} publish_request.retries number of retries to create embed
+ * @apiSuccess (200) {String} publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (200) {String} preview_url URL to preview embed
+ * @apiSuccess (200) {String} repository_url URL to repository of embed
+ * @apiSuccess (200) {String} url URL to embed
  *
- * @apiSuccessExample {JSON} Success Response:
+ * @apiSuccessExample {object} Success Response:
  * {
  *   "branches": {
  *     "master": {
@@ -117,10 +117,10 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
  *
- * @apiParamExample {curl} curl Statement:
+ * @apiParamExample {string} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -130,63 +130,63 @@
  * @apiSuccess (200) {Object[]} items array of embed objects
  * @apiSuccess (200) {Number} item_count number of items in items array, corresponds to number of embeds, plus one for parent player
  *
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches contains objects for the preview and master (published) embed
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.master contains master (published) embed object
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.master.updated_at time embed was updated
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Boolean} items.branches.master.video_cloud indicates if account is Video Cloud enabled
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.preview contains master (published) embed object
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.preview.updated_at time embed was updated
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Boolean} items.branches.preview.video_cloud indicates if account is Video Cloud enabled
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.embed_code published player iframe tag
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for published player
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.id for parent player value of `default`
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.name name of player
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.preview_embed_code preview player iframe tag
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.preview_url URL to preview player
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.publish_request publish request information
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.author email address of person requesting embed creation
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.buildLog URL to build information
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.comment comment on action, e.g. `Player created`
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.errorCode error code, if no error value is `null`
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.errorMessage error message, if no error value is `null`
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.queue_msg_id unique identifier of message
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.requested_at time of embed creation request
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.retries number of retries to create embed
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.repository_url URL to repository of player
- * @apiSuccess (Response Fields for Parent Player - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.url URL to published player
+ * @apiSuccess (200) {Object} items.branches contains objects for the preview and master (published) embed
+ * @apiSuccess (200) {Object} items.branches.master contains master (published) embed object
+ * @apiSuccess (200) {String} items.branches.master.updated_at time embed was updated
+ * @apiSuccess (200) {Boolean} items.branches.master.video_cloud indicates if account is Video Cloud enabled
+ * @apiSuccess (200) {Object} items.branches.preview contains master (published) embed object
+ * @apiSuccess (200) {String} items.branches.preview.updated_at time embed was updated
+ * @apiSuccess (200) {Boolean} items.branches.preview.video_cloud indicates if account is Video Cloud enabled
+ * @apiSuccess (200) {String} items.embed_code published player iframe tag
+ * @apiSuccess (200) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess (200) {String} items.id for parent player value of `default`
+ * @apiSuccess (200) {String} items.name name of player
+ * @apiSuccess (200) {String} items.preview_embed_code preview player iframe tag
+ * @apiSuccess (200) {String} items.preview_url URL to preview player
+ * @apiSuccess (200) {Object} items.publish_request publish request information
+ * @apiSuccess (200) {String} items.publish_request.author email address of person requesting embed creation
+ * @apiSuccess (200) {String} items.publish_request.buildLog URL to build information
+ * @apiSuccess (200) {String} items.publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (200) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (200) {String} items.publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (200) {String} items.publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (200) {String} items.publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (200) {String} items.publish_request.requested_at time of embed creation request
+ * @apiSuccess (200) {String} items.publish_request.retries number of retries to create embed
+ * @apiSuccess (200) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (200) {String} items.repository_url URL to repository of player
+ * @apiSuccess (200) {String} items.url URL to published player
  *
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches contains objects for the preview and master (published) embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.master contains master (published) embed object
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.master.configuration configuration of master embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.master.name name of master (published) version of embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.master.updated_at last update time for master (published) version of embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.preview contains preview embed object
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.preview.configuration configuration of preview embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.preview.name name of preview version of the embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.branches.preview.updated_at last update time of preview version of embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.embed_code published embed iframe tag
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.id id embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.name name of embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.preview_embed_code preview iframe tag for embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} items.publish_request publish request information
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.author email address of person requesting embed creation
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.buildLog URL to build information
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.comment comment on action, e.g. `Player created`
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.errorCode error code, if no error value is `null`
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.errorMessage error message, if no error value is `null`
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.queue_msg_id unique identifier of message
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.requested_at time of embed creation request
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.retries number of retries to create embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.preview_url URL to preview embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.repository_url URL to repository of embed
- * @apiSuccess (Response Fields for Each Embed - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {String} items.url URL to embed
+ * @apiSuccess (200 {Object} items.embed.branches contains objects for the preview and master (published) embed
+ * @apiSuccess (200 {Object} items.embed.branches.master contains master (published) embed object
+ * @apiSuccess (200 {Object} items.embed.branches.master.configuration configuration of master embed
+ * @apiSuccess (200 {Object} items.embed.branches.master.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200 {String} items.embed.branches.master.name name of master (published) version of embed
+ * @apiSuccess (200 {String} items.embed.branches.master.updated_at last update time for master (published) version of embed
+ * @apiSuccess (200 {Object} items.embed.branches.preview contains preview embed object
+ * @apiSuccess (200 {Object} items.embed.branches.preview.configuration configuration of preview embed
+ * @apiSuccess (200 {Object} items.embed.branches.preview.configuration.configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (200 {String} items.embed.branches.preview.name name of preview version of the embed
+ * @apiSuccess (200 {String} items.embed.branches.preview.updated_at last update time of preview version of embed
+ * @apiSuccess (200 {String} items.embed.embed_code published embed iframe tag
+ * @apiSuccess (200 {String} items.embed.embed_in_page URL to browse to retrieve the in-page embed code for embed
+ * @apiSuccess (200 {String} items.embed.id id embed
+ * @apiSuccess (200 {String} items.embed.name name of embed
+ * @apiSuccess (200 {String} items.embed.preview_embed_code preview iframe tag for embed
+ * @apiSuccess (200 {Object} items.embed.publish_request publish request information
+ * @apiSuccess (200 {String} items.embed.publish_request.author email address of person requesting embed creation
+ * @apiSuccess (200 {String} items.embed.publish_request.buildLog URL to build information
+ * @apiSuccess (200 {String} items.embed.publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (200 {String} items.embed.publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (200 {String} items.embed.publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (200 {String} items.embed.publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (200 {String} items.embed.publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (200 {String} items.embed.publish_request.requested_at time of embed creation request
+ * @apiSuccess (200 {String} items.embed.publish_request.retries number of retries to create embed
+ * @apiSuccess (200 {String} items.embed.publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (200 {String} items.embed.preview_url URL to preview embed
+ * @apiSuccess (200 {String} items.embed.repository_url URL to repository of embed
+ * @apiSuccess (200 {String} items.embed.url URL to embed
  * - Note: Fields in configuration objects will be displayed in the response only if explicitly set
  * @apiSuccessExample {JSON} Success Response:
  * {
