@@ -398,9 +398,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -440,9 +440,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/getting-access-tokens))
  *
- * @apiParam {String} account_id account ID
- * @apiParam {String} player_id player ID
- * @apiParam {String} embed_id embed ID
+ * @apiParam (Path) {String} account_id account ID
+ * @apiParam (Path) {String} player_id player ID
+ * @apiParam (Path) {String} embed_id embed ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
