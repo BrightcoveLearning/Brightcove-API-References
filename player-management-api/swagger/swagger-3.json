@@ -402,7 +402,7 @@
                     },
                     "embeds_count": {
                         "type": "integer",
-                        "description": "The number of embeds (child players), will always be at least 1",
+                        "description": "The number of embeds (instances of this player), will always be at least 1",
                         "readOnly": true
                     },
                     "id": {
@@ -451,6 +451,9 @@
                                         "properties": {
                                             "$ref": "#/definitions/schemas/configuration"
                                         }
+                                    },
+                                    "master_url": {
+                                        "type":
                                     }
                                 }
                             }
