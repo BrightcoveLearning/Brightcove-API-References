@@ -627,7 +627,15 @@
               "studio_configuration": {
                 "type": "object",
                 "description": "Object containing playlist information normally set in Studio",
-                "default": true
+                "properites": {
+                  "player": {
+                    "type": "object",
+                    "description": "Object containing playlist information",
+                    "properties": {
+
+                    }
+                  }
+                }
               },
             }
           },
