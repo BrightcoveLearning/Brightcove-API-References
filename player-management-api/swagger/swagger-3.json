@@ -73,7 +73,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/GetPlayerResponse"
+                  "$ref": "#/definitions/schemas/GetPlayerResponse"
                 }
               }
             }
@@ -162,7 +162,7 @@
             "application/json": {
               "schema": {
                 "description": "Update the player",
-                "$ref": "#/components/schemas/Player"
+                "$ref": "#/definitions/schemas/Player"
               }
             }
           },
@@ -175,7 +175,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/UpdatePlayerResponse"
+                  "$ref": "#/definitions/schemas/UpdatePlayerResponse"
                 }
               }
             }
@@ -208,7 +208,7 @@
     },
 
   },
-  "components": {
+  "definitions": {
     "schemas": {
       "Player": {
         "title": "Player",
@@ -386,7 +386,7 @@
           },
           "channel": {
             "description": "the channel this contract belongs to",
-            "$ref": "#/components/schemas/Channel"
+            "$ref": "#/definitions/schemas/Channel"
           }
         }
       },
@@ -446,7 +446,7 @@
           },
           "drm": {
             "description": "DRM packaging details (not applicable to remote assets)",
-            "$ref": "#/components/schemas/Drm"
+            "$ref": "#/definitions/schemas/Drm"
           },
           "encoding_rate": {
             "type": "number",
