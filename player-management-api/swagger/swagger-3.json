@@ -337,6 +337,10 @@
                             }
                         }
                     },
+                    "src": {
+                        "type": "string",
+                        "description": "The URL of the video file to load into the player"
+                    },
                     "title": {
                         "type": "string",
                         "description": "Content of the `&lt;title&gt;` element of the page"
