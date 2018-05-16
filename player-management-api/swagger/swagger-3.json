@@ -158,7 +158,7 @@
                         "application/json": {
                             "schema": {
                                 "description": "Update the player",
-                                "$ref": "#/definitions/schemas/player"
+                                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
                             }
                         }
                     },
@@ -206,7 +206,7 @@
     },
     "definitions": {
         "schemas": {
-            "player": {
+            "UpdatePlayerRequestBody": {
                 "title": "Player",
                 "type": "object",
                 "properties": {
@@ -285,6 +285,13 @@
                         "description": "Media information for non-Video Cloud media",
                         "properties": {
                             "$ref": "#/definitions/schemas/media"
+                        }
+                    },
+                    "player": {
+                        "type": "object",
+                        "description": "Player information object",
+                        "properties": {
+                            "$ref": "#/definitions/schemas/player"
                         }
                     },
                 }
