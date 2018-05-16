@@ -281,8 +281,40 @@
                         "description": "Indicates if the video should play over as soon as it ends"
                     },
                     "media": {
-                        "type": "boolean",
-                        "description": "Indicates if the video should play over as soon as it ends"
+                        "type": "object",
+                        "description": "Media information for non-Video Cloud media",
+                        "properties": {
+                            "$ref": "#/definitions/schemas/media"
+                        }
+                    },
+                }
+            },
+            "media": {
+                "title": "Media Object",
+                "type": "object",
+                "description": "Media information for non-Video Cloud media",
+                "properties": {
+                    "sources": {
+                        "type": "array",
+                        "description": "Array of media source objects",
+                        "properties": {
+                            "$ref": "#/definitions/schemas/media.source"
+                        }
+                    }
+                }
+            },
+            "media.source": {
+                "title": "Media Source Object",
+                "type": "object",
+                "description": "Media source information for non-Video Cloud media",
+                "properties": {
+                    "height": {
+                        "type": "integer",
+                        "description": "Video frame height in pixels"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "description": "Video frame width in pixels"
                     },
                 }
             },
