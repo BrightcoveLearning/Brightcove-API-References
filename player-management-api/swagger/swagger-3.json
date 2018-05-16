@@ -386,8 +386,78 @@
     },
     "definitions": {
         "schemas": {
+            "player": {
+                "title": "Player Information Object",
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "type": "string",
+                        "description": "The account id",
+                        "readOnly": true
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "The player creation date-time",
+                        "readOnly": true
+                    },
+                    "embeds_count": {
+                        "type": "integer",
+                        "description": "The number of embeds (child players), will always be at least 1",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The player id",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The player name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The player description"
+                    },
+                    "branches": {
+                        "type": "object",
+                        "description": "The branches of the player - contains objects for the preview and master (published) player",
+                        "properties": {
+                            "preview": {
+                                "type": "object",
+                                "description": "The preview branch of the player",
+                                "properties": {
+                                    "preview": {
+                                        "type": "object",
+                                        "description": "The preview branch of the player",
+                                        "properties": {
+                                            "configuration": {
+                                                "type": "object",
+                                                "description": "The preview player configuration",
+                                                "properties": {
+                                                    "$ref": "#/definitions/schemas/configuration"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "master": {
+                                "type": "object",
+                                "description": "The master (published) branch of the player",
+                                "properties": {
+                                    "configuration": {
+                                        "type": "object",
+                                        "description": "The master (published) player configuration",
+                                        "properties": {
+                                            "$ref": "#/definitions/schemas/configuration"
+                                        }
+                                    }
+                                }
+                            }
+                }
+            },
             "UpdatePlayerRequestBody": {
-                "title": "Player",
+                "title": "Update Player Request Body",
                 "type": "object",
                 "properties": {
                     "id": {
@@ -473,7 +543,7 @@
                         "properties": {
                             "$ref": "#/definitions/schemas/player"
                         }
-                    },
+                    }
                 }
             },
             "media": {
@@ -566,60 +636,6 @@
                 "title": "GetPlayerResponse",
                 "type": "object",
                 "properties": {
-                    "account_id": {
-                        "type": "string",
-                        "description": "The account id",
-                        "readOnly": true
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The player id",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "The player name"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "The player description"
-                    },
-                    "branches": {
-                        "type": "object",
-                        "description": "The branches of the player - contains objects for the preview and master (published) player",
-                        "properties": {
-                            "preview": {
-                                "type": "object",
-                                "description": "The preview branch of the player",
-                                "properties": {
-                                    "preview": {
-                                        "type": "object",
-                                        "description": "The preview branch of the player",
-                                        "properties": {
-                                            "configuration": {
-                                                "type": "object",
-                                                "description": "The preview player configuration",
-                                                "properties": {
-                                                    "$ref": "#/definitions/schemas/configuration"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "master": {
-                                "type": "object",
-                                "description": "The master (published) branch of the player",
-                                "properties": {
-                                    "configuration": {
-                                        "type": "object",
-                                        "description": "The master (published) player configuration",
-                                        "properties": {
-                                            "$ref": "#/definitions/schemas/configuration"
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -646,7 +662,25 @@
                 }
             },
             "GetPlayersResponse": {
-
+                "title": "Get Players Response",
+                "type": "object",
+                "properties": {
+                    "item_count": {
+                        "type": "integer",
+                        "description": "The number of players returned",
+                        "readOnly": true
+                    },
+                    "items": {
+                        "type": "string",
+                        "description": "URL to preview player",
+                        "readOnly": true
+                    },
+                    "preview_embed_code": {
+                        "type": "string",
+                        "description": "Preview player iframe tag",
+                        "readOnly": true
+                    }
+                }
             }
         }
     }
