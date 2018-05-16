@@ -637,8 +637,8 @@
                         "description": "indicates if player dimensions should be adjusted for playlist"
                       },
                       "height": {
-                        "type": "boolean",
-                        "description": "indicates if player dimensions should be adjusted for playlist"
+                        "type": "string",
+                        "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
                       },
                     }
                   }
