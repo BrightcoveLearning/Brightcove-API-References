@@ -305,20 +305,6 @@
                         "type": "string",
                         "description": "The URL of the video file to load into the player"
                     },
-                    "title": {
-                        "type": "string",
-                        "description": "Content of the &lt;title&gt; element of the page"
-                    },
-                    "poster": {
-                        "type": "object",
-                        "description": "Information for the poster image",
-                        "properties": {
-                            "highres": {
-                                "type": "string",
-                                "description": "The file path to the poster image, relative to the root directory of the skin"
-                            }
-                        }
-                    },
                     "tracks": {
                         "type": "array",
                         "description": "Array of text track objects",
@@ -341,6 +327,25 @@
                         "type": "integer",
                         "description": "Video frame width in pixels"
                     },
+                    "poster": {
+                        "type": "object",
+                        "description": "Information for the poster image",
+                        "properties": {
+                            "highres": {
+                                "type": "string",
+                                "description": "The file path to the poster image, relative to the root directory of the skin"
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Content of the `&lt;title&gt;` element of the page"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
+                        "enum": ["video/mp4", "application/x-mpegURL"]
+                    }
                 }
             },
             "media.track": {
