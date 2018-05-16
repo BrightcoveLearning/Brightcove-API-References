@@ -632,7 +632,14 @@
                     "type": "object",
                     "description": "Object containing playlist information",
                     "properties": {
-
+                      "adjusted": {
+                        "type": "boolean",
+                        "description": "indicates if player dimensions should be adjusted for playlist"
+                      },
+                      "height": {
+                        "type": "boolean",
+                        "description": "indicates if player dimensions should be adjusted for playlist"
+                      },
                     }
                   }
                 }
