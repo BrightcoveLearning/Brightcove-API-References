@@ -648,6 +648,14 @@
                   }
                 }
               },
+              "stylesheets": {
+                  "type": "array",
+                  "description": "Array of URLs to CSS files that should be included with the player",
+                  "items": {
+                      "type": "string",
+                      "description": "URL of a stylesheet to be included with the player"
+                  }
+              }
             }
           },
           "media": {
