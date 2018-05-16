@@ -1,877 +1,901 @@
 {
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Brightcove Player Management API Reference",
-    "description": "Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/node/17910). If you haven't gone through the [Quick Start to Player Management](https://support.brightcove.com/node/18268), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API. If you are working with this API for the first time, read the [Player Management API Overview](https://support.brightcove.com/node/18269). Remember that after making any configuration changes you **MUST** re-publish your player. <strong>Note:</strong> Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
-    "version": "2.0.0"
-  },
-  "servers": [
-    {
-      "url": "https://players.api.brightcove.com/v2",
-      "variables": {}
-    }
-  ],
-  "paths": {
-    "/accounts/{account_id}/players/{player_id}": {
-      "get": {
-        "tags": [
-          "Players"
-        ],
-        "summary": "Get a single player",
-        "description": "Get a player by ID",
-        "operationId": "GetPlayer",
-        "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "200",
-                  "$ref": "#/definitions/schemas/GetPlayerResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-          },
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          },
-          "429": {
-            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-          },
-          "500": {
-            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-          }
-        },
-        "deprecated": false,
-        "security": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Brightcove Player Management API Reference",
+        "description": "Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/node/17910). If you haven't gone through the [Quick Start to Player Management](https://support.brightcove.com/node/18268), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API. If you are working with this API for the first time, read the [Player Management API Overview](https://support.brightcove.com/node/18269). Remember that after making any configuration changes you **MUST** re-publish your player. <strong>Note:</strong> Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
+        "version": "2.0.0"
     },
-      "patch": {
-        "tags": [
-          "Players"
-        ],
-        "summary": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-        "description": "Update a player by ID",
-        "operationId": "UpdatePlayer",
-        "parameters": [
-          {
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Update the plsyer",
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "Update the player",
-                "$ref": "#/definitions/schemas/Player"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "200",
-                  "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+    "servers": [{
+        "url": "https://players.api.brightcove.com/v2",
+        "variables": {}
+    }],
+    "paths": {
+        "/accounts/{account_id}/players/{player_id}": {
+            "get": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Get a single player",
+                "description": "Get a player by ID",
+                "operationId": "GetPlayer",
+                "parameters": [{
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Video Cloud or Brightcove Player account ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "player_id",
+                        "in": "path",
+                        "description": "The player ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type: application/json",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "200",
+                                    "$ref": "#/definitions/schemas/GetPlayerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                    },
+                    "401": {
+                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "429": {
+                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                    },
+                    "500": {
+                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                    }
+                },
+                "deprecated": false,
+                "security": [],
+                "x-operation-settings": {
+                    "CollectParameters": false,
+                    "AllowDynamicQueryParameters": false,
+                    "AllowDynamicFormParameters": false,
+                    "IsMultiContentStreaming": false
                 }
-              }
+            },
+            "patch": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
+                "description": "Update a player by ID",
+                "operationId": "UpdatePlayer",
+                "parameters": [{
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Video Cloud or Brightcove Player account ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "player_id",
+                        "in": "path",
+                        "description": "The player ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type: application/json",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update the plsyer",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "description": "Update the player",
+                                "$ref": "#/definitions/schemas/player"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "200",
+                                    "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                    },
+                    "401": {
+                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "429": {
+                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                    },
+                    "500": {
+                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                    }
+                },
+                "deprecated": false,
+                "security": [],
+                "x-operation-settings": {
+                    "CollectParameters": false,
+                    "AllowDynamicQueryParameters": false,
+                    "AllowDynamicFormParameters": false,
+                    "IsMultiContentStreaming": false
+                }
             }
-          },
-          "400": {
-            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-          },
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          },
-          "429": {
-            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-          },
-          "500": {
-            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-          }
         },
-        "deprecated": false,
-        "security": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      }
-    },
 
-  },
-  "definitions": {
-    "schemas": {
-      "Player": {
-        "title": "Player",
-        "type": "object",
-        "properties": {
-          "id": {
+    },
+    "definitions": {
+        "schemas": {
+            "player": {
+                "title": "Player",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The player id",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The player name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The player description"
+                    }
+                }
+            },
+            "configuration":
+            "GetPlayerResponse": {
+                "title": "GetPlayerResponse",
+                "type": "object",
+                "properties": {
+                    "account_id": {
+                        "type": "string",
+                        "description": "The account id",
+                        "readOnly": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The player id",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The player name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The player description"
+                    },
+                    "branches": {
+                        "type": "object",
+                        "description": "The branches of the player - contains objects for the preview and master (published) player",
+                        "properties": {
+                            "preview": {
+                                "type": "object",
+                                "description": "The preview branch of the player",
+                                "properties": {
+                                    "preview": {
+                                        "type": "object",
+                                        "description": "The preview branch of the player",
+                                        "properties": {
+                                            "configuration": {
+                                                "type": "object",
+                                                "description": "The preview player configuration",
+                                                "properties": {
+                                                    "$ref": "#/definitions/schemas/configuration"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "master": {
+                                "type": "object",
+                                "description": "The master (published) branch of the player",
+                                "properties": {
+                                    "configuration": {
+                                        "type": "object",
+                                        "description": "The master (published) player configuration",
+                                        "properties": {
+                                            "$ref": "#/definitions/schemas/configuration"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+        },
+        "preview_url": {
             "type": "string",
-            "description": "The player id",
+            "description": "URL to preview player",
             "readOnly": true
-          },
-          "name": {
+        },
+        "preview_embed_code": {
             "type": "string",
-            "description": "The player name"
-          },
-          "description": {
-            "type": "string",
-            "description": "The player description"
-          }
+            "description": "Preview player iframe tag",
+            "readOnly": true
         }
-      },
-      "GetPlayerResponse": {
-        "title": "GetPlayerResponse",
-        "type": "object",
-        "properties": {
-            "account_id": {
-              "type": "string",
-              "description": "The account id",
-              "readOnly": true
-            },
-            "id": {
-              "type": "string",
-              "description": "The player id",
-              "readOnly": true
-            },
-            "name": {
-              "type": "string",
-              "description": "The player name"
-            },
-            "description": {
-              "type": "string",
-              "description": "The player description"
-          },
-            "branches": {
-              "type": "object",
-              "description": "The branches of the player - contains objects for the preview and master (published) player",
-              "properties": {
-                  "preview" {
-                      "type": "object",
-                      "description": "The preview branch of the player",
-                      "properties"
-                  }
-              }
-          },
-          },
-            "preview_url": {
-              "type": "string",
-              "description": "URL to preview player",
-              "readOnly": true
-            },
-            "preview_embed_code": {
-              "type": "string",
-              "description": "Preview player iframe tag",
-              "readOnly": true
-            }
-        }
-      },
-      "UpdatePlayerResponse": {
-        "title": "VideoShare",
-        "required": [
-          "video_id",
-          "affiliate_id",
-          "affiliate_video_id"
-        ],
-        "type": "object",
-        "properties": {
-          "video_id": {
+    }
+},
+"UpdatePlayerResponse": {
+    "title": "VideoShare",
+    "required": [
+        "video_id",
+        "affiliate_id",
+        "affiliate_video_id"
+    ],
+    "type": "object",
+    "properties": {
+        "video_id": {
             "type": "string",
             "description": "the video id"
-          },
-          "affiliate_id": {
+        },
+        "affiliate_id": {
             "type": "string",
             "description": "the id of the affiliate account the video is shared to"
-          },
-          "affiliate_video_id": {
+        },
+        "affiliate_video_id": {
             "type": "string",
             "description": "the id of the shared video in the affiliate account"
-          },
-          "statue": {
+        },
+        "statue": {
             "type": "string",
             "description": "the status of the sharing - either PROCESSING, COMPLETE, or FAILED"
-          },
-          "shared_at": {
+        },
+        "shared_at": {
             "type": "string",
             "description": "when the video was shared"
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "the video was last updated in the affiliate account"
-          }
         }
-      },
-      "AddAffiliate": {
-        "title": "AddAffiliate",
-        "type": "object",
-        "properties": {
-          "account_id": {
+    }
+},
+"AddAffiliate": {
+    "title": "AddAffiliate",
+    "type": "object",
+    "properties": {
+        "account_id": {
             "type": "string",
             "description": "affiliate account id"
-          }
         }
-      },
-      "Channel": {
-        "title": "Channel",
-        "type": "object",
-        "properties": {
-          "account_id": {
+    }
+},
+"Channel": {
+    "title": "Channel",
+    "type": "object",
+    "properties": {
+        "account_id": {
             "type": "string",
             "description": "master account id"
-          },
-          "name": {
+        },
+        "name": {
             "type": "string",
             "description": "channel name"
-          },
-          "enforce_custom_fields": {
+        },
+        "enforce_custom_fields": {
             "type": "boolean",
             "description": "if true, will allow sharing only if the affiliate account has all custom fields that have values for the video to be shared"
-          },
-          "enforce_geo": {
+        },
+        "enforce_geo": {
             "type": "boolean",
             "description": "if true, and master account is enabled for geo-filtering"
-          },
-          "account_name": {
+        },
+        "account_name": {
             "type": "string",
             "description": "master account name"
-          },
-          "created_at": {
+        },
+        "created_at": {
             "type": "string",
             "description": "when the channel was created",
             "readOnly": true
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the channel was last updated"
-          }
         }
-      },
-      "Contract": {
-        "title": "Contract",
-        "type": "object",
-        "properties": {
-          "account_id": {
+    }
+},
+"Contract": {
+    "title": "Contract",
+    "type": "object",
+    "properties": {
+        "account_id": {
             "type": "string",
             "description": "affiliate account id"
-          },
-          "approved": {
+        },
+        "approved": {
             "type": "boolean",
             "description": "whether the contract is approved"
-          },
-          "auto_accept": {
+        },
+        "auto_accept": {
             "type": "boolean",
             "description": "whether shared videos will be automatically accepted"
-          },
-          "approved_at": {
+        },
+        "approved_at": {
             "type": "string",
             "description": "when the contract was approved"
-          },
-          "created_at": {
+        },
+        "created_at": {
             "type": "string",
             "description": "when the contract was created",
             "readOnly": true
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the contract was last updated"
-          },
-          "channel": {
+        },
+        "channel": {
             "description": "the channel this contract belongs to",
             "$ref": "#/definitions/schemas/Channel"
-          }
         }
-      },
-      "ChannelAffiliate": {
-        "title": "ChannelAffiliate",
-        "required": [
-          "account_id",
-          "account_name",
-          "approved"
-        ],
-        "type": "object",
-        "properties": {
-          "account_id": {
+    }
+},
+"ChannelAffiliate": {
+    "title": "ChannelAffiliate",
+    "required": [
+        "account_id",
+        "account_name",
+        "approved"
+    ],
+    "type": "object",
+    "properties": {
+        "account_id": {
             "type": "string",
             "description": "affiliate account id"
-          },
-          "account_name": {
+        },
+        "account_name": {
             "type": "string",
             "description": "affiliate account name"
-          },
-          "approved": {
+        },
+        "approved": {
             "type": "boolean",
             "description": "whether the affiliate has approved the relationship"
-          }
         }
-      },
-      "VideoAsset": {
-        "title": "VideoAsset",
-        "required": [
-          "controller_type",
-          "current_filename",
-          "drm",
-          "encoding_rate",
-          "frame_height",
-          "frame_width",
-          "key_systems",
-          "name",
-          "progressive_download",
-          "reference_id",
-          "remote_url",
-          "remote_stream_name",
-          "size",
-          "type",
-          "video_codec",
-          "video_container",
-          "video_duration"
-        ],
-        "type": "object",
-        "properties": {
-          "controller_type": {
+    }
+},
+"VideoAsset": {
+    "title": "VideoAsset",
+    "required": [
+        "controller_type",
+        "current_filename",
+        "drm",
+        "encoding_rate",
+        "frame_height",
+        "frame_width",
+        "key_systems",
+        "name",
+        "progressive_download",
+        "reference_id",
+        "remote_url",
+        "remote_stream_name",
+        "size",
+        "type",
+        "video_codec",
+        "video_container",
+        "video_duration"
+    ],
+    "type": "object",
+    "properties": {
+        "controller_type": {
             "type": "string",
             "description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets)"
-          },
-          "current_filename": {
+        },
+        "current_filename": {
             "type": "string",
             "description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)"
-          },
-          "drm": {
+        },
+        "drm": {
             "description": "DRM packaging details (not applicable to remote assets)",
             "$ref": "#/definitions/schemas/Drm"
-          },
-          "encoding_rate": {
+        },
+        "encoding_rate": {
             "type": "number",
             "description": "average encoding rate in kbps"
-          },
-          "frame_height": {
+        },
+        "frame_height": {
             "type": "number",
             "description": "frame height in pixels"
-          },
-          "frame_width": {
+        },
+        "frame_width": {
             "type": "number",
             "description": "frame width in pixels"
-          },
-          "key_systems": {
+        },
+        "key_systems": {
             "type": "array",
             "items": {
-              "type": "string"
+                "type": "string"
             },
             "description": "array of strings that denote the kind of encryption used for DRM packaged renditions"
-          },
-          "name": {
+        },
+        "name": {
             "type": "string",
             "description": "asset name"
-          },
-          "progressive_download": {
+        },
+        "progressive_download": {
             "type": "boolean",
             "description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)"
-          },
-          "reference_id": {
+        },
+        "reference_id": {
             "type": "string",
             "description": "video reference id (must be unique within the account)"
-          },
-          "remote_url": {
+        },
+        "remote_url": {
             "type": "string",
             "description": "the url for a remote asset (not applicable to ingested assets)"
-          },
-          "remote_stream_name": {
+        },
+        "remote_stream_name": {
             "type": "string",
             "description": "name for remote streams (not applicable to asset types other than rendition)"
-          },
-          "size": {
+        },
+        "size": {
             "type": "number",
             "description": "the size of the asset in bytes (integer)"
-          },
-          "type": {
+        },
+        "type": {
             "type": "string",
             "description": "the type of the asset"
-          },
-          "video_codec": {
+        },
+        "video_codec": {
             "type": "string",
             "description": "not applicable to remote assets"
-          },
-          "video_container": {
+        },
+        "video_container": {
             "type": "string",
             "description": "not applicable to remote assets"
-          },
-          "video_duration": {
+        },
+        "video_duration": {
             "type": "number",
             "description": "duration in milliseconds"
-          },
-          "account_id": {
+        },
+        "account_id": {
             "type": "string",
             "description": "the Video Cloud account id"
-          },
-          "id": {
+        },
+        "id": {
             "type": "string",
             "description": "the asset id",
             "readOnly": true
-          },
-          "audio_only": {
+        },
+        "audio_only": {
             "type": "boolean",
             "description": "this rendition contains only an audio track, no video track (a rendition for low bandwidth devices)"
-          },
-          "cdn_origin_id": {
+        },
+        "cdn_origin_id": {
             "type": "string",
             "description": "an internally used id (not applicable to remote assets)"
-          },
-          "complete": {
+        },
+        "complete": {
             "type": "boolean",
             "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)"
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the video was last modified"
-          },
-          "uploaded_at": {
+        },
+        "uploaded_at": {
             "type": "string",
             "description": "when the asset was added to the video in Video Cloud"
-          }
         }
-      },
-      "TextAsset": {
-        "title": "TextAsset",
-        "required": [
-          "audio_only",
-          "controller_type",
-          "current_filename",
-          "name",
-          "progressive_download",
-          "reference_id",
-          "remote_url",
-          "remote_stream_name",
-          "size",
-          "type",
-          "video_duration"
-        ],
-        "type": "object",
-        "properties": {
-          "audio_only": {
+    }
+},
+"TextAsset": {
+    "title": "TextAsset",
+    "required": [
+        "audio_only",
+        "controller_type",
+        "current_filename",
+        "name",
+        "progressive_download",
+        "reference_id",
+        "remote_url",
+        "remote_stream_name",
+        "size",
+        "type",
+        "video_duration"
+    ],
+    "type": "object",
+    "properties": {
+        "audio_only": {
             "type": "boolean",
             "description": "not applicable to ism_manifests"
-          },
-          "controller_type": {
+        },
+        "controller_type": {
             "type": "string",
             "description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets)"
-          },
-          "current_filename": {
+        },
+        "current_filename": {
             "type": "string",
             "description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)"
-          },
-          "name": {
+        },
+        "name": {
             "type": "string",
             "description": "asset name"
-          },
-          "progressive_download": {
+        },
+        "progressive_download": {
             "type": "boolean",
             "description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)"
-          },
-          "reference_id": {
+        },
+        "reference_id": {
             "type": "string",
             "description": "video reference id (must be unique within the account)"
-          },
-          "remote_url": {
+        },
+        "remote_url": {
             "type": "string",
             "description": "the url for a remote asset (not applicable to ingested assets)"
-          },
-          "remote_stream_name": {
+        },
+        "remote_stream_name": {
             "type": "string",
             "description": "name for remote streams (not applicable to asset types other than rendition)"
-          },
-          "size": {
+        },
+        "size": {
             "type": "number",
             "description": "the size of the asset in bytes (integer)"
-          },
-          "type": {
+        },
+        "type": {
             "type": "string",
             "description": "the type of the asset"
-          },
-          "video_duration": {
+        },
+        "video_duration": {
             "type": "number",
             "description": "video duration in seconds (present if you included it when you created the asset)"
-          },
-          "id": {
+        },
+        "id": {
             "type": "string",
             "description": "the asset id",
             "readOnly": true
-          },
-          "complete": {
+        },
+        "complete": {
             "type": "boolean",
             "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)"
-          },
-          "cdn_origin_id": {
+        },
+        "cdn_origin_id": {
             "type": "string",
             "description": "an internally used id (not applicable to remote assets)"
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the video was last modified"
-          },
-          "uploaded_at": {
+        },
+        "uploaded_at": {
             "type": "string",
             "description": "when the asset was added to the video in Video Cloud"
-          }
         }
-      },
-      "ImageAsset": {
-        "title": "ImageAsset",
-        "required": [
-          "audio_only",
-          "controller_type",
-          "current_filename",
-          "name",
-          "progressive_download",
-          "reference_id",
-          "remote_url",
-          "remote_stream_name",
-          "size",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "audio_only": {
+    }
+},
+"ImageAsset": {
+    "title": "ImageAsset",
+    "required": [
+        "audio_only",
+        "controller_type",
+        "current_filename",
+        "name",
+        "progressive_download",
+        "reference_id",
+        "remote_url",
+        "remote_stream_name",
+        "size",
+        "type"
+    ],
+    "type": "object",
+    "properties": {
+        "audio_only": {
             "type": "boolean",
             "description": "not applicable to posters"
-          },
-          "controller_type": {
+        },
+        "controller_type": {
             "type": "string",
             "description": "the controller type for ingested renditions (not applicable to remote renditions or other types of assets)"
-          },
-          "current_filename": {
+        },
+        "current_filename": {
             "type": "string",
             "description": "the filename for an ingested asset in the Video Cloud system (not applicable to remote assets)"
-          },
-          "name": {
+        },
+        "name": {
             "type": "string",
             "description": "asset name"
-          },
-          "progressive_download": {
+        },
+        "progressive_download": {
             "type": "boolean",
             "description": "whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)"
-          },
-          "reference_id": {
+        },
+        "reference_id": {
             "type": "string",
             "description": "video reference id (must be unique within the account)"
-          },
-          "remote_url": {
+        },
+        "remote_url": {
             "type": "string",
             "description": "the url for a remote asset (not applicable to ingested assets)"
-          },
-          "remote_stream_name": {
+        },
+        "remote_stream_name": {
             "type": "string",
             "description": "name for remote streams (not applicable to asset types other than rendition)"
-          },
-          "size": {
+        },
+        "size": {
             "type": "number",
             "description": "the size of the asset in bytes (integer)"
-          },
-          "type": {
+        },
+        "type": {
             "type": "string",
             "description": "the type of the asset"
-          },
-          "id": {
+        },
+        "id": {
             "type": "string",
             "description": "the asset id",
             "readOnly": true
-          },
-          "complete": {
+        },
+        "complete": {
             "type": "boolean",
             "description": "whether processing is complete for the asset (will be true for remote assets if a remote_url is supplied)"
-          },
-          "cdn_origin_id": {
+        },
+        "cdn_origin_id": {
             "type": "string",
             "description": "an internally used id (not applicable to remote assets)"
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the video was last modified"
-          },
-          "uploaded_at": {
+        },
+        "uploaded_at": {
             "type": "string",
             "description": "when the asset was added to the video in Video Cloud"
-          }
         }
-      },
-      "DynamicRendition": {
-        "title": "DynamicRendition",
-        "required": [
-          "rendition_id",
-          "media_type",
-          "encoding_rate",
-          "frame_height",
-          "frame_width",
-          "size",
-          "updated_at",
-          "uploaded_at",
-          "duration",
-          "audio_configuration",
-          "variant"
-        ],
-        "type": "object",
-        "properties": {
-          "rendition_id": {
+    }
+},
+"DynamicRendition": {
+    "title": "DynamicRendition",
+    "required": [
+        "rendition_id",
+        "media_type",
+        "encoding_rate",
+        "frame_height",
+        "frame_width",
+        "size",
+        "updated_at",
+        "uploaded_at",
+        "duration",
+        "audio_configuration",
+        "variant"
+    ],
+    "type": "object",
+    "properties": {
+        "rendition_id": {
             "type": "string",
             "description": "the rendition id"
-          },
-          "media_type": {
+        },
+        "media_type": {
             "type": "boolean",
             "description": "media type for the rendition (audio or video)"
-          },
-          "encoding_rate": {
+        },
+        "encoding_rate": {
             "type": "number",
             "description": "average encoding rate in kbps"
-          },
-          "frame_height": {
+        },
+        "frame_height": {
             "type": "number",
             "description": "frame height in pixels"
-          },
-          "frame_width": {
+        },
+        "frame_width": {
             "type": "number",
             "description": "frame width in pixels"
-          },
-          "size": {
+        },
+        "size": {
             "type": "number",
             "description": "the size of the asset in bytes (integer)"
-          },
-          "updated_at": {
+        },
+        "updated_at": {
             "type": "string",
             "description": "when the video was last modified"
-          },
-          "uploaded_at": {
+        },
+        "uploaded_at": {
             "type": "string",
             "description": "when the asset was added to the video in Video Cloud"
-          },
-          "duration": {
+        },
+        "duration": {
             "type": "number",
             "description": "duration in milliseconds"
-          },
-          "audio_configuration": {
+        },
+        "audio_configuration": {
             "type": "string",
             "description": "The audio configuration of the audio track"
-          },
-          "variant": {
+        },
+        "variant": {
             "type": "string",
             "description": "The variant of the HLS profile (baseline, main, or high)"
-          }
         }
-      },
-      "Sort": {
-        "title": "sort",
-        "enum": [
-          "name",
-          "updated_at"
-        ],
-        "type": "string",
-        "example": "name",
-        "x-enum-elements": [
-          {
+    }
+},
+"Sort": {
+    "title": "sort",
+    "enum": [
+        "name",
+        "updated_at"
+    ],
+    "type": "string",
+    "example": "name",
+    "x-enum-elements": [{
             "name": "name",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "updated_at",
             "description": ""
-          }
-        ]
-      },
-      "GetPlaylistCountresponse": {
-        "title": "Get_Playlist_CountResponse",
-        "type": "object",
-        "properties": {
-          "count": {
+        }
+    ]
+},
+"GetPlaylistCountresponse": {
+    "title": "Get_Playlist_CountResponse",
+    "type": "object",
+    "properties": {
+        "count": {
             "type": "number",
             "description": "count of videos"
-          }
         }
-      },
-      "GetVideoCountInPlaylistresponse": {
-        "title": "Get_Video_Count_in_PlaylistResponse",
-        "type": "object",
-        "properties": {
-          "count": {
+    }
+},
+"GetVideoCountInPlaylistresponse": {
+    "title": "Get_Video_Count_in_PlaylistResponse",
+    "type": "object",
+    "properties": {
+        "count": {
             "type": "number",
             "description": "count of videos"
-          }
         }
-      },
-      "Sort38": {
-        "title": "sort38",
-        "enum": [
-          "name",
-          "reference_id",
-          "created_at",
-          "published_at",
-          "updated_at",
-          "schedule_starts_at",
-          "schedule_ends_at",
-          "state",
-          "plays_total",
-          "plays_trailing_week"
-        ],
-        "type": "string",
-        "example": "name",
-        "x-enum-elements": [
-          {
+    }
+},
+"Sort38": {
+    "title": "sort38",
+    "enum": [
+        "name",
+        "reference_id",
+        "created_at",
+        "published_at",
+        "updated_at",
+        "schedule_starts_at",
+        "schedule_ends_at",
+        "state",
+        "plays_total",
+        "plays_trailing_week"
+    ],
+    "type": "string",
+    "example": "name",
+    "x-enum-elements": [{
             "name": "name",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "reference_id",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "created_at",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "published_at",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "updated_at",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "schedule_starts_at",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "schedule_ends_at",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "state",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "plays_total",
             "description": ""
-          },
-          {
+        },
+        {
             "name": "plays_trailing_week",
             "description": ""
-          }
-        ]
-      },
-      "GetVideoCountresponse": {
-        "title": "Get_Video_CountResponse",
-        "type": "object",
-        "properties": {
-          "count": {
+        }
+    ]
+},
+"GetVideoCountresponse": {
+    "title": "Get_Video_CountResponse",
+    "type": "object",
+    "properties": {
+        "count": {
             "type": "number",
             "description": "count of videos"
-          }
         }
-      }
     }
-  }
+}
+}
+}
 }
