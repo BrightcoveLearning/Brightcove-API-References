@@ -350,21 +350,29 @@
                         "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
                         "enum": ["video/mp4", "application/x-mpegURL"]
                     }
-                }
+                },
+                "required": [
+                    "src",
+                    "type"
+                ]
             },
             "media.track": {
                 "title": "Media Text Track Object",
                 "type": "object",
                 "description": "Media track information for non-Video Cloud media",
                 "properties": {
-                    "height": {
-                        "type": "integer",
-                        "description": "Video frame height in pixels"
+                    "label": {
+                        "type": "string",
+                        "description": "Text label for the track, for instance `English` for an English language text track"
                     },
-                    "width": {
-                        "type": "integer",
-                        "description": "Video frame width in pixels"
+                    "src": {
+                        "type": "string",
+                        "description": "URL to source of track, required in a track object"
                     },
+                    "srclang": {
+                        "type": "string",
+                        "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
+                    }
                 }
             },
             "GetPlayerResponse": {
