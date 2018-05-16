@@ -297,10 +297,28 @@
                     "sources": {
                         "type": "array",
                         "description": "Array of media source objects",
-                        "properties": {
+                        "items": {
                             "$ref": "#/definitions/schemas/media.source"
                         }
-                    }
+                    },
+                    "src": {
+                        "type": "string",
+                        "description": "The URL of the video file to load into the player"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Content of the &lt;title&gt; element of the page"
+                    },
+                    "poster": {
+                        "type": "object",
+                        "description": "Information for the poster image",
+                        "properties": {
+                            "highres": {
+                                "type": "string",
+                                "description": "The file path to the poster image, relative to the root directory of the skin"
+                            }
+                        }
+                    },
                 }
             },
             "media.source": {
