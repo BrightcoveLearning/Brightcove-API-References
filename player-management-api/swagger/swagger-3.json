@@ -640,6 +640,10 @@
                         "type": "string",
                         "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
                       },
+                      "width": {
+                        "type": "string",
+                        "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                      }
                     }
                   }
                 }
