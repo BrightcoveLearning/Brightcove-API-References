@@ -319,12 +319,34 @@
                             }
                         }
                     },
+                    "tracks": {
+                        "type": "array",
+                        "description": "Array of text track objects",
+                        "items": {
+                            "$ref": "#/definitions/schemas/media.track"
+                        }
+                    }
                 }
             },
             "media.source": {
                 "title": "Media Source Object",
                 "type": "object",
                 "description": "Media source information for non-Video Cloud media",
+                "properties": {
+                    "height": {
+                        "type": "integer",
+                        "description": "Video frame height in pixels"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "description": "Video frame width in pixels"
+                    },
+                }
+            },
+            "media.track": {
+                "title": "Media Text Track Object",
+                "type": "object",
+                "description": "Media track information for non-Video Cloud media",
                 "properties": {
                     "height": {
                         "type": "integer",
