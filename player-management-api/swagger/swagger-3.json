@@ -225,7 +225,67 @@
                     }
                 }
             },
-            "configuration":
+            "configuration": {
+                "title": "Player Configuration",
+                "type": "object",
+                "description": "Configuration for a player",
+                "properties": {
+                    "autoadvance": {
+                        "type": "boolean",
+                        "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                    },
+                    "autoplay": {
+                        "type": "boolean",
+                        "description": "Indicates player should play video immediately, on platforms that allow this"
+                        "default": false
+                    },
+                    "compatibility": {
+                        "type": "boolean",
+                        "description": "Provides compatibility with the Player 1.x.x API - you should not change this setting"
+                    },
+                    "css": {
+                        "type": "object",
+                        "description": "Object containing CSS color overrides",
+                        "properties": {
+                            "controlBarColor": {
+                                "type": "string",
+                                "description": "Background color of control bar"
+                            },
+                            "controlColor": {
+                                "type": "string",
+                                "description": "Color of buttons and text in control bar"
+                            },
+                            "progressColor": {
+                                "type": "string",
+                                "description": "Color of progress bar"
+                            }
+                        }
+                    },
+                    "errors": {
+                        "type": "boolean",
+                        "description": "Indicates if the error messages plugin should be excluded"
+                    },
+                    "fullscreenControl": {
+                        "type": "boolean",
+                        "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                    },
+                    "languages": {
+                        "type": "array",
+                        "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "loop": {
+                        "type": "boolean",
+                        "description": "Indicates if the video should play over as soon as it ends"
+                    },
+                    "media": {
+                        "type": "boolean",
+                        "description": "Indicates if the video should play over as soon as it ends"
+                    },
+                }
+            },
             "GetPlayerResponse": {
                 "title": "GetPlayerResponse",
                 "type": "object",
