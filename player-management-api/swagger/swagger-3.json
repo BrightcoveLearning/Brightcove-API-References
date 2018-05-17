@@ -740,7 +740,6 @@
               }
             }
           }
-        }
       },
       "branch": {
         "title": "Player Branch Object",
