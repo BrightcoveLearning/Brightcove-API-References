@@ -736,52 +736,55 @@
                 "description": "The preview branch of the player",
                 "properties": {
                   "configuration": {
-                    "type": "object",
-                    "properites": {
                       "$ref": "#/components/schemas/configuration"
-                    }
                   },
                   "updated_at": {
                     "type": "string",
-                    "description": "date-time of last update to preview player"
+                    "description": "date-time of last update to preview player",
+                    "readOnly": true
                   },
                   "template_updated_at": {
                     "type": "string",
-                    "description": "date-time of last update to preview player template"
+                    "description": "date-time of last update to preview player template",
+                    "readOnly": true
                   },
                   "preview_url": {
                     "type": "string",
-                    "description": "URL for the preview player"
+                    "description": "URL for the preview player",
+                    "readOnly": true
                   }
                 }
               },
               "master": {
-                "type": "object",
-                "description": "The master (published) branch of the player",
-                "properties": {
-                  "configuration": {
-                    "type": "object",
-                    "properites": {
-                      "$ref": "#/components/schemas/configuration"
-                    }
-                  },
-                  "updated_at": {
-                    "type": "string",
-                    "description": "date-time of last update to preview player"
-                  },
-                  "template_updated_at": {
-                    "type": "string",
-                    "description": "date-time of last update to preview player template"
-                  },
-                  "preview_url": {
-                    "type": "string",
-                    "description": "URL for the preview player"
-                  }
+                "$ref": "#/components/schemas/branch"
                 }
               }
             }
           }
         }
+      },
+      "branch": {
+        "title": "Player Branch Object",
+        "type": "object",
+        "properties": {
+          "configuration": {
+              "$ref": "#/components/schemas/configuration"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "date-time of last update to preview player",
+            "readOnly": true
+          },
+          "template_updated_at": {
+            "type": "string",
+            "description": "date-time of last update to preview player template",
+            "readOnly": true
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL for the preview player",
+            "readOnly": true
+          }
       },
       "configuration": {
         "title": "Player Configuration",
