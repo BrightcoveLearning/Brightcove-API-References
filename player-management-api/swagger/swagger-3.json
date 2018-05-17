@@ -10,287 +10,6 @@
         "variables": {}
     }],
     "paths": {
-        "/accounts/{account_id}/players/{player_id}": {
-            "get": {
-                "tags": [
-                    "Players"
-                ],
-                "summary": "Get a single player",
-                "description": "Get a player by ID",
-                "operationId": "GetPlayer",
-                "parameters": [{
-                        "name": "account_id",
-                        "in": "path",
-                        "description": "Video Cloud or Brightcove Player account ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "player_id",
-                        "in": "path",
-                        "description": "The player ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type: application/json",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "description": "200",
-                                    "$ref": "#/definitions/schemas/GetPlayerResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-                    },
-                    "401": {
-                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-                    },
-                    "404": {
-                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-                    },
-                    "429": {
-                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-                    },
-                    "500": {
-                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-                    }
-                },
-                "deprecated": false,
-                "security": [],
-                "x-operation-settings": {
-                    "CollectParameters": false,
-                    "AllowDynamicQueryParameters": false,
-                    "AllowDynamicFormParameters": false,
-                    "IsMultiContentStreaming": false
-                }
-            },
-            "patch": {
-                "tags": [
-                    "Players"
-                ],
-                "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-                "summary": "Update a player by ID",
-                "operationId": "UpdatePlayer",
-                "parameters": [{
-                        "name": "account_id",
-                        "in": "path",
-                        "description": "Video Cloud or Brightcove Player account ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "player_id",
-                        "in": "path",
-                        "description": "The player ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type: application/json",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Update the plsyer",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Update the player",
-                                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "description": "200",
-                                    "$ref": "#/definitions/schemas/UpdatePlayerResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-                    },
-                    "401": {
-                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-                    },
-                    "404": {
-                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-                    },
-                    "429": {
-                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-                    },
-                    "500": {
-                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-                    }
-                },
-                "deprecated": false,
-                "security": [],
-                "x-operation-settings": {
-                    "CollectParameters": false,
-                    "AllowDynamicQueryParameters": false,
-                    "AllowDynamicFormParameters": false,
-                    "IsMultiContentStreaming": false
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Players"
-                ],
-                "description": "Delete a player and all embeds associated with it.",
-                "summary": "Delete a player by ID",
-                "operationId": "DeletePlayer",
-                "parameters": [{
-                        "name": "account_id",
-                        "in": "path",
-                        "description": "Video Cloud or Brightcove Player account ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "player_id",
-                        "in": "path",
-                        "description": "The player ID.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type: application/json",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "description": "200",
-                                    "$ref": "#/definitions/schemas/DeletePlayerResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-                    },
-                    "401": {
-                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-                    },
-                    "404": {
-                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-                    },
-                    "429": {
-                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-                    },
-                    "500": {
-                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-                    }
-                },
-                "deprecated": false,
-                "security": [],
-                "x-operation-settings": {
-                    "CollectParameters": false,
-                    "AllowDynamicQueryParameters": false,
-                    "AllowDynamicFormParameters": false,
-                    "IsMultiContentStreaming": false
-                }
-            }
-        },
         "/accounts/{account_id}/players": {
             "get": {
                 "tags": [
@@ -460,7 +179,379 @@
                     "IsMultiContentStreaming": false
                 }
             }
+        },
+        "/accounts/{account_id}/players/{player_id}": {
+          "get": {
+            "tags": [
+              "Players"
+            ],
+            "summary": "Get a single player",
+            "description": "Get a player by ID",
+            "operationId": "GetPlayer",
+            "parameters": [{
+              "name": "account_id",
+              "in": "path",
+              "description": "Video Cloud or Brightcove Player account ID.",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "player_id",
+              "in": "path",
+              "description": "The player ID.",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "Content-Type: application/json",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "description": "200",
+                    "$ref": "#/definitions/schemas/GetPlayerResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+            },
+            "401": {
+              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+            },
+            "404": {
+              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+            },
+            "429": {
+              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+            },
+            "500": {
+              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+            }
+          },
+          "deprecated": false,
+          "security": [],
+          "x-operation-settings": {
+            "CollectParameters": false,
+            "AllowDynamicQueryParameters": false,
+            "AllowDynamicFormParameters": false,
+            "IsMultiContentStreaming": false
+          }
+        },
+        "patch": {
+          "tags": [
+            "Players"
+          ],
+          "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
+          "summary": "Update a player by ID",
+          "operationId": "UpdatePlayer",
+          "parameters": [{
+            "name": "account_id",
+            "in": "path",
+            "description": "Video Cloud or Brightcove Player account ID.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "path",
+            "description": "The player ID.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "Content-Type: application/json",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update the plsyer",
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Update the player",
+                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
         }
+      },
+      "delete": {
+        "tags": [
+          "Players"
+        ],
+        "description": "Delete a player and all embeds associated with it.",
+        "summary": "Delete a player by ID",
+        "operationId": "DeletePlayer",
+        "parameters": [{
+          "name": "account_id",
+          "in": "path",
+          "description": "Video Cloud or Brightcove Player account ID.",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "player_id",
+          "in": "path",
+          "description": "The player ID.",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "Content-Type",
+          "in": "header",
+          "description": "Content-Type: application/json",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "Authorization",
+          "in": "header",
+          "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "200",
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "200",
+                "$ref": "#/definitions/schemas/DeletePlayerResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+        },
+        "401": {
+          "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+        },
+        "404": {
+          "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+        },
+        "429": {
+          "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+        },
+        "500": {
+          "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+        }
+      },
+      "deprecated": false,
+      "security": [],
+      "x-operation-settings": {
+        "CollectParameters": false,
+        "AllowDynamicQueryParameters": false,
+        "AllowDynamicFormParameters": false,
+        "IsMultiContentStreaming": false
+      }
+    },
+        "/accounts/{account_id}/players/{player_id}/publish": {
+          "post": {
+            "tags": [
+              "Players"
+            ],
+            "summary": "Publish a player",
+            "description": "Publish a player for optimization and production use.",
+            "operationId": "PublishPlayer",
+            "parameters": [{
+              "name": "account_id",
+              "in": "path",
+              "description": "Video Cloud or Brightcove Player account ID.",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "player_id",
+              "in": "path",
+              "description": "The player ID.",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Content-Type",
+              "in": "header",
+              "description": "Content-Type: application/json",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Authorization",
+              "in": "header",
+              "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+              "required": true,
+              "style": "simple",
+              "explode": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "description": "200",
+                    "$ref": "#/definitions/schemas/PublishPlayerResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+            },
+            "401": {
+              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+            },
+            "404": {
+              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+            },
+            "429": {
+              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+            },
+            "500": {
+              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+            }
+          },
+          "deprecated": false,
+          "security": [],
+          "x-operation-settings": {
+            "CollectParameters": false,
+            "AllowDynamicQueryParameters": false,
+            "AllowDynamicFormParameters": false,
+            "IsMultiContentStreaming": false
+          }
+        },
+    }
+  },
     },
     "definitions": {
         "schemas": {
@@ -920,6 +1011,32 @@
                     "preview_embed_code": {
                         "type": "string",
                         "description": "Preview player iframe tag",
+                        "readOnly": true
+                    }
+                }
+            },
+            "PublishPlayerResponse": {
+                "title": "Publish Player Response",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The player id",
+                        "readOnly": true
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The player URL",
+                        "readOnly": true
+                    },
+                    "embed_code": {
+                        "type": "string",
+                        "description": "The published player iframe tag",
+                        "readOnly": true
+                    },
+                    "published player iframe tag": {
+                        "type": "string",
+                        "description": "URL to browse to retrieve the in-page embed code for published player",
                         "readOnly": true
                     }
                 }
