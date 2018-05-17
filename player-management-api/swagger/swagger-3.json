@@ -518,7 +518,8 @@
               },
               "compatibility": {
                 "type": "boolean",
-                "description": "Provides compatibility with the Player 1.x.x API - you should not change this setting"
+                "description": "Provides compatibility with the Player 1.x.x API",
+                "readOnly": true
               },
               "css": {
                 "type": "object",
