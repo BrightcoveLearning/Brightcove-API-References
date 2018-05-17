@@ -485,11 +485,6 @@
             "title": "Update Player Request Body",
             "type": "object",
             "properties": {
-              "id": {
-                "type": "string",
-                "description": "The player id",
-                "readOnly": true
-              },
               "name": {
                 "type": "string",
                 "description": "The player name"
@@ -501,22 +496,10 @@
             }
           },
           "CreatePlayerRequestBody": {
-            "title": "Update Player Request Body",
+            "title": "Create Player Request Body",
             "type": "object",
             "properties": {
-              "id": {
-                "type": "string",
-                "description": "The player id",
-                "readOnly": true
-              },
-              "name": {
-                "type": "string",
-                "description": "The player name"
-              },
-              "description": {
-                "type": "string",
-                "description": "The player description"
-              }
+                "$ref": "#/definitions/schemas/configuration"
             }
           },
           "configuration": {
