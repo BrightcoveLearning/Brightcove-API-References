@@ -205,9 +205,9 @@
                 "tags": [
                     "Players"
                 ],
-                "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-                "summary": "Update a player by ID",
-                "operationId": "UpdatePlayer",
+                "description": "Delete a player and all embeds associated with it.",
+                "summary": "Delete a player by ID",
+                "operationId": "DeletePlayer",
                 "parameters": [{
                         "name": "account_id",
                         "in": "path",
@@ -253,18 +253,6 @@
                         }
                     }
                 ],
-                "requestBody": {
-                    "description": "Update the plsyer",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "description": "Update the player",
-                                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
-                            }
-                        }
-                    },
-                    "required": true
-                },
                 "responses": {
                     "200": {
                         "description": "200",
@@ -272,7 +260,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                                    "$ref": "#/definitions/schemas/DeletePlayerResponse"
                                 }
                             }
                         }
@@ -941,6 +929,16 @@
                 "type": "object",
                 "properties": {
                     "$ref": "#/definitions/schemas/player"
+                }
+            },
+            "DeletePlayerResponse": {
+                "title": "Get Players Response",
+                "type": "object",
+                "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Report of player deletion"
+                    }
                 }
             }
         }
