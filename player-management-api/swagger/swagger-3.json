@@ -104,8 +104,8 @@
         "tags": [
           "Players"
         ],
-        "summary": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-        "description": "Update a player by ID",
+        "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
+        "summary": "Update a player by ID",
         "operationId": "UpdatePlayer",
         "parameters": [{
             "name": "account_id",
@@ -208,8 +208,8 @@
           "Players"
         ],
         "summary": "Get a list of players",
-        "description": "Get a player by ID",
-        "operationId": "GetPlayer",
+        "description": "Get a list of players",
+        "operationId": "GetPlayers",
         "parameters": [{
             "name": "account_id",
             "in": "path",
@@ -281,28 +281,17 @@
           "IsMultiContentStreaming": false
         }
       },
-      "patch": {
+      "post": {
         "tags": [
           "Players"
         ],
-        "summary": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-        "description": "Update a player by ID",
-        "operationId": "UpdatePlayer",
+        "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
+        "summary": "Create a player",
+        "operationId": "CreatePlayer",
         "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
             "required": true,
             "style": "simple",
             "explode": false,
@@ -334,12 +323,12 @@
           }
         ],
         "requestBody": {
-          "description": "Update the plsyer",
+          "description": "Create a plsyer",
           "content": {
             "application/json": {
               "schema": {
                 "description": "Update the player",
-                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
+                "$ref": "#/definitions/schemas/CreatePlayerRequestBody"
               }
             }
           },
@@ -426,6 +415,7 @@
           "branches": {
             "type": "object",
             "description": "The branches of the player - contains objects for the preview and master (published) player",
+            "readOnly": true,
             "properties": {
               "preview": {
                 "type": "object",
@@ -492,6 +482,25 @@
             }
           },
           "UpdatePlayerRequestBody": {
+            "title": "Update Player Request Body",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The player id",
+                "readOnly": true
+              },
+              "name": {
+                "type": "string",
+                "description": "The player name"
+              },
+              "description": {
+                "type": "string",
+                "description": "The player description"
+              }
+            }
+          },
+          "CreatePlayerRequestBody": {
             "title": "Update Player Request Body",
             "type": "object",
             "properties": {
@@ -802,23 +811,9 @@
         "title": "Get Players Response",
         "type": "object",
         "properties": {
-          "item_count": {
-            "type": "integer",
-            "description": "The number of players returned",
-            "readOnly": true
-          },
-          "items": {
-            "type": "string",
-            "description": "URL to preview player",
-            "readOnly": true
-          },
-          "preview_embed_code": {
-            "type": "string",
-            "description": "Preview player iframe tag",
-            "readOnly": true
+            "$ref": "#/definitions/schemas/player"
           }
         }
       }
     }
   }
-}
