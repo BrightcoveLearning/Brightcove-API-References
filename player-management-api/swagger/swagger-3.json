@@ -539,6 +539,10 @@
                   }
                 }
               },
+              "description": {
+                "type": "string",
+                "description": "Description of the player"
+              },
               "errors": {
                 "type": "boolean",
                 "description": "Indicates if the error messages plugin should be excluded"
@@ -564,6 +568,10 @@
                 "properties": {
                   "$ref": "#/definitions/schemas/media"
                 }
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the player"
               },
               "player": {
                 "type": "object",
