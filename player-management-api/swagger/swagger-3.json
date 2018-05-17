@@ -661,9 +661,27 @@
                   "description": "Order that playback technologies should be used; only visible if changed from default",
                   "items": {
                       "type": "string",
-                      "description": "URL of a stylesheet to be included with the player"
+                      "description": "URL of a stylesheet to be included with the player",
+                      "enum": [
+                          "html5",
+                          "flash"
+                      ]
                   }
               },
+              "video_cloud": {
+                  "type": "object",
+                  "description": "Video Cloud configuration information",
+                  "properites": {
+                      "policy_key": {
+                          "type": "string",
+                          "description": "policy key for Video Cloud account"
+                      },
+                      "video": {
+                          "type": "string",
+                          "description": "if using a Video Cloud video asset, that asset's ID"
+                      }
+                  }
+              }
             }
           },
           "media": {
