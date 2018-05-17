@@ -678,7 +678,13 @@
         "title": "Get Players Response",
         "type": "object",
         "properties": {
-          "$ref": "#/components/schemas/player"
+          "items": {
+            "type": "array",
+            "description": "Array of player information objects",
+            "items": {
+              "$ref": "#/components/schemas/player"
+            }
+          }
         }
       },
       "DeletePlayerResponse": {
