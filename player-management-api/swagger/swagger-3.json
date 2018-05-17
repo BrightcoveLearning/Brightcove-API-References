@@ -765,27 +765,20 @@
                 "description": "The master (published) branch of the player",
                 "properties": {
                   "configuration": {
-                    "type": "object",
-                    "description": "The master (published) player configuration",
-                    "properties": {
                       "$ref": "#/components/schemas/configuration"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "date-time of last update to preview player"
+                    },
+                    "template_updated_at": {
+                      "type": "string",
+                      "description": "date-time of last update to preview player template"
+                    },
+                    "preview_url": {
+                      "type": "string",
+                      "description": "URL for the preview player"
                     }
-                  },
-                  "master_url": {
-                    "type": "string",
-                    "description": "URL of master player",
-                    "readOnly": true
-                  },
-                  "template_updated_at": {
-                    "type": "string",
-                    "description": "Date-time of the last update to the player template",
-                    "readOnly": true
-                  },
-                  "updated_at": {
-                    "type": "string",
-                    "description": "Date-time of the last update to the master player",
-                    "readOnly": true
-                  }
                 }
               }
             }
