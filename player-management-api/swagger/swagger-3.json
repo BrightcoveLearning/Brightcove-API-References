@@ -144,7 +144,7 @@
             "application/json": {
               "schema": {
                 "description": "Create a player",
-                "$ref": "#/components/schemas/CreatePlayerRequestBody"
+                "$ref": "#/components/schemas/configuration"
               }
             }
           },
@@ -577,13 +577,6 @@
   },
   "components": {
     "schemas": {
-      "CreatePlayerRequestBody": {
-        "title": "Create Player Request Body",
-        "type": "object",
-        "properties": {
-          "$ref": "#/components/schemas/configuration"
-        }
-      },
       "UpdatePlayerRequestBody": {
         "title": "Update Player Request Body",
         "type": "object",
