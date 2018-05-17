@@ -200,6 +200,107 @@
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
+        },
+      "delete": {
+        "tags": [
+          "Players"
+        ],
+        "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
+        "summary": "Update a player by ID",
+        "operationId": "UpdatePlayer",
+        "parameters": [{
+            "name": "account_id",
+            "in": "path",
+            "description": "Video Cloud or Brightcove Player account ID.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "path",
+            "description": "The player ID.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "Content-Type: application/json",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update the plsyer",
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Update the player",
+                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
       }
     },
     "/accounts/{account_id}/players": {
