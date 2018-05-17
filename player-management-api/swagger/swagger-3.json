@@ -251,7 +251,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/GetPlayerResponse"
+                  "$ref": "#/components/schemas/player"
                 }
               }
             }
