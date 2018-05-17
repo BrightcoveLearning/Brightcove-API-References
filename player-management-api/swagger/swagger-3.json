@@ -5,14 +5,12 @@
     "description": "Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/node/17910). If you haven't gone through the [Quick Start to Player Management](https://support.brightcove.com/node/18268), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API. If you are working with this API for the first time, read the [Player Management API Overview](https://support.brightcove.com/node/18269). Remember that after making any configuration changes you **MUST** re-publish your player. <strong>Note:</strong> Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
     "version": "2.0.0"
   },
-  "servers": [
-    {
-      "url": "https://players.api.brightcove.com/v2",
-      "variables": {
+  "servers": [{
+    "url": "https://players.api.brightcove.com/v2",
+    "variables": {
 
-      }
     }
-  ],
+  }],
   "paths": {
     "/accounts/{account_id}/players": {
       "get": {
@@ -22,8 +20,7 @@
         "summary": "Get a list of players",
         "description": "Get a list of players",
         "operationId": "GetPlayers",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -103,8 +100,7 @@
         "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
         "summary": "Create a player",
         "operationId": "CreatePlayer",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -198,8 +194,7 @@
         "summary": "Get a single player",
         "description": "Get a player by ID",
         "operationId": "GetPlayer",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -290,8 +285,7 @@
         "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
         "summary": "Update a player by ID",
         "operationId": "UpdatePlayer",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -394,8 +388,7 @@
         "description": "Delete a player and all embeds associated with it.",
         "summary": "Delete a player by ID",
         "operationId": "DeletePlayer",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -488,8 +481,7 @@
         "summary": "Publish a player",
         "description": "Publish a player for optimization and production use.",
         "operationId": "PublishPlayer",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud or Brightcove Player account ID.",
@@ -743,42 +735,48 @@
                 "type": "object",
                 "description": "The preview branch of the player",
                 "properties": {
-                      "configuration": {
-                          "$ref": "#/components/schemas/configuration"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "description": "date-time of last update to preview player"
-                        },
-                        "template_updated_at": {
-                          "type": "string",
-                          "description": "date-time of last update to preview player template"
-                        },
-                        "preview_url": {
-                          "type": "string",
-                          "description": "URL for the preview player"
-                        }
+                  "configuration": {
+                    "type": "object",
+                    "properites": {
+                      "$ref": "#/components/schemas/configuration"
                     }
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "description": "date-time of last update to preview player"
+                  },
+                  "template_updated_at": {
+                    "type": "string",
+                    "description": "date-time of last update to preview player template"
+                  },
+                  "preview_url": {
+                    "type": "string",
+                    "description": "URL for the preview player"
+                  }
+                }
               },
               "master": {
                 "type": "object",
                 "description": "The master (published) branch of the player",
                 "properties": {
                   "configuration": {
+                    "type": "object",
+                    "properites": {
                       "$ref": "#/components/schemas/configuration"
-                    },
-                    "updated_at": {
-                      "type": "string",
-                      "description": "date-time of last update to preview player"
-                    },
-                    "template_updated_at": {
-                      "type": "string",
-                      "description": "date-time of last update to preview player template"
-                    },
-                    "preview_url": {
-                      "type": "string",
-                      "description": "URL for the preview player"
                     }
+                  },
+                  "updated_at": {
+                    "type": "string",
+                    "description": "date-time of last update to preview player"
+                  },
+                  "template_updated_at": {
+                    "type": "string",
+                    "description": "date-time of last update to preview player template"
+                  },
+                  "preview_url": {
+                    "type": "string",
+                    "description": "URL for the preview player"
+                  }
                 }
               }
             }
