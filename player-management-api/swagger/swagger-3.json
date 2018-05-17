@@ -181,490 +181,402 @@
             }
         },
         "/accounts/{account_id}/players/{player_id}": {
-          "get": {
-            "tags": [
-              "Players"
-            ],
-            "summary": "Get a single player",
-            "description": "Get a player by ID",
-            "operationId": "GetPlayer",
-            "parameters": [{
-              "name": "account_id",
-              "in": "path",
-              "description": "Video Cloud or Brightcove Player account ID.",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "player_id",
-              "in": "path",
-              "description": "The player ID.",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "Content-Type: application/json",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "Authorization",
-              "in": "header",
-              "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "200",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "description": "200",
-                    "$ref": "#/definitions/schemas/GetPlayerResponse"
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-            },
-            "401": {
-              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-            },
-            "404": {
-              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-            },
-            "429": {
-              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-            },
-            "500": {
-              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-            }
-          },
-          "deprecated": false,
-          "security": [],
-          "x-operation-settings": {
-            "CollectParameters": false,
-            "AllowDynamicQueryParameters": false,
-            "AllowDynamicFormParameters": false,
-            "IsMultiContentStreaming": false
-          }
-        },
-        "patch": {
-          "tags": [
-            "Players"
-          ],
-          "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
-          "summary": "Update a player by ID",
-          "operationId": "UpdatePlayer",
-          "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Update the plsyer",
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "Update the player",
-                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "200",
-                  "$ref": "#/definitions/schemas/UpdatePlayerResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-          },
-          "401": {
-            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-          },
-          "404": {
-            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-          },
-          "429": {
-            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-          },
-          "500": {
-            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-          }
-        },
-        "deprecated": false,
-        "security": [],
-        "x-operation-settings": {
-          "CollectParameters": false,
-          "AllowDynamicQueryParameters": false,
-          "AllowDynamicFormParameters": false,
-          "IsMultiContentStreaming": false
-        }
-      },
-      "delete": {
-        "tags": [
-          "Players"
-        ],
-        "description": "Delete a player and all embeds associated with it.",
-        "summary": "Delete a player by ID",
-        "operationId": "DeletePlayer",
-        "parameters": [{
-          "name": "account_id",
-          "in": "path",
-          "description": "Video Cloud or Brightcove Player account ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "player_id",
-          "in": "path",
-          "description": "The player ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "Content-Type",
-          "in": "header",
-          "description": "Content-Type: application/json",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "Authorization",
-          "in": "header",
-          "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "200",
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "200",
-                "$ref": "#/definitions/schemas/DeletePlayerResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-        },
-        "401": {
-          "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-        },
-        "404": {
-          "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-        },
-        "429": {
-          "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-        },
-        "500": {
-          "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-        }
-      },
-      "deprecated": false,
-      "security": [],
-      "x-operation-settings": {
-        "CollectParameters": false,
-        "AllowDynamicQueryParameters": false,
-        "AllowDynamicFormParameters": false,
-        "IsMultiContentStreaming": false
-      }
-    },
-        "/accounts/{account_id}/players/{player_id}/publish": {
-          "post": {
-            "tags": [
-              "Players"
-            ],
-            "summary": "Publish a player",
-            "description": "Publish a player for optimization and production use.",
-            "operationId": "PublishPlayer",
-            "parameters": [{
-              "name": "account_id",
-              "in": "path",
-              "description": "Video Cloud or Brightcove Player account ID.",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "player_id",
-              "in": "path",
-              "description": "The player ID.",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "Content-Type",
-              "in": "header",
-              "description": "Content-Type: application/json",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            },
-            {
-              "name": "Authorization",
-              "in": "header",
-              "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-              "required": true,
-              "style": "simple",
-              "explode": false,
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "200",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "description": "200",
-                    "$ref": "#/definitions/schemas/PublishPlayerResponse"
-                  }
-                }
-              }
-            },
-            "400": {
-              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-            },
-            "401": {
-              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-            },
-            "404": {
-              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-            },
-            "429": {
-              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-            },
-            "500": {
-              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
-            }
-          },
-          "deprecated": false,
-          "security": [],
-          "x-operation-settings": {
-            "CollectParameters": false,
-            "AllowDynamicQueryParameters": false,
-            "AllowDynamicFormParameters": false,
-            "IsMultiContentStreaming": false
-          }
-        },
-    }
-  },
-    },
-    "definitions": {
-        "schemas": {
-            "player": {
-                "title": "Player Information Object",
-                "type": "object",
-                "properties": {
-                    "account_id": {
-                        "type": "string",
-                        "description": "The account id",
-                        "readOnly": true
+            "get": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Get a single player",
+                "description": "Get a player by ID",
+                "operationId": "GetPlayer",
+                "parameters": [{
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Video Cloud or Brightcove Player account ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
                     },
-                    "created_at": {
-                        "type": "string",
-                        "description": "The player creation date-time",
-                        "readOnly": true
+                    {
+                        "name": "player_id",
+                        "in": "path",
+                        "description": "The player ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
                     },
-                    "embeds_count": {
-                        "type": "integer",
-                        "description": "The number of embeds (instances of this player), will always be at least 1",
-                        "readOnly": true
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type: application/json",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
                     },
-                    "id": {
-                        "type": "string",
-                        "description": "The player id",
-                        "readOnly": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "description": "The player name"
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "The player description"
-                    },
-                    "url": {
-                        "type": "string",
-                        "description": "URL to player",
-                        "readOnly": "true"
-                    },
-                    "branches": {
-                        "type": "object",
-                        "description": "The branches of the player - contains objects for the preview and master (published) player",
-                        "readOnly": true,
-                        "properties": {
-                            "preview": {
-                                "type": "object",
-                                "description": "The preview branch of the player",
-                                "properties": {
-                                    "preview": {
-                                        "type": "object",
-                                        "description": "The preview branch of the player",
-                                        "properties": {
-                                            "configuration": {
-                                                "type": "object",
-                                                "description": "The preview player configuration",
-                                                "properties": {
-                                                    "$ref": "#/definitions/schemas/configuration"
-                                                }
-                                            }
-                                        },
-                                        "preview_url": {
-                                            "type": "string",
-                                            "description": "URL of preview player",
-                                            "readOnly": true
-                                        },
-                                        "template_updated_at": {
-                                            "type": "string",
-                                            "description": "Date-time of the last update to the player template",
-                                            "readOnly": true
-                                        },
-                                        "updated_at": {
-                                            "type": "string",
-                                            "description": "Date-time of the last update to the preview player",
-                                            "readOnly": true
-                                        }
-                                    }
-                                }
-                            },
-                            "master": {
-                                "type": "object",
-                                "description": "The master (published) branch of the player",
-                                "properties": {
-                                    "configuration": {
-                                        "type": "object",
-                                        "description": "The master (published) player configuration",
-                                        "properties": {
-                                            "$ref": "#/definitions/schemas/configuration"
-                                        }
-                                    },
-                                    "master_url": {
-                                        "type": "string",
-                                        "description": "URL of master player",
-                                        "readOnly": true
-                                    },
-                                    "template_updated_at": {
-                                        "type": "string",
-                                        "description": "Date-time of the last update to the player template",
-                                        "readOnly": true
-                                    },
-                                    "updated_at": {
-                                        "type": "string",
-                                        "description": "Date-time of the last update to the master player",
-                                        "readOnly": true
-                                    }
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "200",
+                                    "$ref": "#/definitions/schemas/GetPlayerResponse"
                                 }
                             }
                         }
                     },
-                    "UpdatePlayerRequestBody": {
-                        "title": "Update Player Request Body",
+                    "400": {
+                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                    },
+                    "401": {
+                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "429": {
+                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                    },
+                    "500": {
+                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                    }
+                },
+                "deprecated": false,
+                "security": [],
+                "x-operation-settings": {
+                    "CollectParameters": false,
+                    "AllowDynamicQueryParameters": false,
+                    "AllowDynamicFormParameters": false,
+                    "IsMultiContentStreaming": false
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Players"
+                ],
+                "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
+                "summary": "Update a player by ID",
+                "operationId": "UpdatePlayer",
+                "parameters": [{
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Video Cloud or Brightcove Player account ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "player_id",
+                        "in": "path",
+                        "description": "The player ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type: application/json",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update the plsyer",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "description": "Update the player",
+                                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "200",
+                                    "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                    },
+                    "401": {
+                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "429": {
+                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                    },
+                    "500": {
+                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                    }
+                },
+                "deprecated": false,
+                "security": [],
+                "x-operation-settings": {
+                    "CollectParameters": false,
+                    "AllowDynamicQueryParameters": false,
+                    "AllowDynamicFormParameters": false,
+                    "IsMultiContentStreaming": false
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Players"
+                ],
+                "description": "Delete a player and all embeds associated with it.",
+                "summary": "Delete a player by ID",
+                "operationId": "DeletePlayer",
+                "parameters": [{
+                        "name": "account_id",
+                        "in": "path",
+                        "description": "Video Cloud or Brightcove Player account ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "player_id",
+                        "in": "path",
+                        "description": "The player ID.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type: application/json",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "200",
+                                    "$ref": "#/definitions/schemas/DeletePlayerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                    },
+                    "401": {
+                        "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                    },
+                    "404": {
+                        "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                    },
+                    "429": {
+                        "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                    },
+                    "500": {
+                        "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                    }
+                },
+                "deprecated": false,
+                "security": [],
+                "x-operation-settings": {
+                    "CollectParameters": false,
+                    "AllowDynamicQueryParameters": false,
+                    "AllowDynamicFormParameters": false,
+                    "IsMultiContentStreaming": false
+                }
+            },
+            "/accounts/{account_id}/players/{player_id}/publish": {
+                "post": {
+                    "tags": [
+                        "Players"
+                    ],
+                    "summary": "Publish a player",
+                    "description": "Publish a player for optimization and production use.",
+                    "operationId": "PublishPlayer",
+                    "parameters": [{
+                            "name": "account_id",
+                            "in": "path",
+                            "description": "Video Cloud or Brightcove Player account ID.",
+                            "required": true,
+                            "style": "simple",
+                            "explode": false,
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "player_id",
+                            "in": "path",
+                            "description": "The player ID.",
+                            "required": true,
+                            "style": "simple",
+                            "explode": false,
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "Content-Type",
+                            "in": "header",
+                            "description": "Content-Type: application/json",
+                            "required": true,
+                            "style": "simple",
+                            "explode": false,
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "name": "Authorization",
+                            "in": "header",
+                            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+                            "required": true,
+                            "style": "simple",
+                            "explode": false,
+                            "schema": {
+                                "type": "string"
+                            }
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "200",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "description": "200",
+                                        "$ref": "#/definitions/schemas/PublishPlayerResponse"
+                                    }
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+                        },
+                        "401": {
+                            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+                        },
+                        "404": {
+                            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+                        },
+                        "429": {
+                            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+                        },
+                        "500": {
+                            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+                        }
+                    },
+                    "deprecated": false,
+                    "security": [],
+                    "x-operation-settings": {
+                        "CollectParameters": false,
+                        "AllowDynamicQueryParameters": false,
+                        "AllowDynamicFormParameters": false,
+                        "IsMultiContentStreaming": false
+                    }
+                }
+            },
+            "definitions": {
+                "schemas": {
+                    "player": {
+                        "title": "Player Information Object",
                         "type": "object",
                         "properties": {
+                            "account_id": {
+                                "type": "string",
+                                "description": "The account id",
+                                "readOnly": true
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "description": "The player creation date-time",
+                                "readOnly": true
+                            },
+                            "embeds_count": {
+                                "type": "integer",
+                                "description": "The number of embeds (instances of this player), will always be at least 1",
+                                "readOnly": true
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The player id",
+                                "readOnly": true
+                            },
                             "name": {
                                 "type": "string",
                                 "description": "The player name"
@@ -672,392 +584,478 @@
                             "description": {
                                 "type": "string",
                                 "description": "The player description"
-                            }
-                        }
-                    },
-                    "CreatePlayerRequestBody": {
-                        "title": "Create Player Request Body",
-                        "type": "object",
-                        "properties": {
-                            "$ref": "#/definitions/schemas/configuration"
-                        }
-                    },
-                    "configuration": {
-                        "title": "Player Configuration",
-                        "type": "object",
-                        "description": "Configuration for a player",
-                        "properties": {
-                            "autoadvance": {
-                                "type": "integer",
-                                "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
                             },
-                            "autoplay": {
-                                "type": "boolean",
-                                "description": "Indicates player should play video immediately, on platforms that allow this",
-                                "default": false
-                            },
-                            "compatibility": {
-                                "type": "boolean",
-                                "description": "Provides compatibility with the Player 1.x.x API",
-                                "readOnly": true
-                            },
-                            "css": {
-                                "type": "object",
-                                "description": "Object containing CSS color overrides",
-                                "properties": {
-                                    "controlBarColor": {
-                                        "type": "string",
-                                        "description": "Background color of control bar"
-                                    },
-                                    "controlColor": {
-                                        "type": "string",
-                                        "description": "Color of buttons and text in control bar"
-                                    },
-                                    "progressColor": {
-                                        "type": "string",
-                                        "description": "Color of progress bar"
-                                    }
-                                }
-                            },
-                            "description": {
+                            "url": {
                                 "type": "string",
-                                "description": "Description of the player"
+                                "description": "URL to player",
+                                "readOnly": "true"
                             },
-                            "errors": {
-                                "type": "boolean",
-                                "description": "Indicates if the error messages plugin should be excluded"
-                            },
-                            "fullscreenControl": {
-                                "type": "boolean",
-                                "description": "Indicates whether the fullscreen control should be shown in the control bar"
-                            },
-                            "languages": {
-                                "type": "array",
-                                "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
-                                "items": {
-                                    "type": "string"
-                                }
-                            },
-                            "loop": {
-                                "type": "boolean",
-                                "description": "Indicates if the video should play over as soon as it ends"
-                            },
-                            "media": {
+                            "branches": {
                                 "type": "object",
-                                "description": "Media information for non-Video Cloud media",
+                                "description": "The branches of the player - contains objects for the preview and master (published) player",
+                                "readOnly": true,
                                 "properties": {
-                                    "$ref": "#/definitions/schemas/media"
-                                }
-                            },
-                            "name": {
-                                "type": "string",
-                                "description": "The name of the player"
-                            },
-                            "player": {
-                                "type": "object",
-                                "description": "Player information object",
-                                "properties": {
-                                    "$ref": "#/definitions/schemas/player"
-                                }
-                            },
-                            "playlist": {
-                                "type": "boolean",
-                                "description": "Indicates if a playlist should be used",
-                                "default": null
-                            },
-                            "playOnSelect": {
-                                "type": "boolean",
-                                "description": "Indicates if a video loaded from a playlist should play on load",
-                                "default": null
-                            },
-                            "plugins": {
-                                "type": "array",
-                                "description": "Array of plugin objects",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Plugin name"
-                                        },
-                                        "options": {
-                                            "type": "object",
-                                            "description": "Map of option-value pairs"
-                                        }
-                                    }
-                                }
-                            },
-                            "preload": {
-                                "type": "string",
-                                "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
-                                "enum": ["auto", "metadata", "none"]
-                            },
-                            "scripts": {
-                                "type": "array",
-                                "description": "Array of URLs for scripts that should loaded with the player",
-                                "items": {
-                                    "type": "string",
-                                    "description": "URL for script to include"
-                                }
-                            },
-                            "skin": {
-                                "type": "boolean",
-                                "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
-                                "default": true
-                            },
-                            "studio_configuration": {
-                                "type": "object",
-                                "description": "Object containing playlist information normally set in Studio",
-                                "properites": {
-                                    "player": {
+                                    "preview": {
                                         "type": "object",
-                                        "description": "Object containing playlist information",
+                                        "description": "The preview branch of the player",
                                         "properties": {
-                                            "adjusted": {
-                                                "type": "boolean",
-                                                "description": "indicates if player dimensions should be adjusted for playlist"
+                                            "preview": {
+                                                "type": "object",
+                                                "description": "The preview branch of the player",
+                                                "properties": {
+                                                    "configuration": {
+                                                        "type": "object",
+                                                        "description": "The preview player configuration",
+                                                        "properties": {
+                                                            "$ref": "#/definitions/schemas/configuration"
+                                                        }
+                                                    }
+                                                },
+                                                "preview_url": {
+                                                    "type": "string",
+                                                    "description": "URL of preview player",
+                                                    "readOnly": true
+                                                },
+                                                "template_updated_at": {
+                                                    "type": "string",
+                                                    "description": "Date-time of the last update to the player template",
+                                                    "readOnly": true
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "description": "Date-time of the last update to the preview player",
+                                                    "readOnly": true
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "master": {
+                                        "type": "object",
+                                        "description": "The master (published) branch of the player",
+                                        "properties": {
+                                            "configuration": {
+                                                "type": "object",
+                                                "description": "The master (published) player configuration",
+                                                "properties": {
+                                                    "$ref": "#/definitions/schemas/configuration"
+                                                }
                                             },
-                                            "height": {
+                                            "master_url": {
                                                 "type": "string",
-                                                "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                                "description": "URL of master player",
+                                                "readOnly": true
                                             },
-                                            "width": {
+                                            "template_updated_at": {
                                                 "type": "string",
-                                                "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                                "description": "Date-time of the last update to the player template",
+                                                "readOnly": true
+                                            },
+                                            "updated_at": {
+                                                "type": "string",
+                                                "description": "Date-time of the last update to the master player",
+                                                "readOnly": true
                                             }
                                         }
                                     }
                                 }
                             },
-                            "stylesheets": {
-                                "type": "array",
-                                "description": "Array of URLs to CSS files that should be included with the player",
-                                "items": {
-                                    "type": "string",
-                                    "description": "URL of a stylesheet to be included with the player"
-                                }
-                            },
-                            "techOrder": {
-                                "type": "array",
-                                "description": "Order that playback technologies should be used; only visible if changed from default",
-                                "items": {
-                                    "type": "string",
-                                    "description": "URL of a stylesheet to be included with the player",
-                                    "enum": [
-                                        "html5",
-                                        "flash"
-                                    ]
-                                }
-                            },
-                            "video_cloud": {
+                            "UpdatePlayerRequestBody": {
+                                "title": "Update Player Request Body",
                                 "type": "object",
-                                "description": "Video Cloud configuration information",
-                                "properites": {
-                                    "policy_key": {
-                                        "type": "string",
-                                        "description": "policy key for Video Cloud account"
-                                    },
-                                    "video": {
-                                        "type": "string",
-                                        "description": "if using a Video Cloud video asset, that asset's ID"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "media": {
-                        "title": "Media Object",
-                        "type": "object",
-                        "description": "Media information for non-Video Cloud media",
-                        "properties": {
-                            "sources": {
-                                "type": "array",
-                                "description": "Array of media source objects",
-                                "items": {
-                                    "$ref": "#/definitions/schemas/media.source"
-                                }
-                            },
-                            "src": {
-                                "type": "string",
-                                "description": "The URL of the video file to load into the player"
-                            },
-                            "tracks": {
-                                "type": "array",
-                                "description": "Array of text track objects",
-                                "items": {
-                                    "$ref": "#/definitions/schemas/media.track"
-                                }
-                            }
-                        }
-                    },
-                    "media.source": {
-                        "title": "Media Source Object",
-                        "type": "object",
-                        "description": "Media source information for non-Video Cloud media",
-                        "properties": {
-                            "height": {
-                                "type": "integer",
-                                "description": "Video frame height in pixels"
-                            },
-                            "width": {
-                                "type": "integer",
-                                "description": "Video frame width in pixels"
-                            },
-                            "poster": {
-                                "type": "object",
-                                "description": "Information for the poster image",
                                 "properties": {
-                                    "highres": {
+                                    "name": {
                                         "type": "string",
-                                        "description": "The file path to the poster image, relative to the root directory of the skin"
+                                        "description": "The player name"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "The player description"
                                     }
                                 }
                             },
-                            "src": {
-                                "type": "string",
-                                "description": "The URL of the video file to load into the player"
+                            "CreatePlayerRequestBody": {
+                                "title": "Create Player Request Body",
+                                "type": "object",
+                                "properties": {
+                                    "$ref": "#/definitions/schemas/configuration"
+                                }
                             },
-                            "title": {
-                                "type": "string",
-                                "description": "Content of the `&lt;title&gt;` element of the page"
+                            "configuration": {
+                                "title": "Player Configuration",
+                                "type": "object",
+                                "description": "Configuration for a player",
+                                "properties": {
+                                    "autoadvance": {
+                                        "type": "integer",
+                                        "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                                    },
+                                    "autoplay": {
+                                        "type": "boolean",
+                                        "description": "Indicates player should play video immediately, on platforms that allow this",
+                                        "default": false
+                                    },
+                                    "compatibility": {
+                                        "type": "boolean",
+                                        "description": "Provides compatibility with the Player 1.x.x API",
+                                        "readOnly": true
+                                    },
+                                    "css": {
+                                        "type": "object",
+                                        "description": "Object containing CSS color overrides",
+                                        "properties": {
+                                            "controlBarColor": {
+                                                "type": "string",
+                                                "description": "Background color of control bar"
+                                            },
+                                            "controlColor": {
+                                                "type": "string",
+                                                "description": "Color of buttons and text in control bar"
+                                            },
+                                            "progressColor": {
+                                                "type": "string",
+                                                "description": "Color of progress bar"
+                                            }
+                                        }
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the player"
+                                    },
+                                    "errors": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the error messages plugin should be excluded"
+                                    },
+                                    "fullscreenControl": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                                    },
+                                    "languages": {
+                                        "type": "array",
+                                        "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "loop": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the video should play over as soon as it ends"
+                                    },
+                                    "media": {
+                                        "type": "object",
+                                        "description": "Media information for non-Video Cloud media",
+                                        "properties": {
+                                            "$ref": "#/definitions/schemas/media"
+                                        }
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "The name of the player"
+                                    },
+                                    "player": {
+                                        "type": "object",
+                                        "description": "Player information object",
+                                        "properties": {
+                                            "$ref": "#/definitions/schemas/player"
+                                        }
+                                    },
+                                    "playlist": {
+                                        "type": "boolean",
+                                        "description": "Indicates if a playlist should be used",
+                                        "default": null
+                                    },
+                                    "playOnSelect": {
+                                        "type": "boolean",
+                                        "description": "Indicates if a video loaded from a playlist should play on load",
+                                        "default": null
+                                    },
+                                    "plugins": {
+                                        "type": "array",
+                                        "description": "Array of plugin objects",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "Plugin name"
+                                                },
+                                                "options": {
+                                                    "type": "object",
+                                                    "description": "Map of option-value pairs"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "preload": {
+                                        "type": "string",
+                                        "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                                        "enum": ["auto", "metadata", "none"]
+                                    },
+                                    "scripts": {
+                                        "type": "array",
+                                        "description": "Array of URLs for scripts that should loaded with the player",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "URL for script to include"
+                                        }
+                                    },
+                                    "skin": {
+                                        "type": "boolean",
+                                        "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                                        "default": true
+                                    },
+                                    "studio_configuration": {
+                                        "type": "object",
+                                        "description": "Object containing playlist information normally set in Studio",
+                                        "properites": {
+                                            "player": {
+                                                "type": "object",
+                                                "description": "Object containing playlist information",
+                                                "properties": {
+                                                    "adjusted": {
+                                                        "type": "boolean",
+                                                        "description": "indicates if player dimensions should be adjusted for playlist"
+                                                    },
+                                                    "height": {
+                                                        "type": "string",
+                                                        "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                                    },
+                                                    "width": {
+                                                        "type": "string",
+                                                        "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "stylesheets": {
+                                        "type": "array",
+                                        "description": "Array of URLs to CSS files that should be included with the player",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "URL of a stylesheet to be included with the player"
+                                        }
+                                    },
+                                    "techOrder": {
+                                        "type": "array",
+                                        "description": "Order that playback technologies should be used; only visible if changed from default",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "URL of a stylesheet to be included with the player",
+                                            "enum": [
+                                                "html5",
+                                                "flash"
+                                            ]
+                                        }
+                                    },
+                                    "video_cloud": {
+                                        "type": "object",
+                                        "description": "Video Cloud configuration information",
+                                        "properites": {
+                                            "policy_key": {
+                                                "type": "string",
+                                                "description": "policy key for Video Cloud account"
+                                            },
+                                            "video": {
+                                                "type": "string",
+                                                "description": "if using a Video Cloud video asset, that asset's ID"
+                                            }
+                                        }
+                                    }
+                                }
                             },
-                            "type": {
-                                "type": "string",
-                                "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
-                                "enum": ["video/mp4", "application/x-mpegURL"]
-                            }
-                        },
-                        "required": [
-                            "src",
-                            "type"
-                        ]
-                    },
-                    "media.track": {
-                        "title": "Media Text Track Object",
-                        "type": "object",
-                        "description": "Media track information for non-Video Cloud media",
-                        "properties": {
-                            "label": {
-                                "type": "string",
-                                "description": "Text label for the track, for instance `English` for an English language text track"
+                            "media": {
+                                "title": "Media Object",
+                                "type": "object",
+                                "description": "Media information for non-Video Cloud media",
+                                "properties": {
+                                    "sources": {
+                                        "type": "array",
+                                        "description": "Array of media source objects",
+                                        "items": {
+                                            "$ref": "#/definitions/schemas/media.source"
+                                        }
+                                    },
+                                    "src": {
+                                        "type": "string",
+                                        "description": "The URL of the video file to load into the player"
+                                    },
+                                    "tracks": {
+                                        "type": "array",
+                                        "description": "Array of text track objects",
+                                        "items": {
+                                            "$ref": "#/definitions/schemas/media.track"
+                                        }
+                                    }
+                                }
                             },
-                            "src": {
-                                "type": "string",
-                                "description": "URL to source of track, required in a track object"
+                            "media.source": {
+                                "title": "Media Source Object",
+                                "type": "object",
+                                "description": "Media source information for non-Video Cloud media",
+                                "properties": {
+                                    "height": {
+                                        "type": "integer",
+                                        "description": "Video frame height in pixels"
+                                    },
+                                    "width": {
+                                        "type": "integer",
+                                        "description": "Video frame width in pixels"
+                                    },
+                                    "poster": {
+                                        "type": "object",
+                                        "description": "Information for the poster image",
+                                        "properties": {
+                                            "highres": {
+                                                "type": "string",
+                                                "description": "The file path to the poster image, relative to the root directory of the skin"
+                                            }
+                                        }
+                                    },
+                                    "src": {
+                                        "type": "string",
+                                        "description": "The URL of the video file to load into the player"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "description": "Content of the `&lt;title&gt;` element of the page"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
+                                        "enum": ["video/mp4", "application/x-mpegURL"]
+                                    }
+                                },
+                                "required": [
+                                    "src",
+                                    "type"
+                                ]
                             },
-                            "srclang": {
-                                "type": "string",
-                                "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
+                            "media.track": {
+                                "title": "Media Text Track Object",
+                                "type": "object",
+                                "description": "Media track information for non-Video Cloud media",
+                                "properties": {
+                                    "label": {
+                                        "type": "string",
+                                        "description": "Text label for the track, for instance `English` for an English language text track"
+                                    },
+                                    "src": {
+                                        "type": "string",
+                                        "description": "URL to source of track, required in a track object"
+                                    },
+                                    "srclang": {
+                                        "type": "string",
+                                        "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
+                                    }
+                                }
+                            },
+                            "GetPlayerResponse": {
+                                "title": "GetPlayerResponse",
+                                "type": "object",
+                                "properties": {}
                             }
                         }
                     },
-                    "GetPlayerResponse": {
-                        "title": "GetPlayerResponse",
+                    "UpdatePlayerResponse": {
+                        "title": "Update Player Response",
                         "type": "object",
-                        "properties": {}
-                    }
-                }
-            },
-            "UpdatePlayerResponse": {
-                "title": "Update Player Response",
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The player id",
-                        "readOnly": true
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "The player id",
+                                "readOnly": true
+                            },
+                            "preview_url": {
+                                "type": "string",
+                                "description": "URL to preview player",
+                                "readOnly": true
+                            },
+                            "preview_embed_code": {
+                                "type": "string",
+                                "description": "Preview player iframe tag",
+                                "readOnly": true
+                            }
+                        }
                     },
-                    "preview_url": {
-                        "type": "string",
-                        "description": "URL to preview player",
-                        "readOnly": true
+                    "CreatePlayerResponse": {
+                        "title": "Create Player Response",
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "The player id",
+                                "readOnly": true
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "The player URL",
+                                "readOnly": true
+                            },
+                            "embed_code": {
+                                "type": "string",
+                                "description": "The published player iframe tag",
+                                "readOnly": true
+                            },
+                            "published player iframe tag": {
+                                "type": "string",
+                                "description": "URL to browse to retrieve the in-page embed code for published player",
+                                "readOnly": true
+                            },
+                            "preview_url": {
+                                "type": "string",
+                                "description": "URL to preview player",
+                                "readOnly": true
+                            },
+                            "preview_embed_code": {
+                                "type": "string",
+                                "description": "Preview player iframe tag",
+                                "readOnly": true
+                            }
+                        }
                     },
-                    "preview_embed_code": {
-                        "type": "string",
-                        "description": "Preview player iframe tag",
-                        "readOnly": true
-                    }
-                }
-            },
-            "CreatePlayerResponse": {
-                "title": "Create Player Response",
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The player id",
-                        "readOnly": true
+                    "PublishPlayerResponse": {
+                        "title": "Publish Player Response",
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "The player id",
+                                "readOnly": true
+                            },
+                            "url": {
+                                "type": "string",
+                                "description": "The player URL",
+                                "readOnly": true
+                            },
+                            "embed_code": {
+                                "type": "string",
+                                "description": "The published player iframe tag",
+                                "readOnly": true
+                            },
+                            "published player iframe tag": {
+                                "type": "string",
+                                "description": "URL to browse to retrieve the in-page embed code for published player",
+                                "readOnly": true
+                            }
+                        }
                     },
-                    "url": {
-                        "type": "string",
-                        "description": "The player URL",
-                        "readOnly": true
+                    "GetPlayersResponse": {
+                        "title": "Get Players Response",
+                        "type": "object",
+                        "properties": {
+                            "$ref": "#/definitions/schemas/player"
+                        }
                     },
-                    "embed_code": {
-                        "type": "string",
-                        "description": "The published player iframe tag",
-                        "readOnly": true
-                    },
-                    "published player iframe tag": {
-                        "type": "string",
-                        "description": "URL to browse to retrieve the in-page embed code for published player",
-                        "readOnly": true
-                    },
-                    "preview_url": {
-                        "type": "string",
-                        "description": "URL to preview player",
-                        "readOnly": true
-                    },
-                    "preview_embed_code": {
-                        "type": "string",
-                        "description": "Preview player iframe tag",
-                        "readOnly": true
-                    }
-                }
-            },
-            "PublishPlayerResponse": {
-                "title": "Publish Player Response",
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "The player id",
-                        "readOnly": true
-                    },
-                    "url": {
-                        "type": "string",
-                        "description": "The player URL",
-                        "readOnly": true
-                    },
-                    "embed_code": {
-                        "type": "string",
-                        "description": "The published player iframe tag",
-                        "readOnly": true
-                    },
-                    "published player iframe tag": {
-                        "type": "string",
-                        "description": "URL to browse to retrieve the in-page embed code for published player",
-                        "readOnly": true
-                    }
-                }
-            },
-            "GetPlayersResponse": {
-                "title": "Get Players Response",
-                "type": "object",
-                "properties": {
-                    "$ref": "#/definitions/schemas/player"
-                }
-            },
-            "DeletePlayerResponse": {
-                "title": "Get Players Response",
-                "type": "object",
-                "properties": {
-                    "message": {
-                      "type": "string",
-                      "description": "Report of player deletion"
+                    "DeletePlayerResponse": {
+                        "title": "Get Players Response",
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string",
+                                "description": "Report of player deletion"
+                            }
+                        }
                     }
                 }
             }
         }
-    }
-}
