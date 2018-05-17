@@ -59,7 +59,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/GetPlayersResponse"
+                                    "$ref": "#/components/schemas/GetPlayersResponse"
                                 }
                             }
                         }
@@ -136,7 +136,7 @@
                         "application/json": {
                             "schema": {
                                 "description": "Create a player",
-                                "$ref": "#/definitions/schemas/CreatePlayerRequestBody"
+                                "$ref": "#/components/schemas/CreatePlayerRequestBody"
                             }
                         }
                     },
@@ -149,7 +149,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/CreatePlayerResponse"
+                                    "$ref": "#/components/schemas/CreatePlayerResponse"
                                 }
                             }
                         }
@@ -240,7 +240,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/GetPlayerResponse"
+                                    "$ref": "#/components/schemas/GetPlayerResponse"
                                 }
                             }
                         }
@@ -328,7 +328,7 @@
                         "application/json": {
                             "schema": {
                                 "description": "Update the player",
-                                "$ref": "#/definitions/schemas/UpdatePlayerRequestBody"
+                                "$ref": "#/components/schemas/UpdatePlayerRequestBody"
                             }
                         }
                     },
@@ -341,7 +341,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/UpdatePlayerResponse"
+                                    "$ref": "#/components/schemas/UpdatePlayerResponse"
                                 }
                             }
                         }
@@ -430,7 +430,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/DeletePlayerResponse"
+                                    "$ref": "#/components/schemas/DeletePlayerResponse"
                                 }
                             }
                         }
@@ -521,7 +521,7 @@
                             "application/json": {
                                 "schema": {
                                     "description": "200",
-                                    "$ref": "#/definitions/schemas/PublishPlayerResponse"
+                                    "$ref": "#/components/schemas/PublishPlayerResponse"
                                 }
                             }
                         }
@@ -551,8 +551,9 @@
                     "IsMultiContentStreaming": false
                 }
             }
+          }
         },
-        "definitions": {
+        "components": {
             "schemas": {
                 "player": {
                     "title": "Player Information Object",
@@ -608,7 +609,7 @@
                                                     "type": "object",
                                                     "description": "The preview player configuration",
                                                     "properties": {
-                                                        "$ref": "#/definitions/schemas/configuration"
+                                                        "$ref": "#/components/schemas/configuration"
                                                     }
                                                 }
                                             },
@@ -638,7 +639,7 @@
                                             "type": "object",
                                             "description": "The master (published) player configuration",
                                             "properties": {
-                                                "$ref": "#/definitions/schemas/configuration"
+                                                "$ref": "#/components/schemas/configuration"
                                             }
                                         },
                                         "master_url": {
@@ -680,7 +681,7 @@
                     "title": "Create Player Request Body",
                     "type": "object",
                     "properties": {
-                        "$ref": "#/definitions/schemas/configuration"
+                        "$ref": "#/components/schemas/configuration"
                     }
                 },
                 "configuration": {
@@ -747,7 +748,7 @@
                             "type": "object",
                             "description": "Media information for non-Video Cloud media",
                             "properties": {
-                                "$ref": "#/definitions/schemas/media"
+                                "$ref": "#/components/schemas/media"
                             }
                         },
                         "name": {
@@ -758,7 +759,7 @@
                             "type": "object",
                             "description": "Player information object",
                             "properties": {
-                                "$ref": "#/definitions/schemas/player"
+                                "$ref": "#/components/schemas/player"
                             }
                         },
                         "playlist": {
@@ -875,7 +876,7 @@
                             "type": "array",
                             "description": "Array of media source objects",
                             "items": {
-                                "$ref": "#/definitions/schemas/media.source"
+                                "$ref": "#/components/schemas/media.source"
                             }
                         },
                         "src": {
@@ -886,7 +887,7 @@
                             "type": "array",
                             "description": "Array of text track objects",
                             "items": {
-                                "$ref": "#/definitions/schemas/media.track"
+                                "$ref": "#/components/schemas/media.track"
                             }
                         }
                     }
@@ -1044,7 +1045,7 @@
                     "title": "Get Players Response",
                     "type": "object",
                     "properties": {
-                        "$ref": "#/definitions/schemas/player"
+                        "$ref": "#/components/schemas/player"
                     }
                 },
                 "DeletePlayerResponse": {
