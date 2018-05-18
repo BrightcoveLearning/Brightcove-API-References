@@ -569,126 +569,6 @@
   },
   "components": {
     "schemas": {
-      "UpdatePlayerRequestBody": {
-        "title": "Update Player Request Body",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The player name"
-          },
-          "description": {
-            "type": "string",
-            "description": "The player description"
-          }
-        }
-      },
-      "UpdatePlayerResponse": {
-        "title": "Update Player Response",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The player id",
-            "readOnly": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "URL to preview player",
-            "readOnly": true
-          },
-          "preview_embed_code": {
-            "type": "string",
-            "description": "Preview player iframe tag",
-            "readOnly": true
-          }
-        }
-      },
-      "CreatePlayerResponse": {
-        "title": "Create Player Response",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The player id",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "description": "The player URL",
-            "readOnly": true
-          },
-          "embed_code": {
-            "type": "string",
-            "description": "The published player iframe tag",
-            "readOnly": true
-          },
-          "published player iframe tag": {
-            "type": "string",
-            "description": "URL to browse to retrieve the in-page embed code for published player",
-            "readOnly": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "URL to preview player",
-            "readOnly": true
-          },
-          "preview_embed_code": {
-            "type": "string",
-            "description": "Preview player iframe tag",
-            "readOnly": true
-          }
-        }
-      },
-      "PublishPlayerResponse": {
-        "title": "Publish Player Response",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The player id",
-            "readOnly": true
-          },
-          "url": {
-            "type": "string",
-            "description": "The player URL",
-            "readOnly": true
-          },
-          "embed_code": {
-            "type": "string",
-            "description": "The published player iframe tag",
-            "readOnly": true
-          },
-          "published player iframe tag": {
-            "type": "string",
-            "description": "URL to browse to retrieve the in-page embed code for published player",
-            "readOnly": true
-          }
-        }
-      },
-      "GetPlayersResponse": {
-        "title": "Get Players Response",
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "description": "Array of player information objects",
-            "items": {
-              "$ref": "#/components/schemas/player"
-            }
-          }
-        }
-      },
-      "DeletePlayerResponse": {
-        "title": "Get Players Response",
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "description": "Report of player deletion"
-          }
-        }
-      },
       "player": {
         "title": "Player Information Object",
         "type": "object",
@@ -1038,6 +918,128 @@
           "srclang": {
             "type": "string",
             "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
+          }
+        }
+      }
+    },
+    "responses": {
+      "UpdatePlayerRequestBody": {
+        "title": "Update Player Request Body",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The player name"
+          },
+          "description": {
+            "type": "string",
+            "description": "The player description"
+          }
+        }
+      },
+      "UpdatePlayerResponse": {
+        "title": "Update Player Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The player id",
+            "readOnly": true
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL to preview player",
+            "readOnly": true
+          },
+          "preview_embed_code": {
+            "type": "string",
+            "description": "Preview player iframe tag",
+            "readOnly": true
+          }
+        }
+      },
+      "CreatePlayerResponse": {
+        "title": "Create Player Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The player id",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The player URL",
+            "readOnly": true
+          },
+          "embed_code": {
+            "type": "string",
+            "description": "The published player iframe tag",
+            "readOnly": true
+          },
+          "published player iframe tag": {
+            "type": "string",
+            "description": "URL to browse to retrieve the in-page embed code for published player",
+            "readOnly": true
+          },
+          "preview_url": {
+            "type": "string",
+            "description": "URL to preview player",
+            "readOnly": true
+          },
+          "preview_embed_code": {
+            "type": "string",
+            "description": "Preview player iframe tag",
+            "readOnly": true
+          }
+        }
+      },
+      "PublishPlayerResponse": {
+        "title": "Publish Player Response",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The player id",
+            "readOnly": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The player URL",
+            "readOnly": true
+          },
+          "embed_code": {
+            "type": "string",
+            "description": "The published player iframe tag",
+            "readOnly": true
+          },
+          "published player iframe tag": {
+            "type": "string",
+            "description": "URL to browse to retrieve the in-page embed code for published player",
+            "readOnly": true
+          }
+        }
+      },
+      "GetPlayersResponse": {
+        "title": "Get Players Response",
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "description": "Array of player information objects",
+            "items": {
+              "$ref": "#/components/schemas/player"
+            }
+          }
+        }
+      },
+      "DeletePlayerResponse": {
+        "title": "Get Players Response",
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Report of player deletion"
           }
         }
       }
