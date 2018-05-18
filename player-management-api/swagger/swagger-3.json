@@ -20,38 +20,15 @@
         "summary": "Get a list of players",
         "description": "Get a list of players",
         "operationId": "GetPlayers",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "responses": {
@@ -100,38 +77,15 @@
         "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
         "summary": "Create a player",
         "operationId": "CreatePlayer",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "requestBody": {
@@ -194,49 +148,18 @@
         "summary": "Get a single player",
         "description": "Get a player by ID",
         "operationId": "GetPlayer",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/player_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "responses": {
@@ -285,49 +208,18 @@
         "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
         "summary": "Update a player by ID",
         "operationId": "UpdatePlayer",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/player_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "requestBody": {
@@ -388,49 +280,18 @@
         "description": "Delete a player and all embeds associated with it.",
         "summary": "Delete a player by ID",
         "operationId": "DeletePlayer",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/player_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "responses": {
@@ -481,49 +342,18 @@
         "summary": "Publish a player",
         "description": "Publish a player for optimization and production use.",
         "operationId": "PublishPlayer",
-        "parameters": [{
-            "name": "account_id",
-            "in": "path",
-            "description": "Video Cloud or Brightcove Player account ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
           },
           {
-            "name": "player_id",
-            "in": "path",
-            "description": "The player ID.",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/player_id"
           },
           {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "Content-Type: application/json",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/ContentType"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/Authorization"
           }
         ],
         "responses": {
@@ -936,7 +766,53 @@
         }
       }
     },
-    "responses": {
+    "parameters": {
+      "account_id": {
+        "name": "account_id",
+        "in": "path",
+        "description": "Video Cloud account ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "player_id": {
+        "name": "player_id",
+        "in": "path",
+        "description": "Brightcove Player ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ContentType": {
+        "name": "Content-Type",
+        "in": "header",
+        "description": "Content-Type: application/json",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "application/json"
+      },
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },    "responses": {
       "UpdatePlayerResponse": {
         "title": "Update Player Response",
         "type": "object",
