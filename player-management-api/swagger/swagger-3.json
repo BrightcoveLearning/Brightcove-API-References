@@ -349,7 +349,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/UpdatePlayerResponse"
+                  "$ref": "#/components/responses/UpdatePlayerResponse"
                 }
               }
             }
@@ -440,7 +440,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/DeletePlayerResponse"
+                  "$ref": "#/components/responses/DeletePlayerResponse"
                 }
               }
             }
@@ -533,7 +533,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/PublishPlayerResponse"
+                  "$ref": "#/components/responses/PublishPlayerResponse"
                 }
               }
             }
