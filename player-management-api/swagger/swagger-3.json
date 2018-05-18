@@ -101,7 +101,6 @@
           "content": {
             "application/json": {
               "schema": {
-                "description": "Create a player",
                 "$ref": "#/components/schemas/configuration"
               }
             }
@@ -273,7 +272,17 @@
             "application/json": {
               "schema": {
                 "description": "Update the player",
-                "$ref": "#/components/schemas/UpdatePlayerRequestBody"
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The player name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "The player description"
+                  }
+                }
               }
             }
           },
@@ -467,20 +476,6 @@
   },
   "components": {
     "schemas": {
-      "UpdatePlayerRequestBody": {
-        "title": "Update Player Request Body",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The player name"
-          },
-          "description": {
-            "type": "string",
-            "description": "The player description"
-          }
-        }
-      },
       "player": {
         "title": "Player Information Object",
         "type": "object",
