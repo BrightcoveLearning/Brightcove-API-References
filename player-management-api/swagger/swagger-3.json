@@ -61,7 +61,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/GetPlayersResponse"
+                  "$ref": "#/components/responses/GetPlayersResponse"
                 }
               }
             }
@@ -153,7 +153,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/CreatePlayerResponse"
+                  "$ref": "#/components/responses/CreatePlayerResponse"
                 }
               }
             }
@@ -569,6 +569,20 @@
   },
   "components": {
     "schemas": {
+      "UpdatePlayerRequestBody": {
+        "title": "Update Player Request Body",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The player name"
+          },
+          "description": {
+            "type": "string",
+            "description": "The player description"
+          }
+        }
+      },
       "player": {
         "title": "Player Information Object",
         "type": "object",
@@ -923,20 +937,6 @@
       }
     },
     "responses": {
-      "UpdatePlayerRequestBody": {
-        "title": "Update Player Request Body",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The player name"
-          },
-          "description": {
-            "type": "string",
-            "description": "The player description"
-          }
-        }
-      },
       "UpdatePlayerResponse": {
         "title": "Update Player Response",
         "type": "object",
