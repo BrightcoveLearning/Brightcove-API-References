@@ -33,12 +33,20 @@
         ],
         "responses": {
           "200": {
-            "description": "200",
+            "description": "SUCCESS",
             "content": {
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/responses/GetPlayersResponse"
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/player"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -102,12 +110,50 @@
         },
         "responses": {
           "200": {
-            "description": "200",
+            "description": "SUCCESS",
             "content": {
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/responses/CreatePlayerResponse"
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The player id",
+                      "readOnly": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The player URL",
+                      "readOnly": true
+                    },
+                    "embed_code": {
+                      "type": "string",
+                      "description": "The published player iframe tag",
+                      "readOnly": true
+                    },
+                    "embed_in_page": {
+                      "type": "string",
+                      "description": "URL to browse to retrieve the in-page embed code for published player",
+                      "readOnly": true
+                    },
+                    "preview_url": {
+                      "type": "string",
+                      "description": "URL to preview player",
+                      "readOnly": true
+                    },
+                    "preview_embed_in_page": {
+                      "type": "string",
+                      "description": "URL to browse to retrieve the in-page embed code for preview player",
+                      "readOnly": true
+                    },
+                    "preview_embed_code": {
+                      "type": "string",
+                      "description": "Preview player iframe tag",
+                      "readOnly": true
+                    }
+                    }
+                  }
                 }
               }
             }
@@ -893,19 +939,6 @@
             "type": "string",
             "description": "URL to browse to retrieve the in-page embed code for published player",
             "readOnly": true
-          }
-        }
-      },
-      "GetPlayersResponse": {
-        "title": "Get Players Response",
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "description": "Array of player information objects",
-            "items": {
-              "$ref": "#/components/schemas/player"
-            }
           }
         }
       },
