@@ -500,7 +500,8 @@
   "components": {
     "schemas": {
       "player": {
-        "title": "Player Information Object",
+        "title": "Player",
+        "description": "Player information object",
         "type": "object",
         "properties": {
           "account_id": {
