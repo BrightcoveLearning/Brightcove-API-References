@@ -374,24 +374,9 @@
                   "description": "200",
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "message": {
                       "type": "string",
-                      "description": "The player id",
-                      "readOnly": true
-                    },
-                    "url": {
-                      "type": "string",
-                      "description": "The player URL",
-                      "readOnly": true
-                    },
-                    "embed_code": {
-                      "type": "string",
-                      "description": "The published player iframe tag",
-                      "readOnly": true
-                    },
-                    "embed_in_page": {
-                      "type": "string",
-                      "description": "URL to browse to retrieve the in-page embed code for published player",
+                      "description": "Message indicating player was deleted",
                       "readOnly": true
                     }
                   }
@@ -451,12 +436,34 @@
         ],
         "responses": {
           "200": {
-            "description": "200",
+            "description": "SUCCESS",
             "content": {
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/responses/PublishPlayerResponse"
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The player id",
+                      "readOnly": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The player URL",
+                      "readOnly": true
+                    },
+                    "embed_code": {
+                      "type": "string",
+                      "description": "The published player iframe tag",
+                      "readOnly": true
+                    },
+                    "embed_in_page": {
+                      "type": "string",
+                      "description": "URL to browse to retrieve the in-page embed code for published player",
+                      "readOnly": true
+                    }
+                  }
                 }
               }
             }
