@@ -880,17 +880,6 @@
           "type": "string"
         }
       }
-    },    "responses": {
-      "DeletePlayerResponse": {
-        "title": "Get Players Response",
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "description": "Report of player deletion"
-          }
-        }
-      }
     }
   }
 }
