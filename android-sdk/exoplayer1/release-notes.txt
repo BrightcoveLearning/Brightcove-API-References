@@ -1,5 +1,45 @@
 Brightcove Native Player for Android Release Notes:
 
+Version 6.2.0:
+
+  SDK changes:
+
+      * Added a VideoParser class with methods to build a Video and a Playlist from a JSON object, following the Brightcove Playback API response format.
+      * Overloaded the requestPurchaseLicense() and requestRentalLicense() methods in the OfflineCatalog class in order to set the OutputProtection through the CustomerRightsTokenConfig object.
+      * Updated the FileDownloader library to 1.7.3 for Offline Playback.
+      * Fixed a race condition for Offline Playback when deleting multiple videos while being downloaded.
+
+  ExoPlayer v2 Changes:
+
+      * The Brightcove ExoPlayer has been updated to 2.7.3.
+      * The following methods were deprecated from BrightcoveDrmSession interface:
+        ** DrmException getDrmError()
+        ** Map<String, String> queryKeyStatus()
+        ** byte[] getOfflineLicenseKeySetId()
+
+  OnceUX Plugin Changes:
+
+      * Added support to parse and read all Ad Creative IDs from SSAI VMAP.
+      * Removed requirement for id attribute in Ad tag.
+
+Version 6.1.2:
+
+  SDK changes:
+
+      * Fixed an issue where the download would not resume in slow networks (down to 256kbps) after
+      killing and restarting the app.
+
+  OnceUX Plugin Changes:
+
+      * Fixed an issue where all ads will be played after seeking over multiple ad pods.
+
+Version 6.1.1:
+
+  SDK changes:
+
+      * Fixed an Offline Analytics dependency that was unexpectedly increasing app sizes.
+      * Fixed an issue with Offline Playback where some downloads were hanging at 99%.
+
 Version 6.1.0:
 
   SDK changes:
