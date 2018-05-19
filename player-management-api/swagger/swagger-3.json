@@ -762,7 +762,24 @@
             "type": "object",
             "description": "Player information object",
             "properties": {
-              "$ref": "#/components/schemas/Player"
+              "inactive": {
+                "type": "boolean",
+                "description": "Indicates if a player is inactive"
+              },
+              "template": {
+                "type": "object",
+                "description": "Specific template details",
+                "properites": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the template"
+                  },
+                  "version": {
+                    "type": "string",
+                    "description": "Version of the template"
+                  }
+                }
+              }
             }
           },
           "playlist": {
