@@ -658,7 +658,24 @@
             "type": "object",
             "description": "Media information for non-Video Cloud media",
             "properties": {
-              "$ref": "#/components/schemas/media"
+              "sources": {
+                "type": "array",
+                "description": "Array of media source objects",
+                "items": {
+                  "$ref": "#/components/schemas/source"
+                }
+              },
+              "src": {
+                "type": "string",
+                "description": "The URL of the video file to load into the player"
+              },
+              "tracks": {
+                "type": "array",
+                "description": "Array of text track objects",
+                "items": {
+                  "$ref": "#/components/schemas/track"
+                }
+              }
             }
           },
           "name": {
@@ -777,31 +794,6 @@
                 "type": "string",
                 "description": "if using a Video Cloud video asset, that asset's ID"
               }
-            }
-          }
-        }
-      },
-      "media": {
-        "title": "Media Object",
-        "type": "object",
-        "description": "Media information for non-Video Cloud media",
-        "properties": {
-          "sources": {
-            "type": "array",
-            "description": "Array of media source objects",
-            "items": {
-              "$ref": "#/components/schemas/source"
-            }
-          },
-          "src": {
-            "type": "string",
-            "description": "The URL of the video file to load into the player"
-          },
-          "tracks": {
-            "type": "array",
-            "description": "Array of text track objects",
-            "items": {
-              "$ref": "#/components/schemas/track"
             }
           }
         }
