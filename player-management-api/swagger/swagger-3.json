@@ -43,7 +43,7 @@
                     "items": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/player"
+                        "$ref": "#/components/schemas/Player"
                       }
                     }
                   }
@@ -213,7 +213,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/player"
+                  "$ref": "#/components/schemas/Player"
                 }
               }
             }
@@ -499,7 +499,7 @@
   },
   "components": {
     "schemas": {
-      "player": {
+      "Player": {
         "title": "Player",
         "description": "Player information object",
         "type": "object",
@@ -651,7 +651,7 @@
             "type": "object",
             "description": "Player information object",
             "properties": {
-              "$ref": "#/components/schemas/player"
+              "$ref": "#/components/schemas/Player"
             }
           },
           "playlist": {
