@@ -543,10 +543,14 @@
             "readOnly": true,
             "properties": {
               "preview": {
-                "$ref": "#/components/schemas/branch"
+                "oneOf": {
+                  "$ref": "#/components/schemas/branch"
+                }
               },
               "master": {
-                "$ref": "#/components/schemas/branch"
+                "oneOf": {
+                  "$ref": "#/components/schemas/branch"
+                }
               }
             }
           }
