@@ -313,7 +313,7 @@
         "description": "Configuration for a player",
         "properties": {
 
-        }}
+        }
       }
     },
     "parameters":
