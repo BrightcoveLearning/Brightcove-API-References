@@ -385,7 +385,56 @@
           {
             "sources":
             {
-                "$ref": "#/components/schemas/sources"
+              "type": "array",
+              "description": "Array of non-Video Cloud media sources",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "height":
+                  {
+                    "type": "integer",
+                    "description": "Video frame height in pixels"
+                  },
+                  "width":
+                  {
+                    "type": "integer",
+                    "description": "Video frame width in pixels"
+                  },
+                  "poster":
+                  {
+                    "type": "object",
+                    "description": "Information for the poster image",
+                    "properties":
+                    {
+                      "highres":
+                      {
+                        "type": "string",
+                        "description": "The file path to the poster image, relative to the root directory of the skin"
+                      }
+                    }
+                  },
+                  "src":
+                  {
+                    "type": "string",
+                    "description": "The URL of the video file to load into the player"
+                  },
+                  "title":
+                  {
+                    "type": "string",
+                    "description": "Content of the `&lt;title&gt;` element of the page"
+                  },
+                  "type":
+                  {
+                    "type": "string",
+                    "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
+                    "enum":
+                    [
+                      "video/mp4",
+                      "application/x-mpegURL"
+                    ]
+                  }
+                }
+              }
             },
             "src":
             {
@@ -395,96 +444,29 @@
             "tracks":
             {
               "type": "array",
-              "description": "Array of text track objects",
+              "description": "Array of text track objects for non-Video Cloud media",
               "items":
               {
-                "$ref": "#/components/schemas/track"
-              }
-            }
-          }
-        }
-      },
-      "sources":
-      {
-        "title": "Media Source Object",
-        "type": "array",
-        "description": "Media source information for non-Video Cloud media",
-        "items": {
-          "type": "object",
-          "properties":
-          {
-            "height":
-            {
-              "type": "integer",
-              "description": "Video frame height in pixels"
-            },
-            "width":
-            {
-              "type": "integer",
-              "description": "Video frame width in pixels"
-            },
-            "poster":
-            {
-              "type": "object",
-              "description": "Information for the poster image",
-              "properties":
-              {
-                "highres":
-                {
-                  "type": "string",
-                  "description": "The file path to the poster image, relative to the root directory of the skin"
+                "type": "object",
+                "properties": {
+                  "label":
+                  {
+                    "type": "string",
+                    "description": "Text label for the track, for instance `English` for an English language text track"
+                  },
+                  "src":
+                  {
+                    "type": "string",
+                    "description": "URL to source of track, required in a track object"
+                  },
+                  "srclang":
+                  {
+                    "type": "string",
+                    "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
+                  }
                 }
               }
-            },
-            "src":
-            {
-              "type": "string",
-              "description": "The URL of the video file to load into the player"
-            },
-            "title":
-            {
-              "type": "string",
-              "description": "Content of the `&lt;title&gt;` element of the page"
-            },
-            "type":
-            {
-              "type": "string",
-              "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
-              "enum":
-              [
-                "video/mp4",
-                "application/x-mpegURL"
-              ]
             }
-        }
-        },
-        "required":
-        [
-          "src",
-          "type"
-        ]
-      },
-      "track":
-      {
-        "title": "Media Text Track Object",
-        "type": "object",
-        "description": "Media track information for non-Video Cloud media",
-        "properties":
-        {
-          "label":
-          {
-            "type": "string",
-            "description": "Text label for the track, for instance `English` for an English language text track"
-          },
-          "src":
-          {
-            "type": "string",
-            "description": "URL to source of track, required in a track object"
-          },
-          "srclang":
-          {
-            "type": "string",
-            "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
           }
         }
       }
