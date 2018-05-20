@@ -715,6 +715,33 @@
           "IsMultiContentStreaming": false
         }
       }
+    },
+    "/accounts/{account_id}/players/{player_id}/configuration/{branch}": {
+      "get": {
+        "tags": [
+          "Player Configurations"
+        ],
+        "summary": "Get player configuration",
+        "description": "et a preview or published player configuration",
+        "operationId": "GetPlayerConfiguration",
+        "parameters": [{
+            "$ref": "#/components/parameters/account_id"
+          },
+          {
+            "$ref": "#/components/parameters/player_id"
+          },
+          {
+            "$ref": "#/components/parameters/branch"
+          },
+          {
+            "$ref": "#/components/parameters/ContentType"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+      }
+
     }
   },
   "components": {
@@ -851,7 +878,6 @@
           }
         }
       }
-
     },
     "parameters": {
       "account_id": {
@@ -874,6 +900,18 @@
         "explode": false,
         "schema": {
           "type": "string"
+        }
+      },
+      "branch": {
+        "name": "branch",
+        "in": "path",
+        "description": "Branch name, `preview` or `master`.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string",
+          "enum": ["master", "preview"]
         }
       },
       "ContentType": {
