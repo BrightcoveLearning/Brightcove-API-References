@@ -307,7 +307,9 @@
   "components":
   {
     "schemas": {
+      "configuration": {
 
+      }
     },
     "parameters":
     {
