@@ -281,7 +281,6 @@
           "IsMultiContentStreaming": false
         }
       }
-
     },
     "/accounts/{account_id}/players/{player_id}/publish": {
       "post": {
