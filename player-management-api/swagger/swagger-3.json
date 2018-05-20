@@ -1,33 +1,33 @@
 {
   "openapi": "3.0.0",
-  "info": 
+  "info":
   {
     "title": "Brightcove Player Management API Reference",
     "description": "Reference for the Brightcove Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/node/17910). If you haven't gone through the [Quick Start to Player Management](https://support.brightcove.com/node/18268), it's highly recommended you start there. You'll get security set up and learn some of the basics of using the Player Management API. If you are working with this API for the first time, read the [Player Management API Overview](https://support.brightcove.com/node/18269). Remember that after making any configuration changes you **MUST** re-publish your player. <strong>Note:</strong> Fields in configuration objects need to be set only if you wish to change their values. Fields in configuration objects will be displayed in the response only if explicitly set. For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
     "version": "2.0.0"
   },
-  "servers": 
+  "servers":
   [
     {
       "url": "https://players.api.brightcove.com/v2",
-      "variables": 
+      "variables":
       {}
     }
   ],
-  "paths": 
+  "paths":
   {
-    "/accounts/{account_id}/players": 
+    "/accounts/{account_id}/players":
     {
-      "get": 
+      "get":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "summary": "Get a list of players",
         "description": "Get a list of players",
         "operationId": "GetPlayers",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -39,118 +39,648 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "SUCCESS",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "items": 
+                    "items":
                     {
                       "type": "array",
-                      "items": 
+                      "items":
                       {
                         "type": "object",
-                        "properties": 
+                        "properties":
                         {
-                          "account_id": 
+                          "account_id":
                           {
                             "type": "string",
                             "description": "The account id"
                           },
-                          "created_at": 
+                          "created_at":
                           {
                             "type": "string",
                             "description": "The player creation date-time"
                           },
-                          "embeds_count": 
+                          "embeds_count":
                           {
                             "type": "integer",
                             "description": "The number of embeds (instances of this player), will always be at least 1"
                           },
-                          "id": 
+                          "id":
                           {
                             "type": "string",
                             "description": "The player id"
                           },
-                          "name": 
+                          "name":
                           {
                             "type": "string",
                             "description": "The player name"
                           },
-                          "description": 
+                          "description":
                           {
                             "type": "string",
                             "description": "The player description"
                           },
-                          "url": 
+                          "url":
                           {
                             "type": "string",
                             "description": "URL to player"
                           },
-                          "branches": 
+                          "branches":
                           {
                             "type": "object",
                             "description": "The branches of the player - contains objects for the preview and master (published) player",
-                            "properties": 
+                            "properties":
                             {
-                              "preview": 
+                              "preview":
                               {
                                 "type": "object",
                                 "description": "The preview player branch",
-                                "properties": 
+                                "properties":
                                 {
-                                  "configuration": 
+                                  "configuration":
                                   {
-                                    "$ref": "#/components/schemas/configuration"
+                                    "type": "object",
+                                    "description": "Configuration for a player",
+                                    "properties":
+                                    {
+                                      "autoadvance":
+                                      {
+                                        "type": "integer",
+                                        "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                                      },
+                                      "autoplay":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates player should play video immediately, on platforms that allow this",
+                                        "default": false
+                                      },
+                                      "compatibility":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Provides compatibility with the Player 1.x.x API",
+                                        "readOnly": true
+                                      },
+                                      "css":
+                                      {
+                                        "type": "object",
+                                        "description": "Object containing CSS color overrides",
+                                        "properties":
+                                        {
+                                          "controlBarColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Background color of control bar"
+                                          },
+                                          "controlColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Color of buttons and text in control bar"
+                                          },
+                                          "progressColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Color of progress bar"
+                                          }
+                                        }
+                                      },
+                                      "errors":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if the error messages plugin should be excluded"
+                                      },
+                                      "fullscreenControl":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                                      },
+                                      "languages":
+                                      {
+                                        "type": "array",
+                                        "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                                        "items":
+                                        {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "loop":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if the video should play over as soon as it ends"
+                                      },
+                                      "media":
+                                      {
+                                        "type": "object",
+                                        "description": "Media information for non-Video Cloud media",
+                                        "properties":
+                                        {
+                                          "sources":
+                                          {
+                                            "type": "array",
+                                            "description": "Array of media source objects",
+                                            "items":
+                                            {
+                                              "$ref": "#/components/schemas/source"
+                                            }
+                                          },
+                                          "src":
+                                          {
+                                            "type": "string",
+                                            "description": "The URL of the video file to load into the player"
+                                          },
+                                          "tracks":
+                                          {
+                                            "type": "array",
+                                            "description": "Array of text track objects",
+                                            "items":
+                                            {
+                                              "$ref": "#/components/schemas/track"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "player":
+                                      {
+                                        "type": "object",
+                                        "description": "Player information object",
+                                        "properties":
+                                        {
+                                          "inactive":
+                                          {
+                                            "type": "boolean",
+                                            "description": "Indicates if a player is inactive"
+                                          },
+                                          "template":
+                                          {
+                                            "type": "object",
+                                            "description": "Specific template details",
+                                            "properites":
+                                            {
+                                              "name":
+                                              {
+                                                "type": "string",
+                                                "description": "The name of the template"
+                                              },
+                                              "version":
+                                              {
+                                                "type": "string",
+                                                "description": "Version of the template"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "playlist":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if a playlist should be used",
+                                        "default": null
+                                      },
+                                      "playOnSelect":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if a video loaded from a playlist should play on load",
+                                        "default": null
+                                      },
+                                      "plugins":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of plugin objects",
+                                        "items":
+                                        {
+                                          "type": "object",
+                                          "properties":
+                                          {
+                                            "name":
+                                            {
+                                              "type": "string",
+                                              "description": "Plugin name"
+                                            },
+                                            "options":
+                                            {
+                                              "type": "object",
+                                              "description": "Map of option-value pairs"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "preload":
+                                      {
+                                        "type": "string",
+                                        "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                                        "enum":
+                                        [
+                                          "auto",
+                                          "metadata",
+                                          "none"
+                                        ]
+                                      },
+                                      "scripts":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of URLs for scripts that should loaded with the player",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL for script to include"
+                                        }
+                                      },
+                                      "skin":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                                        "default": true
+                                      },
+                                      "studio_configuration":
+                                      {
+                                        "type": "object",
+                                        "description": "Object containing playlist information normally set in Studio",
+                                        "properites":
+                                        {
+                                          "player":
+                                          {
+                                            "type": "object",
+                                            "description": "Object containing playlist information",
+                                            "properties":
+                                            {
+                                              "adjusted":
+                                              {
+                                                "type": "boolean",
+                                                "description": "indicates if player dimensions should be adjusted for playlist"
+                                              },
+                                              "height":
+                                              {
+                                                "type": "string",
+                                                "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                              },
+                                              "width":
+                                              {
+                                                "type": "string",
+                                                "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "stylesheets":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of URLs to CSS files that should be included with the player",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL of a stylesheet to be included with the player"
+                                        }
+                                      },
+                                      "techOrder":
+                                      {
+                                        "type": "array",
+                                        "description": "Order that playback technologies should be used; only visible if changed from default",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL of a stylesheet to be included with the player",
+                                          "enum":
+                                          [
+                                            "html5",
+                                            "flash"
+                                          ]
+                                        }
+                                      },
+                                      "video_cloud":
+                                      {
+                                        "type": "object",
+                                        "description": "Video Cloud configuration information",
+                                        "properites":
+                                        {
+                                          "policy_key":
+                                          {
+                                            "type": "string",
+                                            "description": "policy key for Video Cloud account"
+                                          },
+                                          "video":
+                                          {
+                                            "type": "string",
+                                            "description": "if using a Video Cloud video asset, that asset's ID"
+                                          }
+                                        }
+                                      }
+                                    }
                                   },
-                                  "updated_at": 
+                                  "updated_at":
                                   {
                                     "type": "string",
                                     "description": "date-time of last update to preview player"
                                   },
-                                  "template_updated_at": 
+                                  "template_updated_at":
                                   {
                                     "type": "string",
                                     "description": "date-time of last update to preview player template"
                                   },
-                                  "preview_url": 
+                                  "preview_url":
                                   {
                                     "type": "string",
                                     "description": "URL for the player"
                                   }
                                 }
                               },
-                              "master": 
+                              "master":
                               {
                                 "type": "object",
                                 "description": "The master (published) player branch",
-                                "properties": 
+                                "properties":
                                 {
-                                  "configuration": 
+                                  "configuration":
                                   {
-                                    "$ref": "#/components/schemas/configuration"
+                                    "type": "object",
+                                    "description": "Configuration for a player",
+                                    "properties":
+                                    {
+                                      "autoadvance":
+                                      {
+                                        "type": "integer",
+                                        "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                                      },
+                                      "autoplay":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates player should play video immediately, on platforms that allow this",
+                                        "default": false
+                                      },
+                                      "compatibility":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Provides compatibility with the Player 1.x.x API",
+                                        "readOnly": true
+                                      },
+                                      "css":
+                                      {
+                                        "type": "object",
+                                        "description": "Object containing CSS color overrides",
+                                        "properties":
+                                        {
+                                          "controlBarColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Background color of control bar"
+                                          },
+                                          "controlColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Color of buttons and text in control bar"
+                                          },
+                                          "progressColor":
+                                          {
+                                            "type": "string",
+                                            "description": "Color of progress bar"
+                                          }
+                                        }
+                                      },
+                                      "errors":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if the error messages plugin should be excluded"
+                                      },
+                                      "fullscreenControl":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                                      },
+                                      "languages":
+                                      {
+                                        "type": "array",
+                                        "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                                        "items":
+                                        {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "loop":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if the video should play over as soon as it ends"
+                                      },
+                                      "media":
+                                      {
+                                        "type": "object",
+                                        "description": "Media information for non-Video Cloud media",
+                                        "properties":
+                                        {
+                                          "sources":
+                                          {
+                                            "type": "array",
+                                            "description": "Array of media source objects",
+                                            "items":
+                                            {
+                                              "$ref": "#/components/schemas/source"
+                                            }
+                                          },
+                                          "src":
+                                          {
+                                            "type": "string",
+                                            "description": "The URL of the video file to load into the player"
+                                          },
+                                          "tracks":
+                                          {
+                                            "type": "array",
+                                            "description": "Array of text track objects",
+                                            "items":
+                                            {
+                                              "$ref": "#/components/schemas/track"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "player":
+                                      {
+                                        "type": "object",
+                                        "description": "Player information object",
+                                        "properties":
+                                        {
+                                          "inactive":
+                                          {
+                                            "type": "boolean",
+                                            "description": "Indicates if a player is inactive"
+                                          },
+                                          "template":
+                                          {
+                                            "type": "object",
+                                            "description": "Specific template details",
+                                            "properites":
+                                            {
+                                              "name":
+                                              {
+                                                "type": "string",
+                                                "description": "The name of the template"
+                                              },
+                                              "version":
+                                              {
+                                                "type": "string",
+                                                "description": "Version of the template"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "playlist":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if a playlist should be used",
+                                        "default": null
+                                      },
+                                      "playOnSelect":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates if a video loaded from a playlist should play on load",
+                                        "default": null
+                                      },
+                                      "plugins":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of plugin objects",
+                                        "items":
+                                        {
+                                          "type": "object",
+                                          "properties":
+                                          {
+                                            "name":
+                                            {
+                                              "type": "string",
+                                              "description": "Plugin name"
+                                            },
+                                            "options":
+                                            {
+                                              "type": "object",
+                                              "description": "Map of option-value pairs"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "preload":
+                                      {
+                                        "type": "string",
+                                        "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                                        "enum":
+                                        [
+                                          "auto",
+                                          "metadata",
+                                          "none"
+                                        ]
+                                      },
+                                      "scripts":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of URLs for scripts that should loaded with the player",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL for script to include"
+                                        }
+                                      },
+                                      "skin":
+                                      {
+                                        "type": "boolean",
+                                        "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                                        "default": true
+                                      },
+                                      "studio_configuration":
+                                      {
+                                        "type": "object",
+                                        "description": "Object containing playlist information normally set in Studio",
+                                        "properites":
+                                        {
+                                          "player":
+                                          {
+                                            "type": "object",
+                                            "description": "Object containing playlist information",
+                                            "properties":
+                                            {
+                                              "adjusted":
+                                              {
+                                                "type": "boolean",
+                                                "description": "indicates if player dimensions should be adjusted for playlist"
+                                              },
+                                              "height":
+                                              {
+                                                "type": "string",
+                                                "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                              },
+                                              "width":
+                                              {
+                                                "type": "string",
+                                                "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "stylesheets":
+                                      {
+                                        "type": "array",
+                                        "description": "Array of URLs to CSS files that should be included with the player",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL of a stylesheet to be included with the player"
+                                        }
+                                      },
+                                      "techOrder":
+                                      {
+                                        "type": "array",
+                                        "description": "Order that playback technologies should be used; only visible if changed from default",
+                                        "items":
+                                        {
+                                          "type": "string",
+                                          "description": "URL of a stylesheet to be included with the player",
+                                          "enum":
+                                          [
+                                            "html5",
+                                            "flash"
+                                          ]
+                                        }
+                                      },
+                                      "video_cloud":
+                                      {
+                                        "type": "object",
+                                        "description": "Video Cloud configuration information",
+                                        "properites":
+                                        {
+                                          "policy_key":
+                                          {
+                                            "type": "string",
+                                            "description": "policy key for Video Cloud account"
+                                          },
+                                          "video":
+                                          {
+                                            "type": "string",
+                                            "description": "if using a Video Cloud video asset, that asset's ID"
+                                          }
+                                        }
+                                      }
+                                    }
                                   },
-                                  "updated_at": 
+                                  "updated_at":
                                   {
                                     "type": "string",
                                     "description": "date-time of last update to preview player"
                                   },
-                                  "template_updated_at": 
+                                  "template_updated_at":
                                   {
                                     "type": "string",
                                     "description": "date-time of last update to preview player template"
                                   },
-                                  "preview_url": 
+                                  "preview_url":
                                   {
                                     "type": "string",
                                     "description": "URL for the player"
@@ -167,31 +697,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -199,16 +729,16 @@
           "IsMultiContentStreaming": false
         }
       },
-      "post": 
+      "post":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
         "summary": "Create a player",
         "operationId": "CreatePlayer",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -220,73 +750,338 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "requestBody": 
+        "requestBody":
         {
           "description": "Create a plsyer",
-          "content": 
+          "content":
           {
-            "application/json": 
+            "application/json":
             {
-              "schema": 
+              "schema":
               {
-                "$ref": "#/components/schemas/configuration"
+                "type": "object",
+                "description": "Configuration for a player",
+                "properties":
+                {
+                  "autoadvance":
+                  {
+                    "type": "integer",
+                    "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                  },
+                  "autoplay":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates player should play video immediately, on platforms that allow this",
+                    "default": false
+                  },
+                  "compatibility":
+                  {
+                    "type": "boolean",
+                    "description": "Provides compatibility with the Player 1.x.x API",
+                    "readOnly": true
+                  },
+                  "css":
+                  {
+                    "type": "object",
+                    "description": "Object containing CSS color overrides",
+                    "properties":
+                    {
+                      "controlBarColor":
+                      {
+                        "type": "string",
+                        "description": "Background color of control bar"
+                      },
+                      "controlColor":
+                      {
+                        "type": "string",
+                        "description": "Color of buttons and text in control bar"
+                      },
+                      "progressColor":
+                      {
+                        "type": "string",
+                        "description": "Color of progress bar"
+                      }
+                    }
+                  },
+                  "errors":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates if the error messages plugin should be excluded"
+                  },
+                  "fullscreenControl":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                  },
+                  "languages":
+                  {
+                    "type": "array",
+                    "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                    "items":
+                    {
+                      "type": "string"
+                    }
+                  },
+                  "loop":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates if the video should play over as soon as it ends"
+                  },
+                  "media":
+                  {
+                    "type": "object",
+                    "description": "Media information for non-Video Cloud media",
+                    "properties":
+                    {
+                      "sources":
+                      {
+                        "type": "array",
+                        "description": "Array of media source objects",
+                        "items":
+                        {
+                          "$ref": "#/components/schemas/source"
+                        }
+                      },
+                      "src":
+                      {
+                        "type": "string",
+                        "description": "The URL of the video file to load into the player"
+                      },
+                      "tracks":
+                      {
+                        "type": "array",
+                        "description": "Array of text track objects",
+                        "items":
+                        {
+                          "$ref": "#/components/schemas/track"
+                        }
+                      }
+                    }
+                  },
+                  "player":
+                  {
+                    "type": "object",
+                    "description": "Player information object",
+                    "properties":
+                    {
+                      "inactive":
+                      {
+                        "type": "boolean",
+                        "description": "Indicates if a player is inactive"
+                      },
+                      "template":
+                      {
+                        "type": "object",
+                        "description": "Specific template details",
+                        "properites":
+                        {
+                          "name":
+                          {
+                            "type": "string",
+                            "description": "The name of the template"
+                          },
+                          "version":
+                          {
+                            "type": "string",
+                            "description": "Version of the template"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "playlist":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates if a playlist should be used",
+                    "default": null
+                  },
+                  "playOnSelect":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates if a video loaded from a playlist should play on load",
+                    "default": null
+                  },
+                  "plugins":
+                  {
+                    "type": "array",
+                    "description": "Array of plugin objects",
+                    "items":
+                    {
+                      "type": "object",
+                      "properties":
+                      {
+                        "name":
+                        {
+                          "type": "string",
+                          "description": "Plugin name"
+                        },
+                        "options":
+                        {
+                          "type": "object",
+                          "description": "Map of option-value pairs"
+                        }
+                      }
+                    }
+                  },
+                  "preload":
+                  {
+                    "type": "string",
+                    "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                    "enum":
+                    [
+                      "auto",
+                      "metadata",
+                      "none"
+                    ]
+                  },
+                  "scripts":
+                  {
+                    "type": "array",
+                    "description": "Array of URLs for scripts that should loaded with the player",
+                    "items":
+                    {
+                      "type": "string",
+                      "description": "URL for script to include"
+                    }
+                  },
+                  "skin":
+                  {
+                    "type": "boolean",
+                    "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                    "default": true
+                  },
+                  "studio_configuration":
+                  {
+                    "type": "object",
+                    "description": "Object containing playlist information normally set in Studio",
+                    "properites":
+                    {
+                      "player":
+                      {
+                        "type": "object",
+                        "description": "Object containing playlist information",
+                        "properties":
+                        {
+                          "adjusted":
+                          {
+                            "type": "boolean",
+                            "description": "indicates if player dimensions should be adjusted for playlist"
+                          },
+                          "height":
+                          {
+                            "type": "string",
+                            "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                          },
+                          "width":
+                          {
+                            "type": "string",
+                            "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "stylesheets":
+                  {
+                    "type": "array",
+                    "description": "Array of URLs to CSS files that should be included with the player",
+                    "items":
+                    {
+                      "type": "string",
+                      "description": "URL of a stylesheet to be included with the player"
+                    }
+                  },
+                  "techOrder":
+                  {
+                    "type": "array",
+                    "description": "Order that playback technologies should be used; only visible if changed from default",
+                    "items":
+                    {
+                      "type": "string",
+                      "description": "URL of a stylesheet to be included with the player",
+                      "enum":
+                      [
+                        "html5",
+                        "flash"
+                      ]
+                    }
+                  },
+                  "video_cloud":
+                  {
+                    "type": "object",
+                    "description": "Video Cloud configuration information",
+                    "properites":
+                    {
+                      "policy_key":
+                      {
+                        "type": "string",
+                        "description": "policy key for Video Cloud account"
+                      },
+                      "video":
+                      {
+                        "type": "string",
+                        "description": "if using a Video Cloud video asset, that asset's ID"
+                      }
+                    }
+                  }
+                }
               }
             }
           },
           "required": true
         },
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "SUCCESS",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "id": 
+                    "id":
                     {
                       "type": "string",
                       "description": "The player id",
                       "readOnly": true
                     },
-                    "url": 
+                    "url":
                     {
                       "type": "string",
                       "description": "The player URL",
                       "readOnly": true
                     },
-                    "embed_code": 
+                    "embed_code":
                     {
                       "type": "string",
                       "description": "The published player iframe tag",
                       "readOnly": true
                     },
-                    "embed_in_page": 
+                    "embed_in_page":
                     {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for published player",
                       "readOnly": true
                     },
-                    "preview_url": 
+                    "preview_url":
                     {
                       "type": "string",
                       "description": "URL to preview player",
                       "readOnly": true
                     },
-                    "preview_embed_in_page": 
+                    "preview_embed_in_page":
                     {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for preview player",
                       "readOnly": true
                     },
-                    "preview_embed_code": 
+                    "preview_embed_code":
                     {
                       "type": "string",
                       "description": "Preview player iframe tag",
@@ -297,31 +1092,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -330,18 +1125,18 @@
         }
       }
     },
-    "/accounts/{account_id}/players/{player_id}": 
+    "/accounts/{account_id}/players/{player_id}":
     {
-      "get": 
+      "get":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "summary": "Get a single player",
         "description": "Get a player by ID",
         "operationId": "GetPlayer",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -356,110 +1151,640 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "200",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "account_id": 
+                    "account_id":
                     {
                       "type": "string",
                       "description": "The account id"
                     },
-                    "created_at": 
+                    "created_at":
                     {
                       "type": "string",
                       "description": "The player creation date-time"
                     },
-                    "embeds_count": 
+                    "embeds_count":
                     {
                       "type": "integer",
                       "description": "The number of embeds (instances of this player), will always be at least 1"
                     },
-                    "id": 
+                    "id":
                     {
                       "type": "string",
                       "description": "The player id"
                     },
-                    "name": 
+                    "name":
                     {
                       "type": "string",
                       "description": "The player name"
                     },
-                    "description": 
+                    "description":
                     {
                       "type": "string",
                       "description": "The player description"
                     },
-                    "url": 
+                    "url":
                     {
                       "type": "string",
                       "description": "URL to player"
                     },
-                    "branches": 
+                    "branches":
                     {
                       "type": "object",
                       "description": "The branches of the player - contains objects for the preview and master (published) player",
-                      "properties": 
+                      "properties":
                       {
-                        "preview": 
+                        "preview":
                         {
                           "type": "object",
                           "description": "The preview player branch",
-                          "properties": 
+                          "properties":
                           {
-                            "configuration": 
+                            "configuration":
                             {
-                              "$ref": "#/components/schemas/configuration"
+                              "type": "object",
+                              "description": "Configuration for a player",
+                              "properties":
+                              {
+                                "autoadvance":
+                                {
+                                  "type": "integer",
+                                  "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                                },
+                                "autoplay":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates player should play video immediately, on platforms that allow this",
+                                  "default": false
+                                },
+                                "compatibility":
+                                {
+                                  "type": "boolean",
+                                  "description": "Provides compatibility with the Player 1.x.x API",
+                                  "readOnly": true
+                                },
+                                "css":
+                                {
+                                  "type": "object",
+                                  "description": "Object containing CSS color overrides",
+                                  "properties":
+                                  {
+                                    "controlBarColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Background color of control bar"
+                                    },
+                                    "controlColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Color of buttons and text in control bar"
+                                    },
+                                    "progressColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Color of progress bar"
+                                    }
+                                  }
+                                },
+                                "errors":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if the error messages plugin should be excluded"
+                                },
+                                "fullscreenControl":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                                },
+                                "languages":
+                                {
+                                  "type": "array",
+                                  "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                                  "items":
+                                  {
+                                    "type": "string"
+                                  }
+                                },
+                                "loop":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if the video should play over as soon as it ends"
+                                },
+                                "media":
+                                {
+                                  "type": "object",
+                                  "description": "Media information for non-Video Cloud media",
+                                  "properties":
+                                  {
+                                    "sources":
+                                    {
+                                      "type": "array",
+                                      "description": "Array of media source objects",
+                                      "items":
+                                      {
+                                        "$ref": "#/components/schemas/source"
+                                      }
+                                    },
+                                    "src":
+                                    {
+                                      "type": "string",
+                                      "description": "The URL of the video file to load into the player"
+                                    },
+                                    "tracks":
+                                    {
+                                      "type": "array",
+                                      "description": "Array of text track objects",
+                                      "items":
+                                      {
+                                        "$ref": "#/components/schemas/track"
+                                      }
+                                    }
+                                  }
+                                },
+                                "player":
+                                {
+                                  "type": "object",
+                                  "description": "Player information object",
+                                  "properties":
+                                  {
+                                    "inactive":
+                                    {
+                                      "type": "boolean",
+                                      "description": "Indicates if a player is inactive"
+                                    },
+                                    "template":
+                                    {
+                                      "type": "object",
+                                      "description": "Specific template details",
+                                      "properites":
+                                      {
+                                        "name":
+                                        {
+                                          "type": "string",
+                                          "description": "The name of the template"
+                                        },
+                                        "version":
+                                        {
+                                          "type": "string",
+                                          "description": "Version of the template"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "playlist":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if a playlist should be used",
+                                  "default": null
+                                },
+                                "playOnSelect":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if a video loaded from a playlist should play on load",
+                                  "default": null
+                                },
+                                "plugins":
+                                {
+                                  "type": "array",
+                                  "description": "Array of plugin objects",
+                                  "items":
+                                  {
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                      "name":
+                                      {
+                                        "type": "string",
+                                        "description": "Plugin name"
+                                      },
+                                      "options":
+                                      {
+                                        "type": "object",
+                                        "description": "Map of option-value pairs"
+                                      }
+                                    }
+                                  }
+                                },
+                                "preload":
+                                {
+                                  "type": "string",
+                                  "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                                  "enum":
+                                  [
+                                    "auto",
+                                    "metadata",
+                                    "none"
+                                  ]
+                                },
+                                "scripts":
+                                {
+                                  "type": "array",
+                                  "description": "Array of URLs for scripts that should loaded with the player",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL for script to include"
+                                  }
+                                },
+                                "skin":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                                  "default": true
+                                },
+                                "studio_configuration":
+                                {
+                                  "type": "object",
+                                  "description": "Object containing playlist information normally set in Studio",
+                                  "properites":
+                                  {
+                                    "player":
+                                    {
+                                      "type": "object",
+                                      "description": "Object containing playlist information",
+                                      "properties":
+                                      {
+                                        "adjusted":
+                                        {
+                                          "type": "boolean",
+                                          "description": "indicates if player dimensions should be adjusted for playlist"
+                                        },
+                                        "height":
+                                        {
+                                          "type": "string",
+                                          "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                        },
+                                        "width":
+                                        {
+                                          "type": "string",
+                                          "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "stylesheets":
+                                {
+                                  "type": "array",
+                                  "description": "Array of URLs to CSS files that should be included with the player",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL of a stylesheet to be included with the player"
+                                  }
+                                },
+                                "techOrder":
+                                {
+                                  "type": "array",
+                                  "description": "Order that playback technologies should be used; only visible if changed from default",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL of a stylesheet to be included with the player",
+                                    "enum":
+                                    [
+                                      "html5",
+                                      "flash"
+                                    ]
+                                  }
+                                },
+                                "video_cloud":
+                                {
+                                  "type": "object",
+                                  "description": "Video Cloud configuration information",
+                                  "properites":
+                                  {
+                                    "policy_key":
+                                    {
+                                      "type": "string",
+                                      "description": "policy key for Video Cloud account"
+                                    },
+                                    "video":
+                                    {
+                                      "type": "string",
+                                      "description": "if using a Video Cloud video asset, that asset's ID"
+                                    }
+                                  }
+                                }
+                              }
                             },
-                            "updated_at": 
+                            "updated_at":
                             {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at": 
+                            "template_updated_at":
                             {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url": 
+                            "preview_url":
                             {
                               "type": "string",
                               "description": "URL for the player"
                             }
                           }
                         },
-                        "master": 
+                        "master":
                         {
                           "type": "object",
                           "description": "The master (published) player branch",
-                          "properties": 
+                          "properties":
                           {
-                            "configuration": 
+                            "configuration":
                             {
-                              "$ref": "#/components/schemas/configuration"
+                              "type": "object",
+                              "description": "Configuration for a player",
+                              "properties":
+                              {
+                                "autoadvance":
+                                {
+                                  "type": "integer",
+                                  "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
+                                },
+                                "autoplay":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates player should play video immediately, on platforms that allow this",
+                                  "default": false
+                                },
+                                "compatibility":
+                                {
+                                  "type": "boolean",
+                                  "description": "Provides compatibility with the Player 1.x.x API",
+                                  "readOnly": true
+                                },
+                                "css":
+                                {
+                                  "type": "object",
+                                  "description": "Object containing CSS color overrides",
+                                  "properties":
+                                  {
+                                    "controlBarColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Background color of control bar"
+                                    },
+                                    "controlColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Color of buttons and text in control bar"
+                                    },
+                                    "progressColor":
+                                    {
+                                      "type": "string",
+                                      "description": "Color of progress bar"
+                                    }
+                                  }
+                                },
+                                "errors":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if the error messages plugin should be excluded"
+                                },
+                                "fullscreenControl":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates whether the fullscreen control should be shown in the control bar"
+                                },
+                                "languages":
+                                {
+                                  "type": "array",
+                                  "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
+                                  "items":
+                                  {
+                                    "type": "string"
+                                  }
+                                },
+                                "loop":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if the video should play over as soon as it ends"
+                                },
+                                "media":
+                                {
+                                  "type": "object",
+                                  "description": "Media information for non-Video Cloud media",
+                                  "properties":
+                                  {
+                                    "sources":
+                                    {
+                                      "type": "array",
+                                      "description": "Array of media source objects",
+                                      "items":
+                                      {
+                                        "$ref": "#/components/schemas/source"
+                                      }
+                                    },
+                                    "src":
+                                    {
+                                      "type": "string",
+                                      "description": "The URL of the video file to load into the player"
+                                    },
+                                    "tracks":
+                                    {
+                                      "type": "array",
+                                      "description": "Array of text track objects",
+                                      "items":
+                                      {
+                                        "$ref": "#/components/schemas/track"
+                                      }
+                                    }
+                                  }
+                                },
+                                "player":
+                                {
+                                  "type": "object",
+                                  "description": "Player information object",
+                                  "properties":
+                                  {
+                                    "inactive":
+                                    {
+                                      "type": "boolean",
+                                      "description": "Indicates if a player is inactive"
+                                    },
+                                    "template":
+                                    {
+                                      "type": "object",
+                                      "description": "Specific template details",
+                                      "properites":
+                                      {
+                                        "name":
+                                        {
+                                          "type": "string",
+                                          "description": "The name of the template"
+                                        },
+                                        "version":
+                                        {
+                                          "type": "string",
+                                          "description": "Version of the template"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "playlist":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if a playlist should be used",
+                                  "default": null
+                                },
+                                "playOnSelect":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates if a video loaded from a playlist should play on load",
+                                  "default": null
+                                },
+                                "plugins":
+                                {
+                                  "type": "array",
+                                  "description": "Array of plugin objects",
+                                  "items":
+                                  {
+                                    "type": "object",
+                                    "properties":
+                                    {
+                                      "name":
+                                      {
+                                        "type": "string",
+                                        "description": "Plugin name"
+                                      },
+                                      "options":
+                                      {
+                                        "type": "object",
+                                        "description": "Map of option-value pairs"
+                                      }
+                                    }
+                                  }
+                                },
+                                "preload":
+                                {
+                                  "type": "string",
+                                  "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
+                                  "enum":
+                                  [
+                                    "auto",
+                                    "metadata",
+                                    "none"
+                                  ]
+                                },
+                                "scripts":
+                                {
+                                  "type": "array",
+                                  "description": "Array of URLs for scripts that should loaded with the player",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL for script to include"
+                                  }
+                                },
+                                "skin":
+                                {
+                                  "type": "boolean",
+                                  "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
+                                  "default": true
+                                },
+                                "studio_configuration":
+                                {
+                                  "type": "object",
+                                  "description": "Object containing playlist information normally set in Studio",
+                                  "properites":
+                                  {
+                                    "player":
+                                    {
+                                      "type": "object",
+                                      "description": "Object containing playlist information",
+                                      "properties":
+                                      {
+                                        "adjusted":
+                                        {
+                                          "type": "boolean",
+                                          "description": "indicates if player dimensions should be adjusted for playlist"
+                                        },
+                                        "height":
+                                        {
+                                          "type": "string",
+                                          "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                        },
+                                        "width":
+                                        {
+                                          "type": "string",
+                                          "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "stylesheets":
+                                {
+                                  "type": "array",
+                                  "description": "Array of URLs to CSS files that should be included with the player",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL of a stylesheet to be included with the player"
+                                  }
+                                },
+                                "techOrder":
+                                {
+                                  "type": "array",
+                                  "description": "Order that playback technologies should be used; only visible if changed from default",
+                                  "items":
+                                  {
+                                    "type": "string",
+                                    "description": "URL of a stylesheet to be included with the player",
+                                    "enum":
+                                    [
+                                      "html5",
+                                      "flash"
+                                    ]
+                                  }
+                                },
+                                "video_cloud":
+                                {
+                                  "type": "object",
+                                  "description": "Video Cloud configuration information",
+                                  "properites":
+                                  {
+                                    "policy_key":
+                                    {
+                                      "type": "string",
+                                      "description": "policy key for Video Cloud account"
+                                    },
+                                    "video":
+                                    {
+                                      "type": "string",
+                                      "description": "if using a Video Cloud video asset, that asset's ID"
+                                    }
+                                  }
+                                }
+                              }
                             },
-                            "updated_at": 
+                            "updated_at":
                             {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at": 
+                            "template_updated_at":
                             {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url": 
+                            "preview_url":
                             {
                               "type": "string",
                               "description": "URL for the player"
@@ -473,31 +1798,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -505,16 +1830,16 @@
           "IsMultiContentStreaming": false
         }
       },
-      "patch": 
+      "patch":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
         "summary": "Update a player by ID",
         "operationId": "UpdatePlayer",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -529,25 +1854,25 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "requestBody": 
+        "requestBody":
         {
           "description": "Update the plsyer",
-          "content": 
+          "content":
           {
-            "application/json": 
+            "application/json":
             {
-              "schema": 
+              "schema":
               {
                 "description": "Update the player",
                 "type": "object",
-                "properties": 
+                "properties":
                 {
-                  "name": 
+                  "name":
                   {
                     "type": "string",
                     "description": "The player name"
                   },
-                  "description": 
+                  "description":
                   {
                     "type": "string",
                     "description": "The player description"
@@ -558,34 +1883,34 @@
           },
           "required": true
         },
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "SUCCESS",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "id": 
+                    "id":
                     {
                       "type": "string",
                       "description": "The player id",
                       "readOnly": true
                     },
-                    "preview_url": 
+                    "preview_url":
                     {
                       "type": "string",
                       "description": "URL to preview player",
                       "readOnly": true
                     },
-                    "preview_embed_in_page": 
+                    "preview_embed_in_page":
                     {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for preview player",
@@ -596,31 +1921,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -628,16 +1953,16 @@
           "IsMultiContentStreaming": false
         }
       },
-      "delete": 
+      "delete":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "description": "Delete a player and all embeds associated with it.",
         "summary": "Delete a player by ID",
         "operationId": "DeletePlayer",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -652,22 +1977,22 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "SUCCESS",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "message": 
+                    "message":
                     {
                       "type": "string",
                       "description": "Message indicating player was deleted",
@@ -678,31 +2003,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -711,18 +2036,18 @@
         }
       }
     },
-    "/accounts/{account_id}/players/{player_id}/publish": 
+    "/accounts/{account_id}/players/{player_id}/publish":
     {
-      "post": 
+      "post":
       {
-        "tags": 
+        "tags":
         [
           "Players"
         ],
         "summary": "Publish a player",
         "description": "Publish a player for optimization and production use.",
         "operationId": "PublishPlayer",
-        "parameters": 
+        "parameters":
         [
           {
             "$ref": "#/components/parameters/account_id"
@@ -737,40 +2062,40 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses": 
+        "responses":
         {
-          "200": 
+          "200":
           {
             "description": "SUCCESS",
-            "content": 
+            "content":
             {
-              "application/json": 
+              "application/json":
               {
-                "schema": 
+                "schema":
                 {
                   "description": "200",
                   "type": "object",
-                  "properties": 
+                  "properties":
                   {
-                    "id": 
+                    "id":
                     {
                       "type": "string",
                       "description": "The player id",
                       "readOnly": true
                     },
-                    "url": 
+                    "url":
                     {
                       "type": "string",
                       "description": "The player URL",
                       "readOnly": true
                     },
-                    "embed_code": 
+                    "embed_code":
                     {
                       "type": "string",
                       "description": "The published player iframe tag",
                       "readOnly": true
                     },
-                    "embed_in_page": 
+                    "embed_in_page":
                     {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for published player",
@@ -781,31 +2106,31 @@
               }
             }
           },
-          "400": 
+          "400":
           {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401": 
+          "401":
           {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404": 
+          "404":
           {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429": 
+          "429":
           {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500": 
+          "500":
           {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security": 
+        "security":
         [],
-        "x-operation-settings": 
+        "x-operation-settings":
         {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -815,355 +2140,85 @@
       }
     }
   },
-  "components": 
+  "components":
   {
-    "schemas": 
+    "schemas":
     {
-      "configuration": 
-      {
-        "title": "Player Configuration",
-        "type": "object",
-        "description": "Configuration for a player",
-        "properties": 
-        {
-          "autoadvance": 
-          {
-            "type": "integer",
-            "description": "Autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance"
-          },
-          "autoplay": 
-          {
-            "type": "boolean",
-            "description": "Indicates player should play video immediately, on platforms that allow this",
-            "default": false
-          },
-          "compatibility": 
-          {
-            "type": "boolean",
-            "description": "Provides compatibility with the Player 1.x.x API",
-            "readOnly": true
-          },
-          "css": 
-          {
-            "type": "object",
-            "description": "Object containing CSS color overrides",
-            "properties": 
-            {
-              "controlBarColor": 
-              {
-                "type": "string",
-                "description": "Background color of control bar"
-              },
-              "controlColor": 
-              {
-                "type": "string",
-                "description": "Color of buttons and text in control bar"
-              },
-              "progressColor": 
-              {
-                "type": "string",
-                "description": "Color of progress bar"
-              }
-            }
-          },
-          "errors": 
-          {
-            "type": "boolean",
-            "description": "Indicates if the error messages plugin should be excluded"
-          },
-          "fullscreenControl": 
-          {
-            "type": "boolean",
-            "description": "Indicates whether the fullscreen control should be shown in the control bar"
-          },
-          "languages": 
-          {
-            "type": "array",
-            "description": "Languages (2 letter abbreviations) you wish your player to support, from the Vides.js supported list",
-            "items": 
-            {
-              "type": "string"
-            }
-          },
-          "loop": 
-          {
-            "type": "boolean",
-            "description": "Indicates if the video should play over as soon as it ends"
-          },
-          "media": 
-          {
-            "type": "object",
-            "description": "Media information for non-Video Cloud media",
-            "properties": 
-            {
-              "sources": 
-              {
-                "type": "array",
-                "description": "Array of media source objects",
-                "items": 
-                {
-                  "$ref": "#/components/schemas/source"
-                }
-              },
-              "src": 
-              {
-                "type": "string",
-                "description": "The URL of the video file to load into the player"
-              },
-              "tracks": 
-              {
-                "type": "array",
-                "description": "Array of text track objects",
-                "items": 
-                {
-                  "$ref": "#/components/schemas/track"
-                }
-              }
-            }
-          },
-          "player": 
-          {
-            "type": "object",
-            "description": "Player information object",
-            "properties": 
-            {
-              "inactive": 
-              {
-                "type": "boolean",
-                "description": "Indicates if a player is inactive"
-              },
-              "template": 
-              {
-                "type": "object",
-                "description": "Specific template details",
-                "properites": 
-                {
-                  "name": 
-                  {
-                    "type": "string",
-                    "description": "The name of the template"
-                  },
-                  "version": 
-                  {
-                    "type": "string",
-                    "description": "Version of the template"
-                  }
-                }
-              }
-            }
-          },
-          "playlist": 
-          {
-            "type": "boolean",
-            "description": "Indicates if a playlist should be used",
-            "default": null
-          },
-          "playOnSelect": 
-          {
-            "type": "boolean",
-            "description": "Indicates if a video loaded from a playlist should play on load",
-            "default": null
-          },
-          "plugins": 
-          {
-            "type": "array",
-            "description": "Array of plugin objects",
-            "items": 
-            {
-              "type": "object",
-              "properties": 
-              {
-                "name": 
-                {
-                  "type": "string",
-                  "description": "Plugin name"
-                },
-                "options": 
-                {
-                  "type": "object",
-                  "description": "Map of option-value pairs"
-                }
-              }
-            }
-          },
-          "preload": 
-          {
-            "type": "string",
-            "description": "Informs the browser whether or not the video data should begin downloading as soon as the video tag is loaded",
-            "enum": 
-            [
-              "auto",
-              "metadata",
-              "none"
-            ]
-          },
-          "scripts": 
-          {
-            "type": "array",
-            "description": "Array of URLs for scripts that should loaded with the player",
-            "items": 
-            {
-              "type": "string",
-              "description": "URL for script to include"
-            }
-          },
-          "skin": 
-          {
-            "type": "boolean",
-            "description": "Indicates is the default look-and-feel will be used with the player; set to `false` when creating a new, highly customized skin",
-            "default": true
-          },
-          "studio_configuration": 
-          {
-            "type": "object",
-            "description": "Object containing playlist information normally set in Studio",
-            "properites": 
-            {
-              "player": 
-              {
-                "type": "object",
-                "description": "Object containing playlist information",
-                "properties": 
-                {
-                  "adjusted": 
-                  {
-                    "type": "boolean",
-                    "description": "indicates if player dimensions should be adjusted for playlist"
-                  },
-                  "height": 
-                  {
-                    "type": "string",
-                    "description": "player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
-                  },
-                  "width": 
-                  {
-                    "type": "string",
-                    "description": "player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted"
-                  }
-                }
-              }
-            }
-          },
-          "stylesheets": 
-          {
-            "type": "array",
-            "description": "Array of URLs to CSS files that should be included with the player",
-            "items": 
-            {
-              "type": "string",
-              "description": "URL of a stylesheet to be included with the player"
-            }
-          },
-          "techOrder": 
-          {
-            "type": "array",
-            "description": "Order that playback technologies should be used; only visible if changed from default",
-            "items": 
-            {
-              "type": "string",
-              "description": "URL of a stylesheet to be included with the player",
-              "enum": 
-              [
-                "html5",
-                "flash"
-              ]
-            }
-          },
-          "video_cloud": 
-          {
-            "type": "object",
-            "description": "Video Cloud configuration information",
-            "properites": 
-            {
-              "policy_key": 
-              {
-                "type": "string",
-                "description": "policy key for Video Cloud account"
-              },
-              "video": 
-              {
-                "type": "string",
-                "description": "if using a Video Cloud video asset, that asset's ID"
-              }
-            }
-          }
-        }
-      },
-      "source": 
+      "source":
       {
         "title": "Media Source Object",
         "type": "object",
         "description": "Media source information for non-Video Cloud media",
-        "properties": 
+        "properties":
         {
-          "height": 
+          "height":
           {
             "type": "integer",
             "description": "Video frame height in pixels"
           },
-          "width": 
+          "width":
           {
             "type": "integer",
             "description": "Video frame width in pixels"
           },
-          "poster": 
+          "poster":
           {
             "type": "object",
             "description": "Information for the poster image",
-            "properties": 
+            "properties":
             {
-              "highres": 
+              "highres":
               {
                 "type": "string",
                 "description": "The file path to the poster image, relative to the root directory of the skin"
               }
             }
           },
-          "src": 
+          "src":
           {
             "type": "string",
             "description": "The URL of the video file to load into the player"
           },
-          "title": 
+          "title":
           {
             "type": "string",
             "description": "Content of the `&lt;title&gt;` element of the page"
           },
-          "type": 
+          "type":
           {
             "type": "string",
             "description": "MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS",
-            "enum": 
+            "enum":
             [
               "video/mp4",
               "application/x-mpegURL"
             ]
           }
         },
-        "required": 
+        "required":
         [
           "src",
           "type"
         ]
       },
-      "track": 
+      "track":
       {
         "title": "Media Text Track Object",
         "type": "object",
         "description": "Media track information for non-Video Cloud media",
-        "properties": 
+        "properties":
         {
-          "label": 
+          "label":
           {
             "type": "string",
             "description": "Text label for the track, for instance `English` for an English language text track"
           },
-          "src": 
+          "src":
           {
             "type": "string",
             "description": "URL to source of track, required in a track object"
           },
-          "srclang": 
+          "srclang":
           {
             "type": "string",
             "description": "2 letter code (valid BCP 47 language tag) for the language of the text track"
@@ -1171,9 +2226,9 @@
         }
       }
     },
-    "parameters": 
+    "parameters":
     {
-      "account_id": 
+      "account_id":
       {
         "name": "account_id",
         "in": "path",
@@ -1181,12 +2236,12 @@
         "required": true,
         "style": "simple",
         "explode": false,
-        "schema": 
+        "schema":
         {
           "type": "string"
         }
       },
-      "player_id": 
+      "player_id":
       {
         "name": "player_id",
         "in": "path",
@@ -1194,12 +2249,12 @@
         "required": true,
         "style": "simple",
         "explode": false,
-        "schema": 
+        "schema":
         {
           "type": "string"
         }
       },
-      "ContentType": 
+      "ContentType":
       {
         "name": "Content-Type",
         "in": "header",
@@ -1207,13 +2262,13 @@
         "required": true,
         "style": "simple",
         "explode": false,
-        "schema": 
+        "schema":
         {
           "type": "string"
         },
         "example": "application/json"
       },
-      "Authorization": 
+      "Authorization":
       {
         "name": "Authorization",
         "in": "header",
@@ -1221,7 +2276,7 @@
         "required": true,
         "style": "simple",
         "explode": false,
-        "schema": 
+        "schema":
         {
           "type": "string"
         }
