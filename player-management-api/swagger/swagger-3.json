@@ -308,7 +308,12 @@
   {
     "schemas": {
       "configuration": {
+        "title": "Player Configuration",
+        "type": "object",
+        "description": "Configuration for a player",
+        "properties": {
 
+        }}
       }
     },
     "parameters":
