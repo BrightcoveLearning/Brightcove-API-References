@@ -385,12 +385,7 @@
           {
             "sources":
             {
-              "type": "array",
-              "description": "Array of media source objects",
-              "items":
-              {
-                "$ref": "#/components/schemas/source"
-              }
+                "$ref": "#/components/schemas/sources"
             },
             "src":
             {
