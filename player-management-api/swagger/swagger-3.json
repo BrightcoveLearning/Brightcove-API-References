@@ -151,18 +151,14 @@
           "IsMultiContentStreaming": false
         }
       },
-      "post":
-      {
-        "tags":
-        [
+      "post": {
+        "tags": [
           "Players"
         ],
         "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
         "summary": "Create a player",
         "operationId": "CreatePlayer",
-        "parameters":
-        [
-          {
+        "parameters": [{
             "$ref": "#/components/parameters/account_id"
           },
           {
@@ -172,74 +168,57 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "requestBody":
-        {
+        "requestBody": {
           "description": "Create a plsyer",
-          "content":
-          {
-            "application/json":
-            {
-              "schema":
-              {
+          "content": {
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/configuration"
               }
             }
           },
           "required": true
         },
-        "responses":
-        {
-          "200":
-          {
+        "responses": {
+          "200": {
             "description": "SUCCESS",
-            "content":
-            {
-              "application/json":
-              {
-                "schema":
-                {
+            "content": {
+              "application/json": {
+                "schema": {
                   "description": "200",
                   "type": "object",
-                  "properties":
-                  {
-                    "id":
-                    {
+                  "properties": {
+                    "id": {
                       "type": "string",
                       "description": "The player id",
                       "readOnly": true
                     },
-                    "url":
-                    {
+                    "url": {
                       "type": "string",
                       "description": "The player URL",
                       "readOnly": true
                     },
-                    "embed_code":
-                    {
+                    "embed_code": {
                       "type": "string",
                       "description": "The published player iframe tag",
                       "readOnly": true
                     },
-                    "embed_in_page":
-                    {
+                    "embed_in_page": {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for published player",
                       "readOnly": true
                     },
-                    "preview_url":
-                    {
+                    "preview_url": {
                       "type": "string",
                       "description": "URL to preview player",
                       "readOnly": true
                     },
-                    "preview_embed_in_page":
-                    {
+                    "preview_embed_in_page": {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for preview player",
                       "readOnly": true
                     },
-                    "preview_embed_code":
-                    {
+                    "preview_embed_code": {
                       "type": "string",
                       "description": "Preview player iframe tag",
                       "readOnly": true
@@ -249,32 +228,25 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
@@ -497,52 +469,53 @@
             }
           }
         }
+      }
+
+    },
+    "parameters": {
+      "account_id": {
+        "name": "account_id",
+        "in": "path",
+        "description": "Video Cloud account ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
       },
-      "parameters": {
-        "account_id": {
-          "name": "account_id",
-          "in": "path",
-          "description": "Video Cloud account ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
+      "player_id": {
+        "name": "player_id",
+        "in": "path",
+        "description": "Brightcove Player ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ContentType": {
+        "name": "Content-Type",
+        "in": "header",
+        "description": "Content-Type: application/json",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
         },
-        "player_id": {
-          "name": "player_id",
-          "in": "path",
-          "description": "Brightcove Player ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        },
-        "ContentType": {
-          "name": "Content-Type",
-          "in": "header",
-          "description": "Content-Type: application/json",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          },
-          "example": "application/json"
-        },
-        "Authorization": {
-          "name": "Authorization",
-          "in": "header",
-          "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
+        "example": "application/json"
+      },
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
         }
       }
     }
