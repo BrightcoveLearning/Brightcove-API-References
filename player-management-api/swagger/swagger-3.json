@@ -1153,6 +1153,7 @@
         "title": "Plugin",
         "type": "object",
         "description": "A player plugin object",
+        "readOnly": true,
         "properties": {
           "versions": {
             "type": "array",
@@ -1163,9 +1164,45 @@
                 "version_number": {
                   "type": "string",
                   "description": "The version number"
+                },
+                "minimum_template_version": {
+                  "type": "string",
+                  "description": "The minimum player version required to use this plugin"
+                },
+                "stylesheets": {
+                  "type": "array",
+                  "description": "Array of URLs for the plugin stylesheets",
+                  "items": {
+                    "type": "string",
+                    "description": "URL for a stylesheet"
+                  }
+                },
+                "scripts": {
+                  "type": "array",
+                  "description": "Array of URLs for the plugin scripts",
+                  "items": {
+                    "type": "string",
+                    "description": "URL for a script"
+                  }
                 }
               }
             }
+          },
+          "documentation": {
+            "type": "string",
+            "description": "URL for the plugin documentation"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the plugin"
+          },
+          "id": {
+            "type": "string",
+            "description": "The plugin id"
+          },
+          "name": {
+            "type": "string",
+            "description": "The plugin name"
           }
         }
       }
