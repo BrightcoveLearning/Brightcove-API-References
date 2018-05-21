@@ -975,8 +975,7 @@
               "content": {
                 "application/json": {
                   "schema": {
-                    "type": "object",
-                    "description": "Plugin object"
+                    "$ref": "#/components/schemas/plugin"
                   }
                 }
               }
@@ -1149,6 +1148,26 @@
             }
           }
         }
+      },
+      "plugin": {
+        "title": "Plugin",
+        "type": "object",
+        "description": "A player plugin object",
+        "properties": {
+        "versions": {
+          "type": "array",
+          "description": "Array of objects describing the versions of the plugin",
+          "items": {
+            "type": "object",
+            "properties": {
+              "version_number": {
+                "type": "string",
+                "description": "The version number"
+              }
+            }
+          }
+        }
+        }
       }
     },
     "parameters": {
@@ -1167,6 +1186,29 @@
         "name": "player_id",
         "in": "path",
         "description": "Brightcove Player ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "branch": {
+        "name": "branch",
+        "in": "path",
+        "description": "A plugin id",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string",
+          "enum": ["master", "preview"]
+        }
+      },
+      "plugin_id": {
+        "name": "plugin_id",
+        "in": "path",
+        "description": "The plugin ID in the Plugin Registry.",
         "required": true,
         "style": "simple",
         "explode": false,
