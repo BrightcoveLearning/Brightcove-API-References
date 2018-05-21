@@ -6,7 +6,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns all applications configured in the domain. This method returns 20 results by default, totalResults indicates the total number of applications in the domain, previous and/or next page request URLs will be included within the response if necessary. URL Parameters may be appended to modify result sets.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -62,9 +62,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves the details of an application, including its ad configurations. Below are two examples:
- * 1. Single VAST ad request(s) will be made for each configured adPosition (preRoll, midRoll, and/or postRoll).
- * 2. Multiple (ad) configuration, enabling an ad decisioning server to specify all ad breaks in a single response (Freewheel SmartXML, DFP Ad Rules).
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -175,7 +173,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates an new application in the domain.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -227,7 +225,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Update the name or number of ads requested in the VAST pre/mid/postRoll slots.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -280,7 +278,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes an application from the domain. This method will delete all of the application’s adConfigs, but will not delete any related adServer(s). See below for a method to delete adServers.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -312,9 +310,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves all adConfigs assigned to a single Application. Below are two examples:
- * 1.Single VAST ad request(s) will be made for each configured adPosition (preRoll, midRoll, and/or postRoll).
- * 2.Multiple (ad) configuration, enabling an ad decisioning server to specify all ad breaks in a single response (Freewheel SmartXML, DFP Ad Rules).
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -404,9 +400,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Add or replace the adConfig assigned to the specified application. Below are two examples:
- * 1. Single VAST ad request(s) will be made for each configured adPosition (preRoll, midRoll, and/or postRoll).
- * 2. Multiple (ad) configuration, enabling an ad decisioning server to specify all ad breaks in a single response (Freewheel SmartXML, DFP Ad Rules).
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
 
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -539,7 +533,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes all ad configurations from the specified application.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
