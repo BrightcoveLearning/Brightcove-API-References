@@ -101,7 +101,7 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates a new catalog within the parent domainId. You may specify renditions when creating the catalog, otherwise it will be assigned all domain renditions marked as default. The new catalog will also inherit any domain publication rules.
+ * @apiDescription  [Please contact support for information](https://help.brightcove.com/en/contact)
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -281,7 +281,7 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Replace (overwrite) the specified catalog’s current rendition set, using an updated array in the request body. NOTE: This method will not add the specified rendition(s) to, nor will it remove renditions from, existing mediaitems in the specified catalog. Please contact Support if you also need renditions assigned to or removed from previously-ingested mediaItems in the catalog.
+ * @apiDescription Replace (overwrite) the specified catalog’s current rendition set, using an updated array in the request body. DEPRECATED
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -401,7 +401,7 @@
   * @apiGroup Catalog
   * @apiVersion 1.0.0
   *
-  * @apiDescription Retrieves all publicationRuleIds assigned to a Catalog. Please review the [Content Restriction](https://support.brightcove.com/node/17772#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  * @apiDescription Retrieves all publicationRuleIds assigned to a Catalog. DEPRECATED
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
@@ -505,7 +505,7 @@
     * @apiGroup Catalog
     * @apiVersion 1.0.0
     *
-    * @apiDescription Create a catalog publication rule. NOTE: A new catalog publication rule created by this method will only be applied to new mediaItems ingested to the catalog, but will not be applied to existing mediaItems within. Please see below for a method to create or update publication rules assigned to individual mediaItems.
+    * @apiDescription Create a catalog publication rule. DEPRECATED
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
@@ -600,7 +600,7 @@
     * @apiGroup Catalog
     * @apiVersion 1.0.0
     *
-    * @apiDescription Update a catalog publication rule. NOTE: Updates made by this method will only be applied to new mediaItems ingested to the catalog, but will not update publication rules of existing mediaItems within. Please see below for a method to update publication rules assigned to individual mediaItems.
+    * @apiDescription Update a catalog publication rule. DEPRECATED
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
@@ -695,7 +695,7 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes the specified catalog publication rule. NOTE: Deleting a catalog publication rule will prevent it from being applied to new mediaItems ingested to the catalog, but will not delete publication rules of existing mediaItems within. Please see below for the method to delete publication rules assigned to mediaItems.
+ * @apiDescription Deletes the specified catalog publication rule. DEPRECATED
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
