@@ -1154,19 +1154,19 @@
         "type": "object",
         "description": "A player plugin object",
         "properties": {
-        "versions": {
-          "type": "array",
-          "description": "Array of objects describing the versions of the plugin",
-          "items": {
-            "type": "object",
-            "properties": {
-              "version_number": {
-                "type": "string",
-                "description": "The version number"
+          "versions": {
+            "type": "array",
+            "description": "Array of objects describing the versions of the plugin",
+            "items": {
+              "type": "object",
+              "properties": {
+                "version_number": {
+                  "type": "string",
+                  "description": "The version number"
+                }
               }
             }
           }
-        }
         }
       }
     },
