@@ -6,7 +6,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves all ad decisioning servers configured in the domain. This method returns 20 results by default, totalResults indicates the total number of applications in the domain, previous and/or next page request URLs will be included within the response if necessary. URL Parameters may be appended to modify result sets.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -65,7 +65,7 @@
   * @apiGroup Ad_Decisioning_Servers
   * @apiVersion 1.0.0
   *
-  * @apiDescription Retrieves details of a specified adServer.
+  * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
@@ -112,7 +112,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Create an adServer, defining the base URL and query string variables that will be fired to your ad provider for a single VAST ad or DFP/SmartXML ad playlist response. Please see our guide for [Converting an ad tag for the Once Media Management API](https://support.brightcove.com/node/17774).
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -168,7 +168,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Update the specified adServer’s name, base URL, and/or variables. NOTE: This change will affect any application adConfigs utilizing the updated adServer. If you need an updated adServer configuration without changing existing applications or ad configurations, create a new adServer and then create or modify applications and their adConfigs to use the new adServer.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -225,7 +225,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes the specified ad decisioning server. NOTE: This change will remove any application adConfigs utilizing the deleted adServer.
+ * @apiDescription These methods will depend on your domain and catalogs ingest behavior to determine when these calls will go to Once and when they would go to Video Cloud.In order to maintain parity while migration, Once Engineering and Support will be controlling setup to these features for customer on both Once and VideoCloud env, until migration efforts complete. [Please contact Support](https://help.brightcove.com/en/contact) for more information.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
