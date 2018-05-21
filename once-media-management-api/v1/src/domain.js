@@ -132,7 +132,7 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](https://support.brightcove.com/node/17772#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+ * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. DEPRECATED
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -226,7 +226,7 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](https://support.brightcove.com/node/17772#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+ * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. DEPRECATED
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -317,7 +317,7 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](https://support.brightcove.com/node/17772#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+ * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. DEPRECATED
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -408,7 +408,7 @@
   * @apiGroup Domain
   * @apiVersion 1.0.0
   *
-  * @apiDescription Deletes the specified domain publication rule. NOTE: Deleting a domain publication rule will prevent it from being added to new catalogs, but will not delete publication rules of existing catalogs or mediaItems within. Please see below for methods to delete publication rules assigned to catalogs or mediaItems.
+  * @apiDescription Deletes the specified domain publication rule. DEPRECATED
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
@@ -440,7 +440,7 @@
    * @apiGroup Domain
    * @apiVersion 1.0.0
    *
-   * @apiDescription Retrieves all timed text for captions and subtitles for the domain.
+   * @apiDescription Retrieves all timed text for captions and subtitles for the domain. DEPRECATED
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
