@@ -254,20 +254,15 @@
         }
       }
     },
-    "/accounts/{account_id}/players/{player_id}":
-    {
-      "get":
-      {
-        "tags":
-        [
+    "/accounts/{account_id}/players/{player_id}": {
+      "get": {
+        "tags": [
           "Players"
         ],
         "summary": "Get a single player",
         "description": "Get a player by ID",
         "operationId": "GetPlayer",
-        "parameters":
-        [
-          {
+        "parameters": [{
             "$ref": "#/components/parameters/account_id"
           },
           {
@@ -280,111 +275,84 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses":
-        {
-          "200":
-          {
+        "responses": {
+          "200": {
             "description": "200",
-            "content":
-            {
-              "application/json":
-              {
-                "schema":
-                {
+            "content": {
+              "application/json": {
+                "schema": {
                   "description": "200",
                   "type": "object",
-                  "properties":
-                  {
-                    "account_id":
-                    {
+                  "properties": {
+                    "account_id": {
                       "type": "string",
                       "description": "The account id"
                     },
-                    "created_at":
-                    {
+                    "created_at": {
                       "type": "string",
                       "description": "The player creation date-time"
                     },
-                    "embeds_count":
-                    {
+                    "embeds_count": {
                       "type": "integer",
                       "description": "The number of embeds (instances of this player), will always be at least 1"
                     },
-                    "id":
-                    {
+                    "id": {
                       "type": "string",
                       "description": "The player id"
                     },
-                    "name":
-                    {
+                    "name": {
                       "type": "string",
                       "description": "The player name"
                     },
-                    "description":
-                    {
+                    "description": {
                       "type": "string",
                       "description": "The player description"
                     },
-                    "url":
-                    {
+                    "url": {
                       "type": "string",
                       "description": "URL to player"
                     },
-                    "branches":
-                    {
+                    "branches": {
                       "type": "object",
                       "description": "The branches of the player - contains objects for the preview and master (published) player",
-                      "properties":
-                      {
-                        "preview":
-                        {
+                      "properties": {
+                        "preview": {
                           "type": "object",
                           "description": "The preview player branch",
-                          "properties":
-                          {
-                            "configuration":
-                            {
+                          "properties": {
+                            "configuration": {
                               "$ref": "#/components/schemas/configuration"
                             },
-                            "updated_at":
-                            {
+                            "updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at":
-                            {
+                            "template_updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url":
-                            {
+                            "preview_url": {
                               "type": "string",
                               "description": "URL for the player"
                             }
                           }
                         },
-                        "master":
-                        {
+                        "master": {
                           "type": "object",
                           "description": "The master (published) player branch",
-                          "properties":
-                          {
-                            "configuration":
-                            {
+                          "properties": {
+                            "configuration": {
                               "$ref": "#/components/schemas/configuration"
                             },
-                            "updated_at":
-                            {
+                            "updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at":
-                            {
+                            "template_updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url":
-                            {
+                            "preview_url": {
                               "type": "string",
                               "description": "URL for the player"
                             }
@@ -397,50 +365,39 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
       },
-      "patch":
-      {
-        "tags":
-        [
+      "patch": {
+        "tags": [
           "Players"
         ],
         "description": "Update a single player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.",
         "summary": "Update a player by ID",
         "operationId": "UpdatePlayer",
-        "parameters":
-        [
-          {
+        "parameters": [{
             "$ref": "#/components/parameters/account_id"
           },
           {
@@ -453,26 +410,19 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "requestBody":
-        {
+        "requestBody": {
           "description": "Update the plsyer",
-          "content":
-          {
-            "application/json":
-            {
-              "schema":
-              {
+          "content": {
+            "application/json": {
+              "schema": {
                 "description": "Update the player",
                 "type": "object",
-                "properties":
-                {
-                  "name":
-                  {
+                "properties": {
+                  "name": {
                     "type": "string",
                     "description": "The player name"
                   },
-                  "description":
-                  {
+                  "description": {
                     "type": "string",
                     "description": "The player description"
                   }
@@ -482,35 +432,26 @@
           },
           "required": true
         },
-        "responses":
-        {
-          "200":
-          {
+        "responses": {
+          "200": {
             "description": "SUCCESS",
-            "content":
-            {
-              "application/json":
-              {
-                "schema":
-                {
+            "content": {
+              "application/json": {
+                "schema": {
                   "description": "200",
                   "type": "object",
-                  "properties":
-                  {
-                    "id":
-                    {
+                  "properties": {
+                    "id": {
                       "type": "string",
                       "description": "The player id",
                       "readOnly": true
                     },
-                    "preview_url":
-                    {
+                    "preview_url": {
                       "type": "string",
                       "description": "URL to preview player",
                       "readOnly": true
                     },
-                    "preview_embed_in_page":
-                    {
+                    "preview_embed_in_page": {
                       "type": "string",
                       "description": "URL to browse to retrieve the in-page embed code for preview player",
                       "readOnly": true
@@ -520,50 +461,39 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
       },
-      "delete":
-      {
-        "tags":
-        [
+      "delete": {
+        "tags": [
           "Players"
         ],
         "description": "Delete a player and all embeds associated with it.",
         "summary": "Delete a player by ID",
         "operationId": "DeletePlayer",
-        "parameters":
-        [
-          {
+        "parameters": [{
             "$ref": "#/components/parameters/account_id"
           },
           {
@@ -576,23 +506,16 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "responses":
-        {
-          "200":
-          {
+        "responses": {
+          "200": {
             "description": "SUCCESS",
-            "content":
-            {
-              "application/json":
-              {
-                "schema":
-                {
+            "content": {
+              "application/json": {
+                "schema": {
                   "description": "200",
                   "type": "object",
-                  "properties":
-                  {
-                    "message":
-                    {
+                  "properties": {
+                    "message": {
                       "type": "string",
                       "description": "Message indicating player was deleted",
                       "readOnly": true
@@ -602,32 +525,25 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
@@ -751,32 +667,25 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
@@ -814,96 +723,75 @@
                   "description": "200",
                   "type": "object",
                   "properties": {
-                    "account_id":
-                    {
+                    "account_id": {
                       "type": "string",
                       "description": "The account id"
                     },
-                    "created_at":
-                    {
+                    "created_at": {
                       "type": "string",
                       "description": "The player creation date-time"
                     },
-                    "embeds_count":
-                    {
+                    "embeds_count": {
                       "type": "integer",
                       "description": "The number of embeds (instances of this player), will always be at least 1"
                     },
-                    "id":
-                    {
+                    "id": {
                       "type": "string",
                       "description": "The player id"
                     },
-                    "name":
-                    {
+                    "name": {
                       "type": "string",
                       "description": "The player name"
                     },
-                    "description":
-                    {
+                    "description": {
                       "type": "string",
                       "description": "The player description"
                     },
-                    "url":
-                    {
+                    "url": {
                       "type": "string",
                       "description": "URL to player"
                     },
-                    "branches":
-                    {
+                    "branches": {
                       "type": "object",
                       "description": "The branches of the player - contains objects for the preview and master (published) player",
-                      "properties":
-                      {
-                        "preview":
-                        {
+                      "properties": {
+                        "preview": {
                           "type": "object",
                           "description": "The preview player branch",
-                          "properties":
-                          {
-                            "configuration":
-                            {
+                          "properties": {
+                            "configuration": {
                               "$ref": "#/components/schemas/configuration"
                             },
-                            "updated_at":
-                            {
+                            "updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at":
-                            {
+                            "template_updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url":
-                            {
+                            "preview_url": {
                               "type": "string",
                               "description": "URL for the player"
                             }
                           }
                         },
-                        "master":
-                        {
+                        "master": {
                           "type": "object",
                           "description": "The master (published) player branch",
-                          "properties":
-                          {
-                            "configuration":
-                            {
+                          "properties": {
+                            "configuration": {
                               "$ref": "#/components/schemas/configuration"
                             },
-                            "updated_at":
-                            {
+                            "updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player"
                             },
-                            "template_updated_at":
-                            {
+                            "template_updated_at": {
                               "type": "string",
                               "description": "date-time of last update to preview player template"
                             },
-                            "preview_url":
-                            {
+                            "preview_url": {
                               "type": "string",
                               "description": "URL for the player"
                             }
@@ -916,104 +804,141 @@
               }
             }
           },
-          "400":
-          {
+          "400": {
             "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
           },
-          "401":
-          {
+          "401": {
             "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
           },
-          "404":
-          {
+          "404": {
             "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
           },
-          "429":
-          {
+          "429": {
             "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
           },
-          "500":
-          {
+          "500": {
             "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
         },
         "deprecated": false,
-        "security":
-        [],
-        "x-operation-settings":
-        {
+        "security": [],
+        "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
       }
-      },
-      "/accounts/{account_id}/plugins/{plugin_id}": {
-        "get": {
-          "tags": [
-            "Plugin Registry"
-          ],
-          "summary": "Get a single plugin",
-          "description": "Get a single plugin",
-          "operationId": "GetPlugin",
-          "parameters": [{
-              "$ref": "#/components/parameters/account_id"
-            },
-            {
-              "$ref": "#/components/parameters/plugin_id"
-            },
-            {
-              "$ref": "#/components/parameters/ContentType"
-            },
-            {
-              "$ref": "#/components/parameters/Authorization"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "200",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/plugin"
-                  }
+    },
+    "/plugins/{plugin_id}": {
+      "get": {
+        "tags": [
+          "Plugin Registry"
+        ],
+        "summary": "Get a single plugin",
+        "description": "Get a single plugin",
+        "operationId": "GetPlugin",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/plugin_id"
+          },
+          {
+            "$ref": "#/components/parameters/ContentType"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/plugin"
                 }
               }
-            },
-            "400":
-            {
-              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
-            },
-            "401":
-            {
-              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
-            },
-            "404":
-            {
-              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
-            },
-            "429":
-            {
-              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
-            },
-            "500":
-            {
-              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
             }
           },
-          "deprecated": false,
-          "security":
-          [],
-          "x-operation-settings":
-          {
-            "CollectParameters": false,
-            "AllowDynamicQueryParameters": false,
-            "AllowDynamicFormParameters": false,
-            "IsMultiContentStreaming": false
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
           }
+        },
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
         }
       }
+    },
+    "/plugins": {
+      "get": {
+        "tags": [
+          "Plugin Registry"
+        ],
+        "summary": "Get all plugins",
+        "description": "Get all plugins",
+        "operationId": "GetAllPlugin",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ContentType"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/plugin"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+          }
+        },
+        "deprecated": false,
+        "security": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
   },
   "components": {
     "schemas": {
