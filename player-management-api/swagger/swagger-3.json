@@ -896,6 +896,9 @@
         "operationId": "GetAllPlugin",
         "parameters": [
           {
+            "$ref": "#/components/parameters/template_version"
+          },
+          {
             "$ref": "#/components/parameters/ContentType"
           },
           {
@@ -908,7 +911,30 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/plugin"
+                  "type": "object",
+                  "description": "Simple plugin object",
+                  "properties": {
+                    "documentation": {
+                      "type": "string",
+                      "description": "URL for the plugin documentation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of the plugin"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "The plugin id"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "The plugin name"
+                    },
+                    "current_version": {
+                      "type": "string",
+                      "description": "The current version of the plugin"
+                    }
+                  }
                 }
               }
             }
@@ -1176,6 +1202,17 @@
         "in": "path",
         "description": "The plugin ID in the Plugin Registry.",
         "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "template_version": {
+        "name": "template_version",
+        "in": "query",
+        "description": "Limit results to plugins compatible with a specific player template version.",
+        "required": false,
         "style": "simple",
         "explode": false,
         "schema": {
