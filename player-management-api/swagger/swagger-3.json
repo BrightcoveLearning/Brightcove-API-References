@@ -949,7 +949,70 @@
         }
       },
       "/accounts/{account_id}/plugins/{plugin_id}": {
-
+        "get": {
+          "tags": [
+            "Plugin Registry"
+          ],
+          "summary": "Get a single plugin",
+          "description": "Get a single plugin",
+          "operationId": "GetPlugin",
+          "parameters": [{
+              "$ref": "#/components/parameters/account_id"
+            },
+            {
+              "$ref": "#/components/parameters/plugin_id"
+            },
+            {
+              "$ref": "#/components/parameters/ContentType"
+            },
+            {
+              "$ref": "#/components/parameters/Authorization"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "description": "Plugin object"
+                  }
+                }
+              }
+            },
+            "400":
+            {
+              "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+            },
+            "401":
+            {
+              "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+            },
+            "404":
+            {
+              "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+            },
+            "429":
+            {
+              "description": "RATE_LIMIT_EXCEEDED: Too many requests per secon"
+            },
+            "500":
+            {
+              "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+            }
+          },
+          "deprecated": false,
+          "security":
+          [],
+          "x-operation-settings":
+          {
+            "CollectParameters": false,
+            "AllowDynamicQueryParameters": false,
+            "AllowDynamicFormParameters": false,
+            "IsMultiContentStreaming": false
+          }
+        }
       }
     }
   },
@@ -1085,6 +1148,14 @@
               }
             }
           }
+        }
+      },
+      "plugin": {
+        "title": "Plugin",
+        "type": "object",
+        "description": "A player plugin object",
+        "properties": {
+
         }
       }
     },
