@@ -367,52 +367,52 @@
             }
           }
         }
+      }
+    },
+    "parameters": {
+      "account_id": {
+        "name": "account_id",
+        "in": "path",
+        "description": "Video Cloud account ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
       },
-      "parameters": {
-        "account_id": {
-          "name": "account_id",
-          "in": "path",
-          "description": "Video Cloud account ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
+      "player_id": {
+        "name": "player_id",
+        "in": "path",
+        "description": "Brightcove Player ID.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ContentType": {
+        "name": "Content-Type",
+        "in": "header",
+        "description": "Content-Type: application/json",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
         },
-        "player_id": {
-          "name": "player_id",
-          "in": "path",
-          "description": "Brightcove Player ID.",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
-        },
-        "ContentType": {
-          "name": "Content-Type",
-          "in": "header",
-          "description": "Content-Type: application/json",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          },
-          "example": "application/json"
-        },
-        "Authorization": {
-          "name": "Authorization",
-          "in": "header",
-          "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
-          "required": true,
-          "style": "simple",
-          "explode": false,
-          "schema": {
-            "type": "string"
-          }
+        "example": "application/json"
+      },
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "description": "Authorization: Bearer access_token (see [Getting Access Tokens](https://support.brightcove.com/oauth-api-sample-get-access-token))",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
         }
       }
     }
