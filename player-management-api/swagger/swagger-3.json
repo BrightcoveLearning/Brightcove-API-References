@@ -947,6 +947,7 @@
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
+      }
       },
       "/accounts/{account_id}/plugins/{plugin_id}": {
         "get": {
@@ -1013,7 +1014,6 @@
           }
         }
       }
-    }
   },
   "components": {
     "schemas": {
@@ -1203,6 +1203,10 @@
           "name": {
             "type": "string",
             "description": "The plugin name"
+          },
+          "current_version": {
+            "type": "string",
+            "description": "The current version of the plugin"
           }
         }
       }
