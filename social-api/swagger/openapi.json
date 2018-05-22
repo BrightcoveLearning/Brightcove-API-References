@@ -385,32 +385,6 @@
   },
   "components": {
     "schemas": {
-      "UrlParameters": {
-        "title": "URL Parameters",
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp"
-          },
-          "since": {
-            "type": "string",
-            "description": "Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp"
-          },
-          "pageKey": {
-            "type": "string",
-            "description": "The key for the next page of data to return.  If left empty the API returns the first page of data"
-          },
-          "pageSize": {
-            "type": "number",
-            "description": "The number of entries to return in this page of data"
-          },
-          "platform": {
-            "type": "string",
-            "description": "TThe social platform to return data for; if left blank will return data for all social platforms"
-          }
-        }
-      },
       "GetStatusOfVideo200": {
         "title": "Get_Status_of_Video200",
         "required": [
