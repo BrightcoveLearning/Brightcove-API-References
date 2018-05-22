@@ -201,8 +201,7 @@
           "type": "boolean",
           "description": "If true, country array is treated as a list of countries excluded from viewing. If false, the country array is a list of countries included for viewing. "
         }
-      },
-      "required": []
+      }
     },
     "Create_a_Policy_Key200": {
       "properties": {
@@ -231,14 +230,14 @@
           "type": "array",
           "description": "Array of apis permitted for the key ",
           "items": {
-            "type": "sting"
+            "type": "string"
           }
         },
         "allowed-domains": {
           "type": "array",
           "description": "Array of domains allowed to use this key ",
           "items": {
-            "type": "sting"
+            "type": "string"
           }
         },
         "require-ad-config": {
@@ -265,7 +264,7 @@
           "type": "array",
           "description": "Array of ISO 3166 list of 2- or 4-letter codes in lower-case (search for &quot;country codes&quot;) ",
           "items": {
-            "type": "sting"
+            "type": "string"
           }
         },
         "exclude_countries": {
