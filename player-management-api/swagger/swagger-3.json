@@ -1417,12 +1417,12 @@
           "IsMultiContentStreaming": false
         }
       },
-      "post": {
+      "delete": {
         "tags": [
           "Player Embeds"
         ],
-        "description": "Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published. When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are: scripts, tylesheets, plugins, sources. You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called array_prepend or array_append the data will be correspondingly prepended or appended to the common player's data for the like field. ee the Array fields section of the Embeds Guide for a complete discussion.",
-        "summary": "Create an embed",
+        "description": "Delete a particular embed (child player) for a player.",
+        "summary": "Delete an embed",
         "operationId": "CreateEmbed",
         "parameters": [
           {
@@ -1430,6 +1430,9 @@
           },
           {
             "$ref": "#/components/parameters/player_id"
+          },
+          {
+            "$ref": "#/components/parameters/embed_id"
           },
           {
             "$ref": "#/components/parameters/ContentType"
