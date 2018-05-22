@@ -44,6 +44,65 @@
             }
           },
           {
+            "name": "before",
+            "in": "query",
+            "description": "Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageKey",
+            "in": "query",
+            "description": "The key for the next page of data to return. If left empty the API returns the first page of data",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "The number of entries to return in this page of data",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "min": 1,
+              "max": 100
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "description": "The number of entries to return in this page of data",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "enum": ["YOUTUBE", "TWITTER", "FACEBOOK"]
+            }
+          },
+          {
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
