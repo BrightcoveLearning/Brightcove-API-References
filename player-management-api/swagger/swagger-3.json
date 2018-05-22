@@ -1008,14 +1008,17 @@
     "/accounts/{account_id}/players/{player_id}/embeds": {
       "get": {
         "tags": [
-          "Players"
+          "Player Embeds"
         ],
-        "summary": "Get a list of players",
-        "description": "Get a list of players",
-        "operationId": "GetPlayers",
+        "summary": "Get all the embeds for a player.",
+        "description": "Get all the embeds (child players) for a player.",
+        "operationId": "GetEmbeds",
         "parameters": [
           {
             "$ref": "#/components/parameters/account_id"
+          },
+          {
+            "$ref": "#/components/parameters/player_id"
           },
           {
             "$ref": "#/components/parameters/ContentType"
@@ -1151,14 +1154,17 @@
       },
       "post": {
         "tags": [
-          "Players"
+          "Player Embeds"
         ],
-        "description": "Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a blank player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.",
-        "summary": "Create a player",
-        "operationId": "CreatePlayer",
+        "description": "Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published. When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are: scripts, tylesheets, plugins, sources. You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called array_prepend or array_append the data will be correspondingly prepended or appended to the common player's data for the like field. ee the Array fields section of the Embeds Guide for a complete discussion.",
+        "summary": "Create an embed",
+        "operationId": "CreateEmbed",
         "parameters": [
           {
             "$ref": "#/components/parameters/account_id"
+          },
+          {
+            "$ref": "#/components/parameters/player_id"
           },
           {
             "$ref": "#/components/parameters/ContentType"
@@ -1172,7 +1178,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/configuration"
+                "type": "object",
+                "description": "A child player object",
+                "properties":{
+                  "description": {
+                    "type": "string",
+                    "description": "A description of the player"
+                 },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the player"
+                  },
+                  "configuration": {
+                    "$ref": "#/components/schemas/configuration"
+                  }
+                }
               }
             }
           },
