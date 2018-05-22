@@ -1423,7 +1423,7 @@
         ],
         "description": "Delete a particular embed (child player) for a player.",
         "summary": "Delete an embed",
-        "operationId": "CreateEmbed",
+        "operationId": "DeleteEmbed",
         "parameters": [
           {
             "$ref": "#/components/parameters/account_id"
@@ -1441,31 +1441,6 @@
             "$ref": "#/components/parameters/Authorization"
           }
         ],
-        "requestBody": {
-          "description": "Create a plsyer",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "description": "A child player object",
-                "properties":{
-                  "description": {
-                    "type": "string",
-                    "description": "A description of the player"
-                 },
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the player"
-                  },
-                  "configuration": {
-                    "$ref": "#/components/schemas/configuration"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
         "responses": {
           "200": {
             "description": "SUCCESS",
@@ -1475,39 +1450,9 @@
                   "description": "200",
                   "type": "object",
                   "properties": {
-                    "id": {
+                    "message": {
                       "type": "string",
-                      "description": "The player id",
-                      "readOnly": true
-                    },
-                    "url": {
-                      "type": "string",
-                      "description": "The player URL",
-                      "readOnly": true
-                    },
-                    "embed_code": {
-                      "type": "string",
-                      "description": "The published player iframe tag",
-                      "readOnly": true
-                    },
-                    "embed_in_page": {
-                      "type": "string",
-                      "description": "URL to browse to retrieve the in-page embed code for published player",
-                      "readOnly": true
-                    },
-                    "preview_url": {
-                      "type": "string",
-                      "description": "URL to preview player",
-                      "readOnly": true
-                    },
-                    "preview_embed_in_page": {
-                      "type": "string",
-                      "description": "URL to browse to retrieve the in-page embed code for preview player",
-                      "readOnly": true
-                    },
-                    "preview_embed_code": {
-                      "type": "string",
-                      "description": "Preview player iframe tag",
+                      "description": "Message indicating player was deleted",
                       "readOnly": true
                     }
                   }
