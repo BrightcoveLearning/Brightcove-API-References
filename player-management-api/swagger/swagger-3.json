@@ -1274,6 +1274,276 @@
           "IsMultiContentStreaming": false
         }
       }
+    },
+    "/accounts/{account_id}/players/{player_id}/embeds/{embed_id}": {
+      "get": {
+        "tags": [
+          "Player Embeds"
+        ],
+        "summary": "Get all the embeds for a player.",
+        "description": "Get all the embeds (child players) for a player.",
+        "operationId": "GetEmbeds",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
+          },
+          {
+            "$ref": "#/components/parameters/player_id"
+          },
+          {
+            "$ref": "#/components/parameters/ContentType"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "account_id": {
+                            "type": "string",
+                            "description": "The account id"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "The player creation date-time"
+                          },
+                          "embeds_count": {
+                            "type": "integer",
+                            "description": "The number of embeds (instances of this player), will always be at least 1"
+                          },
+                          "id": {
+                            "type": "string",
+                            "description": "The player id"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "The player name"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "The player description"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "URL to player"
+                          },
+                          "branches": {
+                            "type": "object",
+                            "description": "The branches of the player - contains objects for the preview and master (published) player",
+                            "properties": {
+                              "preview": {
+                                "type": "object",
+                                "description": "The preview player branch",
+                                "properties": {
+                                  "configuration": {
+                                    "$ref": "#/components/schemas/configuration"
+                                  },
+                                  "updated_at": {
+                                    "type": "string",
+                                    "description": "date-time of last update to preview player"
+                                  },
+                                  "template_updated_at": {
+                                    "type": "string",
+                                    "description": "date-time of last update to preview player template"
+                                  },
+                                  "preview_url": {
+                                    "type": "string",
+                                    "description": "URL for the player"
+                                  }
+                                }
+                              },
+                              "master": {
+                                "type": "object",
+                                "description": "The master (published) player branch",
+                                "properties": {
+                                  "configuration": {
+                                    "$ref": "#/components/schemas/configuration"
+                                  },
+                                  "updated_at": {
+                                    "type": "string",
+                                    "description": "date-time of last update to preview player"
+                                  },
+                                  "template_updated_at": {
+                                    "type": "string",
+                                    "description": "date-time of last update to preview player template"
+                                  },
+                                  "preview_url": {
+                                    "type": "string",
+                                    "description": "URL for the player"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per second"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "tags": [
+          "Player Embeds"
+        ],
+        "description": "Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published. When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are: scripts, tylesheets, plugins, sources. You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called array_prepend or array_append the data will be correspondingly prepended or appended to the common player's data for the like field. ee the Array fields section of the Embeds Guide for a complete discussion.",
+        "summary": "Create an embed",
+        "operationId": "CreateEmbed",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/account_id"
+          },
+          {
+            "$ref": "#/components/parameters/player_id"
+          },
+          {
+            "$ref": "#/components/parameters/ContentType"
+          },
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "requestBody": {
+          "description": "Create a plsyer",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "A child player object",
+                "properties":{
+                  "description": {
+                    "type": "string",
+                    "description": "A description of the player"
+                 },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the player"
+                  },
+                  "configuration": {
+                    "$ref": "#/components/schemas/configuration"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "200",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The player id",
+                      "readOnly": true
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The player URL",
+                      "readOnly": true
+                    },
+                    "embed_code": {
+                      "type": "string",
+                      "description": "The published player iframe tag",
+                      "readOnly": true
+                    },
+                    "embed_in_page": {
+                      "type": "string",
+                      "description": "URL to browse to retrieve the in-page embed code for published player",
+                      "readOnly": true
+                    },
+                    "preview_url": {
+                      "type": "string",
+                      "description": "URL to preview player",
+                      "readOnly": true
+                    },
+                    "preview_embed_in_page": {
+                      "type": "string",
+                      "description": "URL to browse to retrieve the in-page embed code for preview player",
+                      "readOnly": true
+                    },
+                    "preview_embed_code": {
+                      "type": "string",
+                      "description": "Preview player iframe tag",
+                      "readOnly": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST: the syntax of the API call is likely incorrect"
+          },
+          "401": {
+            "description": "UNAUTHORIZED: Authentication failed - check to make sure your client credentials were correct for the access token "
+          },
+          "404": {
+            "description": "RESOURCE_NOT_FOUND: The api couldn&#39;t find the resource you requested "
+          },
+          "429": {
+            "description": "RATE_LIMIT_EXCEEDED: Too many requests per second"
+          },
+          "500": {
+            "description": "INTERNAL_SERVER_ERROR: there was an error trying to fulfill the request"
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
     }
   },
   "components": {
@@ -1514,6 +1784,17 @@
         "name": "plugin_id",
         "in": "path",
         "description": "The plugin ID in the Plugin Registry.",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "embed_id": {
+        "name": "embed_id",
+        "in": "path",
+        "description": "The embed id.",
         "required": true,
         "style": "simple",
         "explode": false,
