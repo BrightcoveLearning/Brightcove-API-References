@@ -5,12 +5,10 @@
     "description": "Reference for the Brightcove Social API, used to check the status of videos distributed to social platforms.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://social.api.brightcove.com/v1",
-      "variables": {}
-    }
-  ],
+  "servers": [{
+    "url": "https://social.api.brightcove.com/v1",
+    "variables": {}
+  }],
   "paths": {
     "/accounts/{account_id}/social-status/video/{video_id}": {
       "get": {
@@ -20,8 +18,7 @@
         "summary": "Get_Status_of_Video",
         "description": "Get the current status of the requested video on every destination to which Social has ever attempted to distribute it, ordered by date, most recent first. ",
         "operationId": "GetStatusOfVideo",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -165,8 +162,7 @@
         "summary": "Get_Status_of_Video_for_Destination",
         "description": "Get the current status of one video with respect to one destination. ",
         "operationId": "GetStatusOfVideoForDestination",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -262,8 +258,7 @@
         "summary": "Get_Status_of_Videos_for_Destination",
         "description": "Get the current status of every video which Social ever attempted to distribute to the given destination. ",
         "operationId": "GetStatusOfVideosForDestination",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -286,52 +281,52 @@
             }
           },
           {
-          "name": "before",
-          "in": "query",
-          "description": "Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp",
-          "required": false,
-          "style": "form",
-          "explode": true,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "since",
-          "in": "query",
-          "description": "Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp",
-          "required": false,
-          "style": "form",
-          "explode": true,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "pageKey",
-          "in": "query",
-          "description": "The key for the next page of data to return. If left empty the API returns the first page of data",
-          "required": false,
-          "style": "form",
-          "explode": true,
-          "schema": {
-            "type": "string"
-          }
-        },
-        {
-          "name": "pageSize",
-          "in": "query",
-          "description": "The number of entries to return in this page of data",
-          "required": false,
-          "style": "form",
-          "explode": true,
-          "schema": {
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100
-          }
-        },
+            "name": "before",
+            "in": "query",
+            "description": "Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageKey",
+            "in": "query",
+            "description": "The key for the next page of data to return. If left empty the API returns the first page of data",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "The number of entries to return in this page of data",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
           {
             "name": "Content-Type",
             "in": "header",
