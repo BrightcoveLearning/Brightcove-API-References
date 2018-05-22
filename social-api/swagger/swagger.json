@@ -62,7 +62,7 @@
           "500": {
             "description": "TIMEOUT: Server likely too busy; try again later. "
           },
-          "ENTITY 422": {
+          "422": {
             "description": "UNPROCESSIBLE: Invalid query parameters. "
           }
         },
@@ -132,7 +132,7 @@
           "500": {
             "description": "TIMEOUT: Server likely too busy; try again later. "
           },
-          "ENTITY 422": {
+          "422": {
             "description": "UNPROCESSIBLE: Invalid query parameters. "
           }
         },
@@ -195,7 +195,7 @@
           "500": {
             "description": "TIMEOUT: Server likely too busy; try again later. "
           },
-          "ENTITY 422": {
+          "422": {
             "description": "UNPROCESSIBLE: Invalid query parameters. "
           }
         },
