@@ -460,7 +460,14 @@
             "style": "form",
             "explode": true,
             "schema": {
-              "type": "string",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
               "default": "now",
               "example": "now"
             }
