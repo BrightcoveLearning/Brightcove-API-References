@@ -226,8 +226,7 @@
           "type": "string",
           "description": "TThe social platform to return data for; if left blank will return data for all social platforms "
         }
-      },
-      "required": []
+      }
     },
     "Get_Status_of_Video200": {
       "properties": {
