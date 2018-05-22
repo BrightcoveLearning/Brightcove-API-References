@@ -207,11 +207,11 @@
     "URL Parameters": {
       "properties": {
         "before": {
-          "type": "datetime",
+          "type": "string",
           "description": "Only videos last modified at or before the specified timestamp will be returned - ISO 8601 Timestamp "
         },
         "since": {
-          "type": "datetime",
+          "type": "string",
           "description": "Only videos last modified at or since the specified timestamp will be returned - ISO 8601 Timestamp "
         },
         "pageKey": {
@@ -236,7 +236,7 @@
           "description": "The video id "
         },
         "time": {
-          "type": "datetime",
+          "type": "string",
           "description": "The time at which Social last attempted to modify the video on the remote social platform "
         },
         "remote_url": {
@@ -282,7 +282,7 @@
           "description": "The video id "
         },
         "time": {
-          "type": "datetime",
+          "type": "string",
           "description": "The time at which Social last attempted to modify the video on the remote social platform "
         },
         "remote_url": {
@@ -328,7 +328,7 @@
           "description": "The video id "
         },
         "time": {
-          "type": "datetime",
+          "type": "string",
           "description": "The time at which Social last attempted to modify the video on the remote social platform "
         },
         "remote_url": {
