@@ -1589,11 +1589,6 @@
                   "description": "200",
                   "type": "object",
                   "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "The player id",
-                      "readOnly": true
-                    },
                     "preview_url": {
                       "type": "string",
                       "description": "URL to preview player",
