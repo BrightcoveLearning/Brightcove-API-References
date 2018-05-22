@@ -9,7 +9,7 @@
     {
       "url": "https://players.api.brightcove.com/v2",
       "variables": {
-        
+
       }
     }
   ],
@@ -149,7 +149,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -254,7 +254,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -394,7 +394,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -493,7 +493,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -560,7 +560,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -644,7 +644,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -708,7 +708,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -848,7 +848,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -906,7 +906,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -1051,7 +1051,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -1156,7 +1156,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
@@ -1245,7 +1245,7 @@
         },
         "deprecated": false,
         "security": [
-          
+
         ],
         "x-operation-settings": {
           "CollectParameters": false,
