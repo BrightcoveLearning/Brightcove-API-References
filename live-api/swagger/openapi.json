@@ -2550,7 +2550,8 @@
           },
           "region": {
             "type": "string",
-            "description": "AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support. See [Supported AWS Regions] (https://support.brightcove.com/overview-brightcove-live-api#Support_aws_regions) for more details on the support in each region."
+            "description": "AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support. See [Supported AWS Regions] (https://support.brightcove.com/overview-brightcove-live-api#Support_aws_regions) for more details on the support in each region.",
+            "enum": ["us-west-2", "us-east-1", "ap-southeast-2", "ap-northeast-1", "ap-southeast-1", "eu-central-1", "eu-west-1", "sa-east-1"]
           },
           "rtmp_ip_whitelist": {
             "type":"array",
@@ -2609,7 +2610,10 @@
           },
           "event_length": {
             "type": "number",
-            "description": "Used to preset and define an end time for the live event. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins."
+            "description": "Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 93600
           },
           "live_dvr_sliding_window_duration": {
             "type": "number",
