@@ -281,7 +281,7 @@
           {
             "name": "where",
             "in": "query",
-            "description": "0ne or more field==value pairs to filter the results; fields supported are `video_id`, `video_name`, `tracking_id`, `external_id`, `player_id`, `page_url`, `watched`, `time_watched`, `created_at`, `updated_at`, `is_synced`",
+            "description": "0ne or more field==value pairs to filter the results; fields supported are `video_id`, `video_name`, `tracking_id`, `external_id`, `player_id`, `page_url`, `watched`, `time_watched`, `created_at`, `updated_at`, `is_synced`,`utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`",
             "style": "form",
             "explode": true,
             "schema": {
