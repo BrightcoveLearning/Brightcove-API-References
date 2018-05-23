@@ -2567,7 +2567,8 @@
           },
           "ad_insertion": {
             "type": "boolean",
-            "description": "Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags."
+            "description": "Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.",
+            "default": false
           },
           "ad_audio_loudness_level": {
             "type": "number",
