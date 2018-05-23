@@ -1208,9 +1208,7 @@
             "style": "form",
             "explode": true,
             "schema": {
-              "type": "string",
-              "default": "-updated_at",
-              "example": "-updated_at"
+              "$ref": "#/components/schemas/Sort"
             }
           },
           {
