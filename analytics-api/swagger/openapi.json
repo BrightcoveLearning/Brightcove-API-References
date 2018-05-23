@@ -397,7 +397,7 @@
               "type": "integer",
               "format": "int32",
               "default": 0,
-              "example": 0
+              "example": 10
             }
           },
           {
