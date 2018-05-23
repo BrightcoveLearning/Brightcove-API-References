@@ -2572,7 +2572,9 @@
           },
           "ad_audio_loudness_level": {
             "type": "number",
-            "description": "Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (-23dB for EBU R.128) The recommended setting is -23."
+            "description": "Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (-23dB for EBU R.128) The recommended setting is -23.",
+            "minimum": -60.0,
+            "maximum": 60.0
           },
           "beacon_set": {
             "type": "string",
@@ -2580,7 +2582,8 @@
           },
           "reconnect_time": {
             "type": "number",
-            "description": "The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish."
+            "description": "The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish.",
+            "minimum": 1
           },
           "slate": {
             "type": "string",
