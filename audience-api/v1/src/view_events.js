@@ -72,7 +72,7 @@
  * @apiError (Error 4xx) {json} REQUEST_THROTTLED_ERROR 429: The user has exceeded the rate limiting policy
  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: An internal error has occurred
  * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT_ERROR 504: The server timed out while fulfilling your request
-
+ *
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
