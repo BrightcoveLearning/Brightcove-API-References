@@ -89,8 +89,6 @@
             "style": "form",
             "explode": true,
             "schema": {
-              "default": "created_at",
-              "example": "created_at",
               "$ref": "#/components/schemas/Sort"
             }
           },
@@ -560,11 +558,11 @@
           },
           {
             "name": "watched",
-            "description": "Number of times video was viewed"
+            "description": "Percent of video watched"
           },
           {
             "name": "time_watched",
-            "description": "Total amount of time video was watched"
+            "description": "Total secondes video was watched"
           },
           {
             "name": "created_at",
@@ -582,6 +580,7 @@
       },
       "Fields": {
         "title": "fields",
+        "description": "See [Fields for filtering and selection](https://support.brightcove.com/overview-audience-api#Retrieving_view_events) for more information",
         "enum": [
           "video_id",
           "video_name",
@@ -600,47 +599,47 @@
         "x-enum-elements": [
           {
             "name": "video_id",
-            "description": ""
+            "description": "Brightcove video id"
           },
           {
             "name": "video_name",
-            "description": ""
+            "description": "Brightcove video name"
           },
           {
             "name": "tracking_id",
-            "description": ""
+            "description": "Custom tracking id"
           },
           {
             "name": "external_id",
-            "description": ""
+            "description": "The Marketo, Eloqua or other custom GUID"
           },
           {
             "name": "player_id",
-            "description": ""
+            "description": "Brightcove player id"
           },
           {
             "name": "page_url",
-            "description": ""
+            "description": "The URL of the page where the view event was created"
           },
           {
             "name": "watched",
-            "description": ""
+            "description": "Percent watched"
           },
           {
             "name": "time_watched",
-            "description": ""
+            "description": "Seconds watched"
           },
           {
             "name": "created_at",
-            "description": ""
+            "description": "Creation date"
           },
           {
             "name": "updated_at",
-            "description": ""
+            "description": "Last modified date"
           },
           {
             "name": "is_synced",
-            "description": ""
+            "description": "A boolean denoting whether or not the view event has been synchronized"
           }
         ]
       }
