@@ -532,50 +532,51 @@
         ],
         "type": "string",
         "example": "video_id",
+        "default": "created_at",
         "x-enum-elements": [
           {
             "name": "video_id",
-            "description": ""
+            "description": "Video id"
           },
           {
             "name": "video_name",
-            "description": ""
+            "description": "Video name"
           },
           {
             "name": "tracking_id",
-            "description": ""
+            "description": "Custom tracking id"
           },
           {
             "name": "external_id",
-            "description": ""
+            "description": "The Marketo, Eloqua or other custom GUID"
           },
           {
             "name": "player_id",
-            "description": ""
+            "description": "Player id"
           },
           {
             "name": "page_url",
-            "description": ""
+            "description": "URL of the video page"
           },
           {
             "name": "watched",
-            "description": ""
+            "description": "Number of times video was viewed"
           },
           {
             "name": "time_watched",
-            "description": ""
+            "description": "Total amount of time video was watched"
           },
           {
             "name": "created_at",
-            "description": ""
+            "description": "When video was created"
           },
           {
             "name": "updated_at",
-            "description": ""
+            "description": "When video was last updated"
           },
           {
             "name": "is_synced",
-            "description": ""
+            "description": "A boolean denoting whether or not the view event has been synchronized"
           }
         ]
       },
