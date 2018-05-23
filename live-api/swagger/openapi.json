@@ -2552,6 +2552,13 @@
             "type": "string",
             "description": "AWS region - you can also specify region as the alias for a list set up for the account by Brightcove Support. See [Supported AWS Regions] (https://support.brightcove.com/overview-brightcove-live-api#Support_aws_regions) for more details on the support in each region."
           },
+          "rtmp_ip_whitelist": {
+            "type":"array",
+            "description":"Array of IP addresses white-listed for RTMP delivery",
+            "items":{
+              "type":"string"
+            }
+          },
           "channel_type": {
             "type": "string",
             "description": "Indicates whether the job should be billed as `event` hours or a channel (`24x7`) - see [Channels and Event Hours](https://support.brightcove.com/overview-brightcove-live-api#Channels_and_hours).",
@@ -2581,9 +2588,11 @@
             "description": "ID for a beacon set (for SSAI only)."
           },
           "reconnect_time": {
-            "type": "number",
+            "type": "integer",
             "description": "The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish.",
-            "minimum": 1
+            "minimum": 1,
+            "maximum": 7200,
+            "default": 30
           },
           "slate": {
             "type": "string",
@@ -2591,7 +2600,8 @@
           },
           "static": {
             "type": "boolean",
-            "description": "Whether this is a static entry point (SEP) job"
+            "description": "Whether this is a static entry point (SEP) job",
+            "default": false
           },
           "encryption": {
             "description": "Encryption to apply to the stream.",
@@ -2636,11 +2646,16 @@
         "properties": {
           "method": {
             "type": "string",
-            "description": "The encryption method to use."
+            "description": "The encryption method to use.",
+            "enum": ["aes-128"]
           },
           "type": {
             "type": "string",
-            "description": "The encryption type, depending on whether an internal or external key server will be used."
+            "description": "The encryption type, depending on whether an internal or external key server will be used.",
+            "enum": [
+              "internal",
+              "external"
+            ]
           },
           "key": {
             "type": "string",
@@ -2652,15 +2667,17 @@
           },
           "key_rotation": {
             "type": "boolean",
-            "description": "Whether to use key rotation - either a `key`, `passphrase`, or `key_rotation` is required"
+            "description": "Whether to use key rotation - either a `key`, `passphrase`, or `key_rotation` is required",
+            "default": false
           },
           "rotate_every": {
-            "type": "number",
-            "description": "Interval for key rotation in video segments"
+            "type": "integer",
+            "description": "Interval for key rotation in video segments",
+            "default": 10
           },
           "external_url": {
             "type": "string",
-            "description": "The URL for the external encryption key - this field is required if you specify type as external, and the external key must match the key value"
+            "description": "The URL for the external encryption key - this field is required if you specify type as external, and the external key must match the `key` value"
           }
         }
       },
