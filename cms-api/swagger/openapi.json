@@ -10091,7 +10091,8 @@
         "properties": {
           "account_id": {
             "type": "string",
-            "description": "Video Cloud account id"
+            "description": "Video Cloud account id",
+            "readOnly": true
           },
           "audio_only": {
             "type": "boolean",
@@ -10099,11 +10100,13 @@
           },
           "cdn_origin_id": {
             "type": "string",
-            "description": "id on the origin CDN if any"
+            "description": "id on the origin CDN if any",
+            "readOnly": true
           },
           "complete": {
             "type": "boolean",
-            "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true"
+            "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true",
+            "readOnly": true
           },
           "controller_type": {
             "type": "string",
@@ -10123,11 +10126,13 @@
           },
           "frame_height": {
             "type": "number",
-            "description": "frame height in pixels"
+            "description": "frame height in pixels",
+            "readOnly": true
           },
           "frame_width": {
             "type": "number",
-            "description": "frame width in pixels"
+            "description": "frame width in pixels",
+            "readOnly": true
           },
           "hds": {
             "description": "HDS information",
@@ -10148,7 +10153,8 @@
           },
           "preview_thumbnail_asset_id": {
             "type": "string",
-            "description": "thumbnail asset id"
+            "description": "thumbnail asset id",
+            "readOnly": true
           },
           "progressive_download": {
             "type": "boolean",
@@ -10167,11 +10173,13 @@
             "description": "for HTTP types"
           },
           "sharded_directory": {
-            "type": "string"
+            "type": "string",
+            "readOnly": true
           },
           "size": {
             "type": "number",
-            "description": "in bytes"
+            "description": "in bytes",
+            "readOnly": true
           },
           "type": {
             "type": "string",
@@ -10179,14 +10187,17 @@
           },
           "updated_at": {
             "type": "string",
-            "description": "date/time last modified"
+            "description": "date/time last modified",
+            "readOnly": true
           },
           "uploaded_at": {
             "type": "string",
-            "description": "date/time added"
+            "description": "date/time added",
+            "readOnly": true
           },
           "version": {
-            "type": "number"
+            "type": "number",
+            "readOnly": true
           },
           "video_codec": {
             "type": "string",
@@ -10278,7 +10289,8 @@
         "properties": {
           "account_id": {
             "type": "string",
-            "description": "Video Cloud account id"
+            "description": "Video Cloud account id",
+            "readOnly": true
           },
           "created_at": {
             "type": "string",
@@ -10296,11 +10308,13 @@
           },
           "updated_at": {
             "type": "string",
-            "description": "date/time folder last modified"
+            "description": "date/time folder last modified",
+            "readOnly": true
           },
           "video_count": {
             "type": "string",
-            "description": "number of videos in the folder"
+            "description": "number of videos in the folder",
+            "readOnly": true
           }
         }
       },
@@ -10310,15 +10324,18 @@
         "properties": {
           "account_id": {
             "type": "string",
-            "description": "the Video Cloud account id"
+            "description": "the Video Cloud account id",
+            "readOnly": true
           },
           "error_code": {
             "type": "string",
-            "description": "the error code if the job failed"
+            "description": "the error code if the job failed",
+            "readOnly": true
           },
           "error_message": {
             "type": "string",
-            "description": "the error message if the job failed"
+            "description": "the error message if the job failed",
+            "readOnly": true
           },
           "id": {
             "type": "string",
@@ -10327,27 +10344,33 @@
           },
           "priority": {
             "type": "string",
-            "description": "priority of the job (normal or low)"
+            "description": "priority of the job (normal or low)",
+            "readOnly": true
           },
           "started_at": {
             "type": "string",
-            "description": "when processing started"
+            "description": "when processing started",
+            "readOnly": true
           },
           "state": {
             "type": "string",
-            "description": "the current state of the ingest job"
+            "description": "the current state of the ingest job",
+            "readOnly": true
           },
           "submitted_at": {
             "type": "string",
-            "description": "when the job was submitted"
+            "description": "when the job was submitted",
+            "readOnly": true
           },
           "updated_at": {
             "type": "string",
-            "description": "when the status was last updated"
+            "description": "when the status was last updated",
+            "readOnly": true
           },
           "video_id": {
             "type": "string",
-            "description": "the video id"
+            "description": "the video id",
+            "readOnly": true
           }
         }
       },
@@ -10357,7 +10380,8 @@
         "properties": {
           "account_id": {
             "type": "string",
-            "description": "Video Cloud account id"
+            "description": "Video Cloud account id",
+            "readOnly": true
           },
           "created_at": {
             "type": "string",
@@ -10397,7 +10421,8 @@
           "updated_at": {
             "type": "string",
             "description": "date/time last modified",
-            "format": "date-time"
+            "format": "date-time",
+            "readOnly": true
           },
           "video_ids": {
             "type": "array",
@@ -10460,11 +10485,13 @@
           },
           "clip_source_video_id": {
             "type": "string",
-            "description": "The ID of the source video that was clipped to produce this video or null if this video is not a clip of another video"
+            "description": "The ID of the source video that was clipped to produce this video or null if this video is not a clip of another video",
+            "readOnly": true
           },
           "complete": {
             "type": "boolean",
-            "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true"
+            "description": "whether processing is complete &mdash; Note: when you create a new video, the complete property is automatically set to false. As soon as one rendition exists for the video, the complete property will be automatically set to true",
+            "readOnly": true
           },
           "created_at": {
             "type": "string",
@@ -10532,7 +10559,7 @@
             "$ref": "#/components/schemas/VideoImages"
           },
           "link": {
-            "description": "map of scheduling properties",
+            "description": "map of related link properties",
             "$ref": "#/components/schemas/Link"
           },
           "long_description": {
