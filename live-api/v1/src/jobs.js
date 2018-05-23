@@ -23,9 +23,9 @@
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
  * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
  * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
- * @apiParam (Request Body Fields) {String} [encryption.key] The encryption key - either a `key` or a `passphrase` is required; if the `type` is `external`, `key` is required.
- * @apiParam (Request Body Fields) {String} [encryption.passphrase] The encryption key - either a `key` or a `passphrase` is required
- * @apiParam (Request Body Fields) {Boolean} [encryption.key_rotation=false] Whether to use key rotation
+ * @apiParam (Request Body Fields) {String} [encryption.key] The encryption key - either a key, passphrase, or key_rotation is required; if the type is external, key is required
+ * @apiParam (Request Body Fields) {String} [encryption.passphrase] The encryption key  - either a key, passphrase, or key_rotation is required
+ * @apiParam (Request Body Fields) {Boolean} [encryption.key_rotation=false] Whether to use key rotation  - either a key, passphrase, or key_rotation is required
  * @apiParam (Request Body Fields) {Number} [encryption.rotate_every=10] Interval for key rotation in video segments
  * @apiParam (Request Body Fields) {String} [encryption.external_url] The URL for the external encryption key - this field is required if you specify `type` as `external`, and the external key must match the `key` value
  * @apiParam (Request Body Fields) {Number{0-93600}} [event_length=0] Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.
