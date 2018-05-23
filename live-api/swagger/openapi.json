@@ -2638,15 +2638,15 @@
           },
           "key": {
             "type": "string",
-            "description": "The encryption key - either a key or a passphrase is required; if the type is external, key is required."
+            "description": "The encryption key - either a `key`, `passphrase`, or `key_rotation` is required; if the type is `external`, `key` is required"
           },
           "passphrase": {
             "type": "string",
-            "description": "The encryption key - either a key or a passphrase is required"
+            "description": "The encryption key - either a `key`, `passphrase`, or `key_rotation` is required"
           },
           "key_rotation": {
             "type": "boolean",
-            "description": "Whether to use key rotation"
+            "description": "Whether to use key rotation - either a `key`, `passphrase`, or `key_rotation` is required"
           },
           "rotate_every": {
             "type": "number",
