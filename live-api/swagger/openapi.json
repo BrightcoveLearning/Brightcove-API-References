@@ -2609,15 +2609,18 @@
             "$ref": "#/components/schemas/CreateALiveJobbody.encryption"
           },
           "event_length": {
-            "type": "number",
+            "type": "integer",
             "description": "Used to preset and define an end time for the live event. At any point within the specified `event_length` you may reconnect to your stream. The `event_length` setting goes into effect as soon as streaming begins.",
             "default": 0,
             "minimum": 0,
             "maximum": 93600
           },
           "live_dvr_sliding_window_duration": {
-            "type": "number",
-            "description": "The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds. **Note: for SSAI jobs, the limit is 7200."
+            "type": "integer",
+            "description": "The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds. **Note: for SSAI jobs, the limit is `7200`.",
+            "default": 100,
+            "minimum": 0,
+            "maximum": 86400
           },
           "live_dvr_ads_window_duration": {
             "type": "number",
