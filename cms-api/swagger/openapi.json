@@ -10521,11 +10521,12 @@
           },
           "digital_master_id": {
             "type": "string",
-            "description": "asset id of the digital master"
+            "description": "asset id of the digital master",
+            "readOnly": true
           },
           "drm_disabled": {
             "type": "boolean",
-            "description": "if true, the video is not DRM-packaged"
+            "description": "if true, the video is not DRM-packaged - applies to accounts that are enabled for DRM only"
           },
           "duration": {
             "type": "number",
