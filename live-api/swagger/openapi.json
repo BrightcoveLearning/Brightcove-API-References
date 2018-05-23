@@ -2623,15 +2623,31 @@
             "maximum": 86400
           },
           "live_dvr_ads_window_duration": {
-            "type": "number",
-            "description": "The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds."
+            "type": "integer",
+            "description": "The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is `100` seconds.",
+            "default": 100,
+            "minimum": 0,
+            "maximum": 600
           },
           "max_hls_protocol_version": {
-            "type": "number",
-            "description": "Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3."
+            "type": "integer",
+            "description": "Sets the maximum HLS protocol version to use. Special features will be used as available. Default is `3`.",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 5
           },
           "notifications": {
-            "type": "object",
+            "oneOf": [
+            {
+              "type": "array",
+              "items":{
+                "type":"string"
+              }
+            },
+            {
+              "type": "string"
+            }              
+            ]
             "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object."
           },
           "add_cdns": {
