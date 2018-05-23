@@ -554,7 +554,12 @@
           "time_watched",
           "created_at",
           "updated_at",
-          "is_synced"
+          "is_synced",
+          "utm_source",
+          "utm_medium",
+          "utm_campaign",
+          "utm_term",
+          "utm_content"
         ],
         "type": "string",
         "example": "video_id",
@@ -603,6 +608,26 @@
           {
             "name": "is_synced",
             "description": "A boolean denoting whether or not the view event has been synchronized"
+          },
+          {
+            "name": "utm_source",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_medium",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_medium",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_term",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_content",
+            "description": "UTM field found in the page_url"
           }
         ]
       },
@@ -620,7 +645,12 @@
           "time_watched",
           "created_at",
           "updated_at",
-          "is_synced"
+          "is_synced",
+          "utm_source",
+          "utm_medium",
+          "utm_campaign",
+          "utm_term",
+          "utm_content"
         ],
         "type": "string",
         "example": "video_id",
@@ -668,6 +698,26 @@
           {
             "name": "is_synced",
             "description": "A boolean denoting whether or not the view event has been synchronized"
+          },
+          {
+            "name": "utm_source",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_medium",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_medium",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_term",
+            "description": "UTM field found in the page_url"
+          },
+          {
+            "name": "utm_content",
+            "description": "UTM field found in the page_url"
           }
         ]
       }
