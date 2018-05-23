@@ -2639,16 +2639,24 @@
           "notifications": {
             "oneOf": [
             {
-              "type": "array",
-              "items":{
-                "type":"string"
+              "type": "object",
+              "properties":{
+                "event": {
+                  "type":"string",
+                  "description":"The type of event to send notifications for",
+                  "enum":[
+                    "state_changed",
+                    "first_segment_uploaded",
+                    "output_finished"
+                  ]
+                }
               }
             },
             {
               "type": "string"
             }              
             ],
-            "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object."
+            "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object. See [Events](https://support.brightcove.com/live-api-notifications#Events) for an explanation of the events reported in `state_changed` notifications."
           },
           "add_cdns": {
             "type": "array",
