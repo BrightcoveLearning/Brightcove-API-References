@@ -5,12 +5,10 @@
     "description": "Reference for the Brightcove Live API, used to create and manage live streaming events.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://https://api.bcovlive.io",
-      "variables": {}
-    }
-  ],
+  "servers": [{
+    "url": "https://https://api.bcovlive.io",
+    "variables": {}
+  }],
   "paths": {
     "/v1/vods": {
       "post": {
@@ -20,8 +18,7 @@
         "summary": "Create_VOD_Clip",
         "description": "Create VOD clips from a Live Stream. ",
         "operationId": "CreateVodClip",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -99,8 +96,7 @@
         "summary": "List_Credentials",
         "description": "This endpoint can be used to get user credentials for a given user provided one has an API key. ",
         "operationId": "ListCredentials",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -161,8 +157,7 @@
         "summary": "Create_Credential",
         "description": "Create a new credential. ",
         "operationId": "CreateCredential",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -240,8 +235,7 @@
         "summary": "Update_Credential",
         "description": "Update a credential. ",
         "operationId": "UpdateCredential",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "credential_id",
             "in": "path",
             "description": "The credential id",
@@ -328,8 +322,7 @@
         "summary": "Delete_Credential",
         "description": "Delete a credential. ",
         "operationId": "DeleteCredential",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "credential_id",
             "in": "path",
             "description": "The credential id",
@@ -395,8 +388,7 @@
         "summary": "Activate_SEP_Stream",
         "description": "Activate SEP (static entry point) Stream ",
         "operationId": "ActivateSepStream",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -470,8 +462,7 @@
         "summary": "Cancel_Live_Job",
         "description": "Cancel a live stream ",
         "operationId": "CancelLiveJob",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -534,8 +525,7 @@
         "summary": "Create_a_Live_Job",
         "description": "Create a live stream ",
         "operationId": "CreateALiveJob",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": ": application/json",
@@ -613,8 +603,7 @@
         "summary": "Deactivate_SEP_Stream",
         "description": "Deactivate SEP (static entry point) Stream ",
         "operationId": "DeactivateSepStream",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -688,8 +677,7 @@
         "summary": "Get_Live_Job_Details",
         "description": "Get Live Job Details ",
         "operationId": "GetLiveJobDetails",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -763,8 +751,7 @@
         "summary": "Insert_ID3_timed_metadata",
         "description": "Inserts an ID3 timed metadata tag for an ongoing job. Note that: 1) If using timecode property, the job only stores the most recent request for insertion; 2) If using timecode property, the encoder must be sending SMPTE-formatted (HH:MM:SS:FF) timecode stored in the tc property via OnFI ",
         "operationId": "InsertId3TimedMetadata",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -853,8 +840,7 @@
         "summary": "Manual_Ad_Cue_Point_Insertion",
         "description": "Inserts a manual Cue-Out with a duration to the Live ingest point. ",
         "operationId": "ManualAdCuePointInsertion",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "job_id",
             "in": "path",
             "description": "The job id",
@@ -943,8 +929,7 @@
         "summary": "Create_Ad_Configuration",
         "description": "Create a configuration for server-side ad application. ",
         "operationId": "CreateAdConfiguration",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -1022,8 +1007,7 @@
         "summary": "Create_beacon_set",
         "description": "Beacons are data points on playback sent to ad servers to track whether and how much of ads were played. Creates a beacon set. ",
         "operationId": "CreateBeaconSet",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -1101,8 +1085,7 @@
         "summary": "Get_Ad_Configuration",
         "description": "Get an ad application. ",
         "operationId": "GetAdConfiguration",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "application_id",
             "in": "path",
             "description": "The ad application id",
@@ -1174,8 +1157,7 @@
         "summary": "Update_Ad_Configuration",
         "description": "Update a configuration for server-side ad application. ",
         "operationId": "UpdateAdConfiguration",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "application_id",
             "in": "path",
             "description": "The ad application id",
@@ -1262,8 +1244,7 @@
         "summary": "Delete_Ad_Configuration",
         "description": "Delete an ad application. ",
         "operationId": "DeleteAdConfiguration",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "application_id",
             "in": "path",
             "description": "The ad application id",
@@ -1337,8 +1318,7 @@
         "summary": "Delete_Slate_Media_Source_Asset",
         "description": "Delete Slate Media Source Asset. ",
         "operationId": "DeleteSlateMediaSourceAsset",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "slate_msa_id",
             "in": "path",
             "description": "The slate media source asset id",
@@ -1412,8 +1392,7 @@
         "summary": "Update_beacon_set",
         "description": "Updates a beacon set. ",
         "operationId": "UpdateBeaconSet",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "beacon_set_id",
             "in": "query",
             "description": "The beacon set id",
@@ -1500,8 +1479,7 @@
         "summary": "Delete_beacon_set",
         "description": "Deletes a beacon set. ",
         "operationId": "DeleteBeaconSet",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "beacon_set_id",
             "in": "query",
             "description": "The beacon set id",
@@ -1575,8 +1553,7 @@
         "summary": "Get_Account_Ad_Configurations",
         "description": "Get ad applications for an account. ",
         "operationId": "GetAccountAdConfigurations",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "The account id",
@@ -1650,8 +1627,7 @@
         "summary": "Get_Slate_Media_Source_Assets",
         "description": "Get Slate Media Source Assets for an account. ",
         "operationId": "GetSlateMediaSourceAssets",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -1714,8 +1690,7 @@
         "summary": "Get_beacon_sets",
         "description": "Get all beacon sets for an account. ",
         "operationId": "GetBeaconSets",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "The account id",
@@ -1789,8 +1764,7 @@
         "summary": "Get_beacon_sets_for_user",
         "description": "Get all beacon sets for the requesting user. ",
         "operationId": "GetBeaconSetsForUser",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -1853,8 +1827,7 @@
         "summary": "Ingest_Slate_Media_Source_Asset",
         "description": "Ingest Slate Media Source Asset. ",
         "operationId": "IngestSlateMediaSourceAsset",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "Content-Type",
             "in": "header",
             "description": "Content-Type: application/json",
@@ -2136,8 +2109,7 @@
         ],
         "type": "string",
         "example": "AD_SUPPORTED",
-        "x-enum-elements": [
-          {
+        "x-enum-elements": [{
             "name": "AD_SUPPORTED",
             "description": ""
           },
@@ -2155,8 +2127,7 @@
         ],
         "type": "string",
         "example": "ACTIVE",
-        "x-enum-elements": [
-          {
+        "x-enum-elements": [{
             "name": "ACTIVE",
             "description": ""
           },
@@ -2205,8 +2176,7 @@
         ],
         "type": "string",
         "example": "AD",
-        "x-enum-elements": [
-          {
+        "x-enum-elements": [{
             "name": "AD",
             "description": ""
           },
@@ -2554,10 +2524,10 @@
             "enum": ["us-west-2", "us-east-1", "ap-southeast-2", "ap-northeast-1", "ap-southeast-1", "eu-central-1", "eu-west-1", "sa-east-1"]
           },
           "rtmp_ip_whitelist": {
-            "type":"array",
-            "description":"Array of IP addresses white-listed for RTMP delivery",
-            "items":{
-              "type":"string"
+            "type": "array",
+            "description": "Array of IP addresses white-listed for RTMP delivery",
+            "items": {
+              "type": "string"
             }
           },
           "channel_type": {
@@ -2638,15 +2608,14 @@
           },
           "notifications": {
             "type": "array",
-            "items":{
-              "oneOf": [
-                {
+            "items": {
+              "oneOf": [{
                   "type": "object",
-                  "properties":{
+                  "properties": {
                     "event": {
-                      "type":"string",
-                      "description":"The type of event to send notifications for",
-                      "enum":[
+                      "type": "string",
+                      "description": "The type of event to send notifications for",
+                      "enum": [
                         "state_changed",
                         "first_segment_uploaded",
                         "output_finished"
@@ -2657,8 +2626,8 @@
                 {
                   "type": "string"
                 }
-                ]
-                },
+              ]
+            },
             "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object. See [Events](https://support.brightcove.com/live-api-notifications#Events) for an explanation of the events reported in `state_changed` notifications."
           },
           "add_cdns": {
@@ -2783,15 +2752,14 @@
         "description": "Object containing tokenization properites",
         "properties": {
           "start_time": {
-            "oneOf": [
-              {
+            "oneOf": [{
                 "type": "integer"
               },
               {
-              "type": "string",
-              "enum": [
-                "now"
-              ]
+                "type": "string",
+                "enum": [
+                  "now"
+                ]
               }
             ],
             "description": "The time to apply token auth - &quot;now&quot; or epoch time in seconds",
@@ -2805,7 +2773,7 @@
           },
           "ttl": {
             "type": "integer",
-            "description": "The time to live in seconds - either end_time or ttl is required",
+            "description": "The time to live in seconds - either `end_time` or `ttl` is required",
             "format": "int32"
           }
         }
