@@ -2656,7 +2656,7 @@
                 },
                 {
                   "type": "string"
-                }              
+                }
                 ]
                 },
             "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object. See [Events](https://support.brightcove.com/live-api-notifications#Events) for an explanation of the events reported in `state_changed` notifications."
@@ -2735,14 +2735,17 @@
           },
           "protocol": {
             "type": "string",
-            "description": "Protocol to use for the stream delivery"
+            "description": "Protocol to use for the stream delivery",
+            "enum": [
+              "http",
+              "https"
+            ]
           },
           "vendor": {
             "type": "string",
             "description": "CDN vendor such as akamai"
           },
           "token_auth": {
-            "description": "Token authentication details",
             "$ref": "#/components/schemas/CreateALiveJobbody.addCdns.tokenAuth"
           }
         }
@@ -2755,10 +2758,11 @@
           "token_name"
         ],
         "type": "object",
+        "description": "Token authentication details",
         "properties": {
           "auth_type": {
             "type": "string",
-            "description": "Token authentication type - currently, the only supported value is Akamai2.0"
+            "description": "Token authentication type - currently, the only supported value is `Akamai2.0`"
           },
           "key": {
             "type": "string",
@@ -2769,7 +2773,6 @@
             "description": "Your Akamai token token name"
           },
           "media": {
-            "description": "Object containing tokenization properites",
             "$ref": "#/components/schemas/CreateALiveJobbody.addCdns.tokenAuth.media"
           }
         }
@@ -2777,6 +2780,7 @@
       "CreateALiveJobbody.addCdns.tokenAuth.media": {
         "title": "Create_a_Live_JobBody.add_cdns.token_auth.media",
         "type": "object",
+        "description": "Object containing tokenization properites",
         "properties": {
           "start_time": {
             "type": "integer",
