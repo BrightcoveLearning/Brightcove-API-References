@@ -362,15 +362,24 @@
           },
           "event": {
             "type": "string",
-            "description": "the event type"
+            "description": "the event type",
+            "enum":[
+              "player_load", "catalog_request", "catalog_response", "play_request", "ad_mode_begin", "ad_mode_complete", "video_impression", "video_view", "video_engagement", "error"
+            ]
           },
           "device_os": {
             "type": "string",
-            "description": "Override to specify the OS of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. Not typically included)"
+            "description": "Override to specify the OS of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. Not typically included)",
+            "enum":[
+              "android", "bada", "ios", "linux", "mac", "tv", "os_x", "rim", "sybian", "windows", "other"
+            ]
           },
           "device_manufacturer": {
             "type": "string",
-            "description": "Override to specify the manufacturer of the device that originated the event in cases where the User Agent is unreliable (Not typically included)"
+            "description": "Override to specify the manufacturer of the device that originated the event in cases where the User Agent is unreliable (Not typically included)",
+            "enum":[
+              "android", "bada", "ios", "linux", "mac", "tv", "os_x", "rim", "sybian", "windows", "other"
+            ]
           },
           "device_os_version": {
             "type": "string",
