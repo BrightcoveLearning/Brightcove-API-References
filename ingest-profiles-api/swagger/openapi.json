@@ -480,7 +480,8 @@
           },
           "default_profile_id": {
             "type": "string",
-            "description": "The id or name of the profile you want to set as the default"
+            "description": "The id or name of the profile you want to set as the default",
+            "example": "multi-platform-standard-static"
           },
           "default_live_profile_id": {
             "type": "string",
@@ -564,7 +565,8 @@
           },
           "default_profile_id": {
             "type": "string",
-            "description": "The id or name of the profile you want to set as the default"
+            "description": "The id or name of the profile you want to set as the default",
+            "example": "multi-platform-standard-static"
           },
           "default_live_profile_id": {
             "type": "string",
@@ -657,14 +659,14 @@
             "items": {
               "$ref": "#/components/schemas/CreateIngestProfilebody.renditions"
             },
-            "description": "array of rendition maps Legacy Ingest only"
+            "description": "array of rendition maps **Legacy Ingest only**"
           },
           "packages": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CreateIngestProfilebody.packages"
             },
-            "description": "array of package maps for DRM (see Content Security) Legacy Ingest only"
+            "description": "array of package maps for DRM (see Content Security) **Legacy Ingest only**"
           },
           "description": {
             "type": "string",
@@ -681,26 +683,30 @@
         "properties": {
           "rendition": {
             "type": "string",
-            "description": "rendition to use as master - either passthrough (the source optimized for online delivery) or none if you do not want to archive a master"
+            "description": "rendition to use as master - either `passthrough` (the source optimized for online delivery) or `none` if you do not want to archive a master",
+            "default": "none",
+            "enum": [
+              "passthrough",
+              "none"
+            ]
           },
           "distribute": {
             "type": "boolean",
-            "description": "whether to make the master playable as a rendition by pushing it to the CDN(s)"
+            "description": "whether to make the master playable as a rendition by pushing it to the CDN(s)",
+            "default": false
           }
         }
       },
       "CreateIngestProfilebody.dynamicOrigin": {
         "title": "Create_Ingest_ProfileBody.dynamic_origin",
         "required": [
-          "renditions",
-          "temporary_renditions",
-          "dynamic_profile_options"
+          "renditions"
         ],
         "type": "object",
         "properties": {
           "renditions": {
             "type": "object",
-            "description": "names of audio and video renditions to include (audio only for CAE profiles) - see Standard Ingest Profiles - renditions for available renditions you can choose from"
+            "description": "names of audio and video renditions to include (audio only for CAE profiles) - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from"
           },
           "temporary_renditions": {
             "type": "object",
@@ -839,38 +845,38 @@
         "properties": {
           "audio_bitrate": {
             "type": "integer",
-            "description": "audio bitrate in kbps Legacy Ingest only",
+            "description": "audio bitrate in kbps **Legacy Ingest only**",
             "format": "int32"
           },
           "audio_codec": {
             "type": "string",
-            "description": "audio codec, e.g. aac Legacy Ingest only"
+            "description": "audio codec, e.g. aac **Legacy Ingest only**"
           },
           "max_aac_profile": {
             "type": "string",
-            "description": "max aaic profile - aac-lc is the recommended value Legacy Ingest only"
+            "description": "max aaic profile - aac-lc is the recommended value **Legacy Ingest only**"
           },
           "format": {
             "type": "string",
-            "description": "video format, e.g. mp4, ts (for HLS), flv, m4f for video, png or jpg for images Legacy Ingest only"
+            "description": "video format, e.g. mp4, ts (for HLS), flv, m4f for video, png or jpg for images **Legacy Ingest only**"
           },
           "video_bitrate": {
             "type": "integer",
-            "description": "target video bitrate in kbps Legacy Ingest only",
+            "description": "target video bitrate in kbps **Legacy Ingest only**",
             "format": "int32"
           },
           "video_codec": {
             "type": "string",
-            "description": "target video codec Legacy Ingest only"
+            "description": "target video codec **Legacy Ingest only**"
           },
           "height": {
             "type": "integer",
-            "description": "target frame height in pixels Legacy Ingest only",
+            "description": "target frame height in pixels **Legacy Ingest only**",
             "format": "int32"
           },
           "width": {
             "type": "integer",
-            "description": "target frame width in pixels Legacy Ingest only",
+            "description": "target frame width in pixels **Legacy Ingest only**",
             "format": "int32"
           },
           "watermarks": {
@@ -878,151 +884,151 @@
             "items": {
               "$ref": "#/components/schemas/CreateIngestProfilebody.renditions.watermarks"
             },
-            "description": "array of watermark maps Legacy Ingest only"
+            "description": "array of watermark maps **Legacy Ingest only**"
           },
           "aspect_mode": {
             "type": "string",
-            "description": "how to handle mismatch between source and rendition aspect ratio Legacy Ingest only"
+            "description": "how to handle mismatch between source and rendition aspect ratio **Legacy Ingest only**"
           },
           "audio_channels": {
             "type": "number",
-            "description": "number of audio channels Legacy Ingest only"
+            "description": "number of audio channels **Legacy Ingest only**"
           },
           "constant_bitrate": {
             "type": "boolean",
-            "description": "whether to use constant bitrate for encoding Legacy Ingest only"
+            "description": "whether to use constant bitrate for encoding **Legacy Ingest only**"
           },
           "crf": {
             "type": "integer",
-            "description": "1-51, not used by default. Legacy Ingest only",
+            "description": "1-51, not used by default. **Legacy Ingest only**",
             "format": "int32"
           },
           "decoder_bitrate_cap": {
             "type": "integer",
-            "description": "In kbps, the max bitrate fed to the decoder Legacy Ingest only",
+            "description": "In kbps, the max bitrate fed to the decoder **Legacy Ingest only**",
             "format": "int32"
           },
           "encryption_method": {
             "type": "string",
-            "description": "encryption_method to use, e.g. aes-128 Legacy Ingest only"
+            "description": "encryption_method to use, e.g. aes-128 **Legacy Ingest only**"
           },
           "encryption_key_rotation_period": {
             "type": "integer",
-            "description": "use a different key for each set of segments, rotating to a new key after this many segments Legacy Ingest only",
+            "description": "use a different key for each set of segments, rotating to a new key after this many segments **Legacy Ingest only**",
             "format": "int32"
           },
           "fixed_keyframe_interval": {
             "type": "integer",
-            "description": "Forces a keyframe every X frames, but still allows additional keyframes &mdash; NOTE overrides keyframe_interval Legacy Ingest only",
+            "description": "Forces a keyframe every X frames, but still allows additional keyframes &mdash; NOTE overrides keyframe_interval **Legacy Ingest only**",
             "format": "int32"
           },
           "forced_keyframe_rate": {
             "type": "number",
-            "description": "Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used Legacy Ingest only"
+            "description": "Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used **Legacy Ingest only**"
           },
           "frame_rate": {
             "type": "integer",
-            "description": "frame rate in frames per second Legacy Ingest only",
+            "description": "frame rate in frames per second **Legacy Ingest only**",
             "format": "int32"
           },
           "h264_bframes": {
             "type": "integer",
-            "description": "number of bframes for h.264 Legacy Ingest only",
+            "description": "number of bframes for h.264 **Legacy Ingest only**",
             "format": "int32"
           },
           "h264_level": {
             "type": "number",
-            "description": "h.264 profile level Legacy Ingest only"
+            "description": "h.264 profile level **Legacy Ingest only**"
           },
           "h264_profile": {
             "type": "string",
-            "description": "h.264 profile Legacy Ingest only"
+            "description": "h.264 profile **Legacy Ingest only**"
           },
           "h264_reference_frames": {
             "type": "integer",
-            "description": "number of h.264 reference frames to use Legacy Ingest only",
+            "description": "number of h.264 reference frames to use **Legacy Ingest only**",
             "format": "int32"
           },
           "hls_optimized_ts": {
             "type": "boolean",
-            "description": "Time segments optimized for HLS Legacy Ingest only"
+            "description": "Time segments optimized for HLS **Legacy Ingest only**"
           },
           "keyframe_interval": {
             "type": "integer",
-            "description": "Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate) Legacy Ingest only",
+            "description": "Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate) **Legacy Ingest only**",
             "format": "int32"
           },
           "keyframe_rate": {
             "type": "integer",
-            "description": "Maximum number of keyframes per second Legacy Ingest only",
+            "description": "Maximum number of keyframes per second **Legacy Ingest only**",
             "format": "int32"
           },
           "label": {
             "type": "string",
-            "description": "Image type for image renditions; required for image renditions Legacy Ingest only"
+            "description": "Image type for image renditions; required for image renditions **Legacy Ingest only**"
           },
           "live_stream": {
             "type": "boolean",
-            "description": "Whether this will be for live streaming video Legacy Ingest only"
+            "description": "Whether this will be for live streaming video **Legacy Ingest only**"
           },
           "live_sliding_window_duration": {
             "type": "number",
-            "description": "Duration of stream to keep available for LiveDVR delivery (in seconds) Legacy Ingest only"
+            "description": "Duration of stream to keep available for LiveDVR delivery (in seconds) **Legacy Ingest only**"
           },
           "max_video_bitrate": {
             "type": "integer",
-            "description": "Maximum video bitrate (h.264 only) Legacy Ingest only",
+            "description": "Maximum video bitrate (h.264 only) **Legacy Ingest only**",
             "format": "int32"
           },
           "max_frame_rate": {
             "type": "integer",
-            "description": "Limits the frame rate rather than sets it, use as an alternative to frame rate Legacy Ingest only",
+            "description": "Limits the frame rate rather than sets it, use as an alternative to frame rate **Legacy Ingest only**",
             "format": "int32"
           },
           "media_type": {
             "type": "string",
-            "description": "the media type of the rendition Legacy Ingest only"
+            "description": "the media type of the rendition **Legacy Ingest only**"
           },
           "one_pass": {
             "type": "boolean",
-            "description": "force one-pass encoding Legacy Ingest only"
+            "description": "force one-pass encoding **Legacy Ingest only**"
           },
           "reference_id": {
             "type": "string",
-            "description": "A reference id for the rendition that is unique within the account - required for DRM packaging Legacy Ingest only"
+            "description": "A reference id for the rendition that is unique within the account - required for DRM packaging **Legacy Ingest only**"
           },
           "segment_seconds": {
             "type": "number",
-            "description": "number of seconds of content to include in segments (the default for HLS is 10; for DASH: 2) Legacy Ingest only"
+            "description": "number of seconds of content to include in segments (the default for HLS is 10; for DASH: 2) **Legacy Ingest only**"
           },
           "skip": {
-            "description": "A set of conditions for skippiung creation of this rendition see Conditional Output Legacy Ingest only",
+            "description": "A set of conditions for skippiung creation of this rendition see Conditional Output **Legacy Ingest only**",
             "$ref": "#/components/schemas/CreateIngestProfilebody.renditions.skip"
           },
           "skip_video": {
             "type": "boolean",
-            "description": "Set to true to skip video encoding for audio-only renditions Legacy Ingest only"
+            "description": "Set to true to skip video encoding for audio-only renditions **Legacy Ingest only**"
           },
           "speed": {
             "type": "integer",
-            "description": "a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features Legacy Ingest only",
+            "description": "a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features **Legacy Ingest only**",
             "format": "int32"
           },
           "streaming_delivery_format": {
             "type": "string",
-            "description": "Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory Legacy Ingest only"
+            "description": "Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory **Legacy Ingest only**"
           },
           "streaming_delivery_profile": {
             "type": "string",
-            "description": "Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile Legacy Ingest only"
+            "description": "Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile **Legacy Ingest only**"
           },
           "type": {
             "type": "string",
-            "description": "transmuxing type for HLS; typical value is segmented Legacy Ingest only"
+            "description": "transmuxing type for HLS; typical value is segmented **Legacy Ingest only**"
           },
           "upscale": {
             "type": "boolean",
-            "description": "whether to upsize the frames if the source frame size is smaller than the target Legacy Ingest only"
+            "description": "whether to upsize the frames if the source frame size is smaller than the target **Legacy Ingest only**"
           }
         }
       },
@@ -1032,39 +1038,39 @@
         "properties": {
           "min_audio_bitrate": {
             "type": "integer",
-            "description": "the minimum audio bitrate that the source must have (kbps) Legacy Ingest only",
+            "description": "the minimum audio bitrate that the source must have (kbps) **Legacy Ingest only**",
             "format": "int32"
           },
           "max_audio_bitrate": {
             "type": "integer",
-            "description": "the maximum audio bitrate that the source must have (kbps) Legacy Ingest only",
+            "description": "the maximum audio bitrate that the source must have (kbps) **Legacy Ingest only**",
             "format": "int32"
           },
           "min_video_bitrate": {
             "type": "integer",
-            "description": "the minimum video bitrate that the source must have (kbps) Legacy Ingest only",
+            "description": "the minimum video bitrate that the source must have (kbps) **Legacy Ingest only**",
             "format": "int32"
           },
           "max_video_bitrate": {
             "type": "integer",
-            "description": "the maximum video bitrate that the source must have (kbps) Legacy Ingest only",
+            "description": "the maximum video bitrate that the source must have (kbps) **Legacy Ingest only**",
             "format": "int32"
           },
           "require_audio": {
             "type": "boolean",
-            "description": "if true the source must include an audio track Legacy Ingest only"
+            "description": "if true the source must include an audio track **Legacy Ingest only**"
           },
           "require_video": {
             "type": "boolean",
-            "description": "if true the source must include a video track Legacy Ingest only"
+            "description": "if true the source must include a video track **Legacy Ingest only**"
           },
           "min_size": {
             "type": "string",
-            "description": "the source must be at least this resolution - string of the form &quot;widthxheight&quot; (e.g. &quot;400x225&quot;) Legacy Ingest only"
+            "description": "the source must be at least this resolution - string of the form &quot;widthxheight&quot; (e.g. &quot;400x225&quot;) **Legacy Ingest only**"
           },
           "max_size": {
             "type": "string",
-            "description": "the source must be at most this resolution - string of the form &quot;widthxheight&quot; (e.g. &quot;1920x1080&quot;) Legacy Ingest only"
+            "description": "the source must be at most this resolution - string of the form &quot;widthxheight&quot; (e.g. &quot;1920x1080&quot;) **Legacy Ingest only**"
           }
         }
       },
@@ -1081,23 +1087,23 @@
         "properties": {
           "url": {
             "type": "string",
-            "description": "URL for the watermark image Legacy Ingest only"
+            "description": "URL for the watermark image **Legacy Ingest only**"
           },
           "width": {
             "type": "string",
-            "description": "width in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted Legacy Ingest only"
+            "description": "width in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted **Legacy Ingest only**"
           },
           "height": {
             "type": "string",
-            "description": "height in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted Legacy Ingest only"
+            "description": "height in pixels or percent of frame width; e.g. 20 or 10% - decimal values like 10.5% are not permitted **Legacy Ingest only**"
           },
           "x": {
             "type": "string",
-            "description": "distance from left edge to center of image as pixels or precent of frame width; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the right edge) - decimal values like 10.5% are not permitted Legacy Ingest only"
+            "description": "distance from left edge to center of image as pixels or precent of frame width; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the right edge) - decimal values like 10.5% are not permitted **Legacy Ingest only**"
           },
           "y": {
             "type": "string",
-            "description": "distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge) - decimal values like 10.5% are not permitted Legacy Ingest only"
+            "description": "distance from top edge to center if image as pixels or percent of frame height; e.g. 20 or 10% (use negative values like -10 to position the watermark relative to the bottom edge) - decimal values like 10.5% are not permitted **Legacy Ingest only**"
           }
         }
       },
@@ -1115,15 +1121,15 @@
             "items": {
               "type": "string"
             },
-            "description": "for MPEG-DASH, array of DRM types to apply, e.g. [&quot;widevine&quot;, &quot;playready&quot;] Legacy Ingest only"
+            "description": "for MPEG-DASH, array of DRM types to apply, e.g. [&quot;widevine&quot;, &quot;playready&quot;] **Legacy Ingest only**"
           },
           "package_type": {
             "type": "string",
-            "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine Legacy Ingest only"
+            "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine **Legacy Ingest only**"
           },
           "renditions": {
             "type": "object",
-            "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s Legacy Ingest only"
+            "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s **Legacy Ingest only**"
           }
         }
       },
