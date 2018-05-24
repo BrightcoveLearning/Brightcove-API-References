@@ -48,7 +48,22 @@
               "schema": {
                 "description": "Create VOD clips from a Live Stream.",
                 "$ref": "#/components/schemas/CreateVodClipbody"
-              }
+              },
+              "example": {
+                "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+                "outputs":[
+                    {
+                        "label": "last 60 secs if live job",
+                        "duration": 60,
+                        "credentials": "VC_CREDENTIALS",
+                        "videocloud": {
+                            "video": {
+                                "name": "TEST"
+                            },
+                            "ingest": { }
+                        }
+                    }
+                ]              }
             }
           },
           "required": true
