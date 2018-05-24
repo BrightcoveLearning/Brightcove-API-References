@@ -2111,11 +2111,11 @@
         "example": "AD_SUPPORTED",
         "x-enum-elements": [{
             "name": "AD_SUPPORTED",
-            "description": ""
+            "description": "Ad supported - this option can only be selected in the Brightcove account is ad-enabled"
           },
           {
             "name": "FREE",
-            "description": ""
+            "description": "No ad support"
           }
         ]
       },
@@ -2129,11 +2129,11 @@
         "example": "ACTIVE",
         "x-enum-elements": [{
             "name": "ACTIVE",
-            "description": ""
+            "description": "Video is available for playback"
           },
           {
             "name": "INACTIVE",
-            "description": ""
+            "description": "Video is not available for playback"
           }
         ]
       },
@@ -2178,11 +2178,11 @@
         "example": "AD",
         "x-enum-elements": [{
             "name": "AD",
-            "description": ""
+            "description": "A cue point to trigger an add request"
           },
           {
             "name": "CODE",
-            "description": ""
+            "description": "A code cue point to be handled by a script"
           }
         ]
       },
@@ -2233,16 +2233,19 @@
         "properties": {
           "profile": {
             "type": "string",
-            "description": "The ingest profile to use - we recommend that you do **not** include this filed and use the account default profile instead"
+            "description": "The ingest profile to use - we recommend that you do **not** include this field and use the account default profile instead"
           },
           "capture-images": {
             "type": "boolean",
             "description": "Whether Video Cloud should capture poster and thumbnail images at the midpoint of the clip",
             "example": true
           },
-          "notifications": {
-            "type": "object",
-            "description": "An array of URLs that nofications for the ingest job should be sent to"
+          "callbacks": {
+            "type": "array",
+            "description": "An array of URLs that nofications for the ingest job should be sent to",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -2303,7 +2306,10 @@
           },
           "credential_type": {
             "type": "string",
-            "description": "The credential type"
+            "description": "The credential type",
+            "enum": [
+              "ftp", "oauth", "s3", "videocloud", "zencoder"
+            ]
           },
           "credential_private": {
             "type": "string",
