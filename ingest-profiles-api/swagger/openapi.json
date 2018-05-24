@@ -731,7 +731,8 @@
         "properties": {
           "label": {
             "type": "string",
-            "description": "the kind of image this will be"
+            "description": "the kind of image this will be",
+            "enum": ["poster", "thumbnail"]
           },
           "height": {
             "type": "integer",
@@ -755,44 +756,44 @@
         "properties": {
           "min_renditions": {
             "type": "integer",
-            "description": "Minimum number of renditions to create for CAE profiles only",
+            "description": "Minimum number of renditions to create for **CAE profiles only**",
             "format": "int32"
           },
           "max_renditions": {
             "type": "integer",
-            "description": "Maximum number of renditions to create for CAE profiles only",
+            "description": "Maximum number of renditions to create for **CAE profiles only**",
             "format": "int32"
           },
           "min_resolution": {
-            "description": "Defines the minimum resolution for for CAE profiles only renditions",
+            "description": "Defines the minimum resolution for for **CAE profiles only** renditions",
             "$ref": "#/components/schemas/CreateIngestProfilebody.dynamicOrigin.dynamicProfileOptions.minResolution"
           },
           "max_resolution": {
-            "description": "Defines the maximum resolution for renditions for CAE profiles only",
+            "description": "Defines the maximum resolution for renditions for **CAE profiles only**",
             "$ref": "#/components/schemas/CreateIngestProfilebody.dynamicOrigin.dynamicProfileOptions.maxResolution"
           },
           "max_bitrate": {
             "type": "integer",
-            "description": "Maximum bitrate for renditions in kbps for CAE profiles only",
+            "description": "Maximum bitrate for renditions in kbps for **CAE profiles only**",
             "format": "int32"
           },
           "max_first_rendition_bitrate": {
             "type": "integer",
-            "description": "Maximum bitrate for lowest bitrate rendition in kbps for CAE profiles only",
+            "description": "Maximum bitrate for lowest bitrate rendition in kbps for **CAE profiles only**",
             "format": "int32"
           },
           "max_frame_rate": {
             "type": "integer",
-            "description": "Maximum framerate for renditions in fps for CAE profiles only",
+            "description": "Maximum framerate for renditions in fps for **CAE profiles only**",
             "format": "int32"
           },
           "keyframe_rate": {
             "type": "number",
-            "description": "The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second) for CAE profiles only"
+            "description": "The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second) for **CAE profiles only**"
           },
           "select_baseline_profile_configuration": {
             "type": "boolean",
-            "description": "At least one rendition used in the profile will be baseline profile for CAE profiles only"
+            "description": "At least one rendition used in the profile will be baseline profile for **CAE profiles only**"
           }
         }
       },
@@ -802,12 +803,12 @@
         "properties": {
           "height": {
             "type": "integer",
-            "description": "Minimum height for renditions for CAE profiles only",
+            "description": "Minimum height for renditions for **CAE profiles only**",
             "format": "int32"
           },
           "width": {
             "type": "integer",
-            "description": "Minimum width for renditions for CAE profiles only",
+            "description": "Minimum width for renditions for **CAE profiles only**",
             "format": "int32"
           }
         }
@@ -818,12 +819,12 @@
         "properties": {
           "height": {
             "type": "integer",
-            "description": "Maximum height for renditions for CAE profiles only",
+            "description": "Maximum height for renditions for **CAE profiles only**",
             "format": "int32"
           },
           "width": {
             "type": "integer",
-            "description": "Maximum width for renditions for CAE profiles only",
+            "description": "Maximum width for renditions for **CAE profiles only**",
             "format": "int32"
           }
         }
