@@ -785,7 +785,8 @@
           "max_frame_rate": {
             "type": "integer",
             "description": "Maximum framerate for renditions in fps for **CAE profiles only**",
-            "format": "int32"
+            "format": "int32",
+            "default": 30
           },
           "keyframe_rate": {
             "type": "number",
