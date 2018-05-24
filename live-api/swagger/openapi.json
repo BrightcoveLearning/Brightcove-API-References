@@ -2799,8 +2799,10 @@
             "description": "For jobs, setting live_stream to true indicates the output is a live rendition. If live_stream is false, or is not set, the output will be treated as a VOD output."
           },
           "keyframe_interval": {
-            "type": "number",
-            "description": "The maximum number of frames between each keyframe. If you set a low keyframe_interval it will increase the size / decrease the quality of your output file, but it will allow more precise scrubbing in most players. It’s recommended to have at least one keyframe per segment. If keyframe_interval is not provided, keyframes will follow the input GOP structure."
+            "type": "integer",
+            "description": "The maximum number of frames between each keyframe. If you set a low keyframe_interval it will increase the size / decrease the quality of your output file, but it will allow more precise scrubbing in most players. It’s recommended to have at least one keyframe per segment. If keyframe_interval is not provided, keyframes will follow the input GOP structure.",
+            "minimum": 1,
+            "maximum": 6000
           },
           "video_bitrate": {
             "type": "number",
