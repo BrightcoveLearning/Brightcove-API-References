@@ -2031,11 +2031,11 @@
         "type": "object",
         "properties": {
           "video": {
-            "description": "An object containing inputs for Video Cloud video object creation - see the CMS API Reference",
+            "description": "An object containing inputs for Video Cloud video object creation - see the [CMS API Reference](https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/swagger.html#operations-Videos-CreateVideo)",
             "$ref": "#/components/schemas/CreateVodClipbody.outputs.videocloud.video"
           },
           "ingest": {
-            "description": "An object containing inputs for Video Cloud video ingestion - see the Dynamic Ingest Reference - do not include the master field, as that information will be provided by the Live API",
+            "description": "An object containing inputs for Video Cloud video ingestion - see the [Dynamic Ingest Reference](https://brightcovelearning.github.io/Brightcove-API-References/dynamic-ingest-api/v1/doc/swagger.html#operations-Ingest-AccountsVideosIngestRequestsByAccountIdAndVideoIdPost) - do not include the master field, as that information will be provided by the Live API",
             "$ref": "#/components/schemas/CreateVodClipbody.outputs.videocloud.ingest"
           }
         }
@@ -2931,7 +2931,10 @@
           },
           "type": {
             "type": "string",
-            "description": "The only type supported is a playlist. This is used for generating multiple master playlists with different renditions in the HLS manifest with the defined stream labels."
+            "description": "The only type supported is a playlist. This is used for generating multiple master playlists with different renditions in the HLS manifest with the defined stream labels.",
+            "enum": [
+              "playlist"
+            ]
           },
           "streams": {
             "type": "object",
