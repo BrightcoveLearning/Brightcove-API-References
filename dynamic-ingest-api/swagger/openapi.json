@@ -301,7 +301,7 @@
           },
           "capture-images": {
             "type": "boolean",
-            "description": "whether poster and thumbnail should be captured during transcoding; defaults to true if the the profile has image renditions, false if it does not"
+            "description": "whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not"
           },
           "callbacks": {
             "type": "array",
@@ -344,7 +344,11 @@
           },
           "kind": {
             "type": "string",
-            "description": "how the vtt file is meant to be used"
+            "description": "how the vtt file is meant to be used",
+            "default": "captions",
+            "enum": [
+              "captions", "subtitles", "chapters", "metadata"
+            ]
           },
           "label": {
             "type": "string",
@@ -366,7 +370,8 @@
           },
           "merge_with_existing": {
             "type": "boolean",
-            "description": "whether to replace existing audio tracks or add the new ones (currently only false is supported) Dynanic Delivery only"
+            "description": "whether to replace existing audio tracks or add the new ones (currently only false is supported) Dynanic Delivery only",
+            "default": false
           },
           "masters": {
             "type": "array",
@@ -391,7 +396,10 @@
           },
           "variant": {
             "type": "string",
-            "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only"
+            "description": "the type of audio track (default can be set for the account by contacting Brightcove Support) Dynanic Delivery only",
+            "enum":[
+              "main", "alternate", "commentary", "dub", "descriptive"
+            ]
           }
         }
       },
