@@ -383,7 +383,7 @@
     "/v1/jobs/{job_id}/activate": {
       "put": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Activate_SEP_Stream",
         "description": "Activate SEP (static entry point) Stream ",
@@ -457,7 +457,7 @@
     "/v1/jobs/{job_id}/cancel": {
       "put": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Cancel_Live_Job",
         "description": "Cancel a live stream ",
@@ -520,7 +520,7 @@
     "/v1/jobs": {
       "post": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Create_a_Live_Job",
         "description": "Create a live stream ",
@@ -598,7 +598,7 @@
     "/v1/jobs/{job_id}/deactivate": {
       "put": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Deactivate_SEP_Stream",
         "description": "Deactivate SEP (static entry point) Stream ",
@@ -672,7 +672,7 @@
     "/v1/jobs/{job_id}": {
       "get": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Get_Live_Job_Details",
         "description": "Get Live Job Details ",
@@ -746,7 +746,7 @@
     "/v1/jobs/{job_id}/id3tag": {
       "post": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Insert_ID3_timed_metadata",
         "description": "Inserts an ID3 timed metadata tag for an ongoing job. Note that: 1) If using timecode property, the job only stores the most recent request for insertion; 2) If using timecode property, the encoder must be sending SMPTE-formatted (HH:MM:SS:FF) timecode stored in the tc property via OnFI ",
@@ -835,7 +835,7 @@
     "/v1/jobs/{job_id}/cuepoint": {
       "post": {
         "tags": [
-          "Live_Jobs"
+          "Live Jobs"
         ],
         "summary": "Manual_Ad_Cue_Point_Insertion",
         "description": "Inserts a manual Cue-Out with a duration to the Live ingest point. ",
