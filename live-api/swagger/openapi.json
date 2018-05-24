@@ -2444,7 +2444,10 @@
           },
           "credential_type": {
             "type": "string",
-            "description": "The credential type"
+            "description": "The credential type",
+            "enum":[
+              "ftp", "oauth", "s3", "videocloud", "zencoder"
+            ]
           },
           "credential_private": {
             "type": "string",
