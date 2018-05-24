@@ -710,10 +710,10 @@
           },
           "temporary_renditions": {
             "type": "object",
-            "description": "names of video renditions for Fast Publish (only for CAE profiles) - see Standard Ingest Profiles - renditions for available renditions you can choose from"
+            "description": "names of video renditions for Fast Publish (only for CAE profiles) - see [Standard Ingest Profiles - renditions](https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions) for available renditions you can choose from"
           },
           "dynamic_profile_options": {
-            "description": "Defines rendition options for CAE profiles only",
+            "description": "Defines rendition options for **CAE profiles only**",
             "$ref": "#/components/schemas/CreateIngestProfilebody.dynamicOrigin.dynamicProfileOptions"
           },
           "images": {
