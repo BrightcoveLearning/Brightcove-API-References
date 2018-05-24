@@ -2841,15 +2841,15 @@
             "maximum": 2147483647
           },
           "stream_end_time": {
-            "type": "number",
+            "type": "integer",
             "description": "Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time."
           },
           "start_time": {
-            "type": "number",
+            "type": "integer",
             "description": "Clipping API option 3. Universal epoch time, in seconds, to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time."
           },
           "end_time": {
-            "type": "number",
+            "type": "integer",
             "description": "Clipping API option 3. Universal epoch time, in seconds, to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time."
           },
           "copy_video": {
@@ -2869,31 +2869,61 @@
             "description": "Specifying skip_audio removes the audio track."
           },
           "width": {
-            "type": "number",
-            "description": "Video frame width. If no width is supplied, we will use 640 pixels."
+            "type": "integer",
+            "description": "Video frame width. If no width is supplied, we will use 640 pixels.",
+            "default": 640
           },
           "height": {
-            "type": "number",
-            "description": "Video frame height. If no height is supplied, we will use 480 pixels."
+            "type": "integer",
+            "description": "Video frame height. If no height is supplied, we will use 480 pixels.",
+            "default": 480
           },
           "video_codec": {
             "type": "string",
-            "description": "The output video codec. Note: Only h264 is supported."
+            "description": "The output video codec. Note: Only `h264` is supported.",
+            "enum": [
+              "h264"
+            ]
           },
           "h264_profile": {
             "type": "string",
-            "description": "H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose Baseline."
+            "description": "H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose `baseline`.",
+            "enum": [
+              "baseline",
+              "main",
+              "high"
+            ]
           },
           "audio_codec": {
             "type": "string",
-            "description": "The output audio codec to use. Note: Only aac is supported."
+            "description": "The output audio codec to use. Note: Only `aac` is supported.",
+            "enum": [
+              "aac"
+            ]
           },
           "notifications": {
             "type": "array",
             "items": {
-              "type": "string"
+              "oneOf": [{
+                  "type": "object",
+                  "properties": {
+                    "event": {
+                      "type": "string",
+                      "description": "The type of event to send notifications for",
+                      "enum": [
+                        "state_changed",
+                        "first_segment_uploaded",
+                        "output_finished"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
-            "description": "Array of notification destination objects or strings - notifications defined here are for events specific to the output.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object."
+            "description": "Array of notification destination objects or strings - notifications defined here are for job-level events.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: &quot;http://log:pass@httpbin.org/post&quot;, or you can use an object. See [Events](https://support.brightcove.com/live-api-notifications#Events) for an explanation of the events reported in `state_changed` notifications."
           },
           "rendition_label": {
             "type": "string",
