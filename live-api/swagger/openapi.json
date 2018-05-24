@@ -2805,28 +2805,40 @@
             "maximum": 6000
           },
           "video_bitrate": {
-            "type": "number",
-            "description": "target video bitrate in kbps"
+            "type": "integer",
+            "description": "target video bitrate in kbps",
+            "minimum": 64,
+            "maximum": 10000
           },
           "audio_bitrate": {
             "type": "number",
-            "description": "An output bitrate setting for the audio track, in Kbps"
+            "description": "An output bitrate setting for the audio track, in Kbps",
+            "minimum": 16,
+            "maximum": 1024
           },
           "segment_seconds": {
             "type": "number",
-            "description": "Sets the maximum duration of each segment in a segmented output."
+            "description": "Sets the maximum duration of each segment in a segmented output.",
+            "minimum": 2,
+            "maximum": 20
           },
           "duration": {
-            "type": "number",
-            "description": "Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time."
+            "type": "integer",
+            "description": "Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time.",
+            "minimum": 0,
+            "maximum": 172800
           },
           "ad_audio_loudness_level": {
             "type": "number",
-            "description": "Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (-23dB for EBU R.128) The recommended setting is -23."
+            "description": "Adjust the loudness level of the audio. This is measured in LUFS and specified in dB. This is useful to set the output loudness level to conform to a standard (-23dB for EBU R.128) The recommended setting is -23.",
+            "minimum": -60.0,
+            "maximum": 60.0
           },
           "stream_start_time": {
-            "type": "number",
-            "description": "Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time."
+            "type": "integer",
+            "description": "Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.",
+            "minimum": 0,
+            "maximum": 2147483647
           },
           "stream_end_time": {
             "type": "number",
