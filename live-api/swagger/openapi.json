@@ -2783,9 +2783,20 @@
         "description": "Object containing tokenization properites",
         "properties": {
           "start_time": {
-            "type": "integer",
+            "oneOf": [
+              {
+                "type": "integer"
+              },
+              {
+              "type": "string",
+              "enum": [
+                "now"
+              ]
+              }
+            ],
             "description": "The time to apply token auth - &quot;now&quot; or epoch time in seconds",
-            "format": "int32"
+            "format": "int32",
+            "default": "now"
           },
           "end_time": {
             "type": "integer",
