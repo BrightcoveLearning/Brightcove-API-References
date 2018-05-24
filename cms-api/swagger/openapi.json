@@ -10571,7 +10571,7 @@
           },
           "offline_enabled": {
             "type": "boolean",
-            "description": "whether video is enabled for offline viewing"
+            "description": "whether video is enabled for offline viewing - "
           },
           "original_filename": {
             "type": "string",
