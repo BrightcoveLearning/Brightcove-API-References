@@ -3208,11 +3208,13 @@
         "properties": {
           "region": {
             "type": "string",
-            "description": "The Amazon AWS region to use for encoding the job"
+            "description": "The Amazon AWS region to use for encoding the job",
+            "example": "us-west-2"
           },
           "reconnect_time": {
             "type": "number",
-            "description": "The time, in seconds, that the system will wait for a stream to reconnect to the encoder"
+            "description": "The time, in seconds, that the system will wait for a stream to reconnect to the encoder",
+            "example": 1800
           },
           "event_length": {
             "type": "number",
