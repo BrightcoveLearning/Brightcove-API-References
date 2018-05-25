@@ -5,12 +5,10 @@
     "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters. To test API requests, you can use our <a href=\"https://support.brightcove.com/getting-access-tokens\" target=\"_blank\">API Testing Tools</a>",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://ingestion.api.brightcove.com/v1",
-      "variables": {}
-    }
-  ],
+  "servers": [{
+    "url": "https://ingestion.api.brightcove.com/v1",
+    "variables": {}
+  }],
   "paths": {
     "/accounts/{account_id}/configuration": {
       "get": {
@@ -20,8 +18,7 @@
         "summary": "Get_Default_Profile",
         "description": "Get the default ingest profile for the account. ",
         "operationId": "GetDefaultProfile",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -90,8 +87,7 @@
         "summary": "Update_Default_Profile",
         "description": "Updates the default ingest profile for the account. ",
         "operationId": "UpdateDefaultProfile",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -178,8 +174,7 @@
         "summary": "Set_Default_Profile",
         "description": "Sets an ingest profile as the default for the account. ",
         "operationId": "SetDefaultProfile",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID",
@@ -268,8 +263,7 @@
         "summary": "Get_All_Ingest_Profiles",
         "description": "Get an array of all the profiles valid for the account ",
         "operationId": "GetAllIngestProfiles",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID.",
@@ -333,8 +327,7 @@
         "summary": "Create_Ingest_Profile",
         "description": "Create a custom ingest profile for the account. Note that you can also do this through Video Cloud Studio ",
         "operationId": "CreateIngestProfile",
-        "parameters": [
-          {
+        "parameters": [{
             "name": "account_id",
             "in": "path",
             "description": "Video Cloud account ID.",
@@ -896,14 +889,14 @@
             "type": "string",
             "description": "how to handle mismatch between source and rendition aspect ratio **Legacy Ingest only**",
             "default": "preserve",
-            "enum":[
+            "enum": [
               "preserve", "stretch", "crop", "pad"
             ]
           },
           "audio_channels": {
             "type": "integer",
             "description": "number of audio channels **Legacy Ingest only**",
-            "enum":[
+            "enum": [
               1, 2
             ]
           },
@@ -962,7 +955,7 @@
             "type": "string",
             "description": "h.264 profile **Legacy Ingest only**",
             "default": "baseline",
-            "enum":[
+            "enum": [
               "baseline", "main", "high"
             ]
 
@@ -970,7 +963,8 @@
           "h264_reference_frames": {
             "type": "integer",
             "description": "number of h.264 reference frames to use **Legacy Ingest only**",
-            "format": "int32"
+            "format": "int32",
+            "default": 3
           },
           "hls_optimized_ts": {
             "type": "boolean",
@@ -988,15 +982,22 @@
           },
           "label": {
             "type": "string",
-            "description": "Image type for image renditions; required for image renditions **Legacy Ingest only**"
+            "description": "Image type for image renditions; required for image renditions **Legacy Ingest only**",
+            "enum":[
+              "poster", "thumbnail"
+            ]
           },
           "live_stream": {
             "type": "boolean",
-            "description": "Whether this will be for live streaming video **Legacy Ingest only**"
+            "description": "Whether this will be for live streaming video **Legacy Ingest only**",
+            "default": false
           },
           "live_sliding_window_duration": {
-            "type": "number",
-            "description": "Duration of stream to keep available for LiveDVR delivery (in seconds) **Legacy Ingest only**"
+            "type": "integer",
+            "description": "Duration of stream to keep available for LiveDVR delivery (in seconds) **Legacy Ingest only**",
+            "default": 300,
+            "minimum": 300,
+            "maximum": 1800
           },
           "max_video_bitrate": {
             "type": "integer",
@@ -1010,11 +1011,15 @@
           },
           "media_type": {
             "type": "string",
-            "description": "the media type of the rendition **Legacy Ingest only**"
+            "description": "the media type of the rendition **Legacy Ingest only**",
+            "enum":[
+              "video", "audio", "image"
+            ]
           },
           "one_pass": {
             "type": "boolean",
-            "description": "force one-pass encoding **Legacy Ingest only**"
+            "description": "force one-pass encoding **Legacy Ingest only**",
+            "default": false
           },
           "reference_id": {
             "type": "string",
@@ -1025,17 +1030,22 @@
             "description": "number of seconds of content to include in segments (the default for HLS is 10; for DASH: 2) **Legacy Ingest only**"
           },
           "skip": {
+            "type": "object",
             "description": "A set of conditions for skippiung creation of this rendition see Conditional Output **Legacy Ingest only**",
             "$ref": "#/components/schemas/CreateIngestProfilebody.renditions.skip"
           },
           "skip_video": {
             "type": "boolean",
-            "description": "Set to true to skip video encoding for audio-only renditions **Legacy Ingest only**"
+            "description": "Set to true to skip video encoding for audio-only renditions **Legacy Ingest only**",
+            "default":false
           },
           "speed": {
             "type": "integer",
             "description": "a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features **Legacy Ingest only**",
-            "format": "int32"
+            "format": "int32",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 5
           },
           "streaming_delivery_format": {
             "type": "string",
@@ -1043,11 +1053,12 @@
           },
           "streaming_delivery_profile": {
             "type": "string",
-            "description": "Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile **Legacy Ingest only**"
+            "description": "Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile **Legacy Ingest only**",
+            "default": "live"
           },
           "type": {
             "type": "string",
-            "description": "transmuxing type for HLS; typical value is segmented **Legacy Ingest only**"
+            "description": "transmuxing type for HLS; typical value is `segmented` **Legacy Ingest only**"
           },
           "upscale": {
             "type": "boolean",
@@ -1148,11 +1159,11 @@
           },
           "package_type": {
             "type": "string",
-            "description": "for MPEG-DASH, the package type is dash; for other formats, the package type is the DRM type, e.g. widevine **Legacy Ingest only**"
+            "description": "for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine` **Legacy Ingest only**"
           },
           "renditions": {
             "type": "object",
-            "description": "for MPEG-DASH, the renditions will be set to the reference_id for a single rendition; for other formats, renditions is set equal to an array of rendition reference_id&#39;s **Legacy Ingest only**"
+            "description": "for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, renditions is set equal to an array of rendition `reference_id`&#39;s **Legacy Ingest only**"
           }
         }
       },
@@ -1166,11 +1177,16 @@
         "properties": {
           "rendition": {
             "type": "string",
-            "description": "rendition that will be used as master (passthrough = source optimized for online delivery)"
+            "description": "rendition that will be used as master (`passthrough` = source optimized for online delivery)",
+            "enum":[
+              "passthrough", "none"
+            ],
+            "default": "none"
           },
           "distribute": {
             "type": "boolean",
-            "description": "whether source is available for playback as a rendition"
+            "description": "whether source is available for playback as a rendition",
+            "default": false
           }
         }
       },
@@ -1211,7 +1227,10 @@
         "properties": {
           "label": {
             "type": "string",
-            "description": "the image type"
+            "description": "the image type",
+            "enum":[
+              "poster", "thumbnail"
+            ]
           },
           "height": {
             "type": "integer",
