@@ -1261,45 +1261,47 @@
         "properties": {
           "min_renditions": {
             "type": "integer",
-            "description": "minimum number of renditions",
+            "description": "minimum number of renditions **CAE profiles only**",
             "format": "int32"
           },
           "max_renditions": {
             "type": "integer",
-            "description": "maximum number of renditions",
+            "description": "maximum number of renditions **CAE profiles only**",
             "format": "int32"
           },
           "min-resolution": {
-            "description": "defines the minimum resolution for renditions",
+            "description": "defines the minimum resolution for renditions **CAE profiles only**",
             "$ref": "#/components/schemas/DynamicOrigin.dynamicProfileOptions.min-resolution"
           },
           "max-resolution": {
-            "description": "defines the maximum resolution for renditions",
+            "description": "defines the maximum resolution for renditions **CAE profiles only**",
             "$ref": "#/components/schemas/DynamicOrigin.dynamicProfileOptions.max-resolution"
           },
           "max_bitrate": {
             "type": "integer",
-            "description": "maximum bitrate for renditions",
+            "description": "maximum bitrate for renditions **CAE profiles only**",
             "format": "int32"
           },
           "max_first_rendition_bitrate": {
             "type": "integer",
-            "description": "maximum bitrate for the lowest bitrate rendition",
+            "description": "maximum bitrate for the lowest bitrate rendition **CAE profiles only**",
             "format": "int32"
           },
           "max_frame_rate": {
             "type": "integer",
-            "description": "maximum framerate for the renditions",
-            "format": "int32"
+            "description": "maximum framerate for the renditions **CAE profiles only**",
+            "format": "int32",
+            "default": 30
           },
           "keyframe_rate": {
-            "type": "integer",
-            "description": "keyframes per second for the renditions",
-            "format": "int32"
+            "type": "number",
+            "description": "keyframes per second for the renditions **CAE profiles only**",
+            "default": 0.5
           },
           "select_baseline_profile_configuration": {
             "type": "boolean",
-            "description": "whether at least one rendition used in the profile will be baseline profile"
+            "description": "whether at least one rendition used in the profile will be baseline profile **CAE profiles only**",
+            "default": true
           }
         }
       },
