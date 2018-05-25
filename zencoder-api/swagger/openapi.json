@@ -31,7 +31,7 @@
             "schema": {
               "type": "string"
             }
-          }
+          },
           {
             "name": "Zencoder-Api-Key",
             "in": "header",
@@ -55,7 +55,27 @@
                     "type": "string",
                     "description": "Zencoder api key (must be included here if not passed in a header, which is the recommended way)",
                     "required": false
-                  }
+                  },
+                  "input": {
+                    "type": "string",
+                    "description": "A valid URL to a media file (HTTP/HTTPS, FTP/FTPS, SFTP, Azure, GCS, CF or S3), with or without authentication",
+                    "required": true
+                  },
+                  "live_stream": {
+                    "type": "boolean",
+                    "description": "Create a Live streaming job",
+                    "required": false,
+                    "default": false
+                  },
+                  "region": {
+                    "type": "string",
+                    "description": "The AWS region where Zencoder should process the job",
+                    "required": false,
+                    "default": "us",
+                    "enum": [
+                      "us", "europe", "asia", "sa", "australia", "us-virginia", "us-oregon", "us-n-california", "eu-dublin", "asia-singapore", "asia-tokyo", "sa-saopaulo", "australia-sydney", "us-central-gce", "eu-west-gce", "asia-east-gce"
+                    ]
+                  },
                 }
               }
             }
