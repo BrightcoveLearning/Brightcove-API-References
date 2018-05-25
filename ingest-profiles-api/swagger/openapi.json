@@ -790,11 +790,13 @@
           },
           "keyframe_rate": {
             "type": "number",
-            "description": "The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second) for **CAE profiles only**"
+            "description": "The number of keyframes per second for renditions (So a value of 0.5 would result in one keyframe every two seconds; a value of 3 would result in three keyframes per second) for **CAE profiles only**",
+            "default": 0.5
           },
           "select_baseline_profile_configuration": {
             "type": "boolean",
-            "description": "At least one rendition used in the profile will be baseline profile for **CAE profiles only**"
+            "description": "At least one rendition used in the profile will be baseline profile for **CAE profiles only**",
+            "default": false
           }
         }
       },
@@ -820,12 +822,12 @@
         "properties": {
           "height": {
             "type": "integer",
-            "description": "Maximum height for renditions for **CAE profiles only**",
+            "description": "Maximum height for renditions for **CAE profiles only** - defaults to the source height",
             "format": "int32"
           },
           "width": {
             "type": "integer",
-            "description": "Maximum width for renditions for **CAE profiles only**",
+            "description": "Maximum width for renditions for **CAE profiles only** - defaults to the source width",
             "format": "int32"
           }
         }
@@ -852,15 +854,17 @@
           },
           "audio_codec": {
             "type": "string",
-            "description": "audio codec, e.g. aac **Legacy Ingest only**"
+            "description": "audio codec, e.g. `aac` **Legacy Ingest only**"
           },
           "max_aac_profile": {
             "type": "string",
-            "description": "max aaic profile - aac-lc is the recommended value **Legacy Ingest only**"
+            "description": "max aaic profile - `aac-lc` is the recommended value **Legacy Ingest only**",
+            "default": "aac-lc",
+            "enum": ["aac-lc", "he-aac", "he-aac-v2"]
           },
           "format": {
             "type": "string",
-            "description": "video format, e.g. mp4, ts (for HLS), flv, m4f for video, png or jpg for images **Legacy Ingest only**"
+            "description": "video format, e.g. `mp4`, `ts` (for HLS), `m4f` for video, `png` or `jpg` for images **Legacy Ingest only**"
           },
           "video_bitrate": {
             "type": "integer",
@@ -890,20 +894,30 @@
           },
           "aspect_mode": {
             "type": "string",
-            "description": "how to handle mismatch between source and rendition aspect ratio **Legacy Ingest only**"
+            "description": "how to handle mismatch between source and rendition aspect ratio **Legacy Ingest only**",
+            "default": "preserve",
+            "enum":[
+              "preserve", "stretch", "crop", "pad"
+            ]
           },
           "audio_channels": {
-            "type": "number",
-            "description": "number of audio channels **Legacy Ingest only**"
+            "type": "integer",
+            "description": "number of audio channels **Legacy Ingest only**",
+            "enum":[
+              1, 2
+            ]
           },
           "constant_bitrate": {
             "type": "boolean",
-            "description": "whether to use constant bitrate for encoding **Legacy Ingest only**"
+            "description": "whether to use constant bitrate for encoding **Legacy Ingest only**",
+            "default": false
           },
           "crf": {
             "type": "integer",
             "description": "1-51, not used by default. **Legacy Ingest only**",
-            "format": "int32"
+            "format": "int32",
+            "minimum": 1,
+            "maximum": 51
           },
           "decoder_bitrate_cap": {
             "type": "integer",
@@ -912,31 +926,33 @@
           },
           "encryption_method": {
             "type": "string",
-            "description": "encryption_method to use, e.g. aes-128 **Legacy Ingest only**"
+            "description": "encryption_method to use, e.g. `aes-128` **Legacy Ingest only**"
           },
           "encryption_key_rotation_period": {
             "type": "integer",
             "description": "use a different key for each set of segments, rotating to a new key after this many segments **Legacy Ingest only**",
-            "format": "int32"
+            "format": "int32",
+            "default": 10
           },
           "fixed_keyframe_interval": {
             "type": "integer",
-            "description": "Forces a keyframe every X frames, but still allows additional keyframes &mdash; NOTE overrides keyframe_interval **Legacy Ingest only**",
+            "description": "Forces a keyframe every X frames, but still allows additional keyframes &mdash; NOTE overrides `keyframe_interval` **Legacy Ingest only**",
             "format": "int32"
           },
           "forced_keyframe_rate": {
             "type": "number",
-            "description": "Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used **Legacy Ingest only**"
+            "description": "Force the keyframe rate, h264 only, ignored if `forced_keyframe_interval` is used **Legacy Ingest only**"
           },
           "frame_rate": {
             "type": "integer",
-            "description": "frame rate in frames per second **Legacy Ingest only**",
+            "description": "frame rate in frames per second **Legacy Ingest only** - default is the source framerate",
             "format": "int32"
           },
           "h264_bframes": {
             "type": "integer",
             "description": "number of bframes for h.264 **Legacy Ingest only**",
-            "format": "int32"
+            "format": "int32",
+            "default": 0
           },
           "h264_level": {
             "type": "number",
