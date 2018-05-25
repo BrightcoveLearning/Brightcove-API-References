@@ -514,7 +514,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "the type of account"
+            "description": "the type of account",
+            "enum": ["video-cloud"]
           },
           "account-id": {
             "type": "string",
@@ -525,7 +526,7 @@
             "items": {
               "type": "string"
             },
-            "description": "array of operations the credentials grant access to (see Operations)"
+            "description": "array of operations the credentials grant access to (see [Operations](https://support.brightcove.com/api-operations-client-credentials-requests))"
           }
         }
       },
