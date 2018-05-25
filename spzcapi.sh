@@ -3,7 +3,7 @@ txtrst=$(tput sgr0) # Text reset
 txtyel=$(tput setaf 7) # Yellow
 txtgrn=$(tput setaf 6) # Green
 txtred=$(tput setaf 9) # red
-cd player-management-api
+cd zencoder-api
 echo ${txtyel}generating swagger json
 node $SWAGGER_DIR/bin/apidocSwagger.js -i ./v2/src -o ./swagger -t
 echo ${txtgrn}swagger json generated
