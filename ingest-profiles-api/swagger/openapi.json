@@ -955,12 +955,17 @@
             "default": 0
           },
           "h264_level": {
-            "type": "number",
+            "type": "integer",
             "description": "h.264 profile level **Legacy Ingest only**"
           },
           "h264_profile": {
             "type": "string",
-            "description": "h.264 profile **Legacy Ingest only**"
+            "description": "h.264 profile **Legacy Ingest only**",
+            "default": "baseline",
+            "enum":[
+              "baseline", "main", "high"
+            ]
+
           },
           "h264_reference_frames": {
             "type": "integer",
