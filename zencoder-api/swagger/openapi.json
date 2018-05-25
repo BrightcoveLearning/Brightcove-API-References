@@ -76,6 +76,35 @@
                       "us", "europe", "asia", "sa", "australia", "us-virginia", "us-oregon", "us-n-california", "eu-dublin", "asia-singapore", "asia-tokyo", "sa-saopaulo", "australia-sydney", "us-central-gce", "eu-west-gce", "asia-east-gce"
                     ]
                   },
+                  "test": {
+                    "type": "boolean",
+                    "description": "Enable test mode (\"Integration Mode\") for a job",
+                    "required": false,
+                    "default": false
+                  },
+                  "private": {
+                    "type": "boolean",
+                    "description": "Enable privacy mode for a job",
+                    "required": false,
+                    "default": false
+                  },
+                  "download_connections": {
+                    "type": "integer",
+                    "description": "Utilize multiple, simultaneous connections for download acceleration (in some circumstances)",
+                    "required": false,
+                    "default": 5
+                  },
+                  "pass_through": {
+                    "type": "string",
+                    "description": "Optional information to store alongside this job",
+                    "required": false
+                  },
+                  "mock": {
+                    "type": "boolean",
+                    "description": "Send a mocked job request",
+                    "required": false,
+                    "default": false
+                  },
                 }
               }
             }
