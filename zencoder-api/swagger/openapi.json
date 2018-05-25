@@ -105,6 +105,11 @@
                     "required": false,
                     "default": false
                   },
+                  "grouplng": {
+                    "type": "string",
+                    "description": "A report grouping for this job",
+                    "required": false
+                  },
                 }
               }
             }
