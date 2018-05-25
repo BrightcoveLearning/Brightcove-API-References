@@ -1335,12 +1335,12 @@
         "properties": {
           "width": {
             "type": "integer",
-            "description": "defines the maximum width for renditions",
+            "description": "defines the maximum width for renditions - default is the source frame width",
             "format": "int32"
           },
           "height": {
             "type": "integer",
-            "description": "defines the maximum height for renditions",
+            "description": "defines the maximum height for renditions - default is the source frame height",
             "format": "int32"
           }
         }
