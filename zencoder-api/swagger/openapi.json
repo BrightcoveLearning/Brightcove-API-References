@@ -110,6 +110,12 @@
                     "description": "A report grouping for this job",
                     "required": false
                   },
+                  "aspera_transfer_policy": {
+                    "type": "string",
+                    "description": "How to allocate available bandwidth for Aspera file transfers",
+                    "required": false,
+                    "default": "fair"
+                  },
                 }
               }
             }
