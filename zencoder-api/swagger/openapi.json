@@ -116,6 +116,18 @@
                     "required": false,
                     "default": "fair"
                   },
+                  "transfer_minimum_rate": {
+                    "type": "integer",
+                    "description": "A targeted rate in Kbps for data transfer minimums",
+                    "required": false,
+                    "default": 1000
+                  },
+                  "transfer_maximum_rate": {
+                    "type": "integer",
+                    "description": "A targeted rate in Kbps for data transfer maximums",
+                    "required": false,
+                    "default": 250000
+                  },
                 }
               }
             }
