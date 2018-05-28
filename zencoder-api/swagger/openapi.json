@@ -212,6 +212,14 @@
               "json",
               "xml"
             ]
+          },
+          "headers": {
+            "type": "string",
+            "description": "A format and content type for notifications",
+            "enum": [
+              "json",
+              "xml"
+            ]
           }
         }
       },
