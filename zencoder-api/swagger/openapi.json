@@ -158,13 +158,11 @@
                     "description": "An array of Array of output specifications for the encoding job",
                     "required": false,
                     "items": {
-                        {
-                          "type": "object",
-                          "description": "An object describing the destination and format for notifications regarding the job",
-                          "schema": {
-                            "$ref": "#/components/schemas/output"
-                          }
-                        }
+                      "type": "object",
+                      "description": "An object describing the destination and format for notifications regarding the job",
+                      "schema": {
+                        "$ref": "#/components/schemas/output"
+                      }
                     }
                   },
                 }
