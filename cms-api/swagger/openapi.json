@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Brightcove CMS API Reference",
-    "description": "Reference for the Brightcove CMS API, used to access and manage your media library. To test API requests, you can use our [API Testing Tools](https://support.brightcove.com/developer-tools-and-concepts). For permissions needed for OAuth credentials, see [API Operations](https://support.brightcove.com/api-operations-client-credentials-requests). For information on authenticating API requests, see [OAuth Overview](https://support.brightcove.com/overview-oauth-api-v4).",
+    "description": "Reference for the Brightcove CMS API, used to access and manage your media library. To test API requests, you can use our <a href=\"https://support.brightcove.com/developer-tools-and-concepts\" target=\"_blank\">API Testing Tools</a>. For permissions needed for OAuth credentials, see <a href=\"https://support.brightcove.com/api-operations-client-credentials-requests\" target=\"_blank\">API Operations</a>. For information on authenticating API requests, see <a href=\"https://support.brightcove.com/overview-oauth-api-v4\">OAuth Overview</a>.",
     "version": "1.0.0"
   },
   "servers": [
@@ -104,7 +104,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/playlist/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -196,7 +198,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/playlist/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -303,7 +307,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -413,7 +419,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -507,7 +515,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/create"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -605,7 +613,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -701,7 +709,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -806,7 +814,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -930,7 +938,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1028,7 +1036,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1124,7 +1132,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1254,7 +1262,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1351,7 +1359,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/create"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1443,7 +1451,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1525,7 +1533,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1633,7 +1641,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1728,7 +1736,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/playlist/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1815,7 +1823,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/notifications/all"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -1912,7 +1920,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/notifications/all"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2007,7 +2015,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/notifications/all"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2092,7 +2100,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/notifications/all"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2179,7 +2187,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2312,7 +2322,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2409,7 +2421,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/create"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2498,7 +2512,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2580,7 +2596,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/delete"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2697,7 +2715,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2789,7 +2807,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -2798,7 +2816,7 @@
         }
       }
     },
-    "/accounts/{account_id}/videos/{video_id}/audio_tracks/audio_track_id": {
+    "/accounts/{account_id}/videos/{video_id}/audio_tracks/{audio_track_id}": {
       "get": {
         "tags": [
           "Videos"
@@ -2889,7 +2907,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3009,7 +3027,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3108,7 +3126,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3197,7 +3215,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3282,7 +3300,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/asset/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3371,7 +3389,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3460,7 +3478,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+       "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3557,7 +3575,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3646,7 +3664,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3725,7 +3743,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3814,7 +3832,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -3909,7 +3927,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4017,7 +4035,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/create"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4120,7 +4138,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4213,7 +4231,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4328,7 +4346,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/sharing-relationships/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4421,7 +4441,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/delete"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4430,7 +4450,7 @@
         }
       }
     },
-    "/accounts/{account_id}/contracts/master_account_id": {
+    "/accounts/{account_id}/contracts/{master_account_id}/broken": {
       "patch": {
         "tags": [
           "Media Sharing"
@@ -4514,7 +4534,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4606,7 +4626,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4708,7 +4728,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4800,7 +4820,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4895,7 +4915,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -4979,7 +4999,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5063,7 +5083,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/sharing-relationships/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5161,7 +5181,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5259,7 +5279,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5357,7 +5377,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/read"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5468,7 +5488,7 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [{"BC_OAuth2": ["video-cloud/video/update"]}],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5566,7 +5586,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5674,7 +5696,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5772,7 +5796,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5880,7 +5906,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -5978,7 +6006,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6086,7 +6116,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6184,7 +6216,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6292,7 +6326,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6390,7 +6426,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6498,7 +6536,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6596,7 +6636,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6707,7 +6749,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6805,7 +6849,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -6916,7 +6962,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7014,7 +7062,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7125,7 +7175,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7231,7 +7283,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7327,7 +7381,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7449,7 +7505,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7555,7 +7613,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7651,7 +7711,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7773,7 +7835,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7879,7 +7943,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -7975,7 +8041,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8097,7 +8165,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8203,7 +8273,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8299,7 +8371,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8421,7 +8495,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8527,7 +8603,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8623,7 +8701,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8745,7 +8825,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8851,7 +8933,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -8947,7 +9031,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9069,7 +9155,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9175,7 +9263,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9271,7 +9361,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9393,7 +9485,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9499,7 +9593,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9595,7 +9691,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9717,7 +9815,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/update"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9823,7 +9923,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -9919,7 +10021,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -10041,7 +10145,9 @@
           }
         },
         "deprecated": false,
-        "security": [],
+        "security": [
+          {"BC_OAuth2": ["video-cloud/video/read"]}
+        ],
         "x-operation-settings": {
           "CollectParameters": false,
           "AllowDynamicQueryParameters": false,
@@ -10571,7 +10677,7 @@
           },
           "offline_enabled": {
             "type": "boolean",
-            "description": "whether video is enabled for offline viewing - attempting to set this field will result in an error if the account is not enabled for offline playback"
+            "description": "whether video is enabled for offline viewing"
           },
           "original_filename": {
             "type": "string",
