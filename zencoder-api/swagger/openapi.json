@@ -255,6 +255,10 @@
           "url": {
             "type": "string",
             "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+          },
+          "secondary_url": {
+            "type": "string",
+            "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
           }
         }
       }
