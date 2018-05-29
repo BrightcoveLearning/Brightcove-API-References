@@ -160,7 +160,7 @@
                         "$ref": "#/components/schemas/output"
                       }
                     }
-                  },
+                  }
                 }
               }
             }
@@ -260,3 +260,4 @@
       }
     }
   }
+}
