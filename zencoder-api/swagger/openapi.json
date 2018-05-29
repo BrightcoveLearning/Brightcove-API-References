@@ -254,11 +254,15 @@
           },
           "url": {
             "type": "string",
-            "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+            "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
           },
           "secondary_url": {
             "type": "string",
-            "description": "A S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+            "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+          },
+          "base_url": {
+            "type": "string",
+            "description": "A base S3, Cloud Files, GCS, FTP, FTPS, SFTP, Azure, or Aspera directory URL where Zencoder put the transcoded file, without a filename"
           }
         }
       }
