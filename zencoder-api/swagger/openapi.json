@@ -267,6 +267,10 @@
           "filename": {
             "type": "string",
             "description": "The filename of a finished file"
+          },
+          "package_filename": {
+            "type": "string",
+            "description": "The filename of a packaged output"
           }
         }
       }
