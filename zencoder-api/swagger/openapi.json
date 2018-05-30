@@ -271,6 +271,13 @@
           "package_filename": {
             "type": "string",
             "description": "The filename of a packaged output"
+          },
+          "package_format": {
+            "type": "string",
+            "description": "Zip/packaging format to use for the output file(s)",
+            "enum": [
+              "zip", "tar"
+            ]
           }
         }
       }
