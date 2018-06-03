@@ -144,31 +144,31 @@
                           "description": "An object describing the destination and format for notifications regarding the job",
                           "properties": {
 
-                              "url": {
-                                "type": "string",
-                                "description": "A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials"
-                              },
-                              "format": {
-                                "type": "string",
-                                "description": "A format and content type for notifications",
-                                "enum": [
-                                  "json",
-                                  "xml"
-                                ]
-                              },
-                              "headers": {
-                                "type": "object",
-                                "description": "By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here as `header_name/value` pairs",
-                                "example": "headers: {\"Content-Type\": \"application/json\"}"
-                              },
-                              "event": {
-                                "type": "string",
-                                "description": "Live outputs have additional notification events corresponding to the progress of the file",
-                                "enum": [
-                                  "first_segment_uploaded",
-                                  "seamless_playback"
-                                ]
-                              }
+                            "url": {
+                              "type": "string",
+                              "description": "A valid HTTP or HTTPS URL to notify, optionally including HTTP Auth credentials"
+                            },
+                            "format": {
+                              "type": "string",
+                              "description": "A format and content type for notifications",
+                              "enum": [
+                                "json",
+                                "xml"
+                              ]
+                            },
+                            "headers": {
+                              "type": "object",
+                              "description": "By default, HTTP notifications are sent with an HTTP Content-Type, along with a User-Agent; if your application requires additional headers, they can be specified here as `header_name/value` pairs",
+                              "example": "headers: {\"Content-Type\": \"application/json\"}"
+                            },
+                            "event": {
+                              "type": "string",
+                              "description": "Live outputs have additional notification events corresponding to the progress of the file",
+                              "enum": [
+                                "first_segment_uploaded",
+                                "seamless_playback"
+                              ]
+                            }
                           }
                         }
                       ]
@@ -182,57 +182,57 @@
                       "type": "object",
                       "description": "An object describing the destination and format for notifications regarding the job",
                       "properties": {
-                          "type": {
-                            "type": "string",
-                            "description": "The type of file to output",
-                            "default": "standard",
-                            "enum": [
-                              "standard", "segmented", "playlist", "transfer-only"
-                            ]
-                          },
-                          "label": {
-                            "type": "string",
-                            "description": "An optional label for this output - should be unique for the job"
-                          },
-                          "url": {
-                            "type": "string",
-                            "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
-                          },
-                          "secondary_url": {
-                            "type": "string",
-                            "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
-                          },
-                          "base_url": {
-                            "type": "string",
-                            "description": "A base S3, Cloud Files, GCS, FTP, FTPS, SFTP, Azure, or Aspera directory URL where Zencoder put the transcoded file, without a filename"
-                          },
-                          "filename": {
-                            "type": "string",
-                            "description": "The filename of a finished file"
-                          },
-                          "package_filename": {
-                            "type": "string",
-                            "description": "The filename of a packaged output"
-                          },
-                          "package_format": {
-                            "type": "string",
-                            "description": "Zip/packaging format to use for the output file(s)",
-                            "enum": [
-                              "zip", "tar"
-                            ]
-                          },
-                          "device_profile": {
-                            "type": "string",
-                            "description": "A device profile to use for mobile device compatibility",
-                            "enum": [
-                              "mobile/advanced", "mobile/baseline", "mobile/legacy", "v1/mobile/advanced", "v1/mobile/baseline", "v1/mobile/legacy", "v2/mobile/advanced", "v2/mobile/baseline", "v2/mobile/legacy"
-                            ]
-                          },
-                          "strict": {
-                            "type": "boolean",
-                            "description": "Enable strict mode",
-                            "default": false
-                          }
+                        "type": {
+                          "type": "string",
+                          "description": "The type of file to output",
+                          "default": "standard",
+                          "enum": [
+                            "standard", "segmented", "playlist", "transfer-only"
+                          ]
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "An optional label for this output - should be unique for the job"
+                        },
+                        "url": {
+                          "type": "string",
+                          "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+                        },
+                        "secondary_url": {
+                          "type": "string",
+                          "description": "An S3, Cloud Files, GCS, FTP, FTPS, SFTP, Aspera, Azure, HTTP, or RTMP URL where Zencoder will put the transcoded file"
+                        },
+                        "base_url": {
+                          "type": "string",
+                          "description": "A base S3, Cloud Files, GCS, FTP, FTPS, SFTP, Azure, or Aspera directory URL where Zencoder put the transcoded file, without a filename"
+                        },
+                        "filename": {
+                          "type": "string",
+                          "description": "The filename of a finished file"
+                        },
+                        "package_filename": {
+                          "type": "string",
+                          "description": "The filename of a packaged output"
+                        },
+                        "package_format": {
+                          "type": "string",
+                          "description": "Zip/packaging format to use for the output file(s)",
+                          "enum": [
+                            "zip", "tar"
+                          ]
+                        },
+                        "device_profile": {
+                          "type": "string",
+                          "description": "A device profile to use for mobile device compatibility",
+                          "enum": [
+                            "mobile/advanced", "mobile/baseline", "mobile/legacy", "v1/mobile/advanced", "v1/mobile/baseline", "v1/mobile/legacy", "v2/mobile/advanced", "v2/mobile/baseline", "v2/mobile/legacy"
+                          ]
+                        },
+                        "strict": {
+                          "type": "boolean",
+                          "description": "Enable strict mode",
+                          "default": false
+                        }
                       }
                     }
                   }
