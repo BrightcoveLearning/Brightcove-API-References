@@ -122,7 +122,7 @@
 // Update an Ad application_ad_configuration
 
 /**
- * @api {put} /v1/ssai/applications/:application_id Update Ad Configuration
+ * @api {put} /v1/ssai/applications/{application_id} Update Ad Configuration
  * @apiName Update Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -246,7 +246,7 @@
 // Get Ad application_ad_configurations
 
 /**
- * @api {get} /v1/ssai/applications/:account_id Get Account Ad Configurations
+ * @api {get} /v1/ssai/applications/{account_id} Get Account Ad Configurations
  * @apiName Get Account Ad Configurations
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -319,7 +319,7 @@
 // Get an Ad application_ad_configuration
 
 /**
- * @api {get} /v1/ssai/applications/:application_id Get Ad Configuration
+ * @api {get} /v1/ssai/applications/{application_id} Get Ad Configuration
  * @apiName Get Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -379,7 +379,7 @@
 // Delete an ad application
 
 /**
- * @api {delete} /v1/ssai/applications/:application_id Delete Ad Configuration
+ * @api {delete} /v1/ssai/applications/{application_id} Delete Ad Configuration
  * @apiName Delete Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -464,7 +464,7 @@
 // Delete Slate Media Source Asset
 
 /**
- * @api {delete} /v1/ssai/slates/:slate_msa_id Delete Slate Media Source Asset
+ * @api {delete} /v1/ssai/slates/{slate_msa_id} Delete Slate Media Source Asset
  * @apiName Delete Slate Media Source Asset
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -503,7 +503,7 @@
 // Get Slate Media Source Assets
 
 /**
- * @api {get} /v1/ssai/slates/:account_id Get Slate Media Source Assets
+ * @api {get} /v1/ssai/slates/{account_id} Get Slate Media Source Assets
  * @apiName Get Slate Media Source Assets
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -554,7 +554,7 @@
 // Create a beacon set
 
 /**
- * @api {post} /v1/ssai/beaconset Create beacon set
+ * @api {post} /v1/ssai/beaconsets Create beacon set
  * @apiName Create beacon set
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -622,7 +622,7 @@
 // Update a beacon set
 
 /**
- * @api {put} /v1/ssai/beaconset/beacon_set_id Update beacon set
+ * @api {put} /v1/ssai/beaconsets/beacon_set_id Update beacon set
  * @apiName Update beacon set
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -703,7 +703,7 @@
 // Get beacon sets
 
 /**
- * @api {get} /v1/ssai/beaconsets/:account_id Get beacon sets
+ * @api {get} /v1/ssai/beaconsets/{account_id} Get beacon sets
  * @apiName Get beacon sets
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -812,7 +812,7 @@
 // Delete a beacon set
 
 /**
- * @api {delete} /v1/ssai/beaconset/beacon_set_id Delete beacon set
+ * @api {delete} /v1/ssai/beaconsets/beacon_set_id Delete beacon set
  * @apiName Delete beacon set
  * @apiGroup SSAI
  * @apiVersion 1.0.0
