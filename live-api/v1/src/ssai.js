@@ -536,7 +536,7 @@
 // Delete Slate Media Source Asset
 
 /**
- * @api {delete} /v1/ssai/slates/{slate_msa_id} Delete Slate Media Source Asset
+ * @api {delete} /v1/ssai/slates/slate/{slate_msa_id} Delete Slate Media Source Asset
  * @apiName Delete Slate Media Source Asset
  * @apiGroup SSAI
  * @apiVersion 1.0.0
