@@ -1,7 +1,7 @@
 // Create an Ad application_ad_configuration
 
 /**
- * @api {post} /v1/ssai/application Create Ad Configuration
+ * @api {post} /v1/ssai/applications Create Ad Configuration
  * @apiName Create Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -122,7 +122,7 @@
 // Update an Ad application_ad_configuration
 
 /**
- * @api {put} /v1/ssai/application/:application_id Update Ad Configuration
+ * @api {put} /v1/ssai/applications/:application_id Update Ad Configuration
  * @apiName Update Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -319,7 +319,7 @@
 // Get an Ad application_ad_configuration
 
 /**
- * @api {get} /v1/ssai/application/:application_id Get Ad Configuration
+ * @api {get} /v1/ssai/applications/:application_id Get Ad Configuration
  * @apiName Get Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -379,7 +379,7 @@
 // Delete an ad application
 
 /**
- * @api {delete} /v1/ssai/application/:application_id Delete Ad Configuration
+ * @api {delete} /v1/ssai/applications/:application_id Delete Ad Configuration
  * @apiName Delete Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
