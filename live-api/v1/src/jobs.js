@@ -775,7 +775,7 @@
  // Cancel Live Job
 
  /**
-  * @api {put} /v1/jobs/:job_id/cancel Cancel Live Job
+  * @api {put} /v1/jobs/{job_id}/cancel Cancel Live Job
   * @apiName Cancel Live Job
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -808,7 +808,7 @@
  // Activate SEP Stream
 
  /**
-  * @api {put} /v1/jobs/:job_id/activate Activate SEP Stream
+  * @api {put} /v1/jobs/{job_id}/activate Activate SEP Stream
   * @apiName Activate SEP Stream
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -841,7 +841,7 @@
  // Deactivate SEP Stream
 
  /**
-  * @api {put} /v1/jobs/:job_id/deactivate Deactivate SEP Stream
+  * @api {put} /v1/jobs/{job_id}/deactivate Deactivate SEP Stream
   * @apiName Deactivate SEP Stream
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -875,7 +875,7 @@
 // Get Live Job Details
 
  /**
-  * @api {get} /v1/jobs/:job_id Get Live Job Details
+  * @api {get} /v1/jobs/{job_id} Get Live Job Details
   * @apiName Get Live Job Details
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -1249,7 +1249,7 @@
 // Manual Ad Cue Point Insertion
 
 /**
-  * @api {post} /v1/jobs/:job_id/cuepoint Manual Ad Cue Point Insertion
+  * @api {post} /v1/jobs/{job_id}/cuepoint Manual Ad Cue Point Insertion
   * @apiName Manual Ad Cue Point Insertion
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -1303,7 +1303,7 @@
   // Insert ID3 timed metadata
 
   /**
-    * @api {post} /v1/jobs/:job_id/id3tag Insert ID3 timed metadata
+    * @api {post} /v1/jobs/{job_id}/id3tag Insert ID3 timed metadata
     * @apiName Insert ID3 timed metadata
     * @apiGroup Live_Jobs
     * @apiVersion 1.0.0
