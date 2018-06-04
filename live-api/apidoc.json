@@ -21,6 +21,7 @@
     "Update_Ad_Configuration",
     "Delete_Ad_Configuration",
     "Get_Account_Ad_Configurations",
+    "Get_Ad_Configurations_for_User",
     "Get_Ad_Configuration",
     "Ingest_Slate_Media_Source_Asset",
     "Delete_Slate_Media_Source_Asset",
