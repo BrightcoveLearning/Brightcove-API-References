@@ -921,7 +921,7 @@
         }
       }
     },
-    "/v1/ssai/application": {
+    "/v1/ssai/applications": {
       "post": {
         "tags": [
           "SSAI"
@@ -1077,7 +1077,7 @@
         }
       }
     },
-    "/v1/ssai/application/{application_id}": {
+    "/v1/ssai/applications/{application_id}": {
       "get": {
         "tags": [
           "SSAI"
