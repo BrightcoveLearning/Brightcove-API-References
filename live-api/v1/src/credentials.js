@@ -156,7 +156,7 @@
 // Update  Credential
 
 /**
- * @api {put} /v1/credentials/:credential_id Update Credential
+ * @api {put} /v1/credentials/{credential_id} Update Credential
  * @apiName Update Credential
  * @apiGroup Credentials
  * @apiVersion 1.0.0
@@ -210,7 +210,7 @@
 // Delete  Credential
 
 /**
- * @api {delete} /v1/credentials/:credential_id Delete Credential
+ * @api {delete} /v1/credentials/{credential_id} Delete Credential
  * @apiName Delete Credential
  * @apiGroup Credentials
  * @apiVersion 1.0.0
