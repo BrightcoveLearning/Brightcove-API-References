@@ -503,7 +503,7 @@
 // Get Slate Media Source Assets
 
 /**
- * @api {get} /v1/ssai/slates/{account_id} Get Slate Media Source Assets
+ * @api {get} /v1/ssai/slates/account/{account_id} Get Slate Media Source Assets
  * @apiName Get Slate Media Source Assets
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -514,6 +514,55 @@
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
  * @apiParam (Path) {String} account_id The account id.
+ *
+ * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
+ * @apiSuccess (200) {String} account_id Id for the account
+ * @apiSuccess (200) {String} media_source_asset_description User identifiable description for the slate
+ * @apiSuccess (200) {Boolean} media_source_asset_default Whether this is the default media source asset
+ * @apiSuccess (200) {String} media_source_asset_type The media asset type
+ * @apiSuccess (200) {String} media_source_asset_url URL for the media asset to be ingested
+ * @apiSuccess (200) {String} media_source_asset_status Current status of the ingestion of the media asset
+ *
+ * @apiSuccessExample {Object[]} Success response for Get Slate Media Source Assets
+ *    HTTP/1.1 200 OK
+ *    [
+ *      {
+ *        "media_source_asset_id": "MSA_UUID_1",
+ *        "media_source_asset_type": "slate",
+ *        "media_source_asset_default": false,
+ *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
+ *        "account_id": "account_id",
+ *        "media_source_asset_status": "ready"
+ *      },
+ *      {
+ *        "media_source_asset_id": "MSA_UUID_2",
+ *        "media_source_asset_type": "slate",
+ *        "media_source_asset_default": true,
+ *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
+ *        "account_id": "account_id",
+ *        "media_source_asset_status": "ready"
+ *      }
+ *    ]
+ *
+ * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (500) {object} INTERNAL_SERVER_ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ *
+ *
+ */
+
+// Get Slate Media Source Assets for User
+
+/**
+ * @api {get} /v1/ssai/slates Get Slate Media Source Assets for User
+ * @apiName Get Slate Get Slate Media Source Assets for User
+ * @apiGroup SSAI
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Get Slate Media Source Assets for the current user.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
  * @apiSuccess (200) {String} media_source_asset_id Id for the slate asset
  * @apiSuccess (200) {String} account_id Id for the account
@@ -622,7 +671,7 @@
 // Update a beacon set
 
 /**
- * @api {put} /v1/ssai/beaconsets/beacon_set_id Update beacon set
+ * @api {put} /v1/ssai/beaconsets/beaconset/{beacon_set_id} Update beacon set
  * @apiName Update beacon set
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -703,7 +752,7 @@
 // Get beacon sets
 
 /**
- * @api {get} /v1/ssai/beaconsets/{account_id} Get beacon sets
+ * @api {get} /v1/ssai/beaconsets/account/{account_id} Get beacon sets
  * @apiName Get beacon sets
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -812,7 +861,7 @@
 // Delete a beacon set
 
 /**
- * @api {delete} /v1/ssai/beaconsets/beacon_set_id Delete beacon set
+ * @api {delete} /v1/ssai/beaconsets/{beacon_set_id} Delete beacon set
  * @apiName Delete beacon set
  * @apiGroup SSAI
  * @apiVersion 1.0.0
