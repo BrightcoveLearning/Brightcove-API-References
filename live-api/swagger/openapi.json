@@ -2557,6 +2557,11 @@
             "default": "event",
             "enum": ["24x7", "event"]
           },
+          "hls_endlist": {
+            "type": "boolean",
+            "description": "Whether an `EXT-X-ENDLIST` tag should be added to the stream playlist when you stop the stream or the `reconnect_time` window has been reached. The `EXT-X-ENDLIST` tag indicates that no more Media Segments will be added to the Media Playlist file and helps prevent the player from displaying error messages when the stream stops.",
+            "default": true
+          },
           "outputs": {
             "type": "array",
             "items": {
