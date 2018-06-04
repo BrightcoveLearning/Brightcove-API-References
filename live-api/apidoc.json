@@ -25,6 +25,7 @@
     "Ingest_Slate_Media_Source_Asset",
     "Delete_Slate_Media_Source_Asset",
     "Get_Slate_Media_Source_Assets",
+    "Get_Slate_Media_Source_Assets_for_User",
     "Create_beacon_set",
     "Update_beacon_set",
     "Get_beacon_sets",
