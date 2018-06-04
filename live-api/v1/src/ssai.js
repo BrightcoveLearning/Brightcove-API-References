@@ -122,7 +122,7 @@
 // Update an Ad application_ad_configuration
 
 /**
- * @api {put} /v1/ssai/applications/{application_id} Update Ad Configuration
+ * @api {put} /v1/ssai/applications/application/{application_id} Update Ad Configuration
  * @apiName Update Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -246,7 +246,7 @@
 // Get Ad application_ad_configurations
 
 /**
- * @api {get} /v1/ssai/applications/{account_id} Get Account Ad Configurations
+ * @api {get} /v1/ssai/applications/account/{account_id} Get Account Ad Configurations
  * @apiName Get Account Ad Configurations
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -316,10 +316,82 @@
  *
  */
 
+// Get Ad application_ad_configurations
+
+/**
+ * @api {get} /v1/ssai/applications Get Ad Configurations for User
+ * @apiName Get Ad Configurations for User
+ * @apiGroup SSAI
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Get ad applications for the current user.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+ *
+ *
+ * @apiSuccess (200) {Object} application The ad application object
+ * @apiSuccess (200) {String} application.account_id The account id
+ * @apiSuccess (200) {String} application.description The ad application description
+ * @apiSuccess (200) {Object} application.application_ad_configuration The ad configuration object for the application
+ * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+ * @apiSuccess (200) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+ * @apiSuccess (200) {Object} application.application_ad_configuration.headers The ad configuration headers
+ * @apiSuccess (200) {Boolean} application_ad_configuration.ad_configuration_headers_for_impressions If true, this configuration will send headers on all ad requests **and** impressions; if false, headers will not be sent on impressions (quartiles/impressions that we fire for tracking from an ad response).
+ * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+ * @apiSuccess (200) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+ * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+ * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+ * @apiSuccess (200) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+ * @apiSuccess (200) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+ * @apiSuccess (200) {String} application.application_id The ad application id
+ * @apiSuccess (200) {Boolean} inserted Whether the ad application was successfully inserted
+ *
+ * @apiSuccessExample {object} Success response Get Ad Applications
+ *    HTTP/1.1 200 OK
+ *    [
+ *      {
+ *        "application_id": "APPLICATION_ID_1",
+ *        "application_description": "DFP Single Midroll",
+ *        "application_ad_configuration": {
+ *          "ad_configuration_description": "DFP Test Config Single Midroll",
+ *          "ad_configuration_strategy": "MultipleAdResponse",
+ *          "ad_configuration_transforms": [],
+ *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler",
+ *          "ad_configuration_expected_response_type": "Dfp"
+ *        },
+ *        "account_id": "account_id"
+ *      },
+ *      {
+ *        "application_id": "APPLICATION_ID_2",
+ *        "application_description": "Test DFP Single Midroll"
+ *        "application_ad_configuration": {
+ *          "ad_configuration_description": "DFP Test Config Single Midroll",
+ *          "ad_configuration_strategy": "MultipleAdResponse",
+ *          "ad_configuration_transforms": [
+ *            {
+ *              "xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>",
+ *              "xpath": "/"
+ *            }
+ *          ],
+ *          "ad_configuration_url_format": "https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&num={{random.int32}}&ses={{session.session_id}}",
+ *          "ad_configuration_expected_response_type": "Dfp"
+ *        },
+ *        "account_id": "account_id"
+ *      }
+ *    ]
+ *
+ * @apiError (401) {object} UNAUTHORIZED: Unauthorized - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (404) {object} RESOURCE_NOT_FOUND: The api couldn't find the resource you requested - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ * @apiError (500) {object} INTERNAL_SERVER_ERROR: DB getItem, no results found - see [Live API Error Messages](https://support.brightcove.com/live-api-error-messages) for more details
+ *
+ *
+ */
+
 // Get an Ad application_ad_configuration
 
 /**
- * @api {get} /v1/ssai/applications/{application_id} Get Ad Configuration
+ * @api {get} /v1/ssai/applications/application/{application_id} Get Ad Configuration
  * @apiName Get Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
@@ -379,7 +451,7 @@
 // Delete an ad application
 
 /**
- * @api {delete} /v1/ssai/applications/{application_id} Delete Ad Configuration
+ * @api {delete} /v1/ssai/applications/application/{application_id} Delete Ad Configuration
  * @apiName Delete Ad Configuration
  * @apiGroup SSAI
  * @apiVersion 1.0.0
