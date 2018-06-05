@@ -1434,7 +1434,7 @@
         }
       }
     },
-    "/v1/ssai/slates/{slate_msa_id}": {
+    "/v1/ssai/slates/slate{slate_msa_id}": {
       "delete": {
         "tags": [
           "SSAI"
