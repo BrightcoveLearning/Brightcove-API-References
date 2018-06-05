@@ -1139,7 +1139,8 @@
           "AllowDynamicFormParameters": false,
           "IsMultiContentStreaming": false
         }
-      },"get": {
+      },
+      "get": {
               "tags": [
                 "SSAI"
               ],
