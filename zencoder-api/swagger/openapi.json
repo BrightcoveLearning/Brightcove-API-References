@@ -282,7 +282,11 @@
   "components": {
     "schemas": {
       "CreateAJobBody": {
-        "title": "Create_a_job_body"
+        "title": "Create_a_job_body",
+        "type": "object",
+        "properties":{
+          
+        }
       }
       "notification": {
         "title": "Notification Object",
