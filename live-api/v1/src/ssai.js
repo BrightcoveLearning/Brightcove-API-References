@@ -626,8 +626,8 @@
 // Get Slate Media Source Assets for User
 
 /**
- * @api {get} /v1/ssai/slates Get Slate Media Source Assets for User
- * @apiName Get Slate Get Slate Media Source Assets for User
+ * @api {get} /v1/ssai/slates Get Slate Assets for User
+ * @apiName Get Slate Assets for User
  * @apiGroup SSAI
  * @apiVersion 1.0.0
  *
