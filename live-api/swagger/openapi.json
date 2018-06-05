@@ -1508,7 +1508,7 @@
         }
       }
     },
-    "/v1/ssai/beaconset/beacon_set_id": {
+    "/v1/ssai/beaconsets/beaconset/beacon_set_id": {
       "put": {
         "tags": [
           "SSAI"
@@ -1898,9 +1898,9 @@
         "tags": [
           "SSAI"
         ],
-        "summary": "Get_Slate_Media_Source_Assets",
-        "description": "Get Slate Media Source Assets for an account. ",
-        "operationId": "GetSlateMediaSourceAssets",
+        "summary": "Get_User_Slate_Media_Source_Assets",
+        "description": "Get Slate Media Source Assets for the current user. ",
+        "operationId": "GetUserSlateMediaSourceAssets",
         "parameters": [{
             "name": "Content-Type",
             "in": "header",
