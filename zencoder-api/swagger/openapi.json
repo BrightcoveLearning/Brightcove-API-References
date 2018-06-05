@@ -281,6 +281,9 @@
   },
   "components": {
     "schemas": {
+      "CreateAJobBody": {
+        "title": "Create_a_job_body"
+      }
       "notification": {
         "title": "Notification Object",
         "type": "object",
