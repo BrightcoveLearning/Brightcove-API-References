@@ -1867,7 +1867,7 @@
               "application/json": {
                 "schema": {
                   "description": "200",
-                  "$ref": "#/components/schemas/Slate"
+                  "$ref": "#/components/schemas/GetSlateMediaSourceAssets200"
                 }
               }
             }
