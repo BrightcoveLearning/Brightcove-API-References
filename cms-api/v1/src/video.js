@@ -357,7 +357,7 @@
  * @apiSuccessExample {Object} Success Response:
  *     HTTP/1.1 200 OK
  *    {
- *    	"id": "5566317640001",
+ *      "id": "4492075574001",
  *    	"account_id": "57838016001",
  *    	"ad_keys": null,
  *    	"clip_source_video_id": null,
@@ -420,7 +420,7 @@
  *    	"original_filename": "Adult-and-young-swan-Sizergh-Castlle-Cumbria.mov",
  *    	"projection": null,
  *    	"published_at": "2017-09-06T12:52:08.639Z",
- *    	"reference_id": null,
+ *      "reference_id": "my_reference_id",
  *    	"schedule": null,
  *    	"sharing": {
  *    		"by_external_acct": false,
