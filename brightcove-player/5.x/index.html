@@ -135,30 +135,6 @@
 <section>
 
 <header>
-<div id="red" style="margin-left:200px;padding:1em;border:.5em #900 solid;text-align:right"></div>
-<script>
-	var redir = document.getElementById('red'),
-		loc = window.location.href,
-		newLoc = loc.replace('brightcovelearning.github.io/Brightcove-API-References', 'docs.brightcove.com'),
-		t,
-		msg =
-			'Brightcove API References have moved. You will be redirected in 10 seconds. Please update your bookmarks!',
-		a = document.createElement('a'),
-		h31 = document.createElement('h3'),
-		h32 = document.createElement('h3');
-
-	a.setAttribute('href', newLoc);
-	a.textContent = newLoc;
-	h31.textContent = msg;
-	h32.appendChild(a);
-	red.appendChild(h31);
-	red.appendChild(h32);
-	t = window.setTimeout(relocate, 10000);
-
-	function relocate() {
-		window.location.href = newLoc;
-	}
-</script>
 
         <h2>
         big-play-button.js
@@ -6608,6 +6584,31 @@ Not using setupTriggers. Using global onEvent func to distribute events</p></div
 
 <footer>
 	<div id="index-api-docs-div">
+		<div id="red" style="margin-left:200px;padding:1em;border:.5em #900 solid;text-align:right"></div>
+		<script>
+			var redir = document.getElementById('red'),
+				loc = window.location.href,
+				newLoc = loc.replace('brightcovelearning.github.io/Brightcove-API-References', 'docs.brightcove.com'),
+				t,
+				msg =
+					'Brightcove API References have moved. You will be redirected in 10 seconds. Please update your bookmarks!',
+				a = document.createElement('a'),
+				h31 = document.createElement('h3'),
+				h32 = document.createElement('h3');
+
+			a.setAttribute('href', newLoc);
+			a.textContent = newLoc;
+			h31.textContent = msg;
+			h32.appendChild(a);
+			red.appendChild(h31);
+			red.appendChild(h32);
+			t = window.setTimeout(relocate, 10000);
+
+			function relocate() {
+				window.location.href = newLoc;
+			}
+		</script>
+
 	  <p id="index-api-docs-title">Brightcove Player API Documentation</p>
 	  <p id="index-api-docs-text">If you are new to the Brightcove Player API, look first at the <a href="//brightcovelearning.github.io/Brightcove-API-References/brightcove-player/current-release/Player.html">Player</a> class. An instance of the Player class is created when any of the Brightcove Player setup methods are used to initialize a video. The methods and events of a Player object are the most commonly used for managing the player and playback.</p>
 	  <p id="index-api-docs-text2">All classes, events & modules can be accessed via the dropdowns in the header.</p>
