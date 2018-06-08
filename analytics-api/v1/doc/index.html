@@ -34,10 +34,6 @@
   </ul>
 </nav>
 </script>
-
-<script id="template-project" type="text/x-handlebars-template">
-  <div class="pull-left">
-      <div class="top-nav"><img src="//learning-services-media.brightcove.com/doc-assets/general/images/bc-logo-ondark.png" alt="Brightcove"> | <a href="../../../index.html">API References Index</a> | <a href="https://support.brightcove.com">Brightcove Docs</a> |</div>
 <div id="red" style="padding:1em;border:.5em #900 solid"></div>
 <script>
   var redir = document.getElementById('red'),
@@ -62,6 +58,10 @@
     window.location.href = newLoc;
   }
 </script>
+
+<script id="template-project" type="text/x-handlebars-template">
+  <div class="pull-left">
+      <div class="top-nav"><img src="//learning-services-media.brightcove.com/doc-assets/general/images/bc-logo-ondark.png" alt="Brightcove"> | <a href="../../../index.html">API References Index</a> | <a href="https://support.brightcove.com">Brightcove Docs</a> |</div>
 
     <h1>{{name}}</h1>
     {{#if description}}<p>{{{nl2br description}}}</p>{{/if}}
