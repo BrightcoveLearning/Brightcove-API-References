@@ -87,6 +87,31 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
+<div id="red" style="margin-left:200px;padding:1em;border:.5em #900 solid;text-align:right"></div>
+<script>
+	var redir = document.getElementById('red'),
+		loc = window.location.href,
+		newLoc = loc.replace('brightcovelearning.github.io/Brightcove-API-References', 'docs.brightcove.com'),
+		t,
+		msg =
+		'Brightcove API References have moved. You will be redirected in 10 seconds. Please update your bookmarks!',
+		a = document.createElement('a'),
+		h31 = document.createElement('h3'),
+		h32 = document.createElement('h3');
+
+	a.setAttribute('href', newLoc);
+	a.textContent = newLoc;
+	h31.textContent = msg;
+	h32.appendChild(a);
+	red.appendChild(h31);
+	red.appendChild(h32);
+	t = window.setTimeout(relocate, 10000);
+
+	function relocate() {
+		window.location.href = newLoc;
+	}
+</script>
+
 					<h1 class="title">BCOVFWContext Class Reference</h1>
 
 					
