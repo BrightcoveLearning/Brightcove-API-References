@@ -57,14 +57,14 @@
 </head>
 
 <body>
+<div id="red" style="padding:1em;border:.5em #900 solid"></div>
     <script>
-        var body = document.getElementsByTagName('body')[0],
+        var redir = document.getElementById('red')
             loc = window.location.href,
             newLoc = loc.replace('brightcovelearning.github.io/Brightcove-API-References', 'docs.brightcove.com'),
             t,
             msg =
             'Brightcove API References have moved. You will be redirected in 10 seconds. Please update your bookmarks!',
-            div = document.createElement('div'),
             a = document.createElement('a'),
             h31 = document.createElement('h3'),
             h32 = document.createElement('h3');
@@ -73,10 +73,8 @@
         a.textContent = newLoc;
         h31.textContent = msg;
         h32.appendChild(a);
-        div.appendChild(h31);
-        div.appendChild(h32);
-        div.setAttribute('style', 'padding:1em;border:.5em #900 solid');
-        body.insertAdjacentHTML('afterbegin', div);
+        red.appendChild(h31);
+        red.appendChild(h32);
         t = window.setTimeout(relocate, 10000);
         function relocate() {
             window.location.href = newLoc;
